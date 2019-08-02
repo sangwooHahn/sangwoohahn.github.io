@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sangwoo</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+      body {
+        -webkit-animation: showing 1.2s ease forwards;
+        animation: showing 1.2s ease forwards;
+      }
+      @keyframes showing {
+          from { background-color: #fafafa; }
+          to { background-color: black; }
+      }
+      .content {
+        position: absolute;
+        padding-left: 280px;
+        top: 5vh;
+      }
+      .images {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        grid-template-rows: repeat(5, 23%);
+        grid-column-gap: 4%;
+        grid-row-gap: 2.5%;
+      }
+      .content_title_text {
+        color: #ddd;
+      }
+      .content_info {
+        color: #ddd;
+      }
+      .back_button {
+        border-left: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+      }
+      .back_text {
+        color: #ddd;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+      }
+      img:last-of-type {
+        padding-bottom: 60px;
+      }
+      video {
+        height: auto;
+        width: 100%;
+        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+        grid-column: auto / span 2;
+        grid-row: auto / span 2;
+      }
+      /* video:last-of-type {
+        padding-bottom: 60px;
+      } */
+
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        .content {
+          position: absolute;
+          padding-left: 0px;
+          top: 350px;
+          padding-bottom: 50px;
+        }
+        .button_back {
+          background-color: rgba(20,20,20,0.2);
+        }
+        .images {
+          display: grid;
+          grid-template-columns: repeat(1, 96%);
+          grid-template-rows: repeat(5, 1fr);
+          grid-row-gap: 30px;
+          justify-content: center;
+        }
+        video {
+          grid-column: auto / span 1;
+          grid-row: auto / span 1;
+        }
+      }
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 999px) {
+        .content {
+          position: absolute;
+          padding-left: 250px;
+          top: 5vh;
+        }
+        .images {
+          display: grid;
+          grid-template-columns: repeat(1, 96%);
+          grid-template-rows: repeat(5, 1fr);
+          grid-row-gap: 30px;
+          justify-content: center;
+        }
+        video {
+          grid-column: auto / span 1;
+          grid-row: auto / span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+      <div class ="back_button">
+        <div class ="back_text">go back</div>
+      </div>
+    </a>
+    <div class="button_back"></div>
+    <div class="content_title_back">
+      <div class ="content_title_text">Alone</div>
+      <div class ="content_info">Alone was the first work of team PROJECT-A. The game expressed the fear a man who left alone in the office.  It's a top view game, and I used realistic images to create a sense of immersion.</div>
+    </div>
+    <div class = "content">
+      <div class = "images">
+        <video src="images/alone/Alone_trailer_effect_logo2.mov" controls></video>
+        <img src="images/alone/Alone_1.jpg">
+        <img src="images/alone/Alone_2.jpg">
+        <img src="images/alone/Alone_3.jpg">
+        <img src="images/alone/Alone_4.jpg">
+      </div>
+    </div>
+  </body>
+</html>

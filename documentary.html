@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sangwoo</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+      .content {
+        position: absolute;
+        padding-left: 330px;
+        top: 5vh;
+      }
+
+      .content_title_back {
+        width: 270px;
+      }
+      .content_title_text {
+        font-size: 3em;
+      }
+      .images {
+        display: grid;
+        grid-template-columns: repeat(1, 33vw);
+        grid-template-rows: repeat(5, 19.5%);
+        grid-column-gap: 2%;
+        grid-row-gap: 4%;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+      }
+      img:last-of-type {
+        padding-bottom: 60px;
+      }
+
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        .content {
+          position: absolute;
+          padding-left: 0px;
+          top: 350px;
+          padding-bottom: 50px;
+        }
+        .images {
+          display: grid;
+          grid-template-columns: repeat(1, 96%);
+          grid-template-rows: repeat(5, 1fr);
+          grid-row-gap: 30px;
+          justify-content: center;
+        }
+        .content_title_back {
+          width: 100vw;
+        }
+      }
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 999px) {
+        .content {
+          position: absolute;
+          padding-left: 330px;
+          top: 5vh;
+        }
+        .images {
+          display: grid;
+          grid-template-columns: repeat(1, 50vw);
+          grid-template-rows: repeat(5, 1fr);
+          grid-row-gap: 30px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+      <div class ="back_button">
+        <div class ="back_text">go back</div>
+      </div>
+    </a>
+    <div class="button_back"></div>
+    <div class="content_title_back">
+      <div class ="content_title_text">The World of Doucments</div>
+      <div class ="content_info">The Korean Title means "The World Look Through Documentary”. <br>I changed a person's head into a camera and expressed the feeling of filming the world in a documentary.</div>
+    </div>
+    <div class = "content">
+      <div class = "images">
+        <img src="images/documents/documentary.jpg">
+      </div>
+    </div>
+  </body>
+</html>

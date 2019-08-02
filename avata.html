@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sangwoo</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <style>
+      .content {
+        position: absolute;
+        padding-left: 280px;
+        top: 5vh;
+      }
+      .images {
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        grid-template-rows: repeat(5, 22%);
+        grid-column-gap: 2%;
+        grid-row-gap: 4%;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+      }
+      img:last-of-type {
+        padding-bottom: 60px;
+      }
+
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        .content {
+          position: absolute;
+          padding-left: 0px;
+          top: 350px;
+          padding-bottom: 50px;
+        }
+        .images {
+          display: grid;
+          grid-template-columns: repeat(1, 96%);
+          grid-template-rows: repeat(5, 1fr);
+          grid-row-gap: 30px;
+          justify-content: center;
+        }
+      }
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 999px) {
+        .content {
+          position: absolute;
+          padding-left: 250px;
+          top: 5vh;
+        }
+        .images {
+          display: grid;
+          grid-template-columns: repeat(1, 96%);
+          grid-template-rows: repeat(5, 1fr);
+          grid-row-gap: 30px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+      <div class ="back_button">
+        <div class ="back_text">go back</div>
+      </div>
+    </a>
+    <div class="button_back"></div>
+    <div class="content_title_back">
+      <div class ="content_title_text">Cafe Avata</div>
+      <div class ="content_info">Cafe Avatar is a cafe that uses a robotic arm. I made a logo with motif for the joints of the robot arm. Letter A can be used as a pattern by repeated.</div>
+    </div>
+    <div class = "content">
+      <div class = "images">
+        <img src="images/avata/logo_white.jpg">
+        <img src="images/avata/logo_color.jpg">
+        <img src="images/avata/colors.jpg">
+        <img src="images/avata/avata1.jpg">
+        <img src="images/avata/avata2.jpg">
+        <img src="images/avata/avata5.jpg">
+        <img src="images/avata/avata3.jpg">
+        <img src="images/avata/avata4.jpg">
+      </div>
+    </div>
+  </body>
+</html>
