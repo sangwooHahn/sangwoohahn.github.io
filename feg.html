@@ -31,18 +31,6 @@
           from { background-color: #fafafa; }
           to { background-color: black; }
       }
-      .content {
-        position: absolute;
-        padding-left: 280px;
-        top: 5vh;
-      }
-      .images {
-        display: grid;
-        grid-template-columns: repeat(2, 45%);
-        grid-template-rows: repeat(5, 18%);
-        grid-column-gap: 2%;
-        grid-row-gap: 2.5%;
-      }
       .content_title_text {
         color: #ddd;
       }
@@ -56,33 +44,12 @@
       .back_text {
         color: #ddd;
       }
-      img {
-        height: auto;
-        width: 100%;
-        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
-      }
-      img:last-of-type {
-        padding-bottom: 60px;
-      }
-      video {
-        height: auto;
-        width: 100%;
-        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
-        grid-column: auto / span 2;
-        grid-row: auto / span 2;
-      }
       /* video:last-of-type {
         padding-bottom: 60px;
       } */
 
       /*Smart phone*/
       @media screen and (max-width: 599px) {
-        .content {
-          position: absolute;
-          padding-left: 0px;
-          top: 350px;
-          padding-bottom: 50px;
-        }
         .back_button {
           border-left: 1px solid #ddd;
           border-top: 1px solid #ddd;
@@ -90,36 +57,10 @@
         .button_back {
           background-color: rgba(20,20,20,0.2);
         }
-        .images {
-          display: grid;
-          grid-template-columns: repeat(1, 96%);
-          grid-template-rows: repeat(5, 1fr);
-          grid-row-gap: 30px;
-          justify-content: center;
-        }
-        video {
-          grid-column: auto / span 1;
-          grid-row: auto / span 1;
-        }
       }
       /*Tablet*/
       @media screen and (min-width: 600px) and (max-width: 999px) {
-        .content {
-          position: absolute;
-          padding-left: 250px;
-          top: 5vh;
-        }
-        .images {
-          display: grid;
-          grid-template-columns: repeat(1, 96%);
-          grid-template-rows: repeat(5, 1fr);
-          grid-row-gap: 30px;
-          justify-content: center;
-        }
-        video {
-          grid-column: auto / span 1;
-          grid-row: auto / span 1;
-        }
+
       }
     </style>
   </head>
@@ -136,7 +77,7 @@
     </div>
     <div class = "content">
       <div class = "images">
-        <video src="images/feg/FEG_trailer.mp4" controls></video>
+        <video class="bigimage" src="images/feg/FEG_trailer.mp4" controls></video>
         <img src="images/feg/feg1.png">
         <img src="images/feg/feg2.png">
         <img src="images/feg/feg3.png">

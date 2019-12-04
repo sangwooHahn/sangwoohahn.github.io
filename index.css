@@ -67,8 +67,8 @@ li > a:hover {
 .portfolio_list {
   display: grid;
   grid-template-columns: repeat(4, 23%);
-  grid-template-rows: repeat(5, 24vw);
-  grid-gap: 2%;
+  grid-template-rows: repeat(6, 24vw);
+  grid-gap: 1.5%;
   padding-left: 4%;
   padding-top: 5vh;
   padding-bottom: 8vh;
@@ -146,78 +146,6 @@ li > a:hover {
   z-index: 6;
 }
 
-#project_1 {
-  background-image: url("thumbnail/bcard.jpg");
-}
-
-#project_2 {
-  background-image: url("thumbnail/bag.jpg");
-}
-
-#project_3 {
-  background-image: url("thumbnail/document.jpg");
-}
-
-#project_4 {
-  background-image: url("thumbnail/hat.jpg");
-}
-
-#project_5 {
-  background-image: url("thumbnail/documentary.jpg");
-}
-
-#project_6 {
-  background-image: url("thumbnail/GYEONGJU.jpg");
-}
-
-#project_7 {
-  background-image: url("thumbnail/save5.jpg");
-}
-
-#project_8 {
-  background-image: url("thumbnail/alone.jpg");
-}
-
-#project_9 {
-  background-image: url("thumbnail/wws.jpg");
-}
-
-#project_10 {
-  background-image: url("thumbnail/feg.jpg");
-}
-
-#project_11 {
-  background-image: url("thumbnail/projecta.jpg");
-}
-
-#project_12 {
-  background-image: url("thumbnail/album.jpg");
-}
-
-#project_13 {
-  background-image: url("thumbnail/poster.jpg");
-}
-
-#project_14 {
-  background-image: url("thumbnail/fins.jpg");
-}
-
-#project_15 {
-  background-image: url("thumbnail/wangta.jpg");
-}
-
-#project_16 {
-  background-image: url("thumbnail/avata.jpg");
-}
-
-#project_17 {
-  background-image: url("thumbnail/swcd.jpg");
-}
-
-#project_18 {
-  background-image: url("thumbnail/education.jpg");
-}
-
 .vertical_image {
   background-repeat: no-repeat;
   background-size: auto 110%;
@@ -285,6 +213,32 @@ li > a:hover {
   line-height: 1.5em;
 }
 
+/*each page*/
+.content {
+  position: absolute;
+  padding-left: 280px;
+  top: 5vh;
+}
+.images {
+  display: grid;
+  grid-template-columns: repeat(2, 47.5%);
+  grid-template-rows: repeat(auto, 1fr);
+  grid-column-gap: 2vw;
+  grid-row-gap: 2vw;
+}
+.bigimage {
+  grid-column: auto / span 2;
+}
+
+img, video {
+  height: auto;
+  width: 100%;
+  box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+}
+img:last-of-type {
+  padding-bottom: 60px;
+}
+
 /*Smart phone*/
 @media screen and (max-width: 599px) {
 /*@media screen and (max-width: 1100px) {*/
@@ -311,7 +265,7 @@ li > a:hover {
   .portfolio_list {
     display: grid;
     grid-template-columns: repeat(2, 46%);
-    grid-template-rows: repeat(9, 60vw);
+    grid-template-rows: repeat(12, 60vw);
     grid-gap: 10px;
   }
 
@@ -458,6 +412,23 @@ li > a:hover {
     font-size: 1.5em;
     line-height: 1.3em;
   }
+
+  .content {
+    position: absolute;
+    padding-left: 0px;
+    top: 350px;
+    padding-bottom: 50px;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: repeat(1, 95.5%);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-row-gap: 1%;
+    justify-content: center;
+  }
+  .bigimage {
+    grid-column: auto / span 1;
+  }
 }
 /*Tablet*/
  @media screen and (min-width: 600px) and (max-width: 999px) {
@@ -481,12 +452,29 @@ li > a:hover {
   .portfolio_list {
     display: grid;
     grid-template-columns: repeat(3, 31.2%);
-    grid-template-rows: repeat(4, 33vw);
+    grid-template-rows: repeat(8, 33vw);
+    grid-gap: 1.2%;
+  }
+
+  .content {
+    position: absolute;
+    padding-left: 250px;
+    top: 5vh;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: repeat(1, 95.5%);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-row-gap: 1%;
+    justify-content: center;
+  }
+  .bigimage {
+    grid-column: auto / span 1;
   }
 }
 
 
 /*Desktop*/
 @media screen and (min-width: 1200px) {
-
+  
 }

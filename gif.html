@@ -23,6 +23,66 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <style>
+      body {
+        -webkit-animation: showing 1.2s ease forwards;
+        animation: showing 1.2s ease forwards;
+      }
+      @keyframes showing {
+          from { background-color: #fafafa; }
+          to { background-color: black; }
+      }
+      .content {
+        position: absolute;
+        padding-left: 330px;
+        top: 5vh;
+      }
+      .content_title_back {
+        width: 270px;
+      }
+      .content_title_text {
+        font-size: 3em;
+      }
+      .content_title_text {
+        color: #ddd;
+      }
+      .content_info {
+        color: #ddd;
+      }
+      .back_button {
+        border-left: 2px solid #ddd;
+        border-top: 2px solid #ddd;
+      }
+      .back_text {
+        color: #ddd;
+      }
+
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        .content {
+          position: absolute;
+          padding-left: 0px;
+          top: 350px;
+          padding-bottom: 50px;
+        }
+        .content_title_back {
+          width: 100vw;
+        }
+        .back_button {
+          border-left: 1px solid #ddd;
+          border-top: 1px solid #ddd;
+        }
+        .button_back {
+          background-color: rgba(20,20,20,0.2);
+        }
+      }
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 999px) {
+        .content {
+          position: absolute;
+          padding-left: 330px;
+          top: 5vh;
+        }
+      }
     </style>
   </head>
   <body>
@@ -33,17 +93,13 @@
     </a>
     <div class="button_back"></div>
     <div class="content_title_back">
-      <div class ="content_title_text">Stern Village</div>
-      <div class ="content_info">Stern Village is a combination of Village with Stern, which means a star. To express this, I have placed five houses in a star-shaped style.</div>
+      <div class ="content_title_text">Environment</div>
+      <div class ="content_info">Alone was the first work of team PROJECT-A. The game expressed the fear a man who left alone in the office.  It's a top view game, and I used realistic images to create a sense of immersion.</div>
     </div>
     <div class = "content">
       <div class = "images">
-        <img src="images/sternvillage/logo_white.jpg">
-        <img src="images/sternvillage/logo_color.jpg">
-        <img src="images/sternvillage/colors.jpg">
-        <img src="images/sternvillage/bcard.jpg">
-        <img src="images/sternvillage/van.jpg">
-        <img src="images/sternvillage/map.jpg">
+        <img src="images/gif/gif1.gif">
+        <img src="images/gif/gif2.gif">
       </div>
     </div>
   </body>
