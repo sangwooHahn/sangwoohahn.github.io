@@ -216,7 +216,7 @@ li > a:hover {
 /*each page*/
 .content {
   position: absolute;
-  padding-left: 280px;
+  padding-left: 330px; /*280*/
   top: 5vh;
 }
 .images {
@@ -476,5 +476,5 @@ img:last-of-type {
 
 /*Desktop*/
 @media screen and (min-width: 1200px) {
-  
+
 }

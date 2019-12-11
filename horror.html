@@ -56,6 +56,27 @@
         color: #ddd;
       }
 
+      /*Desktop*/
+      @media screen and (min-width: 1200px) {
+        .images {
+          display: grid;
+          grid-template-columns: repeat(4, 22%);
+          grid-template-rows: repeat(auto, 1fr);
+          grid-column-gap: 2vw;
+          grid-row-gap: 6vw;
+        }
+        .hugeimage {
+          grid-column: auto / span 4;
+        }
+        .mobile1 {
+          grid-column: 2 / span 1;
+        }
+        .mobile2 {
+          grid-column: 3 / span 1;
+        }
+      }
+
+
       /*Smart phone*/
       @media screen and (max-width: 599px) {
         .content {
@@ -74,6 +95,21 @@
         .button_back {
           background-color: rgba(20,20,20,0.2);
         }
+        .images {
+          grid-template-columns: repeat(2, 47.5%);
+        }
+        .hugeimage {
+          grid-column: auto / span 2;
+        }
+        .bigimage {
+          grid-column: auto / span 2;
+        }
+        .mobile1 {
+          grid-column: 1 / span 1;
+        }
+        .mobile2 {
+          grid-column: 2 / span 1;
+        }
       }
       /*Tablet*/
       @media screen and (min-width: 600px) and (max-width: 999px) {
@@ -81,6 +117,21 @@
           position: absolute;
           padding-left: 330px;
           top: 5vh;
+        }
+        .images {
+          grid-template-columns: repeat(2, 47.5%);
+        }
+        .hugeimage {
+          grid-column: auto / span 2;
+        }
+        .bigimage {
+          grid-column: auto / span 2;
+        }
+        .mobile1 {
+          grid-column: 1 / span 1;
+        }
+        .mobile2 {
+          grid-column: 2 / span 1;
         }
       }
     </style>
@@ -94,16 +145,19 @@
     <div class="button_back"></div>
     <div class="content_title_back">
       <div class ="content_title_text">Horror Movies by James Wan</div>
-      <div class ="content_info">Alone was the first work of team PROJECT-A. The game expressed the fear a man who left alone in the office.  It's a top view game, and I used realistic images to create a sense of immersion.</div>
+      <div class ="content_info">
+        This is a website that introduces horror movies made by James Wan.
+        Built on the basis of cargo.
+        The background moves continuously, creating a creepy mood.
+        The home page design to focus on the poster.</div>
     </div>
     <div class = "content">
       <div class = "images">
-        <img class = "bigimage" src="images/horror/web.png">
-        <img class = "bigimage" src="images/horror/web2.gif">
-        <img src="images/horror/web.jpg">
-        <img src="images/horror/web2.jpg">
-        <img src="images/horror/mobile.jpg">
-        <img src="images/horror/web_mobile.jpg">
+        <img class = "hugeimage" src="images/horror/web1.gif">
+        <img class = "bigimage" src="images/horror/web3.gif">
+        <img class = "bigimage" src="images/horror/web4.gif">
+        <img class = "mobile1" src="images/horror/mobile1.gif">
+        <img class = "mobile2" src="images/horror/mobile2.gif">
       </div>
     </div>
   </body>
