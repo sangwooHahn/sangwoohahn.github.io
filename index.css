@@ -103,6 +103,8 @@ li > a:hover {
   height: 0%;
   width: 100%;
   border-radius: 0px;
+  -ms-backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
   opacity: 0;
   background-color:rgba(80, 80, 80, 0.3);/*#5eb71f;*/
