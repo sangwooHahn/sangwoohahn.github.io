@@ -384,6 +384,7 @@ img:last-of-type {
     height: 50px;
     width: 100vw;
     z-index: 7;
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
   }
   .content_title_back {
