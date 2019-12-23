@@ -103,34 +103,31 @@ li > a:hover {
   height: 0%;
   width: 100%;
   border-radius: 0px;
-  -ms-backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  backdrop-filter: blur(30px);
   opacity: 0;
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
   background-color:rgba(80, 80, 80, 0.3);/*#5eb71f;*/
   /* background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png"); */
-  /* -webkit-transform: translate3d(0,0,0);
-  -ms-transform: rotateX(-180deg) translateZ(0.1px);
-  -webkit-transform: rotateX(-180deg) translateZ(0.1px);
-  transform: rotateX(-180deg) translateZ(0.1px); */
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
-  z-index: 6;
+  z-index: 9;
 }
 
-.portfolio_list > div:hover .card {
-  /* -ms-transform: translateY(100%) rotateX(-180deg);
+/* .portfolio_list > div:hover .card {
+  -ms-transform: translateY(100%) rotateX(-180deg);
   -webkit-transform: translateY(100%) rotateX(-180deg);
-  transform: translateY(100%) rotateX(-180deg); */
-}
+  transform: translateY(100%) rotateX(-180deg);
+} */
 
 .portfolio_list > div:hover .box_overlay {
-  /* background-color: rgba(0, 0, 0, 1); */
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
   top:65%;
   height: 35%;
   opacity: 1;
 }
+
 .portfolio_list > div:hover .box_text {
   opacity: 1;
 }
@@ -291,11 +288,6 @@ img:last-of-type {
   }
   .card {
     transform-origin: top center;
-  }
-  .box_overlay {
-    /* -ms-transform: rotateX(-180deg) translateZ(0.1px);
-    -webkit-transform: rotateX(-180deg) translateZ(0.1px);
-    transform: rotateX(-180deg) translateZ(0.1px); */
   }
   .portfolio_list > div:hover .card {
     /* -ms-transform: translateY(100%) rotateX(-180deg);
