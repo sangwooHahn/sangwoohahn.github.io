@@ -4,6 +4,7 @@
 }
 html {
   font-family: 'Barlow', sans-serif;
+  height: 100vh;
 }
 
 body {
@@ -11,7 +12,7 @@ body {
   background-color: #fafafa;
   height: 100vh;
   width: auto;
-  overflow-X: hidden;
+  overflow-x: hidden;
 }
 
 ul {
@@ -180,12 +181,12 @@ li > a:hover {
   background-size: auto 100%;
 }
 
-.content { /*size of left side*/
+.content { /*size of right side*/
   position: absolute;
   padding-left: 280px; /*280*/
   top: 5vh;
 }
-.content_title_back { /*size of text box*/
+.content_title_back { /*size of left side*/
   position: fixed;
   top: 5vh;
   width: 210px;

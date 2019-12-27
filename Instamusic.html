@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sangwoo</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      ul {
+        padding-top: 0px;
+        margin-top: 0px;
+        padding-left: 20px;
+      }
+      li {
+        list-style: inherit;
+        line-height: 1.8em;
+      }
+      img, video {
+        box-shadow: 0px 0px .6vw rgba(0,0,0,0);
+      }
+      .img_shadow {
+        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+      }
+      .images {
+        grid-template-columns: 40% 57.5%;
+        overflow: hidden;
+      }
+      .inside_grid {
+        display: grid;
+        grid-template-columns: 40% 50%;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: 40% 25%;
+      }
+      .mobile_img {
+        padding: 0 30vw 0 15vw;
+      }
+      .content_title_text {
+        font-size: 3em;
+      }
+      .text_box {
+        font-family: 'Helvetica', sans-serif;
+        padding: 0% 5% 5% 10px;
+      }
+      .text_title {
+        font-size: 2.5em;
+        padding-top: 60px;
+        padding-bottom: 15px;
+        font-weight: bold;
+        color: rgb(215,53,123);
+      }
+      .sub_title {
+        padding-top: 25px;
+        padding-bottom: 5px;
+        font-size: 1.3em;
+        color: rgb(110,110,110);
+      }
+      .sub_title_s {
+        padding-top: 15px;
+        font-size: 1.1em;
+        color: rgb(110,110,110);
+      }
+      .text_body {
+        padding-top: 5px;
+        font-size: 1em;
+        color: rgb(30,30,30);
+        line-height: 1.5em;
+      }
+      .center_body {
+        padding-left: 44%;
+      }
+      .persona_l {
+        padding-left: 10vw;
+        height: auto;
+        width: 50%;
+      }
+      .persona_r {
+        padding-right: 15vw;
+        height: auto;
+        width: 70%;
+      }
+      .wide_img {
+        height: auto;
+        width: 90%;
+      }
+      .feature_r {
+        padding-right: 15vw;
+        height: auto;
+        width: 120%;
+      }
+      .feature_text_r {
+        padding-left: 10vw;
+      }
+      .sideReduce_text {
+        display: none;
+      }
+      .content_wide {
+        position: absolute;
+        padding-left: 170px; /*280*/
+        top: 5vh;
+      }
+      @-webkit-keyframes fadeOutLeft {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+
+      @keyframes fadeOutLeft {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+      .fadeOutLeft {
+        -webkit-animation-name: fadeOutLeft;
+        -webkit-animation-duration: 1s;
+        animation-name: fadeOutLeft;
+        animation-duration: 1s;
+      }
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        ul {
+          padding-top: 0px;
+          margin-top: 0px;
+          padding-left: 20px;
+          text-align: left;
+        }
+        li {
+          display: list-item;
+          list-style: inherit;
+          line-height: 1.8em;
+          font-size: 1em;
+        }
+        ul > li:nth-of-type(1) {
+          padding-right: 0px;
+        }
+        ul > li:nth-of-type(3) {
+          padding-left: 0px;
+        }
+        .images {
+          grid-template-columns: repeat(1, 100%);
+        }
+        .inside_grid {
+          grid-template-columns: repeat(1, 100%);
+        }
+        .text_box {
+          padding-left: 10%;
+          padding-right: 10%;
+        }
+        .left_text {
+          grid-row-start: 1;
+        }
+        .content_wide {
+          position: relative;
+          padding-left: 0px;
+          top: 100px;
+          padding-bottom: 50px;
+        }
+        .fadeOutLeft {
+          -webkit-animation-name: fadeOutLeft_not;
+          -webkit-animation-duration: 100s;
+          animation-name: fadeOutLeft_not;
+          animation-duration: 100s;
+        }
+        .wide_img {
+          padding-left: 10%;
+          padding-right: 10%;
+          height: auto;
+          width: 80%;
+        }
+        .persona_r {
+          padding-left: 26vw;
+          height: auto;
+          width: 50%;
+        }
+        .persona_l {
+          padding-left: 26vw;
+          height: auto;
+          width: 50%;
+        }
+        .feature_text_r {
+          padding-left: 10vw;
+        }
+        .feature_r {
+          padding-left: 7vw;
+          height: auto;
+          width: 85%;
+        }
+        .left_text {
+          grid-row-start: 1;
+        }
+        .features {
+          grid-template-columns: repeat(1, 95.5%);
+        }
+        .mobile_img {
+          padding-left: 25vw;
+          height: auto;
+          width: 50%;
+        }
+      }
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 999px) {
+        .images {
+          grid-template-columns: repeat(1, 95.5%);
+        }
+        .inside_grid {
+          grid-template-columns: repeat(1, 95.5%);
+        }
+        .persona_r {
+          padding-left: 10vw;
+          height: auto;
+          width: 50%;
+        }
+        .feature_text_r {
+          padding-left: 0vw;
+        }
+        .feature_r {
+          padding-right: 15vw;
+          height: auto;
+          width: 95%;
+        }
+        .left_text {
+          grid-row-start: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+      <div class ="back_button">
+        <div class ="back_text">go back</div>
+      </div>
+    </a>
+    <div class="button_back"></div>
+    <div class="content_title_back">
+      <div id="sideNav_text" class ="content_title_text">InstaMusic</div>
+      <div id="sideNav_info" class ="content_info">
+        Instagram music is a group project.
+        InstaMusic is a music streaming service design for Instagram users.</div>
+    </div>
+    <div class = "content_wide">
+      <div class = "images">
+        <img class="bigimage" data-aos="zoom-in-up" data-aos-duration="1000" src="images/instamusic/logo.png">
+        <div class="text_box">
+          <div class="text_title">Product Concept</div>
+          <div class="text_body">
+            Instagram is designing a music streaming service called InstaMusic for all Instagram users.
+            InstaMusic users can create their own playlists,
+            follow and like other users playlists, share the playlists, or simply just listen to music.
+            Instagram users no longer need other music streaming service while they are on Instagram.
+            The best thing about InstaMusic is that you can take a sneak peek at your favorite star's or influencer's playlists.
+            Also, available on a computer/ PC without installation or update.</div>
+        </div>
+        <img data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/web_mobile.png">
+        <div class="text_box">
+          <div class="text_title">Target Users</div>
+          <div class="text_body">
+            <ul>
+              <li>Music Lover</li>
+              <li>Fandom</li>
+              <li>Influencer</li>
+            </ul>
+          </div>
+        </div>
+        <img class="bigimage" data-aos="zoom-in-up" data-aos-duration="1000" src="images/instamusic/target.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="bigimage text_box">
+          <div class="text_title">Interview Questions</div>
+          <div class="text_body">
+            <ul>
+              <li>What streaming service or application do you use to listen to music.</li>
+              <li>Why do you use it even though there are many other services out there? Please explain the reasons for your choice.</li>
+              <li>What kind of function do you count on?</li>
+              <li>What do you want more from your music streaming service/ application? Needs and wants?</li>
+              <li>When do you listen to music? (Work? Workout? Rest?)</li>
+              <li>Would you listen to one's playlist that you admire (ex. your favorite influencer or movie star)?</li>
+              <li>What do you wish to see from Insta music? Any function, design, skills, etc.</li>
+            </ul>
+          </div>
+        </div>
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Music Lover</div>
+          <div class="sub_title">Q: What is the route of getting your playlist?</div>
+          <div class="text_body">
+            Actually, there are many different ways. Recommendation from other people or friends.
+            Or I listen to first five to ten seconds of a song, and it is added to my playlist if I like it.
+            Also, I like to listen some songs that my favorite artist recommends or listens to.</div>
+        </div>
+        <img class ="persona_l" data-aos="fade-left" data-aos-duration="1500" src="images/instamusic/persona-02.jpg">
+        <div class="inside_grid bigimage">
+          <img class ="persona_r" data-aos="fade-right" data-aos-duration="1500" src="images/instamusic/persona-01.jpg">
+          <div class="left_text text_box">
+            <div class="text_title">Fandom</div>
+            <div class="sub_title">Q: What is the route of getting the playlists of your favorite musician?</div>
+            <div class="text_body">
+              I get their playlists from twitter. What songs they listen to.
+              Other fans upload the lists of songs on twitter and share them with other fans.</div>
+          </div>
+        </div>
+        <div class="text_box">
+          <div class="text_title">Influencer</div>
+          <div class="sub_title">Q: What do you wish to see from Insta music? Any function, design, skills, etc.</div>
+          <div class="text_body">
+            I'm bored with the graphics that Spotify is offering.
+            In general, it's not great that most album art is now images of the musicians.
+            Could insta music offer new ways to visualize music?
+            I wish insta music could help me better mix playlists that students will like so I feel cool.</div>
+        </div>
+        <img class ="persona_l" data-aos="fade-left" data-aos-duration="1500" src="images/instamusic/persona-03.jpg">
+        <div class="text_box">
+          <div class="text_title">Wireframe (Mobile)</div>
+        </div>
+        <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/wireframe-01.png">
+        <div class="text_box">
+          <div class="text_title">Wireframe (Web)</div>
+        </div>
+        <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/wireframe-02.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">3 Key Features</div>
+          <div class="sub_title">
+            <ul>
+              <li>Looking at other user's playlist</li>
+              <li>Creating playlists and sharing with others</li>
+              <li>Free streaming service, no need to multitask</li>
+            </ul>
+          </div>
+        </div>
+        <img data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/keyfeatures.png">
+        <div></div><div><br><br><br><br></div>
+        <div class = "bigimage features">
+          <div class="text_box">
+            <div class="text_title">Feature 1</div>
+            <div class="sub_title">
+              Looking at other user's playlist
+            </div>
+            <div class="text_body">
+              The user can listen to the saved list through the playlist next to the gallery in the profile of another user.</div>
+          </div>
+          <img class="mobile_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/mobile-2.gif">
+        </div>
+        <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/feature1.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class = "bigimage features">
+          <div class="text_box">
+            <div class="text_title">Feature 2</div>
+            <div class="sub_title">
+              Creating playlists and sharing with others
+            </div>
+            <div class="text_body">
+              In mobile version, press + button at the bottom and go to music tab can create a new playlist.
+              In the Web version, user can create your own playlist from My Playlist on the right side.</div>
+          </div>
+          <img class="mobile_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/mobile-3.gif">
+        </div>
+        <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/feature2.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class = "bigimage features">
+          <div class="text_box">
+            <div class="text_title">Feature 3</div>
+            <div class="sub_title">
+              Free streaming service, no need to multitask
+            </div>
+            <div class="text_body">
+              On mobile, the user can open the control bar with tap the music bar below. Click the Music list icon to view the list.
+              In the web version, you can use the Minimize button to minimize the music bar to view a widescreen.</div>
+          </div>
+          <img class="mobile_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/mobile-1.gif">
+        </div>
+        <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/feature3.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Usability Tests</div>
+        </div>
+        <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/userTest.jpg">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">A fan's point of view</div>
+          <div class="sub_title">Fan looking at his or her favorite influencer's playlist:</div>
+          <div class="text_body">
+            <ul>
+            <li>Can you find your following list?</li>
+            <li>Can you find your favorite singer (B1A4) on the list?</li>
+            <li>Do you know where to go to see B1A4's personal playlists?</li>
+            <li>Do you know how to save a song from B1A4's playlists?</li>
+            <li>Do you know where you can see all the saved songs?</li>
+            </ul>
+          </div>
+        </div>
+        <img class="wide_img" data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/feature1.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="inside_grid bigimage">
+          <img class ="feature_r" data-aos="fade-right" data-aos-duration="1500" src="images/instamusic/feature2.png">
+          <div class="feature_text_r left_text text_box">
+            <div class="text_title">Influencers' point of view</div>
+            <div class="sub_title">Users can create their own playlists and share them with others:</div>
+            <div class="text_body">
+              <ul>
+                <li>Do you know where to go to start creating a playlist?</li>
+                <li>Can you delete the song "Hold My Hand" from the list?</li>
+                <li>Can you name your playlists?</li>
+                <li>After you have created your playlist, can you share it?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">No need multitask</div>
+          <div class="sub_title">You can listen to playlist while using instagram</div>
+          <div class="text_body">
+            <ul>
+            <li>Can you play the song on your playlists from where you are?</li>
+            <li>Can you tell the name of the song that you are listening to?</li>
+            <li>While you are listening, can you see the list of the songs?</li>
+            <li>Tell me the name of the next song.</li>
+            <li>Can you find others' comments on your playlist feed?</li>
+          </ul>
+          </div>
+        </div>
+        <img class="wide_img" data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/feature3.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Results and insights</div>
+          <div class="sub_title">Things that change after a user test</div>
+        </div>
+        <img class="wide_img" data-aos="fade-left" data-aos-duration="3000" src="images/instamusic/pages.png">
+        <div class="text_box">
+          <div class="text_title">Issues</div>
+          <div class="text_body">
+            <ul>
+              <li>Clarify "lists" icon</li>
+              <li>Hard to find edit icon of playlists</li>
+              <li>Difference between looking at a single song and playlists</li>
+              <li>Playlists do not read as the "list of the songs"</li>
+              <li>Hard to find saved playlists</li>
+          </ul>
+          </div>
+        </div>
+        <img class="wide_img" data-aos="fade-left" data-aos-duration="3000" src="images/instamusic/issue.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Solution</div>
+          <div class="text_body">
+            <ul>
+            <li>New lists icon design</li>
+            <li>Music bar problem</li>
+            <li>Multiple album images for playlists</li>
+            <li>"Make my playlist" function now on my playlists section</li>
+            <li>Saved song to Saved music</li>
+          </ul>
+          </div>
+        </div>
+        <img class="wide_img" data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/solution.png">
+        <div class="text_box">
+          <div class="text_title">Final Look</div>
+        </div>
+        <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/mobile_final.png">
+        <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/web_final1.png">
+        <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/web_final2.png">
+      </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(window).on("scroll",function() {
+      if($(window).scrollTop()>100) {
+        $('#sideNav_text').addClass("fadeOutLeft");
+        $('#sideNav_info').addClass("fadeOutLeft");
+      }
+      else {
+        $('#sideNav_text').removeClass("fadeOutLeft");
+        $('#sideNav_info').removeClass("fadeOutLeft");
+      }
+      if($(window).scrollTop()>140) {
+        $('#sideNav_text').addClass("sideReduce_text");
+        $('#sideNav_info').addClass("sideReduce_text");
+      }
+      else {
+        $('#sideNav_text').removeClass("sideReduce_text");
+        $('#sideNav_info').removeClass("sideReduce_text");
+      }
+    });
+    </script>
+  </body>
+</html>

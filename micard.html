@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sangwoo</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+      ul {
+        padding-top: 0px;
+        margin-top: 0px;
+        padding-left: 20px;
+      }
+      li {
+        list-style: inherit;
+        line-height: 1.8em;
+      }
+      img, video {
+        box-shadow: 0px 0px .6vw rgba(0,0,0,0);
+      }
+      .title_img {
+        width : 90%;
+      }
+      #target {
+        transform: translateX(-5vw);
+      }
+      .img_shadow {
+        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+      }
+      .images {
+        grid-template-columns: 40% 57.5%;
+        overflow: hidden;
+      }
+      .three_grid {
+        display: grid;
+        grid-template-columns: 27% 27% 27%;
+        grid-column-gap: 5%;
+        padding-top: 2%;
+      }
+      .inside_grid {
+        display: grid;
+        grid-template-columns: 40% 50%;
+      }
+      .mobile_img {
+        width : 45%;
+        padding: 0 15vw 0 12vw;
+      }
+      .content_title_text {
+        font-size: 3em;
+      }
+      .text_box {
+        font-family: 'Helvetica', sans-serif;
+        padding: 0% 5% 5% 10px;
+      }
+      .text_title_b {
+        font-size: 3.2em;
+        padding-top: 60px;
+        padding-bottom: 5px;
+        font-weight: bold;
+        color: rgb(225,0,152);
+      }
+      .text_title {
+        font-size: 2.5em;
+        padding-top: 60px;
+        padding-bottom: 15px;
+        font-weight: bold;
+        color: rgb(225,0,152);
+      }
+      .sub_title {
+        padding-top: 25px;
+        padding-bottom: 5px;
+        font-size: 1.3em;
+        color: rgb(110,110,110);
+      }
+      .sub_title_s {
+        padding-top: 15px;
+        font-size: 1.1em;
+        color: rgb(110,110,110);
+      }
+      .text_body {
+        padding-top: 5px;
+        font-size: 1em;
+        color: rgb(30,30,30);
+        line-height: 1.5em;
+      }
+      .center_title {
+        text-align: center;
+      }
+      .persona_l {
+        padding-left: 10vw;
+        height: auto;
+        width: 50%;
+      }
+      .persona_r {
+        padding-right: 15vw;
+        height: auto;
+        width: 70%;
+      }
+      .wide_img {
+        height: auto;
+        width: 90%;
+      }
+      .feature_r {
+        padding-right: 15vw;
+        height: auto;
+        width: 120%;
+      }
+      .feature_text_r {
+        padding-left: 10vw;
+      }
+      .sideReduce_text {
+        display: none;
+      }
+      .content_wide {
+        position: absolute;
+        padding-left: 170px; /*280*/
+        top: 5vh;
+      }
+      @-webkit-keyframes fadeOutLeft {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+
+      @keyframes fadeOutLeft {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+      .fadeOutLeft {
+        -webkit-animation-name: fadeOutLeft;
+        -webkit-animation-duration: 1s;
+        animation-name: fadeOutLeft;
+        animation-duration: 1s;
+      }
+      .body_dark {
+        -webkit-animation: showing 2.2s ease forwards;
+        animation: showing 2.2s ease forwards;
+      }
+      .content_title_text_dark {
+        color: #ddd;
+      }
+      .content_info_dark {
+        color: #ddd;
+      }
+      .back_button_dark {
+        border-left: 2px solid #ddd;
+        border-top: 2px solid #ddd;
+      }
+      .back_text_dark {
+        color: #ddd;
+      }
+      .text_body_dark {
+        color: #ddd;
+      }
+      @keyframes showing {
+          from { background-color: #fafafa; }
+          to { background-color: black; }
+      }
+
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        ul {
+          padding-top: 0px;
+          margin-top: 0px;
+          padding-left: 20px;
+          text-align: left;
+        }
+        li {
+          display: list-item;
+          list-style: inherit;
+          line-height: 1.8em;
+          font-size: 1em;
+        }
+        ul > li:nth-of-type(1) {
+          padding-right: 0px;
+        }
+        ul > li:nth-of-type(3) {
+          padding-left: 0px;
+        }
+        .title_img {
+          width : 100%;
+        }
+        #target {
+          transform: translateX(0vw);
+        }
+        .images {
+          grid-template-columns: repeat(1, 100%);
+        }
+        .inside_grid {
+          grid-template-columns: repeat(1, 100%);
+        }
+        .text_box {
+          padding-left: 10%;
+          padding-right: 10%;
+        }
+        .left_text {
+          grid-row-start: 1;
+        }
+        .content_wide {
+          position: relative;
+          padding-left: 0px;
+          top: 100px;
+          padding-bottom: 50px;
+        }
+        .fadeOutLeft {
+          -webkit-animation-name: fadeOutLeft_not;
+          -webkit-animation-duration: 100s;
+          animation-name: fadeOutLeft_not;
+          animation-duration: 100s;
+        }
+        .wide_img {
+          padding-left: 10%;
+          padding-right: 10%;
+          height: auto;
+          width: 80%;
+        }
+        .persona_r {
+          padding-left: 26vw;
+          height: auto;
+          width: 50%;
+        }
+        .persona_l {
+          padding-left: 26vw;
+          height: auto;
+          width: 50%;
+        }
+        .left_text {
+          grid-row-start: 1;
+        }
+        .mobile_img {
+          padding-left: 25vw;
+          height: auto;
+          width: 50%;
+        }
+        .feature_r {
+          width: 95%;
+        }
+        .back_button_dark {
+          border-left: 1px solid #ddd;
+          border-top: 1px solid #ddd;
+        }
+        .button_back_dark {
+          background-color: rgba(20,20,20,0.2);
+        }
+      }
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 999px) {
+        .images {
+          grid-template-columns: repeat(1, 95.5%);
+        }
+        .inside_grid {
+          grid-template-columns: repeat(1, 95.5%);
+        }
+        .persona_r {
+          padding-left: 10vw;
+          height: auto;
+          width: 50%;
+        }
+        .left_text {
+          grid-row-start: 1;
+        }
+        .feature_text_r {
+          padding-left: 0vw;
+        }
+        .feature_r {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+      <div class ="back_button">
+        <div class ="back_text">go back</div>
+      </div>
+    </a>
+    <div class="button_back"></div>
+    <div class="content_title_back">
+      <div id="sideNav_text" class ="content_title_text">MICARD</div>
+      <div id="sideNav_info" class ="content_info">
+        Instagram music is a group project.
+        InstaMusic is a music streaming service design for Instagram users.</div>
+    </div>
+    <div class = "content_wide">
+      <div class = "images">
+        <img class="bigimage title_img" data-aos="zoom-in-up" data-aos-duration="1000" src="images/micard/pages.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Product Concept</div>
+          <div class="text_body">
+            "MICARD" is a combination of word MICA and Card.
+            MICARD is a mobile unite application service for students.
+            It has all the features can do with student ID card.
+            This app allows you to use NFC technology instead of carrying an existing student ID card.
+            Three services offered from schools, "Flex, Dining dollars, Meal plan,"
+            will be more effective and simpler to manage. User can easily compare the menu of dining rooms and cafeterias.
+            And preorder the foods and receive the notifications.
+            Users can also find out the status of the laundry in the dormitory,
+            and the shuttle service for safe return at night.</div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/categories.gif">
+        <div class="bigimage text_box">
+          <div class="text_title">Problem of the existing apps</div>
+          <div class="text_body">
+            <ul>
+              <li>Too many kinds of apps</li>
+              <li>Apps not developed for MICA</li>
+              <li>Need to get an app for one simple function</li>
+              <li>App does not update</li>
+              <li>Some of are not works with mobile</li>
+            </ul>
+          </div>
+        </div>
+        <img class="bigimage wide_img" data-aos="zoom-in-up" data-aos-duration="1000" src="images/micard/icons.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Target Users</div>
+          <div class="text_body">
+            <ul>
+              <li>Student who live on campus</li>
+              <li>Student who live off campus</li>
+              <li>Student who eat in campus</li>
+            </ul>
+          </div>
+        </div>
+        <img class="bigimage" data-aos="flip-down" data-aos-duration="1000" src="images/micard/target.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="bigimage text_box">
+          <div class="text_title">Personas</div>
+          <div class="sub_title">
+            <ul>
+              <li>Night Worker</li>
+              <li>Doris Lover</li>
+            </ul>
+          </div>
+        </div>
+        <img class="bigimage wide_img img_shadow" data-aos="zoom-in-up" data-aos-duration="1000" src="images/micard/persona-01.jpg">
+        <img class="bigimage wide_img img_shadow" data-aos="zoom-in-up" data-aos-duration="1000" src="images/micard/persona-02.jpg">
+        <div></div><div><br><br><br><br></div>
+
+        <div class="text_box">
+          <div class="text_title_b">KEY TASK FLOWS</div>
+          <div class="sub_title">
+            <ul>
+              <li>Manage account easily</li>
+              <li>Pay with mobile</li>
+              <li>Check menu and pre-order</li>
+              <li>Conducive functions for school life</li>
+            </ul>
+          </div>
+        </div>
+        <!-- <img data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/keyfeatures.png"> -->
+        <div></div><div><br><br><br><br></div>
+        <div class="bigimage text_box">
+          <div class="text_title">Account</div>
+          <div class="bigimage three_grid">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/account-1.jpg">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/account-2.jpg">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/account-3.jpg">
+          </div>
+        </div>
+        <div class="bigimage text_box">
+          <div class="text_title">MICA Pay</div>
+          <div class="bigimage three_grid">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/micaPay.jpg">
+          </div>
+        </div>
+        <div class="bigimage text_box">
+          <div class="text_title">Dining</div>
+          <div class="bigimage three_grid">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/dining-1.jpg">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/dining-2.jpg">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/dining-3.jpg">
+          </div>
+        </div>
+        <div class="bigimage text_box">
+          <div class="text_title">MICA Life</div>
+          <div class="bigimage three_grid">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/life-1.jpg">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/life-2.jpg">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/life-3.jpg">
+          </div>
+        </div>
+        <div class="bigimage text_box">
+          <div class="text_title">MICA Event</div>
+          <div class="bigimage three_grid">
+            <img class="img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/event.jpg">
+          </div>
+        </div>
+        <div></div><div><br><br><br><br></div>
+        <div class="bigimage text_box">
+          <div class="text_title">Usability Tests</div>
+          <div class="text_body">
+            <ul>
+            <li>Can You find account history on November 7? Tell me where you spent money.</li>
+            <li>Can you find MICA Mobile ID?</li>
+            <li>Can you find today's Meyerhoff dinner menu?</li>
+            <li>Can you find way to pre-order egg sandwich in Cafe Doris?</li>
+            <li>Can you order sandwich with dining dollars?</li>
+            <li>Can you pay for laundry 09?</li>
+            <li>Can you add funds in your flex account?</li>
+            <li>Can you find way to use Dining dollars with MICA pay?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bigimage text_box">
+          <div class="text_title">Results of Testing</div>
+          <div class="text_body">
+            <ul>
+            <li>Don't need to scroll on the first page with Transaction.</li>
+            <li>The letters on the button are small, and wish it write in one line.</li>
+            <li>Dining is better than cafeteria.</li>
+            <li>It would be nice to have a pre-order button in the menu.</li>
+            <li>Pre-order does not look like a button, something need to changes.</li>
+            <li>It says checkout in the middle of the process, so money seems to be paid.</li>
+            <li>When laundry is finished, the information is small.</li>
+            <li>Use pop-up when add a funds, instead of double-check on additional pages.</li>
+            <li>Change the color of each account to a brighter MICA color.</li>
+            </ul>
+          </div>
+        </div>
+        <div></div><div><br><br><br><br></div>
+        <div class="bigimage text_box">
+          <div class="text_title_b">REFLECTIONS AND CHANGES</div>
+        </div>
+        <div class="text_box">
+          <div class="text_title">History Transaction Design</div>
+          <div class="text_body">
+            <ul>
+              <li>Bigger size of date and time</li>
+              <li>Insert account name</li>
+              <li>Easy to find account with color palette</li>
+            </ul>
+          </div>
+        </div>
+        <img class="wide_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/change-03.png">
+        <div class="inside_grid bigimage">
+          <img class ="feature_r" data-aos="fade-right" data-aos-duration="1500" src="images/micard/change-02.png">
+          <div class="feature_text_r left_text text_box">
+            <div class="text_title">Color Palette</div>
+            <div class="text_body">
+              <ul>
+                <li>Change hue to more differences</li>
+                <li>used brighter MICA colors</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="text_box">
+          <div class="text_title">Dining Page</div>
+          <div class="text_body">
+            <ul>
+              <li>Change name from cafeteria to dining</li>
+              <li>Use pictures to show the cafe and dining hall</li>
+              <li>Bigger button and second color for pre-order service</li>
+            </ul>
+          </div>
+        </div>
+        <img class="wide_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/change-01.png">
+        <div></div><div><br><br><br><br></div>
+        <div class="bigimage text_box">
+          <div class="text_title_b">FINAL LOOKS</div>
+        </div>
+        <div class="text_box">
+          <div class="text_title">Mobile ID card</div>
+          <div class="text_body">
+            <ul>
+              <li>It's easily accessible from the Account page with a single tap.</li>
+              <li>The mobile ID card has a big portrait and a name.</li>
+              <li>There is a bar code for rental the book in the library.</li>
+              <li>The blinking color circle under the ID proves it is not a picture.</li>
+              <li>The color changes every morning to prevent forgery.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/id-card2.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Add Funds to Flex</div>
+          <div class="text_body">
+            <ul>
+              <li>Tap the Flax account to go to the Add funds page.</li>
+              <li>Enter the deposit amount.</li>
+              <li>Add a card or tap an existing card.</li>
+              <li>Tap continue to the next step.</li>
+              <li>Make sure user entered the correct amount.</li>
+              <li>Money added to the account.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/deposit.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">+ Add Credit Card</div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/add_credit.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Transaction History</div>
+          <div class="text_body">
+            <ul>
+              <li>The last four history can be found directly on the first page.</li>
+              <li>To see older history, tap more.</li>
+              <li>Older information goes down, new on the top.</li>
+              <li>Shows the date, place, amount of use, and which account used.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/transcript.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Mobile Payment</div>
+          <div class="text_body">
+            <ul>
+              <li>Select the account with swipe.</li>
+              <li>Go through the security process of the smartphone.</li>
+              <li>Hold near to the reader machine.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/mica-pay.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Compare the Menu</div>
+          <div class="text_body">
+            <ul>
+              <li>Don't have to go to the dining room to see today's menu.</li>
+              <li>Can preview a monthly menu.</li>
+              <li>Easy to comparing the menu of several dining services.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/menu2.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Pre-Order Service</div>
+          <div class="text_body">
+            <ul>
+              <li>In the Dining page or Menu, tap the Pre-order.</li>
+              <li>Can set the pick-up time.</li>
+              <li>Can add an order base on the picture.</li>
+              <li>Check the food and price you ordered.</li>
+              <li>User can choose payment method.</li>
+              <li>Food pick-up time is up as an alert.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/pre_order2.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">+ Pre-Order More</div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/pre_order_more2.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Request Shuttle</div>
+          <div class="text_body">
+            <ul>
+              <li>Quickly select my saved location.</li>
+              <li>The nearest shuttle will have the request.</li>
+              <li>Check the route of the shuttle and wait in a safe place.</li>
+              <li>Take the shuttle.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/shuttle.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Laundry Status</div>
+          <div class="text_body">
+            <ul>
+              <li>Saved location's laundry room comes first.</li>
+              <li>User can tap to see other the dorm's laundry room.</li>
+              <li>Icons are corresponds to the layout of laundry room.</li>
+              <li>Pay with mobile by tap on an empty machine.</li>
+              <li>After paying, click Start in the laundry machine.</li>
+              <li>Timer counts automatically.</li>
+              <li>When the alarm ringing, go to get the laundry out.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/laundry.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title">Check Events</div>
+          <div class="text_body">
+            <ul>
+              <li>Check event name, date and thumbnail.</li>
+              <li>Save interesting event with alert.</li>
+            </ul>
+          </div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/event.gif">
+        <div></div><div><br><br><br><br></div>
+        <div class="text_box">
+          <div class="text_title_b">Dark Mode</div>
+          <div class="text_body">Design trend</div>
+        </div>
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/black_mode.gif">
+        <div></div><div><br><br><br><br></div>
+        <img class="bigimage title_img" data-aos="fade-up" data-aos-duration="1000" src="images/micard/dark.png">
+      </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(window).on("scroll",function() {
+      if($(window).scrollTop()>100) {
+        $('#sideNav_text').addClass("fadeOutLeft");
+        $('#sideNav_info').addClass("fadeOutLeft");
+      }
+      else {
+        $('#sideNav_text').removeClass("fadeOutLeft");
+        $('#sideNav_info').removeClass("fadeOutLeft");
+      }
+      if($(window).scrollTop()>140) {
+        $('#sideNav_text').addClass("sideReduce_text");
+        $('#sideNav_info').addClass("sideReduce_text");
+      }
+      else {
+        $('#sideNav_text').removeClass("sideReduce_text");
+        $('#sideNav_info').removeClass("sideReduce_text");
+      }
+
+      if(($(window).scrollTop()>15800+(($(window).width()-1000)*12.5)) && ($(window).width()>1000)) {//21300
+        $('body').addClass("body_dark");
+        $('.content_title_text').addClass("content_title_text_dark");
+        $('.content_info').addClass("content_info_dark");
+        $('.back_button').addClass("back_button_dark");
+        $('.back_text').addClass("back_text_dark");
+        $('.text_body').addClass("text_body_dark");
+      }
+      else if(($(window).scrollTop()>17000+(($(window).width()-600)*16.25)) && ($(window).width()<1000) && ($(window).width()>599)) {//23500
+        $('body').addClass("body_dark");
+        $('.content_title_text').addClass("content_title_text_dark");
+        $('.content_info').addClass("content_info_dark");
+        $('.back_button').addClass("back_button_dark");
+        $('.back_text').addClass("back_text_dark");
+        $('.text_body').addClass("text_body_dark");
+      }
+      else if(($(window).scrollTop()>18700) && ($(window).width()<599)) {
+        $('body').addClass("body_dark");
+        $('.content_title_text').addClass("content_title_text_dark");
+        $('.content_info').addClass("content_info_dark");
+        $('.back_button').addClass("back_button_dark");
+        $('.button_back').addClass("button_back_dark");
+        $('.back_text').addClass("back_text_dark");
+        $('.text_body').addClass("text_body_dark");
+      }
+      else {
+        $('body').removeClass("body_dark");
+        $('.content_title_text').removeClass("content_title_text_dark");
+        $('.content_info').removeClass("content_info_dark");
+        $('.back_button').removeClass("back_button_dark");
+        $('.button_back').removeClass("button_back_dark");
+        $('.back_text').removeClass("back_text_dark");
+        $('.text_body').removeClass("text_body_dark");
+      }
+    });
+    </script>
+  </body>
+</html>
