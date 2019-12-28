@@ -106,6 +106,7 @@ li > a:hover {
   border-radius: 0px;
   opacity: 0;
   -webkit-backdrop-filter: blur(0px);
+  -moz-backdrop-filter: blur(0px);
   backdrop-filter: blur(0px);
   background-color:rgba(80, 80, 80, 0.3);/*#5eb71f;*/
   /* background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png"); */
@@ -123,6 +124,7 @@ li > a:hover {
 
 .portfolio_list > div:hover .box_overlay {
   -webkit-backdrop-filter: blur(30px);
+  -moz-backdrop-filter: blur(30px);
   backdrop-filter: blur(30px);
   top:65%;
   height: 35%;
@@ -386,6 +388,7 @@ img:last-of-type {
     width: 100vw;
     z-index: 7;
     -webkit-backdrop-filter: blur(2px);
+    -moz-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
   }
   .content_title_back {
