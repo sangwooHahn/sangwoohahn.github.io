@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sangwoo</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+    <style>
+      .images {
+        display: grid;
+        grid-template-columns: repeat(8, 11%);
+        grid-template-rows: repeat(auto, 1fr);
+        grid-column-gap: 0.8vw;
+        grid-row-gap: 0.8vw;
+        /* perspective: 3000px; */
+      }
+      .cards {
+        perspective: 300px;
+      }
+      /* .cards:hover img {
+        opacity: 0;
+      } */
+      .cards:hover .card_back {
+        transform-origin: right top;
+        -ms-transform: translateX(100%) rotateY(-180deg) rotateX(180deg);
+        -webkit-transform: translateX(100%) rotateY(-180deg) rotateX(180deg);
+        transform: translateY(2%) rotateY(-15deg) rotateX(10deg);
+        /* background-color:#666;
+        background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png"); */
+      }
+      .cards:hover img {
+        z-index: 9999;
+      }
+      img {
+        height: auto;
+        width: 100%;
+        box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+        border-radius: 1vw;
+        opacity: 1;
+        transition: all .5s ease;
+        transform-style: preserve-3d;
+      }
+      img:last-of-type {
+        padding-bottom: 0px;
+      }
+      .card_back {
+        /* background-color:#666;
+        background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png"); */
+        border-radius: 1.2vw;
+        transition: all .6s ease;
+        padding: 0px 0px 0px 0px;
+      }
+      .last_img {
+        padding-bottom: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+      <div class ="back_button">
+        <div class ="back_text">go back</div>
+      </div>
+    </a>
+    <div class="button_back"></div>
+    <div class="content_title_back">
+      <div class ="content_title_text">Hwatu</div>
+      <div class ="content_info">
+        Hwatu (War of Flowers) is a card for Korean card game Go-Stop and Matgo.</div>
+    </div>
+    <div class = "content">
+      <div class = "images">
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-01.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-02.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-03.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-04.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-05.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-06.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-07.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-08.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-09.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-10.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-11.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-12.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-13.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-14.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-15.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-16.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-17.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-18.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-19.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-20.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-21.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-22.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-23.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-24.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-25.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-26.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-27.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-28.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-29.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-30.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-31.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-32.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-33.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-34.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-35.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-36.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-37.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-38.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-39.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-40.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-41.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-42.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-43.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-44.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-45.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-46.png"></div></div>
+        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-47.png"></div></div>
+        <div class="cards last_img"><div class="card_back"><img src="images/hwatu/hwatu-48.png"></div></div>
+      </div>
+    </div>
+  </body>
+</html>
