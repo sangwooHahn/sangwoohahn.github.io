@@ -71,6 +71,26 @@
       .last_img {
         padding-bottom: 60px;
       }
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        .images {
+          display: grid;
+          grid-template-columns: repeat(4, 22%);
+          grid-template-rows: repeat(auto, 1fr);
+          grid-column-gap: 0.8vw;
+          grid-row-gap: 0.8vw;
+        }
+      }
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 999px) {
+        .images {
+          display: grid;
+          grid-template-columns: repeat(4, 22%);
+          grid-template-rows: repeat(auto, 1fr);
+          grid-column-gap: 0.8vw;
+          grid-row-gap: 0.8vw;
+        }
+      }
     </style>
   </head>
   <body>
