@@ -23,6 +23,10 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="universal-tilt.js"></script>
+    <script src="https://unpkg.com/universal-tilt.js/"></script>
     <style>
       .images {
         display: grid;
@@ -30,24 +34,6 @@
         grid-template-rows: repeat(auto, 1fr);
         grid-column-gap: 0.8vw;
         grid-row-gap: 0.8vw;
-        /* perspective: 3000px; */
-      }
-      .cards {
-        perspective: 300px;
-      }
-      /* .cards:hover img {
-        opacity: 0;
-      } */
-      .cards:hover .card_back {
-        transform-origin: right top;
-        -ms-transform: translateX(100%) rotateY(-180deg) rotateX(180deg);
-        -webkit-transform: translateX(100%) rotateY(-180deg) rotateX(180deg);
-        transform: translateY(2%) rotateY(-15deg) rotateX(10deg);
-        /* background-color:#666;
-        background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png"); */
-      }
-      .cards:hover img {
-        z-index: 9999;
       }
       img {
         height: auto;
@@ -56,17 +42,9 @@
         border-radius: 1vw;
         opacity: 1;
         transition: all .5s ease;
-        transform-style: preserve-3d;
       }
       img:last-of-type {
         padding-bottom: 0px;
-      }
-      .card_back {
-        /* background-color:#666;
-        background-image: url("https://www.transparenttextures.com/patterns/dark-exa.png"); */
-        border-radius: 1.2vw;
-        transition: all .6s ease;
-        padding: 0px 0px 0px 0px;
       }
       .last_img {
         padding-bottom: 60px;
@@ -107,55 +85,82 @@
     </div>
     <div class = "content">
       <div class = "images">
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-01.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-02.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-03.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-04.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-05.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-06.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-07.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-08.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-09.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-10.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-11.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-12.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-13.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-14.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-15.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-16.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-17.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-18.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-19.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-20.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-21.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-22.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-23.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-24.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-25.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-26.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-27.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-28.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-29.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-30.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-31.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-32.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-33.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-34.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-35.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-36.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-37.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-38.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-39.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-40.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-41.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-42.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-43.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-44.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-45.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-46.png"></div></div>
-        <div class="cards"><div class="card_back"><img src="images/hwatu/hwatu-47.png"></div></div>
-        <div class="cards last_img"><div class="card_back"><img src="images/hwatu/hwatu-48.png"></div></div>
+
+        <div class="tilt"><img src="images/hwatu/hwatu-01.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-02.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-03.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-04.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-05.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-06.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-07.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-08.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-09.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-10.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-11.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-12.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-13.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-14.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-15.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-16.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-17.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-18.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-19.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-20.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-21.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-22.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-23.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-24.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-25.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-26.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-27.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-28.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-29.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-30.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-31.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-32.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-33.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-34.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-35.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-36.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-37.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-38.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-39.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-40.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-41.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-42.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-43.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-44.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-45.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-46.png"></div>
+        <div class="tilt"><img src="images/hwatu/hwatu-47.png"></div>
+        <div class="tilt last_img"><img src="images/hwatu/hwatu-48.png"></div>
       </div>
     </div>
+    <script>
+    $(function(){
+      $('.tilt').universalTilt({
+          settings: {
+            base: 'element',
+            reset: true,
+            mobile: true,
+            shine: true,
+            shine: true,
+            'shine-opacity': 0.15,
+            'shine-save': false,
+            max: 45,
+            perspective: 600,
+            scale: 1.1,
+            disabled: null,
+            reverse: true,
+            speed: 1000,
+            easing: 'cubic-bezier(.03,.98,.52,.99)',
+            exclude: null
+          },
+          callbacks: {
+            // callbacks...
+          }
+        });
+    });
+    </script>
   </body>
 </html>
