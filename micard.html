@@ -672,7 +672,7 @@
         $('.back_text').addClass("back_text_dark");
         $('.text_body').addClass("text_body_dark");
       }
-      else if(($(window).scrollTop()>18000+(($(window).width()-18000)*3.5)) && ($(window).width()<599)) {//18700 넓이 - (최소값) * (최대세로값-최소세로값)/(최대넓이-최소넓이)
+      else if(($(window).scrollTop()>18000+(($(window).width()-400)*3.5)) && ($(window).width()<599)) {//18700 넓이 - (최소넓이) * (최대세로값-최소세로값)/(최대넓이-최소넓이)
         $('body').addClass("body_dark");
         $('.content_title_text').addClass("content_title_text_dark");
         $('.content_info').addClass("content_info_dark");
