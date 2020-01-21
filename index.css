@@ -204,6 +204,27 @@ li > a:hover {
   padding-top: 25px;
   line-height: 1.4em;
 }
+
+/*link in content info*/
+      .content_info > a:link {
+        color: #000;
+        text-decoration: none;
+        font-style: italic;
+      }
+      .content_info > a:hover {
+        color: #5eb71f;
+        text-decoration: none;
+      }
+      .content_info > a:visited {
+        color: #7d7d7d;
+        text-decoration: none;
+      }
+      .content_info > a:active {
+        color: #5eb71f;
+        text-decoration: none;
+      }
+
+
 .back_button {
   position : fixed;
   height: 1em;
