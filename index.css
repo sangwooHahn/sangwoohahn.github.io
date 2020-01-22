@@ -67,7 +67,7 @@ li > a:hover {
 .portfolio_list {
   display: grid;
   grid-template-columns: repeat(3, 32.5%);
-  grid-template-rows: repeat(7, 18vw);
+  grid-template-rows: repeat(5, 18vw);
   grid-column-gap : 0.4%;
   grid-row-gap : 0.2%;
   padding-left: 2%;
