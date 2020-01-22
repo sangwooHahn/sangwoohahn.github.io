@@ -60,16 +60,16 @@ li > a:hover {
 .portfolio_group {
   margin-left: 260px;
   top: 5vh;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   transition: all .2s ease;
 }
 
 .portfolio_list {
   display: grid;
   grid-template-columns: repeat(3, 32.5%);
-  grid-template-rows: repeat(5, 18vw);
+  grid-template-rows: repeat(4, 18vw);
   grid-column-gap : 0.4%;
-  grid-row-gap : 0.2%;
+  grid-row-gap : 0.3vw;
   padding-left: 2%;
   padding-top: 5vh;
   padding-bottom: 0vh;
@@ -307,7 +307,7 @@ img:last-of-type {
   .portfolio_list {
     display: grid;
     grid-template-columns: repeat(2, 48.5%);
-    grid-template-rows: repeat(10, 30vw);
+    grid-template-rows: repeat(5, 30vw);
     grid-gap: 5px;
   }
   .card {
@@ -474,12 +474,12 @@ img:last-of-type {
   .portfolio_group {
     margin-left: 200px;
     top: 3vh;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
   }
   .portfolio_list {
     display: grid;
     grid-template-columns: repeat(2, 48%);
-    grid-template-rows: repeat(10, 23vw);
+    grid-template-rows: repeat(5, 23vw);
     grid-column-gap: 1%;
     grid-row-gap: 0.3%;
   }
