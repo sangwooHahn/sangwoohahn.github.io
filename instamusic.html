@@ -256,6 +256,34 @@
     </style>
   </head>
   <body>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(window).on("scroll",function() {
+      if($(window).scrollTop()>100) {
+        $('#sideNav_text').addClass("fadeOutLeft");
+        $('#sideNav_info').addClass("fadeOutLeft");
+      }
+      else {
+        $('#sideNav_text').removeClass("fadeOutLeft");
+        $('#sideNav_info').removeClass("fadeOutLeft");
+      }
+      if($(window).scrollTop()>140) {
+        $('#sideNav_text').addClass("sideReduce_text");
+        $('#sideNav_info').addClass("sideReduce_text");
+      }
+      else {
+        $('#sideNav_text').removeClass("sideReduce_text");
+        $('#sideNav_info').removeClass("sideReduce_text");
+      }
+    });
+    </script>
+
     <a href="index.html">
       <div class ="back_button">
         <div class ="back_text">go back</div>
@@ -375,7 +403,7 @@
             <div class="text_body">
               The user can listen to the saved list through the playlist next to the gallery in the profile of another user.</div>
           </div>
-          <img class="mobile_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/mobile-2.gif">
+          <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/mobile-2.gif">
         </div>
         <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/feature1.gif">
         <div></div><div><br><br><br><br></div>
@@ -389,7 +417,7 @@
               In mobile version, press + button at the bottom and go to music tab can create a new playlist.
               In the Web version, user can create your own playlist from My Playlist on the right side.</div>
           </div>
-          <img class="mobile_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/mobile-3.gif">
+          <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/mobile-3.gif">
         </div>
         <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/feature2.gif">
         <div></div><div><br><br><br><br></div>
@@ -403,7 +431,7 @@
               On mobile, the user can open the control bar with tap the music bar below. Click the Music list icon to view the list.
               In the web version, you can use the Minimize button to minimize the music bar to view a widescreen.</div>
           </div>
-          <img class="mobile_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/mobile-1.gif">
+          <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/instamusic/mobile-1.gif">
         </div>
         <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/feature3.gif">
         <div></div><div><br><br><br><br></div>
@@ -498,31 +526,5 @@
         <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/instamusic/web_final2.png">
       </div>
     </div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    $(window).on("scroll",function() {
-      if($(window).scrollTop()>100) {
-        $('#sideNav_text').addClass("fadeOutLeft");
-        $('#sideNav_info').addClass("fadeOutLeft");
-      }
-      else {
-        $('#sideNav_text').removeClass("fadeOutLeft");
-        $('#sideNav_info').removeClass("fadeOutLeft");
-      }
-      if($(window).scrollTop()>140) {
-        $('#sideNav_text').addClass("sideReduce_text");
-        $('#sideNav_info').addClass("sideReduce_text");
-      }
-      else {
-        $('#sideNav_text').removeClass("sideReduce_text");
-        $('#sideNav_info').removeClass("sideReduce_text");
-      }
-    });
-    </script>
   </body>
 </html>

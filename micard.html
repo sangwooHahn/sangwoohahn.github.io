@@ -300,6 +300,68 @@
     </style>
   </head>
   <body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(window).on("scroll",function() {
+      if($(window).scrollTop()>100) {
+        $('#sideNav_text').addClass("fadeOutLeft");
+        $('#sideNav_info').addClass("fadeOutLeft");
+      }
+      else {
+        $('#sideNav_text').removeClass("fadeOutLeft");
+        $('#sideNav_info').removeClass("fadeOutLeft");
+      }
+      if($(window).scrollTop()>140) {
+        $('#sideNav_text').addClass("sideReduce_text");
+        $('#sideNav_info').addClass("sideReduce_text");
+      }
+      else {
+        $('#sideNav_text').removeClass("sideReduce_text");
+        $('#sideNav_info').removeClass("sideReduce_text");
+      }
+
+      if(($(window).scrollTop()>17200+(($(window).width()-1000)*14)) && ($(window).width()>1000)) {//21300//15800
+        $('body').addClass("body_dark");
+        $('.content_title_text').addClass("content_title_text_dark");
+        $('.content_info').addClass("content_info_dark");
+        $('.back_button').addClass("back_button_dark");
+        $('.back_text').addClass("back_text_dark");
+        $('.text_body').addClass("text_body_dark");
+      }
+      else if(($(window).scrollTop()>17000+(($(window).width()-600)*19)) && ($(window).width()<1000) && ($(window).width()>599)) {//23500
+        $('body').addClass("body_dark");
+        $('.content_title_text').addClass("content_title_text_dark");
+        $('.content_info').addClass("content_info_dark");
+        $('.back_button').addClass("back_button_dark");
+        $('.back_text').addClass("back_text_dark");
+        $('.text_body').addClass("text_body_dark");
+      }
+      else if(($(window).scrollTop()>17500+(($(window).width()-400)*15)) && ($(window).width()<599)) {//18700 넓이 - (최소넓이) * (최대세로값-최소세로값17500)/(최대넓이-최소넓이)
+        $('body').addClass("body_dark");
+        $('.content_title_text').addClass("content_title_text_dark");
+        $('.content_info').addClass("content_info_dark");
+        $('.back_button').addClass("back_button_dark");
+        $('.button_back').addClass("button_back_dark");
+        $('.back_text').addClass("back_text_dark");
+        $('.text_body').addClass("text_body_dark");
+      }
+      else {
+        $('body').removeClass("body_dark");
+        $('.content_title_text').removeClass("content_title_text_dark");
+        $('.content_info').removeClass("content_info_dark");
+        $('.back_button').removeClass("back_button_dark");
+        $('.button_back').removeClass("button_back_dark");
+        $('.back_text').removeClass("back_text_dark");
+        $('.text_body').removeClass("text_body_dark");
+      }
+    });
+    </script>
+
     <a href="index.html">
       <div class ="back_button">
         <div class ="back_text">go back</div>
@@ -318,7 +380,7 @@
     </div>
     <div class = "content_wide">
       <div class = "images">
-        <img class="bigimage title_img" data-aos="zoom-in-up" data-aos-duration="1000" src="images/micard/pages.png">
+        <img class="bigimage title_img" data-aos="fade-up" data-aos-duration="1000" src="images/micard/micard.png">
         <div></div><div><br><br><br><br></div>
         <div class="text_box">
           <div class="text_title">Product Concept</div>
@@ -542,6 +604,7 @@
           </div>
         </div>
         <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/transcript.gif">
+        <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/micard/micard.jpg">
         <div></div><div><br><br><br><br></div>
         <div class="text_box">
           <div class="text_title">Mobile Payment</div>
@@ -554,6 +617,7 @@
           </div>
         </div>
         <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/mica-pay.gif">
+        <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/micard/vending.jpg">
         <div></div><div><br><br><br><br></div>
         <div class="text_box">
           <div class="text_title">Compare the Menu</div>
@@ -586,6 +650,7 @@
           <div class="text_title">+ Pre-Order More</div>
         </div>
         <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/pre_order_more2.gif">
+        <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/micard/order.jpg">
         <div></div><div><br><br><br><br></div>
         <div class="text_box">
           <div class="text_title">Request Shuttle</div>
@@ -615,7 +680,8 @@
           </div>
         </div>
         <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/laundry.gif">
-        <div></div><div><br><br><br><br></div>
+        <img class="bigimage img_shadow wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/micard/laundry.jpg">
+        <!-- <div></div><div><br><br><br><br></div>
         <div class="text_box">
           <div class="text_title">Check Events</div>
           <div class="text_body">
@@ -625,7 +691,7 @@
             </ul>
           </div>
         </div>
-        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/event.gif">
+        <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/event.gif"> -->
         <div></div><div><br><br><br><br></div>
         <div class="text_box">
           <div class="text_title_b">Dark Mode</div>
@@ -636,66 +702,5 @@
         <img class="bigimage title_img" data-aos="fade-up" data-aos-duration="1000" src="images/micard/dark.png">
       </div>
     </div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    $(window).on("scroll",function() {
-      if($(window).scrollTop()>100) {
-        $('#sideNav_text').addClass("fadeOutLeft");
-        $('#sideNav_info').addClass("fadeOutLeft");
-      }
-      else {
-        $('#sideNav_text').removeClass("fadeOutLeft");
-        $('#sideNav_info').removeClass("fadeOutLeft");
-      }
-      if($(window).scrollTop()>140) {
-        $('#sideNav_text').addClass("sideReduce_text");
-        $('#sideNav_info').addClass("sideReduce_text");
-      }
-      else {
-        $('#sideNav_text').removeClass("sideReduce_text");
-        $('#sideNav_info').removeClass("sideReduce_text");
-      }
-
-      if(($(window).scrollTop()>15800+(($(window).width()-1000)*12.5)) && ($(window).width()>1000)) {//21300
-        $('body').addClass("body_dark");
-        $('.content_title_text').addClass("content_title_text_dark");
-        $('.content_info').addClass("content_info_dark");
-        $('.back_button').addClass("back_button_dark");
-        $('.back_text').addClass("back_text_dark");
-        $('.text_body').addClass("text_body_dark");
-      }
-      else if(($(window).scrollTop()>17000+(($(window).width()-600)*16.25)) && ($(window).width()<1000) && ($(window).width()>599)) {//23500
-        $('body').addClass("body_dark");
-        $('.content_title_text').addClass("content_title_text_dark");
-        $('.content_info').addClass("content_info_dark");
-        $('.back_button').addClass("back_button_dark");
-        $('.back_text').addClass("back_text_dark");
-        $('.text_body').addClass("text_body_dark");
-      }
-      else if(($(window).scrollTop()>18000+(($(window).width()-400)*3.5)) && ($(window).width()<599)) {//18700 넓이 - (최소넓이) * (최대세로값-최소세로값)/(최대넓이-최소넓이)
-        $('body').addClass("body_dark");
-        $('.content_title_text').addClass("content_title_text_dark");
-        $('.content_info').addClass("content_info_dark");
-        $('.back_button').addClass("back_button_dark");
-        $('.button_back').addClass("button_back_dark");
-        $('.back_text').addClass("back_text_dark");
-        $('.text_body').addClass("text_body_dark");
-      }
-      else {
-        $('body').removeClass("body_dark");
-        $('.content_title_text').removeClass("content_title_text_dark");
-        $('.content_info').removeClass("content_info_dark");
-        $('.back_button').removeClass("back_button_dark");
-        $('.button_back').removeClass("button_back_dark");
-        $('.back_text').removeClass("back_text_dark");
-        $('.text_body').removeClass("text_body_dark");
-      }
-    });
-    </script>
   </body>
 </html>
