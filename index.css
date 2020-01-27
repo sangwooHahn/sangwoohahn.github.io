@@ -60,14 +60,14 @@ li > a:hover {
 .portfolio_group {
   margin-left: 260px;
   top: 5vh;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px;  turn when list is longer than 9 */
   transition: all .2s ease;
 }
 
 .portfolio_list {
   display: grid;
   grid-template-columns: repeat(3, 32.5%);
-  grid-template-rows: repeat(4, 18vw);
+  grid-template-rows: repeat(3, 18vw);
   grid-column-gap : 0.4%;
   grid-row-gap : 0.3vw;
   padding-left: 2%;
