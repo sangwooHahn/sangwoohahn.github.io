@@ -83,6 +83,7 @@ li > a:hover {
   display: grid;
   grid-template-columns: repeat(2, 47.5%);
   grid-template-rows: repeat(9, 26vw);
+  grid-auto-flow: dense;
   grid-column-gap : 2vw;
   grid-row-gap : 3vh;
   padding-left: 2%;
@@ -186,6 +187,9 @@ li > a:hover {
 .left_text {
   padding-top: 31%;
   padding-left: 42%;
+}
+.portfolio_list > div:nth-of-type(4n-1) {
+  grid-column-start: 2;
 }
 .project_name {
   font-size: 2.2em;
@@ -349,34 +353,37 @@ img:last-of-type {
   }
   .portfolio_list {
     display: grid;
-    grid-template-columns: repeat(1, 98%);
-    grid-template-rows: repeat(9, 60vw 40vw);
+    padding-left: 0%;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(9, 60vw 50vw);
     grid-gap: 5px;
   }
-  #fourth_grid {
-    grid-row: 4 / span 1;
-  }
-  #eighth_grid {
-    grid-row: 8 / span 1;
-  }
-  #tweleveth_grid {
-    grid-row: 12 / span 1;
-  }
-  #sixteenth_grid {
-    grid-row: 16 / span 1;
+  .overlay_text_s {
+    top: 37%;
   }
   .right_text {
     padding-top: 1%;
+    margin-left: 5%;
   }
   .left_text {
     padding-top: 1%;
     padding-left: 0%;
+    margin-left: 5%;
+  }
+  .portfolio_list > div:nth-of-type(4n-1) {
+    grid-column-start: auto;
+  }
+  .project_name {
+    font-size: 2em;
+  }
+  .project_category {
+    font-size: 0.9em;
   }
   .project_info {
     width: 70vw;
   }
   .project_color_box {
-    width: 50vw;
+    width: 60vw;
   }
   .thumbnail_img {
     transform-origin: top center;
@@ -547,24 +554,15 @@ img:last-of-type {
     grid-column-gap: 1%;
     grid-row-gap: 0.3%;
   }
-  #fourth_grid {
-    grid-row: 4 / span 1;
-  }
-  #eighth_grid {
-    grid-row: 8 / span 1;
-  }
-  #tweleveth_grid {
-    grid-row: 12 / span 1;
-  }
-  #sixteenth_grid {
-    grid-row: 16 / span 1;
-  }
   .right_text {
     padding-top: 1%;
   }
   .left_text {
     padding-top: 1%;
     padding-left: 0%;
+  }
+  .portfolio_list > div:nth-of-type(4n-1) {
+    grid-column-start: auto;
   }
   .project_info {
     width: 40vw;
