@@ -82,7 +82,7 @@ li > a:hover {
 .portfolio_list {
   display: grid;
   grid-template-columns: repeat(2, 47.5%);
-  grid-template-rows: repeat(9, 26vw);
+  grid-template-rows: repeat(10, 26vw);
   grid-auto-flow: dense;
   grid-column-gap : 2vw;
   grid-row-gap : 3vh;
@@ -355,7 +355,7 @@ img:last-of-type {
     display: grid;
     padding-left: 0%;
     grid-template-columns: repeat(1, 100%);
-    grid-template-rows: repeat(9, 60vw 50vw);
+    grid-template-rows: repeat(10, 60vw 50vw);
     grid-gap: 5px;
   }
   .overlay_text_s {
@@ -550,7 +550,7 @@ img:last-of-type {
   .portfolio_list {
     display: grid;
     grid-template-columns: repeat(1, 98%);
-    grid-template-rows: repeat(9, 52vw 30vw);
+    grid-template-rows: repeat(10, 52vw 30vw);
     grid-column-gap: 1%;
     grid-row-gap: 0.3%;
   }
