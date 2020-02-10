@@ -299,14 +299,22 @@ li > a:hover {
 
 .about_content {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 160px;
   line-height: 1.5em;
+  width: 30%;
+  transform: translateX(130%);
+}
+
+.about_content > p {
+  text-align: left;
 }
 
 .contact_content {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 160px;
   line-height: 1.5em;
+  width: 30%;
+  transform: translateX(130%);
 }
 
 /*each page*/
@@ -509,12 +517,20 @@ img:last-of-type {
     top: 36%;
   }
   .about_content {
-    font-size: 1.5em;
-    line-height: 1.3em;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    padding-top: 0px;
+    margin-top: 160px;
+    width: 80%;
+    transform: translateX(10%);
   }
   .contact_content {
     font-size: 1.5em;
     line-height: 1.3em;
+    padding-top: 0px;
+    margin-top: 160px;
+    width: 80%;
+    transform: translateX(10%);
   }
 
   .content {
@@ -570,6 +586,15 @@ img:last-of-type {
   .project_color_box {
     width: 40vw;
   }
+  .about_content {
+    width: 50%;
+    transform: translateX(70%);
+  }
+  .contact_content {
+    width: 50%;
+    transform: translateX(70%);
+  }
+
   .content {
     position: absolute;
     padding-left: 260px;
