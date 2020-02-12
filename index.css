@@ -70,6 +70,10 @@ li > a:hover {
   font-weight: bold;
   text-align: left;
   line-height: 1.1em;
+  transition: all 5s ease;
+}
+.title_text:hover {
+  color : #5eb71f;
 }
 
 .portfolio_group {
