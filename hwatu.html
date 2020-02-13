@@ -28,6 +28,7 @@
     <script src="universal-tilt.js"></script>
     <script src="https://unpkg.com/universal-tilt.js/"></script>
     <style>
+
       .images {
         display: grid;
         grid-template-columns: repeat(8, 11%);
@@ -35,7 +36,7 @@
         grid-column-gap: 0.8vw;
         grid-row-gap: 0.8vw;
       }
-      img {
+      .tilt > img {
         height: auto;
         width: 100%;
         box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
@@ -43,11 +44,17 @@
         opacity: 1;
         transition: all .5s ease;
       }
-      img:last-of-type {
+      .tilt > img:last-of-type {
         padding-bottom: 0px;
       }
       .last_img {
         padding-bottom: 60px;
+      }
+      .fullimage {
+        grid-column: auto / span 8;
+      }
+      .halfimage {
+        grid-column: auto / span 4;
       }
       /*Smart phone*/
       @media screen and (max-width: 599px) {
@@ -58,6 +65,12 @@
           grid-column-gap: 0.8vw;
           grid-row-gap: 0.8vw;
         }
+        .fullimage {
+          grid-column: auto / span 4;
+        }
+        .halfimage {
+          grid-column: auto / span 2;
+        }
       }
       /*Tablet*/
       @media screen and (min-width: 600px) and (max-width: 999px) {
@@ -67,6 +80,12 @@
           grid-template-rows: repeat(auto, 1fr);
           grid-column-gap: 0.8vw;
           grid-row-gap: 0.8vw;
+        }
+        .fullimage {
+          grid-column: auto / span 4;
+        }
+        .halfimage {
+          grid-column: auto / span 2;
         }
       }
     </style>
@@ -81,7 +100,8 @@
     <div class="content_title_back">
       <div class ="content_title_text">Hwatu</div>
       <div class ="content_info">
-        Hwatu (War of Flowers) is a card for Korean card game Go-Stop and Matgo.</div>
+        Hwatu (War of Flowers) is a playing card for Korean card game Go-Stop and Matgo.
+        It consists of 12 kinds of flower and tree illustrations.</div>
     </div>
     <div class = "content">
       <div class = "images">
@@ -134,6 +154,10 @@
         <div class="tilt"><img src="images/hwatu/hwatu-46.png"></div>
         <div class="tilt"><img src="images/hwatu/hwatu-47.png"></div>
         <div class="tilt last_img"><img src="images/hwatu/hwatu-48.png"></div>
+        <img class="fullimage" src="images/hwatu/card28.jpg">
+        <img class="fullimage" src="images/hwatu/card33.jpg">
+        <img class="halfimage" src="images/hwatu/card40.jpg">
+        <img class="halfimage" src="images/hwatu/card46.jpg">
       </div>
     </div>
     <script>
