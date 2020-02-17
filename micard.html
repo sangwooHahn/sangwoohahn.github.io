@@ -76,7 +76,7 @@
         padding: 0.1em 0.2em 0.2em 0.3em;
         margin-right: 40%;
         font-weight: bold;
-        background: linear-gradient(to right, #2d9bcf 50%, rgba(250,250,250,0) 95%);
+        background: linear-gradient(to right, #2d9bcf 50%, rgba(45,155,207,0) 95%);
         background-size: 100% 10px;
         background-position:left bottom;
         background-repeat: no-repeat;
@@ -113,12 +113,12 @@
         height: auto;
         width: 90%;
       }
-      .feature_r {
+      .left_image {
         padding-right: 15vw;
         height: auto;
         width: 120%;
       }
-      .feature_text_r {
+      .right_text {
         padding-left: 10vw;
       }
       .sideReduce_text {
@@ -221,8 +221,14 @@
         }
         .text_title_b {
           margin-right: 0%;
+          font-size: 2.5em;
         }
-        .left_text {
+        .text_title {
+          font-size: 2.3em;
+          padding-top: 60px;
+          padding-bottom: 5px;
+        }
+        .left_text_on_mobile {
           grid-row-start: 1;
         }
         .content_wide {
@@ -243,7 +249,11 @@
           height: auto;
           width: 80%;
         }
-        .left_text {
+        .right_text {
+          padding-left: 10%;
+          margin: 0;
+        }
+        .left_text_on_mobile {
           grid-row-start: 1;
         }
         .mobile_img {
@@ -255,7 +265,7 @@
           width : 50%;
           padding: 0 5vw 0 26vw;
         }
-        .feature_r {
+        .left_image {
           width: 95%;
         }
         .back_button_dark {
@@ -277,13 +287,13 @@
         .text_title_b {
           margin-right: 5%;
         }
-        .left_text {
+        .left_text_on_mobile {
           grid-row-start: 1;
         }
-        .feature_text_r {
+        .right_text {
           padding-left: 0vw;
         }
-        .feature_r {
+        .left_image {
           width: 100%;
         }
         .mobile_img_left {
@@ -335,7 +345,7 @@
         $('.back_text').addClass("back_text_dark");
         $('.text_body').addClass("text_body_dark");
       }
-      else if(($(window).scrollTop()>19200+(($(window).width()-400)*11)) && ($(window).width()<599)) {//18700 넓이 - (최소넓이) * (최대세로값-최소세로값17500)/(최대넓이-최소넓이)
+      else if(($(window).scrollTop()>18500+(($(window).width()-400)*11)) && ($(window).width()<599)) {//18700 넓이 - (최소넓이) * (최대세로값-최소세로값17500)/(최대넓이-최소넓이)
         $('body').addClass("body_dark");
         $('.content_title_text').addClass("content_title_text_dark");
         $('.content_info').addClass("content_info_dark");
@@ -395,8 +405,8 @@
         <div></div><div><br><br><br><br></div>
 
         <div class="inside_grid bigimage">
-          <img class ="feature_r" data-aos="fade-right" data-aos-duration="1500" src="images/micard/problem.png">
-          <div class="feature_text_r left_text text_box">
+          <img class ="left_image" data-aos="fade-right" data-aos-duration="1500" src="images/micard/problem.png">
+          <div class="right_text left_text_on_mobile text_box">
             <div class="text_title">Current Problems</div>
             <div class="text_body">
               MICA students have to carry their school ID card with them everywhere.
@@ -412,9 +422,9 @@
 
         <div></div><div><br><br><br><br></div>
         <div class="bigimage text_title_b">Research and Progress</div>
-        <div class="text_title">Night Worker</div>
+        <div class="text_box"><div class="text_title">Night Worker</div></div>
         <img class="bigimage wide_img img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/persona-01.jpg">
-        <div class="text_title">Doris Lover</div>
+        <div class="text_box"><div class="text_title">Doris Lover</div></div>
         <img class="bigimage wide_img img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/persona-02.jpg">
         <div></div><div><br><br><br><br></div>
 
@@ -476,8 +486,8 @@
         </div>
         <img class="wide_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/change-03.png">
         <div class="inside_grid bigimage">
-          <img class ="feature_r" data-aos="fade-right" data-aos-duration="1500" src="images/micard/change-02.png">
-          <div class="feature_text_r left_text text_box">
+          <img class ="left_image" data-aos="fade-right" data-aos-duration="1500" src="images/micard/change-02.png">
+          <div class="right_text left_text_on_mobile text_box">
             <div class="text_title">Color Palette</div>
             <div class="text_body">
               <ul>
@@ -499,8 +509,8 @@
         </div>
         <img class="wide_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/change-01.png">
         <div></div><div><br><br><br><br></div>
+        <div class="text_title_b">Final Looks</div>
         <div class="bigimage text_box">
-          <div class="text_title">Final Looks</div>
           <div class="text_title_b">Account pages</div>
         </div>
         <img class="bigimage wide_img img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/micard/micard.jpg">
@@ -523,7 +533,7 @@
 
         <div class="inside_grid bigimage">
           <img class ="mobile_img_left" data-aos="fade-right" data-aos-duration="1500" src="images/micard/deposit.gif">
-          <div class="feature_text_r left_text text_box">
+          <div class="right_text left_text_on_mobile text_box">
             <div class="text_title">Add Funds to Flex</div>
             <div class="text_body">
               <ul>
@@ -547,7 +557,7 @@
 
         <div class="inside_grid bigimage">
           <img class ="mobile_img_left" data-aos="fade-right" data-aos-duration="1500" src="images/micard/transcript.gif">
-          <div class="feature_text_r left_text text_box">
+          <div class="right_text left_text_on_mobile text_box">
             <div class="text_title">Transaction History</div>
             <div class="text_body">
               <ul>
@@ -600,7 +610,7 @@
 
         <div class="inside_grid bigimage">
           <img class ="mobile_img_left" data-aos="fade-right" data-aos-duration="1500" src="images/micard/pre_order2.gif">
-          <div class="feature_text_r left_text text_box">
+          <div class="right_text left_text_on_mobile text_box">
             <div class="text_title">Pre-Order Service</div>
             <div class="text_body">
               <ul>
@@ -645,7 +655,7 @@
 
         <div class="inside_grid bigimage">
           <img class ="mobile_img_left" data-aos="fade-right" data-aos-duration="1500" src="images/micard/laundry.gif">
-          <div class="feature_text_r left_text text_box">
+          <div class="right_text left_text_on_mobile text_box">
             <div class="text_title">Laundry Status</div>
             <div class="text_body">
               <ul>
@@ -673,8 +683,8 @@
         </div>
         <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/micard/event.gif"> -->
         <div></div><div><br><br><br><br></div>
+        <div class="bigimage text_title_b">Dark Mode</div>
         <div class="text_box">
-          <div class="text_title_b">Dark Mode</div>
           <div class="text_body">
             <ul>
               <li>Design trend</li>

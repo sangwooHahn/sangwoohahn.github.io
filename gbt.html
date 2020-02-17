@@ -119,12 +119,12 @@
         height: auto;
         width: 90%;
       }
-      .feature_r {
+      .left_image {
         padding-right: 15vw;
         height: auto;
         width: 120%;
       }
-      .feature_text_r {
+      .right_text {
         padding-left: 10vw;
       }
       .sideReduce_text {
@@ -225,10 +225,15 @@
           padding-left: 10%;
           padding-right: 10%;
         }
+        .text_title {
+          font-size: 2.3em;
+          padding-top: 60px;
+          padding-bottom: 5px;
+        }
         .text_title_b {
           margin-right: 0%;
         }
-        .left_text {
+        .left_text_on_mobile {
           grid-row-start: 1;
         }
         .content_wide {
@@ -249,7 +254,11 @@
           height: auto;
           width: 80%;
         }
-        .left_text {
+        .right_text {
+          padding-left: 10%;
+          margin: 0;
+        }
+        .left_text_on_mobile {
           grid-row-start: 1;
         }
         .mobile_img {
@@ -261,7 +270,7 @@
           width : 50%;
           padding: 0 5vw 0 26vw;
         }
-        .feature_r {
+        .left_image {
           width: 95%;
         }
         .back_button_dark {
@@ -283,13 +292,13 @@
         .text_title_b {
           margin-right: 5%;
         }
-        .left_text {
+        .left_text_on_mobile {
           grid-row-start: 1;
         }
-        .feature_text_r {
+        .right_text {
           padding-left: 0vw;
         }
-        .feature_r {
+        .left_image {
           width: 100%;
         }
         .mobile_img_left {
@@ -343,7 +352,7 @@
       <div class = "images">
 
         <img class="bigimage title_img" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/title.png">
-        <div class="bigimage text_title">GBT Transportation System</div>
+        <div class="bigimage text_title text_box">GBT Transportation System</div>
         <div class="text_box">
           <div class="text_body">
             Greater Bridgeport Transit (GBT) is a transit service locate in Bridgeport in Connecticut.
@@ -358,10 +367,10 @@
         </div>
         <div></div>
 
-        <div></div><div><br><br><br><br></div>
+        <div></div><div><br><br></div>
 
         <div class="bigimage text_title_b">Current Problems</div>
-        <div></div><div><br><br><br><br></div>
+        <div></div><div><br></div>
 
         <div class="text_box">
           <div class="text_title">Bus Stop</div>
@@ -379,8 +388,8 @@
         <div></div><div><br><br><br><br></div>
 
         <div class="inside_grid bigimage">
-          <img class ="feature_r" data-aos="fade-right" data-aos-duration="1500" src="images/gbt/route-01.png">
-          <div class="feature_text_r left_text text_box">
+          <img class ="left_image" data-aos="fade-right" data-aos-duration="1500" src="images/gbt/route-01.png">
+          <div class="right_text left_text_on_mobile text_box">
             <div class="text_title">Route Map</div>
             <div class="text_body">
               <ul>
@@ -393,7 +402,6 @@
           </div>
         </div>
 
-        <div></div><div><br><br><br><br></div>
 
         <div class="text_box">
           <div class="text_title">Mobile Application</div>
@@ -412,9 +420,9 @@
         <div></div><div><br><br><br><br></div>
 
         <div class="bigimage text_title_b">Bus Stop Design</div>
-        <div class="text_title">Idea Sketches</div>
+        <div class="text_box text_title">Idea Sketches</div>
         <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/sketch.png">
-        <div class="text_title">Final Design</div>
+        <div class="text_box text_title">Final Design</div>
         <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/busstop.png">
         <div></div><div><br><br><br><br></div>
 
@@ -431,9 +439,9 @@
         <div></div><div><br><br><br><br></div>
         <div class="bigimage text_title_b">Route Map Design</div>
 
-        <div class="text_title">Idea Sketches</div>
+        <div class="text_box text_title">Idea Sketches</div>
         <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/map_sketch.png">
-        <div class="text_title">Final Design</div>
+        <div class="text_box text_title">Final Design</div>
         <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/color.png">
         <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/route1.png">
         <img class="bigimage wide_img" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/route3.png">
@@ -468,11 +476,9 @@
         <img class="mobile_img" data-aos="fade-left" data-aos-duration="1000" src="images/gbt/mobile.jpg">
         <div></div><div><br><br><br><br></div>
 
-        <div class="bigimage text_box">
-          <div class="text_title_b">Final Looks</div>
-        </div>
+        <div class="bigimage text_title_b">Final Looks</div>
+        <img class="bigimage wide_img img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/map.png">
         <img class="bigimage wide_img img_shadow" data-aos="fade-up" data-aos-duration="1000" src="images/gbt/bus_station.jpg">
-
       </div>
     </div>
   </body>
