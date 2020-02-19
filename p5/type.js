@@ -3,28 +3,29 @@ var dropzone;
 var back_img;
 var typeX = 0;
 var typeY = 0;
+var canvasSize = 400;
 
 function setup() {
-  canvas = createCanvas(400, 400);
+  canvas = createCanvas(canvasSize, canvasSize);
   colorMode(HSB,100);
   backColor_hue = 0;
 
   control_bar();
-  
+
   typeX = width/2;
   typeY = height/2;
-  
+
   DropZone();
 }
 
 function draw() {
   backColor = color(backColor_hue, 30, 95);
   background(backColor);
-  
+
   if(back_img != null) {
-    image(back_img, 0, 0, 400, 400);
+    image(back_img, 0, 0, canvasSize, canvasSize);
   }
-  
+
   noFill();
   push();
   translate(typeX,typeY);
@@ -34,15 +35,14 @@ function draw() {
     typing(title_input.value()[i],(nextLetter*i*fat)+space*i,0);
   }
   pop();
-  
+
   control_value ();
-  
+
   if(mouseIsPressed &&
     0 < mouseX && mouseX < width && 0 < mouseY && mouseY < height) {
     typeX = typeX+mouseX-pmouseX;
     typeY = typeY+mouseY-pmouseY;
   }
-  
 }
 
 function DropZone () {
@@ -64,3 +64,23 @@ function gotFile (file) {
   back_img = createImg(file.data);
   back_img.hide();
 }
+
+function windowResized() {
+    if(canvasSize > windowWidth) {
+      resizeCanvas(windowWidth, windowWidth);
+    }
+    else {
+      resizeCanvas(canvasSize, canvasSize);
+    }
+}
+// function windowResized() {
+//   if(windowWidth < 599) {
+//     resizeCanvas(windowWidth, windowHeight);
+//   }
+//   else if(windowWidth > 600 && windowWidth < 999) {
+//     resizeCanvas(windowWidth-280, windowHeight-280);
+//   }
+//   else {
+//     resizeCanvas(windowWidth-280, windowHeight)-280;
+//   }
+// }

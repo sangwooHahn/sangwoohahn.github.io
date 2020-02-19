@@ -1,10 +1,9 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: auto;
 }
-canvas {
-  display: block;
-}
+
 #dropzone{
   margin: 0;
   padding: 0;
@@ -12,3 +11,66 @@ canvas {
   width:394px;
   border: 0px dashed black;
 }
+
+/* canvas, #dropzone {
+  margin-top: 60px;
+  margin-left: 350px;
+  display: block;
+} */
+
+#Controls > div {
+  font-size: 0.8em;
+}
+#Controls > div:first-of-type {
+  margin-top: 5px;
+}
+
+#P_contents {
+  display: grid;
+  grid-template-columns: 400px auto;
+  grid-template-rows: 400px auto;
+  margin-top: 60px;
+  margin-left: 350px;
+  grid-column-gap: 30px;
+}
+
+/*Smart phone*/
+@media screen and (max-width: 599px) {
+  #P_contents {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 400px auto;
+    margin-top: 60px;
+    margin-left: 0px;
+    grid-column-gap: 30px;
+    grid-row-gap: 10px;
+  }
+  canvas {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  #Controls > input:nth-child(1){
+    margin-left: 12%;
+  }
+  #Controls > input:nth-child(1n+2) {
+    width: 60%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  #Controls > div {
+    text-align: center;
+  }
+}
+
+/*Tablet*/
+ @media screen and (min-width: 600px) and (max-width: 999px) {
+   #P_contents {
+     display: grid;
+     grid-template-columns: 400px;
+     grid-template-rows: 400px auto;
+     margin-top: 60px;
+     margin-left: 350px;
+     grid-column-gap: 30px;
+     grid-row-gap: 10px;
+   }
+ }
