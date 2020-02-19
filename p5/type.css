@@ -44,9 +44,8 @@ html, body {
   #dropzone{
     display: none;
   }
-  canvas {
-    margin-left: 50%;
-    transform: translateX(-50%);
+   canvas {
+    padding-left: 5%;
   }
   #Controls > input:nth-child(1){
     margin-left: 12%;
