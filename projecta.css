@@ -1,0 +1,145 @@
+
+html,body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Heebo', sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 1em;
+}
+p {
+  padding: 0;
+  padding-top: 5px;
+  margin: 0;
+  color: white;
+  font-size: 0.7em;
+  line-height: 130%;
+}
+img {
+  display:block;
+  height: 130px;
+  width: auto;
+  margin: auto;
+  padding-top: 35vh;
+}
+body > img {
+  position: absolute;
+  height: 40px;
+  width: auto;
+  margin: 10px;
+  bottom:0;
+  right:0;
+}
+.main_container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  height:100vh;
+}
+.text_container {
+  height: 30px;
+  width: 200px;
+  margin: auto;
+  margin-top: 20px;
+  opacity: 0;
+  transition: all 1s ease;
+}
+.alone_container {
+  background-image: url('images/alone.jpg');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  background-blend-mode: soft-light;
+  background-color: #540e08;
+  transition: all 1s ease;
+}
+.alone_container:hover .text_container {
+  height: 90px;
+  opacity: 1;
+}
+.alone_container:hover {
+  background-size: auto 110%;
+}
+.thefins_container {
+  background-image: url('images/thefins1.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  background-blend-mode: soft-light;
+  background-color: #12265B;
+  transition: all 1s ease;
+}
+.thefins_container:hover .text_container {
+  height: 90px;
+  opacity: 1;
+}
+.thefins_container:hover {
+  background-size: auto 110%;
+}
+.newgame_container {
+  background-color: darkgray;
+  text-align: center;
+}
+.newgame_container:hover .text_container {
+  height: 90px;
+  opacity: 1;
+}
+.newgame_container:hover {
+  background-size: auto 110%;
+}
+.download_button {
+  /* background-color: #C61010; */
+  color: white;
+  border-radius: 3px;
+  width: 200px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 7px 0 6px 0;
+  text-align: center;
+}
+.year {
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 15.6vw;
+  letter-spacing: -0.05em;
+  font-weight: 900;
+  line-height: 1;
+  top: 0;
+  mix-blend-mode: overlay;
+  opacity: 0.1;
+}
+.mobile_text {
+  display: none;
+}
+
+/*Tablet*/
+@media screen and (max-width: 760px) {
+  .main_container {
+    display: none;
+  }
+  body > img {
+    position: relative;
+    height: 100px;
+    width: auto;
+    margin: auto;
+    padding-top: 40vh;
+    bottom:0;
+    right:0;
+    top:0;
+    left:0;
+  }
+  .mobile_text {
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+  }
+}

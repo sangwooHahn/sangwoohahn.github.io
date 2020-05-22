@@ -1,78 +1,67 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>sangwoo</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <style>
-      .content {
-        position: absolute;
-        padding-left: 330px;
-        top: 5vh;
+    <title>Project-A Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="projecta.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    var OSName="Unknown OS";
+    if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+    if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+    if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+    if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+
+    $(document).ready(function(){
+      if(OSName=="Windows") {
+        $('.mac_button').hide();
+        $('.win_button').show();
       }
-      .content_title_back {
-        width: 270px;
+      else if(OSName=="MacOS") {
+        $('.mac_button').show();
+        $('.win_button').hide();
       }
-      .content_title_text {
-        font-size: 3.2em;
+      else {
+        $('.mac_button').hide();
+        $('.win_button').hide();
       }
-      /*Smart phone*/
-      @media screen and (max-width: 599px) {
-        .content {
-          position: absolute;
-          padding-left: 0px;
-          top: 350px;
-          padding-bottom: 50px;
-        }
-        .content_title_back {
-          width: 100vw;
-        }
-      }
-      /*Tablet*/
-      @media screen and (min-width: 600px) and (max-width: 999px) {
-        .content {
-          position: absolute;
-          padding-left: 330px;
-          top: 5vh;
-        }
-      }
-    </style>
+    });
+
+  </script>
   </head>
   <body>
-    <a href="index.html">
-      <div class ="back_button">
-        <div class ="back_text">go back</div>
+    <div class="main_container">
+      <div class="alone_container">
+        <img src="images/alone_logo.png">
+        <div class="text_container">
+          <h1>Alone</h1>
+          <p>사무실에 혼자 남은 주인공에게 의문의 여성으로부터 계속 연락이 온다. 주인공은 여성을 피해 사무실을 탈출하려 한다.</p>
+        </div>
+        <a href="downloads/Alone.app" download><div style="background-color: #C61010;" class="download_button mac_button">Download</div></a>
+        <a href="downloads/Alone.zip" download><div style="background-color: #C61010;" class="download_button win_button">Download</div></a>
+        <div class="year">2018</div>
       </div>
-    </a>
-    <div class="button_back"></div>
-    <div class="content_title_back">
-      <div class ="content_title_text">PROJECT-A</div>
-      <div class ="content_info">PROJECT-A is a small game development team. To express the game that is announced every July, the triangle symbol has a constant rotating arrow with the number 7.</div>
-    </div>
-    <div class = "content">
-      <div class = "images">
-        <img class = "bigimage" src="images/projecta/logo_color.jpg">
-        <img src="images/projecta/logo_white.jpg">
-        <img src="images/projecta/colors.jpg">
+      <div class="thefins_container">
+        <img src="images/thefins_logo.png">
+        <div class="text_container">
+          <h1>The Fins</h1>
+          <p>섬을 지키려는 물고기들과 섬을 침투하려는 적군 물고기의 전투를 그린 게임. 자동 전투 방식의 디펜스 게임으로 어렵지 않은 조작으로 즐길 수 있다.</p>
+        </div>
+        <a href="downloads/The_Fins.app" download><div style="background-color: #F4BA19;" class="download_button mac_button">Download</div></a>
+        <a href="downloads/The_Fins.zip" download><div style="background-color: #F4BA19;" class="download_button win_button">Download</div></a>
+        <div class="year">2019</div>
+      </div>
+      <div class="newgame_container">
+        <img src="images/newgame_logo.png">
+        <div class="text_container">
+          <h1>Released on July 29, 2020</h1>
+          <p>2020년 7월 29일 공개</p>
+        </div>
+        <div class="year">2020</div>
       </div>
     </div>
+    <img src="images/projecta_logo.png">
+    <div class="mobile_text">컴퓨터에서 접속해주세요.</div>
   </body>
 </html>
