@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sangwoo Portfolo</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(window).on('scroll',function(){
+        var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 300);
+        $('.title_image_overlap').css('transform','translateX('+(-title_image_position)+'%)');
+
+        if(title_image_position > 0) {
+          $('.title_image').css('filter','hue-rotate(170deg) saturate(300%) hue-rotate(40deg)');
+          $('.title_image_overlap').css('animation-name','none');
+        }
+        else {
+          $('.title_image').css('filter','hue-rotate(0deg) saturate(100%) hue-rotate(0deg)');
+          $('.title_image_overlap').css('animation-name','overlap_animation');
+        }
+      });
+      $(document).ready(function(){ /* control all page of the special colors*/
+         var color = ('#2284CA');
+         $('h2').css('color',color);
+         $('h3').css('color',color);
+         $('.go_back div').css('color',color);
+         $('.nav').css('background-color',color);
+         $('.title_container').css('background-color',color);
+         $('.color_box').css('background-color',color);
+         $('.color_button h2').css('background-color',color);
+         $('.color_button h2').css('color','#fafafa');
+         $('.color_box > div > h3').css('color','#fafafa');
+         $('.contact_container div h3').css('color','#fafafa');
+         $('.go_back').css('border-left', '2.5px solid '+color);
+         $('.go_back').css('border-top', '2.5px solid '+color);
+      });
+      window.open_about = function() {
+        localStorage.setItem("click_open", "about_show");
+      }
+    </script>
+    <style>
+
+
+    .title_image {
+      position: absolute;
+      left: 0vw;
+      right: 0;
+      bottom: 0;
+      height: 85vh;
+      width: auto;
+      margin: auto;
+      transition:left 1s ease;
+      /* background-color: rgba(0,255,0,0.2); */
+    }
+    .title_image_overlap {
+      position: fixed;
+      left: 0vw;
+      right: 0;
+      bottom: 0;
+      height: 85vh;
+      width: auto;
+      margin: auto;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      animation-name: overlap_animation;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      transition: left 1s ease;
+      z-index: 99;
+      /* background-color: rgba(255,0,0,0.2); */
+    }
+
+    @keyframes overlap_animation {
+      0% {transform:  translate(0px, 0px);}
+      25% {transform: translate(30px, 30px);}
+      50% {transform: translate(0px, 30px);}
+      75% {transform: translate(30px, 0px);}
+      100% {transform: translate(0px, 0px);}
+    }
+    /* @media screen and (min-width: 600px) and  (max-width: 1100px) {
+      .title_image, .title_image_overlap {
+        width: 96%;
+        left : 0px;
+      }
+    } */
+
+    @media screen and (min-width: 600px) and  (max-width: 1156px) {
+      .title_image, .title_image_overlap {
+        width: auto;
+        left : -20%;
+        height: auto;
+        width:100vw;
+      }
+    }
+
+    /*Smart phone*/
+    @media screen and (max-width: 599px) {
+      .title_image, .title_image_overlap {
+        width: auto;
+        height: 54vh;
+        left : -40%;
+        clip-path: margin-box;
+      }
+    }
+
+
+      .grind_in_grid {
+        margin-top: 60px;
+        width: 100%;
+      }
+      .grind_in_grid img {
+        height: auto;
+        width: 40%;
+        padding-left: 0px;
+      }
+      .grind_in_grid h4 {
+        margin-top: 10px;
+      }
+
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 900px) {
+        .grind_in_grid {
+          display: grid;
+          grid-template-columns: 40% 50%;
+        }
+        .tablet_transform_grid {
+          display: inherit;
+        }
+        .grind_in_grid h4 {
+          /* text-align: center; */
+        }
+        .grind_in_grid p {
+          margin-left: 10%;
+          width : 50%;
+        }
+        .grind_in_grid img { /* face image*/
+          width: 80%;
+        }
+        .grind_in_grid div { /* face and title*/
+          padding-left: 16%;
+        }
+        .tablet_transform_grid > img { /* scenario image*/
+          width: 100%;
+          margin-left: 0%;
+        }
+      }
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        .grind_in_grid img {
+          padding-left: 30%;
+        }
+        .grind_in_grid h4 {
+          text-align: center;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div>
+        <ul>
+          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+          <li><a href="index.html#body_cont">Portfolio</a></li>
+          <li><a href="index.html#contact_cont">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+    <div class="title_container">
+      <div>
+        <div class="title_description">
+          <subtitle>UI · UX Design</subtitle>
+          <h1>MICARD</h1>
+          <p>MICARD is a combination of word MICA and Card.
+            MICARD is a mobile unit application service for MICA students.
+            Mobile cards can replace plastic cards with NFC technology.
+            It has all the features of a student ID card and combinate of school life applications.</p>
+        </div>
+      </div>
+    </div>
+    <img class ="pattern_image" src="images/patterns/pattern.png">
+    <img class ="title_image" src="images/micard/title1.png">
+    <img class ="title_image_overlap" src="images/micard/title2.png">
+
+    <div class="content_container">
+      <div class="two_grid content_more_space">
+        <div class="content_inside_space">
+          <h3>Current Problem</h3>
+          <p>MICA has lots of applications for a better school life.
+            There are more than six types of applications, but some of them are old and do not update anymore.
+            Another problem is that all of the applications not design by MICA.
+            So students have to download different apps for each function.</p>
+        </div>
+        <img src="images/micard/problem.png">
+      </div>
+      <div class="two_grid content_space">
+        <div class="content_inside_space">
+          <h3>Inspiration</h3>
+          <p>Mobile ID card are design inspired by NJ mobile bus ticket.
+            It has a specific pattern of blinking color bands that helps avoid fraudulent methods, such as screenshots.
+            The blinking screen color bands that it is not a picture.
+            School accounts are design inspired by mobile bank applications.
+            Users can easily control the balance and pay with their smartphone.</p>
+        </div>
+        <img src="images/micard/inspiration.png">
+      </div>
+      <h2 class="content_space">Persona Scenario</h2>
+    </div>
+
+
+    <div class="content_container">
+      <div class="two_grid tablet_transform_grid">
+        <div class="grind_in_grid">
+          <div>
+            <img src="images/micard/persona3.png">
+            <h4>Dormitory Resident</h4>
+          </div>
+          <p>He is a student living in a dormitory. He has to show his ID every time he enters the dormitory.
+            In his room, he wants to check the empty washing machine instead of going to the laundry room.
+            He wants to make mobile payments both in laundry and vending machines.
+            And he wants the alarm to be set automatically whenever he do the laundry.</p>
+        </div>
+        <img src="images/micard/persona3-1.png">
+      </div>
+      <div class="two_grid content_half_space tablet_transform_grid">
+        <div class="grind_in_grid">
+          <div>
+            <img src="images/micard/persona1.png">
+            <h4>Night Worker</h4>
+          </div>
+          <p>She does her homework in the studio until late at night and uses a shuttle to go back to her home.
+            She also uses the shuttle to go to the H-mart or restaurant.
+            She wants to check the shuttle schedule and request a shuttle via mobile and check real-time location.</p>
+        </div>
+        <img src="images/micard/persona1-1.png">
+      </div>
+      <div class="two_grid content_half_space tablet_transform_grid">
+        <div class="grind_in_grid">
+          <div>
+            <img src="images/micard/persona2.png">
+            <h4>Cafe Doris Lover</h4>
+          </div>
+          <p>She often buys and eats food at Cafe Doris. She wants to pre-order food and pick it up right away before lunchtime.
+            If she didn’t order in advance, she can go directly to Doris, order food, and pay via mobile.
+            Sometimes she compares food on her mobile and goes to Meyerhoff Dining Hall.</p>
+        </div>
+        <img src="images/micard/persona2-1.png">
+      </div>
+    </div>
+
+    <div class="content_container">
+       <h2 class="content_space">Wire Frame</h2>
+       <img src="images/micard/wireframe-1.png">
+       <img src="images/micard/wireframe-2.png">
+       <img src="images/micard/wireframe-3.png">
+       <img src="images/micard/wireframe-4.png">
+
+       <h2 class="content_space">Usability Tests</h2>
+    </div>
+
+    <div class="color_box">
+      <div>
+        <h3>Questions</h3>
+        <p>
+          · Can You find account history on November 7? Tell me where you spent money.<br>
+          · Can you find MICA Mobile ID?<br>
+          · Can you find today's Meyerhoff dinner menu?<br>
+          · Can you find way to pre-order egg sandwich in Cafe Doris?<br>
+          · Can you order sandwich with dining dollars?<br>
+          · Can you pay for laundry 09?<br>
+          · Can you add funds in your flex account?<br>
+          · Can you find way to use Dining dollars with MICA pay?
+        </p>
+        <h3>Results of Testing</h3>
+        <p>
+          · Don't need to scroll on the first page with Transaction.<br>
+          · The letters on the button are small, and wish it write in one line.<br>
+          · Dining is better than cafeteria.<br>
+          · It would be nice to have a pre-order button in the menu.<br>
+          · Pre-order does not look like a button, something need to changes.<br>
+          · It says checkout in the middle of the process, so money seems to be paid.<br>
+          · When laundry is finished, the information is small.<br>
+          · Use pop-up when add a funds, instead of double-check on additional pages.<br>
+          · Change the color of each account to a brighter MICA color.
+        </p>
+      </div>
+    </div>
+
+    <div class="content_container">
+      <h2 class="content_space">Resolution</h2>
+      <div class="content_half_space">
+        <img src="images/micard/mockup1.jpg">
+        <img src="images/micard/mockup2.jpg">
+        <img src="images/micard/mockup3.jpg">
+      </div>
+
+      <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down">
+        <div class="color_button content_half_space"><h2>>Try Yourself</h2></div>
+      </a>
+    </div>
+
+    <div class="contact_container">
+      <div>
+        <h3>Contact</h3>
+        <p><a href="mailto:sangwoohahn93@gmail.com">sangwoohahn93@gmail.com</a></p>
+        <p><a href="mailto:shahn@mica.edu">shahn@mica.edu</a></p>
+      </div>
+    </div>
+  </body>
+</html>

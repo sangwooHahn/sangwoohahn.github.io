@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sangwoo Portfolo</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(window).on('scroll',function(){
+        var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 30);
+        $('.title_image').css('transform','rotate('+(-title_image_position)+'deg)'+'scale('+(100+(title_image_position))+'%)');
+      });
+
+      $(document).ready(function(){ /* control all page of the special colors*/
+        var color = ('#1D4922');
+        $('h2').css('color',color);
+        $('h3').css('color',color);
+        $('.go_back div').css('color',color);
+        $('.nav').css('background-color',color);
+        $('.title_container').css('background-color',color);
+        $('.color_box').css('background-color',color);
+        $('.color_button h2').css('background-color',color);
+        $('.color_button h2').css('color','#fafafa');
+        $('.color_box > div > h3').css('color','#fafafa');
+        $('.contact_container div h3').css('color','#fafafa');
+        $('.go_back').css('border-left', '2.5px solid '+color);
+        $('.go_back').css('border-top', '2.5px solid '+color);
+       });
+
+       window.open_about = function() {
+         localStorage.setItem("click_open", "about_show");
+       }
+       </script>
+
+    </script>
+    <style>
+    .title_image {
+      position: absolute;
+      right: 10vw;
+      bottom: 25vh;
+      height: 70vh;
+      width: auto;
+      transition:left 1s ease;
+      /* background-color: rgba(0,255,0,0.2); */
+    }
+        .content_inside_space {
+          padding-top: 170px;
+        }
+        .pattern_image {
+          opacity: 0.4;
+        }
+        .color_box {
+          padding-top: 30px;
+          padding-bottom: 50px;
+        }
+        .color_box > div > p {
+          padding-top: 20px;
+        }
+        .color_palette {
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+          grid-template-rows: repeat(2,1fr);
+          grid-column-gap: 5%;
+          grid-row-gap: 30px;
+        }
+        .color_palette div {
+          height: 230px;
+          margin: 40px 10% 0px 10%;
+        }
+        .color_palette p {
+          padding-top: 10px;
+          line-height: 150%;
+        }
+        .grind_in_grid {
+          margin-top: 60px;
+          width: 100%;
+        }
+        .grind_in_grid img {
+          height: auto;
+          width: 40%;
+          padding-left: 0px;
+        }
+        .grind_in_grid h4 {
+          margin-top: 10px;
+        }
+
+        .multi_grid {
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          grid-gap: 20px;
+        }
+        .four_grid {
+          display: grid;
+          grid-template-columns: repeat(4,1fr);
+        }
+
+        .typeface_geo {
+          font-family: Georgia, sans-serif;
+        }
+        .typeface_geo .grind_in_grid, .typeface_mukta .grind_in_grid {
+          margin-top: 40px;
+        }
+        .typeface_geo p {
+          font-size: 12px;
+          line-height: 120%;
+        }
+        .typeface_mukta p {
+          font-size: 11px;
+          line-height: 140%;
+        }
+        .typeface_mukta {
+          font-family: 'Mukta Mahee', sans-serif;
+        }
+        .type_content {
+          padding-top: 30px;
+        }
+        .grind_in_grid_column {
+          display: grid;
+          grid-template-columns: 30% 70%;
+          padding-left: 40px;
+        }
+        .grind_in_grid_column p {
+          padding-top: 30px;
+        }
+        .inside_img_mac {
+          background-image: url('images/jubudae/macbook.png');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+          height: 650px;
+          width: 1000px;
+        }
+        .inside_img_mac > div {
+          top: 18.7%;
+          height: 62%;
+          width: 62.7%;
+          background-color: #E1B165;
+          position: relative;
+          overflow-x:auto;
+          overflow-y:auto;
+          margin: auto;
+        }
+        .inside_img_mac img {
+          position: relative;
+        }
+        .inside_img_mobile {
+          background-image: url('images/jubudae/mobile.png');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 30% auto;
+          height: 650px;
+          width: 1000px;
+        }
+        .inside_img_mobile > div {
+          border-radius: 8%/4.5%;
+          top: 9.2%;
+          height: 81.8%;
+          width: 24.6%;
+          background-color: #E1B165;
+          position: relative;
+          overflow-x:auto;
+          overflow-y:auto;
+          margin: auto;
+        }
+        .inside_img_frame {
+          position: absolute;
+          left:0;
+          right:0;
+          margin: auto;
+          height: auto;
+          width: 128px;
+          transform: translateY(34.7px);
+          z-index: 9999;
+        }
+
+        /*Tablet*/
+        @media screen and (min-width: 600px) and (max-width: 1156px) {
+          .title_image {
+            bottom: 35%;
+            width: 58vw;
+            right:5vw;
+            height: auto;
+          }
+          .grind_in_grid {
+            display: grid;
+            grid-template-columns: 45% 55%;
+          }
+          .tablet_transform_grid {
+            display: inherit;
+          }
+          .grind_in_grid p {
+            margin-left: 0%;
+            width : 100%;
+          }
+          .grind_in_grid img { /* face image*/
+            width: 80%;
+          }
+          .grind_in_grid div { /* face and title*/
+            padding-top: 80px;
+          }
+          .tablet_transform_grid > img { /* scenario image*/
+            width: 100%;
+            margin-left: 0%;
+          }
+          .content_inside_space {
+            padding-top: 30%;
+          }
+          .typeface_geo .grind_in_grid div {s
+            padding-top: 0px;
+          }
+          .typeface_mukta .grind_in_grid div {
+            padding-top: 0px;
+          }
+          .grind_in_grid_column {
+            padding-left: 0px;
+          }
+          .grind_in_grid_column {
+            grid-template-columns: 45% 55%;
+          }
+          .inside_img_mac, .inside_img_mobile {
+            height: 55vw;
+            width: 85vw;
+          }
+          .inside_img_mac > div {
+            top: 17.7%;
+            height: 63%;
+            width: 62.7%;
+          }
+          .inside_img_frame {
+             position: absolute;
+             height: auto;
+             width: 11%;
+             margin: inherit;
+             left: 78px;
+             transform: translate(37.5vw,2.8vw);
+             z-index: 9999;
+           }
+           .four_grid {
+             grid-template-columns: repeat(2,1fr);
+           }
+        }
+
+        /*Smart phone*/
+        @media screen and (max-width: 599px) {
+          .title_image {
+            bottom: 26%;
+            width: 90vw;
+            left:4vw;
+            height: auto;
+          }
+          .grind_in_grid img {
+            padding-left: 30%;
+          }
+          .grind_in_grid h4, .grind_in_grid p {
+            text-align: center;
+          }
+          .typeface_mukta p, .typeface_geo p {
+            text-align: left;
+          }
+          .grind_in_grid_column {
+            padding-left: 0px;
+          }
+          .inside_img_mac {
+            height: 55vw;
+            width: 85vw;
+          }
+          .inside_img_mac > div {
+            top: 16.7%;
+            height: 65%;
+            width: 62.7%;
+          }
+          .inside_img_mobile {
+            background-size: 50% auto;
+            height: 90vw;
+            width: 85vw;
+          }
+          .inside_img_mobile > div {
+            border-radius: 8%/4.5%;
+            top: 8.2%;
+            height: 83.8%;
+            width: 40.6%;
+          }
+          .inside_img_frame {
+             position: absolute;
+             height: auto;
+             width: 20%;
+             margin: inherit;
+             left: 40px;
+             transform: translate(33vw,3.6vw);
+             z-index: 9999;
+           }
+           .multi_grid {
+             grid-template-columns: repeat(1,1fr);
+           }
+           .four_grid {
+             grid-template-columns: repeat(2,1fr);
+           }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div>
+        <ul>
+          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+          <li><a href="index.html#body_cont">Portfolio</a></li>
+          <li><a href="index.html#contact_cont">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+    <div class="title_container">
+      <div>
+        <div class="title_description">
+          <subtitle>Museum Branding</subtitle>
+          <h1>MoMap</h1>
+          <p>The MoMap branding project designs logos and color systems for use in map museums.
+            Explain how to use the branding system and introduce applications such as posters and web designs that can be used as examples.</p>
+        </div>
+      </div>
+    </div>
+    <img class ="pattern_image" src="images/patterns/pattern.png">
+    <img class ="title_image" src="images/momap/logo.png">
+
+    <div class="content_container">
+      <div class="two_grid content_space">
+        <div class="content_inside_space">
+          <h3>Conception</h3>
+          <p>MoMap is a museum that collects maps of the world.
+            There are many maps available from the past to the present.
+            There is also an experience hall where you can make maps with measurements and geographic information.</p>
+        </div>
+        <div class="content_inside_space">
+          <h3>Introduction</h3>
+          <p>MoMap is a museum where people can see various maps.
+            There are maps from all over the world that draw for different purposes.
+            During watch the history of the world map, you can feel the development of mapping technology.
+            Also, you can experience the mapping technology of the future.
+            MoMap is easily understood by anyone, not just by people who are interested in maps.
+            The Experience Hall offers various programs to explore and experience map measurements and geographical information.</p>
+        </div>
+      </div>
+      <!-- <div class="two_grid content_half_space">
+        <div class="content_inside_space">
+          <h3>Introduction</h3>
+          <p>MoMap is a museum where people can see various maps.
+            There are maps from all over the world that draw for different purposes.
+            During watch the history of the world map, you can feel the development of mapping technology.
+            Also, you can experience the mapping technology of the future.
+            MoMap is easily understood by anyone, not just by people who are interested in maps.
+            The Experience Hall offers various programs to explore and experience map measurements and geographical information.</p>
+        </div>
+
+      </div> -->
+      <h2 class="content_space">Target Audience</h2>
+    </div>
+
+    <div class="color_box">
+      <div>
+        <p>
+          1. Persons and experts interested in rare maps collected from around the world.</p><p>
+          2. Parents and children who want to study the history of map.</p><p>
+          3. Persons who want to see another world through a map.</p><p>
+          4. Persons who want to know how to see the world in the past.</p><p>
+          5. Persons who curious about the development of modern mapping and future technology.
+        </p>
+      </div>
+    </div>
+
+    <div class="content_container">
+       <h3 class="content_space">Logo Sketches</h3>
+       <img class="content_half_space" src="images/momap/sketch1.png">
+       <img src="images/momap/sketch2.png">
+
+       <div class="two_grid content_space">
+         <div>
+           <h3>Logo Mark</h3>
+           <p>To express the museum of the map, the logo has the characteristics of the map.
+             The logo mark looks like a road and a building from above.
+             The building is shaped like a letter, and geometric lines represent roads.</p>
+         </div>
+       </div>
+       <img src="images/momap/logomark.png">
+
+       <h2 class="content_space">Brand Systems</h2>
+    </div>
+
+    <div class="color_box">
+      <div>
+        <p>> Lock Up</p>
+        <p>> Clear Space</p>
+        <p>> Color Study</p>
+        <p>> Color Palette</p>
+        <p>> Typeface</p>
+      </div>
+    </div>
+
+    <div class="content_container">
+      <div class="two_grid content_space">
+        <div>
+          <h3>Lock Up</h3>
+          <p>The logo mark and the entire name of the museum consist of a single logo.
+            The full name along the road is written like the name of the road on the map.</p>
+        </div>
+        <img src="images/momap/logomark.png">
+      </div>
+      <h3 class="content_space">Clear Space</h3>
+      <div class="two_grid content_half_space tablet_transform_grid">
+        <div class="grind_in_grid">
+          <img src="images/momap/clear_space1.png">
+          <div>
+            <h4>Logo mark clear space</h4>
+            <p>Height of the letter "O" from MoMap.</p>
+          </div>
+        </div>
+        <img src="images/momap/clear_space2.png">
+      </div>
+      <h3 class="content_space">Color Study</h3>
+      <img src="images/momap/color_study1.png">
+      <div class="two_grid content_half_space">
+        <div class="content_inside_space">
+          <h3>Primary Color Palette</h3>
+          <p>The color of the logo is divided into two versions: the bright version and the dark version.
+            Change the color of the logo according to the guidelines.</p>
+        </div>
+        <img src="images/momap/color1.png">
+      </div>
+      <div class="color_palette">
+        <div style="background-color: #dbdbdb;"></div>
+        <div style="background-color: #858585;"></div>
+        <div style="background-color: #000000;"></div>
+        <div style="background-color: #ffffff; border: solid black 0.1px;"></div>
+        <div>
+          <h4>Urban Light Gray</h4>
+          <p>
+            RGB : 219, 219, 219<br>
+            CMYK :13%, 10%, 10%, 0%<br>
+            HEX : #dbdbdb
+          </p>
+        </div>
+        <div>
+          <h4>Urban Gray</h4>
+          <p>
+            RGB : 133, 133, 133<br>
+            CMYK : 50%, 42%, 42%, 6%<br>
+            HEX : #858585
+          </p>
+        </div>
+        <div>
+          <h4>Urban Black</h4>
+          <p>
+            RGB  :0, 0, 0<br>
+            CMYK : 75%, 68%, 67%, 90%<br>
+            HEX : #000000
+          </p>
+        </div>
+        <div>
+          <h4>Urban White</h4>
+          <p>
+            RGB : 255,255,255<br>
+            CMYK : 0%, 0%, 0%, 0%<br>
+            HEX : #ffffff
+          </p>
+        </div>
+      </div>
+      <div class="two_grid content_half_space">
+        <div>
+          <h3>Secondary Color Palette</h3>
+          <p>It’s designed to match any color combination.
+            Each color was obtained by changing the color seen on Earth.
+            These colors are used for poster, website, and other branding aplications.</p>
+        </div>
+      </div>
+      <div class="color_palette">
+        <div style="background-color: #efcaa3;"></div>
+        <div style="background-color: #cf5d37;"></div>
+        <div style="background-color: #edbe5f;"></div>
+        <div style="background-color: #1c4922;"></div>
+        <div>
+          <h4>Soil Light Orange</h4>
+          <p>
+            RGB : 239, 202, 163<br>
+            CMYK : 5%, 21%, 37%, 0%<br>
+            HEX : #efcaa3
+          </p>
+        </div>
+        <div>
+          <h4>Soil Orange</h4>
+          <p>
+            RGB : 207, 93, 53<br>
+            CMYK : 14%, 76%, 89%, 3%<br>
+            HEX : #cf5d37
+          </p>
+        </div>
+        <div>
+          <h4>Sand Yellow</h4>
+          <p>
+            RGB : 237, 190, 95<br>
+            CMYK : 7%, 25%, 73%, 0<br>
+            HEX : #edbe5f
+          </p>
+        </div>
+        <div>
+          <h4>Nature Green</h4>
+          <p>
+            RGB : 28, 73, 34<br>
+            CMYK : 84%, 43%, 100%, 49%<br>
+            HEX : #1c4922
+          </p>
+        </div>
+      </div>
+      <img src="images/momap/color3.png">
+
+      <h3 class="content_space">Typeface</h3>
+      <div class="two_grid content_half_space tablet_transform_grid typeface_geo">
+        <div class="grind_in_grid">
+          <div>
+            <div><b>Georgia</b></div>
+            <p>Primary Typeface</p>
+          </div>
+          <div class="type_content">
+            <div style="font-size:30px;"><b>MoMap H1</b></div>
+            <div style="font-size:20px; padding-top:5px;">MoMap H2</div>
+            <p style="width:80%; padding-top:10px;">MoMap is a museum where people can see various maps.
+              There are maps from all over the world that draw for different purposes.
+              During watch the history of the world map, you can feel the development of mapping technology.
+              Also, you can experience the mapping technology of the future.</p>
+          </div>
+        </div>
+        <div class="grind_in_grid_column">
+          <div>
+            <p>Georgia | Regular</p>
+            <p>Georgia | Italic</p>
+            <p>Georgia | Bold</p>
+            <p>Georgia | Bold Italic</p>
+          </div>
+          <div>
+            <p style="font-weight: 200;">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 200;"><i>MoMap is a museum where people can see various maps.</i></p>
+            <p style="font-weight: 600;">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 600;"><i>MoMap is a museum where people can see various maps.</i></p>
+          </div>
+        </div>
+      </div>
+      <div class="two_grid content_half_space tablet_transform_grid typeface_mukta">
+        <div class="grind_in_grid">
+          <div>
+            <div><b>Mukta Mahee</b></div>
+            <p>Primary Typeface</p>
+          </div>
+          <div class="type_content">
+            <div style="font-size:30px;"><b>MoMap H1</b></div>
+            <div style="font-size:20px; padding-top:2px;">MoMap H2</div>
+            <p style="width:80%; padding-top:5px;">MoMap is a museum where people can see various maps.
+              There are maps from all over the world that draw for different purposes.
+              During watch the history of the world map, you can feel the development of mapping technology.
+              Also, you can experience the mapping technology of the future.</p>
+          </div>
+        </div>
+        <div class="grind_in_grid_column">
+          <div>
+            <p>Mukta Mahee | Extra Light</p>
+            <p>Mukta Mahee | Light</p>
+            <p>Mukta Mahee | Regular</p>
+            <p>Mukta Mahee | Medium</p>
+            <p>Mukta Mahee | Semi Bold</p>
+            <p>Mukta Mahee | Bold</p>
+            <p>Mukta Mahee | Extra Bold</p>
+          </div>
+          <div>
+            <p style="font-weight: 200">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 300;">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 400;">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 500">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 600;">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 700;">MoMap is a museum where people can see various maps.</p>
+            <p style="font-weight: 800;">MoMap is a museum where people can see various maps.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="content_more_space">Brand Applications</h2>
+      </div>
+
+      <div class="color_box">
+        <div>
+          <p>> Exhibition Poster</p>
+          <p>> Exhibition Brochure</p>
+          <p>> Mobile AD</p>
+          <p>> Museum Webpage</p>
+          <p>> Additional items</p>
+          <p>> Exhibition Spatial</p>
+        </div>
+      </div>
+
+      <div class="content_container">
+        <h3 class="content_space">Exhibition Poster</h3>
+        <div class="multi_grid content_half_space">
+          <img src="images/momap/poster1.jpg">
+          <img src="images/momap/poster2.jpg">
+          <img src="images/momap/poster3.jpg">
+          <img src="images/momap/poster4.jpg">
+        </div>
+
+        <img class="content_half_space" src="images/momap/mockup1.jpg">
+        <img src="images/momap/mockup2.jpg">
+        <img src="images/momap/mockup3.jpg">
+
+        <h3 class="content_space">Exhibition Brochure</h3>
+        <img class="content_half_space" src="images/momap/mockup_brochure1.jpg">
+        <img src="images/momap/mockup_brochure2.jpg">
+        <img src="images/momap/mockup_brochure3.jpg">
+
+        <h3 class="content_space">Mobile AD</h3>
+        <div class="four_grid content_half_space">
+          <img src="images/momap/ad1.png">
+          <img src="images/momap/ad2.png">
+          <img src="images/momap/ad3.png">
+          <img src="images/momap/ad4.png">
+        </div>
+        <div class="four_grid">
+          <img src="images/momap/ad5.png">
+          <img src="images/momap/ad6.png">
+          <img src="images/momap/ad7.png">
+          <img src="images/momap/ad8.png">
+        </div>
+
+         <h3 class="content_space">Webpages</h3>
+         <div class="inside_img_mac">
+           <div>
+             <img src="images/momap/web.jpg">
+           </div>
+         </div>
+         <p style="text-align:center;">Scroll on the screen to see the webpages</p>
+         <div class="inside_img_mobile">
+           <img class="inside_img_frame" src="images/jubudae/notch.png">
+           <div>
+             <img src="images/momap/mobile.jpg">
+           </div>
+         </div>
+
+         <h3 class="content_space">Banner</h3>
+         <img class="content_half_space" src="images/momap/banner.jpg">
+         <h3 class="content_space">Bus Wrapper</h3>
+         <img class="content_half_space" src="images/momap/bus.jpg">
+         <h3 class="content_space">Museum Goods</h3>
+         <img class="content_half_space" src="images/momap/cup.jpg">
+         <img src="images/momap/puzzle.jpg">
+
+         <h3 class="content_space">Exhibition Spatial</h3>
+         <img class="content_half_space" src="images/momap/museum1.jpg">
+         <img src="images/momap/museum2.jpg">
+         <img src="images/momap/museum3.jpg">
+
+      </div>
+    </div>
+
+    <div class="contact_container content_space">
+      <div>
+        <h3>Contact</h3>
+        <p><a href="mailto:sangwoohahn93@gmail.com">sangwoohahn93@gmail.com</a></p>
+        <p><a href="mailto:shahn@mica.edu">shahn@mica.edu</a></p>
+      </div>
+    </div>
+  </body>
+</html>

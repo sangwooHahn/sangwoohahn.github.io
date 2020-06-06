@@ -1,0 +1,267 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Heebo', sans-serif;
+  background-color: #fafafa;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 4em;
+  line-height: 100%;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  line-height: 40px;
+  vertical-align: sub;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+  font-weight: normal;
+  line-height: 140%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+subtitle {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.nav {
+  z-index: 1001;
+  top: 0;
+  height : 7vh;
+}
+
+.nav div {
+  height: 100%;
+  width : 1000px;
+  margin : auto;
+}
+
+.nav div ul {
+  display: flex;
+  margin: 0;
+  list-style: none;
+  padding: 2.2vh 0 0 0px;
+}
+
+.nav div li {
+  margin-right: 30px;
+}
+.nav div li a {
+  text-decoration: none;
+  /* color : #fafafa; */
+  color : #000;
+}
+
+.go_back {
+  position : fixed;
+  height: 1em;
+  width: 1em;
+  top: 94%;
+  left: 3%;
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+  z-index: 999;
+  mix-blend-mode: multiply;
+}
+
+.go_back div {
+  position: absolute;
+  background-color: rgba(0,0,0,0);
+  -ms-transform: rotate(45deg);
+  -webkit-ransform: rotate(45deg);
+  transform: rotate(45deg);
+  width : 60px;
+  top: 135%;
+  left: 6px;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+
+/*bigger than 1290*/
+@media screen and (min-width: 1290px) {
+  .go_back div {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.title_container {
+  height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.title_container > div {
+  display: flex;
+  height: 100%;
+  width: 470px;
+  margin: auto;
+}
+
+.title_container img {
+  height: 100%;
+  padding-right: 10px;
+}
+
+
+.content_container {
+  height: auto;
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 50px;
+}
+.content_container > div {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(auto,1fr);
+  grid-gap: 20px;
+}
+.content_container p {
+  padding-top: 20px;
+}
+.content_container img {
+  width: 100%;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.05);
+}
+.content_container video {
+  width: 100%;
+}
+.big_image {
+  grid-column: auto / span 2;
+}
+
+
+.content_inside_space{
+  /* padding-top: 23%; */
+  padding-top: 120px;
+  transition: all 0.5s ease;
+}
+
+.content_space {
+  margin-top: 60px;
+}
+
+.content_half_space {
+  margin-top: 30px;
+}
+
+
+.color_button {
+  height: 7vh;
+  margin-bottom: 100px;
+}
+
+.color_button h2 {
+  background-color: #dedede;
+  color: #000;
+  height: 60px;
+  line-height: 100%;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+
+.contact_container {
+  position: relative;
+  z-index: 100;
+  height: 43vh;
+  background-color: #666;
+}
+
+.contact_container div {
+  width: 1000px;
+  height: 100%;
+  margin: auto;
+  color: #fafafa;
+}
+
+.contact_container div h3 {
+  padding-top: 40px;
+  color: #fafafa;
+}
+.contact_container div p:first-of-type {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+#momap, #foodtruck, #obang, #identity, #animate, #SMC, #gif, #sequence, #foodtruck_motion, #room {
+  display: none;
+}
+.title_container img {
+  cursor: pointer;
+}
+.title_container img:hover {
+  transform: scale(110%);
+}
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1156px) {
+  .title_container {
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    padding: 10px 20px 10px 20px;
+  }
+  .nav div, .contact_container div {
+    width: auto;
+    margin: 0px 78px 0px 78px;
+  }
+  .content_container {
+    width: auto;
+    margin-left: 78px;
+    margin-right: 78px;
+  }
+}
+
+/*Smart phone*/
+@media screen and (max-width: 599px) {
+  .title_container {
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    padding: 10px 20px 10px 20px;
+  }
+  .nav div, .contact_container div {
+    width: auto;
+    margin: 0px 40px 0px 40px;
+  }
+  .content_container {
+    width: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  .content_container > div {
+    grid-template-columns: repeat(1,1fr);
+  }
+}

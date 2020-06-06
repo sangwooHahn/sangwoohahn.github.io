@@ -1,0 +1,340 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Heebo', sans-serif;
+  background-color: #fafafa;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  line-height: 100%;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+  font-weight: normal;
+  line-height: 140%;
+}
+ul {
+  font-size: 0.9em;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+subtitle {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+.about_contatiner {
+  display: none;
+  height: 100vh;
+}
+
+.about_contatiner p {
+  padding-top: 10px;
+}
+.about_contatiner div {
+  height: 100%;
+  width : 350px;
+  margin : auto;
+  left:0;
+  right:0;
+  padding-top: 35vh;
+}
+
+.title_container {
+  height: 95vh;
+  top:0;
+  background-color: rgb(77,77,77);
+}
+
+
+.title_container > div {
+  position: fixed;
+  display:block;
+}
+
+.nav {
+  z-index: 1001;
+  position: sticky;
+  top: 0;
+  height : 5vh;
+  background-color: #fafafa;
+}
+
+.nav div {
+  height: 100%;
+  width : 1000px;
+  margin : auto;
+}
+.nav div ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-top: 1.2vh;
+}
+
+.nav div li {
+  margin-right: 30px;
+}
+
+.nav div li a {
+  text-decoration: none;
+  color : #000;
+}
+
+.body_container {
+  z-index: 1000;
+  position: relative;
+  height: auto;
+  padding-top: 5vh;
+  background-color: #fafafa;
+}
+
+.container {
+  height: 100%;
+  width: 1000px;
+  margin: auto;
+}
+
+.portfolios {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  /* grid-template-rows: repeat(auto-fill,365px); */
+  grid-auto-rows :365px;
+  grid-auto-flow: dense;
+  grid-column-gap: 30px;
+  grid-row-gap: 20px;
+  padding: 0px 0px 140px 0px;
+}
+
+.thumbnail {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.06);
+  transition: all 1s ease;
+}
+.thumbnail div {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.thumbnail:hover {
+  background-size: 105%;
+}
+
+.thumbnail_description {
+  padding-left: 0px;
+  padding-top: 35%;
+}
+
+.thumbnail_description p {
+  margin-top: 10px;
+  width: 60%;
+}
+.thumbnail_description h1 {
+  margin-top: 5px;
+}
+
+.portfolios > div:nth-of-type(4n-1) { /*every 3rd images*/
+  grid-column-start: 2;
+}
+
+.portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
+  padding-left: 230px;
+}
+.portfolios > div:nth-of-type(4n) p { /*every 4th testxs(left)*/
+  width: 100%;
+}
+/* .portfolios > div:last-of-type {
+  grid-column-start: 1;
+} */
+
+.moreProject_container {
+  position: relative;
+  height: 50vh;
+  background-color: #fafafa;
+}
+
+.moreProject_container > div {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 1000px;
+  height: 100%;
+  margin: auto;
+}
+
+
+.posters div {
+  position: absolute;
+  width: 191.25px;
+  height: 247.5px;
+  margin: 60px 0px 0px 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+  transition: all 1s ease;
+}
+
+.poster1 {
+  z-index: 3;
+}
+.poster2 {
+  transform: rotate(-10deg) translate(-15px, -7px);
+  z-index: 2;
+}
+.poster3 {
+  transform: rotate(10deg);
+  z-index: 1;
+}
+
+.poster1:hover {
+  transform: rotate(5deg);
+}
+.poster1:hover ~ .poster2 {
+  transform: translate(-40px, -5px) rotate(-15deg);
+}
+.poster1:hover ~ .poster3 {
+  transform: translate(30px, -5px) rotate(15deg);
+}
+
+.motions div {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  margin: 70px 0px 0px 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+  transition: all 1s ease;
+  /* cursor: pointer; */
+}
+
+.motion1 {
+  transform: rotate(3deg) translate(18px, -4px);
+  z-index: 2;
+}
+.motion2 {
+  transform: rotate(-6deg) translate(-10px, -3px);
+  z-index: 1;
+}
+.motion1:hover {
+  transform: translate(45px, 5px) rotate(5deg);
+}
+.motion1:hover ~ .motion2 {
+  transform: translate(-40px, -3px) rotate(-8deg);
+}
+
+.contact_container {
+  z-index: 1000;
+  position: relative;
+  height: 45vh;
+  background-color: #666;
+}
+
+.contact_container div {
+  width: 1000px;
+  height: 100%;
+  margin: auto;
+  color: #fafafa;
+  /* background-color: green; */
+}
+
+.contact_container div h2 {
+  padding-top: 40px;
+}
+.contact_container a {
+  color: #fafafa;
+}
+.contact_container div p:first-of-type {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1156px) {
+  .nav div, .container, .moreProject_container > div, .contact_container div {
+    width: auto;
+    margin: 0px 40px 0px 40px;
+  }
+  .thumbnail_description {
+    padding-top: 15vw;
+  }
+  .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
+    padding-left: 15vw;
+  }
+  .portfolios {
+    grid-auto-rows: 33vw;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+  }
+}
+/*Tablet222*/
+@media screen and (min-width: 600px) and (max-width: 890px) {
+  .thumbnail_description {
+    padding-top: 10vw;
+  }
+  .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
+    padding-left: 5vw;
+  }
+  .thumbnail_description p {
+    width: 80%;
+  }
+}
+
+/*Smart phone*/
+@media screen and (max-width: 699px) {
+  .nav div, .moreProject_container > div, .contact_container div {
+    width: auto;
+    margin: 0px 40px 0px 40px;
+  }
+  .container {
+    width: auto;
+    margin: 0px 00px 0px 00px;
+  }
+  .portfolios {
+    grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: 350px 250px;
+  }
+  .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
+    padding-left: 0px;
+  }
+  .portfolios > div:nth-of-type(4n-1) { /*every 3rd images*/
+    grid-column-start: 1;
+  }
+  .thumbnail_description {
+    margin-left: 40px;
+    padding-top: 10px;
+    width: 70vw;
+  }
+  .thumbnail_description p {
+    width: 100%;
+  }
+  .moreProject_container {
+    height: auto;
+  }
+  .moreProject_container > div {
+    grid-template-columns: repeat(1,1fr);
+    grid-auto-rows: 500px;
+  }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sangwoo Portfolo</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="extras.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){ /* control all page of the special colors*/
+        var color = ('#000');
+        $('h2').css('color',color);
+        $('h3').css('color',color);
+        $('.go_back div').css('color',color);
+        $('.nav').css('background-color','#dedede');
+        $('.title_container').css('background-color','#dedede');
+        $('.contact_container div h3').css('color','#fafafa');
+        $('.go_back').css('border-left', '2.5px solid '+color);
+        $('.go_back').css('border-top', '2.5px solid '+color);
+
+        if(localStorage.getItem("click_open")=="foodtruck_show") {
+          document.getElementById("pitchfork").style.display = "none";
+          document.getElementById("foodtruck").style.display = "block";
+          localStorage.setItem("click_open", "undefined");
+        }
+       });
+      window.buttons = function() {
+        document.getElementById("pitchfork").style.display = "none";
+        document.getElementById("identity").style.display = "none";
+        document.getElementById("obang").style.display = "none";
+        document.getElementById("foodtruck").style.display = "none";
+        document.getElementById("momap").style.display = "none";
+      }
+      window.button1 = function() {
+        document.getElementById("pitchfork").style.display = "block";
+      }
+      window.button2 = function() {
+        document.getElementById("identity").style.display = "block";
+      }
+      window.button3 = function() {
+        document.getElementById("obang").style.display = "block";
+      }
+      window.button4 = function() {
+        document.getElementById("foodtruck").style.display = "block";
+      }
+      window.button5 = function() {
+        document.getElementById("momap").style.display = "block";
+      }
+      window.open_foodtruck = function() {
+        localStorage.setItem("click_open", "foodtruck_show");
+      }
+    </script>
+    <style>
+      .title_container > div {
+        width: 335px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="nav">
+      <div>
+        <ul>
+          <li><a href="index.html#title_cont">About</a></li>
+          <li><a href="index.html#body_cont">Portfolio</a></li>
+          <li><a href="index.html#contact_cont">Contact</a></li>
+        </ul>
+      </div>
+    </div> -->
+    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+    <div class="title_container">
+      <div>
+        <img onclick="buttons(); button1();" src="images/posters/pitchfork.jpg">
+        <img onclick="buttons(); button2();" src="images/posters/save9.jpg">
+        <img onclick="buttons(); button3();" src="images/posters/GYEONGJU.jpg">
+        <img onclick="buttons(); button4();" src="images/posters/foodtruck1.jpg">
+        <img onclick="buttons(); button5();" src="images/posters/momap1.jpg">
+      </div>
+    </div>
+
+    <div id="momap" class="content_container content_space">
+      <h2>Maps Throught Time</h2>
+      <div class="content_half_space">
+        <img src="images/posters/momap1.jpg">
+        <img src="images/posters/momap2.jpg">
+        <img src="images/posters/momap3.jpg">
+        <img src="images/posters/momap4.jpg">
+        <img class="big_image" src="images/posters/mockup5.jpg">
+        <img src="images/posters/mockup4.jpg">
+        <img src="images/posters/mockup6.jpg">
+      </div>
+      <a href="momap.html"><div class="color_button content_half_space"><h2>> View the Project</h2></div></a>
+    </div>
+
+    <div id="pitchfork" class="content_container content_space">
+      <h2>Pitchfork Music Festival 2019</h2>
+      <div class="content_half_space">
+        <img class="big_image" src="images/posters/pitchfork.jpg">
+        <!-- <div></div> -->
+        <img src="images/posters/mockup1.jpg">
+        <img src="images/posters/mockup2.jpg">
+        <img class="big_image" src="images/posters/mockup3.jpg">
+      </div>
+      <!-- <a><div class="color_button content_half_space"><h2>> View the Motions</h2></div></a> -->
+    </div>
+
+    <div id="obang" class="content_container content_space">
+      <h2>Obang City</h2>
+      <div class="content_half_space">
+        <img class="big_image" src="images/posters/SEOUL.jpg">
+        <img src="images/posters/JEJU.jpg">
+        <img src="images/posters/GYEONGJU.jpg">
+        <img src="images/posters/JEONJU.jpg">
+        <img src="images/posters/BUSAN.jpg">
+        <img class="big_image" src="images/posters/obang2.jpg">
+      </div>
+    </div>
+
+    <div id="identity" class="content_container content_space">
+      <h2>Screen Identity</h2>
+      <div class="content_half_space">
+        <img src="images/posters/save1.jpg">
+        <img src="images/posters/save2.jpg">
+        <img src="images/posters/save3.jpg">
+        <img src="images/posters/save4.jpg">
+        <img src="images/posters/save5.jpg">
+        <img src="images/posters/save6.jpg">
+        <img src="images/posters/save7.jpg">
+        <img src="images/posters/save8.jpg">
+        <img src="images/posters/save9.jpg">
+        <img src="images/posters/save10.jpg">
+      </div>
+    </div>
+
+    <div id="foodtruck" class="content_container content_space">
+      <h2>Food Truck Festival</h2>
+      <div class="content_half_space">
+        <img src="images/posters/foodtruck1.jpg">
+        <img src="images/posters/foodtruck2.jpg">
+        <img class="big_image" src="images/posters/foodtruck3.jpg">
+        <img class="big_image" src="images/posters/mockup8.jpg">
+        <img src="images/posters/mockup7.jpg">
+        <img src="images/posters/mockup9.jpg">
+      </div>
+      <a onclick="open_foodtruck();" href="motions.html#foodtruck_motion"><div class="color_button content_half_space"><h2>> View the Motions</h2></div></a>
+    </div>
+
+    <!-- <div class="contact_container content_space">
+      <div>
+        <h3>Contact</h3>
+        <p>sangwoohahn93@gmail.com</p>
+        <p>shahn@mica.edu</p>
+      </div>
+    </div> -->
+  </body>
+</html>
