@@ -26,10 +26,6 @@
     <link rel="stylesheet" type="text/css" href="portfolio.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-      $(window).on('scroll',function(){
-        var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 30);
-        $('.title_image').css('transform','rotate('+(-title_image_position)+'deg)'+'scale('+(100+(title_image_position))+'%)');
-      });
 
       $(document).ready(function(){ /* control all page of the special colors*/
         var color = ('#1D4922');
