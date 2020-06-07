@@ -51,7 +51,7 @@ function draw() {
   fill(c);
   textSize(16);
   textAlign(CENTER, CENTER);
-  text('Graphic Designer',width/2,height_s-120);
+  text('Graphic Designer',width/2,height_s-100);
 
   controls();
 }
