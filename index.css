@@ -337,4 +337,7 @@ subtitle {
     grid-template-columns: repeat(1,1fr);
     grid-auto-rows: 500px;
   }
+  .posters div {
+    left : 0;
+  }
 }
