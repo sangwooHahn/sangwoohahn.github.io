@@ -172,6 +172,7 @@ subtitle {
   position: relative;
   height: 50vh;
   background-color: #fafafa;
+  padding-bottom: 5px;
 }
 
 .moreProject_container > div {
