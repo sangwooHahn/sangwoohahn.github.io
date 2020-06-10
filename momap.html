@@ -311,6 +311,21 @@
            .four_grid {
              grid-template-columns: repeat(2,1fr);
            }
+           .color_palette {
+             grid-template-columns: repeat(2,1fr);
+             grid-template-rows: 150px 1fr 150px 1fr;
+             grid-row-gap: 10px;
+           }
+           .color_palette div {
+             height: auto;
+             margin: 30px 10% 0px 10%;
+           }
+           .color_palette div:nth-child(5) {
+             grid-row-start: 2;
+           }
+           .color_palette div:nth-child(6) {
+             grid-row-start: 2;
+           }
         }
     </style>
   </head>
