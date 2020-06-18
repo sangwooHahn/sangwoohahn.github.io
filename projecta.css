@@ -53,7 +53,7 @@ body > img {
   transition: all 1s ease;
 }
 .alone_container {
-  background-image: url('images/alone.jpg');
+  background-image: url('images/projecta/alone.jpg');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
@@ -69,7 +69,7 @@ body > img {
   background-size: auto 110%;
 }
 .thefins_container {
-  background-image: url('images/thefins1.png');
+  background-image: url('images/projecta/thefins1.png');
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
