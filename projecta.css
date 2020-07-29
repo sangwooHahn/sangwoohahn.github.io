@@ -84,15 +84,20 @@ body > img {
 .thefins_container:hover {
   background-size: auto 110%;
 }
-.newgame_container {
-  background-color: darkgray;
-  text-align: center;
+.daydream_container {
+  background-image: url('images/projecta/daydream_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  background-blend-mode: soft-light;
+  background-color: #6d1d5a;
+  transition: all 1s ease;
 }
-.newgame_container:hover .text_container {
+.daydream_container:hover .text_container {
   height: 90px;
   opacity: 1;
 }
-.newgame_container:hover {
+.daydream_container:hover {
   background-size: auto 110%;
 }
 .download_button {
