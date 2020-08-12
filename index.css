@@ -310,13 +310,19 @@ subtitle {
     width: auto;
     margin: 0px 40px 0px 40px;
   }
+  .about_contatiner div {
+    height: 100%;
+    width : auto;
+    margin : 0 40px 0 40px;
+    padding-top: 30vh;
+  }
   .container {
     width: auto;
     margin: 0px 00px 0px 00px;
   }
   .portfolios {
     grid-template-columns: repeat(1,1fr);
-    grid-auto-rows: 350px 250px;
+    grid-auto-rows: 250px 200px;
   }
   .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
     padding-left: 0px;
@@ -326,7 +332,7 @@ subtitle {
   }
   .thumbnail_description {
     margin-left: 40px;
-    padding-top: 10px;
+    padding-top: 0px;
     width: 70vw;
   }
   .thumbnail_description p {
@@ -341,5 +347,8 @@ subtitle {
   }
   .posters div {
     left : 0;
+  }
+  .motions div {
+    margin: 70px 0px 0px 30px;
   }
 }
