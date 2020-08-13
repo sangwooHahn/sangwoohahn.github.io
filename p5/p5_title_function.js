@@ -41,7 +41,7 @@ function controls() {
     t = mouseY/20;
     if(t<1)
       t=1;
-    w = mouseX/8;
+    w = (width-mouseX)/8;
     // arc = mouseX/35+20;
   }
 
@@ -121,10 +121,10 @@ function ah(_x, _y) {
   vertex(0,h);
   endShape(CLOSE);
   beginShape();
-  vertex(0,h/2-t/2);
-  vertex(w/2,h/2-t/2);
-  vertex(w/2,h/2+t/2);
-  vertex(0,h/2+t/2);
+  vertex(t,h/2-t/2);
+  vertex(t+w/2,h/2-t/2);
+  vertex(t+w/2,h/2+t/2);
+  vertex(t,h/2+t/2);
   endShape(CLOSE);
   stroke(200,0,0);
   noFill();
@@ -364,8 +364,10 @@ function gg(_x, _y) {
   // rect(w-arc,h-arc-t,arc,t); // tail
   if(arc < t)
     rect(w-arc,arc,arc,t-arc); // extra stright right top
-  if(t<arc)
-    rect(w-arc,h-arc,arc-t,t); //tail
+  // if(t<arc) {
+    rect(w/2,h/2-t/2,w/2,t); //tail
+    rect(w-t,h/2-t/2,t,h/2+t/2-arc); //tail
+  // }
 
   stroke(0,100,200);
   noFill();
