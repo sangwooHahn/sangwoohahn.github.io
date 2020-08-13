@@ -27,10 +27,10 @@
     <link rel="stylesheet" type="text/css" href="portfolio.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-      $(window).on('scroll',function(){
-        var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 30);
-        $('.title_image').css('transform','rotate('+(-title_image_position)+'deg)'+'scale('+(100+(title_image_position))+'%)');
-      });
+      // $(window).on('scroll',function(){
+      //   var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 30);
+      //   $('.title_image').css('transform','rotate('+(-title_image_position)+'deg)'+'scale('+(100+(title_image_position))+'%)');
+      // });
 
       $(document).ready(function(){ /* control all page of the special colors*/
         var color = ('#C10C0C');
@@ -40,7 +40,7 @@
         $('.nav').css('background-color',color);
         $('.title_container').css('background-color',color);
         $('.color_box').css('background-color',color);
-        $('.color_button h2').css('background-color',color);
+        $('.color_button').css('background-color',color);
         $('.color_button h2').css('color','#fafafa');
         $('.color_box > div > h3').css('color','#fafafa');
         $('.contact_container div h3').css('color','#fafafa');
@@ -141,6 +141,10 @@
     }
     .grind_in_grid_column p {
       padding-top: 30px;
+    }
+    .inside_img_container {
+      width: 1000px;
+      margin: auto;
     }
     .inside_img_mac {
       background-image: url('images/jubudae/macbook.png');
@@ -289,34 +293,38 @@
       .grind_in_grid_column {
         padding-left: 0px;
       }
+      .inside_img_container {
+        width: auto;
+        margin: 0px 0px 0px 0px;
+      }
       .inside_img_mac {
         height: 55vw;
-        width: 85vw;
+        width: 100vw;
       }
       .inside_img_mac > div {
-        top: 16.7%;
-        height: 65%;
+        top: 12.7%;
+        height: 72%;
         width: 62.7%;
       }
       .inside_img_mobile {
         background-size: 50% auto;
-        height: 90vw;
-        width: 85vw;
+        height: 100vw;
+        width: 100vw;
       }
       .inside_img_mobile > div {
-        border-radius: 8%/4.5%;
-        top: 8.2%;
-        height: 83.8%;
-        width: 40.6%;
+        border-radius: 9%/4.5%;
+        top: 6%;
+        height: 88.2%;
+        width: 41.5%;
       }
       .inside_img_frame {
-         position: absolute;
-         height: auto;
-         width: 20%;
-         margin: inherit;
-         left: 40px;
-         transform: translate(33vw,3.6vw);
-         z-index: 9999;
+        position: absolute;
+        height: auto;
+        width: 22%;
+        margin: inherit;
+        left: 0px;
+        transform: translate(39vw,1.5vw);
+        z-index: 9999;
        }
     }
     </style>
@@ -608,9 +616,9 @@
          <img src="images/jubudae/wireframe.png">
          <img class="content_space" src="images/jubudae/mockup.jpg">
 
-         <!-- <a href="https://xd.adobe.com/view/e6def204-db22-4057-4ed7-c6068208a020-90ef/?fullscreen&hints=off">
-           <div class="color_button content_half_space"><h2>>Try Yourself</h2></div>
-         </a> -->
+         <a href="https://www.figma.com/proto/QG5dtTrgRKKNI1gSTH5zF7/JuBudae_renew?node-id=2%3A0&viewport=412%2C-760%2C0.27701279520988464&scaling=scale-down" target="_blank">
+           <div class="color_button content_half_space"><h2>Try Yourself</h2></div>
+         </a>
 
          <div class="two_grid content_half_space">
            <div class="content_inside_space">
@@ -620,20 +628,21 @@
                Its design to have the same experience on two different devices.</p>
            </div>
          </div>
+      </div>
+      <div class="inside_img_container">
          <div class="inside_img_mac">
            <div>
-             <img src="images/jubudae/webpage.jpg">
+             <img src="images/jubudae/webpage.png">
            </div>
          </div>
          <p style="text-align:center;">Scroll on the screen to see the webpages</p>
          <div class="inside_img_mobile">
            <img class="inside_img_frame" src="images/jubudae/notch.png">
            <div>
-             <img src="images/jubudae/mobilepage.jpg">
+             <img src="images/jubudae/mobilepage.png">
            </div>
          </div>
-      </div>
-    </div>
+       </div>
 
     <div class="contact_container content_space">
       <div>

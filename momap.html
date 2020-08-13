@@ -138,6 +138,10 @@
         .grind_in_grid_column p {
           padding-top: 30px;
         }
+        .inside_img_container {
+          width: 1000px;
+          margin: auto;
+        }
         .inside_img_mac {
           background-image: url('images/jubudae/macbook.png');
           background-position: center;
@@ -276,34 +280,38 @@
           .grind_in_grid_column {
             padding-left: 0px;
           }
+          .inside_img_container {
+            width: auto;
+            margin: 0px 0px 0px 0px;
+          }
           .inside_img_mac {
             height: 55vw;
-            width: 85vw;
+            width: 100vw;
           }
           .inside_img_mac > div {
-            top: 16.7%;
-            height: 65%;
+            top: 12.7%;
+            height: 72%;
             width: 62.7%;
           }
           .inside_img_mobile {
             background-size: 50% auto;
-            height: 90vw;
-            width: 85vw;
+            height: 100vw;
+            width: 100vw;
           }
           .inside_img_mobile > div {
-            border-radius: 8%/4.5%;
-            top: 8.2%;
-            height: 83.8%;
-            width: 40.6%;
+            border-radius: 9%/4.5%;
+            top: 6%;
+            height: 88.2%;
+            width: 41.5%;
           }
           .inside_img_frame {
-             position: absolute;
-             height: auto;
-             width: 20%;
-             margin: inherit;
-             left: 40px;
-             transform: translate(33vw,3.6vw);
-             z-index: 9999;
+            position: absolute;
+            height: auto;
+            width: 22%;
+            margin: inherit;
+            left: 0px;
+            transform: translate(39vw,1.5vw);
+            z-index: 9999;
            }
            .multi_grid {
              grid-template-columns: repeat(1,1fr);
@@ -657,19 +665,24 @@
         </div>
 
          <h3 class="content_space">Webpages</h3>
-         <div class="inside_img_mac">
-           <div>
-             <img src="images/momap/web.jpg">
-           </div>
-         </div>
-         <p style="text-align:center;">Scroll on the screen to see the webpages</p>
-         <div class="inside_img_mobile">
-           <img class="inside_img_frame" src="images/jubudae/notch.png">
-           <div>
-             <img src="images/momap/mobile.jpg">
-           </div>
-         </div>
+      </div>
 
+      <div class="inside_img_container">
+        <div class="inside_img_mac">
+          <div>
+            <img src="images/momap/web.jpg">
+          </div>
+        </div>
+        <p style="text-align:center;">Scroll on the screen to see the webpages</p>
+        <div class="inside_img_mobile">
+          <img class="inside_img_frame" src="images/jubudae/notch.png">
+          <div>
+            <img src="images/momap/mobile.jpg">
+          </div>
+        </div>
+      </div>
+
+      <div class="content_container">
          <h3 class="content_space">Banner</h3>
          <img class="content_half_space" src="images/momap/banner.jpg">
          <h3 class="content_space">Bus Wrapper</h3>
