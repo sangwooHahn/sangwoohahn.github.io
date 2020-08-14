@@ -262,7 +262,6 @@ subtitle {
 }
 
 .contact_container {
-  z-index: 1000;
   position: relative;
   height: 45vh;
   background-color: #666;
