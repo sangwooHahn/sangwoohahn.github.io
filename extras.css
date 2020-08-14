@@ -100,7 +100,7 @@ subtitle {
   -webkit-ransform: rotate(45deg);
   transform: rotate(45deg);
   width : 60px;
-  top: 135%;
+  top: 160%; /*왜 여기서만 다른지 모르겠음*/
   left: 6px;
   opacity: 0;
   visibility: hidden;
