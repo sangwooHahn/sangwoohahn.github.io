@@ -27,39 +27,6 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script> -->
     <link rel="stylesheet" type="text/css" href="p5/p5_style.css">
     <meta charset="utf-8"/>
-    <script>
-    $(document).ready(function(){
-      $("#about_button").on('click',function(event){
-        $("#about_cont").slideDown(1000);
-        $("#title_cont").slideDown(1000);
-        $("#title_cont").delay(1000).css('position','sticky');
-        $("#myCanvas").delay(1000).css('position','inherit');
-        $("#about_cont_div").delay(1000).css('position','fixed');
-      });
-
-      if(localStorage.getItem("click_open")=="about_show") {
-        $("#about_cont").slideDown(1000);
-        $("#title_cont").slideDown(1000);
-        $("#title_cont").delay(1000).css('position','sticky');
-        $("#myCanvas").delay(1000).css('position','inherit');
-        $("#about_cont_div").delay(1000).css('position','fixed');
-        localStorage.setItem("click_open", "undefined");
-      }
-
-      $("a").on('click', function(event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 800, function(){
-            window.location.hash = hash;
-          });
-        }
-      });
-    });
-
-    </script>
   </head>
   <body>
     <div id="about_cont" class="about_contatiner">
@@ -156,6 +123,39 @@
       </div>
     </div>
 
+    <script>
+    $(document).ready(function(){
+      $("#about_button").on('click',function(event){
+        $("#about_cont").slideDown(1000);
+        $("#title_cont").slideDown(1000);
+        $("#title_cont").delay(1000).css('position','sticky');
+        $("#myCanvas").delay(1000).css('position','inherit');
+        $("#about_cont_div").delay(1000).css('position','fixed');
+      });
+
+      if(localStorage.getItem("click_open")=="about_show") {
+        $("#about_cont").slideDown(1000);
+        $("#title_cont").slideDown(1000);
+        $("#title_cont").delay(1000).css('position','sticky');
+        $("#myCanvas").delay(1000).css('position','inherit');
+        $("#about_cont_div").delay(1000).css('position','fixed');
+        localStorage.setItem("click_open", "undefined");
+      }
+
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </body>
 </html>
