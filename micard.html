@@ -20,6 +20,7 @@
     <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="portfolio.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -90,6 +91,14 @@
       /* background-color: rgba(255,0,0,0.2); */
     }
 
+    .two_grid_large {
+      grid-template-columns: 45% 55%;
+    }
+    .two_grid_large img {
+      width: 50%;
+      padding-left: 30%;
+    }
+
     @keyframes overlap_animation {
       0% {transform:  translate(0px, 0px);}
       25% {transform: translate(30px, 30px);}
@@ -120,6 +129,13 @@
         width:100vw;
         left : -40%;
         clip-path: margin-box;
+      }
+      .two_grid_large {
+        grid-template-columns: 100%;
+      }
+      .two_grid_large img {
+        width: 100%;
+        padding-left: 0%;
       }
     }
 
@@ -308,7 +324,51 @@
     </div>
 
     <div class="content_container">
-      <h2 class="content_space">Resolution</h2>
+      <h2 class="content_space">Key Features</h2>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Mobile ID</h3>
+          <p>• Easily accessible from the First page.</p>
+          <p>• Has a big portrait and a name.</p>
+          <p>• Bar code for rental the book in the library.</p>
+          <p>• Blinking color circle proves it is not a picture.</p>
+          <p>• The color changes every morning to prevent forgery.</p>
+        </div>
+        <img  src="images/micard/id-card.gif">
+      </div>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Add Funds</h3>
+          <p>• Reduced step to one page.</p>
+          <p>• Users can register card and use it quickly.</p>
+          <p>• A reconfirmation is appeared before completion.</p>
+        </div>
+        <img src="images/micard/add_credit.gif">
+      </div>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Pre-Order Service</h3>
+          <p>• Able to set pickup time.</p>
+          <p>• Easy to select ingredients with the pictures.</p>
+          <p>• The notifications tell users the pickup time.</p>
+        </div>
+        <img src="images/micard/pre_order.gif">
+      </div>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Laundry Status</h3>
+          <p>• Users can check laundrt status anywhere.</p>
+          <p>• Saved location's laundry room comes first.</p>
+          <p>• The icon is the same as the actual location.</p>
+          <p>• Easy step to pay with mobile.</p>
+          <p>• Timer counts automatically.</p>
+        </div>
+        <img src="images/micard/laundry.gif">
+      </div>
+    </div>
+
+    <div class="content_container">
+      <h2 class="content_space">Resolutions</h2>
       <div class="content_half_space">
         <img src="images/micard/mockup1.jpg">
         <img src="images/micard/mockup2.jpg">
