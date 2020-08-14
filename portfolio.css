@@ -262,36 +262,53 @@ subtitle {
 }
 
 .contact_container {
+  z-index: 1000;
   position: relative;
-  z-index: 100;
   height: 45vh;
   background-color: #666;
 }
 
-.contact_container div {
+.contact {
   width: 1000px;
-  height: 100%;
+  height: 90%;
   margin: auto;
-  color: #fafafa;
-}
-
-.contact_container a {
   color: #fafafa;
 }
 
 .contact_container div h3 {
   padding-top: 40px;
+}
+.contact_container a {
   color: #fafafa;
 }
-.contact_container div p:first-of-type {
-  padding-top: 30px;
-  padding-bottom: 10px;
+.contact_container i {
+  float: left;
+  padding-right: 10px;
+}
+.contact_container i, .contact_container a p {
+  margin-top: 20px;
+}
+
+.contact_container a:first-of-type p, .contact_container a:first-of-type i {
+  margin-top: 30px;
+}
+.copyright {
+  height: 10%;
+  background-color: #555;
+}
+.copyright div {
+  width: 1000px;
+  margin: auto;
+  color: #fafafa;
+}
+.copyright p {
+  padding-top: 1.4%;
 }
 
 
 /*Tablet*/
 @media screen and (min-width: 600px) and (max-width: 1156px) {
-  .nav div, .title_container > div, .content_container, .color_box > div, .contact_container div {
+  .nav div, .title_container > div, .content_container, .color_box > div, .contact, .copyright div {
     width: auto;
     margin: 0px 78px 0px 78px;
   }
@@ -311,7 +328,7 @@ subtitle {
 
 /*Smart phone*/
 @media screen and (max-width: 599px) {
-  .nav div, .title_container > div, .content_container, .color_box > div, .contact_container div {
+  .nav div, .title_container > div, .content_container, .color_box > div, .contact, .copyright div {
     width: auto;
     margin: 0px 40px 0px 40px;
   }
@@ -341,5 +358,14 @@ subtitle {
   }
   .content_space {
     margin-top: 200px;
+  }
+  .contact {
+    height: 85%;
+  }
+  .copyright {
+    height: 15%;
+  }
+  .copyright p {
+    padding-top: 2%;
   }
 }

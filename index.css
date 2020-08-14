@@ -12,7 +12,7 @@ h1 {
   line-height: 100%;
 }
 
-h2 {
+h2, h3 {
   margin: 0;
   padding: 0;
   font-size: 1.5em;
@@ -254,28 +254,46 @@ subtitle {
   background-color: #666;
 }
 
-.contact_container div {
+.contact {
   width: 1000px;
-  height: 100%;
+  height: 90%;
   margin: auto;
   color: #fafafa;
-  /* background-color: green; */
 }
 
-.contact_container div h2 {
+.contact_container div h3 {
   padding-top: 40px;
 }
 .contact_container a {
   color: #fafafa;
 }
-.contact_container div p:first-of-type {
-  padding-top: 30px;
-  padding-bottom: 10px;
+.contact_container i {
+  float: left;
+  padding-right: 10px;
+}
+.contact_container i, .contact_container a p {
+  margin-top: 20px;
+}
+
+.contact_container a:first-of-type p, .contact_container a:first-of-type i {
+  margin-top: 30px;
+}
+.copyright {
+  height: 10%;
+  background-color: #555;
+}
+.copyright div {
+  width: 1000px;
+  margin: auto;
+  color: #fafafa;
+}
+.copyright p {
+  padding-top: 1.4%;
 }
 
 /*Tablet*/
 @media screen and (min-width: 600px) and (max-width: 1156px) {
-  .nav div, .container, .moreProject_container > div, .contact_container div {
+  .nav div, .container, .moreProject_container > div, .contact, .copyright div {
     width: auto;
     margin: 0px 40px 0px 40px;
   }
@@ -306,7 +324,7 @@ subtitle {
 
 /*Smart phone*/
 @media screen and (max-width: 699px) {
-  .nav div, .moreProject_container > div, .contact_container div {
+  .nav div, .moreProject_container > div, .contact, .copyright div {
     width: auto;
     margin: 0px 40px 0px 40px;
   }
@@ -322,7 +340,7 @@ subtitle {
   }
   .portfolios {
     grid-template-columns: repeat(1,1fr);
-    grid-auto-rows: 300px 230px;
+    grid-auto-rows: 280px 220px;
   }
   .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
     padding-left: 0px;
@@ -350,5 +368,14 @@ subtitle {
   }
   .motions div {
     margin: 70px 0px 0px 40px;
+  }
+  .contact {
+    height: 85%;
+  }
+  .copyright {
+    height: 15%;
+  }
+  .copyright p {
+    padding-top: 2%;
   }
 }

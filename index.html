@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="p5/p5.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script> -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" type="text/css" href="p5/p5_style.css">
     <meta charset="utf-8"/>
   </head>
@@ -116,13 +116,19 @@
       </div>
     </div>
     <div id="contact_cont" class="contact_container">
-      <div>
-        <h2>Contact</h2>
-        <p><a href="mailto:sangwoohahn93@gmail.com">sangwoohahn93@gmail.com</a></p>
-        <p><a href="mailto:shahn@mica.edu">shahn@mica.edu</a></p>
+      <div class="contact">
+        <h3>Contact</h3>
+        <a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i><p>shahn@mica.edu</p></a>
+        <a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i><p>@hahnsangwoo</p></a>
+        <a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i><p>Sangwoo Hahn</p></a>
+      </div>
+      <div class="copyright">
+        <div>
+          <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
+        </div>
       </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
     $(document).ready(function(){
       $("#about_button").on('click',function(event){
@@ -156,6 +162,6 @@
     });
 
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   </body>
 </html>
