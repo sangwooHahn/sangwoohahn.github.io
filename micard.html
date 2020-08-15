@@ -98,6 +98,13 @@
       width: 50%;
       padding-left: 30%;
     }
+    .two_grid_large a {
+      padding-left: 24%;
+    }
+    .two_grid_large div:nth-child(2) p {
+      padding: 0;
+      color:#999;
+    }
 
     @keyframes overlap_animation {
       0% {transform:  translate(0px, 0px);}
@@ -133,9 +140,9 @@
       .two_grid_large {
         grid-template-columns: 100%;
       }
-      .two_grid_large img {
+      .two_grid_large img, .two_grid_large a {
         width: 100%;
-        padding-left: 0%;
+        padding: 0%;
       }
     }
 
@@ -334,7 +341,14 @@
           <p>• Blinking color circle proves it is not a picture.</p>
           <p>• The color changes every morning to prevent forgery.</p>
         </div>
-        <img  src="images/micard/id-card.gif">
+        <div>
+          <img id="gif-1" src="images/micard/id-card.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-1').src='images/micard/id-card.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
       </div>
       <div class="two_grid two_grid_large content_half_space">
         <div class="content_inside_space">
@@ -343,7 +357,14 @@
           <p>• Users can register card and use it quickly.</p>
           <p>• A reconfirmation is appeared before completion.</p>
         </div>
-        <img src="images/micard/add_credit.gif">
+        <div>
+          <img id="gif-2" src="images/micard/add_credit.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-2').src='images/micard/add_credit.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
       </div>
       <div class="two_grid two_grid_large content_half_space">
         <div class="content_inside_space">
@@ -352,7 +373,14 @@
           <p>• Easy to select ingredients with the pictures.</p>
           <p>• The notifications tell users the pickup time.</p>
         </div>
-        <img src="images/micard/pre_order.gif">
+        <div>
+          <img id="gif-3" src="images/micard/pre_order.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-3').src='images/micard/pre_order.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
       </div>
       <div class="two_grid two_grid_large content_half_space">
         <div class="content_inside_space">
@@ -363,7 +391,14 @@
           <p>• Easy step to pay with mobile.</p>
           <p>• Timer counts automatically.</p>
         </div>
-        <img src="images/micard/laundry.gif">
+        <div>
+          <img id="gif-4" src="images/micard/laundry.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-4').src='images/micard/laundry.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
       </div>
     </div>
 
