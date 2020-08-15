@@ -60,6 +60,14 @@ video {
 a {
   cursor: pointer;
   text-decoration: none;
+  background: linear-gradient(to right, #fff 50%, rgba(0,0,0,0) 50%);
+  background-size: 0% 2px;
+  background-position:left bottom;
+  background-repeat: no-repeat;
+  transition: all 0.9s ease;
+}
+a:hover {
+  background-size: 200% 2px;
 }
 
 subtitle {
@@ -284,11 +292,10 @@ subtitle {
   float: left;
   padding-right: 10px;
 }
-.contact_container i, .contact_container a p {
+.contact_container p {
   margin-top: 20px;
 }
-
-.contact_container a:first-of-type p, .contact_container a:first-of-type i {
+.contact_container p:first-of-type {
   margin-top: 30px;
 }
 .copyright {
