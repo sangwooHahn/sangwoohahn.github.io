@@ -68,7 +68,7 @@ subtitle {
 .title_container {
   height: 100vh; /*95vh;*/
   top:0;
-  background-color: rgb(77,77,77);
+  background-color: #000;/*rgb(77,77,77);*/
 }
 
 

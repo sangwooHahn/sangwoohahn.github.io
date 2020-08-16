@@ -292,10 +292,10 @@ subtitle {
   float: left;
   padding-right: 10px;
 }
-.contact_container p {
+.contact p {
   margin-top: 20px;
 }
-.contact_container p:first-of-type {
+.contact p:first-of-type {
   margin-top: 30px;
 }
 .copyright {

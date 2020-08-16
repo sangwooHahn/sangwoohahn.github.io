@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sangwoo Portfolio</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+      $(document).ready(function(){ /* control all page of the special colors*/
+        var color = ('#5DA929');
+        $('h2').css('color',color);
+        $('h3').css('color',color);
+        $('.go_back div').css('color',color);
+        $('.nav').css('background-image','linear-gradient(to right, #5DA929 60%, #fff)');
+        $('.title_container').css('background-image','linear-gradient(to right, #5DA929 60%, #fff)');
+        $('.color_box').css('background-image','linear-gradient(to right, #5DA929 60%, #fff)');
+        $('.color_button').css('background-image','linear-gradient(to right, #5DA929 60%, #fff)');
+        $('.color_button h2').css('color','#fafafa');
+        $('.color_box > div > h3').css('color','#fafafa');
+        $('.contact_container div h3').css('color','#fafafa');
+        $('.go_back').css('border-left', '2.5px solid '+color);
+        $('.go_back').css('border-top', '2.5px solid '+color);
+       });
+
+       window.open_about = function() {
+         localStorage.setItem("click_open", "about_show");
+       }
+    </script>
+    <style>
+      .title_container {
+        height:50vh;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div>
+        <ul>
+          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+          <li><a href="index.html#body_cont">Portfolio</a></li>
+          <li><a href="index.html#contact_cont">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+
+    <div class="title_container">
+      <div>
+        <div class="title_description">
+          <subtitle>Page not found</subtitle>
+          <h1>404</h1>
+          <p>oooooops! Something missing.</p>
+        </div>
+      </div>
+    </div>
+    <img class ="pattern_image" src="images/patterns/pattern.png">
+
+    <div class="contact_container">
+      <div class="contact">
+        <h3>Contact</h3>
+        <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
+        <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
+        <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
+      </div>
+      <div class="copyright">
+        <div>
+          <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
