@@ -27,6 +27,8 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
     $(window).on('scroll',function(){
+      var title_image_back_position = Math.round($(window).scrollTop() / $(window).height() * 140);
+      $('.title_image_back').css('transform','translateX('+(title_image_back_position)+'%)');
       var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 100);
       $('.title_image').css('transform','translateX('+(title_image_position)+'%)');
       var title_image_overlap_position = Math.round($(window).scrollTop() / $(window).height() * 70);
@@ -117,7 +119,7 @@
     }
 
 
-    .title_image, .title_image_overlap {
+    .title_image, .title_image_overlap, .title_image_back {
       position: fixed;
       /* top:6vw; */
       bottom:0vw;
@@ -134,7 +136,7 @@
 
     /*Tablet*/
     @media screen and (min-width: 600px) and (max-width: 1156px) {
-      .title_image, .title_image_overlap {
+      .title_image, .title_image_overlap, .title_image_back {
         width: 100%;
       }
       .content_inside_space {
@@ -155,7 +157,7 @@
 
     /*Smart phone*/
     @media screen and (max-width: 599px) {
-      .title_image, .title_image_overlap {
+      .title_image, .title_image_overlap, .title_image_back {
         width: 150%;
       }
       .title_image img {
@@ -200,7 +202,8 @@
       </div>
     </div>
     <img class ="pattern_image" src="images/patterns/pattern.png">
-    <img class ="title_image" src="images/daydream/title_bg.png">
+    <img class ="title_image_back" src="images/daydream/title_back.png">
+    <img class ="title_image" src="images/daydream/title_middle.png">
     <img class ="title_image_overlap" src="images/daydream/title_front.png">
 
     <div class="content_container">
