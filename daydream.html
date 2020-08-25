@@ -27,12 +27,12 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
     $(window).on('scroll',function(){
-      var title_image_back_position = Math.round($(window).scrollTop() / $(window).height() * 140);
-      $('.title_image_back').css('transform','translateX('+(title_image_back_position)+'%)');
-      var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 100);
-      $('.title_image').css('transform','translateX('+(title_image_position)+'%)');
-      var title_image_overlap_position = Math.round($(window).scrollTop() / $(window).height() * 70);
-      $('.title_image_overlap').css('transform','translateX('+(title_image_overlap_position)+'%)');
+      var title_image_back_position = Math.round($(window).scrollTop() / $(window).height() * 140*10);
+      $('.title_image_back').css('transform','translateX('+(title_image_back_position/10)+'%)');
+      var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 100*10);
+      $('.title_image').css('transform','translateX('+(title_image_position/10)+'%)');
+      var title_image_overlap_position = Math.round($(window).scrollTop() / $(window).height() * 70*10);
+      $('.title_image_overlap').css('transform','translateX('+(title_image_overlap_position/10)+'%)');
     });
 
       $(document).ready(function(){ /* control all page of the special colors*/

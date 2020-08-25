@@ -27,8 +27,8 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
       $(window).on('scroll',function(){
-        var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 300);
-        $('.title_image_overlap').css('transform','translateX('+(-title_image_position)+'%)');
+        var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 300*10);
+        $('.title_image_overlap').css('transform','translateX('+(-title_image_position/10)+'%)');
 
         if(title_image_position > 0) {
           $('.title_image').css('filter','hue-rotate(170deg) saturate(300%) hue-rotate(40deg)');
