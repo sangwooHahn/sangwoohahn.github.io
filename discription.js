@@ -43,7 +43,7 @@ const discriptionList = [
   "question mark : As one of the special characters, use it instead of a period at the end of a sentence in a question.",
   "readability : Transfont's alphabet is not made with readability at its core. However, it is designed to be read like an alphabet with minimal characteristics of the alphabet.",
   "response : Transfont responds in real-time. It changes shape according to human behavior, and it changes continuously through change.",
-  "sangwoo hahn : The designer of the Transfont. Visit this website to explore his various other works. <a style='color:black;' href='https://sangwoohahn.com'>sangwoohahn.com</a>",
+  "sangwoo hahn : The designer of the Transfont. Visit this website to explore his various other works. <a style='color:black;' href='https://sangwoohahn.com' target='_blank'>sangwoohahn.com</a>",
   "sans serif : One of the forms of fonts, a term referring to fonts that do not have serifs.",
   "serif : Meaning the decoration on the end of a font. The typeface without it is called Sans serif.",
   "sound : Considering the characteristics of transponders that work in the form of fonts by hand and body, sound is another element that controls web pages.",
