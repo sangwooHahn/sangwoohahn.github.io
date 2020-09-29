@@ -34,7 +34,7 @@ ul {
   align-items: center;
   /* background-color: salmon; */
   color: #1840CF;
-  padding-left: 20px;
+  padding-left: 30px;
   font-size: 1.4em;
   /* font-weight: bold; */
 }
@@ -86,7 +86,7 @@ ul {
 #control_container {
   color: white;
   font-size: 1.4em;
-  margin-top: 25vh;
+  margin-top: 35px;
   padding-left: 30px;
 }
 #allListID, #left_arrow, #right_arrow, #title_ID {
@@ -103,7 +103,7 @@ ul {
 #list_container {
   color: white;
   font-size: 1.4em;
-  /* margin-top: 30vh; */
+  margin-top: 25vh;
   height: 65vh;
   overflow: auto;
 }
@@ -117,6 +117,57 @@ ul {
 #list_container li:hover {
   background-color: #3057e3;
 }
-#list_container li:hover::before {
-  content: '◄ ';
+
+
+/*Desktop*/
+@media screen and (min-width: 1100px) {
+  #list_container li:hover::before {
+    content: '◄ ';
+  }
+}
+
+/*Small size*/
+@media screen and (max-width: 1100px) {
+  .container_right {
+    grid-template-rows: auto 80px;
+  }
+  .container {
+    grid-template-columns: auto;
+    grid-template-rows: auto 440px;
+  }
+  #list_container {
+    margin-top: 20px;
+    height: 262px;
+  }
+  #list_container li {
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+  #control_container {
+    position : relative;
+    padding-bottom: 5px;
+    margin: 0;
+    height : 20px;
+    grid-row-start: 2;
+  }
+  #alphabet_container {
+    position : relative;
+    grid-row-start: 2;
+    padding-top: 0;
+  }
+  #word {
+    margin-top: 13vh;
+    font-size: 17vw;
+  }
+  #discription {
+    width: 80%;
+    margin-top: 4vh;
+  }
+  #list_container li:hover::before {
+    content: '▲ ';
+  }
+  .control_and_list {
+    display: grid;
+    grid-template-rows: auto 40px;
+  }
 }
