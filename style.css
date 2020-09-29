@@ -183,7 +183,7 @@ ul {
 /*Small height size*/
 @media screen and (max-height: 750px) {
   #word {
-    margin-top: 20%;
+    margin-top: 18%;
   }
   .container {
     grid-template-rows: auto 300px;
@@ -191,5 +191,8 @@ ul {
   #list_container {
     margin-top: 10px;
     height: 160px;
+  }#discription {
+    width: 85%;
+    margin-top: 3vh;
   }
 }
