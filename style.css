@@ -126,7 +126,7 @@ ul {
   }
 }
 
-/*Small size*/
+/*Small width size*/
 @media screen and (max-width: 800px) {
   .container_right {
     grid-template-rows: auto 80px;
@@ -144,6 +144,10 @@ ul {
     padding-top: 5px;
     padding-left: 18px;
   }
+  #alphabet_container div, #alphabet_container i {
+    padding-right: 6px;
+    padding-left: 6px;
+  }
   #control_container {
     position : relative;
     padding-bottom: 5px;
@@ -160,7 +164,7 @@ ul {
     padding-right: 13px;
   }
   #word {
-    margin-top: 13vh;
+    margin-top: 35%;
     font-size: 17vw;
   }
   #discription {
@@ -173,5 +177,19 @@ ul {
   .control_and_list {
     display: grid;
     grid-template-rows: auto 40px;
+  }
+}
+
+/*Small height size*/
+@media screen and (max-height: 750px) {
+  #word {
+    margin-top: 20%;
+  }
+  .container {
+    grid-template-rows: auto 300px;
+  }
+  #list_container {
+    margin-top: 10px;
+    height: 160px;
   }
 }
