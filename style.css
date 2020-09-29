@@ -120,14 +120,14 @@ ul {
 
 
 /*Desktop*/
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 800px) {
   #list_container li:hover::before {
     content: '◄ ';
   }
 }
 
 /*Small size*/
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 800px) {
   .container_right {
     grid-template-rows: auto 80px;
   }
@@ -154,6 +154,7 @@ ul {
     position : relative;
     grid-row-start: 2;
     padding-top: 0;
+    padding-right: 23px;
   }
   #word {
     margin-top: 13vh;
