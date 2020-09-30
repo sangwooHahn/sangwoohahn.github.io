@@ -21,6 +21,9 @@ ul {
   /* background-color: grey; */
   height: 100%;
   width: 100%;
+  background-color: #9eb3ff;
+  transition: background-color .5s ease;
+  /* z-index: -3; */
 }
 .container_right {
   background-color: #1840CF;
@@ -28,15 +31,18 @@ ul {
   grid-template-rows: 50px auto;
   height: 100%;
   width: 100%;
+  z-index: 4;
 }
-.nav {
+#nav {
   display: flex;
   align-items: center;
-  /* background-color: salmon; */
   color: #1840CF;
   padding-left: 30px;
   font-size: 1.4em;
   /* font-weight: bold; */
+  background-color: #9eb3ff;
+  transition: background-color .5s ease;
+  z-index: 5;
 }
 .word_container {
   width: 100%;
@@ -128,17 +134,17 @@ ul {
   }
   #window {
     position: fixed;
-    z-index: -2;
+    z-index: 2;
   }
   #preview {
     position: fixed;
-    z-index: -1;
     /* display: block; */
     padding: 0;
     margin: auto;
     margin-top: 25vh;
     left:50%;
     transform: translateX(-58%);
+    z-index: 3;
   }
 }
 
@@ -155,12 +161,14 @@ ul {
     position: fixed;
     z-index: -2;
     transform: translateY(-23%) scale(0.6);
+    z-index: 2;
   }
   #preview {
     position: fixed;
     z-index: -1;
     margin-top: 0vh;
     transform: translateY(10vw) translateX(-5%) scale(0.8);
+    z-index: 3;
   }
   #list_container {
     margin-top: 20px;
@@ -216,12 +224,14 @@ ul {
     position: fixed;
     z-index: -2;
     transform: translateY(-40%) scale(0.4);
+    z-index: 2;
   }
   #preview {
     position: fixed;
     z-index: -1;
     margin-top: 0vh;
     transform: translateY(-10%) translateX(-60vw) scale(0.4);
+    z-index: 3;
   }
   .container {
     grid-template-rows: auto 300px;
