@@ -64,17 +64,19 @@ function createGlyphCanvas(glyph, sizeX, sizeY) { // 글자 글리프가 들어�
 
 setInterval(function() {
   if(lmt) {
-    t = Math.round(map(mx,200,500,20,200)/10)*10;
+    t = Math.round(map(mx,200,500,200,20)/10)*10;
     if(t<10) t=10;
-    arc = Math.round(map(my,20,300,200,0)/10)*10;
-    if(arc<0) arc=0;
+
   }
   if(!lmt) {
-    lt = map(mx,400,2200,1,0);
-    mh = Math.round(map(my,0,200,400,0)/10)*10;
-    if(mh<0) mh=0;
+    //lt = map(mx,400,2200,1,0);
+    arc = Math.round(map(mx,500,1000,0,200)/10)*10;
+    if(arc<0) arc=0;
   }
+  mh = Math.round(map(my,0,200,400,0)/10)*10;
+  if(mh<0) mh=0;
 
+  lt = 1;
   s = 20;
 
   fontChanged();

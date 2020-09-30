@@ -104,7 +104,7 @@ ul {
   color: white;
   font-size: 1.4em;
   margin-top: 25vh;
-  height: 65vh;
+  height: 59vh;
   overflow: auto;
 }
 #list_container li {
@@ -154,13 +154,13 @@ ul {
   #window {
     position: fixed;
     z-index: -2;
-    transform: translateY(-40%) scale(0.4);
+    transform: translateY(-23%) scale(0.6);
   }
   #preview {
     position: fixed;
     z-index: -1;
     margin-top: 0vh;
-    transform: translateY(-20%) translateX(-18vh) scale(0.6);
+    transform: translateY(10vw) translateX(-5%) scale(0.8);
   }
   #list_container {
     margin-top: 20px;
@@ -191,7 +191,7 @@ ul {
     padding-right: 13px;
   }
   #word {
-    margin-top: 35%;
+    margin-top: 25%;
     font-size: 17vw;
   }
   #discription {
@@ -208,9 +208,20 @@ ul {
 }
 
 /*Small height size*/
-@media screen and (max-height: 750px) and (max-width: 800px) {
+@media screen and (max-height: 500px) and (max-width: 800px) {
   #word {
     margin-top: 18%;
+  }
+  #window {
+    position: fixed;
+    z-index: -2;
+    transform: translateY(-40%) scale(0.4);
+  }
+  #preview {
+    position: fixed;
+    z-index: -1;
+    margin-top: 0vh;
+    transform: translateY(-10%) translateX(-60vw) scale(0.4);
   }
   .container {
     grid-template-rows: auto 300px;
