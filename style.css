@@ -154,13 +154,13 @@ ul {
   #window {
     position: fixed;
     z-index: -2;
-    transform: translateY(-20%);
+    transform: translateY(-40%) scale(0.4);
   }
   #preview {
     position: fixed;
     z-index: -1;
-    margin-top: 8vh;
-    transform: translateX(-14vh) scale(0.6);
+    margin-top: 0vh;
+    transform: translateY(-20%) translateX(-18vh) scale(0.6);
   }
   #list_container {
     margin-top: 20px;
