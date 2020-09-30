@@ -67,8 +67,10 @@ for(let i = 0; i < alphabetList.length; i++) {
 
 
 document.getElementById("title_ID").onclick = function() {
-  wordButtons('Welcome Back!');
-  document.getElementById("discription").innerHTML = 'Choose an alphabet on the right, and move the mouse over the words to see the meaning!';
+  wordButtons('⠀');
+  document.getElementById("discription").innerHTML = 'Welcome to Transfont Dictionary! Transfont is a project for creating custom fonts. Users can change behavior in real-time to influencing the appearance of fonts. These fonts are more personalized than other fonts. If you want more information, please choose an alphabet on the right, and move the mouse over the words to see the meaning!';
+  document.getElementById("preview").style.display = "block";//타이틀 보이게.
+  document.getElementById("window").style.display = "block";//춤추는 인간 보이게.
 };
 
 let allList = '<i class="fas fa-list" id="allListID"></i>';//'<i class="fas fa-sort-alpha-down" id="allListID"></i>';
@@ -172,4 +174,10 @@ function arrowButton (arrow) {//화살표 좌우 기능
 
 function wordButtons(text) { //단어에 올리면 큰단어 글씨 바뀌게 하기
   document.getElementById("word").innerHTML = text;
+  document.getElementById("preview").style.display = "none";//타이틀 안보이게.
+  document.getElementById("window").style.display = "none";//춤추는 인간 안보이게.
 }
+
+
+
+  // document.getElementById('word_t').style.width = document.getElementById('container_left').offsetWidth + "px";

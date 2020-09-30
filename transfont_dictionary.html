@@ -2,20 +2,25 @@
 <html>
   <head>
     <title>Transfont Dictionary</title>
+    <script type="text/javascript" src="dist/opentype.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta charset="utf-8"/>
   </head>
   <body>
+
     <div class="container">
-      <div class="container_left">
+      <div id="container_left">
         <div class="nav"><div id="title_ID"><b>Transfont</b> Dictionary</div></div>
         <div class="word_container">
-          <div id="word">Welcome!</div>
-          <div id="discription">Choose an alphabet on the right, and move the mouse over the words to see the meaning!</div>
+          <div id = "window"></div>
+          <canvas id="preview" width="920" height="300" class="text"></canvas>
+          <div id="word">⠀</div>
+          <div id="discription">Welcome to Transfont Dictionary! Transfont is a project for creating custom fonts. Users can change behavior in real-time to influencing the appearance of fonts. These fonts are more personalized than other fonts. If you want more information, please choose an alphabet on the right, and move the mouse over the words to see the meaning!</div>
         </div>
       </div>
       <div class="container_right">
@@ -30,7 +35,25 @@
       </div>
     </div>
 
+    <div id="myCanvas"></div>
+    <div id="window"></div>
+    <label style="display:none;">Font Size<input type="range" min="10" max="500" step="10" value="150" id="font-size-range" autocomplete="off"><span id="fontSize">150</span></label>
+    <label style="display:none;">thickSize<input type="range" min="10" max="400" step="10" value="120" id="thickSize-range" autocomplete="off"><span id="thickSize">100</span></label>
+    <label style="display:none;">Width<input type="range" min="10" max="800" step="10" value="600" id="width-range" autocomplete="off"><span id="widthSize">600</span></label>
+    <label style="display:none;">Arc<input type="range" min="0" max="500" step="10" value="200" id="arc-range" autocomplete="off"><span id="arcSize">100</span></label>
+    <label style="display:none;">middle-height<input type="range" min="10" max="700" step="10" value="300" id="mh-range" autocomplete="off"><span id="mhSize">300</span></label>
+    <label style="display:none;">light-thick<input type="range" min="0" max="10" step="1" value="10" id="lt-range" autocomplete="off"><span id="ltSize">1</span></label>
+    <label style="display:none;"><input type="checkbox" onchange="serifChanged(this)">serif</label>
+    <label style="display:none;">serif-weight<input type="range" min="0" max="150" step="10" value="70" id="serif-range" autocomplete="off"><span id="serifSize">70</span></label>
+    <label style="display:none;">serif-height<input type="range" min="0" max="150" step="10" value="100" id="sh-range" autocomplete="off"><span id="shSize">100</span></label>
+
+    <input style="display:none;" type="text" class="text-input" onkeyup="renderTextPreview()" value="Transfont" autofocus id="textField">
+    <div id="glyphs" style="display:none;"></div>
+
+
+    <script src="transfont_s.js"></script>
     <script src="dictionary.js"></script>
+    <script src="dance.js"></script>
     <script src="discription.js"></script>
   </body>
 </html>
