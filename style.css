@@ -160,14 +160,15 @@ ul {
   #window {
     position: fixed;
     z-index: -2;
-    transform: translateY(-23%) scale(0.6);
+    transform: translateY(-28%) scale(0.6);
     z-index: 2;
   }
   #preview {
     position: fixed;
     z-index: -1;
     margin-top: 0vh;
-    transform: translateY(10vw) translateX(-5%) scale(0.8);
+    left:60%;
+    transform: translateY(10vw) translateX(-45%) scale(0.7);
     z-index: 3;
   }
   #list_container {
@@ -216,21 +217,21 @@ ul {
 }
 
 /*Small height size*/
-@media screen and (max-height: 500px) and (max-width: 800px) {
+@media screen and (max-height: 800px) and (max-width: 800px) {
   #word {
-    margin-top: 18%;
+    margin-top: 15px;
   }
   #window {
     position: fixed;
     z-index: -2;
-    transform: translateY(-40%) scale(0.4);
+    transform: translateY(-35%) scale(0.4);
     z-index: 2;
   }
   #preview {
     position: fixed;
     z-index: -1;
     margin-top: 0vh;
-    transform: translateY(-10%) translateX(-60vw) scale(0.4);
+    transform: translateY(-30%) translateX(-60vw) scale(0.4);
     z-index: 3;
   }
   .container {

@@ -68,7 +68,7 @@ for(let i = 0; i < alphabetList.length; i++) {
 
 document.getElementById("title_ID").onclick = function() {
   wordButtons('⠀');
-  document.getElementById("discription").innerHTML = 'Welcome to Transfont Dictionary! Transfont is a project for creating custom fonts. Users can change behavior in real-time to influencing the appearance of fonts. These fonts are more personalized than other fonts. If you want more information, please choose an alphabet on the right, and move the mouse over the words to see the meaning!';
+  document.getElementById("discription").innerHTML = 'Welcome to Transfont Dictionary! Transfont is a project that connects individuals and fonts. Fonts are designed to transform the shape by users\' movement. It will create you the most personalized fonts. If you want more information, please choose an alphabet on the right, and move the mouse over the words to see the meaning!';
   document.getElementById("preview").style.display = "block";//타이틀 보이게.
   document.getElementById("window").style.display = "block";//춤추는 인간 보이게.
   document.getElementById("nav").style.backgroundColor = clickedColor;//배경색깔
