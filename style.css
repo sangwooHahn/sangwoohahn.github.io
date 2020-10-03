@@ -131,7 +131,7 @@ ul {
 
 
 /*Desktop*/
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1000px) {
   #list_container li:hover::before {
     content: '◄ ';
   }
@@ -152,7 +152,7 @@ ul {
 }
 
 /*Small width size*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .container_right {
     grid-template-rows: auto 80px;
   }

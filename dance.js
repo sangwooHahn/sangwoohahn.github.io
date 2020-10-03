@@ -32,7 +32,7 @@ var lmt; // left mouse true // 마우스가 캐릭보다 왼쪽
 
 function setup() {
   let screen;
-  if(windowWidth > 800)
+  if(windowWidth > 1000)
     screen  = createCanvas(windowWidth-420, windowHeight/2.5);
   else
     screen  = createCanvas(windowWidth, windowHeight/2.5);
@@ -222,7 +222,7 @@ function segment(x, y, a) {
 }
 
 function windowResized() {
-  if(windowWidth > 800)
+  if(windowWidth > 1000)
     resizeCanvas(windowWidth-420, windowHeight/2.5);
   else
     resizeCanvas(windowWidth, windowHeight/2.5);
