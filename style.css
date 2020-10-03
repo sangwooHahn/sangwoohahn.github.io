@@ -231,7 +231,7 @@ ul {
   #window {
     position: fixed;
     z-index: -2;
-    transform: translateY(-35%) scale(0.4);
+    transform: translateY(-37%) scale(0.4);
     z-index: 2;
   }
   #preview {
