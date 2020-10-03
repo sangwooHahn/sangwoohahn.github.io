@@ -123,6 +123,9 @@ ul {
 #list_container li:hover {
   background-color: #3057e3;
 }
+#word {
+  line-height: 0.9em;
+}
 
 
 
@@ -219,7 +222,7 @@ ul {
 /*Small height size*/
 @media screen and (max-height: 800px) and (max-width: 800px) {
   #word {
-    margin-top: 15px;
+    margin-top:5px;
   }
   #window {
     position: fixed;
@@ -231,6 +234,7 @@ ul {
     position: fixed;
     z-index: -1;
     margin-top: 0vh;
+    left:0%;
     transform: translateY(-30%) translateX(-60vw) scale(0.4);
     z-index: 3;
   }
