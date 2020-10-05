@@ -9,7 +9,7 @@ const discriptionList = [
   "communication : Are you ready to communicate with Font? The Transfont will be the best font in response to your actions and comments.",
   "camera : Use to control the font by operating a camera connected to the computer. Camera images are shown on the web in real time, and this is a safe form that is not recorded or transmitted.",
   "control : Each element of the font changes depending on the behavior of the user's body. Users can directly control each element.",
-  "counter space : an empty space as one of the components of the font. For example,  A, D, and R have counter space, and E and F have no counter space.",
+  "counter : an empty space as one of the components of the font. For example,  A, D, and R have counter space, and E and F have no counter space.",
   "css :A language used to add design to a web language written in html. This allows you to adjust everything, including color and composition size, and also adds a very simple movement.",
   "descender, The part of the type that falls below the baseline. The word that has this is p,q,j,y,etc.",
   "digital : Transfont is a digital-based font production project. Everything is digital.",
