@@ -54,7 +54,7 @@ let cb = 'ellipse'; //current brush
 let bbc = false; // brush button clicked
 let cbc = false; // clear button clicked
 let obc = false; // opacity button clicked
-let uo = true; // UI opend 
+let uo = true; // UI opend
 let countOldPoint = 0;//for connect brush
 let oldPointX = [];
 let oldPointY = [];
@@ -288,8 +288,10 @@ const colorButton0 = {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  dCanvas = createGraphics(windowWidth, windowHeight);
+  let newCanvas = createCanvas(windowWidth, windowHeight-105);
+  dCanvas = createGraphics(windowWidth, windowHeight-105);
+  newCanvas.parent("photoshop");
+  dCanvas.parent("photoshop");
   dCanvas.clear();
 
   cursor('none');
@@ -484,16 +486,16 @@ function insideRandomButton(buttonNum, num) {
 function alertPopup(text) {
   noStroke();
   fill(0, 80);
-  rect(0, 0, windowWidth, windowHeight);
+  rect(0, 0, windowWidth, windowHeight-105);
   fill(240);
   button5.x = windowWidth / 2 - button5.xs / 2 - 70;
   button6.x = windowWidth / 2 - button6.xs / 2 + 70;
-  button5.y = windowHeight / 2 + 30;
-  button6.y = windowHeight / 2 + 30;
-  rect(windowWidth / 2 - 150, windowHeight / 2 - 75, 300, 150, 5);
+  button5.y = (windowHeight-105) / 2 + 30;
+  button6.y = (windowHeight-105) / 2 + 30;
+  rect(windowWidth / 2 - 150, (windowHeight-105) / 2 - 75, 300, 150, 5);
   drawButtons(button5, 'Clear (y)', 'red', 15, 5, 220, 230);
   drawButtons(button6, 'Cancel (n)', 0, 15, 5, 220, 230);
-  bigText(text, windowWidth / 2, windowHeight / 2 - 20);
+  bigText(text, windowWidth / 2, (windowHeight-105) / 2 - 20);
 }
 
 //big h1 text
@@ -614,8 +616,8 @@ function brushImagesOnList() {
     ellipse(88, 434, 6);
     ellipse(102, 434, 6);
     ellipse(95, 435, 30, 30);
-    
-    
+
+
 
     //shortcut text for brush list
     noStroke();
@@ -1011,7 +1013,7 @@ function drawingCanvas() {
           dCanvas.ellipse(random(mouseX - cbs, mouseX + cbs), random(mouseY - cbs, mouseY + cbs), randomCbs, randomCbs);
           dCanvas.ellipse(random(mouseX - cbs, mouseX + cbs), random(mouseY - cbs, mouseY + cbs), randomCbs, randomCbs);
           dCanvas.ellipse(random(mouseX - cbs, mouseX + cbs), random(mouseY - cbs, mouseY + cbs), randomCbs, randomCbs);
-          //draw ellipse with color      
+          //draw ellipse with color
           break;
         case 'rotate':
           dCanvas.strokeWeight(cbs * 0.1);
@@ -1032,7 +1034,7 @@ function drawingCanvas() {
           dCanvas.stroke(cc.r, cc.g, cc.b, ca);
           dCanvas.line(mouseX, mouseY, pmouseX, pmouseY);
 
-          
+
           for (let j = 0; j < countOldPoint; j++) {
             dCanvas.strokeWeight(cbs * 0.03);
             if (oldPointX[j]!=undefined)
@@ -1041,7 +1043,7 @@ function drawingCanvas() {
           oldPointX[countOldPoint] = mouseX;
           oldPointY[countOldPoint] = mouseY;
           countOldPoint++;
-          
+
           if(countOldPoint > 8)
             countOldPoint = 0;
           break;
@@ -1097,7 +1099,7 @@ function mouseCursor() {
   fill(0);
   if ((mouseY > interfaceH && // interface area
       (!bbc || ((mouseX < button01.x || mouseX > button01.x + button01.xs) || mouseY > button08.y + button08.ys)) && //brush list down
-      (!cbc || (mouseX < windowWidth / 2 - 150 || mouseX > windowWidth / 2 + 150) || (mouseY < windowHeight / 2 - 75 || mouseY > windowHeight / 2 + 75))) || (!uo && (mouseY < windowHeight / 2 - 75 || mouseY > windowHeight / 2 + 75))) { //when inside interface
+      (!cbc || (mouseX < windowWidth / 2 - 150 || mouseX > windowWidth / 2 + 150) || (mouseY < (windowHeight-105) / 2 - 75 || mouseY > (windowHeight-105) / 2 + 75))) || (!uo && (mouseY < (windowHeight-105) / 2 - 75 || mouseY > (windowHeight-105) / 2 + 75))) { //when inside interface
     noFill();
     switch (cb) {
       case 'ellipse':
@@ -1178,6 +1180,6 @@ function mouseCursor() {
 
 //resizing window
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
-  dCanvas = createGraphics(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight-105);
+  dCanvas = createGraphics(windowWidth, windowHeight-105);
 }
