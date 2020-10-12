@@ -238,7 +238,7 @@
           .grind_in_grid_column {
             grid-template-columns: 45% 55%;
           }
-          .inside_img_mac, .inside_img_mobile {
+          /* .inside_img_mac, .inside_img_mobile {
             height: 55vw;
             width: 85vw;
           }
@@ -255,9 +255,33 @@
              left: 78px;
              transform: translate(37.5vw,2.8vw);
              z-index: 9999;
-           }
+           } */
            .four_grid {
              grid-template-columns: repeat(2,1fr);
+           }
+        }
+        /*under 1000px*/
+        @media screen and (min-width: 600px) and (max-width: 1000px) {
+          .inside_img_container {
+            width: 100vw;
+          }
+          .inside_img_mac {
+            height: 61vw;
+            width: 100vw;
+          }
+          .inside_img_mac > div {
+            top: 15.7%;
+            height: 65%;
+            width: 62.7%;
+          }
+          .inside_img_mobile {
+            height: 65vw;
+            width: 100vw;
+          }
+          .inside_img_frame {
+            margin: inherit;
+            width: 12%;
+            transform: translate(44vw,3.7vw);
            }
         }
 
@@ -311,7 +335,7 @@
             width: 22%;
             margin: inherit;
             left: 0px;
-            transform: translate(39vw,1.5vw);
+            transform: translate(39vw,1.6vw);
             z-index: 9999;
            }
            .multi_grid {
