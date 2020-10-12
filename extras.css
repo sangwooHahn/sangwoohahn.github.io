@@ -228,9 +228,14 @@ subtitle {
   padding-bottom: 10px;
 }
 
-#momap, #foodtruck, #obang, #identity, #animate, #SMC, #gif, #sequence, #foodtruck_motion, #room {
+#momap, #foodtruck, #obang, #identity, #animate, #SMC, #gif, #sequence, #foodtruck_motion, #room, #photoshop {
   display: none;
 }
+#photoshop {
+  margin: 0px;
+  padding: 0px;
+}
+
 .title_container img {
   cursor: pointer;
 }

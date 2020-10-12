@@ -22,6 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="extras.css">
+    <script src="p5/p5.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
       $(document).ready(function(){ /* control all page of the special colors*/
@@ -42,13 +43,14 @@
         }
        });
        window.buttons = function() {
-       document.getElementById("sketches").style.display = "none";
+         document.getElementById("sketches").style.display = "none";
          document.getElementById("animate").style.display = "none";
          document.getElementById("SMC").style.display = "none";
-           document.getElementById("gif").style.display = "none";
+         document.getElementById("gif").style.display = "none";
          document.getElementById("sequence").style.display = "none";
          document.getElementById("foodtruck_motion").style.display = "none";
          document.getElementById("room").style.display = "none";
+         document.getElementById("photoshop").style.display = "none";
          $('video').trigger('pause');
        }
        window.button1 = function() {
@@ -71,6 +73,9 @@
        }
        window.button7 = function() {
          document.getElementById("room").style.display = "block";
+       }
+       window.button8 = function() {
+         document.getElementById("photoshop").style.display = "block";
        }
        window.open_foodtruck = function() {
          localStorage.setItem("click_open", "foodtruck_show");
@@ -102,6 +107,7 @@
         <img onclick="buttons(); button5();" src="images/motions/sequence.gif">
         <img onclick="buttons(); button6();" src="images/motions/move.jpg">
         <img onclick="buttons(); button7();" src="images/motions/test0147.png">
+        <img onclick="buttons(); button8();" src="images/motions/photoshop.png">
       </div>
     </div>
 
@@ -157,6 +163,10 @@
       <div class="content_half_space">
         <iframe width="1000" height="600" src="https://www.youtube.com/embed/Cg936WKZoAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
+    </div>
+
+    <div id="photoshop" class="content_container content_space">
+      <script src="p5/wackyphotoshop.js"></script>
     </div>
 
     <!-- <div class="contact_container content_space">
