@@ -51,8 +51,8 @@ function draw() {
 function drawBackground(sh) {
   noiseSeed(sh);
   fill(0,0,0,110);
-  drawingContext.shadowColor = color(60);//almost same as fill
-  drawingContext.shadowBlur = 300;
+  drawingContext.shadowColor = color(10);//almost same as fill
+  drawingContext.shadowBlur = 500;
   beginShape();
   vertex(0, height);
   for (let i = -width; i <= width * 3; i += (sin(frameCount / 200) + 2) * 30)
