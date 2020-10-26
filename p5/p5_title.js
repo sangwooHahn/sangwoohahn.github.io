@@ -40,6 +40,7 @@ function draw() {
     drawingContext.shadowBlur = 0;
     drawName();
   }
+    noStroke();
     drawBackground(height - (i * 250));
 }
   // ml ();

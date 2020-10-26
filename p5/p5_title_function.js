@@ -6,6 +6,7 @@ function names(_x,_y,_r,_g,_b) {
 
   c = color(_r,_g,_b);
   fill(c);
+  stroke(c);
 
   aa(0,0);
   oo((w+gw)/2,h+gh);
@@ -13,6 +14,7 @@ function names(_x,_y,_r,_g,_b) {
 
   c = color(_r,_g,_b*0.6);
   fill(c);
+  stroke(c);
 
   if(!kr) {
     ss(-w-gw,0,arc);
