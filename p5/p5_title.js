@@ -35,7 +35,7 @@ function draw() {
   background(255);
   noStroke();
 
-  for (let i = 4; i > 0; i--) {
+  for (let i = 5; i > 0; i--) {
   if(i==2) {
     drawingContext.shadowBlur = 0;
     drawName();
