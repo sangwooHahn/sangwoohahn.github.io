@@ -26,34 +26,55 @@ function setup() {
   stw = 10;
   stwb = true;
   r=0;
+
+  // rsm = random(1000);
+  // rom = random(6, 12);
 }
 
 function draw() {
-  background(0);
-
+  background(255);
   noStroke();
+
+  for (let i = 4; i > 0; i--) {
+  if(i==2) {
+    drawingContext.shadowBlur = 0;
+    drawName();
+  }
+    drawBackground(height - (i * 250));
+}
+  // ml ();
+  drawTitle();
+  controls();
+}
+
+function drawBackground(sh) {
+  noiseSeed(sh);
+  fill(0,0,0,110);
+  drawingContext.shadowColor = color(60);//almost same as fill
+  drawingContext.shadowBlur = 300;
+  beginShape();
+  vertex(0, height);
+  for (let i = -width; i <= width * 3; i += (sin(frameCount / 200) + 2) * 30)
+    vertex(i, sh + noise(i / 200) * noise(frameCount / 100) * 400); // multiple vertexes
+  vertex(width, height);
+  endShape();
+}
+
+function drawName() {
   r++;
-  if(r>361)
-  r=0;
-  // names(sx+mouseY/10,sy+mouseX/10,r,70,7);
-  names(sx-mouseY/10,sy-mouseX/10,r,0,3);
-  names(sx-mouseX/10,sy-mouseY/10,r,70,3);
-  names(sx+mouseX/10,sy+mouseY/10,r,70,3);
-  // names(sx+t/3,sy,r,70,70);
-  // names(sx+t/4,sy,r,70,70);
-
-  ml ();
-
-  noStroke();
+  if(r>361) r=0;
+  // names(sx-mouseY/10,sy-mouseX/10,r,0,3);
+  // names(sx-mouseX/10,sy-mouseY/10,r,70,3);
+  // names(sx+mouseX/10,sy+mouseY/10,r,70,3);
   names(sx,sy,r,70,100);
+}
 
+function drawTitle () {
   c = color(r,70,70);
   fill(c);
   textSize(16);
   textAlign(CENTER, CENTER);
   text('Interaction Designer',width/2,height_s-100);
-
-  controls();
 }
 
 function mouseClicked() {
