@@ -32,10 +32,10 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(0);
   noStroke();
 
-  for (let i = 6; i > 0; i--) {
+  for (let i = 5; i > 0; i--) {
   if(i==2) {
     drawingContext.shadowBlur = 0;
     drawName();
