@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sangwoo Portfolio</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="portfolio.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+      $(document).ready(function(){ /* control all page of the special colors*/
+         var color = ('#07248c');
+         $('h2').css('color',color);
+         $('h3').css('color',color);
+         $('.go_back div').css('color',color);
+         $('.nav').css('background-color',color);
+         $('.title_container').css('background-color',color);
+         $('.color_box').css('background-color',color);
+         $('.color_button').css('background-color',color);
+         $('.color_button h2').css('color','#fafafa');
+         $('.color_box > div > h3').css('color','#fafafa');
+         $('.contact_container div h3').css('color','#fafafa');
+         $('.go_back').css('border-left', '2.5px solid '+color);
+         $('.go_back').css('border-top', '2.5px solid '+color);
+      });
+      window.open_about = function() {
+        localStorage.setItem("click_open", "about_show");
+      }
+    </script>
+    <style>
+
+
+    .title_image {
+      position: absolute;
+      right: 6vw;
+      bottom: 25vh;
+      height: 70vh;
+      width: auto;
+      transition:left 1s ease;
+      /* background-color: rgba(0,255,0,0.2); */
+    }
+
+    .two_grid_large {
+      grid-template-columns: 45% 55%;
+    }
+    .two_grid_large img {
+      width: 50%;
+      padding-left: 30%;
+    }
+    .two_grid_large a {
+      margin-left: 24%;
+    }
+    .two_grid_large div:nth-child(2) p {
+      padding: 0;
+      color:#999;
+    }
+    .two_grid_large div:nth-child(2) a {
+      background: linear-gradient(to right, #999 50%, rgba(0,0,0,0) 50%);
+      background-size: 0% 2px;
+      background-position: left bottom;
+      background-repeat: no-repeat;
+    }
+    .two_grid_large div:nth-child(2) a:hover {
+      background-size: 200% 2px;
+    }
+
+
+    @media screen and (min-width: 600px) and  (max-width: 1156px) {
+      .title_image {
+        height: auto;
+        width:60vw;
+        top:150px;
+        bottom: 0;
+      }
+    }
+
+    /*Smart phone*/
+    @media screen and (max-width: 599px) {
+      .title_image {
+        height: auto;
+        width:100vw;
+        left : 0%;
+        clip-path: margin-box;
+      }
+      .two_grid_large {
+        grid-template-columns: 100%;
+      }
+      .two_grid_large img, .two_grid_large a {
+        width: 100%;
+        padding: 0%;
+      }
+    }
+
+
+      .grind_in_grid {
+        margin-top: 60px;
+        width: 100%;
+      }
+      .grind_in_grid img {
+        height: auto;
+        width: 40%;
+        padding-left: 0px;
+      }
+      .grind_in_grid h4 {
+        margin-top: 10px;
+      }
+
+      /*Tablet*/
+      @media screen and (min-width: 600px) and (max-width: 900px) {
+        .grind_in_grid {
+          display: grid;
+          grid-template-columns: 40% 50%;
+        }
+        .tablet_transform_grid {
+          display: inherit;
+        }
+        .grind_in_grid h4 {
+          /* text-align: center; */
+        }
+        .grind_in_grid p {
+          margin-left: 10%;
+          width : 50%;
+        }
+        .grind_in_grid img { /* face image*/
+          width: 80%;
+        }
+        .grind_in_grid div { /* face and title*/
+          padding-left: 16%;
+        }
+        .tablet_transform_grid > img { /* scenario image*/
+          width: 100%;
+          margin-left: 0%;
+        }
+      }
+      /*Smart phone*/
+      @media screen and (max-width: 599px) {
+        .grind_in_grid img {
+          padding-left: 30%;
+        }
+        .grind_in_grid h4 {
+          text-align: center;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div>
+        <ul>
+          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+          <li><a href="index.html#body_cont">Portfolio</a></li>
+          <li><a href="index.html#contact_cont">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+    <div class="title_container">
+      <div>
+        <div class="title_description">
+          <subtitle>Thesis / Interaction Design</subtitle>
+          <h1>Transfont</h1>
+          <p>The project started with the question, “Why don’t people make individual fonts?”
+            and “In which way the font can be more reflective to the individual?”
+            To answer this question, the Transfont connects through the interaction between the font and the users.
+            </p>
+        </div>
+      </div>
+    </div>
+    <img class ="pattern_image" src="images/patterns/pattern.png">
+    <img class ="title_image" src="images/transfont/title.png">
+
+    <div class="content_container">
+      <div class="two_grid content_more_space">
+        <div class="content_inside_space">
+          <h3>Interaction</h3>
+          <p>To deliver the connection between the font and the users, “Interaction” is set as the main keyword.
+            The user’s behavior reflects in the font and appears in the appearance of the font.
+            Through this process, users perceive the font that reflects their actions as their font.</p>
+        </div>
+        <img src="images/transfont/interaction.png">
+      </div>
+
+      <div class="two_grid content_space">
+        <div>
+          <h3>UX Research</h3>
+          <p>Transfont is designed through web pages to reach many users.
+            Users can make fonts through their webcam and microphone.
+            An alternative to webcams and microphones is to provide control bars and the text fields.
+            Users can experience real-time fonts design that respond to their behavior.</p>
+        </div>
+      </div>
+      <!-- <img class="content_half_space"src="images/micard/sketch.png"> -->
+    </div>
+
+    <div class="content_container">
+        <h2 class="content_space">User Flow</h2>
+        <img class="content_half_space" src="images/transfont/userflow.png">
+       <h2 class="content_space">Key Featurese</h2>
+       <img class="content_half_space" src="images/transfont/keyfeatures.png">
+
+       <!-- <h2 class="content_space">Usability Tests</h2> -->
+    </div>
+
+    <!-- <div class="color_box">
+      <div>
+        <h3>Questions</h3>
+        <p>
+          · Can You find account history on November 7? Tell me where you spent money.<br>
+          · Can you find MICA Mobile ID?<br>
+          · Can you find today's Meyerhoff dinner menu?<br>
+          · Can you find way to pre-order egg sandwich in Cafe Doris?<br>
+          · Can you order sandwich with dining dollars?<br>
+          · Can you pay for laundry 09?<br>
+          · Can you add funds in your flex account?<br>
+          · Can you find way to use Dining dollars with MICA pay?
+        </p>
+        <h3>Results of Testing</h3>
+        <p>
+          · Don't need to scroll on the first page with Transaction.<br>
+          · The letters on the button are small, and wish it write in one line.<br>
+          · Dining is better than cafeteria.<br>
+          · It would be nice to have a pre-order button in the menu.<br>
+          · Pre-order does not look like a button, something need to changes.<br>
+          · It says checkout in the middle of the process, so money seems to be paid.<br>
+          · When laundry is finished, the information is small.<br>
+          · Use pop-up when add a funds, instead of double-check on additional pages.<br>
+          · Change the color of each account to a brighter MICA color.
+        </p>
+      </div>
+    </div> -->
+
+    <!-- <div class="content_container">
+      <h2 class="content_space">Key Features</h2>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Mobile ID</h3>
+          <p>• Easily accessible from the First page.</p>
+          <p>• Has a big portrait and a name.</p>
+          <p>• Bar code for rental the book in the library.</p>
+          <p>• Blinking color circle proves it is not a picture.</p>
+          <p>• The color changes every morning to prevent forgery.</p>
+        </div>
+        <div>
+          <img id="gif-1" src="images/micard/id-card.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-1').src='images/micard/id-card.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Add Funds</h3>
+          <p>• Reduced step to one page.</p>
+          <p>• Users can register card and use it quickly.</p>
+          <p>• A reconfirmation is appeared before completion.</p>
+        </div>
+        <div>
+          <img id="gif-2" src="images/micard/add_credit.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-2').src='images/micard/add_credit.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Pre-Order Service</h3>
+          <p>• Able to set pickup time.</p>
+          <p>• Easy to select ingredients with the pictures.</p>
+          <p>• The notifications tell users the pickup time.</p>
+        </div>
+        <div>
+          <img id="gif-3" src="images/micard/pre_order.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-3').src='images/micard/pre_order.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="two_grid two_grid_large content_half_space">
+        <div class="content_inside_space">
+          <h3>Laundry Status</h3>
+          <p>• Users can check laundrt status anywhere.</p>
+          <p>• Saved location's laundry room comes first.</p>
+          <p>• The icon is the same as the actual location.</p>
+          <p>• Easy step to pay with mobile.</p>
+          <p>• Timer counts automatically.</p>
+        </div>
+        <div>
+          <img id="gif-4" src="images/micard/laundry.gif">
+          <p style ="text-align:center">
+            <a onclick="document.getElementById('gif-4').src='images/micard/laundry.gif'">
+              <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
+            </a>
+          </p>
+        </div>
+      </div>
+    </div> -->
+    <img class="content_space" src="images/transfont/typefaces.png">
+
+
+    <div class="content_container">
+      <h2 class="content_space">Resolutions</h2>
+      <p class="two_grid content_half_space">
+        Transfont is a web-based project that easily accessible through the Internet.
+        Various elements transform into user-specific combinations,
+        allow them to create their unique fonts. The font design by the user can be download as an OTF format.
+        Users can install this file and use the font.
+      </p>
+      <div class="content_half_space">
+        <img src="images/transfont/mockup.jpg">
+      </div>
+
+      <a href="transfont_dictionary.html" target="_blank">
+        <div class="color_button content_half_space"><h2>Learn More</h2></div>
+      </a>
+    </div>
+
+    <div class="contact_container content_space">
+      <div class="contact">
+        <h3>Contact</h3>
+        <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
+        <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
+        <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
+      </div>
+      <div class="copyright">
+        <div>
+          <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
