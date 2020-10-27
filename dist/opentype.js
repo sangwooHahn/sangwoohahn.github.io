@@ -604,9 +604,9 @@
 	 * @class
 	 * @constructor
 	 */
-	function Path() {
+	function Path(color='white') {
 	    this.commands = [];
-	    this.fill = 'black';
+	    this.fill = color//'white';
 	    this.stroke = null;
 	    this.strokeWidth = 1;
 	}
@@ -3430,7 +3430,7 @@
 	 * @param  {opentype.Font} if hinting is to be used, the font
 	 * @return {opentype.Path}
 	 */
-	Glyph.prototype.getPath = function(x, y, fontSize, options, font) {
+	Glyph.prototype.getPath = function(x, y, fontSize, options, font, color) {
 	    x = x !== undefined ? x : 0;
 	    y = y !== undefined ? y : 0;
 	    fontSize = fontSize !== undefined ? fontSize : 72;
@@ -3462,7 +3462,7 @@
 	        if (yScale === undefined) { yScale = scale; }
 	    }
 
-	    var p = new Path();
+	    var p = new Path(color);
 	    for (var i = 0; i < commands.length; i += 1) {
 	        var cmd = commands[i];
 	        if (cmd.type === 'M') {
@@ -3572,8 +3572,8 @@
 	 * @param  {number} [fontSize=72] - Font size in pixels. We scale the glyph units by `1 / unitsPerEm * fontSize`.
 	 * @param  {Object=} options - xScale, yScale to stretch the glyph.
 	 */
-	Glyph.prototype.draw = function(ctx, x, y, fontSize, options) {
-	    this.getPath(x, y, fontSize, options).draw(ctx);
+	Glyph.prototype.draw = function(ctx, x, y, fontSize, options, color) {
+	    this.getPath(x, y, fontSize, options, color).draw(ctx);
 	};
 
 	/**
@@ -13209,6 +13209,7 @@
 	Font.prototype.forEachGlyph = function(text, x, y, fontSize, options, callback) {
 	    x = x !== undefined ? x : 0;
 	    y = y !== undefined ? y : 0;
+
 	    fontSize = fontSize !== undefined ? fontSize : 72;
 	    options = Object.assign({}, this.defaultRenderOptions, options);
 	    var fontScale = 1 / this.unitsPerEm * fontSize;
@@ -13252,10 +13253,10 @@
 	 * @param  {GlyphRenderOptions=} options
 	 * @return {opentype.Path}
 	 */
-	Font.prototype.getPath = function(text, x, y, fontSize, options) {
-	    var fullPath = new Path();
+	Font.prototype.getPath = function(text, x, y, fontSize, options, color) {
+	    var fullPath = new Path(color);
 	    this.forEachGlyph(text, x, y, fontSize, options, function(glyph, gX, gY, gFontSize) {
-	        var glyphPath = glyph.getPath(gX, gY, gFontSize, options, this);
+	        var glyphPath = glyph.getPath(gX, gY, gFontSize, options, this, color);
 	        fullPath.extend(glyphPath);
 	    });
 	    return fullPath;
@@ -13308,8 +13309,8 @@
 	 * @param  {number} [fontSize=72] - Font size in pixels. We scale the glyph units by `1 / unitsPerEm * fontSize`.
 	 * @param  {GlyphRenderOptions=} options
 	 */
-	Font.prototype.draw = function(ctx, text, x, y, fontSize, options) {
-	    this.getPath(text, x, y, fontSize, options).draw(ctx);
+	Font.prototype.draw = function(ctx, text, x, y, fontSize, options, color) {
+	    this.getPath(text, x, y, fontSize, options, color).draw(ctx);
 	};
 
 	/**

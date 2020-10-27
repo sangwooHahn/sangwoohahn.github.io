@@ -1,0 +1,230 @@
+html,body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Mukta', sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 400px;
+  height: 100%;
+  width: 100%;
+}
+
+#nav {
+  height: 50px;
+  color: #1840CF;
+  padding-left: 25px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+#container_left {
+  height: 100%;
+  width: 100%;
+}
+
+#preview {
+  position: fixed;
+  width : calc(100% - 400px);
+  margin-top: calc(25vh - 50px);
+  margin-left: 140px;
+  z-index: -1;
+}
+
+form {
+  position: fixed;
+  margin-top: calc(70vh - 50px);
+  margin-left: 140px;
+  width: calc(100vw - 400px - 140px);
+}
+
+form .fa-microphone-alt {
+  display: none;
+  position: fixed;
+  margin-left: 15px;
+  margin-top: 11px;
+  font-size: 1.8em;
+  color: #1840CF;
+}
+form .fa-keyboard {
+  /* display: block; */
+  display: none;
+  position: fixed;
+  margin-left: 12px;
+  margin-top: 12px;
+  font-size: 1.6em;
+  color: #1840CF;
+}
+
+
+form input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #1840CF;
+  border: 3px solid #1840CF;
+  outline: none;
+  /* background-color: #1840CF; */
+  padding: 12px 20px 12px 45px;
+  transition: width 0.4s ease-in-out;
+}
+
+form input[type=text]:focus {
+  width: 50%;
+}
+
+
+#container_right {
+  display: grid;
+  grid-template-rows: 480px auto 60px;
+  width: 100%;
+  /* border-left: 5px solid #1840CF; */
+  background-color: #1840CF;
+}
+
+#glyphs {
+  padding-left: 25px;
+  padding-top: 25px;
+}
+
+#labels {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+#labels > label {
+  display: grid;
+  grid-template-columns: 120px auto;
+  color: white;
+  height: 50px;
+}
+#labels input {
+  margin-top: 24px;
+}
+
+
+#downloadButton {
+  width: 100%;
+  text-align: center;
+  padding-top: 11px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  background-color: #07248c;
+}
+
+#downloadButton:hover {
+  background-color: #609FFF;
+  color: #07248c;
+  cursor: pointer;
+}
+
+.wrapper {
+  float: left;
+  margin: 0px;
+  border:0px solid #ccc;
+}
+
+.customSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #eee;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.customSlider:hover {
+  opacity: 0.7;
+}
+.customSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #07248c;
+  border-radius: 25%;
+  cursor: pointer;
+}
+.customSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #07248c;
+  border-radius: 25%;
+  cursor: pointer;
+}
+
+
+.customCheck {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 12px;
+  margin-top: 18px;
+  cursor: pointer;
+  font-size: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.customCheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkMark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 15%;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.customCheck:hover input ~ .checkMark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.customCheck input:checked ~ .checkMark {
+  background-color: #07248c;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkMark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.customCheck input:checked ~ .checkMark::after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.customCheck .checkMark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
