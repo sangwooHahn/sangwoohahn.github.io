@@ -3,6 +3,7 @@
 function names(_x,_y,_r,_g,_b) {
   push();
   translate(_x,_y);
+  // scale(map(width,0,1500,0.5,1),map(width,0,1500,0.5,1),1);
 
   c = color(_r,_g,_b);
   fill(c);
@@ -38,8 +39,10 @@ function controls() {
     t = mouseY/20;
     if(t<1) t=1;
     // w = (width-mouseX)/8;
-    t = map(mouseY,0,height,37,10);
-    arc = map(mouseX,0,width,w/2,0);
+    t = map(mouseY, 0, height, 10, 37);
+    arc = map(mouseX, 0, width, w/2, 0);
+
+  w = map(width, 0, 1500, 10, 90);
 
   if(w<t+t/4)
     w=t+t/4;
