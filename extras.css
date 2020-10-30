@@ -205,29 +205,6 @@ subtitle {
 }
 
 
-.contact_container {
-  position: relative;
-  z-index: 100;
-  height: 43vh;
-  background-color: #666;
-}
-
-.contact_container div {
-  width: 1000px;
-  height: 100%;
-  margin: auto;
-  color: #fafafa;
-}
-
-.contact_container div h3 {
-  padding-top: 40px;
-  color: #fafafa;
-}
-.contact_container div p:first-of-type {
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
 #momap, #foodtruck, #obang, #identity, #animate, #SMC, #gif, #sequence, #foodtruck_motion, #room, #photoshop {
   display: none;
 }
