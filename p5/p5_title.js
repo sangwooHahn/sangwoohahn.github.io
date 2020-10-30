@@ -47,7 +47,7 @@ function drawBackground(sh,i) {
   noStroke();
   drawingContext.shadowColor = color(0,0,0,30);//almost same as fill
   drawingContext.shadowBlur = 10;
-  fill((frameCount/10+(i*200)+30)%101,80,70);
+  fill((frameCount/10+(i*200)+45)%101,80,70);
   beginShape();
   vertex(0, height);
   curveVertex(0, height);
