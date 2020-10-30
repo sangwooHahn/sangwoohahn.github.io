@@ -1,11 +1,8 @@
 function setup() {
-  var sketchCanvas = createCanvas(windowWidth, windowHeight);
+  var sketchCanvas = createCanvas(windowWidth, windowHeight-50);
   sketchCanvas.parent("myCanvas");
   // background(30);
-
-  height_s = height*0.95;
-  box_on = false;
-  kr = true;
+  kr = false;
   auto_lang = true;
 
   sw = 1; //screenwidth;
@@ -18,71 +15,58 @@ function setup() {
   gw = 10; //gap width;
   gh = 10; //gap height;
 
-  sx = width/2-w-w/3; // start x;
-  sy = height_s/2-h-h/2; // start y;
-
-  colorMode(HSB, 360, 100, 100);
-  c = color(random(0,360),90,100);
+  colorMode(HSB, 100, 100, 100,100);
+  // c = color(random(0,360),90,100);
   stw = 10;
   stwb = true;
   r=0;
 
-  // rsm = random(1000);
-  // rom = random(6, 12);
 }
 
 function draw() {
   background(0);
-  noStroke();
 
-  for (let i = 5; i > 0; i--) {
-  if(i==2) {
-    drawingContext.shadowBlur = 0;
-    drawName();
+  sx = width/2-w; // start x;
+  sy = height/2-h; // start y;
+
+  for (let i = int(height/200)+1; i >= 0; i--) {
+    if(i==0) {
+      drawingContext.shadowBlur = 0;
+      names(sx,sy,r,0,100);
+    }
+    drawBackground(height - (i * 200),i);
   }
-    noStroke();
-    drawBackground(height - (i * 250));
-}
-  // ml ();
+
+  drawingContext.shadowBlur = 0;
   drawTitle();
   controls();
 }
 
-function drawBackground(sh) {
+function drawBackground(sh,i) {
   noiseSeed(sh);
-  fill(0,0,0,110);
-  drawingContext.shadowColor = color(10);//almost same as fill
-  drawingContext.shadowBlur = 500;
+  noStroke();
+  drawingContext.shadowColor = color(0,0,0,30);//almost same as fill
+  drawingContext.shadowBlur = 10;
+  fill((frameCount/10+(i*200)+30)%101,80,70);
   beginShape();
   vertex(0, height);
-  for (let i = -width; i <= width * 3; i += (sin(frameCount / 200) + 2) * 30)
-    vertex(i, sh + noise(i / 200) * noise(frameCount / 100) * 400); // multiple vertexes
+  curveVertex(0, height);
+  for (let i = -width*0.8; i <= width*1.2; i += 170)
+    curveVertex(i, sh - noise(i / 200) * noise(frameCount / 300) * 400); // multiple vertexes
+  curveVertex(width, height);
   vertex(width, height);
   endShape();
 }
 
-function drawName() {
-  r++;
-  if(r>361) r=0;
-  // names(sx-mouseY/10,sy-mouseX/10,r,0,3);
-  // names(sx-mouseX/10,sy-mouseY/10,r,70,3);
-  // names(sx+mouseX/10,sy+mouseY/10,r,70,3);
-  names(sx,sy,r,70,100);
-}
 
 function drawTitle () {
-  c = color(r,70,70);
-  fill(c);
+  fill('white');
   textSize(16);
   textAlign(CENTER, CENTER);
-  text('Interaction Designer',width/2,height_s-100);
-}
-
-function mouseClicked() {
-  auto_lang=!auto_lang;
+  text('Interaction Designer',width/2,height-100);
 }
 
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight-50);
 }

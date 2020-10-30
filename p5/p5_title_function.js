@@ -12,10 +12,6 @@ function names(_x,_y,_r,_g,_b) {
   oo((w+gw)/2,h+gh);
   oo((w+gw)/2+w+gw,h+gh);
 
-  c = color(_r,_g,_b*0.6);
-  fill(c);
-  stroke(c);
-
   if(!kr) {
     ss(-w-gw,0,arc);
     nn(w+gw,0);
@@ -31,21 +27,19 @@ function names(_x,_y,_r,_g,_b) {
 
 function controls() {
 
-  if(frameCount%20==0 && auto_lang)
-    kr = !kr;
+  // if(frameCount%20==0 && auto_lang)
+  //   kr = !kr;
 
   if(h/2 < w/2)
     arc = h/2;
   if(h/2 > w/2)
     arc = w/2;
 
-  if(!mouseIsPressed) {
     t = mouseY/20;
-    if(t<1)
-      t=1;
-    w = (width-mouseX)/8;
-    // arc = mouseX/35+20;
-  }
+    if(t<1) t=1;
+    // w = (width-mouseX)/8;
+    t = map(mouseY,0,height,37,10);
+    arc = map(mouseX,0,width,w/2,0);
 
   if(w<t+t/4)
     w=t+t/4;
@@ -53,43 +47,8 @@ function controls() {
     h=t+t/4;
 
 
-  sx = width/2-w-w/6; // start x;
-  sy = height_s/2-h-h/4; // start y;
-}
-
-function ml () {
-  c = color(r,70,30);
-  stroke(c);
-  if(stwb)
-    stw ++;
-  if(!stwb)
-    stw --;
-  if(stw>60 && stwb)
-    stwb = false;
-  if(stw<10 && !stwb)
-    stwb = true;
-
-  strokeWeight(stw);
-  line(mouseX,mouseY,pmouseX,pmouseY);
-}
-
-function bg () {
-  noStroke();
-  // fill(map(mouseX,0,width,0,360),50,100);
-  // beginShape();
-  // vertex(width/3,0);
-  // vertex(0,0);
-  // vertex(width/3*2,height_s);
-  // vertex(width/3,height_s);
-  // endShape(CLOSE);
-  // noStroke();
-  fill(map(mouseX,0,width,60,300),0,100);
-  beginShape();
-  vertex(width/5*4,0);
-  vertex(width/6*2,0);
-  vertex(0,height_s);
-  vertex(width/6*5,height_s);
-  endShape(CLOSE);
+  // sx = width/2-w-w/6; // start x;
+  // sy = height/2-h-h/4; // start y;
 }
 
 function aa(_x, _y) {
@@ -107,10 +66,6 @@ function aa(_x, _y) {
   vertex(w,h);
   vertex(w-t-t/8,h);
   endShape(CLOSE);
-  stroke(0,200,0);
-  noFill();
-  if(box_on)
-    rect(0,0,w,h);
   pop();
 }
 function ah(_x, _y) {
@@ -128,10 +83,6 @@ function ah(_x, _y) {
   vertex(t+w/2,h/2+t/2);
   vertex(t,h/2+t/2);
   endShape(CLOSE);
-  stroke(200,0,0);
-  noFill();
-  if(box_on)
-    rect(0,0,w,h);
   pop();
 }
 function nn (_x, _y) {
@@ -157,10 +108,6 @@ function nn (_x, _y) {
   vertex(w-t,h);
   vertex(0,t/3);
   endShape(CLOSE);
-  stroke(200,0,0);
-  noFill();
-  if(box_on)
-    rect(0,0,w,h);
   pop();
 }
 function oo(_x, _y) {
@@ -199,11 +146,6 @@ function oo(_x, _y) {
   rect(arc,h-t,w-arc-arc,t);
   rect(0,arc,t,h-arc-arc);
   rect(w-t,arc,t,h-arc-arc);
-
-  stroke(0,200,0);
-  noFill();
-  if(box_on)
-    rect(0,0,w,h);
   pop();
 }
 
@@ -222,10 +164,6 @@ function uu(_x, _y) {
   vertex(w/2+t/2,h/2);
   vertex(w/2-t/2,h/2);
   endShape(CLOSE);
-  stroke(0,100,200);
-  noFill();
-  if(box_on)
-    rect(0,0,w,h);
   pop();
 }
 
@@ -256,10 +194,6 @@ function ww(_x, _y) {
   vertex((w*1.5+t)/4+t/2+(w*1.5+t)/2-t+t/16,h);
   vertex((w*1.5+t)/4-t/2+(w*1.5+t)/2-t-t/16,h);
   endShape(CLOSE);
-  stroke(200,0,0);
-  noFill();
-  if(box_on)
-    rect(0,0,w*1.5,h);
   pop();
 }
 
@@ -320,11 +254,6 @@ function ss (_x, _y, _arc) {
   }
   rect(0, _arc, t, h/2+t/2-_arc-_arc);
   rect(w-t, h/2-t/2+_arc, t, h/2+t/2-_arc-_arc);
-
-  stroke(200,0,0);
-  noFill();
-  if(box_on)
-    rect(0,0,w,h);
   pop();
 }
 
@@ -339,11 +268,14 @@ function gg(_x, _y) {
   bezierVertex(t+(arc-t)/2, t, t, t+(arc-t)/2, t, arc);
   endShape(CLOSE);
 
+  var ggarc = arc;
+  if(ggarc > h/2-t/2-10)
+    ggarc = h/2-t/2-10;
   beginShape();
-  vertex(w-arc, 0);
-  bezierVertex(w-(arc/2), 0, w, arc/2, w, arc);
-  vertex(w-t, arc);
-  bezierVertex(w-t, t+(arc-t)/2, w-t-(arc-t)/2, t, w-arc, t);
+  vertex(w-ggarc, 0);
+  bezierVertex(w-(ggarc/2), 0, w, ggarc/2, w, ggarc);
+  vertex(w-t, ggarc);
+  bezierVertex(w-t, t+(ggarc-t)/2, w-t-(ggarc-t)/2, t, w-ggarc, t);
   endShape(CLOSE);
 
   beginShape();
@@ -360,20 +292,12 @@ function gg(_x, _y) {
   bezierVertex(t, h-t-(arc-t)/2, t+(arc-t)/2, h-t, arc, h-t);
   endShape(CLOSE);
 
-  rect(arc,0,w-arc-arc,t);
+  rect(arc,0,w-arc-ggarc,t);
   rect(arc,h-t,w-arc-arc,t);
   rect(0,arc,t,h-arc-arc);
-  // rect(w-arc,h-arc-t,arc,t); // tail
   if(arc < t)
     rect(w-arc,arc,arc,t-arc); // extra stright right top
-  // if(t<arc) {
-    rect(w/2,h/2-t/2,w/2,t); //tail
-    rect(w-t,h/2-t/2,t,h/2+t/2-arc); //tail
-  // }
-
-  stroke(0,100,200);
-  noFill();
-  if(box_on)
-    rect(0,0,w,h);
+  rect(w/2,h/2-t/2,w/2,t); //tail
+  rect(w-t,h/2-t/2,t,h/2+t/2-arc);
   pop();
 }
