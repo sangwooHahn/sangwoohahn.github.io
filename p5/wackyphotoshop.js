@@ -1180,6 +1180,6 @@ function mouseCursor() {
 
 //resizing window
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight-105);
-  dCanvas = createGraphics(windowWidth, windowHeight-105);
+  // resizeCanvas(windowWidth, windowHeight-105);
+  // dCanvas = createGraphics(windowWidth, windowHeight-105);
 }
