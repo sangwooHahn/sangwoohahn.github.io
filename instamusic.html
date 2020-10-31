@@ -1,114 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sangwoo Portfolio</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="portfolio.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script>
-      $(window).on('scroll',function(){
-        var title_image_position = Math.round($(window).scrollTop() / $(window).height() * -12);
-        $('.title_image').css('transform','translateY('+(-title_image_position)+'%)');
-      });
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
+  $(window).on('scroll',function(){
+    var title_image_position = Math.round($(window).scrollTop() / $(window).height() * -12);
+    $('.title_image').css('transform','translateY('+(-title_image_position)+'%)');
+  });
 
-      $(document).ready(function(){ /* control all page of the special colors*/
-        var color = ('#E1306C');
-        $('h2').css('color',color);
-        $('h3').css('color',color);
-        $('.go_back div').css('color',color);
-        $('.nav').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
-        $('.title_container').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
-        $('.color_box').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
-        $('.color_button').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
-        $('.color_button h2').css('color','#fafafa');
-        $('.color_box > div > h3').css('color','#fafafa');
-        $('.contact_container div h3').css('color','#fafafa');
-        $('.go_back').css('border-left', '2.5px solid '+color);
-        $('.go_back').css('border-top', '2.5px solid '+color);
-       });
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var color = ('#E1306C');
+    $('h2').css('color',color);
+    $('h3').css('color',color);
+    $('.go_back div').css('color',color);
+    $('.nav').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
+    $('.title_container').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
+    $('.color_box').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
+    $('.color_button').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
+    $('.color_button h2').css('color','#fafafa');
+    $('.color_box > div > h3').css('color','#fafafa');
+    $('.contact_container div h3').css('color','#fafafa');
+    $('.go_back').css('border-left', '2.5px solid '+color);
+    $('.go_back').css('border-top', '2.5px solid '+color);
+  });
 
-       window.open_about = function() {
-         localStorage.setItem("click_open", "about_show");
-       }
-    </script>
-    <style>
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+  </script>
+  <style>
 
+  .title_image {
+    position: absolute;
+    right: 0px;
+    bottom: 20vh;
+    height: 76vh;
+    width: auto;
+    transition:left 1s ease;
+    /* background-color: rgba(0,255,0,0.2); */
+  }
+  .content_inside_space {
+    padding-top: 60%;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1156px) {
     .title_image {
-      position: absolute;
-      right: 0px;
-      bottom: 20vh;
-      height: 76vh;
-      width: auto;
-      transition:left 1s ease;
-      /* background-color: rgba(0,255,0,0.2); */
+      bottom: 30%;
+      width: 60vw;
+      height: auto;
     }
     .content_inside_space {
-      padding-top: 60%;
+      padding-top: 30%;
     }
+  }
 
-    /*Tablet*/
-    @media screen and (min-width: 600px) and (max-width: 1156px) {
-      .title_image {
-        bottom: 30%;
-        width: 60vw;
-        height: auto;
-      }
-      .content_inside_space {
-        padding-top: 30%;
-      }
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      bottom: 0%;
+      width: 90vw;
+      height: auto;
     }
+  }
 
-    /*Smart phone*/
-    @media screen and (max-width: 599px) {
-      .title_image {
-        bottom: 0%;
-        width: 90vw;
-        height: auto;
-      }
-    }
-
-    </style>
-  </head>
-  <body>
-    <div class="nav">
-      <div>
-        <ul>
-          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-          <li><a href="index.html#body_cont">Portfolio</a></li>
-          <li><a href="index.html#contact_cont">Contact</a></li>
-        </ul>
-      </div>
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div>
+      <ul>
+        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+        <li><a href="index.html#body_cont">Portfolio</a></li>
+        <li><a href="index.html#contact_cont">Contact</a></li>
+      </ul>
     </div>
-    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-    <div class="title_container">
-      <div>
-        <div class="title_description">
-          <subtitle>UX Research ( Team Project )</subtitle>
-          <h1>InstaMusic</h1>
-          <p>InstaMusic is a music streaming service for Instagram users.
-            Users can listen to and share music anytime while using Instagram.
-            InstaMusic users can view a playlist of their favorite stars or influencers.
-            PC users can use the services directly from a webpage without installation or update.</p>
+  </div>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div>
+      <div class="title_description">
+        <subtitle>UX Research ( Team Project )</subtitle>
+        <h1>InstaMusic</h1>
+        <p>InstaMusic is a music streaming service for Instagram users.
+          Users can listen to and share music anytime while using Instagram.
+          InstaMusic users can view a playlist of their favorite stars or influencers.
+          PC users can use the services directly from a webpage without installation or update.</p>
         </div>
       </div>
     </div>
@@ -124,102 +124,104 @@
             The fandom finds the playlist of its favorite stars and presses heart or listens to music.
             Influencer shares their music playlists for their fans.
             The music lover goes to the music list and listen to and saves categorized music.</p>
+          </div>
+          <img src="images/instamusic/scenario.png">
         </div>
-        <img src="images/instamusic/scenario.png">
-      </div>
-      <div class="two_grid content_space">
-        <div class="content_inside_space">
-          <h3>Design Goal</h3>
-          <p>The main function of InstaMusic is to share and listen to music lists with others.
-            To share music like a photo, album cover uses to visualize music.
-            Categorizes music allows users to make their own lists and post them on a feed.
-            Users looking for music can watch the latest feeds or go into their favorite user’s music albums.</p>
+        <div class="two_grid content_space">
+          <div class="content_inside_space">
+            <h3>Design Goal</h3>
+            <p>The main function of InstaMusic is to share and listen to music lists with others.
+              To share music like a photo, album cover uses to visualize music.
+              Categorizes music allows users to make their own lists and post them on a feed.
+              Users looking for music can watch the latest feeds or go into their favorite user’s music albums.</p>
+            </div>
+            <img src="images/instamusic/inspiration.png">
+          </div>
         </div>
-        <img src="images/instamusic/inspiration.png">
-      </div>
-    </div>
 
 
-    <div class="content_container">
-       <h2 class="content_space">Wire Frame</h2>
-       <h3 class="content_half_space">Mobile version</h3>
-       <img class="content_half_space" src="images/instamusic/wireframe-1.png">
-       <h3 class="content_half_space">Web version</h3>
-       <img src="images/instamusic/wireframe-2.png">
+        <div class="content_container">
+          <h2 class="content_space">User Flow</h2>
+          <img class="content_half_space" src="images/instamusic/userflow.png">
+          <h2 class="content_half_space">Wire Frame</h2>
+          <h3 class="content_half_space">Mobile version</h3>
+          <img class="content_half_space" src="images/instamusic/wireframe-1.png">
+          <h3 class="content_half_space">Web version</h3>
+          <img src="images/instamusic/wireframe-2.png">
 
-       <h2 class="content_space">Usability Tests</h2>
-    </div>
-
-    <div class="color_box">
-      <div>
-        <h3>A fan's point of view</h3>
-        <p>
-          · Can you find your following list?<br>
-          · Can you find your favorite singer (B1A4) on the list?<br>
-          · Do you know where to go to see B1A4's personal playlists?<br>
-          · Do you know how to save a song from B1A4's playlists?<br>
-          · Do you know where you can see all the saved songs?
-        </p>
-        <h3>Influencers' point of view</h3>
-        <p>
-          · Do you know where to go to start creating a playlist?<br>
-          · Can you delete the song "Hold My Hand" from the list?<br>
-          · Can you name your playlists?<br>
-          · After you have created your playlist, can you share it?
-        </p>
-        <h3>No need multitask</h3>
-        <p>
-          · Can you play the song on your playlists from where you are?<br>
-          · Can you tell the name of the song that you are listening to?<br>
-          · While you are listening, can you see the list of the songs?<br>
-          · Tell me the name of the next song.<br>
-          · Can you find others' comments on your playlist feed?
-        </p>
-      </div>
-    </div>
-
-    <div class="content_container">
-      <h2 class="content_space">Key Features</h2>
-      <div>
-        <h3 class="content_half_space">Mobile version</h3>
-        <img src="images/instamusic/keyfeature-1.png">
-        <h3 class="content_half_space">Web version</h3>
-        <img src="images/instamusic/keyfeature-2.png">
-      </div>
-
-      <h2 class="content_space">Resolution</h2>
-      <p class="two_grid content_half_space">
-        InstaMusic is designed to give the same experience as Instagram.
-        The small music bar is to allow users to control music and not interfere with feed appreciation.
-        Users can post music with the same experience as posting photos on Instagram.
-        On mobile, users can create a list of music through the + button at the bottom.
-        Users on the web can choose music from Create My Playlist on the right.
-      </p>
-      <div class="content_half_space">
-        <img src="images/instamusic/mobile_final.png">
-        <img src="images/instamusic/web_final1.png">
-      </div>
-
-      <a href="https://www.figma.com/proto/AxSPQJmAqIBJGAjG0xfVbe/INSTAGRAM?node-id=723%3A1708&viewport=896%2C1792%2C0.06700076907873154&scaling=min-zoom" target="_blank">
-        <div style="margin-bottom:10px;" class="color_button content_half_space"><h2>Web Prototype</h2></div>
-      </a>
-      <a href="https://www.figma.com/proto/AxSPQJmAqIBJGAjG0xfVbe/INSTAGRAM?node-id=1%3A2&viewport=233%2C105%2C0.09654483199119568&scaling=scale-down" target="_blank">
-        <div class="color_button content_half_space"><h2>Mobile Prototype</h2></div>
-      </a>
-    </div>
-
-    <div class="contact_container content_space">
-      <div class="contact">
-        <h3>Contact</h3>
-        <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
-        <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
-        <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
-      </div>
-      <div class="copyright">
-        <div>
-          <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
+          <h2 class="content_space">Usability Tests</h2>
         </div>
-      </div>
-    </div>
-  </body>
-</html>
+
+        <div class="color_box">
+          <div>
+            <h3>A fan's point of view</h3>
+            <p>
+              · Can you find your following list?<br>
+              · Can you find your favorite singer (B1A4) on the list?<br>
+              · Do you know where to go to see B1A4's personal playlists?<br>
+              · Do you know how to save a song from B1A4's playlists?<br>
+              · Do you know where you can see all the saved songs?
+            </p>
+            <h3>Influencers' point of view</h3>
+            <p>
+              · Do you know where to go to start creating a playlist?<br>
+              · Can you delete the song "Hold My Hand" from the list?<br>
+              · Can you name your playlists?<br>
+              · After you have created your playlist, can you share it?
+            </p>
+            <h3>No need multitask</h3>
+            <p>
+              · Can you play the song on your playlists from where you are?<br>
+              · Can you tell the name of the song that you are listening to?<br>
+              · While you are listening, can you see the list of the songs?<br>
+              · Tell me the name of the next song.<br>
+              · Can you find others' comments on your playlist feed?
+            </p>
+          </div>
+        </div>
+
+        <div class="content_container">
+          <h2 class="content_space">Key Features</h2>
+          <div>
+            <h3 class="content_half_space">Mobile version</h3>
+            <img src="images/instamusic/keyfeature-1.png">
+            <h3 class="content_half_space">Web version</h3>
+            <img src="images/instamusic/keyfeature-2.png">
+          </div>
+
+          <h2 class="content_space">Resolution</h2>
+          <p class="two_grid content_half_space">
+            InstaMusic is designed to give the same experience as Instagram.
+            The small music bar is to allow users to control music and not interfere with feed appreciation.
+            Users can post music with the same experience as posting photos on Instagram.
+            On mobile, users can create a list of music through the + button at the bottom.
+            Users on the web can choose music from Create My Playlist on the right.
+          </p>
+          <div class="content_half_space">
+            <img src="images/instamusic/mobile_final.png">
+            <img src="images/instamusic/web_final1.png">
+          </div>
+
+          <a href="https://www.figma.com/proto/AxSPQJmAqIBJGAjG0xfVbe/INSTAGRAM?node-id=723%3A1708&viewport=896%2C1792%2C0.06700076907873154&scaling=min-zoom" target="_blank">
+            <div style="margin-bottom:10px;" class="color_button content_half_space"><h2>Web Prototype</h2></div>
+          </a>
+          <a href="https://www.figma.com/proto/AxSPQJmAqIBJGAjG0xfVbe/INSTAGRAM?node-id=1%3A2&viewport=233%2C105%2C0.09654483199119568&scaling=scale-down" target="_blank">
+            <div class="color_button content_half_space"><h2>Mobile Prototype</h2></div>
+          </a>
+        </div>
+
+        <div class="contact_container content_space">
+          <div class="contact">
+            <h3>Contact</h3>
+            <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
+            <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
+            <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
+          </div>
+          <div class="copyright">
+            <div>
+              <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>

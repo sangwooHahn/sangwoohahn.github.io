@@ -1,378 +1,137 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sangwoo Portfolio</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/jlt4mer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="portfolio.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script>
-      // $(window).on('scroll',function(){
-      //   var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 30);
-      //   $('.title_image').css('transform','rotate('+(-title_image_position)+'deg)'+'scale('+(100+(title_image_position))+'%)');
-      // });
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/jlt4mer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>
 
-      $(document).ready(function(){ /* control all page of the special colors*/
-        var color = ('#C10C0C');
-        $('h2').css('color',color);
-        $('h3').css('color',color);
-        $('.go_back div').css('color',color);
-        $('.nav').css('background-color',color);
-        $('.title_container').css('background-color',color);
-        $('.color_box').css('background-color',color);
-        $('.color_button').css('background-color',color);
-        $('.color_button h2').css('color','#fafafa');
-        $('.color_box > div > h3').css('color','#fafafa');
-        $('.contact_container div h3').css('color','#fafafa');
-        $('.go_back').css('border-left', '2.5px solid '+color);
-        $('.go_back').css('border-top', '2.5px solid '+color);
-       });
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var color = ('#C10C0C');
+    $('h2').css('color',color);
+    $('h3').css('color',color);
+    $('.go_back div').css('color',color);
+    $('.nav').css('background-color',color);
+    $('.title_container').css('background-color',color);
+    $('.color_box').css('background-color',color);
+    $('.color_button').css('background-color',color);
+    $('.color_button h2').css('color','#fafafa');
+    $('.color_box > div > h3').css('color','#fafafa');
+    $('.contact_container div h3').css('color','#fafafa');
+    $('.go_back').css('border-left', '2.5px solid '+color);
+    $('.go_back').css('border-top', '2.5px solid '+color);
+  });
 
-       window.open_about = function() {
-         localStorage.setItem("click_open", "about_show");
-       }
-       </script>
-    </script>
-    <style>
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+  </script>
+</script>
+<style>
 
-    .title_image {
-      position: absolute;
-      right: 5vw;
-      bottom: 35vh;
-      height: 45vh;
-      width: auto;
-      transition:left 1s ease;
-      /* background-color: rgba(0,255,0,0.2); */
-    }
-    .title_image_over {
-      position: absolute;
-      right: 20vw;
-      bottom: 35vh;
-      height: 45vh;
-      width: auto;
-      transition:left 1s ease;
-      /* background-color: rgba(0,255,0,0.2); */
-    }
-    .content_inside_space {
-      padding-top: 170px;
-    }
-    .pattern_image {
-      opacity: 0.4;
-    }
-    .color_box {
-      padding-top: 30px;
-      padding-bottom: 50px;
-    }
-    .color_box > div > p {
-      padding-top: 20px;
-    }
-    .color_palette {
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      grid-template-rows: repeat(2,1fr);
-      grid-column-gap: 5%;
-      grid-row-gap: 30px;
-    }
-    .color_palette div {
-      height: 230px;
-      margin: 40px 10% 0px 10%;
-    }
-    .color_palette p {
-      padding-top: 10px;
-      line-height: 150%;
-    }
-    .grind_in_grid {
-      margin-top: 60px;
-      width: 100%;
-    }
-    .grind_in_grid img {
-      height: auto;
-      width: 40%;
-      padding-left: 0px;
-    }
-    .grind_in_grid h4 {
-      margin-top: 10px;
-    }
+.title_image {
+  position: absolute;
+  right: 5vw;
+  bottom: 35vh;
+  height: 45vh;
+  width: auto;
+  transition:left 1s ease;
+  /* background-color: rgba(0,255,0,0.2); */
+}
+.title_image_over {
+  position: absolute;
+  right: 20vw;
+  bottom: 35vh;
+  height: 45vh;
+  width: auto;
+  transition:left 1s ease;
+  /* background-color: rgba(0,255,0,0.2); */
+}
+.content_inside_space {
+  padding-top: 170px;
+}
+.pattern_image {
+  opacity: 0.4;
+}
 
-    .typeface_din {
-      font-family: din-2014, sans-serif;
-    }
-    .typeface_din .grind_in_grid, .typeface_noto .grind_in_grid {
-      margin-top: 40px;
-    }
-    .typeface_din p {
-      font-size: 12px;
-      line-height: 120%;
-    }
-    .typeface_noto p {
-      font-size: 11px;
-      line-height: 140%;
-    }
-    .typeface_noto {
-      font-family: 'Noto Sans KR', sans-serif;
-    }
-    .type_content {
-      padding-top: 30px;
-    }
-    .grind_in_grid_column {
-      display: grid;
-      grid-template-columns: 30% 70%;
-      padding-left: 40px;
-    }
-    .grind_in_grid_column p {
-      padding-top: 30px;
-    }
-    .inside_img_container {
-      width: 1000px;
-      margin: auto;
-    }
-    .inside_img_mac {
-      background-image: url('images/jubudae/macbook.png');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      height: 650px;
-      width: 1000px;
-    }
-    .inside_img_mac > div {
-      top: 18.7%;
-      height: 62%;
-      width: 62.7%;
-      background-color: #AFAFAF;
-      position: relative;
-      overflow-x:auto;
-      overflow-y:auto;
-      margin: auto;
-    }
-    .inside_img_mac img {
-      position: relative;
-    }
-    .inside_img_mobile {
-      background-image: url('images/jubudae/mobile.png');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 30% auto;
-      height: 650px;
-      width: 1000px;
-    }
-    .inside_img_mobile > div {
-      border-radius: 8%/4.5%;
-      top: 9.2%;
-      height: 81.8%;
-      width: 24.6%;
-      background-color: #AFAFAF;
-      position: relative;
-      overflow-x:auto;
-      overflow-y:auto;
-      margin: auto;
-    }
-    .inside_img_frame {
-      position: absolute;
-      left:0;
-      right:0;
-      margin: auto;
-      height: auto;
-      width: 128px;
-      transform: translateY(34.7px);
-      z-index: 9999;
-    }
 
-    /*Tablet*/
-    @media screen and (min-width: 600px) and (max-width: 1156px) {
-      .title_image {
-        bottom: 30%;
-        width: 45vw;
-        right:3vw;
-        height: auto;
-      }
-      .title_image_over {
-        bottom: 52%;
-        width: 45vw;
-        right:12vw;
-        height: auto;
-      }
-      .grind_in_grid {
-        display: grid;
-        grid-template-columns: 45% 55%;
-      }
-      .tablet_transform_grid {
-        display: inherit;
-      }
-      .grind_in_grid p {
-        margin-left: 0%;
-        width : 100%;
-      }
-      .grind_in_grid img { /* face image*/
-        width: 80%;
-      }
-      .grind_in_grid div { /* face and title*/
-        padding-top: 80px;
-      }
-      .tablet_transform_grid > img { /* scenario image*/
-        width: 100%;
-        margin-left: 0%;
-      }
-      .content_inside_space {
-        padding-top: 30%;
-      }
-      .typeface_din .grind_in_grid div {s
-        padding-top: 0px;
-      }
-      .typeface_noto .grind_in_grid div {
-        padding-top: 0px;
-      }
-      .grind_in_grid_column {
-        padding-left: 0px;
-      }
-      .grind_in_grid_column {
-        grid-template-columns: 45% 55%;
-      }
-      /* .inside_img_mac, .inside_img_mobile {
-        height: 65vw;
-        width: 1000px;
-      }
-      .inside_img_mac > div {
-        top: 15.7%;
-        height: 66%;
-        width: 63%;
-      }
-      .inside_img_frame {
-         position: absolute;
-         height: auto;
-         width: 11%;
-         margin: inherit;
-         left: 78px;
-         transform: translate(37.5vw,2.8vw);
-         z-index: 9999;
-       } */
-    }
-    /*under 1000px*/
-    @media screen and (min-width: 600px) and (max-width: 1000px) {
-      .inside_img_container {
-        width: 100vw;
-      }
-      .inside_img_mac {
-        height: 61vw;
-        width: 100vw;
-      }
-      .inside_img_mac > div {
-        top: 15.7%;
-        height: 65%;
-        width: 62.7%;
-      }
-      .inside_img_mobile {
-        height: 65vw;
-        width: 100vw;
-      }
-      .inside_img_frame {
-        margin: inherit;
-        width: 12%;
-        transform: translate(44vw,3.7vw);
-       }
-    }
+/*Tablet*/
+@media screen and (min-width: 600px) and (max-width: 1156px) {
+  .title_image {
+    bottom: 30%;
+    width: 45vw;
+    right:3vw;
+    height: auto;
+  }
+  .title_image_over {
+    bottom: 52%;
+    width: 45vw;
+    right:12vw;
+    height: auto;
+  }
+  .content_inside_space {
+    padding-top: 30%;
+  }
+}
 
-    /*Smart phone*/
-    @media screen and (max-width: 599px) {
-      .title_image {
-        bottom: 5%;
-        width: 60vw;
-        left:20vw;
-        height: auto;
-      }
-      .title_image_over {
-        bottom: 23%;
-        width: 60vw;
-        left:20vw;
-        height: auto;
-      }
-      .grind_in_grid img {
-        padding-left: 30%;
-      }
-      .grind_in_grid h4, .grind_in_grid p {
-        text-align: center;
-      }
-      .typeface_noto p, .typeface_din p {
-        text-align: left;
-      }
-      .grind_in_grid_column {
-        padding-left: 0px;
-      }
-      .inside_img_container {
-        width: auto;
-        margin: 0px 0px 0px 0px;
-      }
-      .inside_img_mac {
-        height: 61vw;
-        width: 100vw;
-      }
-      .inside_img_mac > div {
-        top: 15.7%;
-        height: 65%;
-        width: 62.7%;
-      }
-      .inside_img_mobile {
-        background-size: 50% auto;
-        height: 100vw;
-        width: 100vw;
-      }
-      .inside_img_mobile > div {
-        border-radius: 9%/4.5%;
-        top: 6%;
-        height: 88.2%;
-        width: 41.5%;
-      }
-      .inside_img_frame {
-        position: absolute;
-        height: auto;
-        width: 22%;
-        margin: inherit;
-        left: 0px;
-        transform: translate(39vw,1.6vw);
-        z-index: 9999;
-       }
-    }
-    </style>
-  </head>
-  <body>
-    <div class="nav">
-      <div>
-        <ul>
-          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-          <li><a href="index.html#body_cont">Portfolio</a></li>
-          <li><a href="index.html#contact_cont">Contact</a></li>
-        </ul>
-      </div>
+/*Smart phone*/
+@media screen and (max-width: 599px) {
+  .title_image {
+    bottom: 5%;
+    width: 60vw;
+    left:20vw;
+    height: auto;
+  }
+  .title_image_over {
+    bottom: 23%;
+    width: 60vw;
+    left:20vw;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="nav">
+    <div>
+      <ul>
+        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+        <li><a href="index.html#body_cont">Portfolio</a></li>
+        <li><a href="index.html#contact_cont">Contact</a></li>
+      </ul>
     </div>
-    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-    <div class="title_container">
-      <div>
-        <div class="title_description">
-          <subtitle>Restaurant Branding / UX Design</subtitle>
-          <h1>Ju Budae</h1>
-          <p>Ju Budae is a restaurant that specializes in Budae-jjigae.
-            The origin of Budae-jjigae is based on American ingredients from the U.S. military during the Korean War.
-            The main ingredients of Budae-jjigae are American products such as spam, American cheese, baked beans, and sausages.</p>
+  </div>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div>
+      <div class="title_description">
+        <subtitle>UX Design / Product Design</subtitle>
+        <h1>Ju Budae : <br>Digital Menu</h1>
+        <p>The digital menu is a menu designed for Budae-Jjigae restaurants.
+          It is place on each table to help costumers quickly order by viewing the images without calling the waiter.</p>
         </div>
       </div>
     </div>
@@ -381,314 +140,99 @@
     <img class ="title_image_over" src="images/jubudae/sketches1.png">
 
     <div class="content_container">
-      <div class="two_grid content_more_space">
-        <div class="content_inside_space">
-          <h3>Inspiration</h3>
-          <p>Ju Budae is a brand project designed to reflect the characteristics of Joo-young.
-            She was born and raised in the U.S., but she is also Korean who has been greatly influenced by Korean culture.
-            She is Korean-American, friendly, and trendy. This keyword reflects in every design of branding.</p>
-        </div>
-        <img style="width:50%;padding-left:20%;" src="images/jubudae/selfie.png">
-      </div>
-      <h2 class="content_space">Interview</h2>
-    </div>
-
-    <div class="color_box">
-      <div>
-        <p>
-          <b>Q : Where did you born?</b><br>
-          A : Born in Baltimore and live in Ellicott City.
-          I raise in America, but I like Korean culture.
-          I also study the Korean language to get closer to my parents.
-          I am Korean and American.
-        </p>
-        <p>
-          <b>Q : What is your favorite food?</b><br>
-          A : Most of them are Korean food or Asian food.
-          Among Korean food, I like stimulating food.
-          Kimchi-jjigae or Gamjatang.
-        </p>
-        <p>
-          <b>Q : Why did you like stimulating food?</b><br>
-          A : I was under a lot of stress when I was in middle school and high school.
-          At this time, stimulating foods gave me energy and made me happy.
-        </p>
-        <p>
-          <b>Q : What kind of restaurant will be great if you open a restaurant?</b><br>
-          A : It would be more of a sitting-down restaurant than a take-out restaurant.
-          And I am not good at eating alone, so I hope it is comfortable to eat alone.
-        </p>
-        <p>
-          <b>Q : What would you like to name the restaurant?</b><br>
-          A : I’d like to make it Namju Manju. That’s my nickname.
-        </p>
-        <p>
-          <b>Q : What color do you like?</b><br>
-          A : The best choices are black and white.
-          Also I like pink, orange, and burgundy. And I avoid dark purple.
-        </p>
-      </div>
-    </div>
-
-    <div class="content_container">
-       <div class="two_grid content_space">
-         <div class="content_inside_space">
-           <h3>Restaurant concept</h3>
-           <p>Ju Budae is a restaurant that specializes in Budae-jjigae.
-             The origin of Budae-jjigae is based on American food from the U.S. Army during the Korean War.
-             The main ingredients of Budaejjigae are American-made products such as Spam, American cheese, baked beans, and sausages.</p>
-         </div>
-         <img src="images/jubudae/keywords.png">
-       </div>
-       <div class="two_grid content_space">
-         <div class="content_inside_space">
-           <h3>Logo Sketches</h3>
-           <p>The logo sketches base on three keywords and interviews.
-             The logo and brand name design by combining Joo-young's name and Budae-jjigae.
-             logo using the elements of the national flags of South Korea and the United States and the ingredients of Budae-jjigae.</p>
-         </div>
-         <img src="images/jubudae/sketch.png">
-       </div>
-       <div class="two_grid content_space">
-         <div>
-           <h3>Logo Mark</h3>
-           <p>The brand name “Ju Budae” comes from Joo-young’s nickname “Juju” and Budae Jjigae’s “Budae.”
-             The logo mark is designed to be read in both Korean and English to
-             preserve the characteristics of the brand that targets both Koreans and Americans.
-             “Ju” can read as an English “Ju” and also read as a Korean letter “주.”</p>
-         </div>
-         <!-- <img src="images/jubudae/sketch.png"> -->
-       </div>
-       <img src="images/jubudae/logomark.png">
-
-       <h2 class="content_space">Brand Systems</h2>
-    </div>
-
-    <div class="color_box">
-      <div>
-        <p>• Lock Up</p>
-        <p>• Clear Space</p>
-        <p>• Color Study</p>
-        <p>• Color Palette</p>
-        <p>• Typeface</p>
-      </div>
-    </div>
-
-    <div class="content_container">
-      <h3 class="content_space">Lock Up</h3>
-      <img src="images/jubudae/lockup.png">
-      <h3 class="content_space">Clear Space</h3>
-      <div class="two_grid content_half_space tablet_transform_grid">
-        <div class="grind_in_grid">
-          <img src="images/jubudae/typeface1.png">
-          <div>
-            <h4>English logo mark clear space</h4>
-            <p>Width of the letter “B“ from Budae.</p>
-          </div>
-        </div>
-        <img src="images/jubudae/typeface2.png">
-      </div>
-      <div class="two_grid content_half_space tablet_transform_grid">
-        <div class="grind_in_grid">
-          <img src="images/jubudae/typeface3.png">
-          <div>
-            <h4>Korean logo mark clear space</h4>
-            <p>Height of the letter “ㅂ“ from Budae.</p>
-          </div>
-        </div>
-        <img src="images/jubudae/typeface4.png">
-      </div>
-      <h3 class="content_space">Color Study</h3>
-      <img src="images/jubudae/colorstudy.png">
       <div class="two_grid content_space">
         <div class="content_inside_space">
-          <h3>Color Palette</h3>
-          <p>
-            Budae-Jjigae contains various vegetables and processed goods.
-            The color of the logo is red from the symbol color of Budae-jjigae.
-            Budae red and Dark red from Budae-jjigae use for logo marks and brand systems.</p>
-        </div>
-        <div class="color_palette">
-          <div style="background-color: #c20d0d;"></div>
-          <div style="background-color: #471212;"></div>
-          <div>
-            <h4>Budae Red</h4>
-            <p>
-              RGB : 193, 12, 12<br>
-              CMYK : 16%, 100%, 100%, 8%<br>
-              HEX : #c20d0d;
-            </p>
+          <h3>Current Problems</h3>
+          <p>Budae-jjigae is a food that contains various ingredients and can add several times.
+            To make food orders easier, the menu design as a digital menu.
+            Customers can choose and order their own without calling a waiter whenever they order additional toppings.</p>
           </div>
-          <div>
-            <h4>Budae Dark Red</h4>
-            <p>
-              RGB : 71, 18, 18<br>
-              CMYK : 44%, 86%, 76%, 68%<br>
-              HEX : #471212;
-            </p>
+          <div class="content_inside_space">
+          <h3>UX Research</h3>
+          <p>The process of using the digital menu divides into 3 stages: first order, extra order, and after eating.
+            At the order stage, customers order basic Budae-jjigae. And add the toppings they want.
+            On extra orders, customers can order for more toppings.
+            After the eating, customers can check the price and get the bill.</p>
+          </div>
           </div>
         </div>
-      </div>
-      <h3>Typeface</h3>
-      <div class="two_grid content_half_space tablet_transform_grid typeface_din">
-        <div class="grind_in_grid">
-          <div>
-            <div><b>DIN 2014</b></div>
-            <p>Primary Typeface</p>
-          </div>
-          <div class="type_content">
-            <div style="font-size:30px;"><b>Ju Budae H1</b></div>
-            <div style="font-size:20px; padding-top:5px;">Ju Budae H2</div>
-            <p style="width:80%; padding-top:10px;">Ju Budae is a restaurant that specializes in Budae-jjigae.
-              The origin of Budae-jjigae is based on American food from the U.S. Army during the Korean War.
-              The main ingredients of Budaejjigae are American-made products such as Spam, American cheese, baked beans, and sausages.</p>
-          </div>
-        </div>
-        <div class="grind_in_grid_column">
-          <div>
-            <p>DIN 2014 | Extra Light</p>
-            <p>DIN 2014 | Light</p>
-            <p>DIN 2014 | Regular</p>
-            <p>DIN 2014 | Demi</p>
-            <p>DIN 2014 | Bold</p>
-            <p>DIN 2014 | Extra Bold</p>
-          </div>
-          <div>
-            <p style="font-weight: 200;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 300;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 400;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 600;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 700;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 800;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="two_grid content_half_space tablet_transform_grid typeface_noto">
-        <div class="grind_in_grid">
-          <div>
-            <div><b>Noto Sans CJK</b></div>
-            <p>Primary Typeface</p>
-          </div>
-          <div class="type_content">
-            <div style="font-size:30px;"><b>Ju Budae H1</b></div>
-            <div style="font-size:20px; padding-top:2px;">Ju Budae H2</div>
-            <p style="width:80%; padding-top:5px;">Ju Budae is a restaurant that specializes in Budae-jjigae.
-              The origin of Budae-jjigae is based on American food from the U.S. Army during the Korean War.
-              The main ingredients of Budaejjigae are American-made products such as Spam, American cheese, baked beans, and sausages.</p>
-          </div>
-        </div>
-        <div class="grind_in_grid_column">
-          <div>
-            <p>Noto Sans CJK | Thin</p>
-            <p>Noto Sans CJK | Light</p>
-            <p>Noto Sans CJK | Regular</p>
-            <p>Noto Sans CJK | Medium</p>
-            <p>Noto Sans CJK | Bold</p>
-            <p>Noto Sans CJK | Black</p>
-          </div>
-          <div>
-            <p style="font-weight: 100">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 300;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 400;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 500">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 700;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-            <p style="font-weight: 900;">Ju Budae is a restaurant that specializes in Budae-jjigae.</p>
-          </div>
-        </div>
+        <!-- <div class="two_grid content_space">
+          <div class="content_inside_space">
+            <h3>UX Research</h3>
+            <p>The process of using the digital menu divides into 3 stages: first order, extra order, and after eating.
+              At the order stage, customers order basic Budae-jjigae. And add the toppings they want.
+              On extra orders, customers can order for more toppings.
+              After the eating, customers can check the price and get the bill.</p>
+            </div>
+            <!-- <img style="width:50%;padding-left:20%;" src="images/jubudae/selfie.png"> -->
+          </div> -->
       </div>
 
-      <h2 class="content_more_space">Brand Applications</h2>
+
+      <div class="content_container">
+        <h3 class="content_space">User Flow</h3>
+        <img src="images/jubudae/userflow.png">
+        <h3 class="content_space">Wireframe</h3>
+        <img src="images/jubudae/wireframe.png">
+        <h3 class="content_space">page Descriptions</h3>
+        <img src="images/jubudae/pageDetail.png">
+        <h3 class="content_space">Key Functions</h3>
+        <img src="images/jubudae/keyFunction.png">
+
+        <h2 class="content_space">Usability Tests</h2>
       </div>
 
       <div class="color_box">
         <div>
-          <p>• Pattern Design</p>
-          <p>• Package Design</p>
-          <p>• Webpages</p>
-          <p>• Digital Menu</p>
+          <h3>Questions</h3>
+          <p>
+            · Can you change it to a different kind of Budae?<br>
+            · Do you understand why the price varies depending on the number of people?<br>
+            · Can you select and cancel the desired topping?<br>
+            · Can you order 3 bottles of Coke?<br>
+            · can you notice the total amount and the amount including tax?<br>
+            · Can you cancel one coke you selected?<br>
+            · Can you go back to the previous step and place an additional order?<br>
+            · What should you do to call a waiter?
+          </p>
         </div>
       </div>
 
       <div class="content_container">
-        <div class="two_grid content_space">
-          <div style="padding-top:100px;">
-            <h3>Pattern Design</h3>
-            <p >The pattern design for packaging and branding is a graphical illustration of the primary ingredients of Budae-jjigae.</p>
-            <img  style="padding-top:15px; padding-left:0px;" src="images/jubudae/pattern1.png">
+        <div class="two_grid content_half_space">
+          <div class="content_inside_space">
+            <h3>Resolution</h3>
+            <p>Budae-jjigae is a food that contains various ingredients and can add several times.
+              To make food orders easier, the menu design as a digital menu.
+              Digital menus have reduced the process of calling waiters, ordering extra food, and receiving food again.
+              And customers can order unfamiliar food with seeing the photos.</p>
+            </div>
           </div>
-          <img src="images/jubudae/pattern2.png">
+          <img class="content_half_space" src="images/jubudae/mockup.jpg">
+
+          <a href="https://www.figma.com/proto/QG5dtTrgRKKNI1gSTH5zF7/JuBudae_renew?node-id=2%3A0&viewport=412%2C-760%2C0.27701279520988464&scaling=scale-down" target="_blank">
+            <div style="margin-bottom:10px;" class="color_button content_half_space"><h2>Prototype</h2></div>
+          </a>
+          <a href="jubudae_branding.html" target="_blank">
+            <div class="color_button content_half_space"><h2>Branding</h2></div>
+          </a>
         </div>
-         <div class="two_grid content_space">
-           <div class="content_inside_space">
-             <h3>Package Design</h3>
-             <p>The package used for delivery and food pickup consists of a container for soups and ingredients and a paper bag for it.
-               Packages for uncook food make into use dedicate patterns.
-               Each package design uses a dedicated color and pattern, showing that it is a dedicated container.</p>
-           </div>
-           <img src="images/jubudae/package.png">
-         </div>
-
-         <div class="two_grid content_half_space">
-           <div class="content_inside_space">
-             <h3>Webpages</h3>
-             <p>Webpages are designed for restaurant introductions and online orders.
-               The web page consists of mobile and PC versions.
-               Its design to have the same experience on two different devices.</p>
-           </div>
-         </div>
-      </div>
-
-      <div class="inside_img_container">
-         <div class="inside_img_mac">
-           <div>
-             <img src="images/jubudae/webpage.png">
-           </div>
-         </div>
-         <p style="text-align:center;">Scroll on the screen to see the webpages</p>
-         <div class="inside_img_mobile">
-           <img class="inside_img_frame" src="images/jubudae/notch.png">
-           <div>
-             <img src="images/jubudae/mobilepage.png">
-           </div>
-         </div>
-       </div>
-
-       <div class="content_container">
-         <div class="two_grid content_half_space">
-           <div class="content_inside_space">
-             <h3>Digital Menu</h3>
-             <p>Budae-jjigae is a food that contains various ingredients and can add several times.
-               To make food orders easier, the menu design as a digital menu.
-               Digital menus have reduced the process of calling waiters, ordering extra food, and receiving food again.
-               And customers can order unfamiliar food with seeing the photos.</p>
-           </div>
-         </div>
-         <h3 class="content_half_space">User Flow</h3>
-         <img src="images/jubudae/userflow.png">
-         <h3 class="content_space">Wireframe</h3>
-         <img src="images/jubudae/wireframe.png">
-         <img class="content_space" src="images/jubudae/mockup.jpg">
-
-         <a href="https://www.figma.com/proto/QG5dtTrgRKKNI1gSTH5zF7/JuBudae_renew?node-id=2%3A0&viewport=412%2C-760%2C0.27701279520988464&scaling=scale-down" target="_blank">
-           <div class="color_button content_half_space"><h2>Prototype</h2></div>
-         </a>
-       </div>
 
 
 
 
-       <div class="contact_container content_space">
-         <div class="contact">
-           <h3>Contact</h3>
-           <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
-           <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
-           <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
-         </div>
-         <div class="copyright">
-           <div>
-             <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
-           </div>
-         </div>
-       </div>
-  </body>
-</html>
+        <div class="contact_container content_space">
+          <div class="contact">
+            <h3>Contact</h3>
+            <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
+            <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
+            <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
+          </div>
+          <div class="copyright">
+            <div>
+              <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>
