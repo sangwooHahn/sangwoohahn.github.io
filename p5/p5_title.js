@@ -52,7 +52,7 @@ function drawBackground(sh,i) {
   vertex(0, height);
   curveVertex(0, height);
   for (let i = -width*1; i <= width*1.2; i += 180)
-    curveVertex(i, sh - noise(i / 200) * noise(frameCount / 300) * 400); // multiple vertexes
+    curveVertex(i, sh - noise(i / 200) * noise(frameCount / 1000) * 400); // multiple vertexes
   curveVertex(width, height);
   vertex(width, height);
   endShape();
