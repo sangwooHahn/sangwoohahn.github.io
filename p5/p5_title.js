@@ -29,12 +29,12 @@ function draw() {
   sx = width/2-w; // start x;
   sy = height/2-h; // start y;
 
-  for (let i = int(height/200)+1; i >= 0; i--) {
+  for (let i = int(height/220)+1; i >= 0; i--) {
     if(i==0) {
       drawingContext.shadowBlur = 0;
       names(sx,sy,r,0,100);
     }
-    drawBackground(height - (i * 200),i);
+    drawBackground(height - (i * 220),i);
   }
 
   drawingContext.shadowBlur = 0;
@@ -51,7 +51,7 @@ function drawBackground(sh,i) {
   beginShape();
   vertex(0, height);
   curveVertex(0, height);
-  for (let i = -width*1; i <= width*1.2; i += 170)
+  for (let i = -width*1; i <= width*1.2; i += 180)
     curveVertex(i, sh - noise(i / 200) * noise(frameCount / 300) * 400); // multiple vertexes
   curveVertex(width, height);
   vertex(width, height);
