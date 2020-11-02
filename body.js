@@ -1,12 +1,16 @@
 let video;
 let poseNet;
-let pose;
+var pose;
 let skeleton;
 let cameraActive = false;
 
 let stopAll = false;
 
 function setup() {
+  cameraStart();
+}
+
+function cameraStart () {
   var sketchCanvas = createCanvas(400, 480);//(640, 480);
   sketchCanvas.parent("bodyCanvas");
   video = createCapture(VIDEO);
@@ -42,7 +46,7 @@ function draw() {
       // drawMask();
       drawNose();
       // drawSkeleton();
-      // drawJoint();
+      drawJoint();
 
       }
     }
@@ -64,7 +68,7 @@ function draw() {
 
   function drawNose() {
       fill(255, 0, 0);
-      ellipse(pose.nose.x, pose.nose.y, pose.rightEye.x- pose.leftEye.x);
+      ellipse(pose.nose.x, pose.nose.y, pose.leftEye.x- pose.rightEye.x);
   }
 
   function drawSkeleton() {
@@ -77,11 +81,11 @@ function draw() {
   }
 
   function drawJoint() {
-    for (let i = 0; i < pose.keypoints.length; i++) {
+    for (let i = 5; i < pose.keypoints.length; i++) {
       let x = pose.keypoints[i].position.x;
       let y = pose.keypoints[i].position.y;
       noStroke();
       fill('#1840CF');
-      ellipse(x, y, 20);
+      ellipse(x, y, (pose.leftEye.x- pose.rightEye.x)*0.8);
     }
   }

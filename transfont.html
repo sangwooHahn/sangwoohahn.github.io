@@ -17,10 +17,45 @@
 <body>
   <div class="container">
     <div id="container_left">
-      <div id="nav">Transfont</div>
+      <div class="nav">
+        <ul>
+          <li id="transfont_button">Transfont</li>
+          <li id="about_button">About</li>
+          <li id="use_button">How to Use</li>
+          <li id="update_button">Update</li>
+        </ul>
+      </div>
       <!-- <h1 id="fontFamilyName"></h1> -->
-      <canvas id="preview" width="2000" height="300" class="text"></canvas><!-- width="440" height="300"-->
-      <form><i class="fas fa-microphone-alt" id="micIcon"></i><i class="fas fa-keyboard" id="keyIcon"></i><input type="text" class="text-input" onkeyup="renderTextPreview()" value="ACER" autofocus id="textField"></form>
+      <div id="main_container">
+        <canvas id="preview" width="2000" height="300" class="text"></canvas><!-- width="440" height="300"-->
+        <div id="text_information">Welcome to the transfont</div>
+        <form><i class="fas fa-microphone-alt" id="micIcon"></i><i class="fas fa-keyboard" id="keyIcon"></i><input type="text" class="text-input" onkeyup="renderTextPreview()" value="ACER" autofocus id="textField"></form>
+      </div>
+      <div id="about_container" class="container_left_content">
+        <div class="content_left">
+          about
+        </div>
+      </div>
+      <div id="use_container" class="container_left_content">
+        <div class="content_left">
+          use
+        </div>
+      </div>
+      <div id="update_container" class="container_left_content">
+        <div class="content_left">
+          ver 1.0.1<br><br>
+          (11.01.2020)<br>
+          · mobile notice added<br>
+          · about, how to use, update page added<br>
+          · glyph size decreased<br>
+          · information text added<br>
+          · click keyboard icon to switch to mic<br>
+          · flexible textfield size by the length of the text<br><br>
+          (11.02.2020)<br>
+          · camera — slider switch button added<br>
+          · able to see the joint from the cam<br>
+        </div>
+      </div>
     </div>
     <div id="container_right">
       <div id="bodyCanvas"></div>
@@ -35,10 +70,13 @@
         <label><p>Serif-weight</p><input class="customSlider" type="range" min="0" max="150" step="10" value="70" id="serif-range" autocomplete="off"></label>
         <label><p>Serif-height</p><input class="customSlider" type="range" min="0" max="150" step="10" value="100" id="sh-range" autocomplete="off"></label>
       </div>
+      <div id="switchButton"><i id="slideIcon"class="fas fa-sliders-h"></i><i id="camIcon" class="fas fa-video"></i><div id="switchButton_text">Switch to Cam</div></div>
       <div id="glyphs"></div>
       <div id="downloadButton" onclick="font.download()">Download</div>
     </div>
   </div>
+  <img src="images/transfont/logo.png">
+  <div class="mobile_text">Sorry, mobile devices are not support.<br>Please access from the computer</div>
 </body>
 <script src="transfont.js"></script>
 <script src="body.js"></script>

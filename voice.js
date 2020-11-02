@@ -17,8 +17,9 @@ if (!('webkitSpeechRecognition' in window)) {
     console.log("end");
   };
 
+var interim_transcript = '';
+
   recognition.onresult = function(event) {
-    var interim_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; i++) {
       if (event.results[i].isFinal) {
         final_transcript = event.results[i][0].transcript;
@@ -32,14 +33,16 @@ if (!('webkitSpeechRecognition' in window)) {
     if(final_transcript[0]==' ')
       final_transcript = final_transcript.substr(1);
     //final_span.innerHTML = final_transcript;//linebreak(final_transcript);
-    if(interim_transcript == "save" || interim_transcript == "Save"  || interim_transcript == " save" || interim_transcript == "stop" || interim_transcript == "Stop"  || interim_transcript == " stop")
+    if(interim_transcript == "save" || interim_transcript == "Save" || interim_transcript == "stop" || interim_transcript == "Stop")
       stopAll = true;
-    else if(interim_transcript == "start" || interim_transcript == "Start"  || interim_transcript == " start" || interim_transcript == "move" || interim_transcript == "Move"  || interim_transcript == " move")
+    else if(interim_transcript == "start" || interim_transcript == "Start" || interim_transcript == "move" || interim_transcript == "Move")
       stopAll = false;
-    else if(final_transcript == "save" || final_transcript == "Save"  || final_transcript == " save" || final_transcript == "stop" || final_transcript == "Stop"  || final_transcript == " stop")
+    else if(final_transcript == "save" || final_transcript == "Save" || final_transcript == "stop" || final_transcript == "Stop")
       stopAll = true;
-    else if(final_transcript == "start" || final_transcript == "Start"  || final_transcript == " start" || final_transcript == "move" || final_transcript == "Move"  || final_transcript == " move")
+    else if(final_transcript == "start" || final_transcript == "Start" || final_transcript == "move" || final_transcript == "Move" )
       stopAll = false;
+    else if(final_transcript == "download" || final_transcript == "Download")
+      font.download();
     else
       document.getElementById('textField').value = final_transcript;
 

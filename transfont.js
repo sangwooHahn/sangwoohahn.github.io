@@ -3782,11 +3782,11 @@ function createGlyphFont (firstDraw) {//글리프 좌표를 써둔 부분
         fontW[i] = fontW[i-1];
 
       if(!fontW[i])
-        fontW[i] = font2.getAdvanceWidth(textForFindWidth[i], fontSize, options) + s/4;
+        fontW[i] = font2.getAdvanceWidth(textForFindWidth[i], fontSize, options) + s/4 + 5;
       else if(fontW[i])
         fontW[i] += font2.getAdvanceWidth(textForFindWidth[i], fontSize, options);//각자 크기만큼 담김 .이제 각자 앞에껄 합한만큼으로 해주자.
     }
-    console.log(fontW[0]);
+    // console.log(fontW[0]);
     // 여기서는 폰트간격에 문제가 안생기니 여기서 저장해서 아래 프리뷰 만들때 정보 제공할거임.
 
     // console.log(font2.getAdvanceWidth(document.getElementById('textField').value, fontSize, options));
@@ -3799,10 +3799,10 @@ function createGlyphFont (firstDraw) {//글리프 좌표를 써둔 부분
       var ctx;
       var glyph = font2.glyphs.get(i);
       var canvasSizeX = 45;
-      var canvasSizeY = 50;
+      var canvasSizeY = 45;
       var x = 10;
       var y = 30;
-      var fontSize_g = 35;
+      var fontSize_g = 30;
       if(!firstDraw) {//만약 이게 처음 그리는게 아니라면 칸의 이름만 받아와서
         ctx = document.getElementById('c' + glyph.index).getContext('2d');
         ctx.clearRect(0, 0, canvasSizeX, canvasSizeY+20); // 흰색 네모를 그려서 덮어버리는거임
@@ -3823,7 +3823,7 @@ function renderTextPreview() { //써둔 글자를 받아서 프리뷰에 써주�
     previewCtx.clearRect(0, 0, 2000, 300);
     for (let i = 0; i < textToRender.length; i++) {
       if(i==0)
-        font2.draw(previewCtx, textToRender[i], s/4, 200, fontSize, options, 'black');
+        font2.draw(previewCtx, textToRender[i], s/4 + 5, 200, fontSize, options, 'black');
       else
       font2.draw(previewCtx, textToRender[i], fontW[i-1], 200, fontSize, options, 'black');
     }

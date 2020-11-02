@@ -4,6 +4,16 @@ html,body {
   width: 100%;
   font-family: 'Mukta', sans-serif;
 }
+ul {
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: inline;
+  list-style-type:none;
+  margin-right: 40px;
+  cursor: pointer;
+}
 
 .container {
   display: grid;
@@ -12,11 +22,15 @@ html,body {
   width: 100%;
 }
 
-#nav {
+
+.nav {
   height: 50px;
   color: #1840CF;
   padding-left: 25px;
   padding-top: 10px;
+}
+
+.nav > ul > li:first-of-type {
   font-weight: bold;
   font-size: 1.4em;
 }
@@ -32,6 +46,27 @@ html,body {
   margin-top: calc(25vh - 50px);
   margin-left: 140px;
   z-index: -1;
+}
+
+#text_information {
+  position: fixed;
+  margin-top: calc(70vh - 80px);
+  margin-left: 150px;
+  width: calc(100vw - 400px - 140px);
+  color: #1840CF;
+}
+
+#about_container, #use_container, #update_container {
+  display: none;
+}
+
+.container_left_content {
+  margin: 0;
+  padding: 0;
+}
+.content_left {
+  margin-top: calc(25vh - 50px);
+  margin-left: 140px;
 }
 
 form {
@@ -60,8 +95,8 @@ form .fa-keyboard {
 }
 
 
-form input[type=text] {
-  width: 130px;
+#textField[type=text] {
+  /* width: 130px; */
   box-sizing: border-box;
   border-radius: 5px;
   font-size: 1em;
@@ -69,18 +104,23 @@ form input[type=text] {
   border: 3px solid #1840CF;
   outline: none;
   /* background-color: #1840CF; */
-  padding: 12px 20px 12px 45px;
+  padding: 12px 20px 12px 48px;
   transition: width 0.4s ease-in-out;
 }
 
-form input[type=text]:focus {
-  width: 50%;
+#textField[type=text]:focus {
+  /* width: 50%; */
 }
+
+#micIcon, #keyIcon {
+  cursor: pointer;
+}
+
 
 
 #container_right {
   display: grid;
-  grid-template-rows: 480px auto 60px;
+  grid-template-rows: 480px 30px auto 60px;
   width: 100%;
   /* border-left: 5px solid #1840CF; */
   background-color: #1840CF;
@@ -94,7 +134,9 @@ form input[type=text]:focus {
 #labels {
   padding-left: 30px;
   padding-right: 30px;
-  padding-top: 20px;
+  padding-top: 32px;
+  /* background-color: #07248c; */
+  /* border-bottom: 5px solid #07248c; */
 }
 #labels > label {
   display: grid;
@@ -106,6 +148,21 @@ form input[type=text]:focus {
   margin-top: 24px;
 }
 
+#switchButton {
+  color: white;
+  margin-left: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#slideIcon, #camIcon {
+  font-size: 1em;
+  margin-right: 10px;
+}
+
+#switchButton_text {
+  display: inline-block;
+}
 
 #downloadButton {
   width: 100%;
@@ -227,4 +284,36 @@ form input[type=text]:focus {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+body > img {
+  display: none;
+  position: relative;
+  height: 100px;
+  width: auto;
+  margin: auto;
+  padding-top: 35vh;
+  bottom:0;
+  right:0;
+  top:0;
+  left:0;
+}
+
+.mobile_text {
+  display: none;
+}
+
+/*Tablet*/
+@media screen and (max-width: 1000px) {
+  .container {
+    display: none;
+  }
+  body > img {
+    display: block;
+  }
+  .mobile_text {
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+  }
 }
