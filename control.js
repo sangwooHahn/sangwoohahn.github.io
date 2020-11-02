@@ -109,5 +109,5 @@ function allButtonOff () {
 
 function buttonOn (button) {
   document.getElementById(button).style.textDecoration= "underline";//전체 리스트 내리기 버튼도 밑줄끄기
-  document.getElementById(button).style.color= "black";//전체 리스트 내리기 버튼도 밑줄끄기
+  document.getElementById(button).style.color= "#07248c";//전체 리스트 내리기 버튼도 밑줄끄기
 }
