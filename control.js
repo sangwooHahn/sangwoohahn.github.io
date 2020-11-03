@@ -1,15 +1,46 @@
+function tensNum (num) {
+  return Math.round(num/10)*10;
+}
+function evenNum (num) {
+  if((num/10)%2==1)
+   return num+10;
+  else return num;
+}
+function forthNum (num) {
+  if((num/10)%4==1)
+    return num+30;
+  else if((num/10)%4==2)
+    return num+20;
+  else if((num/10)%4==3)
+    return num+10;
+  else return num;
+}
+
 setInterval(function() {
   if(!stopAll) {
     if(pose !=undefined) {
-      w = Math.ceil(Math.abs(pose.leftWrist.x-pose.rightWrist.x)*1.5/10)*10;
-      if((w/10)%2==1)
-         w = w+10;
-        if(w>800) w=800; if(w<10) w=10;
+      let noseS = Math.ceil((pose.leftEye.x- pose.rightEye.x)/10)*10;
 
-      mh = Math.round((Math.abs(pose.leftHip.y-pose.leftKnee.y)*3 + Math.abs(pose.rightHip.y-pose.rightKnee.y)*3)/2/10)*10;
-      //mh=100;
-      t = Math.round(Math.abs(pose.leftAnkle.x-pose.rightAnkle.x)*1.5/10)*10;
-      if(t>300) t=300; if(t<10) t=10;
+      w = tensNum( Math.abs(pose.leftElbow.x-pose.leftShoulder.x)/noseS*90 + Math.abs(pose.rightShoulder.x-pose.rightElbow.x)/noseS*90);
+      w = forthNum(w);
+      if(w<10) w=10; if(w>800) w=800;
+
+      t = tensNum( Math.abs(pose.leftAnkle.x-pose.rightAnkle.x)/noseS/noseS*750 );
+      t = forthNum(t);
+      if(t<10) t=10; if(t>300) t=300;
+
+      arcs = tensNum( Math.abs(pose.leftWrist.x-pose.leftElbow.x)/noseS*50 + Math.abs(pose.rightWrist.x-pose.rightElbow.x)/noseS*50 );
+      arcs = evenNum(arcs);
+      if(arcs<10) arcs=10; if(arcs>500) arcs=500;
+
+      mh = tensNum( (Math.abs(pose.leftShoulder.y-pose.leftHip.y)/noseS*80 +  Math.abs(pose.rightShoulder.y-pose.rightHip.y)/noseS*80)/2 );
+      mh = evenNum(mh);
+      if(mh<10) mh=10; if(mh>700) mh=700;
+
+      lt = Math.round((Math.abs(pose.leftWrist.y-pose.leftHip.y)/noseS*0.1 +  Math.abs(pose.rightWrist.y-pose.rightHip.y)/noseS*0.1)*10)/10;
+      lt = map(lt,0,2,1,0);
+      if(lt<0) lt=0; if(lt>1) lt=1;
+
     }
     fontChanged();
     renderTextPreview();
