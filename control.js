@@ -34,7 +34,7 @@ setInterval(function() {
       if(arcs<10) arcs=10; if(arcs>500) arcs=500;
 
       mh = tensNum( (Math.abs(pose.leftShoulder.y-pose.leftHip.y)/noseS*80 +  Math.abs(pose.rightShoulder.y-pose.rightHip.y)/noseS*80)/2 );
-      mh = evenNum(mh);
+      mh = forthNum(mh);
       if(mh<10) mh=10; if(mh>700) mh=700;
 
       lt = Math.round((Math.abs(pose.leftWrist.y-pose.leftHip.y)/noseS*0.1 +  Math.abs(pose.rightWrist.y-pose.rightHip.y)/noseS*0.1)*10)/10;

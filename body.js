@@ -44,7 +44,7 @@ function draw() {
       let d = dist(pose.rightEye.x, pose.rightEye.y, pose.leftEye.x, pose.leftEye.y);
 
       // drawMask();
-      drawNose();
+      // drawNose();
       // drawSkeleton();
       drawJoint();
 
