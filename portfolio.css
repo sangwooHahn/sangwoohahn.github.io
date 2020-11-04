@@ -9,7 +9,7 @@ html, body {
 h1 {
   margin: 0;
   padding: 0;
-  font-size: 4em;
+  font-size: 4.7em;
   line-height: 100%;
 }
 
@@ -33,7 +33,7 @@ h3 {
 h4 {
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 700;
 }
 
@@ -43,6 +43,15 @@ p {
   font-size: 0.9em;
   font-weight: normal;
   line-height: 140%;
+}
+
+.content_container p, .color_box p, .title_container p {
+  font-weight: 300;
+  font-size: 1.1em;
+  line-height: 160%;
+}
+.content_p {
+  padding-top: 20px;
 }
 
 ul {
@@ -149,7 +158,8 @@ subtitle {
 }
 
 .title_container {
-  height: 470px;
+  height: 520px
+  /* height: 470px; */
   /* background-color: #2284CA; */
 }
 
@@ -160,7 +170,7 @@ subtitle {
 }
 
 .title_description {
-  padding-top: 180px;
+  padding-top: 150px;
   color : #fafafa;
   /* transition: all 1s ease; */
 }
@@ -169,7 +179,7 @@ subtitle {
 }
 .title_description p {
   margin-top: 20px;
-  width : 340px;
+  width : 460px;
 }
 
 .pattern_image {
