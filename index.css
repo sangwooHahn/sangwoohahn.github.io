@@ -352,8 +352,13 @@ subtitle {
   }
 }
 /*Tablet222*/
-@media screen and (min-width: 600px) and (max-width: 970px) {
-
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+  h1 {
+    font-size: 4em;
+  }
+  .thumbnail_description {
+    padding-top: 8vw;
+  }
 }
 
 /*Smart phone*/
