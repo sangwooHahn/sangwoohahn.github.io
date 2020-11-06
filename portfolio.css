@@ -353,6 +353,9 @@ subtitle {
     width: auto;
     margin: 0px 40px 0px 40px;
   }
+  .content_container p, .color_box p, .title_container p {
+    line-height: 140%;
+  }
   .title_container {
     height: 470px;
   }
