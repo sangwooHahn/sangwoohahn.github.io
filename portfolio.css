@@ -353,6 +353,9 @@ subtitle {
     width: auto;
     margin: 0px 40px 0px 40px;
   }
+  h1 {
+    font-size: 4em;
+  }
   .content_container p, .color_box p, .title_container p {
     line-height: 140%;
   }
