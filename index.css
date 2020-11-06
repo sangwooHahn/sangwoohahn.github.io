@@ -358,6 +358,9 @@ subtitle {
 
 /*Smart phone*/
 @media screen and (max-width: 699px) {
+  h1 {
+    font-size: 4em;
+  }
   .nav div, .moreProject_container > div, .contact, .copyright div {
     width: auto;
     margin: 0px 40px 0px 40px;
