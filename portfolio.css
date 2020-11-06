@@ -93,7 +93,7 @@ subtitle {
 .nav {
   z-index: 1001;
   top: 0;
-  height : 5vh;
+  height : 50px;
   /* background-color: #2284CA; */
 }
 
@@ -106,8 +106,9 @@ subtitle {
 .nav div ul {
   display: flex;
   margin: 0;
+  padding: 0;
   list-style: none;
-  padding: 1.2vh 0 0 0px;
+  padding-top: 13px;
 }
 
 .nav div li {
@@ -358,9 +359,6 @@ subtitle {
   }
   .content_container p, .color_box p, .title_container p {
     line-height: 140%;
-  }
-  .title_container {
-    height: 470px;
   }
   .title_description {
     padding-top: 40px;
