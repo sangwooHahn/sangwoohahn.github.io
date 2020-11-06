@@ -40,7 +40,7 @@ h4 {
 p {
   margin: 0;
   padding: 0;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: normal;
   line-height: 140%;
 }
@@ -50,12 +50,17 @@ p {
   font-size: 1.1em;
   line-height: 160%;
 }
+.contact_container p {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 140%;
+}
 .content_p {
   padding-top: 20px;
 }
 
 ul {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 img {
@@ -80,7 +85,7 @@ a:hover {
 }
 
 subtitle {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 300;
 }
 
@@ -94,7 +99,7 @@ subtitle {
 
 .nav div {
   height: 100%;
-  width : 1000px;
+  width : 1300px;
   margin : auto;
 }
 
@@ -106,7 +111,7 @@ subtitle {
 }
 
 .nav div li {
-  margin-right: 30px;
+  margin-right: 60px;
 }
 .nav div li a {
   text-decoration: none;
@@ -119,8 +124,8 @@ subtitle {
   width: 1em;
   /* border-left: 3px solid #2284CA; */
   /* border-top: 3px solid #2284CA; */
-  top: 94%;
-  left: 4%;
+  top: 93%;
+  left: calc(2.5% + 5px);
   -ms-transform: translateY(-50%) rotate(-45deg);
   -webkit-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg);
@@ -146,7 +151,7 @@ subtitle {
 }
 
 /*bigger than 1290*/
-@media screen and (min-width: 1290px) {
+@media screen and (min-width: 1590px) {
   /* .go_back {
     border-left: 2px solid #2284CA;
     border-top: 2px solid #2284CA;
@@ -165,7 +170,7 @@ subtitle {
 
 .title_container > div {
   height: 100%;
-  width: 1000px;
+  width: 1300px;
   margin: auto;
 }
 
@@ -179,7 +184,7 @@ subtitle {
 }
 .title_description p {
   margin-top: 20px;
-  width : 460px;
+  width : 480px;
 }
 
 .pattern_image {
@@ -193,7 +198,7 @@ subtitle {
 
 .content_container {
   height: auto;
-  width: 1000px;
+  width: 1300px;
   margin: auto;
 }
 
@@ -240,7 +245,7 @@ subtitle {
 
 .color_box > div {
   margin: auto;
-  width: 1000px;
+  width: 1300px;
 }
 
 .color_box > div > h3 {
@@ -286,7 +291,7 @@ subtitle {
 }
 
 .contact {
-  width: 1000px;
+  width: 1300px;
   height: calc(100% - 50px);
   margin: auto;
   color: #fafafa;
@@ -313,7 +318,7 @@ subtitle {
   background-color: #555;
 }
 .copyright div {
-  width: 1000px;
+  width: 1300px;
   margin: auto;
   color: #fafafa;
 }
@@ -323,7 +328,7 @@ subtitle {
 
 
 /*Tablet*/
-@media screen and (min-width: 600px) and (max-width: 1156px) {
+@media screen and (min-width: 600px) and (max-width: 1456px) {
   .nav div, .title_container > div, .content_container, .color_box > div, .contact, .copyright div {
     width: auto;
     margin: 0px 78px 0px 78px;
@@ -379,7 +384,7 @@ subtitle {
     height: calc(100% - 100px);
   }
   .copyright {
-    height: 50px;
+    height: 100px;
   }
   .copyright p {
     padding-top: 15px;

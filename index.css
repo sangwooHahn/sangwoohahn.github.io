@@ -8,7 +8,7 @@ html, body {
 h1 {
   margin: 0;
   padding: 0;
-  font-size: 3.2em;
+  font-size: 4.7em;
   line-height: 100%;
 }
 
@@ -22,19 +22,28 @@ h2, h3 {
 p {
   margin: 0;
   padding: 0;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: normal;
   line-height: 140%;
 }
 
-.about_contatiner p {
-  font-size: 1.2em;
+.about_container p {
+  font-size: 1em;
   font-weight: 300;
   line-height: 160%;
 }
+.contact_container p {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 140%;
+}
 
 ul {
-  font-size: 0.9em;
+  font-size: 1em;
+}
+
+li {
+  cursor: pointer;
 }
 
 a {
@@ -51,19 +60,19 @@ a:hover {
 }
 
 subtitle {
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: 300;
 }
 
-.about_contatiner {
+.about_container {
   display: none;
   height: 100vh;
 }
 
-.about_contatiner p {
+.about_container p {
   padding-top: 10px;
 }
-.about_contatiner div {
+.about_container div {
   height: 100%;
   width : 450px;
   margin : auto;
@@ -91,11 +100,13 @@ subtitle {
   bottom: 0;
   height : 50px;
   background-color: #fafafa;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
 }
 
 .nav div {
   height: 100%;
-  width : 1000px;
+  width : 1300px;
   margin : auto;
 }
 .nav div ul {
@@ -103,11 +114,11 @@ subtitle {
   margin: 0;
   padding: 0;
   list-style: none;
-  padding-top: 15px;
+  padding-top: 13px;
 }
 
 .nav div li {
-  margin-right: 30px;
+  margin-right: 60px;
 }
 
 .nav div li a {
@@ -119,76 +130,79 @@ subtitle {
   z-index: 1000;
   position: relative;
   height: auto;
-  padding-top: 5vh;
   background-color: #fafafa;
 }
 
 .container {
-  height: 100%;
+  /* height: 100%;
   width: 1000px;
-  margin: auto;
+  margin: auto; */
 }
 
 .portfolios {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  /* grid-template-rows: repeat(auto-fill,365px); */
-  grid-auto-rows :365px;
+  grid-template-columns: repeat(1,1fr);
+}
+
+.portfolio_container {
+  display: grid;
+  grid-template-columns: auto 1fr;
   grid-auto-flow: dense;
-  grid-column-gap: 30px;
-  grid-row-gap: 20px;
-  padding: 0px 0px 140px 0px;
+  height: 100%;
+  width: 1500px;
+  margin: auto;
 }
 
 .thumbnail {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% auto;
-  box-shadow: 0px 0px 4px rgba(0,0,0,0.06);
-  transition: all 1s ease;
-  cursor: pointer;
+  height: 600px;
+}
+.thumbnail img {
+  height: 100%;
 }
 .thumbnail div {
   width: 100%;
   height: 100%;
 }
 
-.thumbnail:hover {
-  background-size: 105%;
-}
-
 .thumbnail_description {
-  padding-left: 0px;
-  padding-top: 42%;
+  padding-left: 30px;
+  padding-top: 260px;
+  color: white;
 }
 
 .thumbnail_description p {
   margin-top: 10px;
-  width: 80%;
+  width: 100%;
 }
-/* .thumbnail_description a {
-  color: #999;
-} */
 
 .thumbnail_description h1 {
   margin-top: 5px;
 }
 
-.portfolios > div:nth-of-type(4n-1) { /*every 3rd images*/
-  grid-column-start: 2;
+#special_bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110% auto;
 }
 
-.portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
-  padding-left: 180px;
-}
-.portfolios > div:nth-of-type(4n) p { /*every 4th testxs(left)*/
-  width: 100%;
+.portfolio_button {
+  height : 38px;
+  width : 145px;
+  margin-top: 20px;
+  background-color: red;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: normal;
+  padding-top: 15px;
+  padding-left: 26px;
+  color: white;
+  cursor: pointer;
 }
 
 
 .moreProject_container {
   position: relative;
-  height: 50vh;
+  height: 600px;
   background-color: #fafafa;
   padding-bottom: 5px;
 }
@@ -196,9 +210,11 @@ subtitle {
 .moreProject_container > div {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  width: 1000px;
+  width: 1300px;
   height: 100%;
   margin: auto;
+  padding-top: 100px;
+  padding-left: 60px;
 }
 
 
@@ -267,12 +283,12 @@ subtitle {
 .contact_container {
   z-index: 1000;
   position: relative;
-  height: 45vh;
+  height: 400px;
   background-color: #666;
 }
 
 .contact {
-  width: 1000px;
+  width: 1300px;
   height: calc(100% - 50px);
   margin: auto;
   color: #fafafa;
@@ -307,7 +323,7 @@ subtitle {
   background-color: #555;
 }
 .copyright div {
-  width: 1000px;
+  width: 1300px;
   margin: auto;
   color: #fafafa;
 }
@@ -316,34 +332,28 @@ subtitle {
 }
 
 /*Tablet*/
-@media screen and (min-width: 600px) and (max-width: 1156px) {
-  .nav div, .container, .moreProject_container > div, .contact, .copyright div {
+@media screen and (min-width: 600px) and (max-width: 1540px) {
+  .nav div, .moreProject_container > div, .contact, .copyright div {
     width: auto;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 100px 0px 100px;
   }
-  .thumbnail_description {
-    padding-top: 15vw;
+  .portfolio_container {
+    width: auto;
+    margin: 0px 20px 0px 20px;
   }
-  .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
-    padding-left: 15vw;
+  .thumbnail {
+    height: 38.96vw;
   }
-  .portfolios {
-    grid-auto-rows: 33vw;
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
-  }
-}
-/*Tablet222*/
-@media screen and (min-width: 600px) and (max-width: 890px) {
   .thumbnail_description {
     padding-top: 10vw;
   }
-  .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
-    padding-left: 5vw;
+  .moreProject_container > div {
+    padding-left : 0vw;
   }
-  .thumbnail_description p {
-    width: 80%;
-  }
+}
+/*Tablet222*/
+@media screen and (min-width: 600px) and (max-width: 970px) {
+
 }
 
 /*Smart phone*/
@@ -352,29 +362,32 @@ subtitle {
     width: auto;
     margin: 0px 40px 0px 40px;
   }
-  .about_contatiner div {
+  .portfolio_container {
+    width: auto;
+    grid-template-columns : 1fr;
+    /* grid-template-rows: auto auto; */
+  }
+  .thumbnail {
+    width:100%;
+    height: auto;
+  }
+  #special_bg {
+    background-size: auto 110%;
+  }
+  .about_container div {
     height: 100%;
     width : auto;
     margin : 0 40px 0 40px;
     padding-top: 30vh;
   }
-  .container {
-    width: auto;
-    margin: 0px 00px 0px 00px;
-  }
   .portfolios {
     grid-template-columns: repeat(1,1fr);
-    grid-auto-rows: 280px 220px;
-  }
-  .portfolios > div:nth-of-type(4n) { /*every 4th testxs(left)*/
-    padding-left: 0px;
-  }
-  .portfolios > div:nth-of-type(4n-1) { /*every 3rd images*/
-    grid-column-start: 1;
+    grid-auto-rows: auto;
   }
   .thumbnail_description {
-    margin-left: 40px;
-    padding-top: 0px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    padding-top: 20px;
     width: 70vw;
   }
   .thumbnail_description p {
@@ -389,6 +402,7 @@ subtitle {
   }
   .posters div {
     left : 0;
+    margin: 60px 0px 0px 145px;
   }
   .motions div {
     margin: 70px 0px 0px 40px;
