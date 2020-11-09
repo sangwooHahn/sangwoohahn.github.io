@@ -70,23 +70,25 @@ setInterval(function() {
     document.getElementById("keyIcon").style.display = "block";
   }
 
-  document.getElementById("text_information").innerHTML = "";
-  if(!voiceActive && document.getElementById("textField").value == "")
-    document.getElementById("text_information").innerHTML = "Please type the text";
-  if(stopAll)
-    document.getElementById("text_information").innerHTML = 'Say "start" to active';
-  else if(voiceActive && document.getElementById("textField").value == "" && interim_transcript!='')
-    document.getElementById("text_information").innerHTML = "wait..";
-  else if(voiceActive && document.getElementById("textField").value == "" && interim_transcript=='')
-    document.getElementById("text_information").innerHTML = "Please say something";
-  else if(voiceActive)
-    document.getElementById("text_information").innerHTML = 'Say "download" to download the font';
+  if(pose != undefined) {
+    document.getElementById("text_information").innerHTML = "";
+    if(!voiceActive && document.getElementById("textField").value == "")
+      document.getElementById("text_information").innerHTML = "Please type the text";
+    if(stopAll)
+      document.getElementById("text_information").innerHTML = 'Say "start" to active';
+    else if(voiceActive && document.getElementById("textField").value == "" && interim_transcript!='')
+      document.getElementById("text_information").innerHTML = "wait..";
+    else if(voiceActive && document.getElementById("textField").value == "" && interim_transcript=='')
+      document.getElementById("text_information").innerHTML = "Please say something";
+    else if(voiceActive)
+      document.getElementById("text_information").innerHTML = 'Say "download" to download the font';
 
-  if(cameraActive && pose.leftEye.x- pose.rightEye.x > 40 && !stopAll)
-    document.getElementById("text_information").innerHTML = "It's too close, step back to show whole body";
+    if(cameraActive && pose.leftEye.x- pose.rightEye.x > 40 && !stopAll)
+      document.getElementById("text_information").innerHTML = "It's too close, step back to show whole body";
 
-    // console.log(document.getElementById("textField").style.width);
-    document.getElementById("textField").style.width = document.getElementById("textField").value.length*9+90+"px";
+    }
+      // console.log(document.getElementById("textField").style.width);
+      document.getElementById("textField").style.width = document.getElementById("textField").value.length*9+90+"px";
 }, 100);
 
 document.getElementById("keyIcon").onclick = function() {
