@@ -99,7 +99,7 @@ subtitle {
 
 .nav div {
   height: 100%;
-  width : 1300px;
+  width : 1100px;
   margin : auto;
 }
 
@@ -171,7 +171,7 @@ subtitle {
 
 .title_container > div {
   height: 100%;
-  width: 1300px;
+  width: 1100px;
   margin: auto;
 }
 
@@ -199,7 +199,7 @@ subtitle {
 
 .content_container {
   height: auto;
-  width: 1300px;
+  width: 1100px;
   margin: auto;
 }
 
@@ -246,7 +246,7 @@ subtitle {
 
 .color_box > div {
   margin: auto;
-  width: 1300px;
+  width: 1100px;
 }
 
 .color_box > div > h3 {
@@ -292,7 +292,7 @@ subtitle {
 }
 
 .contact {
-  width: 1300px;
+  width: 1100px;
   height: calc(100% - 50px);
   margin: auto;
   color: #fafafa;
@@ -319,7 +319,7 @@ subtitle {
   background-color: #555;
 }
 .copyright div {
-  width: 1300px;
+  width: 1100px;
   margin: auto;
   color: #fafafa;
 }
@@ -329,7 +329,7 @@ subtitle {
 
 
 /*Tablet*/
-@media screen and (min-width: 600px) and (max-width: 1456px) {
+@media screen and (min-width: 600px) and (max-width: 1256px) {
   .nav div, .title_container > div, .content_container, .color_box > div, .contact, .copyright div {
     width: auto;
     margin: 0px 78px 0px 78px;
