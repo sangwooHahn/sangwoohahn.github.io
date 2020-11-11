@@ -198,6 +198,10 @@ subtitle {
   color: white;
   cursor: pointer;
 }
+.portfolio_button:hover {
+  transform: scale(0.98);
+  opacity: 0.95;
+}
 
 
 .moreProject_container {
