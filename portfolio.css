@@ -273,9 +273,9 @@ subtitle {
 }
 
 .color_button {
-  height: 8vh;
+  height: 80px;
   margin-bottom: 100px;
-  padding: 10px;
+  padding-top: 35px;
   border-radius: 20px;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
   transition: all .2s ease;
@@ -283,7 +283,6 @@ subtitle {
 
 .color_button h2 {
   color: #fafafa;
-  line-height: 8vh;
   text-align: center;
 }
 .color_button:hover {
@@ -398,5 +397,18 @@ subtitle {
   }
   .copyright p {
     padding-top: 15px;
+  }
+  .two_color_button {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+  }
+  .color_button {
+    padding-top: 25px;
+    height: 50px;
+    border-radius: 15px;
+  }
+  .color_button h2 {
+    font-size: 1.5em;
   }
 }
