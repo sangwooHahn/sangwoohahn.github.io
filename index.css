@@ -397,13 +397,21 @@ subtitle {
     grid-auto-rows: auto;
   }
   .thumbnail_description {
-    margin-left: 5px;
-    margin-bottom: 40px;
+    margin-left: 35px;
+    padding-left: 0;
+    margin-bottom: 35px;
     padding-top: 20px;
-    width: 70vw;
+    width: auto;
+    margin-right: 35px;
   }
   .thumbnail_description p {
     width: 100%;
+  }
+  .portfolio_button {
+    height : 38px;
+    width : auto;
+    padding-left: 0px;
+    text-align: center;
   }
   .moreProject_container {
     height: auto;
