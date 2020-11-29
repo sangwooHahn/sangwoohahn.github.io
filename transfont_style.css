@@ -14,14 +14,43 @@ li {
   margin-right: 40px;
   cursor: pointer;
 }
+h2 {
+  font-size: 2em;
+  color: #1840CF;
+  margin-bottom: 0;
+}
+p {
+  margin-top: 0;
+  width: 600px;
+}
+a {
+  color: black;
+}
+h3 {
+  font-size: 2em;
+  color: #1840CF;
+  text-align: center;
+  margin-bottom: 200px;
+}
 
-.container {
+video {
+  /* width:calc(100% - 140px); */
+  width:100%;
+  /* margin-left: 140px;
+  margin-top: 50px; */
+  margin-bottom: 0px;
+}
+img {
+  width:100%;
+}
+
+#container {
   display: grid;
   grid-template-columns: auto 400px;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
-
 
 .nav {
   height: 50px;
@@ -54,10 +83,13 @@ li {
   margin-left: 150px;
   width: calc(100vw - 400px - 140px);
   color: #1840CF;
+  font-size: 1em;
 }
 
 #about_container, #use_container, #update_container {
   display: none;
+  height: calc(95vh - 50px);
+  overflow: scroll;
 }
 
 .container_left_content {
@@ -65,8 +97,9 @@ li {
   padding: 0;
 }
 .content_left {
-  margin-top: calc(25vh - 50px);
+  margin-top: 50px;
   margin-left: 140px;
+  width:calc(100% - 140px);
 }
 
 form {
@@ -124,6 +157,8 @@ form .fa-keyboard {
   width: 100%;
   /* border-left: 5px solid #1840CF; */
   background-color: #1840CF;
+
+  transition: all 1s ease;
 }
 
 #glyphs {
@@ -137,6 +172,9 @@ form .fa-keyboard {
   padding-top: 32px;
   /* background-color: #07248c; */
   /* border-bottom: 5px solid #07248c; */
+}
+#labels p {
+  margin-top: 16px;
 }
 #labels > label {
   display: grid;
@@ -305,7 +343,7 @@ body > img {
 
 /*Tablet*/
 @media screen and (max-width: 1000px) {
-  .container {
+  #container {
     display: none;
   }
   body > img {

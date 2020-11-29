@@ -32,6 +32,7 @@ var lmh = mh*0.8;
 var lhh = h+70; //lowercase-height-overheight; 아래쪽에서 제어 //h같은게 대문자보다 커서 그거 제어
 var tlt = t*lt; //t*lt의 소수점을 없애려고 한번에 제어 // 아래쪽에서 제어
 
+var typeName = 'Transfont'; // 아래에서 제어
 var styleWeight = 'Medium'; // 아래에서 제어
 
 window.onload = function(){ // start 같은 함수
@@ -94,31 +95,36 @@ function createGlyphFont (firstDraw) {//글리프 좌표를 써둔 부분
 
   tlt = Math.round((t*lt)/10)*10; //이상하게도 먼저하면 에러남
 
-
-
-  if(10 <= t < 20)
+  if(10 <= t && t < 20)
   styleWeight = 'Thin';
-  if(20 <= t < 30)
+  if(20 <= t && t < 30)
   styleWeight = 'Extra Light';
-  if(30 <= t < 40)
+  if(30 <= t && t < 40)
   styleWeight = 'Light';
-  if(40 <= t < 60)
+  if(40 <= t && t < 60)
   styleWeight = 'Normal';
-  if(60 <= t < 80)
+  if(60 <= t && t < 80)
   styleWeight = 'Medium';
-  if(80 <= t < 100)
+  if(80 <= t && t < 100)
   styleWeight = 'Semi Bold';
-  if(100 <= t < 130)
+  if(100 <= t && t < 130)
   styleWeight = 'Bold';
-  if(130 <= t < 150)
+  if(130 <= t && t < 150)
   styleWeight = 'Extra Bold';
-  if(150 <= t < 170)
+  if(150 <= t && t < 170)
   styleWeight = 'Black';
-  if(170 <= t < 200)
+  if(170 <= t && t < 200)
   styleWeight = 'Heavy';
   if(200 <= t)
   styleWeight = 'Strong';
 
+  if(w < 490)
+  styleWeight += ' Condensed';
+
+
+  typeName = 'Transfont';
+  if(srf)
+  typeName += ' Serif';
 
 
   var notdefPath = new opentype.Path();
@@ -3763,7 +3769,7 @@ function createGlyphFont (firstDraw) {//글리프 좌표를 써둔 부분
     sevenGlyph, eightGlyph, nineGlyph,
     dotGlyph, commaGlyph, quoteGlyph, qmarkGlyph, emarkGlyph];
     font = new opentype.Font({
-      familyName: 'TransFont',
+      familyName: typeName,
       styleName: styleWeight,
       unitsPerEm: 1000,
       ascender: 800,

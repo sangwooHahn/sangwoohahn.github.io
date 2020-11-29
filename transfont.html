@@ -15,36 +15,60 @@
     </style>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <div id="container_left">
       <div class="nav">
         <ul>
           <li id="transfont_button">Transfont</li>
           <li id="about_button">About</li>
           <li id="use_button">How to Use</li>
-          <li id="update_button">Update</li>
+          <li id="update_button">Update History</li>
         </ul>
       </div>
       <!-- <h1 id="fontFamilyName"></h1> -->
       <div id="main_container">
         <canvas id="preview" width="2000" height="300" class="text"></canvas><!-- width="440" height="300"-->
         <div id="text_information">Welcome to the transfont</div>
-        <form><i class="fas fa-microphone-alt" id="micIcon"></i><i class="fas fa-keyboard" id="keyIcon"></i><input type="text" class="text-input" onkeyup="renderTextPreview()" value="ACER" autofocus id="textField"></form>
+        <form><i class="fas fa-microphone-alt" id="micIcon"></i><i class="fas fa-keyboard" id="keyIcon"></i><input type="text" class="text-input" onkeyup="renderTextPreview()" value="Welcome" autofocus id="textField"></form>
       </div>
       <div id="about_container" class="container_left_content">
         <div class="content_left">
-          loading..
+          <video controls src="images/transfont/trailer.mp4" type="video/mp4"></video>
+          <h2>Introduction</h2>
+          <p>People have their own accents, gestures, and handwriting.
+          But in the digital world, they don't have their own fonts to express themselves.
+          Transfont is a project to create an interactive typeface.
+          Determine the appearance of the font in response to human motion.
+          These designed fonts become personal fonts.</p>
+          <br>
+          <h2>License</h2>
+          <p>MIT</p>
+          <br>
+          <h2>Sources</h2>
+          <p>
+          <a href="https://github.com/opentypejs">OpenType.js</a><br>
+          <a href="https://www.tensorflow.org/">TensorFlow</a></p>
         </div>
       </div>
       <div id="use_container" class="container_left_content">
         <div class="content_left">
-          Move your body!<br>
-          Make your own font!<br><br>
+          <img src="images/transfont/explain1.png">
+          <h3>Step 1 : Please prepare a computer with a cam and microphone.</h3>
+          <img src="images/transfont/explain2.png">
+          <h3>Step 2 : Step back until you see the whole body.</h3>
+          <img src="images/transfont/explain3.png">
+          <h3>Step 3 : Use a microphone to say an example word you want to see.</h3>
+          <img src="images/transfont/explain4.png">
+          <h3>Step 4 : Now move your body and design the font.</h3>
+          <h3>Key Word : <br>
+          "Stop" for freeze the motion<br>
+          "Start" for unfreeze the motion<br>
+          "Download" for download the font</h3>
         </div>
       </div>
       <div id="update_container" class="container_left_content">
         <div class="content_left">
-          ver 0.0.2<br><br>
+          <h2>ver 0.0.4</h2>
           (11.01.2020)<br>
           · mobile notice added<br>
           · about, how to use, update page added<br>
@@ -63,7 +87,19 @@
           · shoulder-hip Y distance control the middle-height<br>
           · width and weight increase and decrese slower<br><br>
           (11.09.2020)<br>
-          · bug fixed : video and voice now actived<br><br>
+          · bug fixed : video and voice now active<br><br>
+          (11.20.2020)<br>
+          · About page updated<br>
+          · scroll in the update page<br>
+          · Side disapear when accessing additional pages<br>
+          · How to Use page updated<br>
+          · update page -> Update History page<br>
+          · information text size increase when move back<br><br>
+          (11.21.2020)<br>
+          · bug fixed : weight style chanhged base on font-weight<br>
+          · Condensed style added base on width size<br>
+          · serif style added base on serif design (not for motion)<br>
+          · bug found : multi-download in voice.<br><br>
         </div>
       </div>
     </div>

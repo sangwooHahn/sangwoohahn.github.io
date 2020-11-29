@@ -27,7 +27,7 @@ var interim_transcript = '';
         interim_transcript = event.results[i][0].transcript;
       }
     }
-
+    console.log(interim_transcript + "/" + final_transcript);
     if(interim_transcript[0]==' ')
       interim_transcript = interim_transcript.substr(1);
     if(final_transcript[0]==' ')
@@ -41,8 +41,10 @@ var interim_transcript = '';
       stopAll = true;
     else if(final_transcript == "start" || final_transcript == "Start" || final_transcript == "move" || final_transcript == "Move" )
       stopAll = false;
-    else if(final_transcript == "download" || final_transcript == "Download")
+    else if(final_transcript == "download" || final_transcript == "Download") {
       font.download();
+      final_transcript = '';
+    }
     else
       document.getElementById('textField').value = final_transcript;
 

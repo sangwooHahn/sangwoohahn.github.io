@@ -83,10 +83,16 @@ setInterval(function() {
     else if(voiceActive)
       document.getElementById("text_information").innerHTML = 'Say "download" to download the font';
 
-    if(cameraActive && pose.leftEye.x- pose.rightEye.x > 40 && !stopAll)
+    if(cameraActive && pose.leftEye.x- pose.rightEye.x > 40 && !stopAll) {
       document.getElementById("text_information").innerHTML = "It's too close, step back to show whole body";
-
+      document.getElementById("text_information").style.marginTop= "calc(70vh - 80px)";
+      document.getElementById("text_information").style.fontSize = "1em";
     }
+    else {
+      document.getElementById("text_information").style.marginTop= "calc(68vh - 80px)";
+      document.getElementById("text_information").style.fontSize = "2em";
+    }
+  }
       // console.log(document.getElementById("textField").style.width);
       document.getElementById("textField").style.width = document.getElementById("textField").value.length*9+90+"px";
 }, 100);
@@ -109,6 +115,7 @@ document.getElementById("switchButton").onclick = function() {
 document.getElementById("transfont_button").onclick = function() {
   allButtonOff();
   document.getElementById("main_container").style.display= "block";
+  document.getElementById("container_right").style.transform= "translateX(0px)";
 };
 document.getElementById("about_button").onclick = function() {
   allButtonOff();
@@ -138,6 +145,8 @@ function allButtonOff () {
   document.getElementById("about_container").style.display= "none";
   document.getElementById("use_container").style.display= "none";
   document.getElementById("update_container").style.display= "none";
+
+  document.getElementById("container_right").style.transform= "translateX(400px)";
 }
 
 function buttonOn (button) {
