@@ -51,7 +51,7 @@ function drawBackground(sh,i) {
   beginShape();
   vertex(0, height);
   curveVertex(0, height);
-  for (let i = -width*0.2; i <= width*1.5; i  += (sin(frameCount / 2000) + 2) * 40)
+  for (let i = -width*0.2; i <= width*1.5; i += (sin(frameCount / 1000) + 2) * 40)
     curveVertex(i, sh - noise(i/20)*noise(frameCount/200)*250); // multiple vertexes
   curveVertex(width, height);
   vertex(width, height);
@@ -63,7 +63,7 @@ function drawTitle () {
   fill('white');
   textSize(20);
   textAlign(CENTER, CENTER);
-  text('Interaction · UX Designer',width/2,height-100);
+  text('UI · UX Designer',width/2,height-100);
 }
 
 
