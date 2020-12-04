@@ -63,7 +63,7 @@ function drawTitle () {
   fill('white');
   textSize(20);
   textAlign(CENTER, CENTER);
-  text('UI · UX Designer',width/2,height-100);
+  text('Interaction · UX Designer',width/2,height-100);
 }
 
 
