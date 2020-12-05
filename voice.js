@@ -33,13 +33,13 @@ var interim_transcript = '';
     if(final_transcript[0]==' ')
       final_transcript = final_transcript.substr(1);
     //final_span.innerHTML = final_transcript;//linebreak(final_transcript);
-    if(interim_transcript == "save" || interim_transcript == "Save" || interim_transcript == "stop" || interim_transcript == "Stop")
+    if(interim_transcript == "save" || interim_transcript == "Save" || interim_transcript == "stop" || interim_transcript == "Stop"  || interim_transcript == "freeze" || interim_transcript == "Freeze")
       stopAll = true;
-    else if(interim_transcript == "start" || interim_transcript == "Start" || interim_transcript == "move" || interim_transcript == "Move")
+    else if(interim_transcript == "start" || interim_transcript == "Start" || interim_transcript == "move" || interim_transcript == "Move" || interim_transcript == "active" || interim_transcript == "Active"  || interim_transcript == "begin" || interim_transcript == "Begin")
       stopAll = false;
-    else if(final_transcript == "save" || final_transcript == "Save" || final_transcript == "stop" || final_transcript == "Stop")
+    else if(final_transcript == "save" || final_transcript == "Save" || final_transcript == "stop" || final_transcript == "Stop"  || final_transcript == "freeze" || final_transcript == "Freeze")
       stopAll = true;
-    else if(final_transcript == "start" || final_transcript == "Start" || final_transcript == "move" || final_transcript == "Move" )
+    else if(final_transcript == "start" || final_transcript == "Start" || final_transcript == "move" || final_transcript == "Move"  || final_transcript == "active" || final_transcript == "Active"  || final_transcript == "begin" || final_transcript == "Begin")
       stopAll = false;
     else if(final_transcript == "download" || final_transcript == "Download") {
       font.download();

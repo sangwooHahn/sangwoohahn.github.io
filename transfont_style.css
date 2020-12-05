@@ -41,7 +41,8 @@ video {
   margin-bottom: 0px;
 }
 img {
-  width:100%;
+  width:80%;
+  margin-left: calc(calc(100% - 80%) / 2);
 }
 
 #container {

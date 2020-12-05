@@ -25,7 +25,7 @@ setInterval(function() {
       w = forthNum(w);
       if(w<10) w=10; if(w>800) w=800;
 
-      t = tensNum( Math.abs(pose.leftAnkle.x-pose.rightAnkle.x)/noseS/noseS*750 );
+      t = tensNum( Math.abs(pose.leftAnkle.x-pose.rightAnkle.x)/noseS/noseS*400);
       t = forthNum(t);
       if(t<10) t=10; if(t>300) t=300;
 
@@ -42,10 +42,10 @@ setInterval(function() {
       if(lt<0) lt=0; if(lt>1) lt=1;
 
     }
-    fontChanged();
-    renderTextPreview();
-    createGlyphFont(false);
   }
+  fontChanged();
+  renderTextPreview();
+  createGlyphFont(false);
 
 
   if(cameraActive) {
@@ -72,10 +72,11 @@ setInterval(function() {
 
   if(pose != undefined) {
     document.getElementById("text_information").innerHTML = "";
+
     if(!voiceActive && document.getElementById("textField").value == "")
       document.getElementById("text_information").innerHTML = "Please type the text";
     if(stopAll)
-      document.getElementById("text_information").innerHTML = 'Say "start" to active';
+      document.getElementById("text_information").innerHTML = 'Say "active" to active';
     else if(voiceActive && document.getElementById("textField").value == "" && interim_transcript!='')
       document.getElementById("text_information").innerHTML = "wait..";
     else if(voiceActive && document.getElementById("textField").value == "" && interim_transcript=='')
@@ -89,10 +90,12 @@ setInterval(function() {
       document.getElementById("text_information").style.fontSize = "1em";
     }
     else {
-      document.getElementById("text_information").style.marginTop= "calc(68vh - 80px)";
+      document.getElementById("text_information").style.marginTop= "calc(67vh - 80px)";
       document.getElementById("text_information").style.fontSize = "2em";
     }
   }
+  if(navigator.userAgent.indexOf("Chrome") == -1)
+    document.getElementById("text_information").innerHTML = "Use the Chrome browser to enable voice recognition";
       // console.log(document.getElementById("textField").style.width);
       document.getElementById("textField").style.width = document.getElementById("textField").value.length*9+90+"px";
 }, 100);
