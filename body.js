@@ -130,7 +130,7 @@ function timerWork () {
     textAlign(CENTER, CENTER);
     if(stopTimeCount != 0)
     text(ceil(stopTimeCount), width/2, height/2);
-    if((frameCount-clickedFrame) % 60 == 0) {
+    if((frameCount-clickedFrame) % getFrameRate() == 0) {
       stopTimeCount--;
     }
   }
