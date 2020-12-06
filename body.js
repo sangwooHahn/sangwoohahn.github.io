@@ -13,6 +13,7 @@ let stopAll = false;
 function setup() {
   cameraStart();
   angleMode(DEGREES);
+  frameRate(30);
 }
 
 function cameraStart () {
@@ -130,7 +131,7 @@ function timerWork () {
     textAlign(CENTER, CENTER);
     if(stopTimeCount != 0)
     text(ceil(stopTimeCount), width/2, height/2);
-    if((frameCount-clickedFrame) % getFrameRate() == 0) {
+    if((frameCount-clickedFrame) % 30 == 0) {
       stopTimeCount--;
     }
   }
