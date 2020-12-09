@@ -130,14 +130,14 @@ img {
 }
 #use_container .content_left .content_grid_three {
   display: grid;
-  grid-template-columns: repeat(2, 600px);
+  grid-template-columns: 300px 300px 300px 300px;
   grid-column-gap: 50px;
   grid-row-gap: 20px;
   width:100%;
   margin-top: 50px;
 }
 #use_container .content_left .content_grid_three h3 {
-  margin-top: 200px;
+  margin-top: 90px;
   margin-bottom: 0px;
 }
 #use_container .content_left .content_grid_three p {
