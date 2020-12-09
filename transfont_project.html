@@ -102,19 +102,6 @@
     }
 
 
-      .grind_in_grid {
-        margin-top: 60px;
-        width: 100%;
-      }
-      .grind_in_grid img {
-        height: auto;
-        width: 40%;
-        padding-left: 0px;
-      }
-      .grind_in_grid h4 {
-        margin-top: 10px;
-      }
-
       /*Tablet*/
       @media screen and (min-width: 600px) and (max-width: 900px) {
         .grind_in_grid {
@@ -124,31 +111,54 @@
         .tablet_transform_grid {
           display: inherit;
         }
-        .grind_in_grid h4 {
-          /* text-align: center; */
-        }
-        .grind_in_grid p {
-          margin-left: 10%;
-          width : 50%;
-        }
-        .grind_in_grid img { /* face image*/
-          width: 80%;
-        }
-        .grind_in_grid div { /* face and title*/
-          padding-left: 16%;
-        }
         .tablet_transform_grid > img { /* scenario image*/
           width: 100%;
           margin-left: 0%;
         }
+
+        .content_grid {
+          grid-template-columns: 300px auto;
+          grid-column-gap: 20px;
+        }
+
+        .content_grid div {
+          margin-top: 120px;
+        }
+
+        .content_grid_two {
+          display: grid;
+          grid-template-columns: 300px auto 300px auto;
+          grid-row-gap: 50px;
+          grid-column-gap: 10px;
+        }
+
+        .content_grid_two div {
+          margin-top: 50px;
+        }
       }
       /*Smart phone*/
       @media screen and (max-width: 599px) {
-        .grind_in_grid img {
-          padding-left: 30%;
+        .content_grid {
+          grid-template-columns: 100%;
+          grid-column-gap: 0px;
+          grid-row-gap: 50px;
         }
-        .grind_in_grid h4 {
-          text-align: center;
+
+        .content_grid div {
+          margin-top: 0px;
+          margin-bottom: 50px;
+        }
+
+        .content_grid_two {
+          display: grid;
+          grid-template-columns: 300px;
+          grid-column-gap: 0px;
+          grid-row-gap: 50px;
+        }
+
+        .content_grid_two div {
+          margin-top: 0px;
+          margin-bottom: 50px;
         }
       }
 
