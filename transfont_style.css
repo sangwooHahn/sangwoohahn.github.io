@@ -27,27 +27,27 @@ a {
   color: black;
 }
 h3 {
-  font-size: 2em;
-  color: #1840CF;
-  text-align: center;
-  margin-bottom: 200px;
+  font-size: 1.5em;
+  color: #000;
+  /* text-align: center;
+  margin-bottom: 200px; */
 }
 
 video {
   /* width:calc(100% - 140px); */
-  width:100%;
+  width: calc(100% - 400px);
   /* margin-left: 140px;
   margin-top: 50px; */
   margin-bottom: 0px;
 }
 img {
-  width:80%;
-  margin-left: calc(calc(100% - 80%) / 2);
+  width:100%;
+  /* margin-left: calc(calc(100% - 80%) / 2); */
 }
 
 #container {
-  display: grid;
-  grid-template-columns: auto 400px;
+  /* display: grid; */
+  /* grid-template-columns: auto 400px; */
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -98,9 +98,50 @@ img {
   padding: 0;
 }
 .content_left {
-  margin-top: 50px;
+  /* margin-top: 100px; */
   margin-left: 140px;
   width:calc(100% - 140px);
+}
+.content_left h2 {
+  margin-top: 100px;
+}
+
+#use_container .content_left .content_grid {
+  display: grid;
+  grid-template-columns: 600px auto;
+  grid-column-gap: 50px;
+  grid-row-gap: 200px;
+  width:100%;
+  margin-top: 50px;
+}
+#use_container .content_left .content_grid div {
+  margin-top: 100px;
+}
+#use_container .content_left .content_grid_two {
+  display: grid;
+  grid-template-columns: 250px auto;
+  grid-column-gap: 200px;
+  grid-row-gap: 0px;
+  width:100%;
+  margin-top: 50px;
+}
+#use_container .content_left .content_grid_two h3 {
+  margin-top: 35px;
+}
+#use_container .content_left .content_grid_three {
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+  width:100%;
+  margin-top: 50px;
+}
+#use_container .content_left .content_grid_three h3 {
+  margin-top: 200px;
+  margin-bottom: 0px;
+}
+#use_container .content_left .content_grid_three p {
+  margin-top: 0px;
 }
 
 form {
@@ -153,9 +194,13 @@ form .fa-keyboard {
 
 
 #container_right {
+  position: fixed;
+  top: 0;
+  right: 0;
   display: grid;
   grid-template-rows: 480px 30px auto 60px;
-  width: 100%;
+  height:100%;
+  width: 400px;
   /* border-left: 5px solid #1840CF; */
   background-color: #1840CF;
 
@@ -214,8 +259,8 @@ form .fa-keyboard {
 }
 
 #downloadButton:hover {
-  background-color: #609FFF;
-  color: #07248c;
+  background-color: #000;/*#609FFF;*/
+  color: #fff;
   cursor: pointer;
 }
 
