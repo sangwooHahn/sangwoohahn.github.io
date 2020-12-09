@@ -58,28 +58,26 @@
       /* background-color: rgba(0,255,0,0.2); */
     }
 
-    .two_grid_large {
-      grid-template-columns: 45% 55%;
+    .content_grid {
+      display: grid;
+      grid-template-columns: 600px auto;
+      grid-row-gap: 100px;
+      grid-column-gap: 50px;
     }
-    .two_grid_large img {
-      width: 50%;
-      padding-left: 30%;
+
+    .content_grid div {
+      margin-top: 150px;
     }
-    .two_grid_large a {
-      margin-left: 24%;
+
+    .content_grid_two {
+      display: grid;
+      grid-template-columns: 300px auto 300px auto;
+      grid-row-gap: 50px;
+      grid-column-gap: 10px;
     }
-    .two_grid_large div:nth-child(2) p {
-      padding: 0;
-      color:#999;
-    }
-    .two_grid_large div:nth-child(2) a {
-      background: linear-gradient(to right, #999 50%, rgba(0,0,0,0) 50%);
-      background-size: 0% 2px;
-      background-position: left bottom;
-      background-repeat: no-repeat;
-    }
-    .two_grid_large div:nth-child(2) a:hover {
-      background-size: 200% 2px;
+
+    .content_grid_two div {
+      margin-top: 50px;
     }
 
 
@@ -100,13 +98,6 @@
         left : 0%;
         bottom: 5%;
         clip-path: margin-box;
-      }
-      .two_grid_large {
-        grid-template-columns: 100%;
-      }
-      .two_grid_large img, .two_grid_large a {
-        width: 100%;
-        padding: 0%;
       }
     }
 
@@ -294,11 +285,61 @@
        <h3 class="content_half_space">Key Functions</h3>
        <img class="content_half_space" src="images/transfont/keyfeatures.png">
        <h3 class="content_space">How to Use</h3>
-       <img class="content_half_space" src="images/transfont/howtouse.png">
+       <div class = "content_grid">
+         <img src="images/transfont/step_1.gif">
+         <div>
+           <p>1. Prepare a web camera and microphone.</p>
+           <p>2. Allow browsers to use web camera and microphone.</p>
+         </div>
+         <img src="images/transfont/step_2.gif">
+         <div>
+           <p>3. Step back until see your whole body.</p>
+         </div>
+         <img src="images/transfont/step_3.gif">
+         <div>
+           <p>4. Speak on microphone to see an example text.</p>
+         </div>
+         <img src="images/transfont/step_4.gif">
+         <div>
+           <p>5. Move your body and design the font.</p>
+           <p>6. Use keywords for additional controls.</p>
+         </div>
+       </div>
+      </div>
+
+      <h3 class="content_more_space">How it Works</h3>
+
+      <div class="content_grid_two content_half_space">
+        <img src="images/transfont/motion_1.gif">
+        <div>
+          <h4>Width</h4>
+          <p>The distance between the elbows.</p>
+        </div>
+        <img src="images/transfont/motion_2.gif">
+        <div>
+          <h4>Weight</h4>
+          <p>The distance between feet.</p>
+        </div>
+        <img src="images/transfont/motion_3.gif">
+        <div>
+          <h4>Arc</h4>
+          <p>Angle of arm.</p>
+        </div>
+        <img src="images/transfont/motion_4.gif">
+        <div>
+          <h4>Middle Height</h4>
+          <p>The height of the shoulder.</p>
+        </div>
+        <img src="images/transfont/motion_5.gif">
+        <div>
+          <h4>Horizontal Weight</h4>
+          <p>The height of the hand.</p>
+        </div>
       </div>
     </div>
 
     <img class="content_space" src="images/transfont/typefaces.png">
+
 
 
     <div class="content_container">
