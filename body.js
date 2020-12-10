@@ -88,7 +88,7 @@ function draw() {
         textSize(15);
         textAlign(LEFT,BOTTOM);
         textStyle(NORMAL);
-        text('Active', 30, -3);
+        text('Activate', 30, -3);
       }
     }
   }
