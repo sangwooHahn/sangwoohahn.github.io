@@ -27,6 +27,12 @@
     <link rel="stylesheet" type="text/css" href="portfolio.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta charset="utf-8"/>
+    <script>
+    $(function(){
+      $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+    });
+    </script>
     <script>
       // $(window).on('scroll',function(){
       //   var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 30);
@@ -680,18 +686,6 @@
 
 
 
-       <div class="contact_container content_space">
-         <div class="contact">
-           <h3>Contact</h3>
-           <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
-           <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
-           <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
-         </div>
-         <div class="copyright">
-           <div>
-             <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
-           </div>
-         </div>
-       </div>
+       <div id="contact_cont" class="contact_container content_space"></div>
   </body>
 </html>

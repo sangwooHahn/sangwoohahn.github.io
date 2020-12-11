@@ -27,6 +27,13 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" type="text/css" href="p5/p5_style.css">
     <meta charset="utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+    <script>
+    $(function(){
+      $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+    });
+    </script>
   </head>
   <body>
     <div id="about_cont" class="about_container">
@@ -163,20 +170,7 @@
         </div>
       </div>
     </div>
-    <div id="contact_cont" class="contact_container">
-      <div class="contact">
-        <h3>Contact</h3>
-        <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
-        <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 2px;"></i>@hahnsangwoo</a></p>
-        <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in"></i>Sangwoo Hahn</a></p>
-      </div>
-      <div class="copyright">
-        <div>
-          <p>Copyright ⓒ 2020 by Sangwoo Hahn | All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div id="contact_cont" class="contact_container"></div>
     <script>
     $(document).ready(function(){
       $("#about_button").on('click',function(event){
@@ -210,20 +204,5 @@
     });
 
     </script>
-
-    <!-- Default Statcounter code for Web Portfolio http://sangwoohahn.com -->
-    <script type="text/javascript">
-    var sc_project=12443380;
-    var sc_invisible=1;
-    var sc_security="5c2f2ec8";
-    var sc_https=1;
-    </script>
-    <script type="text/javascript"
-    src="https://www.statcounter.com/counter/counter.js" async></script>
-    <noscript><div class="statcounter"><a title="Web Analytics"
-    href="https://statcounter.com/" target="_blank"><img class="statcounter"
-    src="https://c.statcounter.com/12443380/0/5c2f2ec8/1/" alt="Web
-    Analytics"></a></div></noscript>
-    <!-- End of Statcounter Code -->
   </body>
 </html>
