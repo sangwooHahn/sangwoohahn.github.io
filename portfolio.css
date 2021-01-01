@@ -3,7 +3,7 @@ html, body {
   margin: 0;
   font-family: 'Heebo', sans-serif;
   background-color: #fafafa;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 h1 {
@@ -189,10 +189,10 @@ subtitle {
   /* transition: all 1s ease; */
 }
 .title_description h1 {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .title_description p {
-  margin-top: 20px;
+  margin-top: 10px;
   width : 480px;
 }
 
@@ -235,11 +235,11 @@ subtitle {
 }
 
 .content_space {
-  margin-top: 220px;
+  margin-top: 200px;
 }
 
 .content_more_space {
-  margin-top: 380px;
+  margin-top: 250px;
 }
 
 .content_half_space {
@@ -270,6 +270,24 @@ subtitle {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
+}
+
+.color_button_title {
+  /* width:400px; */
+  width:auto;
+  /* height:50px; */
+  /* background-color:#021260; */
+  margin-top:50px;
+  /* border-radius:10px; */
+  /* padding-top:18px; */
+  color:white;
+  font-size:1.1em;
+  text-decoration: none;
+  /* text-align: center; */
+}
+
+.color_button_title a {
+  color:white;
 }
 
 .color_button {
@@ -343,13 +361,22 @@ subtitle {
     /* padding-top: 100px; */
   }
   .title_description p {
-    width : 30vw;
+    width : 350px;
   }
   .two_grid {
     grid-template-columns: 45% 55%;
   }
   .content_inside_space{
     padding-top: 0%;
+  }
+}
+/*Tablet_vertical*/
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  .title_description {
+    padding-top: 110px;
+  }
+  .color_button_title {
+    margin-top:20px;
   }
 }
 
@@ -362,7 +389,16 @@ subtitle {
   h1 {
     font-size: 4em;
   }
+  .quotes {
+    font-size: 2em;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 2em;
+    line-height: 20px;
+  }
   .content_container p, .color_box p, .title_container p {
+    font-size: 1em;
     line-height: 140%;
   }
   .title_description {
@@ -387,7 +423,7 @@ subtitle {
     width: 100%;
   }
   .content_space {
-    margin-top: 200px;
+    margin-top: 100px;
   }
   .contact {
     height: calc(100% - 100px);
@@ -410,5 +446,8 @@ subtitle {
   }
   .color_button h2 {
     font-size: 1.5em;
+  }
+  .color_button_title {
+    margin-top:20px;
   }
 }

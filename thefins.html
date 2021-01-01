@@ -1,162 +1,180 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sangwoo Portfolio</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="portfolio.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <meta charset="utf-8"/>
-    <script>
-    $(function(){
-      $("#contact_cont").load("https://sangwoohahn.com/footer.html");
-    });
-    </script>
-    <script>
-      // $(window).on('scroll',function(){
-      //   var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 30);
-      //   $('.title_image').css('transform','rotate('+(-title_image_position*20)+'deg)');
-      // });
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $(function(){
+    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+  });
 
-      $(document).ready(function(){ /* control all page of the special colors*/
-        var color = ('#12265B');
-        $('h2').css('color',color);
-        $('h3').css('color',color);
-        $('.go_back div').css('color',color);
-        $('.nav').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
-        $('.title_container').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
-        $('.color_box').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
-        $('.color_button').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
-        $('.color_button h2').css('color','#fafafa');
-        $('.color_box > div > h3').css('color','#fafafa');
-        $('.contact_container div h3').css('color','#fafafa');
-        $('.go_back').css('border-left', '2.5px solid '+color);
-        $('.go_back').css('border-top', '2.5px solid '+color);
-       });
+  $(window).on('scroll',function(){
+    var title_image_position = Math.round($(window).scrollTop());
+    $('.title_image').css('transform','translateY(-'+(title_image_position)+'px)');
+  });
 
-       window.open_about = function() {
-         localStorage.setItem("click_open", "about_show");
-       }
-    </script>
-    <style>
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var color = ('#12265B');
+    $('h2').css('color',color);
+    $('h3').css('color',color);
+    $('.go_back div').css('color',color);
+    $('.nav').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
+    $('.title_container').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
+    $('.color_box').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
+    $('.color_button').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
+    $('.color_button h2').css('color','#fafafa');
+    $('.color_box > div > h3').css('color','#fafafa');
+    $('.contact_container div h3').css('color','#fafafa');
+    $('.go_back').css('border-left', '2.5px solid '+color);
+    $('.go_back').css('border-top', '2.5px solid '+color);
+  });
 
-    .title_image img {
-      position: absolute;
-      top:6vw;
-      right:120px;
-      width:35%;
-      animation-duration: 0.75s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-    .title_image img:nth-child(2) {
-      animation-name: animation_1;
-    }
-    .title_image img:nth-child(3) {
-      animation-name: animation_2;
-    }
-    .title_image img:nth-child(4) {
-      animation-name: animation_3;
-    }
-    .title_image img:nth-child(1) {
-      animation-name: animation_4;
-      animation-duration: 1.5s;
-    }
-    @keyframes animation_1 {
-      0%,25% {opacity:1;}
-      25.01%,100% {opacity:0;}
-    }
-    @keyframes animation_2 {
-      0%,24.99% {opacity:0;}
-      25%,50% {opacity:1;}
-      50.01%,74.99% {opacity:0;}
-      75%,100% {opacity:1;}
-    }
-    @keyframes animation_3 {
-      0%,49.99% {opacity:0;}
-      50%,75% {opacity:1;}
-      75.01%,100% {opacity:0;}
-    }
-    @keyframes animation_4 {
-      0% {transform: scale(100%); opacity: 0.3;}
-      50% {transform: scale(110%); opacity: 0.8;}
-      100% {transform: scale(100%); opacity: 0.3;}
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+  </script>
+  <style>
+
+
+  .title_image {
+    position: fixed;
+    top:110px;
+    left:calc(calc(100vw - 1000px) * 0.5 + 550px);
+    width: 550px;
+    height: auto;
+  }
+
+  .title_image img {
+    position: absolute;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .title_image img:nth-child(2) {
+    animation-name: animation_1;
+  }
+  .title_image img:nth-child(3) {
+    animation-name: animation_2;
+  }
+  .title_image img:nth-child(4) {
+    animation-name: animation_3;
+  }
+  .title_image img:nth-child(1) {
+    animation-name: animation_4;
+    animation-duration: 1.5s;
+  }
+  @keyframes animation_1 {
+    0%,25% {opacity:1;}
+    25.01%,100% {opacity:0;}
+  }
+  @keyframes animation_2 {
+    0%,24.99% {opacity:0;}
+    25%,50% {opacity:1;}
+    50.01%,74.99% {opacity:0;}
+    75%,100% {opacity:1;}
+  }
+  @keyframes animation_3 {
+    0%,49.99% {opacity:0;}
+    50%,75% {opacity:1;}
+    75.01%,100% {opacity:0;}
+  }
+  @keyframes animation_4 {
+    0% {transform: scale(100%); opacity: 0.3;}
+    50% {transform: scale(110%); opacity: 0.8;}
+    100% {transform: scale(100%); opacity: 0.3;}
+  }
+  .content_inside_space {
+    padding-top: 60%;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
+    .title_image {
+      left: 500px;
+      top:150px;
+      width: 500px;
+      height: auto;
     }
     .content_inside_space {
-      padding-top: 60%;
+      padding-top: 30%;
     }
+  }
 
-    /*Tablet*/
-    @media screen and (min-width: 600px) and (max-width: 1156px) {
-      .title_image {
-        bottom: 15%;
-        width: 60vw;
-      }
-      .content_inside_space {
-        padding-top: 30%;
-      }
-      .title_image img {
-        top:130px;
-      }
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+    .title_image {
+      left: 50px;
+      top: 480px;
     }
-
-    /*Smart phone*/
-    @media screen and (max-width: 599px) {
-      .title_image {
-        bottom: 6%;
-        width: 100vw;
-      }
-      .title_image img {
-        top:310px;
-        right:50px;
-        width:80%;
-      }
-      .content_inside_space {
-        padding-top: 0px;
-      }
+    .title_description p {
+      width : 480px;
     }
+    .content_more_space {
+      margin-top: 400px;
+    }
+  }
 
-    </style>
-  </head>
-  <body>
-    <div class="nav">
-      <div>
-        <ul>
-          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-          <li><a href="index.html#body_cont">Portfolio</a></li>
-          <li><a href="index.html#contact_cont">Contact</a></li>
-        </ul>
-      </div>
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      left: 50px;
+      top: 330px;
+      width:80%;
+      height:auto;
+    }
+    .content_more_space {
+      margin-top: 250px;
+    }
+    .content_inside_space {
+      padding-top: 0px;
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div>
+      <ul>
+        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+        <li><a href="index.html#body_cont">Portfolio</a></li>
+        <li><a href="index.html#contact_cont">Contact</a></li>
+      </ul>
     </div>
-    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-    <div class="title_container">
-      <div>
-        <div class="title_description">
-          <subtitle>UI · UX / Game Design</subtitle>
-          <h1>Project-A:<br>The Fins</h1>
-          <p>
-            The Fins is a tactical game of the auto-defensive game genre.
-            The player can summon the units to defend the island and destroy enemy bases.
-            The units automatically find and attacks the nearest enemy.</p>
+  </div>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div>
+      <div class="title_description">
+        <subtitle>UI · UX / Game Design</subtitle>
+        <h1>Project-A:<br>The Fins</h1>
+        <p>
+          The Fins is a tactical auto-defensive game for mobile and PC.
+          The players can summon the units to defend the island and destroy enemy bases to win the game.
+        </p>
         </div>
       </div>
     </div>
@@ -175,81 +193,85 @@
         The Fins is the second project. It has a story that fish trying to protect the island by helping humans from the fish from the deep sea that have changed minds by marine pollution.
         Fish gathered the trash that humans threw away and made their weapons and armor.
         In preparation for an increasingly powerful enemy attack, users can plan and place strategies in the position and order of the fish and successfully protect the island.</p>
-      <div class="two_grid content_space">
-        <div class="content_inside_space">
-          <h3>Target Audience</h3>
-          <p>The Fins is a simple game designed to make it easy for beginners to play.
-            The game design with an automatic combat method to make it easier to operate with a small-screen smartphone.
-            The game is designed in stage mode and takes 5 to 10 minutes per stage.
-            Users can enjoy games in a short time in their busy lives.</p>
+        <div class="two_grid content_space">
+          <div class="content_inside_space">
+            <h3>Target Audience</h3>
+            <p>The Fins is a simple game designed to make it easy for beginners to play.
+              The game design with an automatic combat method to make it easier to operate with a small-screen smartphone.
+              The game is designed in stage mode and takes 5 to 10 minutes per stage.
+              Users can enjoy games in a short time in their busy lives.
+            </p>
+          </div>
+          <img src="images/thefins/target.png">
         </div>
-        <img src="images/thefins/target.png">
-      </div>
-      <div class="two_grid content_space">
-        <div class="content_inside_space">
-          <h3>Character Design</h3>
-          <p>The fishes are chosen as characters to express the battle of a large scale.
-            Fish divide into blue-gray and red colors according to friendly units or enemies.
-            To show the details of the fishes, half of their bodies are out of the water.</p>
+        <div class="two_grid content_space">
+          <div class="content_inside_space">
+            <h3>Character Design</h3>
+            <p>The fishes are chosen as characters to express the battle of a large scale.
+              Fish divide into blue-gray and red colors according to friendly units or enemies.
+              To show the details of the fishes, half of their bodies are out of the water.
+            </p>
+          </div>
+          <img src="images/thefins/sketch.png">
         </div>
-        <img src="images/thefins/sketch.png">
       </div>
-    </div>
-    <img class="content_half_space" src="images/thefins/character.jpg">
+      <img class="content_half_space" src="images/thefins/character.jpg">
 
 
-    <div class="content_container">
-       <h2 class="content_space">Game Interface</h2>
-       <div class="content_half_space">
-         <h3>UX Research</h3>
-         <p class="content_p">
-           The Fins is the game win through strategy and deployment.
-           For this, the game divides into preparation and combat stages.
-           In the preparation stage, players upgrade and select the units using existing rewards to prepare for the next battle.
-           In the combat phase, players can identify enemies that flock in a certain pattern and strategically deploy fish to win.
-           There are three different missions in each battle so that it doesn't end with just one battle.
-           Through this mission, the player can earn differential rewards.
-           Players can play again at any time if they have won but have failed to earn rewards for failing additional missions.</p>
-       </div>
+      <div class="content_container">
+        <h2 class="content_space">Game Interface</h2>
+        <div class="content_half_space">
+          <h3>UX Research</h3>
+          <p class="content_p">
+            The Fins is the game win through strategy and deployment.
+            For this, the game divides into preparation and combat stages.
+            In the preparation stage, players upgrade and select the units using existing rewards to prepare for the next battle.
+            In the combat phase, players can identify enemies that flock in a certain pattern and strategically deploy fish to win.
+            There are three different missions in each battle so that it doesn't end with just one battle.
+            Through this mission, the player can earn differential rewards.
+            Players can play again at any time if they have won but have failed to earn rewards for failing additional missions.
+          </p>
+        </div>
 
-       <h3 class="content_space">User Flow</h3>
-       <img src="images/thefins/userflow.png">
-       <h3 class="content_half_space">Wireframe</h3>
-       <img src="images/thefins/wireframe.png">
+        <h3 class="content_space">User Flow</h3>
+        <img src="images/thefins/userflow.png">
+        <h3 class="content_half_space">Wireframe</h3>
+        <img src="images/thefins/wireframe.png">
 
-       <h2 class="content_space">Usability Tests</h2>
-    </div>
-
-    <div class="color_box">
-      <div>
-        <h3>Questions - Pages</h3>
-        <p>
-          · Can you find unit upgrade page?<br>
-          · Can you go to archieve page?<br>
-          · Can you upgrade "Whirlpool" skill?<br>
-          · Can you find credit page?<br>
-          · Can you find island status page?<br>
-          · Can you start to game with stage 7?
-        </p>
-        <h3>Questions - Game</h3>
-        <p>
-          · Can you upgrade the battle money?<br>
-          · Can you find enemy base?<br>
-          · Can you find setting page?<br>
-          · Can you find stage missions?<br>
-          · Can you find pause the game?<br>
-          · Do you know which unit is most expensive?<br>
-          · Do you know shortcut to see island?
-        </p>
+        <h2 class="content_space">Usability Tests</h2>
       </div>
-    </div>
 
-    <div class="content_container">
-      <h2 class="content_space">Key Functions</h2>
+      <div class="color_box">
+        <div>
+          <h3>Questions - Pages</h3>
+          <p>
+            · Can you find unit upgrade page?<br>
+            · Can you go to archieve page?<br>
+            · Can you upgrade "Whirlpool" skill?<br>
+            · Can you find credit page?<br>
+            · Can you find island status page?<br>
+            · Can you start to game with stage 7?
+          </p>
+          <h3>Questions - Game</h3>
+          <p>
+            · Can you upgrade the battle money?<br>
+            · Can you find enemy base?<br>
+            · Can you find setting page?<br>
+            · Can you find stage missions?<br>
+            · Can you find pause the game?<br>
+            · Do you know which unit is most expensive?<br>
+            · Do you know shortcut to see island?
+          </p>
+        </div>
+      </div>
+
+      <div class="content_container">
+        <h2 class="content_space">Key Functions</h2>
         <p class="content_p">
           The game interface categorizes functions through color. Sky blue is the color of the gem used in the preparation stage.
           Yellow is the color of a shell for the combat stage. Light green is the color of the island, which symbolizes friendly units, and the island's health and winning sign.
-          Pink is the color of the enemy base and is used for enemy units and failed sign. By classifying it according to use, players can infer functions by color.</p>
+          Pink is the color of the enemy base and is used for enemy units and failed sign. By classifying it according to use, players can infer functions by color.
+        </p>
         <div class="content_half_space">
           <h3>Upgrade</h3>
           <img src="images/thefins/upgrade.png">
@@ -280,4 +302,4 @@
 
     <div id="contact_cont" class="contact_container content_space"></div>
   </body>
-</html>
+  </html>

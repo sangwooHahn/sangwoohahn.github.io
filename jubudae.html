@@ -32,8 +32,12 @@
   $(function(){
     $("#contact_cont").load("https://sangwoohahn.com/footer.html");
   });
-  </script>
-  <script>
+
+
+  $(window).on('scroll',function(){
+    var title_image_position = Math.round($(window).scrollTop());
+    $('.title_image').css('transform','translateY(-'+(title_image_position)+'px)');
+  });
 
   $(document).ready(function(){ /* control all page of the special colors*/
     var color = ('#C10C0C');
@@ -59,23 +63,13 @@
 <style>
 
 .title_image {
-  position: absolute;
-  right: 5vw;
-  bottom: 35vh;
-  height: 45vh;
-  width: auto;
-  transition:left 1s ease;
-  /* background-color: rgba(0,255,0,0.2); */
+  position: fixed;
+  top:130px;
+  left:calc(calc(100vw - 1000px) * 0.5 + 500px);
+  width: 750px;
+  height: auto;
 }
-.title_image_over {
-  position: absolute;
-  right: 20vw;
-  bottom: 35vh;
-  height: 45vh;
-  width: auto;
-  transition:left 1s ease;
-  /* background-color: rgba(0,255,0,0.2); */
-}
+
 .content_inside_space {
   padding-top: 170px;
 }
@@ -85,17 +79,11 @@
 
 
 /*Tablet*/
-@media screen and (min-width: 600px) and (max-width: 1156px) {
+@media screen and (min-width: 600px) and (max-width: 1256px) {
   .title_image {
-    bottom: 30%;
-    width: 45vw;
-    right:3vw;
-    height: auto;
-  }
-  .title_image_over {
-    bottom: 52%;
-    width: 45vw;
-    right:12vw;
+    left: 500px;
+    top:150px;
+    width: 700px;
     height: auto;
   }
   .content_inside_space {
@@ -103,19 +91,30 @@
   }
 }
 
+/*Tablet_vertical*/
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  .title_image {
+    left: 0px;
+    top: 410px;
+  }
+  .title_description p {
+    width : 480px;
+  }
+  .content_more_space {
+    margin-top: 400px;
+  }
+}
+
 /*Smart phone*/
 @media screen and (max-width: 599px) {
   .title_image {
-    bottom: 5%;
-    width: 60vw;
-    left:20vw;
-    height: auto;
+    left: 0px;
+    top: 330px;
+    width:100%;
+    height:auto;
   }
-  .title_image_over {
-    bottom: 23%;
-    width: 60vw;
-    left:20vw;
-    height: auto;
+  .content_more_space {
+    margin-top: 250px;
   }
 }
 </style>
@@ -135,105 +134,109 @@
     <div>
       <div class="title_description">
         <subtitle>UX Design / Product Design</subtitle>
-        <h1>Ju Budae: <br>Digital Menu</h1>
-        <p>The digital menu is a menu designed for Budae-Jjigae restaurants.
-          It is place on each table to help costumers quickly order by viewing the images without calling the waiter.</p>
-        </div>
+        <h1>Digital Menu</h1>
+        <p>Digital menu for Budae-jjigae restaurant "Ju Budae".
+          Customers can look at pictures of food without the help of a waiter and order additional food repeatedly.
+        </p>
+      </div>
+      <div class="color_button_title"><a href="https://www.figma.com/proto/QG5dtTrgRKKNI1gSTH5zF7/JuBudae_renew?node-id=2%3A0&viewport=412%2C-760%2C0.27701279520988464&scaling=scale-down" target="_blank"><i class="fas fa-flask"></i> Prototype</a></div>
+    </div>
+  </div>
+  <img class ="pattern_image" src="images/patterns/pattern3.png">
+  <img class ="title_image" src="images/jubudae/title.png">
+
+  <div class="content_container">
+    <h2 class="quotes content_more_space">"A way to reduce unnecessary movement of waiters."</h2>
+    <p class="content_p">Budae-jjigae is a traditional Korean food. Customers can also make their Budae-jjigae by adding a variety of ingredients.
+      And they can add more ingredients while eating. However, customers should call a waiter whenever they add ingredients.
+      They have to wait for the waiter to pick up the order, send the order to the kitchen, and get it back.
+      This process takes a very long time to get ingredients, not extra food. So a digital menu can reduce this process.
+      It will be a small tablet monitor on every table, and customers can easily see unfamiliar foreign foods through explanations and photos.
+      And the process of ordering is reduced because the order will go directly into the kitchen and serve it by the waiter.
+    </p>
+    <div class="content_half_space">
+      <div class="content_inside_space">
+        <h3>UX Research</h3>
+        <p class="content_p">The process of an order divides into two main parts.
+          The First Order and During a Meal. The First Order divides into four processes.
+          Choose the type of Budae-jjigae, choose the ingredients to add, and order rice or beverages, and check the list on the final order page.
+          The First Order process will proceed in order unless users cancel it.
+          After order, During a Meal will be showing the additional ingredients, more rice, or beverages, call the waiter to pay or take out it.
+          This process is done by moving from During a Meal page to another page and come back.
+          Once users completed their first order, they will not be able to return to the first order to prevent information from being lost by mistake.
+          Its design to be controlled only from the main tablet that manages all menus.
+        </p>
       </div>
     </div>
-    <img class ="pattern_image" src="images/patterns/pattern3.png">
-    <img class ="title_image" src="images/jubudae/sketches2.png">
-    <img class ="title_image_over" src="images/jubudae/sketches1.png">
-
-    <div class="content_container">
-      <h2 class="quotes content_more_space">"A way to reduce unnecessary movement of waiters."</h2>
-      <p class="content_p">Budae-jjigae is a traditional Korean food. Customers can also make their Budae-jjigae by adding a variety of ingredients.
-        And they can add more ingredients while eating. However, customers should call a waiter whenever they add ingredients.
-        They have to wait for the waiter to pick up the order, send the order to the kitchen, and get it back.
-        This process takes a very long time to get ingredients, not extra food. So a digital menu can reduce this process.
-        It will be a small tablet monitor on every table, and customers can easily see unfamiliar foreign foods through explanations and photos.
-        And the process of ordering is reduced because the order will go directly into the kitchen and serve it by the waiter.</p>
-      <div class="content_half_space">
-          <div class="content_inside_space">
-          <h3>UX Research</h3>
-          <p class="content_p">The process of an order divides into two main parts.
-            The First Order and During a Meal. The First Order divides into four processes.
-            Choose the type of Budae-jjigae, choose the ingredients to add, and order rice or beverages, and check the list on the final order page.
-            The First Order process will proceed in order unless users cancel it.
-            After order, During a Meal will be showing the additional ingredients, more rice, or beverages, call the waiter to pay or take out it.
-            This process is done by moving from During a Meal page to another page and come back.
-            Once users completed their first order, they will not be able to return to the first order to prevent information from being lost by mistake.
-            Its design to be controlled only from the main tablet that manages all menus.</p>
-          </div>
-          </div>
-        </div>
-        <!-- <div class="two_grid content_space">
-          <div class="content_inside_space">
-            <h3>UX Research</h3>
-            <p>The process of using the digital menu divides into 3 stages: first order, extra order, and after eating.
-              At the order stage, customers order basic Budae-jjigae. And add the toppings they want.
-              On extra orders, customers can order for more toppings.
-              After the eating, customers can check the price and get the bill.</p>
-            </div>
-            <img style="width:50%;padding-left:20%;" src="images/jubudae/selfie.png">
-          </div> -->
-      </div>
+  </div>
+  <!-- <div class="two_grid content_space">
+  <div class="content_inside_space">
+  <h3>UX Research</h3>
+  <p>The process of using the digital menu divides into 3 stages: first order, extra order, and after eating.
+  At the order stage, customers order basic Budae-jjigae. And add the toppings they want.
+  On extra orders, customers can order for more toppings.
+  After the eating, customers can check the price and get the bill.</p>
+</div>
+<img style="width:50%;padding-left:20%;" src="images/jubudae/selfie.png">
+</div> -->
+</div>
 
 
-      <div class="content_container">
-        <h3 class="content_space">User Flow</h3>
-        <img src="images/jubudae/userflow.png">
-        <h3 class="content_space">Wireframe</h3>
-        <img src="images/jubudae/wireframe.png">
-        <h3 class="content_space">Page Descriptions</h3>
-        <img src="images/jubudae/pageDetail.png">
-        <h3 class="content_space">Key Functions</h3>
-        <img src="images/jubudae/keyFunction.png">
+<div class="content_container">
+  <h3 class="content_space">User Flow</h3>
+  <img src="images/jubudae/userflow.png">
+  <h3 class="content_space">Wireframe</h3>
+  <img src="images/jubudae/wireframe.png">
+  <h3 class="content_space">Page Descriptions</h3>
+  <img src="images/jubudae/pageDetail.png">
+  <h3 class="content_space">Key Functions</h3>
+  <img src="images/jubudae/keyFunction.png">
 
-        <h2 class="content_space">Usability Tests</h2>
-      </div>
+  <h2 class="content_space">Usability Tests</h2>
+</div>
 
-      <div class="color_box">
-        <div>
-          <h3>Questions</h3>
-          <p>
-            · Can you change it to a different kind of Budae?<br>
-            · Do you understand why the price varies depending on the number of people?<br>
-            · Can you select and cancel the desired topping?<br>
-            · Can you order 3 bottles of Coke?<br>
-            · can you notice the total amount and the amount including tax?<br>
-            · Can you cancel one coke you selected?<br>
-            · Can you go back to the previous step and place an additional order?<br>
-            · What should you do to call a waiter?
-          </p>
-        </div>
-      </div>
+<div class="color_box">
+  <div>
+    <h3>Questions</h3>
+    <p>
+      · Can you change it to a different kind of Budae?<br>
+      · Do you understand why the price varies depending on the number of people?<br>
+      · Can you select and cancel the desired topping?<br>
+      · Can you order 3 bottles of Coke?<br>
+      · can you notice the total amount and the amount including tax?<br>
+      · Can you cancel one coke you selected?<br>
+      · Can you go back to the previous step and place an additional order?<br>
+      · What should you do to call a waiter?
+    </p>
+  </div>
+</div>
 
-      <div class="content_container">
-        <div class="content_space">
-          <div>
-            <h3>Resolution</h3>
-            <p class="content_p">Budae-jjigae is a food that contains various ingredients and can add several times.
-              To make food orders easier, the menu design as a digital menu.
-              Digital menus have reduced the process of calling waiters, ordering extra food, and receiving food again.
-              And customers can order unfamiliar food with seeing the photos.</p>
-            </div>
-          </div>
-          <img class="content_half_space" src="images/jubudae/mockup.jpg">
+<div class="content_container">
+  <div class="content_space">
+    <div>
+      <h3>Resolution</h3>
+      <p class="content_p">Budae-jjigae is a food that contains various ingredients and can add several times.
+        To make food orders easier, the menu design as a digital menu.
+        Digital menus have reduced the process of calling waiters, ordering extra food, and receiving food again.
+        And customers can order unfamiliar food with seeing the photos.
+      </p>
+    </div>
+  </div>
+  <img class="content_half_space" src="images/jubudae/mockup.jpg">
 
-          <div class="two_color_button content_half_space">
-            <a href="https://www.figma.com/proto/QG5dtTrgRKKNI1gSTH5zF7/JuBudae_renew?node-id=2%3A0&viewport=412%2C-760%2C0.27701279520988464&scaling=scale-down" target="_blank">
-              <div style="margin-bottom:20px;" class="color_button"><h2><i class="fas fa-flask"></i> Prototype</h2></div>
-            </a>
-            <a href="jubudae_branding.html" target="_blank">
-            <div class="color_button"><h2><i class="fas fa-external-link-alt"></i> Branding</h2></div>
-            </a>
-          </div>
-        </div>
+  <div class="two_color_button content_half_space">
+    <a href="https://www.figma.com/proto/QG5dtTrgRKKNI1gSTH5zF7/JuBudae_renew?node-id=2%3A0&viewport=412%2C-760%2C0.27701279520988464&scaling=scale-down" target="_blank">
+      <div style="margin-bottom:20px;" class="color_button"><h2><i class="fas fa-flask"></i> Prototype</h2></div>
+    </a>
+    <a href="jubudae_branding.html" target="_blank">
+      <div class="color_button"><h2><i class="fas fa-external-link-alt"></i> Branding</h2></div>
+    </a>
+  </div>
+</div>
 
 
 
 
-        <div id="contact_cont" class="contact_container content_space"></div>
-      </body>
-      </html>
+<div id="contact_cont" class="contact_container content_space"></div>
+</body>
+</html>

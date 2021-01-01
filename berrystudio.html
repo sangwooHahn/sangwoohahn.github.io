@@ -1,327 +1,342 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sangwoo Portfolio</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="portfolio.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <meta charset="utf-8"/>
-    <script>
-    $(function(){
-      $("#contact_cont").load("https://sangwoohahn.com/footer.html");
-    });
-    </script>
-    <script>
-      $(document).ready(function(){ /* control all page of the special colors*/
-         var color = ('#442DD2');
-         $('h2').css('color',color);
-         $('h3').css('color',color);
-         $('.go_back div').css('color',color);
-         $('.nav').css('background-color',color);
-         $('.title_container').css('background-color',color);
-         $('.color_box').css('background-color',color);
-         $('.color_button').css('background-color',color);
-         $('.color_button h2').css('color','#fafafa');
-         $('.color_box > div > h3').css('color','#fafafa');
-         $('.contact_container div h3').css('color','#fafafa');
-         $('.go_back').css('border-left', '2.5px solid '+color);
-         $('.go_back').css('border-top', '2.5px solid '+color);
-      });
-      window.open_about = function() {
-        localStorage.setItem("click_open", "about_show");
-      }
-    </script>
-    <style>
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $(function(){
+    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+  });
 
+  $(window).on('scroll',function(){
+    var title_image_position = Math.round($(window).scrollTop());
+    $('.title_image').css('transform','translateY(-'+(title_image_position)+'px)');
+  });
 
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var color = ('#442DD2');
+    $('h2').css('color',color);
+    $('h3').css('color',color);
+    $('.go_back div').css('color',color);
+    $('.nav').css('background-color',color);
+    $('.title_container').css('background-color',color);
+    $('.color_box').css('background-color',color);
+    $('.color_button').css('background-color',color);
+    $('.color_button h2').css('color','#fafafa');
+    $('.color_box > div > h3').css('color','#fafafa');
+    $('.contact_container div h3').css('color','#fafafa');
+    $('.go_back').css('border-left', '2.5px solid '+color);
+    $('.go_back').css('border-top', '2.5px solid '+color);
+  });
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+  </script>
+  <style>
+
+  .title_image {
+    position: fixed;
+    top:130px;
+    left:calc(calc(100vw - 1000px) * 0.5 + 500px);
+    width: 750px;
+    height: auto;
+  }
+
+  .two_grid_large {
+    grid-template-columns: 45% 55%;
+  }
+  .two_grid_large img {
+    width: 50%;
+    padding-left: 30%;
+  }
+  .two_grid_large a {
+    margin-left: 24%;
+  }
+  .two_grid_large div:nth-child(2) p {
+    padding: 0;
+    color:#999;
+  }
+  .two_grid_large div:nth-child(2) a {
+    background: linear-gradient(to right, #999 50%, rgba(0,0,0,0) 50%);
+    background-size: 0% 2px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+  }
+  .two_grid_large div:nth-child(2) a:hover {
+    background-size: 200% 2px;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
     .title_image {
-      position: absolute;
-      right: 4vw;
-      bottom: 30vh;
-      height: 55vh;
-      width: auto;
-      transition:left 1s ease;
-      /* background-color: rgba(0,255,0,0.2); */
+      left: 500px;
+      top:150px;
+      width: 700px;
+      height: auto;
+    }
+  }
+
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+    .title_image {
+      left: 0px;
+      top: 410px;
+    }
+    .title_description p {
+      width : 480px;
+    }
+    .content_more_space {
+      margin-top: 400px;
+    }
+  }
+
+
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      left: 0px;
+      top: 330px;
+      width:100%;
+      height:auto;
+    }
+    .content_more_space {
+      margin-top: 250px;
     }
 
     .two_grid_large {
-      grid-template-columns: 45% 55%;
+      grid-template-columns: 100%;
     }
-    .two_grid_large img {
-      width: 50%;
+    .two_grid_large img, .two_grid_large a {
+      width: 100%;
+      padding: 0%;
+    }
+  }
+
+  .grind_in_grid {
+    margin-top: 60px;
+    width: 100%;
+  }
+  .grind_in_grid img {
+    height: auto;
+    width: 40%;
+    padding-left: 0px;
+  }
+  .grind_in_grid h4 {
+    margin-top: 10px;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    .grind_in_grid {
+      display: grid;
+      grid-template-columns: 40% 50%;
+    }
+    .tablet_transform_grid {
+      display: inherit;
+    }
+    .grind_in_grid h4 {
+      /* text-align: center; */
+    }
+    .grind_in_grid p {
+      margin-left: 10%;
+      width : 50%;
+    }
+    .grind_in_grid img { /* face image*/
+      width: 80%;
+    }
+    .grind_in_grid div { /* face and title*/
+      padding-left: 16%;
+    }
+    .tablet_transform_grid > img { /* scenario image*/
+      width: 100%;
+      margin-left: 0%;
+    }
+  }
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .grind_in_grid img {
       padding-left: 30%;
     }
-    .two_grid_large a {
-      margin-left: 24%;
+    .grind_in_grid h4 {
+      text-align: center;
     }
-    .two_grid_large div:nth-child(2) p {
-      padding: 0;
-      color:#999;
-    }
-    .two_grid_large div:nth-child(2) a {
-      background: linear-gradient(to right, #999 50%, rgba(0,0,0,0) 50%);
-      background-size: 0% 2px;
-      background-position: left bottom;
-      background-repeat: no-repeat;
-    }
-    .two_grid_large div:nth-child(2) a:hover {
-      background-size: 200% 2px;
-    }
+  }
 
-    @media screen and (min-width: 600px) and  (max-width: 1156px) {
-      .title_image {
-        bottom: 35%;
-        width: 58vw;
-        right:5vw;
-        height: auto;
-      }
-    }
-
-    /*Smart phone*/
-    @media screen and (max-width: 599px) {
-      .title_image {
-        bottom: 8%;
-        width: 90vw;
-        left:4vw;
-        height: auto;
-      }
-      .two_grid_large {
-        grid-template-columns: 100%;
-      }
-      .two_grid_large img, .two_grid_large a {
-        width: 100%;
-        padding: 0%;
-      }
-    }
-
-
-      .grind_in_grid {
-        margin-top: 60px;
-        width: 100%;
-      }
-      .grind_in_grid img {
-        height: auto;
-        width: 40%;
-        padding-left: 0px;
-      }
-      .grind_in_grid h4 {
-        margin-top: 10px;
-      }
-
-      /*Tablet*/
-      @media screen and (min-width: 600px) and (max-width: 900px) {
-        .grind_in_grid {
-          display: grid;
-          grid-template-columns: 40% 50%;
-        }
-        .tablet_transform_grid {
-          display: inherit;
-        }
-        .grind_in_grid h4 {
-          /* text-align: center; */
-        }
-        .grind_in_grid p {
-          margin-left: 10%;
-          width : 50%;
-        }
-        .grind_in_grid img { /* face image*/
-          width: 80%;
-        }
-        .grind_in_grid div { /* face and title*/
-          padding-left: 16%;
-        }
-        .tablet_transform_grid > img { /* scenario image*/
-          width: 100%;
-          margin-left: 0%;
-        }
-      }
-      /*Smart phone*/
-      @media screen and (max-width: 599px) {
-        .grind_in_grid img {
-          padding-left: 30%;
-        }
-        .grind_in_grid h4 {
-          text-align: center;
-        }
-      }
-
-    </style>
-  </head>
-  <body>
-    <div class="nav">
-      <div>
-        <ul>
-          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-          <li><a href="index.html#body_cont">Portfolio</a></li>
-          <li><a href="index.html#contact_cont">Contact</a></li>
-        </ul>
-      </div>
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div>
+      <ul>
+        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+        <li><a href="index.html#body_cont">Portfolio</a></li>
+        <li><a href="index.html#contact_cont">Contact</a></li>
+      </ul>
     </div>
-    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-    <div class="title_container">
-      <div>
-        <div class="title_description">
-          <subtitle>UI · UX / Product Design</subtitle>
-          <h1>Berry Studio</h1>
-          <p>Berry Studio is a platform that buys and sells a drawing for one dollar.
-            Request for the drawing from the customer's point of view and draw from the artist's point of view.
-            So that anyone can be an artist of the Berry Studio, it's done with two functions on one platform.</p>
-        </div>
-      </div>
-    </div>
-    <img class ="pattern_image" src="images/patterns/pattern.png">
-    <img class ="title_image" src="images/berrystudio/title.png">
-
-    <div class="content_container">
-      <h2 class="quotes content_more_space">"How can we trade a simple commission? <br>I'd like to buy your five minutes drawing for a dollar."</h2>
-      <p class="content_p">There are many commission platforms on the Internet. However, most commissions are for high-quality illustrations.
-        It pays a lot of money to request professional illustrators for drawings. And artist do expensive commission to make money.
-        So the quality and cost of the illustrations and the time is increasing.
-        Then how about buying and selling the drawings for a dollar? People can buy about five minutes for a dollar.
-        Berry Studio is a platform for trading a drawing in a dollar. Customers pay with a berry, and artists draw the worth 5-minute commission to receive it.
-        And there are no boundaries between artists and consumers. Anyone can be an artist.</p>
-      <div class="two_grid content_space">
-        <div>
-          <h3>Target Audiences</h3>
-          <p>Berry Studios has two target audiences. A customer who wants to get a drawing and an artist who wants to draw.
-            The artist draws a drawing to get a Berry, and the customer buys the Berry and pays the artist.
-            However, there is no boundary in this relationship. It doesn't have a separate register to switch users' role.</p>
-        </div>
-        <img src="images/berrystudio/target.png">
-      </div>
-
-      <!-- <div class="content_space">
-        <div>
-          <h3>UX Research</h3>
-          <p class="content_p">MICARD’s design goal is to transfer all the functions of the school ID card to the mobile and integrate existing apps.
-            After organizing all the functions into a list, group them into categories with similar functions.
-            The categories are largely divided into account, dining, and life.
-            MICARD's functions focused on personal life, not on the classes and communication.
-            It only has the functions that users need to use the card or while staying on the school campus.</p>
-        </div>
-      </div> -->
-      <!-- <img class="content_half_space"src="images/micard/sketch.png"> -->
-      <h2 class="content_space" style="line-height: 100%;">Persona Scenario</h2>
-    </div>
-
-
-    <div class="content_container">
-      <div class="two_grid tablet_transform_grid">
-        <div class="grind_in_grid">
-          <div>
-            <img src="images/berrystudio/persona1.jpg">
-            <h4>Cat Lover</h4>
-          </div>
-          <p>He is a college student who has a cat. He wants to draw a portrait for the cat, but he lacks drawing skills.
-            He tried to ask someone else to draw, but it's not easy to find someone who draws animals.
-            Also, most commissions require high prices. He wants to get several pictures of different styles for the cat.
-            He is looking for someone to draw for the cat at a low price.</p>
-        </div>
-        <img src="images/berrystudio/persona1.png">
-      </div>
-      <div class="two_grid content_half_space tablet_transform_grid">
-        <div class="grind_in_grid">
-          <div>
-            <img src="images/berrystudio/persona2.jpg">
-            <h4>Office Worker</h4>
-          </div>
-          <p>She is an office worker. She does simple line drawing as a hobby, and a good response on social media. She draws simple but unique illustrations.
-            he wants to make money by drawing pictures in her leisure time.
-            However, there is no way to sell them. She wants to show a picture to many people and get a commission.</p>
-        </div>
-        <img src="images/berrystudio/persona2.png">
-      </div>
-    </div>
-
-    <div class="content_container">
-        <h2 class="content_space">User Flow</h2>
-        <p class="content_p">Barry Studios targets two types of users. User flow is divided into the customer and the artist.
-          Each target user can reach their goal in two ways.
-          The first way to get a drawing from the customer's perspective is to find the artist they like on the feed and commission their photo directly.
-          The second way is to post the image on the commission page and get an artist's request.
-          The first way to draw from an artist's perspective of view is to wait for someone's direct request.
-          The second way is to request the commission they want to draw from the commission list that the customer posted.</p>
-        <img class="content_half_space" src="images/berrystudio/userflow.png">
-       <h2 class="content_half_space">Wire Frame</h2>
-       <p class="content_p">The pages divide into four functions. The main feed page is where the completed commission comes up.
-         Commission pages are for a request to non-specific artists. The customer looks for the artist, and the artist responds.
-         Activity is where artists and customers record their activities. The requests sent and received can check here.
-         My gallery is where the final results store. Users can access their account from here. And Users can always access their Berry status on every page.</p>
-       <img class="content_half_space" src="images/berrystudio/wireframe1.png">
-       <img src="images/berrystudio/wireframe2.png">
-
-       <h2 class="content_space">Usability Tests</h2>
-    </div>
-
-    <div class="color_box">
-      <div>
-        <h3>Questions</h3>
-        <p>
-          · Guess the expected function of each button.<br>
-          · Guess the function of each page.<br>
-          · Test for access to specific features.<br>
-          · Expect what will be on the next page.<br>
-          · Guess how you can get away from each page.<br>
-          · Check the users can move to the expected flow.
-        </p>
-        <h3>Resolutions</h3>
-        <p>
-          · The target audience for some buttons is not clear.<br>
-          · The name of the page does not imply a function.<br>
-          · Some of features not found at once.<br>
-          · Unexpected function appear, but satisfied with it.<br>
-          · Most of them succeeded at once, and knew which page to go back to.<br>
-          · Most of them went with the flow, but some of the buttons were confused.
+  </div>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div>
+      <div class="title_description">
+        <subtitle>UI · UX / Product Design</subtitle>
+        <h1>Berry Studio</h1>
+        <p>Berry Studio is a platform that buys and sells a drawing for one dollar.
+          It has two functions on one platform, anyone can be an artist and customer of the Berry Studio.
         </p>
       </div>
+      <div class="color_button_title"><a href="https://www.figma.com/proto/suhTHqdbMmcvVEvoEAWoiq/Berry-Drawing-Studio?node-id=55%3A0&viewport=176%2C297%2C0.19706547260284424&scaling=scale-down" target="_blank"><i class="fas fa-flask"></i> Prototype</a></div>
     </div>
+  </div>
+  <img class ="pattern_image" src="images/patterns/pattern.png">
+  <img class ="title_image" src="images/berrystudio/title.png">
 
-    <div class="content_container">
-      <h2 class="content_space">Key Features</h2>
-      <img class="content_half_space" src="images/berrystudio/keyfeatures1.png">
-      <img class="content_half_space" src="images/berrystudio/keyfeatures2.png">
-      <img class="content_half_space" src="images/berrystudio/keyfeatures3.png">
-      <img class="content_half_space" src="images/berrystudio/keyfeatures4.png">
+  <div class="content_container">
+    <h2 class="quotes content_more_space">"How can we trade a simple commission? <br>I'd like to buy your five minutes drawing for a dollar."</h2>
+    <p class="content_p">There are many commission platforms on the Internet. However, most commissions are for high-quality illustrations.
+      It pays a lot of money to request professional illustrators for drawings. And artist do expensive commission to make money.
+      So the quality and cost of the illustrations and the time is increasing.
+      Then how about buying and selling the drawings for a dollar? People can buy about five minutes for a dollar.
+      Berry Studio is a platform for trading a drawing in a dollar. Customers pay with a berry, and artists draw the worth 5-minute commission to receive it.
+      And there are no boundaries between artists and consumers. Anyone can be an artist.
+    </p>
+    <div class="two_grid content_space">
+      <div>
+        <h3>Target Audiences</h3>
+        <p>Berry Studios has two target audiences. A customer who wants to get a drawing and an artist who wants to draw.
+          The artist draws a drawing to get a Berry, and the customer buys the Berry and pays the artist.
+          However, there is no boundary in this relationship. It doesn't have a separate register to switch users' role.
+        </p>
+      </div>
+      <img src="images/berrystudio/target.png">
     </div>
+    <h2 class="content_space" style="line-height: 100%;">Persona Scenario</h2>
+  </div>
 
-    <div class="content_container">
-      <h2 class="content_space">Resolutions</h2>
-      <p class="content_p">
-        Berry Studio is a commission platform that allows you to trade drawings with each other simple way.
-        Customers don't have to bargain with artists. The artists who not professional illustrators also have opportunities for those who wanted to do a commission.
-        By making the system as simple as possible, users are not exposed to too many variables.
-        It has a simple process of requesting and drawing images and posting them.
+
+  <div class="content_container">
+    <div class="two_grid tablet_transform_grid">
+      <div class="grind_in_grid">
+        <div>
+          <img src="images/berrystudio/persona1.jpg">
+          <h4>Cat Lover</h4>
+        </div>
+        <p>He is a college student who has a cat. He wants to draw a portrait for the cat, but he lacks drawing skills.
+          He tried to ask someone else to draw, but it's not easy to find someone who draws animals.
+          Also, most commissions require high prices. He wants to get several pictures of different styles for the cat.
+          He is looking for someone to draw for the cat at a low price.
+        </p>
+      </div>
+      <img src="images/berrystudio/persona1.png">
+    </div>
+    <div class="two_grid content_half_space tablet_transform_grid">
+      <div class="grind_in_grid">
+        <div>
+          <img src="images/berrystudio/persona2.jpg">
+          <h4>Office Worker</h4>
+        </div>
+        <p>She is an office worker. She does simple line drawing as a hobby, and a good response on social media. She draws simple but unique illustrations.
+          he wants to make money by drawing pictures in her leisure time.
+          However, there is no way to sell them. She wants to show a picture to many people and get a commission.
+        </p>
+      </div>
+      <img src="images/berrystudio/persona2.png">
+    </div>
+  </div>
+
+  <div class="content_container">
+    <h2 class="content_space">User Flow</h2>
+    <p class="content_p">Barry Studios targets two types of users. User flow is divided into the customer and the artist.
+      Each target user can reach their goal in two ways.
+      The first way to get a drawing from the customer's perspective is to find the artist they like on the feed and commission their photo directly.
+      The second way is to post the image on the commission page and get an artist's request.
+      The first way to draw from an artist's perspective of view is to wait for someone's direct request.
+      The second way is to request the commission they want to draw from the commission list that the customer posted.
+    </p>
+    <img class="content_half_space" src="images/berrystudio/userflow.png">
+    <h2 class="content_half_space">Wire Frame</h2>
+    <p class="content_p">The pages divide into four functions. The main feed page is where the completed commission comes up.
+      Commission pages are for a request to non-specific artists. The customer looks for the artist, and the artist responds.
+      Activity is where artists and customers record their activities. The requests sent and received can check here.
+      My gallery is where the final results store. Users can access their account from here. And Users can always access their Berry status on every page.
+    </p>
+    <img class="content_half_space" src="images/berrystudio/wireframe1.png">
+    <img src="images/berrystudio/wireframe2.png">
+
+    <h2 class="content_space">Usability Tests</h2>
+  </div>
+
+  <div class="color_box">
+    <div>
+      <h3>Questions</h3>
+      <p>
+        · Guess the expected function of each button.<br>
+        · Guess the function of each page.<br>
+        · Test for access to specific features.<br>
+        · Expect what will be on the next page.<br>
+        · Guess how you can get away from each page.<br>
+        · Check the users can move to the expected flow.
       </p>
-      <div class="content_half_space">
-        <img src="images/berrystudio/mockup1.jpg">
-        <img src="images/berrystudio/mockup2.jpg">
-      </div>
+      <h3>Resolutions</h3>
+      <p>
+        · The target audience for some buttons is not clear.<br>
+        · The name of the page does not imply a function.<br>
+        · Some of features not found at once.<br>
+        · Unexpected function appear, but satisfied with it.<br>
+        · Most of them succeeded at once, and knew which page to go back to.<br>
+        · Most of them went with the flow, but some of the buttons were confused.
+      </p>
+    </div>
+  </div>
 
-      <a href="https://www.figma.com/proto/suhTHqdbMmcvVEvoEAWoiq/Berry-Drawing-Studio?node-id=55%3A0&viewport=176%2C297%2C0.19706547260284424&scaling=scale-down" target="_blank">
-        <div class="color_button content_half_space"><h2><i class="fas fa-flask"></i> Prototype</h2></div>
-      </a>
+  <div class="content_container">
+    <h2 class="content_space">Key Features</h2>
+    <img class="content_half_space" src="images/berrystudio/keyfeatures1.png">
+    <img class="content_half_space" src="images/berrystudio/keyfeatures2.png">
+    <img class="content_half_space" src="images/berrystudio/keyfeatures3.png">
+    <img class="content_half_space" src="images/berrystudio/keyfeatures4.png">
+  </div>
+
+  <div class="content_container">
+    <h2 class="content_space">Resolutions</h2>
+    <p class="content_p">
+      Berry Studio is a commission platform that allows you to trade drawings with each other simple way.
+      Customers don't have to bargain with artists. The artists who not professional illustrators also have opportunities for those who wanted to do a commission.
+      By making the system as simple as possible, users are not exposed to too many variables.
+      It has a simple process of requesting and drawing images and posting them.
+    </p>
+    <div class="content_half_space">
+      <img src="images/berrystudio/mockup1.jpg">
+      <img src="images/berrystudio/mockup2.jpg">
     </div>
 
-    <div id="contact_cont" class="contact_container content_space"></div>
-  </body>
+    <a href="https://www.figma.com/proto/suhTHqdbMmcvVEvoEAWoiq/Berry-Drawing-Studio?node-id=55%3A0&viewport=176%2C297%2C0.19706547260284424&scaling=scale-down" target="_blank">
+      <div class="color_button content_half_space"><h2><i class="fas fa-flask"></i> Prototype</h2></div>
+    </a>
+  </div>
+
+  <div id="contact_cont" class="contact_container content_space"></div>
+</body>
 </html>

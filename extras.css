@@ -108,14 +108,6 @@ subtitle {
   transition: opacity 1s ease;
 }
 
-/*bigger than 1290*/
-@media screen and (min-width: 1290px) {
-  .go_back div {
-    opacity: 1;
-    visibility: visible;
-  }
-}
-
 .title_container {
   height: 80px;
   padding-top: 10px;
@@ -129,11 +121,17 @@ subtitle {
   margin: auto;
 }
 
-.title_container img {
+.title_container img, .title_container a {
   height: 100%;
   padding-right: 10px;
 }
 
+.title_container div img {
+  cursor: pointer;
+}
+.title_container div img:hover {
+  transform: scale(1.1);
+}
 
 .content_container {
   height: auto;
@@ -206,11 +204,12 @@ subtitle {
   padding: 0px;
 }
 
-.title_container img {
-  cursor: pointer;
-}
-.title_container img:hover {
-  transform: scale(110%);
+/*bigger than 1290*/
+@media screen and (min-width: 1290px) {
+  .go_back div {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /*Tablet*/

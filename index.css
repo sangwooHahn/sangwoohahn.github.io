@@ -226,7 +226,7 @@ subtitle {
   position: absolute;
   width: 191.25px;
   height: 247.5px;
-  margin: 60px 0px 0px 100px;
+  margin: 60px 0px 0px 5vw;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -361,9 +361,17 @@ subtitle {
     font-size: 4em;
   }
   .thumbnail_description {
-    padding-top: 8vw;
+    padding-top: 5vw;
   }
 }
+
+/*Tablet333*/
+@media screen and (min-width: 600px) and (max-width: 870px) {
+  .thumbnail_description {
+    padding: 0 auto 0 auto;
+  }
+}
+
 
 /*Smart phone*/
 @media screen and (max-width: 699px) {
@@ -423,6 +431,7 @@ subtitle {
   }
   .posters div {
     left : 0;
+    margin: 60px 0px 0px 100px;
   }
   .motions div {
     margin: 70px 0px 0px 40px;
