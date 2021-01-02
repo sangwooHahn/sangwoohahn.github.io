@@ -82,15 +82,14 @@ subtitle {
 }
 
 .title_container {
-  height: 100vh; /*95vh;*/
+  height: calc(100vh - 50px); /*95vh;*/
   top:0;
-  background-color: #fafafa;/*rgb(77,77,77);*/
+  background-color: #666;/*rgb(77,77,77);*/
 }
 
-
 .title_container > div {
-  position: fixed;
-  display:block;
+  /* position: fixed; */
+  /* display:block; */
 }
 
 .nav {

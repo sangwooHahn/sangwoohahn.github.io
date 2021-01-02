@@ -1,0 +1,711 @@
+.name_container {
+  position: absolute;
+  margin-left: calc(50vw - 230px);
+  margin-top: calc(50vh - 210px);
+}
+.name_container div {
+  position: absolute;
+  background-color: #fafafa;
+  z-index: 9999;
+  border-radius: 00px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.15);
+  transition: all 0.5s ease;
+}
+.name_container div:hover {
+  /* background-color: #ff0000; */
+  /* box-shadow: 0 0 30px rgba(0,0,0,0.3); */
+}
+
+.name_sub_container {
+  position: absolute;
+  color: #fafafa;
+  font-size: 1.2em;
+  text-align: center;
+  margin-left: calc(50vw - 100px);
+  margin-top: calc(50vh + 150px);
+  z-index: 9999;
+}
+
+
+
+/*S*/
+.name_container div:nth-child(1) {
+  width: 100px;
+  height: 30px;
+  border-radius: 30px 30px 0px 0;
+  animation: anime1 10s ease infinite;
+}
+@keyframes anime1 {
+  0% {
+    border-radius: 30px 30px 0px 0;
+    width: 100px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+    /* width: 80px; */
+  }
+  100% {
+    border-radius: 30px 30px 0px 0;
+    width: 100px;
+  }
+}
+.name_container div:nth-child(2) {
+  width: 30px;
+  height: 90px;
+  border-radius: 30px 0 0 30px;
+  animation: anime2 10s ease infinite;
+}
+@keyframes anime2 {
+  0% {
+    border-radius: 30px 0 0 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0 0 30px;
+  }
+}
+.name_container div:nth-child(3) {
+  margin-top: 60px;
+  width: 100px;
+  height: 30px;
+  border-radius: 0 30px 0 30px;
+  animation: anime3 10s ease infinite;
+}
+@keyframes anime3 {
+  0% {
+    border-radius: 0 30px 0 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0 30px 0 30px;
+  }
+}
+.name_container div:nth-child(4) {
+  margin-left: 70px;
+  margin-top: 60px;
+  width: 30px;
+  height: 90px;
+  border-radius: 0 30px 30px 0;
+  animation: anime4 10s ease infinite;
+}
+@keyframes anime4 {
+  0% {
+    border-radius: 0 30px 30px 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0 30px 30px 0;
+  }
+}
+.name_container div:nth-child(5) {
+  margin-top: 120px;
+  width: 100px;
+  height: 30px;
+  border-radius: 0 0 30px 30px;
+  animation: anime5 10s ease infinite;
+}
+@keyframes anime5 {
+  0% {
+    border-radius: 0 0 30px 30px;
+    width: 100px;
+    margin-left: 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+    /* width: 80px;
+    margin-left: 20px; */
+  }
+  100% {
+    border-radius: 0 0 30px 30px;
+    width: 100px;
+    margin-left: 0px;
+  }
+}
+/*A*/
+.name_container div:nth-child(6) {
+  margin-left: 120px;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px 30px 0 0;
+  animation: anime6 10s ease infinite;
+}
+@keyframes anime6 {
+  0% {
+    border-radius: 30px 30px 0 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 30px 0 0;
+  }
+}
+.name_container div:nth-child(7) {
+  margin-left: 120px;
+  margin-top: 60px;
+  width: 100px;
+  height: 30px;
+}
+.name_container div:nth-child(8) {
+  margin-left: 120px;
+  width: 30px;
+  height: 150px;
+  border-radius: 30px 0 0 0;
+  animation: anime8 10s ease infinite;
+}
+@keyframes anime8 {
+  0% {
+    border-radius: 30px 0 0 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0 0 0;
+  }
+}
+.name_container div:nth-child(9) {
+  margin-left: 190px;
+  width: 30px;
+  height: 150px;
+  border-radius: 0px 30px 0 0;
+  animation: anime9 10s ease infinite;
+}
+@keyframes anime9 {
+  0% {
+    border-radius: 0px 30px 0 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0px 30px 0 0;
+  }
+}
+/*N*/
+.name_container div:nth-child(10) {
+  margin-left: 275px;
+  width: 32px;
+  height: 150px;
+  transform: skewX(21deg);
+  border-radius: 20px 0px 0 0;
+  animation: anime10 10s ease infinite;
+}
+@keyframes anime10 {
+  0% {
+    border-radius: 20px 0px 0 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 20px 0px 0 0;
+  }
+}
+.name_container div:nth-child(11) {
+  margin-left: 240px;
+  width: 30px;
+  height: 150px;
+  border-radius: 30px 0 0 0;
+  animation: anime11 10s ease infinite;
+}
+@keyframes anime11 {
+  0% {
+    border-radius: 30px 0 0 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0 0 0;
+  }
+}
+.name_container div:nth-child(12) {
+  margin-left: 310px;
+  width: 30px;
+  height: 150px;
+  border-radius: 30px 0 0 0;
+  animation: anime12 10s ease infinite;
+}
+@keyframes anime12 {
+  0% {
+    border-radius: 30px 0 0 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0 0 0;
+  }
+}
+/*G*/
+.name_container div:nth-child(13) {
+  margin-left: 360px;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px 30px 0 0;
+  animation: anime13 10s ease infinite;
+}
+@keyframes anime13 {
+  0% {
+    border-radius: 30px 30px 0 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 30px 0 0;
+  }
+}
+.name_container div:nth-child(14) {
+  margin-left: 360px;
+  width: 30px;
+  height: 150px;
+  border-radius: 30px 0 0 30px;
+  animation: anime14 10s ease infinite;
+}
+@keyframes anime14 {
+  0% {
+    border-radius: 30px 0 0 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0 0 30px;
+  }
+}
+.name_container div:nth-child(15) {
+  margin-left: 430px;
+  margin-top: 60px;
+  width: 30px;
+  height: 90px;
+  border-radius: 0 30px 30px 0;
+  animation: anime15 10s ease infinite;
+}
+@keyframes anime15 {
+  0% {
+    border-radius: 0 30px 30px 0;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0 30px 30px 0;
+  }
+}
+.name_container div:nth-child(16) {
+  margin-left: 360px;
+  margin-top: 120px;
+  width: 100px;
+  height: 30px;
+  border-radius: 0 0 30px 30px;
+  animation: anime16 10s ease infinite;
+}
+@keyframes anime16 {
+  0% {
+    border-radius: 0 0 30px 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0 0 30px 30px;
+  }
+}
+.name_container div:nth-child(17) {
+  margin-left: 410px;
+  margin-top: 60px;
+  width: 50px;
+  height: 30px;
+  border-radius: 0 30px 0 0px;
+  animation: anime17 10s ease infinite;
+}
+@keyframes anime17 {
+  0% {
+    border-radius: 0 30px 0 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0 30px 0 0px;
+  }
+}
+/*W*/
+.name_container div:nth-child(18) {
+  margin-left: 50px;
+  margin-top: 170px;
+  width: 32px;
+  height: 150px;
+  transform: skewX(10deg);
+  border-radius: 0 30px 0 0px;
+  animation: anime18 10s ease infinite;
+}
+@keyframes anime18 {
+  0% {
+    border-radius: 0 30px 0 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0 30px 0 0px;
+  }
+}
+.name_container div:nth-child(19) {
+  margin-left: 80px;
+  margin-top: 170px;
+  width: 32px;
+  height: 150px;
+  transform: skewX(-10deg);
+  border-radius: 30px 0 0 0px;
+  animation: anime19 10s ease infinite;
+}
+@keyframes anime19 {
+  0% {
+    border-radius: 30px 0 0 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0 0 0px;
+  }
+}
+.name_container div:nth-child(20) {
+  margin-left: 110px;
+  margin-top: 170px;
+  width: 32px;
+  height: 150px;
+  transform: skewX(10deg);
+  border-radius: 30px 0 0 0px;
+  animation: anime20 10s ease infinite;
+}
+@keyframes anime20 {
+  0% {
+    border-radius: 30px 0 0 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0 0 0px;
+  }
+}
+.name_container div:nth-child(21) {
+  margin-left: 140px;
+  margin-top: 170px;
+  width: 32px;
+  height: 150px;
+  transform: skewX(-10deg);
+  border-radius: 30px 0px 0 0px;
+  animation: anime21 10s ease infinite;
+}
+@keyframes anime21 {
+  0% {
+    border-radius: 30px 0px 0 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0px 0 0px;
+  }
+}
+/*O*/
+.name_container div:nth-child(22) {
+  margin-left: 200px;
+  margin-top: 170px;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px 30px 0 0px;
+  animation: anime22 10s ease infinite;
+}
+@keyframes anime22 {
+  0% {
+    border-radius: 30px 30px 0 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 30px 0 0px;
+  }
+}
+.name_container div:nth-child(23) {
+  margin-left: 200px;
+  margin-top: 290px;
+  width: 100px;
+  height: 30px;
+  border-radius: 0px 0px 30px 30px;
+  animation: anime23 10s ease infinite;
+}
+@keyframes anime23 {
+  0% {
+    border-radius: 0px 0px 30px 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0px 0px 30px 30px;
+  }
+}
+.name_container div:nth-child(24) {
+  margin-left: 200px;
+  margin-top: 170px;
+  width: 30px;
+  height: 150px;
+  border-radius: 30px 0px 0 30px;
+  animation: anime24 10s ease infinite;
+}
+@keyframes anime24 {
+  0% {
+    border-radius: 30px 0px 0 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0px 0 30px;
+  }
+}
+.name_container div:nth-child(25) {
+  margin-left: 270px;
+  margin-top: 170px;
+  width: 30px;
+  height: 150px;
+  border-radius: 0px 30px 30px 0px;
+  animation: anime25 10s ease infinite;
+}
+@keyframes anime25 {
+  0% {
+    border-radius: 0px 30px 30px 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0px 30px 30px 0px;
+  }
+}
+/*O2*/
+.name_container div:nth-child(26) {
+  margin-left: 320px;
+  margin-top: 170px;
+  width: 100px;
+  height: 30px;
+  border-radius: 30px 30px 0 0px;
+  animation: anime26 10s ease infinite;
+}
+@keyframes anime26 {
+  0% {
+    border-radius: 30px 30px 0 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 30px 0 0px;
+  }
+}
+.name_container div:nth-child(27) {
+  margin-left: 320px;
+  margin-top: 290px;
+  width: 100px;
+  height: 30px;
+  border-radius: 0px 0px 30px 30px;
+  animation: anime27 10s ease infinite;
+}
+@keyframes anime27 {
+  0% {
+    border-radius: 0px 0px 30px 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0px 0px 30px 30px;
+  }
+}
+.name_container div:nth-child(28) {
+  margin-left: 320px;
+  margin-top: 170px;
+  width: 30px;
+  height: 150px;
+  border-radius: 30px 0px 0 30px;
+  animation: anime28 10s ease infinite;
+}
+@keyframes anime28 {
+  0% {
+    border-radius: 30px 0px 0 30px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 30px 0px 0 30px;
+  }
+}
+.name_container div:nth-child(29) {
+  margin-left: 390px;
+  margin-top: 170px;
+  width: 30px;
+  height: 150px;
+  border-radius: 0px 30px 30px 0px;
+  animation: anime29 10s ease infinite;
+}
+@keyframes anime29 {
+  0% {
+    border-radius: 0px 30px 30px 0px;
+  }
+  50% {
+    border-radius: 0px 0px 0px 0;
+  }
+  100% {
+    border-radius: 0px 30px 30px 0px;
+  }
+}
+
+
+.backgroundColor_container {
+  position: relative;
+  display: grid;
+  /* grid-template-columns: repeat(20, 1fr); */
+  grid-template-rows: repeat(6, 1fr);
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundColor_container div {
+  /* position: absolute; */
+  width:100%;
+  height:100%;
+  background-color: #22e094;
+}
+.backgroundColor_container div:first-child {
+  animation: colorchange 10s ease-out 0.1s infinite;
+}
+
+.backgroundColor_container div:nth-child(2) {
+  animation: colorchange 10s ease-out 0.2s infinite;
+}
+
+.backgroundColor_container div:nth-child(3) {
+  animation: colorchange 10s ease-out 0.3s infinite;
+}
+
+.backgroundColor_container div:nth-child(4) {
+  animation: colorchange 10s ease-out 0.4s infinite;
+}
+
+.backgroundColor_container div:nth-child(5) {
+  animation: colorchange 10s ease-out 0.5s infinite;
+}
+
+.backgroundColor_container div:nth-child(6) {
+  animation: colorchange 10s ease-out 0.6s infinite;
+}
+
+@keyframes colorchange {
+  20% {
+    background-color: #22e094;
+  }
+  40% {
+    background-color: #1edce3;
+  }
+  60% {
+    background-color: #148fdb;
+  }
+  80% {
+    background-color: #73c928;
+  }
+  100% {
+    background-color: #22e094;
+  }
+}
+
+
+
+.arrow_container {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  z-index: 99;
+  margin-left: calc(50% - 12px);
+  margin-top: calc(100vh - 170px);
+}
+
+.chevron {
+  position: absolute;
+  width: 32px;
+  height: 6px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before, .chevron:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: #fafafa;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.arrow_text {
+  display: block;
+  margin-left: -24px;
+  margin-top: 75px;
+  font-size: 1em;
+  color: #fafafa;
+  /* text-transform: uppercase; */
+  text-align: center;
+  white-space: nowrap;
+}
