@@ -2,6 +2,7 @@
   position: absolute;
   margin-left: calc(50vw - 230px);
   margin-top: calc(50vh - 210px);
+  z-index: 9999;
 }
 .name_container div {
   position: absolute;
@@ -708,4 +709,16 @@
   /* text-transform: uppercase; */
   text-align: center;
   white-space: nowrap;
+}
+
+/*Smart phone*/
+@media screen and (max-width: 699px) {
+  .name_container {
+    transform: scale(0.6, 0.6);
+    margin-left: calc(50vw - 138px);
+    margin-top: calc(50vh - 156px);
+  }
+  .name_sub_container {
+    margin-top: calc(50vh + 60px);
+  }
 }
