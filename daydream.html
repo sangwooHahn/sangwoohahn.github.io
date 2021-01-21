@@ -1,264 +1,226 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sangwoo Portfolio</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="portfolio.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <meta charset="utf-8"/>
-    <script>
-    $(function(){
-      $("#contact_cont").load("https://sangwoohahn.com/footer.html");
-    });
-    </script>
-    <script>
-    $(window).on('scroll',function(){
-      var title_image_back_position = Math.round($(window).scrollTop() / $(window).height() * 140*10);
-      $('.title_image_back').css('transform','translateX('+(title_image_back_position/10)+'%)');
-      var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 100*10);
-      $('.title_image').css('transform','translateX('+(title_image_position/10)+'%)');
-      var title_image_overlap_position = Math.round($(window).scrollTop() / $(window).height() * 70*10);
-      $('.title_image_overlap').css('transform','translateX('+(title_image_overlap_position/10)+'%)');
-    });
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $(function(){
+    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+  });
 
-      $(document).ready(function(){ /* control all page of the special colors*/
-        var color = ('#942A75');
-        $('h2').css('color',color);
-        $('h3').css('color',color);
-        $('.go_back div').css('color',color);
-        $('.nav').css('background-color',color);
-        $('.title_container').css('background-color',color);
-        $('.color_box').css('background-color',color);
-        $('.color_button').css('background-color',color);
-        $('.color_button h2').css('color','#fafafa');
-        $('.color_box > div > h3').css('color','#fafafa');
-        $('.contact_container div h3').css('color','#fafafa');
-        $('.go_back').css('border-left', '2.5px solid '+color);
-        $('.go_back').css('border-top', '2.5px solid '+color);
-       });
+  $(window).on('scroll',function(){
+    var title_image_position = Math.round($(window).scrollTop());
+    $('.title_image').css('transform','translateY(-'+(title_image_position)+'px)');
+  });
 
-       window.open_about = function() {
-         localStorage.setItem("click_open", "about_show");
-       }
-    </script>
-    <style>
-    /* * {box-sizing: border-box;} */
+  // $(window).on('scroll',function(){
+  //   var title_image_back_position = Math.round($(window).scrollTop() / $(window).height() * 140*10);
+  //   $('.title_image_back').css('transform','translateX('+(title_image_back_position/10)+'%)');
+  //   var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 100*10);
+  //   $('.title_image').css('transform','translateX('+(title_image_position/10)+'%)');
+  //   var title_image_overlap_position = Math.round($(window).scrollTop() / $(window).height() * 70*10);
+  //   $('.title_image_overlap').css('transform','translateX('+(title_image_overlap_position/10)+'%)');
+  // });
 
-    .img-comp-container {
-      position: relative;
-      height: 800px; /*should be the same height as the images*/
-      width: 1000px;
-      margin: auto;
-    }
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var color = ('#962174');
+    $('h2').css('color',color);
+    $('h3').css('color',color);
+    $('.go_back div').css('color',color);
+    $('.nav').css('background-color',color);
+    $('.title_container').css('background-color',color);
+    $('.color_box').css('background-color',color);
+    $('.color_button').css('background-color',color);
+    $('.color_button h2').css('color','#fafafa');
+    $('.color_box > div > h3').css('color','#fafafa');
+    $('.contact_container div h3').css('color','#fafafa');
+    $('.go_back').css('border-left', '2.5px solid '+color);
+    $('.go_back').css('border-top', '2.5px solid '+color);
+  });
 
-    .img-comp-img {
-      position: absolute;
-      width: 100%;
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+  </script>
+  <style>
+  /* * {box-sizing: border-box;} */
+
+  .title_image {
+    position: fixed;
+    top:60px;
+    left:calc(calc(100vw - 1000px) * 0.5 + 450px);
+    width: 750px;
+    height: auto;
+  }
+
+  .img-comp-container {
+    position: relative;
+    height: 800px; /*should be the same height as the images*/
+    width: 1000px;
+    margin: auto;
+  }
+
+  .img-comp-img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .img-comp-img img {
+    display: block;
+    vertical-align: middle;
+    width:1000px;
+  }
+
+  #img-comp-slider {
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    /*set the appearance of the slider:*/
+    width: 10px;
+    height: 130px;
+    background-color: #962174;
+    opacity: 0.9;
+    border-radius: 5px;
+  }
+  #img-comp-slider-l {
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    /*set the appearance of the slider:*/
+    opacity: 0.9;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right:10px solid #962174;
+  }
+  #img-comp-slider-r {
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    /*set the appearance of the slider:*/
+    opacity: 0.9;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left:10px solid #962174;
+  }
+
+  .img-comp-overlay {
+    width:100%;
+  }
+
+  .content_inside_space {
+    padding-top: 60%;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
+    .title_image {
+      left: 500px;
+      top:150px;
+      width: 700px;
       height: auto;
-      overflow: hidden;
-    }
-
-    .img-comp-img img {
-      display: block;
-      vertical-align: middle;
-      width:1000px;
-    }
-
-    .img-comp-slider {
-      position: absolute;
-      z-index: 9;
-      cursor: ew-resize;
-      /*set the appearance of the slider:*/
-      width: 10px;
-      height: 130px;
-      background-color: #942A75;
-      opacity: 0.9;
-      border-radius: 5px;
-    }
-    .img-comp-slider-l {
-      position: absolute;
-      z-index: 9;
-      cursor: ew-resize;
-      /*set the appearance of the slider:*/
-      opacity: 0.9;
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-right:10px solid #942A75;
-    }
-    .img-comp-slider-r {
-      position: absolute;
-      z-index: 9;
-      cursor: ew-resize;
-      /*set the appearance of the slider:*/
-      opacity: 0.9;
-      width: 0;
-      height: 0;
-      border-top: 10px solid transparent;
-      border-bottom: 10px solid transparent;
-      border-left:10px solid #942A75;
-    }
-
-    .img-comp-overlay {
-    	width:100%;
-    }
-
-
-    .title_image, .title_image_overlap, .title_image_back {
-      position: fixed;
-      /* top:6vw; */
-      bottom:0vw;
-      right:0px;
-      width: 80%;
-      height: auto;
-      animation-duration: 0.75s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
     }
     .content_inside_space {
-      padding-top: 60%;
+      padding-top: 30%;
     }
-
-    /*Tablet*/
-    @media screen and (min-width: 600px) and (max-width: 1156px) {
-      .title_image, .title_image_overlap, .title_image_back {
-        width: 100%;
-      }
-      .content_inside_space {
-        padding-top: 30%;
-      }
-      .title_image img {
-        top:130px;
-      }
-
-      .img-comp-container {
-        height: 500px; /*should be the same height as the images*/
-      }
-      .img-comp-img img {
-        width:600px;
-        height: auto;
-      }
+    .img-comp-container {
+      height: 500px; /*should be the same height as the images*/
     }
-
-    /*Smart phone*/
-    @media screen and (max-width: 599px) {
-      .title_image, .title_image_overlap, .title_image_back {
-        width: 150%;
-      }
-      .title_image img {
-        top:310px;
-        right:50px;
-        width:80%;
-      }
-      .content_inside_space {
-        padding-top: 0px;
-      }
-
-      .img-comp-container {
-        height: 300px; /*should be the same height as the images*/
-        width: 370px;
-      }
-      .img-comp-img img {
-        width:370px;
-      }
+    .img-comp-img img {
+      width:600px;
+      height: auto;
     }
+  }
 
-    </style>
-  </head>
-  <body>
-    <div class="nav">
-      <div>
-        <ul>
-          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-          <li><a href="index.html#body_cont">Portfolio</a></li>
-          <li><a href="index.html#contact_cont">Contact</a></li>
-        </ul>
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+    .title_image {
+      left: 0px;
+      top: 410px;
+    }
+    .title_description p {
+      width : 480px;
+    }
+    .content_more_space {
+      margin-top: 400px;
+    }
+  }
+
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      left: 0px;
+      top: 330px;
+      width:100%;
+      height:auto;
+    }
+    .content_more_space {
+      margin-top: 250px;
+    }
+    .img-comp-container {
+      height: 300px; /*should be the same height as the images*/
+      width: 370px;
+    }
+    .img-comp-img img {
+      width:370px;
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div>
+      <ul>
+        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+        <li><a href="index.html#body_cont">Portfolio</a></li>
+        <li><a href="index.html#contact_cont">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div>
+      <div class="title_description">
+        <subtitle>UI · UX / Game Design</subtitle>
+        <h1>Daydream</h1>
+        <p>Daydream is an action battle game for PC and consoles developed with the programmer.
+          Story of challengers who enter the tower and fight monsters to find the Loar.
+        </p>
       </div>
     </div>
-    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-    <div class="title_container">
-      <div>
-        <div class="title_description">
-          <subtitle>UI · UX / Game Design</subtitle>
-          <h1>Daydream</h1>
-          <p>Daydream is an action game developed in collaboration with a programmer for three months.
-            It tells the story of challengers who enter the tower and fight monsters to find the magical stone Loar that grants their wishes.</p>
-        </div>
-      </div>
-    </div>
-    <img class ="pattern_image" src="images/patterns/pattern.png">
-    <img class ="title_image_back" src="images/daydream/title_back.png">
-    <img class ="title_image" src="images/daydream/title_middle.png">
-    <img class ="title_image_overlap" src="images/daydream/title_front.png">
-
-    <div class="content_container">
-      <div class="two_grid content_space">
-        <div class="content_inside_space">
-          <h3>Target Audience</h3>
-          <p>Daydream is a game for people who enjoy the games and feel a sense of accomplishment through difficulty.
-            It is set in a medieval Western fantasy and contains its own story and worldview.
-            Games develop with console and PC versions so that users can enjoy the battle with large screens and control the joysticks.</p>
-        </div>
-        <img src="images/daydream/target.png">
-      </div>
-
-      <h2 class="content_space">Game Graphics</h2>
-
-      <!-- <div class="two_grid content_half_space">
-        <div class="content_inside_space">
-          <h3>Character Design</h3>
-          <p>The characters’ design has a condensed appearance to make the movement easier because of the short development period.
-            All motions make with frame-by-frame animations.
-            To preserve the identity of the character, each character is assigned a symbolic color and weapon.</p>
-        </div>
-        <img src="images/daydream/crt.png">
-      </div> -->
-      <h3 class="content_half_space">Character Designs</h3>
-      <img src="images/daydream/monster.png">
-    </div>
-    <img class="content_half_space" src="images/daydream/crt_motions.png">
-
-    <div class="content_container content_half_space">
-      <!-- <div class="two_grid">
-        <div class="content_inside_space">
-          <h3>Boss Design</h3>
-          <p>Boss "Golem of Knowledge" was designed in the form of a golem consisting of bookshelves.
-            Boss design parts by parts to move to keyframe animation.
-            Hands that are not directly connected to the shoulder has advantageous in attacking enemies.</p>
-        </div>
-      </div> -->
-
-      <div class="two_grid content_half_space">
-        <div class="content_inside_space">
-          <h3>Environment Design</h3>
-          <!-- <p>The fixed environment creates in 3D to avoid monotony and gives a sense of space.
-            The camera is fixed in one direction and moves only left and right to evade awkward combinations of 2D and 3D.
-            The area designs to remind the old place of the tower, where the Golem of Knowledge stays.</p> -->
-        </div>
-      </div>
-    </div>
-
+  </div>
+  <img class ="pattern_image" src="images/patterns/pattern.png">
+  <!-- <img class ="title_image" src="images/daydream/3dMap_color.png"> -->
+  <div class="title_image">
     <div class="img-comp-container">
       <div class="img-comp-img">
         <img src="images/daydream/3dMap_black.png">
@@ -267,158 +229,199 @@
         <img src="images/daydream/3dMap_color.png">
       </div>
     </div>
+  </div>
 
-    <img class="content_half_space" src="images/daydream/environment.jpg">
+  <div class="content_container">
+    <h2 class="quotes content_more_space">"From planning to development."</h2>
+    <p class="content_p">Daydream is the third work of a short-term game development project.
+      The project was developed in collaboration with programmers in an attempt to translate various ideas into reality.
+      The game tells the story of challengers who challenge the tower and find the mysterious stone, Loar.
+      Daydream is designed to allow users to choose a challenger, defeat the enemy, and receive feelings of challenge the tower.
+    </p>
+  </div>
 
-    <div class="content_container">
-       <h2 class="content_space">Game Interface</h2>
-       <div class="two_grid content_half_space">
-         <div class="content_inside_space">
-           <h3>Interface Research</h3>
-           <p>The game is design for a console and a PC.
-             The game does not use a mouse even in PC because the video games do not have a mouse pointer.
-             All buttons design with dynamic interfaces, designed for the use of various functions with minimal buttons.
-             Before the battle stage, It allows preparation progress mostly with confirmation and cancellation buttons.</p>
-         </div>
-         <img src="images/daydream/interface.png">
-       </div>
+  <div class="two_big_image_grid content_space">
+    <img src="images/daydream/game1.png">
+    <img src="images/daydream/game4.png">
+  </div>
+  <img src="images/daydream/mockup.jpg">
 
-       <h3 class="content_space">User Flow</h3>
-       <img src="images/daydream/userflow.png">
-       <h3 class="content_half_space">Wireframe</h3>
-       <img src="images/daydream/wireframe.png">
-       <h3 class="content_space">Key functions</h3>
-       <img class="content_half_space" src="images/daydream/detail.png">
-
-       <h2 class="content_space">Usability Tests</h2>
-    </div>
-
-    <div class="color_box">
-      <div>
-        <h3>Title & Character Page</h3>
-        <p>
-          · Do you understand how to control it?<br>
-          · Do you realize you have to choose two characters to proceed?<br>
-          · Is the icon enough to mark the selected character?
-        </p>
-        <h3>During the Game</h3>
-        <p>
-          · Where is the character's health and how much is it?<br>
-          · Can you find the key for switching characters?<br>
-          · Where is the health point of your second character?<br>
-          · Were is the boss' health status?<br>
-          · If you forgot control keys, where would you find them?<br>
-          · Where is the detailed description of the skill?<br>
-          · Do you know that each skills consumes a different amount of energy?<br>
-          · Do you expect what would appear when you pressed the Esc key?
-        </p>
-        <h3>Menu</h3>
-        <p>
-          · What would you do when you went back to battle from the menu?<br>
-          · Where should you proceed with control the volume?<br>
-          · Do you know the difference between Quit game and Back to Main?
+  <div class="content_container">
+    <div class="two_grid content_space">
+      <div class="content_inside_space">
+        <h3>Target Audience</h3>
+        <p>Daydream is a game for people who enjoy the games and feel a sense of accomplishment through difficulty.
+          Games develop with console and PC versions so that users can enjoy the battle with large screens and control the joysticks.
         </p>
       </div>
+      <img src="images/daydream/target.png">
     </div>
+  </div>
+
+  <div class="content_container content_half_space">
+
     <div class="content_container">
-        <h2 class="content_space">Resolution</h2>
-        <p class="content_p">
-          The game was organized in stages, not in real-time to give a detailed explanation.
-          This makes it easier to provide information about items or during the healing time.
-          This allows users to feel like they are growing up by defeating enemies in each level.
-        </p>
-        <div class="content_half_space">
-          <img src="images/daydream/game1.png">
-          <img src="images/daydream/game2.png">
-          <img src="images/daydream/game3.png">
-          <!-- <img src="images/daydream/game4.png"> -->
-          <img src="images/daydream/mockup.jpg">
-          <video controls class="content_half_space" src="images/daydream/trailer.mp4" type="video/mp4"></video>
-          <video controls src="images/daydream/intro.mp4" type="video/mp4"></video>
-        </div>
+      <h2 class="content_space">Game Interface</h2>
+      <h3 class="content_half_space">Key functions</h3>
+      <img class="content_half_space" src="images/daydream/detail.png">
+      <h3 class="content_space">User Flow</h3>
+      <img src="images/daydream/userflow.png">
+      <h3 class="content_half_space">Wireframe</h3>
+      <img src="images/daydream/wireframe.png">
 
-        <a href="thefins.html" target="_blank">
-          <div class="color_button content_half_space"><h2><i class="fas fa-external-link-alt"></i> Project-A: The Fins</h2></div>
-        </a>
-
-      </div>
+      <h2 class="content_space">Usability Tests</h2>
     </div>
+  </div>
 
-    <div id="contact_cont" class="contact_container content_space"></div>
+  <div class="color_box">
+    <div>
+      <h3>Title & Select Page</h3>
+      <p>
+        · Can you understand how to control it?<br>
+        · Did you realize you have to choose two characters?<br>
+        · Is the Flag enough to understand character is selected?
+      </p>
+      <h3>In the Battle</h3>
+      <p>
+        · Where is the character's health and how much is it?<br>
+        · Can you find the key for switching characters?<br>
+        · Where is the health point of your second character?<br>
+        · Were is the boss' health point?<br>
+        · If you forgot control keys, where would you find them?<br>
+        · Where is the detailed description of the skill?<br>
+        · Do you know that each skills consumes a different amount of energy?<br>
+        · Do you expect what would appear when you pressed the Esc key?
+      </p>
+      <h3>Menu</h3>
+      <p>
+        · What would you do when you went back to battle from the menu?<br>
+        · Where should you proceed with control the volume?<br>
+        · Do you know the difference between Quit game and Back to Main?
+      </p>
+    </div>
+  </div>
+  <div class="content_container">
+    <h2 class="content_space">Vidoes</h2>
+    <!-- <p class="content_p">
+    The game was organized in stages, not in real-time to give a detailed explanation.
+    This makes it easier to provide information about items or during the healing time.
+    This allows users to feel like they are growing up by defeating enemies in each level.
+  </p> -->
+  <div class="content_half_space">
+    <!-- <img src="images/daydream/game1.png">
+    <img src="images/daydream/game2.png">
+    <img src="images/daydream/game3.png"> -->
+    <!-- <img src="images/daydream/game4.png"> -->
+    <!-- <img src="images/daydream/mockup.jpg"> -->
+    <video controls class="content_half_space" src="images/daydream/trailer.mp4" type="video/mp4"></video>
+    <video controls src="images/daydream/intro.mp4" type="video/mp4"></video>
+  </div>
 
-    <script>
-      function initComparisons() {
-        var x, i;
-        x = document.getElementsByClassName("img-comp-overlay");
-        for (i = 0; i < x.length; i++) {
-          compareImages(x[i]);
-        }
-        function compareImages(img) {
-          var slider, sliderl, sliderr, img, clicked = 0, w, h;
-          w = img.offsetWidth;
-          h = img.offsetHeight;
-          img.style.width = "50%";
-          slider = document.createElement("DIV");
-          slider.setAttribute("class", "img-comp-slider");
-          img.parentElement.insertBefore(slider, img);
-          slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
-          slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
-          sliderl = document.createElement("DIV");
-          sliderl.setAttribute("class", "img-comp-slider-l");
-          sliderl.style.top = (h / 2)-10 + "px";
-          sliderl.style.left = (w / 2) - (slider.offsetWidth / 2)-12 + "px";
-          img.parentElement.insertBefore(sliderl, img);
-          sliderr = document.createElement("DIV");
-          sliderr.setAttribute("class", "img-comp-slider-r");
-          sliderr.style.top = (h / 2)-10 + "px";
-          sliderr.style.left = (w / 2) - (slider.offsetWidth / 2)+12 + "px";
-          img.parentElement.insertBefore(sliderr, img);
-          slider.addEventListener("mousedown", slideReady);
-          window.addEventListener("mouseup", slideFinish);
-          slider.addEventListener("touchstart", slideReady);
-          window.addEventListener("touchend", slideFinish);
-          sliderl.addEventListener("mousedown", slideReady);
-          sliderl.addEventListener("touchstart", slideReady);
-          sliderr.addEventListener("mousedown", slideReady);
-          sliderr.addEventListener("touchstart", slideReady);
-          function slideReady(e) {
-            e.preventDefault();
-            clicked = 1;
-            window.addEventListener("mousemove", slideMove);
-            window.addEventListener("touchmove", slideMove);
-          }
-          function slideFinish() {
-            clicked = 0;
-          }
-          function slideMove(e) {
-            var pos;
-            if (clicked == 0) return false;
-            pos = getCursorPos(e)
-            if (pos < 0) pos = 0;
-            if (pos > w) pos = w;
-            slide(pos);
-          }
-          function getCursorPos(e) {
-            var a, x = 0;
-            e = e || window.event;
-            a = img.getBoundingClientRect();
-            x = e.pageX - a.left;
-            x = x - window.pageXOffset;
-            return x;
-          }
-          function slide(x) {
-            img.style.width = x + "px";
-            slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
-            sliderl.style.left = img.offsetWidth - (sliderl.offsetWidth / 2)-12 + "px";
-            sliderr.style.left = img.offsetWidth - (sliderr.offsetWidth / 2)+12 + "px";
-          }
-        }
-      }
-      </script>
-    <script>
-      setTimeout(function(){
-         initComparisons();
-      }, 3000);
-    </script>
-  </body>
+  <a href="thefins.html" target="_blank">
+    <div class="color_button content_half_space"><h2><i class="fas fa-external-link-alt"></i> Project-A: The Fins</h2></div>
+  </a>
+
+</div>
+
+<div id="contact_cont" class="contact_container content_space"></div>
+
+<script>
+function initComparisons() {
+  var x, i;
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var slider, sliderl, sliderr, img, clicked = 0, w, h;
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    img.style.width = "50%";
+    slider = document.createElement("DIV");
+    slider.setAttribute("id", "img-comp-slider");
+    img.parentElement.insertBefore(slider, img);
+    slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+    slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+    sliderl = document.createElement("DIV");
+    sliderl.setAttribute("id", "img-comp-slider-l");
+    sliderl.style.top = (h / 2)-10 + "px";
+    sliderl.style.left = (w / 2) - (slider.offsetWidth / 2)-12 + "px";
+    img.parentElement.insertBefore(sliderl, img);
+    sliderr = document.createElement("DIV");
+    sliderr.setAttribute("id", "img-comp-slider-r");
+    sliderr.style.top = (h / 2)-10 + "px";
+    sliderr.style.left = (w / 2) - (slider.offsetWidth / 2)+12 + "px";
+    img.parentElement.insertBefore(sliderr, img);
+    slider.addEventListener("mousedown", slideReady);
+    window.addEventListener("mouseup", slideFinish);
+    slider.addEventListener("touchstart", slideReady);
+    window.addEventListener("touchend", slideFinish);
+    sliderl.addEventListener("mousedown", slideReady);
+    sliderl.addEventListener("touchstart", slideReady);
+    sliderr.addEventListener("mousedown", slideReady);
+    sliderr.addEventListener("touchstart", slideReady);
+    function slideReady(e) {
+      e.preventDefault();
+      clicked = 1;
+      window.addEventListener("mousemove", slideMove);
+      window.addEventListener("touchmove", slideMove);
+    }
+    function slideFinish() {
+      clicked = 0;
+    }
+    function slideMove(e) {
+      var pos;
+      if (clicked == 0) return false;
+      pos = getCursorPos(e)
+      if (pos < 0) pos = 0;
+      if (pos > w) pos = w;
+      slide(pos);
+    }
+    function getCursorPos(e) {
+      var a, x = 0;
+      e = e || window.event;
+      a = img.getBoundingClientRect();
+      x = e.pageX - a.left;
+      x = x - window.pageXOffset;
+      return x;
+    }
+    function slide(x) {
+      img.style.width = x + "px";
+      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+      sliderl.style.left = img.offsetWidth - (sliderl.offsetWidth / 2)-12 + "px";
+      sliderr.style.left = img.offsetWidth - (sliderr.offsetWidth / 2)+12 + "px";
+    }
+  }
+}
+
+function resize_scroll() {
+  var x, i;
+  x = document.getElementsByClassName("img-comp-overlay");
+  for (i = 0; i < x.length; i++) {
+    compareImages(x[i]);
+  }
+  function compareImages(img) {
+    var sliderOffsetWidth = document.getElementById("img-comp-slider").offsetWidth;
+    var sliderOffsetHeight = document.getElementById("img-comp-slider").offsetHeight;
+    var w, h;
+    w = img.offsetWidth;
+    h = img.offsetHeight;
+    document.getElementById("img-comp-slider").style.top = (h / 2) - (sliderOffsetHeight / 2) + "px";
+    // document.getElementById("img-comp-slider").style.left = (w / 2) - (sliderOffsetWidth / 2) + "px";
+    document.getElementById("img-comp-slider-l").style.top = (h / 2)-10 + "px";
+    // document.getElementById("img-comp-slider-l").style.left = (w / 2) - (sliderOffsetWidth / 2)-12 + "px";
+    document.getElementById("img-comp-slider-r").style.top = (h / 2)-10 + "px";
+    // document.getElementById("img-comp-slider-r").style.left = (w / 2) - (sliderOffsetWidth / 2)+12 + "px";
+  }
+}
+</script>
+<script>
+setTimeout(function(){
+  initComparisons();
+}, 30);
+window.onresize = function(event) {
+  resize_scroll();
+};
+</script>
+</body>
 </html>

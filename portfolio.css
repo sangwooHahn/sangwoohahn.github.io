@@ -205,6 +205,13 @@ subtitle {
   opacity: 0.6;
 }
 
+.two_big_image_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding-bottom: 10px;
+}
+
 .content_container {
   height: auto;
   width: 1100px;
@@ -378,6 +385,9 @@ subtitle {
   .color_button_title {
     margin-top:20px;
   }
+  .two_big_image_grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*Smart phone*/
@@ -409,6 +419,9 @@ subtitle {
   }
   .pattern_image {
     width: 70%;
+  }
+  .two_big_image_grid {
+    grid-template-columns: 1fr;
   }
   .two_grid {
     display: grid;
