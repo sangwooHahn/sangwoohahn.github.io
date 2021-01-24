@@ -198,7 +198,7 @@ subtitle {
   cursor: pointer;
 }
 .portfolio_button:hover {
-  transform: scale(0.98);
+  transform: scale(0.95);
   opacity: 0.95;
 }
 
