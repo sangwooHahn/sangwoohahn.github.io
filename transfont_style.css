@@ -11,7 +11,7 @@ ul {
 li {
   display: inline;
   list-style-type:none;
-  margin-right: 40px;
+  margin-right: 10px;
   cursor: pointer;
 }
 h2 {
@@ -28,14 +28,14 @@ a {
 }
 h3 {
   font-size: 1.5em;
-  color: #000;
+  color: #202020;
   /* text-align: center;
   margin-bottom: 200px; */
 }
 
 video {
   /* width:calc(100% - 140px); */
-  width: calc(100% - 400px);
+  width: calc(100% - 350px);
   /* margin-left: 140px;
   margin-top: 50px; */
   margin-bottom: 0px;
@@ -55,14 +55,30 @@ img {
 
 .nav {
   height: 50px;
-  color: #1840CF;
-  padding-left: 25px;
+  color: #202020;
+  padding-left: 0px;
   padding-top: 10px;
+}
+
+.nav > ul > li {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 40px;
+}
+
+.nav > ul > li:hover {
+  background-color: #eee;
 }
 
 .nav > ul > li:first-of-type {
   font-weight: bold;
+  color: #1840CF;
   font-size: 1.4em;
+}
+.nav > ul > li:first-of-type:hover {
+    background-color: #fff;
 }
 
 #container_left {
@@ -72,7 +88,7 @@ img {
 
 #preview {
   position: fixed;
-  width : calc(100% - 400px);
+  width : calc(100% - 350px);
   margin-top: calc(25vh - 50px);
   margin-left: 140px;
   z-index: -1;
@@ -82,8 +98,8 @@ img {
   position: fixed;
   margin-top: calc(70vh - 80px);
   margin-left: 150px;
-  width: calc(100vw - 400px - 140px);
-  color: #1840CF;
+  width: calc(100vw - 350px - 140px);
+  color: #202020;
   font-size: 1em;
 }
 
@@ -148,7 +164,7 @@ form {
   position: fixed;
   margin-top: calc(70vh - 50px);
   margin-left: 140px;
-  width: calc(100vw - 400px - 140px);
+  width: calc(100vw - 350px - 140px);
 }
 
 form .fa-microphone-alt {
@@ -163,8 +179,8 @@ form .fa-keyboard {
   /* display: block; */
   display: none;
   position: fixed;
-  margin-left: 12px;
-  margin-top: 12px;
+  margin-left: 20px;
+  margin-top: 11px;
   font-size: 1.6em;
   color: #1840CF;
 }
@@ -173,13 +189,13 @@ form .fa-keyboard {
 #textField[type=text] {
   /* width: 130px; */
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 50px;
   font-size: 1em;
   color: #1840CF;
   border: 3px solid #1840CF;
   outline: none;
   /* background-color: #1840CF; */
-  padding: 12px 20px 12px 48px;
+  padding: 12px 20px 12px 58px;
   transition: width 0.4s ease-in-out;
 }
 
@@ -198,18 +214,18 @@ form .fa-keyboard {
   top: 0;
   right: 0;
   display: grid;
-  grid-template-rows: 480px 30px auto 60px;
+  grid-template-rows: 480px 45px auto 55px;
   height:100%;
-  width: 400px;
+  width: 350px;
   /* border-left: 5px solid #1840CF; */
-  background-color: #1840CF;
+  background-color: #202020;
 
   transition: all 1s ease;
 }
 
 #glyphs {
   padding-left: 25px;
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
 #labels {
@@ -217,7 +233,7 @@ form .fa-keyboard {
   padding-right: 30px;
   padding-top: 32px;
   /* background-color: #07248c; */
-  /* border-bottom: 5px solid #07248c; */
+  /* border-bottom: 0.2px solid #aaa; */
 }
 #labels p {
   margin-top: 16px;
@@ -234,9 +250,17 @@ form .fa-keyboard {
 
 #switchButton {
   color: white;
-  margin-left: 30px;
-  margin-top: 15px;
+  margin-left: 15px;
+  margin-top: 7px;
+  padding-left: 15px;
+  padding-top: 7px;
+  width: 144px;
+  background-color: #202020;
+  border-radius: 20px;
   cursor: pointer;
+}
+#switchButton:hover {
+  background-color: #444;
 }
 
 #slideIcon, #camIcon {
@@ -251,15 +275,16 @@ form .fa-keyboard {
 #downloadButton {
   width: 100%;
   text-align: center;
-  padding-top: 11px;
-  font-size: 1.5em;
+  padding-top: 10px;
+  font-size: 1.3em;
   font-weight: bold;
+  /* text-transform: uppercase; */
   color: white;
-  background-color: #07248c;
+  background-color: #1840CF;
 }
 
 #downloadButton:hover {
-  background-color: #000;/*#609FFF;*/
+  background-color: #0b2a99;/*#609FFF;*/
   color: #fff;
   cursor: pointer;
 }
@@ -273,8 +298,8 @@ form .fa-keyboard {
 .customSlider {
   -webkit-appearance: none;
   width: 100%;
-  height: 10px;
-  background: #eee;
+  height: 5px;
+  background: #444;
   outline: none;
   opacity: 1;
   -webkit-transition: .2s;
@@ -286,16 +311,16 @@ form .fa-keyboard {
 .customSlider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
-  background: #07248c;
+  width: 15px;
+  height: 15px;
+  background: #fff;
   border-radius: 25%;
   cursor: pointer;
 }
 .customSlider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background: #07248c;
+  width: 15px;
+  height: 15px;
+  background: #1840CF;
   border-radius: 25%;
   cursor: pointer;
 }
@@ -332,17 +357,17 @@ form .fa-keyboard {
   height: 20px;
   width: 20px;
   border-radius: 15%;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 /* On mouse-over, add a grey background color */
 .customCheck:hover input ~ .checkMark {
-  background-color: #ccc;
+  background-color: #aaa;
 }
 
 /* When the checkbox is checked, add a blue background */
 .customCheck input:checked ~ .checkMark {
-  background-color: #07248c;
+  background-color: #ccc;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -363,7 +388,7 @@ form .fa-keyboard {
   top: 2px;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid #202020;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);

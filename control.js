@@ -138,11 +138,11 @@ document.getElementById("update_button").onclick = function() {
 
 function allButtonOff () {
   document.getElementById("about_button").style.textDecoration= "none";//전체 리스트 내리기 버튼도 밑줄끄기
-  document.getElementById("about_button").style.color= "#1840CF";
+  document.getElementById("about_button").style.color= "#202020";
   document.getElementById("use_button").style.textDecoration= "none";
-  document.getElementById("use_button").style.color= "#1840CF";
+  document.getElementById("use_button").style.color= "#202020";
   document.getElementById("update_button").style.textDecoration= "none";
-  document.getElementById("update_button").style.color= "#1840CF";
+  document.getElementById("update_button").style.color= "#202020";
 
   document.getElementById("main_container").style.display= "none";
   document.getElementById("about_container").style.display= "none";
@@ -154,5 +154,5 @@ function allButtonOff () {
 
 function buttonOn (button) {
   document.getElementById(button).style.textDecoration= "underline";//전체 리스트 내리기 버튼도 밑줄끄기
-  document.getElementById(button).style.color= "#07248c";//전체 리스트 내리기 버튼도 밑줄끄기
+  document.getElementById(button).style.color= "#202020";//전체 리스트 내리기 버튼도 밑줄끄기
 }

@@ -6,6 +6,7 @@ let cameraActive = false;
 let stopTimer = false;
 let stopTimeCount;
 let timerColor = 'white';
+let timerBGColorOpcity = 0;
 let clickedFrame;
 
 let stopAll = false;
@@ -17,7 +18,7 @@ function setup() {
 }
 
 function cameraStart () {
-  var sketchCanvas = createCanvas(400, 480);//(640, 480);
+  var sketchCanvas = createCanvas(350, 480);//(640, 480);
   sketchCanvas.parent("bodyCanvas");
   video = createCapture(VIDEO);
   video.hide();
@@ -66,7 +67,12 @@ function draw() {
 
   function drawTimer () {
     if(!stopTimer) {
+
+      fill(0,0,0,timerBGColorOpcity);
+      rect(8,8,95,40,50);
+
       translate(20, 40);
+
       noFill();
       stroke(timerColor);
       strokeWeight(2.5);
@@ -90,23 +96,31 @@ function draw() {
         textStyle(NORMAL);
         text('Activate', 30, -3);
       }
+      else {
+        textSize(15);
+        textAlign(LEFT,BOTTOM);
+        textStyle(NORMAL);
+        text('Timer', 30, -3);
+      }
     }
   }
 
 function clickTimer () {
-  if(mouseX > 20 && mouseX < 40 && mouseY > 20 && mouseY < 40) {
-    timerColor = '#1840CF';
+  if(mouseX > 10 && mouseX < 100 && mouseY > 10 && mouseY < 50) {
+    // timerColor = '#1840CF';
+    timerBGColorOpcity = 120;
     if(!stopTimer) {
       cursor(HAND);
     }
   } else {
     timerColor = 'white';
+    timerBGColorOpcity = 0;
     cursor(ARROW);
   }
 }
 
 function mouseClicked () {
-  if(mouseX > 20 && mouseX < 40 && mouseY > 20 && mouseY < 40) {
+  if(mouseX > 10 && mouseX < 100 && mouseY > 10 && mouseY < 50) {
     if(stopAll) {
       stopAll = false;
     }
@@ -137,6 +151,7 @@ function timerWork () {
   }
   if(stopAll) {
     stopTimeCount = 0;
+    timerBGColorOpcity = 0;
     stopTimer = false;
   }
 }

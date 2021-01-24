@@ -3804,9 +3804,9 @@ function createGlyphFont (firstDraw) {//글리프 좌표를 써둔 부분
     for (var i = 2; i < font2.glyphs.length; i++) { // 폰트없을때랑 스페이스랑 제외하기 위해서 2로 시작
       var ctx;
       var glyph = font2.glyphs.get(i);
-      var canvasSizeX = 45;
+      var canvasSizeX = 40;
       var canvasSizeY = 45;
-      var x = 10;
+      var x = 5;
       var y = 30;
       var fontSize_g = 30;
       if(!firstDraw) {//만약 이게 처음 그리는게 아니라면 칸의 이름만 받아와서
@@ -3815,7 +3815,7 @@ function createGlyphFont (firstDraw) {//글리프 좌표를 써둔 부분
       }
       else
       ctx = createGlyphCanvas(glyph, canvasSizeX, canvasSizeY);
-      glyph.draw(ctx, x, y, fontSize_g, 'white');
+      glyph.draw(ctx, x, y, fontSize_g, 'black');
       // glyph.drawPoints(ctx, x, y, fontSize_g);
       // glyph.drawMetrics(ctx, x, y, fontSize_g);
     }
