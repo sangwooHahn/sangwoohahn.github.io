@@ -388,6 +388,9 @@ subtitle {
   .two_big_image_grid {
     grid-template-columns: 1fr;
   }
+  .content_inside_space{
+    padding-top: 0%;
+  }
 }
 
 /*Smart phone*/
@@ -437,6 +440,9 @@ subtitle {
   }
   .content_space {
     margin-top: 100px;
+  }
+  .content_inside_space{
+    padding-top: 0%;
   }
   .contact {
     height: calc(100% - 100px);
