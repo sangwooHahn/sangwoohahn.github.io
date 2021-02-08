@@ -1,16 +1,18 @@
 .name_container {
   position: absolute;
-  margin-left: calc(50vw - 230px);
-  margin-top: calc(50vh - 210px);
-  z-index: 9999;
+  margin-left: calc(50vw - 420px);
+  margin-top: calc(200px);
+  /* transform: scale(1.25, 1.25); */
+  z-index: 1000;
 }
+
 .name_container div {
   position: absolute;
   background-color: #fafafa;
   z-index: 9999;
   border-radius: 00px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.15);
-  transition: all 0.5s ease;
+  box-shadow: 0 0 30px rgba(250,250,250,0.5);
+  transition: animation 0.5s ease;
 }
 .name_container div:hover {
   /* background-color: #ff0000; */
@@ -20,11 +22,15 @@
 .name_sub_container {
   position: absolute;
   color: #fafafa;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  /* font-weight: bold; */
   text-align: center;
-  margin-left: calc(50vw - 100px);
-  margin-top: calc(50vh + 150px);
-  z-index: 9999;
+  margin-left: calc(50vw - 140px);
+  margin-top: calc(380px);
+  padding: 6px 70px 6px 70px;
+  border-radius: 0px;
+  /* z-index: 9999; */
+  animation: colorchange 10s ease-out 0s infinite;
 }
 
 
@@ -34,7 +40,7 @@
   width: 100px;
   height: 30px;
   border-radius: 30px 30px 0px 0;
-  animation: anime1 10s ease infinite;
+  /* animation: anime1 10s ease infinite; */
 }
 @keyframes anime1 {
   0% {
@@ -54,7 +60,7 @@
   width: 30px;
   height: 90px;
   border-radius: 30px 0 0 30px;
-  animation: anime2 10s ease infinite;
+  /* animation: anime2 10s ease infinite; */
 }
 @keyframes anime2 {
   0% {
@@ -72,7 +78,7 @@
   width: 100px;
   height: 30px;
   border-radius: 0 30px 0 30px;
-  animation: anime3 10s ease infinite;
+  /* animation: anime3 10s ease infinite; */
 }
 @keyframes anime3 {
   0% {
@@ -91,7 +97,7 @@
   width: 30px;
   height: 90px;
   border-radius: 0 30px 30px 0;
-  animation: anime4 10s ease infinite;
+  /* animation: anime4 10s ease infinite; */
 }
 @keyframes anime4 {
   0% {
@@ -109,7 +115,7 @@
   width: 100px;
   height: 30px;
   border-radius: 0 0 30px 30px;
-  animation: anime5 10s ease infinite;
+  /* animation: anime5 10s ease infinite; */
 }
 @keyframes anime5 {
   0% {
@@ -134,7 +140,7 @@
   width: 100px;
   height: 30px;
   border-radius: 30px 30px 0 0;
-  animation: anime6 10s ease infinite;
+  /* animation: anime6 10s ease infinite; */
 }
 @keyframes anime6 {
   0% {
@@ -158,7 +164,7 @@
   width: 30px;
   height: 150px;
   border-radius: 30px 0 0 0;
-  animation: anime8 10s ease infinite;
+  /* animation: anime8 10s ease infinite; */
 }
 @keyframes anime8 {
   0% {
@@ -176,7 +182,7 @@
   width: 30px;
   height: 150px;
   border-radius: 0px 30px 0 0;
-  animation: anime9 10s ease infinite;
+  /* animation: anime9 10s ease infinite; */
 }
 @keyframes anime9 {
   0% {
@@ -196,7 +202,7 @@
   height: 150px;
   transform: skewX(21deg);
   border-radius: 20px 0px 0 0;
-  animation: anime10 10s ease infinite;
+  /* animation: anime10 10s ease infinite; */
 }
 @keyframes anime10 {
   0% {
@@ -214,7 +220,7 @@
   width: 30px;
   height: 150px;
   border-radius: 30px 0 0 0;
-  animation: anime11 10s ease infinite;
+  /* animation: anime11 10s ease infinite; */
 }
 @keyframes anime11 {
   0% {
@@ -232,7 +238,7 @@
   width: 30px;
   height: 150px;
   border-radius: 30px 0 0 0;
-  animation: anime12 10s ease infinite;
+  /* animation: anime12 10s ease infinite; */
 }
 @keyframes anime12 {
   0% {
@@ -251,7 +257,7 @@
   width: 100px;
   height: 30px;
   border-radius: 30px 30px 0 0;
-  animation: anime13 10s ease infinite;
+  /* animation: anime13 10s ease infinite; */
 }
 @keyframes anime13 {
   0% {
@@ -269,7 +275,7 @@
   width: 30px;
   height: 150px;
   border-radius: 30px 0 0 30px;
-  animation: anime14 10s ease infinite;
+  /* animation: anime14 10s ease infinite; */
 }
 @keyframes anime14 {
   0% {
@@ -288,7 +294,7 @@
   width: 30px;
   height: 90px;
   border-radius: 0 30px 30px 0;
-  animation: anime15 10s ease infinite;
+  /* animation: anime15 10s ease infinite; */
 }
 @keyframes anime15 {
   0% {
@@ -307,7 +313,7 @@
   width: 100px;
   height: 30px;
   border-radius: 0 0 30px 30px;
-  animation: anime16 10s ease infinite;
+  /* animation: anime16 10s ease infinite; */
 }
 @keyframes anime16 {
   0% {
@@ -326,7 +332,7 @@
   width: 50px;
   height: 30px;
   border-radius: 0 30px 0 0px;
-  animation: anime17 10s ease infinite;
+  /* animation: anime17 10s ease infinite; */
 }
 @keyframes anime17 {
   0% {
@@ -341,13 +347,13 @@
 }
 /*W*/
 .name_container div:nth-child(18) {
-  margin-left: 50px;
-  margin-top: 170px;
+  margin-left: 488px;
+  margin-top: 0px;
   width: 32px;
   height: 150px;
   transform: skewX(10deg);
   border-radius: 0 30px 0 0px;
-  animation: anime18 10s ease infinite;
+  /* animation: anime18 10s ease infinite; */
 }
 @keyframes anime18 {
   0% {
@@ -361,13 +367,13 @@
   }
 }
 .name_container div:nth-child(19) {
-  margin-left: 80px;
-  margin-top: 170px;
+  margin-left:518px;
+  margin-top: 0px;
   width: 32px;
   height: 150px;
   transform: skewX(-10deg);
   border-radius: 30px 0 0 0px;
-  animation: anime19 10s ease infinite;
+  /* animation: anime19 10s ease infinite; */
 }
 @keyframes anime19 {
   0% {
@@ -381,13 +387,13 @@
   }
 }
 .name_container div:nth-child(20) {
-  margin-left: 110px;
-  margin-top: 170px;
+  margin-left: 548px;
+  margin-top: 0px;
   width: 32px;
   height: 150px;
   transform: skewX(10deg);
   border-radius: 30px 0 0 0px;
-  animation: anime20 10s ease infinite;
+  /* animation: anime20 10s ease infinite; */
 }
 @keyframes anime20 {
   0% {
@@ -401,13 +407,13 @@
   }
 }
 .name_container div:nth-child(21) {
-  margin-left: 140px;
-  margin-top: 170px;
+  margin-left: 578px;
+  margin-top: 0px;
   width: 32px;
   height: 150px;
   transform: skewX(-10deg);
   border-radius: 30px 0px 0 0px;
-  animation: anime21 10s ease infinite;
+  /* animation: anime21 10s ease infinite; */
 }
 @keyframes anime21 {
   0% {
@@ -422,12 +428,12 @@
 }
 /*O*/
 .name_container div:nth-child(22) {
-  margin-left: 200px;
-  margin-top: 170px;
+  margin-left: 638px;
+  margin-top: 0px;
   width: 100px;
   height: 30px;
   border-radius: 30px 30px 0 0px;
-  animation: anime22 10s ease infinite;
+  /* animation: anime22 10s ease infinite; */
 }
 @keyframes anime22 {
   0% {
@@ -441,12 +447,12 @@
   }
 }
 .name_container div:nth-child(23) {
-  margin-left: 200px;
-  margin-top: 290px;
+  margin-left: 638px;
+  margin-top: 120px;
   width: 100px;
   height: 30px;
   border-radius: 0px 0px 30px 30px;
-  animation: anime23 10s ease infinite;
+  /* animation: anime23 10s ease infinite; */
 }
 @keyframes anime23 {
   0% {
@@ -460,12 +466,12 @@
   }
 }
 .name_container div:nth-child(24) {
-  margin-left: 200px;
-  margin-top: 170px;
+  margin-left: 638px;
+  margin-top: 0px;
   width: 30px;
   height: 150px;
   border-radius: 30px 0px 0 30px;
-  animation: anime24 10s ease infinite;
+  /* animation: anime24 10s ease infinite; */
 }
 @keyframes anime24 {
   0% {
@@ -479,12 +485,12 @@
   }
 }
 .name_container div:nth-child(25) {
-  margin-left: 270px;
-  margin-top: 170px;
+  margin-left: 708px;
+  margin-top: 0px;
   width: 30px;
   height: 150px;
   border-radius: 0px 30px 30px 0px;
-  animation: anime25 10s ease infinite;
+  /* animation: anime25 10s ease infinite; */
 }
 @keyframes anime25 {
   0% {
@@ -499,12 +505,12 @@
 }
 /*O2*/
 .name_container div:nth-child(26) {
-  margin-left: 320px;
-  margin-top: 170px;
+  margin-left: 758px;
+  margin-top: 0px;
   width: 100px;
   height: 30px;
   border-radius: 30px 30px 0 0px;
-  animation: anime26 10s ease infinite;
+  /* animation: anime26 10s ease infinite; */
 }
 @keyframes anime26 {
   0% {
@@ -518,12 +524,12 @@
   }
 }
 .name_container div:nth-child(27) {
-  margin-left: 320px;
-  margin-top: 290px;
+  margin-left: 758px;
+  margin-top: 120px;
   width: 100px;
   height: 30px;
   border-radius: 0px 0px 30px 30px;
-  animation: anime27 10s ease infinite;
+  /* animation: anime27 10s ease infinite; */
 }
 @keyframes anime27 {
   0% {
@@ -537,12 +543,12 @@
   }
 }
 .name_container div:nth-child(28) {
-  margin-left: 320px;
-  margin-top: 170px;
+  margin-left: 758px;
+  margin-top: 0px;
   width: 30px;
   height: 150px;
   border-radius: 30px 0px 0 30px;
-  animation: anime28 10s ease infinite;
+  /* animation: anime28 10s ease infinite; */
 }
 @keyframes anime28 {
   0% {
@@ -556,12 +562,12 @@
   }
 }
 .name_container div:nth-child(29) {
-  margin-left: 390px;
-  margin-top: 170px;
+  margin-left: 828px;
+  margin-top: 0px;
   width: 30px;
   height: 150px;
   border-radius: 0px 30px 30px 0px;
-  animation: anime29 10s ease infinite;
+  /* animation: anime29 10s ease infinite; */
 }
 @keyframes anime29 {
   0% {
@@ -579,14 +585,12 @@
 .backgroundColor_container {
   position: relative;
   display: grid;
-  /* grid-template-columns: repeat(20, 1fr); */
   grid-template-rows: repeat(6, 1fr);
   width: 100%;
   height: 100%;
 }
 
-.backgroundColor_container div {
-  /* position: absolute; */
+/* .backgroundColor_container div {
   width:100%;
   height:100%;
   background-color: #22e094;
@@ -613,6 +617,14 @@
 
 .backgroundColor_container div:nth-child(6) {
   animation: colorchange 10s ease-out 0.6s infinite;
+} */
+
+/* .nav {
+  animation: colorchange 10s ease-out 0s infinite;
+} */
+
+.name_container div {
+  animation: colorchange 10s ease-out 0s infinite;
 }
 
 @keyframes colorchange {
@@ -641,7 +653,7 @@
   height: 32px;
   z-index: 99;
   margin-left: calc(50% - 12px);
-  margin-top: calc(100vh - 170px);
+  margin-top: calc(100% - 100px);
 }
 
 .chevron {
@@ -667,7 +679,7 @@
   top: 0;
   height: 100%;
   width: 51%;
-  background: #fafafa;
+  background: #000;/*#fafafa;*/
 }
 
 .chevron:before {
@@ -703,22 +715,76 @@
 .arrow_text {
   display: block;
   margin-left: -24px;
-  margin-top: 75px;
+  margin-top: 62px;
   font-size: 1em;
-  color: #fafafa;
+  color: #000;
   /* text-transform: uppercase; */
   text-align: center;
   white-space: nowrap;
 }
 
 /*Smart phone*/
-@media screen and (max-width: 699px) {
+/* @media screen and (max-width: 699px) { */
+/*Tablet*/
+@media screen and (max-width: 1256px) {
   .name_container {
     transform: scale(0.6, 0.6);
     margin-left: calc(50vw - 138px);
-    margin-top: calc(50vh - 156px);
+    margin-top: calc(160px);
   }
   .name_sub_container {
-    margin-top: calc(50vh + 60px);
+    margin-top: calc(420px);
+  }
+
+  /*W*/
+  .name_container div:nth-child(18) {
+    margin-left: 50px;
+    margin-top: 170px;
+  }
+  .name_container div:nth-child(19) {
+    margin-left: 80px;
+    margin-top: 170px;
+  }
+  .name_container div:nth-child(20) {
+    margin-left: 110px;
+    margin-top: 170px;
+  }
+  .name_container div:nth-child(21) {
+    margin-left: 140px;
+    margin-top: 170px;
+  }
+  /*O*/
+  .name_container div:nth-child(22) {
+    margin-left: 200px;
+    margin-top: 170px;
+  }
+  .name_container div:nth-child(23) {
+    margin-left: 200px;
+    margin-top: 290px;
+  }
+  .name_container div:nth-child(24) {
+    margin-left: 200px;
+    margin-top: 170px;
+  }
+  .name_container div:nth-child(25) {
+    margin-left: 270px;
+    margin-top: 170px;
+  }
+  /*O2*/
+  .name_container div:nth-child(26) {
+    margin-left: 320px;
+    margin-top: 170px;
+  }
+  .name_container div:nth-child(27) {
+    margin-left: 320px;
+    margin-top: 290px;
+  }
+  .name_container div:nth-child(28) {
+    margin-left: 320px;
+    margin-top: 170px;
+  }
+  .name_container div:nth-child(29) {
+    margin-left: 390px;
+    margin-top: 170px;
   }
 }
