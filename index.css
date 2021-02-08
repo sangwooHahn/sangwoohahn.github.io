@@ -377,7 +377,7 @@ subtitle {
 @media screen and (max-width: 699px) {
   .nav div, .moreProject_container > div, .contact, .copyright div {
     width: auto;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 30px 0px 30px;
   }
   .two_grid_thumbnail {
     grid-column: span 1;
@@ -402,10 +402,10 @@ subtitle {
     opacity: 1;
   }
   .thumbnail_description {
-    padding-left: 35px;
+    padding-left: 30px;
     padding-top: 60px;
     width: auto;
-    padding-right: 35px;
+    padding-right: 30px;
   }
   .thumbnail_description p {
     width: 100%;
