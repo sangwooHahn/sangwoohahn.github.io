@@ -391,6 +391,9 @@ subtitle {
     margin : 0 40px 0 40px;
     padding-top: 30vh;
   }
+  .portfolio_container {
+    height: 700px;
+  }
   .portfolios {
     grid-template-columns: repeat(1,1fr);
     grid-auto-rows: auto;
