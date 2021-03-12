@@ -71,6 +71,10 @@ ul {
   font-size: 1em;
 }
 
+li {
+  z-index: 999;
+}
+
 img {
   width: 100%;
 }
