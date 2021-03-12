@@ -24,7 +24,7 @@ document.addEventListener("click", function(evt) {
         targetElement = evt.target;  // current clicked element
 
     do {
-        if (targetElement == flyoutElement) {
+        if (targetElement == flyoutElement && contact_toggle) {
             // This is a click inside. Do nothing, just return.
             return;
         }
