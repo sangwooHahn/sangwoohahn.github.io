@@ -16,13 +16,25 @@
 <script>
 let contact_toggle = false;
 document.getElementById("contact_button").onclick = function(e) {
-  if(e.target != document.getElementById('contact_area') && contact_toggle) {
-      console.log('You clicked outside');
-      toggle_contact();
-  } else {
-      console.log('You clicked inside');
-  }
+  toggle_contact();
 };
+
+document.addEventListener("click", function(evt) {
+    var flyoutElement = document.getElementById('contact_area'),//desire to click element
+        targetElement = evt.target;  // current clicked element
+
+    do {
+        if (targetElement == flyoutElement) {
+            // This is a click inside. Do nothing, just return.
+            return;
+        }
+        // Go up the DOM
+        targetElement = targetElement.parentNode;
+    } while (targetElement);
+
+    // This is a click outside.
+    toggle_contact();
+});
 
 document.getElementById("contact_close").onclick = function() {
   toggle_contact();
