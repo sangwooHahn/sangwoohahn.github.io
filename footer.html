@@ -16,7 +16,7 @@
 <script>
 let contact_toggle = false;
 document.getElementById("contact_button").onclick = function(e) {
-  if(e.target != document.getElementById('contact_area')) {
+  if(e.target != document.getElementById('contact_area') && contact_toggle) {
       console.log('You clicked outside');
       toggle_contact();
   } else {
