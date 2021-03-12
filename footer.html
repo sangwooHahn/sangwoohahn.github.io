@@ -13,6 +13,31 @@
   </div>
 </div>
 
+<script>
+let contact_toggle = false;
+document.getElementById("contact_button").onclick = function() {
+  toggle_contact();
+};
+
+document.getElementById("contact_close").onclick = function() {
+  toggle_contact();
+};
+
+
+function toggle_contact ()
+{
+  if(!contact_toggle)
+  {
+    document.getElementById("contact_cont").style.transform= "translateX(0px)";
+  } else
+  {
+    document.getElementById("contact_cont").style.transform= "translateX(300px)";
+  }
+  contact_toggle = !contact_toggle;
+}
+
+</script>
+
 <script type="text/javascript">
 var sc_project=12443380;
 var sc_invisible=1;
