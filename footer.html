@@ -1,5 +1,5 @@
 <div id="contact_cont" class="contact_container">
-  <div class="contact">
+  <div id="contact_area" class="contact">
     <!-- <h3>Contact</h3> -->
     <div id="contact_close"><h3>Contact</h3></div>
     <p><a href="mailto:shahn@mica.edu"><i class="far fa-envelope" style="padding-top: 2px;"></i>shahn@mica.edu</a></p>
@@ -15,8 +15,13 @@
 
 <script>
 let contact_toggle = false;
-document.getElementById("contact_button").onclick = function() {
-  toggle_contact();
+document.getElementById("contact_button").onclick = function(e) {
+  if(e.target != document.getElementById('contact_area')) {
+      console.log('You clicked outside');
+      toggle_contact();
+  } else {
+      console.log('You clicked inside');
+  }
 };
 
 document.getElementById("contact_close").onclick = function() {
