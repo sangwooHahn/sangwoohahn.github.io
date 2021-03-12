@@ -14,46 +14,43 @@
 </div>
 
 <script>
-let contact_toggle = false;
+  let contact_toggle = false;
 
-document.addEventListener("click", function(evt) {
-    var flyoutElement = document.getElementById('contact_area'),//desire to click element
-        targetElement = evt.target;  // current clicked element
+  document.addEventListener("click", function(evt) {
+      var desireElement = document.getElementById('contact_area'),//desire to click element
+          buttonElement = document.getElementById('contact_button'), // detect contact button
+          targetElement = evt.target;  // current clicked element
 
-    do {
-        if (targetElement == flyoutElement && contact_toggle) {
-            // This is a click inside. Do nothing, just return.
-            return;
-        }
-        // Go up the DOM
-        targetElement = targetElement.parentNode;
-    } while (targetElement);
+      do {
+          if (targetElement == desireElement || targetElement == buttonElement) {
+              // This is a click inside. Do nothing, just return.
+              return;
+          }
+          // Go up the DOM
+          targetElement = targetElement.parentNode;
+      } while (targetElement);
+      // This is a click outside.
+      if(contact_toggle)
+        toggle_contact();
+  });
 
-    // This is a click outside.
-    if (contact_toggle) {
-      toggle_contact();
-    }
-});
-
-document.getElementById("contact_button").onclick = function() {
-  toggle_contact();
-};
-document.getElementById("contact_close").onclick = function() {
-  toggle_contact();
-};
+  document.getElementById("contact_button").onclick = function() {
+    toggle_contact();
+  };
+  document.getElementById("contact_close").onclick = function() {
+    toggle_contact();
+  };
 
 
-function toggle_contact ()
-{
-  if(!contact_toggle)
+  function toggle_contact ()
   {
-    document.getElementById("contact_cont").style.transform= "translateX(0px)";
-  } else
-  {
-    document.getElementById("contact_cont").style.transform= "translateX(300px)";
+    if(!contact_toggle)
+      document.getElementById("contact_cont").style.transform= "translateX(0px)";
+    else
+      document.getElementById("contact_cont").style.transform= "translateX(300px)";
+
+      contact_toggle = !contact_toggle;
   }
-  contact_toggle = !contact_toggle;
-}
 
 </script>
 
