@@ -15,9 +15,6 @@
 
 <script>
 let contact_toggle = false;
-document.getElementById("contact_button").onclick = function(e) {
-  toggle_contact();
-};
 
 document.addEventListener("click", function(evt) {
     var flyoutElement = document.getElementById('contact_area'),//desire to click element
@@ -36,6 +33,9 @@ document.addEventListener("click", function(evt) {
     toggle_contact();
 });
 
+document.getElementById("contact_button").onclick = function(e) {
+  toggle_contact();
+};
 document.getElementById("contact_close").onclick = function() {
   toggle_contact();
 };
