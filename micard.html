@@ -28,7 +28,7 @@
   <meta charset="utf-8"/>
   <script>
   $(function(){
-    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
 
   $(window).on('scroll',function(){
@@ -52,12 +52,13 @@
     var color = ('#2284CA');
     $('h2').css('color',color);
     $('h3').css('color',color);
+    $('.go_back_cont').css('background-color',color);
     $('.go_back div').css('color',color);
     $('.nav').css('background-color',color);
     $('.title_container').css('background-color',color);
     $('.color_box').css('background-color',color);
     $('.color_button').css('background-color',color);
-    $('.color_button h2').css('color','#fafafa');
+    $('.color_button h3').css('color','#fafafa');
     $('.color_box > div > h3').css('color','#fafafa');
     $('.contact_container div h3').css('color','#fafafa');
     $('.go_back').css('border-left', '2.5px solid '+color);
@@ -231,7 +232,7 @@
       <ul>
         <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
         <li><a href="index.html#body_cont">Portfolio</a></li>
-        <li><a href="index.html#contact_cont">Contact</a></li>
+        <li><a id ="contact_button">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -259,7 +260,7 @@
       And after class, come back to the dormitory or stay in the studio to do homework.
       In all this process, students always carry their student ID cards. They should always show their student ID when they enter the building or get the food.
       But students don't only have student cards in their pockets. A smartphone is always there too.
-      Therefore, if all the functions of student ID are transfer in to their smartphone, the pocket will be lighter.
+      Therefore, if all the functions of student ID are transfer to their smartphone, the pocket will be lighter.
     </p>
   </div>
 
@@ -270,7 +271,7 @@
   <img src="images/micard/mockup3.jpg">
 
   <div class="content_container">
-    <div class="two_grid content_space">
+    <!-- <div class="two_grid content_space">
       <div>
         <h3>Current Problem</h3>
         <p>In MICA campus life, student ID cards are used in many places.
@@ -280,9 +281,9 @@
         </p>
       </div>
       <img src="images/micard/problem.png">
-    </div>
+    </div> -->
 
-    <div class="content_space">
+    <!-- <div class="content_space">
       <div>
         <h3>Design Goal</h3>
         <p class="content_p">MICARD’s design goal is to transfer all the functions of the school ID card to the mobile and integrate existing apps.
@@ -293,12 +294,9 @@
         </p>
       </div>
     </div>
-    <img class="content_half_space"src="images/micard/sketch.png">
-    <h3 class="content_space" style="line-height: 100%;">Persona Scenario</h3>
-  </div>
-
-
-  <div class="content_container">
+    <img class="content_half_space"src="images/micard/sketch.png"> -->
+    <h2 class="content_space" style="line-height: 100%;">User Research</h2>
+    <h3 class="content_half_space" style="line-height: 100%;">Persona Scenario</h3>
     <div class="two_grid tablet_transform_grid">
       <div class="grind_in_grid">
         <div>
@@ -458,30 +456,10 @@
     </div>
 
     <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" target="_blank">
-      <div class="color_button content_space"><h2><i class="fas fa-flask"></i> Prototype</h2></div>
+      <div class="color_button content_space"><h3><i class="fas fa-flask"></i> Prototype</h3></div>
     </a>
   </div>
 
-  <!-- <div class="content_container">
-    <h2 class="content_space">Resolutions</h2>
-    <p class="content_p">
-      The functions of the ID card, self-certification, and payment method transfer to the smartphone.
-      The users open the door using a smartphone and request a shuttle.
-      Users can pay for their food before lunchtime and get a notification when order is complete.
-      And users no longer have to go directly to the laundry room to check the empty washing machine.
-      It eliminates the inconvenience of school life beyond the integration of cards.
-    </p>
-    <div class="content_half_space">
-      <img src="images/micard/mockup1.jpg">
-      <img src="images/micard/mockup2.jpg">
-      <img src="images/micard/mockup3.jpg">
-    </div>
-
-    <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" target="_blank">
-      <div class="color_button content_half_space"><h2><i class="fas fa-flask"></i> Prototype</h2></div>
-    </a>
-  </div> -->
-
-  <div id="contact_cont" class="contact_container content_space"></div>
+  <div id="copyright_cont" class="content_space"></div>
 </body>
 </html>

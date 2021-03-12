@@ -1,6 +1,6 @@
 .name_container {
   position: absolute;
-  margin-left: calc(50vw - 420px);
+  margin-left: calc(50% - 420px);
   margin-top: calc(200px);
   /* transform: scale(1.25, 1.25); */
   z-index: 1000;
@@ -645,6 +645,24 @@
   }
 }
 
+@keyframes textColorchange {
+  0% {
+    color: #22e094;
+  }
+  20% {
+    color: #1edce3;
+  }
+  50% {
+    color: #148fdb;
+  }
+  70% {
+    color: #73c928;
+  }
+  100% {
+    color: #22e094;
+  }
+}
+
 
 
 .arrow_container {
@@ -653,7 +671,7 @@
   height: 32px;
   z-index: 99;
   margin-left: calc(50% - 12px);
-  margin-top: calc(100% - 100px);
+  top: calc(100vh - 130px);
 }
 
 .chevron {

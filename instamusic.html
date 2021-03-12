@@ -28,7 +28,7 @@
   <meta charset="utf-8"/>
   <script>
   $(function(){
-    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
   </script>
   <script>
@@ -46,7 +46,7 @@
     $('.title_container').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
     $('.color_box').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
     $('.color_button').css('background-image','linear-gradient(to right, #E1306C 50%, #F56040)');
-    $('.color_button h2').css('color','#fafafa');
+    $('.color_button h3').css('color','#fafafa');
     $('.color_box > div > h3').css('color','#fafafa');
     $('.contact_container div h3').css('color','#fafafa');
     $('.go_back').css('border-left', '2.5px solid '+color);
@@ -120,7 +120,7 @@
       <ul>
         <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
         <li><a href="index.html#body_cont">Portfolio</a></li>
-        <li><a href="index.html#contact_cont">Contact</a></li>
+        <li><a id ="contact_button">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -146,25 +146,30 @@
     <p class="content_p">What do people do while they're awake? Most people have similar daily lives.
       However, many people invest time in listening to music or seeing social media in their daily lives. It is already considered part of life by many people.
       Studies show that people all over the world do more than two hours of social media a day on average.
-      And according to IFPI's survey, people spend 17.8 hours a week listening to music, which is about 2.5 hours a day.
+      <!-- And according to IFPI's survey, people spend 17.8 hours a week listening to music, which is about 2.5 hours a day.
       About 75 percent of consumers listen to music on their smartphones, and 50 percent said they would choose streaming if they were asked to choose one.
       So what if Instagram provides music services on the app to users who are already using a smartphone to view Instagram?
-      And not just streaming music, also provide a sharing a list to followers and creating a place to communicate with others through music.
+      And not just streaming music, also provide a sharing a list to followers and creating a place to communicate with others through music. -->
     </p>
-    <!-- <h3 class="content_half_space">Role : </h3>
-    <p class="content_p">
-      User Researcher,
-    </p> -->
   </div>
 
   <img class="content_space" src="images/instamusic/insta.jpg">
 
-  <div class="content_container">
-    <div class="two_grid content_space">
+  <div class="content_container content_space">
+
+    <h2 class="content_space">Key Features</h2>
+    <div>
+      <h3 class="content_half_space">Mobile version</h3>
+      <img src="images/instamusic/keyfeature-1.png">
+      <h3 class="content_half_space">Web version</h3>
+      <img src="images/instamusic/keyfeature-2.png">
+    </div>
+
+    <h2 class="content_space">User Research</h2>
+    <div class="two_grid">
       <div class="content_inside_space">
         <h3>Persona Scenario</h3>
-        <p>The fandom, influencer, and music lovers are the personas of InstaMusic.
-          Each persona shows three main features of InstaMusic.
+        <p>
           The fandom finds the playlist of its favorite stars and presses heart or listens to music.
           Influencer shares their music playlists for their fans.
           The music lover goes to the music list and listen to and saves categorized music.
@@ -172,21 +177,8 @@
       </div>
       <img src="images/instamusic/scenario.png">
     </div>
-    <div class="content_space">
-      <h3>Design Goal</h3>
-      <p class="content_p">
-        The biggest advantage of InstaMusic is that users can listen to and share music just like the previous Instagram experience.
-        Users can search for categories of music through hashtags, and share music lists like pictures through music sharing.
-        The small music controller bar at the bottom is a size that does not interfere with the user's use of Instagram.
-        When the user clicks on a video on Instagram, it automatically adjusts the sound of the music to prevent overlapping music.
-        And users can create a music list with the same experience as creating photo feeds.
-      </p>
-    </div>
-  </div>
 
-
-  <div class="content_container">
-    <h2 class="content_space">User Flow</h2>
+    <h3 class="content_half_space">User Flow</h3>
     <img class="content_half_space" src="images/instamusic/userflow.png">
     <h2 class="content_half_space">Wire Frame</h2>
     <h3 class="content_half_space">Mobile version</h3>
@@ -194,10 +186,10 @@
     <h3 class="content_half_space">Web version</h3>
     <img src="images/instamusic/wireframe-2.png">
 
-    <h2 class="content_space">Usability Tests</h2>
+    <!-- <h2 class="content_space">Usability Tests</h2> -->
   </div>
 
-  <div class="color_box">
+  <!-- <div class="color_box">
     <div>
       <h3>A fan's point of view</h3>
       <p>
@@ -223,16 +215,11 @@
         · Can you find others' comments on your playlist feed?
       </p>
     </div>
-  </div>
+  </div> -->
+
+  <!-- <img class="content_half_space" src="images/instamusic/insta.jpg"> -->
 
   <div class="content_container">
-    <h2 class="content_space">Key Features</h2>
-    <div>
-      <h3 class="content_half_space">Mobile version</h3>
-      <img src="images/instamusic/keyfeature-1.png">
-      <h3 class="content_half_space">Web version</h3>
-      <img src="images/instamusic/keyfeature-2.png">
-    </div>
 
     <!-- <h2 class="content_space">Resolution</h2>
     <p class="content_p">
@@ -249,14 +236,14 @@
 
     <div class="two_color_button content_half_space">
       <a href="https://www.figma.com/proto/AxSPQJmAqIBJGAjG0xfVbe/INSTAGRAM?node-id=1%3A2&viewport=233%2C105%2C0.09654483199119568&scaling=scale-down" target="_blank">
-        <div style="margin-bottom:20px;" class="color_button"><h2><i class="fas fa-flask"></i> Mobile Prototype</h2></div>
+        <div style="margin-bottom:20px;" class="color_button"><h3><i class="fas fa-flask"></i> Mobile Prototype</h3></div>
       </a>
       <a href="https://www.figma.com/proto/AxSPQJmAqIBJGAjG0xfVbe/INSTAGRAM?node-id=723%3A1708&viewport=896%2C1792%2C0.06700076907873154&scaling=min-zoom" target="_blank">
-        <div class="color_button"><h2><i class="fas fa-flask"></i> Web Prototype</h2></div>
+        <div class="color_button"><h3><i class="fas fa-flask"></i> Web Prototype</h3></div>
       </a>
     </div>
   </div>
 
-  <div id="contact_cont" class="contact_container content_space"></div>
+  <div id="copyright_cont" class="content_half_space"></div>
 </body>
 </html>

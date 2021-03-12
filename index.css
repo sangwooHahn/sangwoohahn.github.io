@@ -12,7 +12,14 @@ h1 {
   line-height: 100%;
 }
 
-h2, h3 {
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+h3 {
   margin: 0;
   padding: 0;
   font-size: 1.5em;
@@ -75,7 +82,10 @@ subtitle {
 .about_container > div {
   height: 100%;
   width : 450px;
-  margin : auto;
+  margin-left: calc(calc(100% - 450px) / 2);
+  margin-right: calc(calc(100% - 450px) / 2);
+  /* margin-left: calc(calc(100% - 300px - 450px) / 2);
+  margin-right: calc(calc(100% - 300px - 450px) / 2); */
   left:0;
   right:0;
   padding-top: 30vh;
@@ -83,7 +93,7 @@ subtitle {
 
 .title_container {
   position: relative;
-  height: 570px; /*calc(60vh - 50px);95vh;*/
+  height: 540px; /*calc(60vh - 50px);95vh;*/
   top:0px;
   /* background-color: #666;rgb(77,77,77);*/
   background-color: #fafafa;
@@ -128,6 +138,17 @@ subtitle {
 .nav div li a {
   text-decoration: none;
   color : #000;
+}
+#nav_cont, #title_cont, #about_cont, #body_cont, #moreProject_cont, #copyright_cont  {
+  width: 100vw;
+  transition: width 0.5s ease;
+}
+#about_cont_div {
+  transition: all 0.5s ease;
+}
+#contact_cont {
+  transform: translateX(300px);
+  transition: all 0.5s ease;
 }
 
 .body_container {
@@ -207,14 +228,14 @@ subtitle {
   position: relative;
   height: 600px;
   background-color: #fafafa;
-  padding-bottom: 5px;
+  /* padding-bottom: 5px; */
 }
 
 .moreProject_container > div {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   width: 1100px;
-  height: 100%;
+  /* height: 100%; */
   margin: auto;
   padding-top: 100px;
   padding-left: 60px;
@@ -284,21 +305,26 @@ subtitle {
 }
 
 .contact_container {
-  z-index: 1000;
-  position: relative;
-  height: 400px;
-  background-color: #666;
+  position: fixed;
+  height: 100vh;
+  width: 300px;
+  top:0;
+  right: 0;
+  background-color: #333;
+  z-index: 9999;
 }
 
 .contact {
-  width: 1100px;
-  height: calc(100% - 50px);
-  margin: auto;
+  width: 240px;
+  height: 100%;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
   color: #fafafa;
 }
 
 .contact_container div h3 {
-  padding-top: 40px;
+  padding-top: 10px;
 }
 .contact_container a {
   color: #fafafa;
@@ -316,19 +342,41 @@ subtitle {
   padding-right: 10px;
 }
 .contact_container p {
-  margin-top: 20px;
-}
-.contact_container p:first-of-type {
   margin-top: 30px;
 }
+.contact_container p:first-of-type {
+  margin-top: 60px;
+}
+
+#contact_close {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin-top: 26px;
+  border-left: 2.5px solid white;
+  border-top: 2.5px solid white;
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+#contact_close > h3 {
+  -ms-transform: rotate(45deg);
+  -webkit-ransform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-left: 18px;
+  margin-top: -9px;
+  cursor: pointer;
+}
+
 .copyright {
   height: 50px;
-  background-color: #555;
+  background-color: #eee;
 }
 .copyright div {
   width: 1100px;
   margin: auto;
-  color: #fafafa;
+  color: #999;
 }
 .copyright p {
   padding-top: 15px;
@@ -336,7 +384,7 @@ subtitle {
 
 /*Tablet*/
 @media screen and (min-width: 600px) and (max-width: 1256px) {
-  .nav div, .moreProject_container > div, .contact, .copyright div {
+  .nav div, .moreProject_container > div, .copyright div {
     width: auto;
     margin: 0px 100px 0px 100px;
   }
@@ -375,7 +423,7 @@ subtitle {
 
 /*Smart phone*/
 @media screen and (max-width: 699px) {
-  .nav div, .moreProject_container > div, .contact, .copyright div {
+  .nav div, .moreProject_container > div, .copyright div {
     width: auto;
     margin: 0px 30px 0px 30px;
   }

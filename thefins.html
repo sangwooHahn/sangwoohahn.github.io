@@ -28,7 +28,7 @@
   <meta charset="utf-8"/>
   <script>
   $(function(){
-    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
 
   $(window).on('scroll',function(){
@@ -45,7 +45,7 @@
     $('.title_container').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
     $('.color_box').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
     $('.color_button').css('background-color',color);//image','linear-gradient(to right, #12265B 50%, #04447E)');
-    $('.color_button h2').css('color','#fafafa');
+    $('.color_button h3').css('color','#fafafa');
     $('.color_box > div > h3').css('color','#fafafa');
     $('.contact_container div h3').css('color','#fafafa');
     $('.go_back').css('border-left', '2.5px solid '+color);
@@ -161,7 +161,7 @@
       <ul>
         <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
         <li><a href="index.html#body_cont">Portfolio</a></li>
-        <li><a href="index.html#contact_cont">Contact</a></li>
+        <li><a id ="contact_button">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -294,12 +294,12 @@
         </div>
 
         <a href="daydream.html" target="_blank">
-          <div class="color_button content_half_space"><h2><i class="fas fa-external-link-alt"></i> Daydream</h2></div>
+          <div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Daydream</h3></div>
         </a>
 
       </div>
     </div>
 
-    <div id="contact_cont" class="contact_container content_space"></div>
+    <div id="copyright_cont" class="content_space"></div>
   </body>
   </html>

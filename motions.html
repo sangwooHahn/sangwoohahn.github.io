@@ -1,182 +1,191 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sangwoo Portfolio</title>
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="extras.css">
-    <script src="p5/p5.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
-    <script>
-      $(document).ready(function(){ /* control all page of the special colors*/
-        var color = ('#000');
-        $('h2').css('color',color);
-        $('h3').css('color',color);
-        $('.go_back div').css('color',color);
-        $('.nav').css('background-color','#dedede');
-        $('.title_container').css('background-color','#dedede');
-        $('.contact_container div h3').css('color','#fafafa');
-        $('.go_back').css('border-left', '2.5px solid '+color);
-        $('.go_back').css('border-top', '2.5px solid '+color);
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="extras.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $$(function(){
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
+  });
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var color = ('#000');
+    $('h2').css('color',color);
+    $('h3').css('color',color);
+    $('.go_back div').css('color',color);
+    $('.nav').css('background-color','#dedede');
+    $('.title_container').css('background-color','#dedede');
+    $('.contact_container div h3').css('color','#fafafa');
+    $('.go_back').css('border-left', '2.5px solid '+color);
+    $('.go_back').css('border-top', '2.5px solid '+color);
 
-        if(localStorage.getItem("click_open")=="foodtruck_show") {
-          document.getElementById("sketches").style.display = "none";
-          document.getElementById("foodtruck_motion").style.display = "block";
-          localStorage.setItem("click_open", "undefined");
-        }
-       });
-       window.buttons = function() {
-         document.getElementById("sketches").style.display = "none";
-         document.getElementById("animate").style.display = "none";
-         document.getElementById("SMC").style.display = "none";
-         document.getElementById("gif").style.display = "none";
-         document.getElementById("sequence").style.display = "none";
-         document.getElementById("foodtruck_motion").style.display = "none";
-         document.getElementById("room").style.display = "none";
-         document.getElementById("photoshop").style.display = "none";
-         $('video').trigger('pause');
-       }
-       window.button001 = function() {
-         document.getElementById("sketches").style.display = "block";
-       }
-       window.button002 = function() {
-         document.getElementById("animate").style.display = "block";
-       }
-       window.button003 = function() {
-         document.getElementById("SMC").style.display = "block";
-       }
-       window.button004 = function() {
-         document.getElementById("gif").style.display = "block";
-       }
-       window.button005 = function() {
-         document.getElementById("sequence").style.display = "block";
-       }
-       window.button006 = function() {
-         document.getElementById("foodtruck_motion").style.display = "block";
-       }
-       window.button007 = function() {
-         document.getElementById("room").style.display = "block";
-       }
-       window.button008 = function() {
-         document.getElementById("photoshop").style.display = "block";
-       }
-       window.open_foodtruck = function() {
-         localStorage.setItem("click_open", "foodtruck_show");
-       }
-    </script>
-    <style>
-      .title_container > div {
-        width: 1000px;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- <div class="nav">
-      <div>
-        <ul>
-          <li><a href="index.html#title_cont">About</a></li>
-          <li><a href="index.html#body_cont">Portfolio</a></li>
-          <li><a href="index.html#contact_cont">Contact</a></li>
-        </ul>
-      </div>
-    </div> -->
-    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-    <div class="title_container">
-      <div>
-        <img onclick="buttons(); button001();" src="images/motions/letter.gif">
-        <img onclick="buttons(); button002();" src="images/motions/thumbnail2.gif">
-        <img onclick="buttons(); button003();" src="images/motions/SMC.jpg">
-        <img onclick="buttons(); button004();" src="images/motions/gif1.gif">
-        <img onclick="buttons(); button005();" src="images/motions/sequence.gif">
-        <img onclick="buttons(); button006();" src="images/motions/move.jpg">
-        <img onclick="buttons(); button007();" src="images/motions/test0147.png">
-        <img onclick="buttons(); button008();" src="images/motions/photoshop.png">
-        <a href="https://editor.p5js.org/Sangwoo/present/a7s_eEEZP" target="_blank" style="width:0px;"><img src="images/motions/soundVisual.png"></a>
-      </div>
-    </div>
+    if(localStorage.getItem("click_open")=="foodtruck_show") {
+      document.getElementById("sketches").style.display = "none";
+      document.getElementById("foodtruck_motion").style.display = "block";
+      localStorage.setItem("click_open", "undefined");
+    }
+  });
+  window.buttons = function() {
+    document.getElementById("sketches").style.display = "none";
+    document.getElementById("animate").style.display = "none";
+    document.getElementById("SMC").style.display = "none";
+    document.getElementById("gif").style.display = "none";
+    document.getElementById("sequence").style.display = "none";
+    document.getElementById("foodtruck_motion").style.display = "none";
+    document.getElementById("room").style.display = "none";
+    document.getElementById("photoshop").style.display = "none";
+    $('video').trigger('pause');
+  }
+  window.button001 = function() {
+    document.getElementById("sketches").style.display = "block";
+  }
+  window.button002 = function() {
+    document.getElementById("animate").style.display = "block";
+  }
+  window.button003 = function() {
+    document.getElementById("SMC").style.display = "block";
+  }
+  window.button004 = function() {
+    document.getElementById("gif").style.display = "block";
+  }
+  window.button005 = function() {
+    document.getElementById("sequence").style.display = "block";
+  }
+  window.button006 = function() {
+    document.getElementById("foodtruck_motion").style.display = "block";
+  }
+  window.button007 = function() {
+    document.getElementById("room").style.display = "block";
+  }
+  window.button008 = function() {
+    document.getElementById("photoshop").style.display = "block";
+  }
+  window.open_foodtruck = function() {
+    localStorage.setItem("click_open", "foodtruck_show");
+  }
+  </script>
+  <style>
+  .title_container > div {
+    width: 1000px;
+  }
+  </style>
+</head>
+<body>
+  <!-- <div class="nav">
+  <div>
+  <ul>
+  <li><a href="index.html#title_cont">About</a></li>
+  <li><a href="index.html#body_cont">Portfolio</a></li>
+  <li><a id ="contact_button">Contact</a></li>
+</ul>
+</div>
+</div> -->
+<a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+<div class="title_container">
+  <div>
+    <img onclick="buttons(); button001();" src="images/motions/letter.gif">
+    <img onclick="buttons(); button002();" src="images/motions/thumbnail2.gif">
+    <img onclick="buttons(); button003();" src="images/motions/SMC.jpg">
+    <img onclick="buttons(); button004();" src="images/motions/gif1.gif">
+    <img onclick="buttons(); button005();" src="images/motions/sequence.gif">
+    <img onclick="buttons(); button006();" src="images/motions/move.jpg">
+    <img onclick="buttons(); button007();" src="images/motions/test0147.png">
+    <img onclick="buttons(); button008();" src="images/motions/photoshop.png">
+    <a href="https://editor.p5js.org/Sangwoo/present/a7s_eEEZP" target="_blank" style="width:0px;"><img src="images/motions/soundVisual.png"></a>
+  </div>
+</div>
 
-    <div id="gif" class="content_container content_space">
-      <h2>Loop Environment</h2>
-      <div class="content_half_space">
-        <img src="images/motions/gif1.gif">
-        <img src="images/motions/gif2.gif">
-      </div>
-    </div>
+<div id="gif" class="content_container content_space">
+  <h2>Loop Environment</h2>
+  <div class="content_half_space">
+    <img src="images/motions/gif1.gif">
+    <img src="images/motions/gif2.gif">
+  </div>
+</div>
 
-    <div id="animate" class="content_container content_space">
-      <h2>Animate Sound and Text</h2>
-      <div class="content_half_space">
-        <video controls class="big_image" src="images/motions/space_cubez.mp4" type="video/mp4"></video>
-        <video controls class="big_image" src="images/motions/harrypotter.mp4" type="video/mp4"></video>
-      </div>
-    </div>
+<div id="animate" class="content_container content_space">
+  <h2>Animate Sound and Text</h2>
+  <div class="content_half_space">
+    <video controls class="big_image" src="images/motions/space_cubez.mp4" type="video/mp4"></video>
+    <video controls class="big_image" src="images/motions/harrypotter.mp4" type="video/mp4"></video>
+  </div>
+</div>
 
-    <div id="SMC" class="content_container content_space">
-      <h2>Secret Movie Club</h2>
-      <div class="content_half_space">
-        <video controls class="big_image" src="images/motions/SMC.mp4" type="video/mp4"></video>
-      </div>
-    </div>
+<div id="SMC" class="content_container content_space">
+  <h2>Secret Movie Club</h2>
+  <div class="content_half_space">
+    <video controls class="big_image" src="images/motions/SMC.mp4" type="video/mp4"></video>
+  </div>
+</div>
 
-    <div id="sketches" class="content_container content_space">
-      <h2>3D Sketches</h2>
-      <div class="content_half_space">
-        <video controls autoplay loop src="images/motions/letter.mp4" type="video/mp4"></video>
-        <video controls autoplay loop src="images/motions/pizza.mp4" type="video/mp4"></video>
-      </div>
-    </div>
+<div id="sketches" class="content_container content_space">
+  <h2>3D Sketches</h2>
+  <div class="content_half_space">
+    <video controls autoplay loop src="images/motions/letter.mp4" type="video/mp4"></video>
+    <video controls autoplay loop src="images/motions/pizza.mp4" type="video/mp4"></video>
+  </div>
+</div>
 
-    <div id="sequence" class="content_container content_space">
-      <h2>Catch Me If You Can</h2>
-      <div class="content_half_space">
-        <video controls class="big_image" src="images/motions/TITLESEQUENCE_s.mp4" type="video/mp4"></video>
-      </div>
-    </div>
+<div id="sequence" class="content_container content_space">
+  <h2>Catch Me If You Can</h2>
+  <div class="content_half_space">
+    <video controls class="big_image" src="images/motions/TITLESEQUENCE_s.mp4" type="video/mp4"></video>
+  </div>
+</div>
 
-    <div id="foodtruck_motion" class="content_container content_space">
-      <h2>Food Truck Festival</h2>
-      <div class="content_half_space">
-        <video controls loop src="images/motions/move.mp4" type="video/mp4"></video>
-        <video controls autoplay loop src="images/motions/FoodTruckFestival.mp4" type="video/mp4"></video>
-      </div>
-      <a onclick="open_foodtruck();" href="posters.html#foodtruck"><div class="color_button content_half_space"><h2><i class="fas fa-external-link-alt"></i> Posters</h2></div></a>
-    </div>
+<div id="foodtruck_motion" class="content_container content_space">
+  <h2>Food Truck Festival</h2>
+  <div class="content_half_space">
+    <video controls loop src="images/motions/move.mp4" type="video/mp4"></video>
+    <video controls autoplay loop src="images/motions/FoodTruckFestival.mp4" type="video/mp4"></video>
+  </div>
+  <!-- <a onclick="open_foodtruck();" href="posters.html#foodtruck"><div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Posters</h3></div></a> -->
 
-    <div id="room" class="content_container content_space">
-      <h2>Self Quarantine 360°</h2>
-      <div class="content_half_space">
-        <iframe width="1000" height="600" src="https://www.youtube.com/embed/Cg936WKZoAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
+  <a onclick="open_foodtruck();" href="posters.html#foodtruck">
+    <div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Posters</h3></div>
+  </a>
+</div>
 
-    <div id="photoshop" class="content_container content_space">
-      <script src="p5/wackyphotoshop.js"></script>
-    </div>
+<div id="room" class="content_container content_space">
+  <h2>Self Quarantine 360°</h2>
+  <div class="content_half_space">
+    <iframe width="1000" height="600" src="https://www.youtube.com/embed/Cg936WKZoAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
 
-    <!-- <div class="contact_container content_space">
-      <div>
-        <h3>Contact</h3>
-        <p>sangwoohahn93@gmail.com</p>
-        <p>shahn@mica.edu</p>
-      </div>
-    </div> -->
-  </body>
+<div id="photoshop" class="content_space">
+  <script src="p5/wackyphotoshop.js"></script>
+</div>
+
+<!-- <div class="contact_container content_space">
+<div>
+<h3>Contact</h3>
+<p>sangwoohahn93@gmail.com</p>
+<p>shahn@mica.edu</p>
+</div>
+</div> -->
+<!-- <div id="copyright_cont" class="contact_container content_half_space"></div> -->
+</body>
 </html>

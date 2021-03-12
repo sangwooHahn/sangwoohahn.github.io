@@ -28,7 +28,7 @@
   <meta charset="utf-8"/>
   <script>
   $(function(){
-    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
 
   $(window).on('scroll',function(){
@@ -45,7 +45,7 @@
     $('.title_container').css('background-color',color);
     $('.color_box').css('background-color',color);
     $('.color_button').css('background-color',color);
-    $('.color_button h2').css('color','#fafafa');
+    $('.color_button h3').css('color','#fafafa');
     $('.color_box > div > h3').css('color','#fafafa');
     $('.contact_container div h3').css('color','#fafafa');
     $('.go_back').css('border-left', '2.5px solid '+color);
@@ -224,7 +224,7 @@
       <ul>
         <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
         <li><a href="index.html#body_cont">Portfolio</a></li>
-        <li><a href="index.html#contact_cont">Contact</a></li>
+        <li><a id ="contact_button">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -234,9 +234,9 @@
       <div class="title_description">
         <subtitle>Thesis / Interaction Design</subtitle>
         <h1>Transfont</h1>
-        <p>Transfont is a project that connects the person and font.
-          The design of the font depends on the person's movement.
-          Font designs from the one's body becomes the most personal typeface.
+        <p>Transfont is an experimental project that connects the person and font.
+          The design of the font transforms by the person's movement.
+          Users create their own fonts through web pages.
         </p>
       </div>
       <div class="color_button_title"><a href="https://sangwoohahn.com/transfont.html" target="_blank"><i class="fas fa-external-link-alt"></i> Transfont.com</a></div>
@@ -250,115 +250,113 @@
     <img class ="title_image" src="images/transfont/title_person.gif">
   </div>
 
-  <div class="content_container">
-    <!-- <a href="https://sangwoohahn.com/transfont.html" target="_blank"><div class="color_button_title"><i class="fas fa-external-link-alt"></i> Transfont.com</div></a> -->
+  <!-- <div class="content_container">
+  <h2 class="quotes content_more_space">"How might we design interactive typeface?"</h2>
+  <p class="content_p">
+  People communicate digitally in the digital age.
+  People comunicate in text messages, write and post on the Internet.
+  But when people write digitally, they use fonts made by others not there own's.
+  Why people do not have their own fonts, just as they have their own voices or handwriting?
+  The biggest reason is that the font design takes a lot of time and effort, and people have to design lot of characters at the same time.
+  To reduce this process and make the font more individual, an experiment is conducted to connect the font to human motion.
+  The fonts design elements from the Transfont are connected to each person's movements to make it personal typeface.
+</p>
+</div> -->
 
-    <h2 class="quotes content_more_space">"How might we design interactive typeface?"</h2>
-    <p class="content_p">
-      People communicate digitally in the digital age.
-      People comunicate in text messages, write and post on the Internet.
-      But when people write digitally, they use fonts made by others not there own's.
-      Why people do not have their own fonts, just as they have their own voices or handwriting?
-      The biggest reason is that the font design takes a lot of time and effort, and people have to design lot of characters at the same time.
-      To reduce this process and make the font more individual, an experiment is conducted to connect the font to human motion.
-      The fonts design elements from the Transfont are connected to each person's movements to make it personal typeface.
-    </p>
-  </div>
 
-  <img class="content_space" src="images/transfont/mockup.jpg">
+<!-- <div class="two_big_image_grid content_space">
+<img src="images/micard/mockup1.jpg">
+<img src="images/micard/mockup2.jpg">
+</div> -->
 
-  <div  class="content_container">
-    <h3  class="content_space">Interaction</h3>
-    <div class="content_grid_two content_half_space">
-      <img src="images/transfont/motion_1.gif">
-      <div>
-        <h4>Width</h4>
-        <p>The distance between the elbows.</p>
-      </div>
-      <img src="images/transfont/motion_2.gif">
-      <div>
-        <h4>Weight</h4>
-        <p>The distance between feet.</p>
-      </div>
-      <img src="images/transfont/motion_3.gif">
-      <div>
-        <h4>Arc</h4>
-        <p>Angle of arm.</p>
-      </div>
-      <img src="images/transfont/motion_4.gif">
-      <div>
-        <h4>Middle Height</h4>
-        <p>The height of the shoulder.</p>
-      </div>
-      <img src="images/transfont/motion_5.gif">
-      <div>
-        <h4>Horizontal Weight</h4>
-        <p>The height of the hand.</p>
-      </div>
+<div  class="content_container">
+  <h2  class="content_space">How it works</h2>
+  <h3 style="padding-top:50px;">Interaction</h3>
+  <div class="content_grid_two content_half_space">
+    <img src="images/transfont/motion_1.gif">
+    <div>
+      <h4>Width</h4>
+      <p>The distance between the elbows.</p>
     </div>
-
-    <h3 class="content_space">Key Functions</h3>
-    <img class="content_half_space" src="images/transfont/keyfeatures.png">
-    <img style="box-shadow : 0px 0px 15px rgba(0,0,0,0.1);" class="content_half_space" src="images/transfont/transfont.gif">
-
-    <div class="content_space content_space">
-      <!-- <h2>UX Research</h2> -->
-      <h3 class="content_half_space">User Flow</h3>
-      <p class="content_p">Users need a camera and microphone to make a font that control by motion.
-        The camera captures and scans the body, which the user moves away from the device.
-        To controls other elements of the device, users will command with their voice.
-        It works in four different ways, depending on the state of the users’ device or environment.
-        If users don’t have a camera, users control the font directly.
-        When the users are away to design the font with the body, use the microphone to control the example texts.
-        If users don’t have a microphone, use the keyboard to type the texts.
-      </p>
-      <img class="content_half_space" src="images/transfont/userflow.png">
-      <h3 class="content_space">How to Use</h3>
-      <div class = "content_grid">
-        <img src="images/transfont/step_1.gif">
-        <div>
-          <p>1. Prepare a web camera and microphone.</p>
-          <p>2. Allow browsers to use web camera and microphone.</p>
-        </div>
-        <img src="images/transfont/step_2.gif">
-        <div>
-          <p>3. Step back until see your whole body.</p>
-        </div>
-        <img src="images/transfont/step_3.gif">
-        <div>
-          <p>4. Speak on microphone to see an example text.</p>
-        </div>
-        <img src="images/transfont/step_4.gif">
-        <div>
-          <p>5. Move your body and design the font.</p>
-          <p>6. Use keywords for additional controls.</p>
-        </div>
-      </div>
+    <img src="images/transfont/motion_2.gif">
+    <div>
+      <h4>Weight</h4>
+      <p>The distance between feet.</p>
+    </div>
+    <img src="images/transfont/motion_3.gif">
+    <div>
+      <h4>Arc</h4>
+      <p>Angle of arm.</p>
+    </div>
+    <img src="images/transfont/motion_4.gif">
+    <div>
+      <h4>Middle Height</h4>
+      <p>The height of the shoulder.</p>
+    </div>
+    <img src="images/transfont/motion_5.gif">
+    <div>
+      <h4>Horizontal Weight</h4>
+      <p>The height of the hand.</p>
     </div>
   </div>
 
-  <img class="content_space" src="images/transfont/typefaces.png">
+  <h3 class="content_space">Key Functions</h3>
+  <img class="content_half_space" src="images/transfont/keyfeatures.png">
+  <h3 class="content_space">Examples of Use</h3>
+  <img style="box-shadow : 0px 0px 15px rgba(0,0,0,0.1);" class="content_half_space" src="images/transfont/transfont.gif">
 
-
-
-  <div class="content_container">
-    <h2 class="content_space">Trailer</h2>
-    <!-- <p class="content_p">
-      Transfont is a web-based project that easily accessible through the Internet.
-      Various elements transform into user-specific combinations,
-      allow them to create their unique fonts. The font design by the user can be download as an OTF format.
-      Users can install this file and use the font.
-    </p> -->
-    <video class="content_half_space"  controls src="images/transfont/trailer.mp4" type="video/mp4"></video>
-    <!-- <img src="images/transfont/mockup.jpg"> -->
-
-    <div class="content_half_space">
-      <a href="https://sangwoohahn.com/transfont.html" target="_blank">
-        <div class="color_button"><h2><i class="fas fa-external-link-alt"></i> Transfont</h2></div>
-      </a>
+  <div class="content_space content_space">
+    <h2 class="content_space">How to Use</h2>
+    <div class = "content_grid">
+      <img src="images/transfont/step_1.gif">
+      <div>
+        <p>1. Prepare a web camera and microphone.</p>
+        <p>2. Allow browsers to use web camera and microphone.</p>
+      </div>
+      <img src="images/transfont/step_2.gif">
+      <div>
+        <p>3. Step back until see your whole body.</p>
+      </div>
+      <img src="images/transfont/step_3.gif">
+      <div>
+        <p>4. Speak on microphone to see an example text.</p>
+      </div>
+      <img src="images/transfont/step_4.gif">
+      <div>
+        <p>5. Move your body and design the font.</p>
+        <p>6. Use keywords for additional controls.</p>
+      </div>
     </div>
   </div>
+</div>
 
-  <div id="contact_cont" class="contact_container content_space"></div>
+<img class="content_space" src="images/transfont/typefaces.png">
+<img class="content_half_space" src="images/transfont/mockup.jpg">
+
+<div class="content_container">
+  <div class="content_half_space">
+    <a href="https://sangwoohahn.com/transfont.html" target="_blank">
+      <div class="color_button"><h3><i class="fas fa-external-link-alt"></i> Transfont</h3></div>
+    </a>
+  </div>
+</div>
+
+<div id="copyright_cont" class="content_space"></div>
+
+<!-- <script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash == "#contact_cont") {
+      event.preventDefault();
+      var hash = this.hash;
+      console.log(this.hash);
+      $('html, body').animate({scrollTop: $(hash).offset().top}, 800, function(){
+        window.location.hash = hash;
+      });
+    }
+  });
+});
+
+</script> -->
 </body>
 </html>

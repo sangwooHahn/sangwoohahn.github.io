@@ -8,7 +8,7 @@ html, body {
 h1 {
   margin: 0;
   padding: 0;
-  font-size: 4em;
+  font-size: 4.7em;
   line-height: 100%;
 }
 
@@ -16,7 +16,8 @@ h2 {
   margin: 0;
   padding: 0;
   font-size: 2.5em;
-  line-height: 40px;
+  line-height: 25px;
+  /* color: #2284CA; */
   vertical-align: sub;
 }
 
@@ -25,19 +26,20 @@ h3 {
   padding: 0;
   font-size: 1.5em;
   font-weight: 600;
+  /* color: #2284CA; */
 }
 
 h4 {
   margin: 0;
   padding: 0;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 700;
 }
 
 p {
   margin: 0;
   padding: 0;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: normal;
   line-height: 140%;
 }
@@ -84,8 +86,8 @@ subtitle {
   position : fixed;
   height: 1em;
   width: 1em;
-  top: 94%;
-  left: 4%;
+  bottom: 58px;
+  left: calc(2.5% + 5px);
   -ms-transform: translateY(-50%) rotate(-45deg);
   -webkit-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg);
@@ -100,7 +102,7 @@ subtitle {
   -webkit-ransform: rotate(45deg);
   transform: rotate(45deg);
   width : 60px;
-  top: 160%; /*왜 여기서만 다른지 모르겠음*/
+  top: 135%;
   left: 6px;
   opacity: 0;
   visibility: hidden;
@@ -174,25 +176,23 @@ subtitle {
   margin-top: 30px;
 }
 
-
 .color_button {
-  height: 8vh;
-  margin-bottom: 100px;
-  padding: 10px;
-  border-radius: 100px;
+  width : 350px;
+  height: 55px;
+  color: white;
   background-color: #dedede;
-  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  padding-top: 20px;
+  border-radius: 100px;
+  text-align: center;
   transition: all .2s ease;
 }
 
-.color_button h2 {
-  color: #fafafa;
-  line-height: 8vh;
-  text-align: center;
-}
 .color_button:hover {
-  box-shadow:inset 0px 0px 5px rgba(0,0,0,0.05);
-  transform: scale(0.99);
+  transform: scale(0.98);
 }
 
 
@@ -202,6 +202,49 @@ subtitle {
 #photoshop {
   margin: 0px;
   padding: 0px;
+}
+
+.contact_container {
+  position: relative;
+  height: 50px;
+  background-color: #aaa;
+  z-index: 999;
+}
+
+.contact {
+  width: 1100px;
+  height: calc(100% - 50px);
+  margin: auto;
+  color: #fafafa;
+}
+
+.contact_container div h2 {
+  padding-top: 40px;
+}
+.contact_container a {
+  color: #fafafa;
+}
+.contact_container i {
+  float: left;
+  padding-right: 10px;
+}
+.contact p {
+  margin-top: 20px;
+}
+.contact p:first-of-type {
+  margin-top: 30px;
+}
+.copyright {
+  height: 50px;
+  background-color: #aaa;
+}
+.copyright div {
+  width: 1100px;
+  margin: auto;
+  color: #fafafa;
+}
+.copyright p {
+  padding-top: 15px;
 }
 
 /*bigger than 1290*/

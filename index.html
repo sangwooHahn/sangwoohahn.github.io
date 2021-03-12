@@ -32,21 +32,21 @@
   <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
   <script>
   $(function(){
-    $("#contact_cont").load("https://sangwoohahn.com/footer.html");
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
   </script>
 </head>
 <body>
-  <div class="nav">
+<div id="nav_cont" class="nav">
     <div>
       <ul>
         <li><a id="about_button" href="#about_cont">About</a></li>
         <li><a href="#body_cont">Portfolio</a></li>
-        <li><a href="#contact_cont">Contact</a></li>
+        <li><a id="contact_button">Contact</a></li>
       </ul>
     </div>
   </div>
-  <div id="about_cont" class="about_container">
+<div id="about_cont" class="about_container">
     <div id="about_cont_div">
       <h1>Hello!</h1>
       <p>I'm Sangwoo Hahn, a designer who studies users' experiences and designs digital products.
@@ -62,7 +62,7 @@
       </div>
     </div>
   </div>
-  <div id="title_cont" class="title_container">
+<div id="title_cont" class="title_container">
     <div class="name_container">
       <div></div><div></div><div></div><div></div><div></div>
       <div></div><div></div><div></div><div></div>
@@ -72,16 +72,16 @@
       <div></div><div></div><div></div><div></div>
       <div></div><div></div><div></div><div></div>
     </div>
-    <div  class="name_sub_container">Design Portfolio</div>
+    <!-- <div  class="name_sub_container">Design Portfolio</div> -->
     <!-- <div  class="name_sub_container">UX · Interaction Designer</div> -->
     <div class="backgroundColor_container">
       <div></div><div></div><div></div><div></div><div></div><div></div>
     </div>
     <!-- <div id="myCanvas">
-    <script src="p5/p5_title.js"></script>
-    <script src="p5/p5_title_function.js"></script>
-  </div> -->
-</div>
+      <script src="p5/p5_title.js"></script>
+      <script src="p5/p5_title_function.js"></script>
+    </div> -->
+  </div>
 <div id="body_cont" class="body_container">
   <div class="container">
     <div class="portfolios">
@@ -98,19 +98,7 @@
         </div>
       </div>
 
-      <div id="special_bg" style="background-image:url('thumbnail/insta.jpg');" onclick="location.href='instamusic.html';">
-        <div class="portfolio_container" style="background-image:url('thumbnail/instamusic.png'); background-size: auto 70%; background-position: center 80px;">
-          <div></div>
-          <div class="thumbnail_description" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));">
-            <!-- <subtitle>UX Research</subtitle> -->
-            <h1>InstaMusic</h1>
-            <p>Music streaming services for Instagram users</p>
-            <a href="instamusic.html"><div class="portfolio_button" style="background-color:#9838B2;">View the Project</div></a>
-          </div>
-        </div>
-      </div>
-
-      <div style="background-color:#2284CA;" class="two_grid_thumbnail" onclick="location.href='micard.html';">
+      <div style="background-color:#2284CA;" onclick="location.href='micard.html';">
         <div class="portfolio_container" style="background-image:url('images/micard/micard.jpg');">
           <div></div>
           <div class="thumbnail_description">
@@ -122,7 +110,7 @@
         </div>
       </div>
 
-      <div style="background-color:#962174;" onclick="location.href='daydream.html';">
+      <div style="background-color:#962174;" class="two_grid_thumbnail" onclick="location.href='daydream.html';">
         <div class="portfolio_container" style="background-image:url('images/daydream/game4.jpg');">
           <div></div>
           <div class="thumbnail_description">
@@ -130,6 +118,18 @@
             <h1>Daydream</h1>
             <p>Action battle game for PC and consoles</p>
             <a href="daydream.html"><div class="portfolio_button" style="background-color:#962174;">View the Project</div></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="special_bg" style="background-image:url('thumbnail/insta.jpg');" onclick="location.href='instamusic.html';">
+        <div class="portfolio_container" style="background-image:url('thumbnail/instamusic.png'); background-size: auto 70%; background-position: center 80px;">
+          <div></div>
+          <div class="thumbnail_description" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));">
+            <!-- <subtitle>UX Research</subtitle> -->
+            <h1>InstaMusic</h1>
+            <p>Music streaming services for Instagram users</p>
+            <a href="instamusic.html"><div class="portfolio_button" style="background-color:#9838B2;">View the Project</div></a>
           </div>
         </div>
       </div>
@@ -162,10 +162,10 @@
     </div>
   </div>
 </div>
-<div class="moreProject_container">
+<div id="moreProject_cont" class="moreProject_container">
   <div>
     <div class="posters">
-      <h2>+ Poster</h2>
+      <h3>+ Poster</h3>
       <a href="posters.html">
         <div class="poster1" style ="background-image:url('thumbnail/foodtruck2.jpg')"></div>
         <div class="poster2" style ="background-image:url('thumbnail/momap1.jpg')"></div>
@@ -173,7 +173,7 @@
       </a>
     </div>
     <div class="motions">
-      <h2>+ Motion & Code</h2>
+      <h3>+ Motion & Code</h3>
       <a href="motions.html">
         <div class="motion1" style ="background-image:url('thumbnail/letter.gif')"></div>
         <div class="motion2" style ="background-image:url('thumbnail/gif1.gif')"></div>
@@ -181,7 +181,8 @@
     </div>
   </div>
 </div>
-<div id="contact_cont" class="contact_container"></div>
+<div id="copyright_cont"></div>
+
 <script>
 $(document).ready(function(){
   $("#about_button").on('click',function(event){
@@ -213,6 +214,44 @@ $(document).ready(function(){
     }
   });
 });
+
+// let contact_toggle = false;
+// document.getElementById("contact_button").onclick = function() {
+//   toggle_contact();
+// };
+//
+// document.getElementById("contact_close").onclick = function() {
+//   toggle_contact();
+// };
+//
+//
+// function toggle_contact ()
+// {
+//   if(!contact_toggle)
+//   {
+//     // document.getElementById("nav_cont").style.width= "calc(100vw - 300px)";
+//     // document.getElementById("about_cont").style.width= "calc(100vw - 300px)";
+//     // document.getElementById("about_cont_div").style.marginLeft= "calc(calc(100% - 300px - 450px) / 2)";
+//     // document.getElementById("about_cont_div").style.marginRight= "calc(calc(100% - 300px - 450px) / 2)";
+//     // document.getElementById("title_cont").style.width= "calc(100vw - 300px)";
+//     // document.getElementById("body_cont").style.width= "calc(100vw - 300px)";
+//     // document.getElementById("moreProject_cont").style.width= "calc(100vw - 300px)";
+//     // document.getElementById("copyright_cont").style.width= "calc(100vw - 300px)";
+//     document.getElementById("contact_cont").style.transform= "translateX(0px)";
+//   } else
+//   {
+//     // document.getElementById("nav_cont").style.width= "100vw";
+//     // document.getElementById("about_cont").style.width= "100vw";
+//     // document.getElementById("about_cont_div").style.marginLeft= "calc(calc(100% - 450px) / 2)";
+//     // document.getElementById("about_cont_div").style.marginRight= "calc(calc(100% - 450px) / 2)";
+//     // document.getElementById("title_cont").style.width= "100vw";
+//     // document.getElementById("body_cont").style.width= "100vw";
+//     // document.getElementById("moreProject_cont").style.width= "100vw";
+//     // document.getElementById("copyright_cont").style.width= "100vw";
+//     document.getElementById("contact_cont").style.transform= "translateX(300px)";
+//   }
+//   contact_toggle = !contact_toggle;
+// }
 
 </script>
 </body>
