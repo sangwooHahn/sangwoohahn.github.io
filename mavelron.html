@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>마블론 : 던전과 용병들</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="mavelron.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="universal-tilt.js"></script>
+  <script src="https://unpkg.com/universal-tilt.js/"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $(function(){
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
+  });
+
+  $(window).on('scroll',function(){
+    var title_image_position = Math.round($(window).scrollTop());
+    $('.title_image').css('transform','translateY(-'+(title_image_position)+'px)');
+  });
+
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var color = ('#A666DD');
+    $('h2').css('color',color);
+    $('h3').css('color',color);
+    $('.go_back div').css('color','#f4f4f4');
+    $('.nav').css('background-color',color);
+    $('.title_container').css('background-color',color);
+    $('.color_box').css('background-color',color);
+    $('.color_button').css('background-color',color);
+    $('.color_button h3').css('color','#fafafa');
+    $('.color_box > div > h3').css('color','#fafafa');
+    $('.contact_container div h3').css('color','#fafafa');
+    $('.go_back').css('border-left', '2.5px solid '+'#f4f4f4');
+    $('.go_back').css('border-top', '2.5px solid '+'#f4f4f4');
+  });
+
+  </script>
+  <style>
+  .title_image {
+    position: absolute;
+    top:50px;
+    left:calc(calc(100vw - 1000px) * 0.5 + 500px);
+    width: 600px;
+    height: auto;
+  }
+  .grids {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1vw;
+    padding-top: 30px;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 1vw;
+    padding-top: 70px;
+  }
+  .tilt > img {
+    height: auto;
+    width: 100%;
+    box-shadow: 0px 0px .6vw rgba(0,0,0,.03);
+    opacity: 1;
+    transition: all .5s ease;
+  }
+  .tilt > img:last-of-type {
+    padding-bottom: 0px;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
+    .title_image {
+      left:450px;
+      top:150px;
+      width: 450px;
+      height: auto;
+    }
+    .content_inside_space {
+      padding-top: 30%;
+    }
+    .img-comp-container {
+      height: 500px; /*should be the same height as the images*/
+    }
+    .img-comp-img img {
+      width:600px;
+      height: auto;
+    }
+  }
+
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+    .title_image {
+      left: 50px;
+      top: 380px;
+      width: 350px;
+    }
+    .title_description p {
+      width : 480px;
+    }
+    .content_more_space {
+      margin-top: 400px;
+    }
+    .content_inside_space {
+      padding-top: 30%;
+    }
+  }
+
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      left: 10%;
+      top: 300px;
+      width:80%;
+      height:auto;
+    }
+    .content_more_space {
+      margin-top: 250px;
+    }
+    .img-comp-container {
+      height: 300px; /*should be the same height as the images*/
+      width: 370px;
+    }
+    .img-comp-img img {
+      width:370px;
+    }
+    .content_inside_space {
+      padding-top: 0%;
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <a href="projecta.html"><div class="go_back"><div>메인으로</div></div></a>
+  <div class="title_container" style="background-image: url('images/mavelron/mavelron_bg.jpg'); background-size: auto 100%; background-color: #540e08;">
+    <div>
+      <div class="title_description">
+        <h1>마블론</h1><h1 style="font-size:2.1em">:던전과 용병들</h1>
+        <p>용병과 모험의 도시 마블론. 이 도시의 새로 생긴 작은 길드마스터로서 용병을 고용하고 장비를 지급하여 던전을 탐험하세요. 용병이 던전에서 더 많이 벌어 올수록 길드는 성장합니다!
+        </p>
+      </div>
+    </div>
+  </div>
+  <img class ="title_image" src="images/mavelron/logo.png">
+
+  <div class="content_container">
+    <h2 class="quotes content_space">"마블론에 오신 것을 환영합니다!"</h2>
+    <p class="content_p">지방 개척을 위한 용병들의 도시, 마블론에 오신 것을 환영합니다. 길드장이 되어 인근 지역을 개척하고 탐험할 용병들을 모아주세요! 용병들과 함께 의뢰를 받아 치안유지와 미해결 사건들을 맡아서 길드를 성장시켜 주세요.
+      던전에는 알 수 없는 다양한 종류의 몬스터들이 존재합니다. 던전에서 용병들이 벌어오는 오드를 통해 길드를 성장시키고 더 좋은 무기들을 얻어 용병들에게 힘을 실어주세요. 그들은 당신에게 더 큰 보물과 보상을 안겨 줄 것입니다.
+    </p>
+  </div>
+
+  <div class="content_container">
+    <h2 class="content_space">소개영상</h2>
+    <div class="content_half_space">
+      <video controls src="images/mavelron/intro.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+
+  <img class="content_space" src="images/mavelron/bg_image.jpg">
+
+  <div class="content_container">
+    <div class="content_space">
+      <h2>어떤 용병을 고용할 지 준비되었나요?</h2>
+      <p class="content_p">마블론에는 여러 능력을 가지고 있는 다양한 용병들이 준비되어 있습니다.<br>각각의 용병들은 다른 체력과 아주 특별한 능력을 지니고 있습니다. 그들을 고용하고 던전으로 보내기 전에 유심히 살펴 보십시오.
+      </p>
+      <div class="grids">
+        <img src="images/mavelron/crt.png">
+      </div>
+      <h2 class="content_space">던전에서 마주칠 수 있는 몬스터들의 정보입니다.</h2>
+      <p class="content_p">마블론 인근 던전에서 나타나는 80여 종이 넘는 다양한 몬스터들을 무찌르세요.<br>몬스터들은 여러 종족으로 나뉘어져 분류됩니다. 걱정마십시오. 그들을 위해 맞춤형 무기와 방어구들을 준비해 두었습니다.
+      </p>
+      <div class="grids">
+        <img src="images/mavelron/card-06.png">
+        <img src="images/mavelron/card-07.png">
+        <img src="images/mavelron/card-08.png">
+        <img src="images/mavelron/card-09.png">
+        <img src="images/mavelron/card-10.png">
+      </div>
+      <h2 class="content_space">몬스터를 물리칠 멋진 장비들을 살펴보세요!</h2>
+      <p class="content_p">용병들에게 제공할 40여 종의 다양한 무기와 방어구들을 얻을 수 있습니다. 이들을 활용해서 적들을 처치하고 돌파하세요.
+      </p>
+    </div>
+  </div>
+  <div class="color_box content_half_space">
+    <div class="cards">
+      <div class="tilt"><img src="images/mavelron/card-01.png"></div>
+      <div class="tilt"><img src="images/mavelron/card-02.png"></div>
+      <div class="tilt"><img src="images/mavelron/card-03.png"></div>
+      <div class="tilt"><img src="images/mavelron/card-04.png"></div>
+      <div class="tilt"><img src="images/mavelron/card-05.png"></div>
+    </div>
+  </div>
+
+  <div class="content_container">
+      <div class="color_button content_half_space"><h3> 곧 공개됩니다!</h3></div>
+  </div>
+
+  <script>
+  $(function(){
+    $('.tilt').universalTilt({
+      settings: {
+        base: 'element',
+        reset: true,
+        mobile: true,
+        shine: false,
+        'shine-opacity': 0.15,
+        'shine-save': false,
+        max: 45,
+        perspective: 600,
+        scale: 1.13,
+        disabled: null,
+        reverse: false,
+        speed: 1000,
+        easing: 'cubic-bezier(.03,.98,.52,.99)',
+        exclude: /(iPod|iPhone|iPad|Android)/
+      },
+      callbacks: {
+        // callbacks...
+      }
+    });
+  });
+  </script>
+</body>
+</html>
