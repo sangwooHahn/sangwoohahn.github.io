@@ -41,7 +41,7 @@ body > img {
 }
 .main_container {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(4,1fr);
   height:100vh;
 }
 .text_container {
@@ -100,6 +100,28 @@ body > img {
 .daydream_container:hover {
   background-size: auto 110%;
 }
+.newgame_container {
+  /* background-image: url('images/projecta/daydream_bg.jpg'); */
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+  background-blend-mode: soft-light;
+  background-color: #888888;/*#6D55CA;*/
+  transition: all 1s ease;
+}
+.newgame_container:hover .text_container {
+  height: 90px;
+  opacity: 1;
+}
+.newgame_container:hover {
+  background-size: auto 110%;
+}
+.newgame_text_container {
+  height: 30px;
+  width: 200px;
+  margin: auto;
+  margin-top: 20px;
+}
 .download_button {
   /* background-color: #C61010; */
   color: white;
@@ -114,8 +136,8 @@ body > img {
   position: absolute;
   text-align: center;
   color: white;
-  font-size: 15.6vw;
-  letter-spacing: -0.05em;
+  font-size: 12.5vw;/*15.6vw;*/
+  letter-spacing: -0.1em;
   font-weight: 900;
   line-height: 1;
   top: 0;
