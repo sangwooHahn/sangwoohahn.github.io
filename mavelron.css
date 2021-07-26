@@ -486,6 +486,9 @@ subtitle {
   .content_space {
     margin-top: 100px;
   }
+  .content_half_space {
+    margin-top: 30px;
+  }
   .content_inside_space{
     padding-top: 0%;
   }
