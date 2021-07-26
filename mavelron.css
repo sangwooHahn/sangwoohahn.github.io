@@ -137,7 +137,7 @@ subtitle {
   height: 1em;
   width: 1em;
   bottom: 58px;
-  left: calc(2.5% + 5px);
+  left: calc(2.5% - 3px);
   -ms-transform: translateY(-50%) rotate(-45deg);
   -webkit-transform: translateY(-50%) rotate(-45deg);
   transform: translateY(-50%) rotate(-45deg);
@@ -207,6 +207,10 @@ subtitle {
   height: auto;
   width: 40%;
   opacity: 0.6;
+}
+
+.bgimage {
+  content:url(images/mavelron/mavelron_bg.jpg);
 }
 
 .two_big_image_grid {
@@ -435,7 +439,7 @@ subtitle {
 @media screen and (max-width: 599px) {
   .nav div, .title_container > div, .content_container, .color_box > div, .contact, .copyright div {
     width: auto;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 20px 0px 20px;
   }
   h1 {
     font-size: 4em;
@@ -460,6 +464,9 @@ subtitle {
   }
   .pattern_image {
     width: 70%;
+  }
+  .bgimage {
+    content:url(images/mavelron/mavelron_bg_mobile.jpg);
   }
   .two_big_image_grid {
     grid-template-columns: 1fr;
