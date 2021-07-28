@@ -15,6 +15,7 @@ h1 {
   margin: 0;
   color: white;
   font-size: 1em;
+  /* text-align: center; */
 }
 p {
   padding: 0;
@@ -38,6 +39,7 @@ body > img {
   margin: 10px;
   bottom:0;
   right:0;
+  z-index: 2;
 }
 .main_container {
   display: grid;
@@ -52,121 +54,130 @@ body > img {
   opacity: 0;
   transition: all 1s ease;
 }
-.alone_container {
-  background-image: url('images/projecta/alone.jpg');
+.game_container {
+  position: relative;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-position: center;
   background-blend-mode: soft-light;
-  background-color: #540e08;
   transition: all 1s ease;
+  z-index: 1;
 }
-.alone_container:hover .text_container {
+.game_container:hover .text_container {
   height: 90px;
   opacity: 1;
 }
-.alone_container:hover {
+.game_container:hover {
   background-size: auto 110%;
-}
-.thefins_container {
-  background-image: url('images/projecta/thefins.png');
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-  background-blend-mode: soft-light;
-  background-color: #12265B;
-  transition: all 1s ease;
-}
-.thefins_container:hover .text_container {
-  height: 90px;
-  opacity: 1;
-}
-.thefins_container:hover {
-  background-size: auto 110%;
-}
-.daydream_container {
-  background-image: url('images/projecta/daydream_bg.jpg');
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-  background-blend-mode: soft-light;
-  background-color: #6d1d5a;
-  transition: all 1s ease;
-}
-.daydream_container:hover .text_container {
-  height: 90px;
-  opacity: 1;
-}
-.daydream_container:hover {
-  background-size: auto 110%;
-}
-.newgame_container {
-  /* background-image: url('images/projecta/daydream_bg.jpg'); */
-  background-repeat: no-repeat;
-  background-size: auto 100%;
-  background-position: center;
-  background-blend-mode: soft-light;
-  background-color: #888888;/*#6D55CA;*/
-  transition: all 1s ease;
-}
-.newgame_container:hover .text_container {
-  height: 90px;
-  opacity: 1;
-}
-.newgame_container:hover {
-  background-size: auto 110%;
-}
-.newgame_text_container {
-  height: 30px;
-  width: 200px;
-  margin: auto;
-  margin-top: 20px;
 }
 .download_button {
   /* background-color: #C61010; */
   color: white;
-  border-radius: 3px;
+  border-radius: 6px;
   width: 200px;
   margin: auto;
   margin-top: 20px;
   padding: 7px 0 6px 0;
   text-align: center;
 }
-.year {
+.game_container::before {
   position: absolute;
+  display: block;
   text-align: center;
+  content: attr(data-year);
   color: white;
-  font-size: 12.5vw;/*15.6vw;*/
+  font-size: 12.5vw;
   letter-spacing: -0.1em;
   font-weight: 900;
   line-height: 1;
   top: 0;
   mix-blend-mode: overlay;
-  opacity: 0.1;
+  opacity: 0.2;
+  z-index: -1;
 }
 .mobile_text {
   display: none;
 }
 
 /*Tablet*/
-@media screen and (max-width: 760px) {
+@media screen and (min-width: 600px) and (max-width: 1256px) {
   .main_container {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
   }
-  body > img {
-    position: relative;
-    height: 100px;
-    width: auto;
-    margin: auto;
-    padding-top: 35vh;
-    bottom:0;
-    right:0;
-    top:0;
-    left:0;
+  img {
+    padding-top: 8vh;
   }
-  .mobile_text {
-    display: block;
-    padding-top: 10px;
-    text-align: center;
+  .text_container {
+    opacity: 1;
+  }
+  .text_container {
+    height: 90px;
+    opacity: 1;
+  }
+  .game_container::before {
+    font-size: 23.1vw;
+    letter-spacing: -0.05em;
+  }
+  .game_container {
+    background-size: 100% auto;
+    height: 50vh;
+  }
+  .game_container:hover {
+    background-size: 100% auto;
   }
 }
+/*Smart phone*/
+@media screen and (max-width: 699px) {
+  .main_container {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(4,1fr);
+    height:60vh;
+  }
+  img {
+    padding-top: 16vh;
+  }
+  .text_container {
+    opacity: 1;
+  }
+  .text_container {
+    height: 90px;
+    opacity: 1;
+  }
+  .game_container::before {
+    font-size: 47vw;
+    letter-spacing: -0.05em;
+  }
+  .game_container {
+    background-size: 100% auto;
+    height:540px;
+  }
+  .game_container:hover {
+    background-size: 100% auto;
+  }
+  body > img {
+    position: fixed;
+  }
+}
+
+/* .main_container {
+  display: none;
+}
+body > img {
+  position: relative;
+  height: 100px;
+  width: auto;
+  margin: auto;
+  padding-top: 35vh;
+  bottom:0;
+  right:0;
+  top:0;
+  left:0;
+}
+.mobile_text {
+  display: block;
+  padding-top: 10px;
+  text-align: center;
+} */
