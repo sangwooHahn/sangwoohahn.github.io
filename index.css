@@ -118,6 +118,10 @@ a:hover {
   padding-left: 30px;
   background-color: rgba(250,250,250, 0.8);/*#fafafa;*/
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  -o-backdrop-filter: blur(20px);
+  -ms-backdrop-filter: blur(20px);
   display: flex;
 }
 
