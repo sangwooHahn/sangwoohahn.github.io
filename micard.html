@@ -130,26 +130,31 @@
   @media screen and (min-width: 600px) and (max-width: 960px) {
 
   }
-}
 
-/*Smart phone*/
-@media screen and (max-width: 599px) {
-  .title_image {
-    position: fixed;
-    left: calc(calc(100vw - 1000px) * 0.5 + 430px);
-    right: 0;
-    bottom: calc(calc(400px - 55vh) * -1);
-    height: calc(20vh + 180px);
-    width: auto;
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      left: calc(calc(100vw - 1000px) * 0.5 + 490px);
+      right: 0;
+      top: 270px;
+      bottom: calc(calc(400px - 55vh) * -1);
+      height: calc(20vh + 180px);
+      width: auto;
+    }
+    .title_image_overlap {
+      position: fixed;
+      left: calc(calc(100vw - 1000px) * 0.5 + 480px - 20vh);
+      bottom: calc(calc(90px - 10vh) * -1);
+      height: calc(40vh + 100px);
+      width: auto;
+    }
+    .quote_left {
+      transform: scale(70%) translate(calc(-70px), -40px);
+    }
+    .quote_right {
+      transform: scale(70%) translate(calc(100vw + 10px), 270px);
+    }
   }
-  .title_image_overlap {
-    position: fixed;
-    left: calc(calc(100vw - 1000px) * 0.5 + 430px - 20vh);
-    bottom: calc(calc(200px - 15vh) * -1);
-    height: calc(40vh + 100px);
-    width: auto;
-  }
-}
 
 </style>
 </head>
@@ -175,7 +180,9 @@
           It provides services that focus on life in school.
         </p>
       </div>
-      <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button content_half_space">Prototype <i class="fas fa-flask"></i></div></a>
+    </div>
+    <div class="content_container_full_mobile content_half_space">
+      <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button">Prototype <i class="fas fa-flask"></i></div></a>
     </div>
   </div>
   <img class ="title_image" src="images/micard/title1.png">
@@ -183,16 +190,16 @@
 
   <div class="content_container content_more_space">
     <div class="quote_left">
-      <div class="quotes" style="width:40px; height:40px; position:absolute;; transform: translate(0px, 10px);"></div>
-      <div class="quotes"  style="width:40px; height:40px; position:absolute; transform: translate(50px, 10px);"></div>
-      <div class="quotes"  style="width:20px; height:25px; position:absolute;; transform: translate(0px, -15px);"></div>
-      <div class="quotes"  style="width:20px; height:25px; position:absolute; transform: translate(50px, -15px);"></div>
+      <div class="quotes" style="width:80px; height:80px; position:absolute; border-radius: 0 5px 5px 5px; transform: translate(0px, 40px);"></div>
+      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 0 5px 5px 5px; transform: translate(90px, 40px);"></div>
+      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 100% 0 0 0; transform: translate(0px, -10px);"></div>
+      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 100% 0 0 0; transform: translate(90px, -10px);"></div>
     </div>
     <div class="quote_right">
-      <div class="quotes"  style="width:40px; height:40px; position:absolute; transform: translate(-40px, -10px);"></div>
-      <div class="quotes"  style="width:40px; height:40px; position:absolute; transform: translate(-90px, -10px);"></div>
-      <div class="quotes"  style="width:20px; height:25px; position:absolute; transform: translate(-20px, 30px);"></div>
-      <div class="quotes"  style="width:20px; height:25px; position:absolute; transform: translate(-70px, 30px);"></div>
+      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 5px 5px 0 5px; transform: translate(-80px, 20px);"></div>
+      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 5px 5px 0 5px; transform: translate(-170px, 20px);"></div>
+      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 0 0 100% 0; transform: translate(-40px, 100px);"></div>
+      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 0 0 100% 0; transform: translate(-130px, 100px);"></div>
     </div>
     <div class="quote_container">
       <h2 class="noH2Line">Students always have two things in their pockets. A smartphone and a student ID.</h2>
@@ -346,7 +353,7 @@
   <div class="content_container">
     <h2 class="content_space">Key features</h2>
 
-    <div class="four_four_two_grid content_small_space">
+    <div class="four_four_two_grid grid_gap_20 content_small_space">
       <div class="two_grid_content">
         <h3 class="content_half_space">Mobile ID</h3>
         <p class="content_tiny_space" style="line-height:200%;">
@@ -367,7 +374,7 @@
       </div>
     </div>
 
-    <div class="four_four_two_grid content_small_space">
+    <div class="four_four_two_grid grid_gap_20 content_small_space">
       <div class="two_grid_content">
         <h3 class="content_half_space">Add funds</h3>
         <p class="content_tiny_space" style="line-height:200%;">
@@ -386,7 +393,7 @@
       </div>
     </div>
 
-    <div class="four_four_two_grid content_small_space">
+    <div class="four_four_two_grid grid_gap_20 content_small_space">
       <div class="two_grid_content">
         <h3 class="content_half_space">Pre-order service</h3>
         <p class="content_tiny_space" style="line-height:200%;">
@@ -405,7 +412,7 @@
       </div>
     </div>
 
-    <div class="four_four_two_grid content_small_space">
+    <div class="four_four_two_grid grid_gap_20 content_small_space">
       <div class="two_grid_content">
         <h3 class="content_half_space">Laundry status</h3>
         <p class="content_tiny_space" style="line-height:200%;">
@@ -425,12 +432,12 @@
         </p>
       </div>
     </div>
+  </div>
 
-    <div class="button_container content_container_full_mobile content_space">
-      <div class="inside_container">
-        <h2 class="noH2Line">Mobile app prototype</h2>
-        <div class="content_half_space"><a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="round_button">Prototype <i class="fas fa-flask"></i></div></a></div>
-      </div>
+  <div class="button_container content_container_full_mobile content_more_space">
+    <div class="inside_container">
+      <h2 class="noH2Line">Mobile app prototype</h2>
+      <div class="content_half_space"><a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="round_button">Prototype <i class="fas fa-flask"></i></div></a></div>
     </div>
   </div>
 

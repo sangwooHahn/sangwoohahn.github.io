@@ -281,9 +281,11 @@ a:hover {
 
 /* Quote Contaioner */
 .quote_container {
+  position: relative;
   padding-left: 150px;
   padding-right: 150px;
   margin: auto;
+  z-index: 1;
 }
 .quote_container h2 {
   text-align: center;
@@ -341,7 +343,11 @@ a:hover {
 }
 
 
+
 /* Sapcing */
+.content_first_space {
+  margin-top: 200px;
+}
 .content_more_space {
   margin-top: 200px;
 }
@@ -601,11 +607,8 @@ a:hover {
     width: auto;
     padding-left: 0px;
     padding-right: 0px;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-  .quote_right {
-    transform: translate(calc(100vw - 80px), 0px);
+    margin-right: 0px;
+    margin-left: 0px;
   }
 
   .title_description {
@@ -625,18 +628,34 @@ a:hover {
   .three_two_one_grid {
     grid-template-columns: repeat(1, 1fr);
   }
+  .persona_grid{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+  }
 
 
   .half_image_full_mobile {
     width:100%;
   }
 
+
+
+  /* Sapcing */
+  .content_first_space {
+    margin-top: 200px;
+  }
   .content_more_space {
-    margin-top: 250px;
+    margin-top: 150px;
   }
   .content_space {
-    margin-top: 100px;
+    margin-top: 80px;
   }
+  hr {
+    margin-top: 80px;
+  }
+
+
 
   .contact {
     height: calc(100% - 100px);
