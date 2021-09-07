@@ -21,8 +21,10 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="extras.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
   <meta charset="utf-8"/>
@@ -31,18 +33,21 @@
     $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
   $(document).ready(function(){ /* control all page of the special colors*/
-    var color = ('#000');
-    $('h2').css('color',color);
-    $('h3').css('color',color);
-    $('.go_back div').css('color',color);
-    $('.nav').css('background-color','#dedede');
-    $('.title_container').css('background-color','#dedede');
+    var main_color = ('#000000');
+    var sub_color = ('#dedede');
+    var white_color = ('#fafafa');
+    $('h2').css('color',main_color);
+    $('h3').css('color',main_color);
+    $('.go_back div').css('color',main_color);
+    $('.go_back').css('border-left', '2.5px solid '+ main_color);
+    $('.go_back').css('border-top', '2.5px solid '+ main_color);
+    $('.title_container').css('background-color',sub_color);
     $('.contact_container div h3').css('color','#fafafa');
-    $('.go_back').css('border-left', '2.5px solid '+color);
-    $('.go_back').css('border-top', '2.5px solid '+color);
+    $('.round_button').css('background-color',sub_color);
+    $('.contact_container div h3').css('color',white_color);
 
     if(localStorage.getItem("click_open")=="foodtruck_show") {
-      document.getElementById("sketches").style.display = "none";
+      document.getElementById("strider").style.display = "none";
       document.getElementById("foodtruck_motion").style.display = "block";
       localStorage.setItem("click_open", "undefined");
     }
@@ -55,7 +60,8 @@
     document.getElementById("sequence").style.display = "none";
     document.getElementById("foodtruck_motion").style.display = "none";
     document.getElementById("room").style.display = "none";
-    document.getElementById("photoshop").style.display = "none";
+    document.getElementById("strider").style.display = "none";
+    // document.getElementById("photoshop").style.display = "none";
     $('video').trigger('pause');
   }
   window.button001 = function() {
@@ -80,112 +86,177 @@
     document.getElementById("room").style.display = "block";
   }
   window.button008 = function() {
-    document.getElementById("photoshop").style.display = "block";
+    document.getElementById("strider").style.display = "block";
   }
+  // window.button008 = function() {
+  //   document.getElementById("photoshop").style.display = "block";
+  // }
   window.open_foodtruck = function() {
     localStorage.setItem("click_open", "foodtruck_show");
   }
   </script>
   <style>
+  .title_container {
+    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #eaeaea;
+  }
+
   .title_container > div {
-    width: 1000px;
+    display: flex;
+    height: 100%;
+    width: 860px;
+    /* width: 470px; */
+    margin: auto;
+  }
+
+  .title_container img, .title_container a {
+    height: 100%;
+    width: auto;
+    padding-right: 10px;
+  }
+
+  .title_container div img {
+    cursor: pointer;
+  }
+  .title_container div img:hover {
+    transform: scale(1.1);
+  }
+  #animate, #SMC, #gif, #sequence, #foodtruck_motion, #room, #sketches {
+  display: none;
+  }
+  /* #photoshop {
+  display: none;
+  margin: 0px;
+  padding: 0px;
+  }*/
+
+  .full_auto_height_container {
+    height: calc(100vh - 300px);
+  }
+  .auto_full_height_container {
+    height: auto;
+  }
+  .full_full_height_container {
+    height: calc(100vh - 300px);
+  }
+
+  #youtube_video{
+    width : 100%;
+    height : 600px;
+  }
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_container {
+      position: sticky;
+      top: 0;
+      overflow: auto;
+      padding: 10px 20px 10px 20px;
+    }
+    .full_auto_height_container {
+      height: auto;
+    }
+    .auto_full_height_container {
+      height: calc(100vh - 330px);
+    }
+    .full_full_height_container {
+      height: calc(100vh - 330px);
+    }
+    #youtube_video{
+      width : 100%;
+      height : 200px;
+    }
   }
   </style>
 </head>
 <body>
-  <!-- <div class="nav">
-  <div>
-  <ul>
-  <li><a href="index.html#title_cont">About</a></li>
-  <li><a href="index.html#body_cont">Portfolio</a></li>
-  <li><a id ="contact_button">Contact</a></li>
-</ul>
-</div>
-</div> -->
-<a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-<div class="title_container">
-  <div>
-    <img onclick="buttons(); button001();" src="images/motions/letter.gif">
-    <img onclick="buttons(); button002();" src="images/motions/thumbnail2.gif">
-    <img onclick="buttons(); button003();" src="images/motions/SMC.jpg">
-    <img onclick="buttons(); button004();" src="images/motions/gif1.gif">
-    <img onclick="buttons(); button005();" src="images/motions/sequence.gif">
-    <img onclick="buttons(); button006();" src="images/motions/move.jpg">
-    <img onclick="buttons(); button007();" src="images/motions/test0147.png">
-    <img onclick="buttons(); button008();" src="images/motions/photoshop.png">
-    <a href="https://editor.p5js.org/Sangwoo/present/a7s_eEEZP" target="_blank" style="width:0px;"><img src="images/motions/soundVisual.png"></a>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div>
+      <img onclick="buttons(); button008();" src="images/motions/Strider_fox.gif">
+      <img onclick="buttons(); button005();" src="images/motions/sequence.gif">
+      <img onclick="buttons(); button004();" src="images/motions/gif1.gif">
+      <img onclick="buttons(); button007();" src="images/motions/test0147.png">
+      <img onclick="buttons(); button001();" src="images/motions/letter.gif">
+      <img onclick="buttons(); button002();" src="images/motions/thumbnail2.gif">
+      <img onclick="buttons(); button003();" src="images/motions/SMC.jpg">
+      <img onclick="buttons(); button006();" src="images/motions/move.jpg">
+      <!-- <img onclick="buttons(); button008();" src="images/motions/photoshop.png"> -->
+      <!-- <a href="https://editor.p5js.org/Sangwoo/present/a7s_eEEZP" target="_blank" style="width:0px;"><img src="images/motions/soundVisual.png"></a> -->
+    </div>
   </div>
-</div>
 
-<div id="gif" class="content_container content_space">
-  <h2>Loop Environment</h2>
-  <div class="content_half_space">
-    <img src="images/motions/gif1.gif">
-    <img src="images/motions/gif2.gif">
+  <div id="strider" class="content_container auto_full_height_container content_half_space">
+    <h2>Introduce the Strider</h2>
+    <img class="content_half_space" src="images/motions/Strider_fox.gif">
   </div>
-</div>
 
-<div id="animate" class="content_container content_space">
-  <h2>Animate Sound and Text</h2>
-  <div class="content_half_space">
-    <video controls class="big_image" src="images/motions/space_cubez.mp4" type="video/mp4"></video>
-    <video controls class="big_image" src="images/motions/harrypotter.mp4" type="video/mp4"></video>
+  <div id="gif" class="content_container full_auto_height_container content_half_space">
+    <h2>Loop environment</h2>
+    <div class="four_two_one_grid content_half_space grid_gap_10">
+      <img class="two_grid_content" src="images/motions/gif1.gif">
+      <img class="two_grid_content" src="images/motions/gif2.gif">
+    </div>
   </div>
-</div>
 
-<div id="SMC" class="content_container content_space">
-  <h2>Secret Movie Club</h2>
-  <div class="content_half_space">
-    <video controls class="big_image" src="images/motions/SMC.mp4" type="video/mp4"></video>
+  <div id="animate" class="content_container full_full_height_container content_half_space">
+    <h2>Sound visualization</h2>
+    <div class="content_half_space" style="font-size:0px;">
+      <video controls src="images/motions/space_cubez.mp4" type="video/mp4"></video>
+      <!-- <video controls class="content_10_space" src="images/motions/harrypotter.mp4" type="video/mp4"></video> -->
+    </div>
   </div>
-</div>
 
-<div id="sketches" class="content_container content_space">
-  <h2>3D Sketches</h2>
-  <div class="content_half_space">
-    <video controls autoplay loop src="images/motions/letter.mp4" type="video/mp4"></video>
-    <video controls autoplay loop src="images/motions/pizza.mp4" type="video/mp4"></video>
+  <div id="SMC" class="content_container full_full_height_container content_half_space">
+    <h2>Secret Movie Club</h2>
+    <div class="content_half_space">
+      <video controls class="big_image" src="images/motions/SMC.mp4" type="video/mp4"></video>
+    </div>
   </div>
-</div>
 
-<div id="sequence" class="content_container content_space">
-  <h2>Catch Me If You Can</h2>
-  <div class="content_half_space">
-    <video controls class="big_image" src="images/motions/TITLESEQUENCE_s.mp4" type="video/mp4"></video>
+  <div id="sketches" class="content_container full_auto_height_container content_half_space">
+    <h2>3D sketches</h2>
+    <div class="four_two_one_grid content_half_space grid_gap_10">
+      <video controls autoplay loop class="two_grid_content" src="images/motions/letter.mp4" type="video/mp4"></video>
+      <video controls autoplay loop class="two_grid_content" src="images/motions/pizza.mp4" type="video/mp4"></video>
+    </div>
   </div>
-</div>
 
-<div id="foodtruck_motion" class="content_container content_space">
-  <h2>Food Truck Festival</h2>
-  <div class="content_half_space">
-    <video controls loop src="images/motions/move.mp4" type="video/mp4"></video>
-    <video controls autoplay loop src="images/motions/FoodTruckFestival.mp4" type="video/mp4"></video>
+  <div id="sequence" class="content_container full_full_height_container content_half_space">
+    <h2>Catch me if you can</h2>
+    <div class="content_half_space">
+      <video controls class="big_image" src="images/motions/TITLESEQUENCE_s.mp4" type="video/mp4"></video>
+    </div>
   </div>
-  <!-- <a onclick="open_foodtruck();" href="posters.html#foodtruck"><div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Posters</h3></div></a> -->
 
-  <a onclick="open_foodtruck();" href="posters.html#foodtruck">
-    <div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Posters</h3></div>
-  </a>
-</div>
+  <div id="foodtruck_motion" class="content_container content_half_space">
+    <h2>Social media AD</h2>
+    <div class="four_two_one_grid content_half_space grid_gap_10">
+      <video controls loop class="two_grid_content" src="images/motions/move.mp4" type="video/mp4"></video>
+      <video controls autoplay loop class="two_grid_content" src="images/motions/FoodTruckFestival.mp4" type="video/mp4"></video>
+    </div>
 
-<div id="room" class="content_container content_space">
-  <h2>Self Quarantine 360°</h2>
-  <div class="content_half_space">
-    <iframe width="1000" height="600" src="https://www.youtube.com/embed/Cg936WKZoAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="content_half_space centered_text">
+      <a onclick="open_foodtruck();" href="posters.html#foodtruck">
+        <div class="round_button"><h3>Posters</h3></div>
+      </a>
+    </div>
   </div>
-</div>
 
-<div id="photoshop" class="content_space">
-  <script src="p5/wackyphotoshop.js"></script>
-</div>
+  <div id="room" class="content_container full_full_height_container content_half_space">
+    <h2>Self Quarantine 360°</h2>
+    <div class="content_half_space">
+      <iframe id="youtube_video" src="https://www.youtube.com/embed/Cg936WKZoAc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p>*Drag the screen to experience the 3D space.</p>
+  </div>
 
-<!-- <div class="contact_container content_space">
-<div>
-<h3>Contact</h3>
-<p>sangwoohahn93@gmail.com</p>
-<p>shahn@mica.edu</p>
-</div>
-</div> -->
-<!-- <div id="copyright_cont" class="contact_container content_half_space"></div> -->
+  <!--
+  <div id="photoshop" class="content_half_space">
+    <script src="p5/wackyphotoshop.js"></script>
+  </div> -->
+
+  <div id="copyright_cont" class="content_space"></div>
 </body>
 </html>

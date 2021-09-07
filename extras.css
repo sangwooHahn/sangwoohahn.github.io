@@ -196,14 +196,6 @@ subtitle {
 }
 
 
-#momap, #foodtruck, #obang, #identity, #animate, #SMC, #gif, #sequence, #foodtruck_motion, #room, #photoshop {
-  display: none;
-}
-#photoshop {
-  margin: 0px;
-  padding: 0px;
-}
-
 .contact_container {
   position: relative;
   height: 50px;

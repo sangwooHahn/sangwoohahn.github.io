@@ -21,8 +21,10 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="extras.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
   <meta charset="utf-8"/>
@@ -30,16 +32,20 @@
   $(function(){
     $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
+
   $(document).ready(function(){ /* control all page of the special colors*/
-    var color = ('#000');
-    $('h2').css('color',color);
-    $('h3').css('color',color);
-    $('.go_back div').css('color',color);
-    $('.nav').css('background-color','#dedede');
-    $('.title_container').css('background-color','#dedede');
+    var main_color = ('#000000');
+    var sub_color = ('#dedede');
+    var white_color = ('#fafafa');
+    $('h2').css('color',main_color);
+    $('h3').css('color',main_color);
+    $('.go_back div').css('color',main_color);
+    $('.go_back').css('border-left', '2.5px solid '+ main_color);
+    $('.go_back').css('border-top', '2.5px solid '+ main_color);
+    $('.title_container').css('background-color',sub_color);
     $('.contact_container div h3').css('color','#fafafa');
-    $('.go_back').css('border-left', '2.5px solid '+color);
-    $('.go_back').css('border-top', '2.5px solid '+color);
+    $('.round_button').css('background-color',sub_color);
+    $('.contact_container div h3').css('color',white_color);
 
     if(localStorage.getItem("click_open")=="foodtruck_show") {
       document.getElementById("pitchfork").style.display = "none";
@@ -74,111 +80,145 @@
   }
   </script>
   <style>
+  .title_container {
+    height: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #eaeaea;
+  }
+
   .title_container > div {
+    display: flex;
+    height: 100%;
     width: 335px;
+    /* width: 470px; */
+    margin: auto;
+  }
+
+  .title_container img, .title_container a {
+    height: 100%;
+    padding-right: 10px;
+  }
+
+  .title_container div img {
+    cursor: pointer;
+  }
+  .title_container div img:hover {
+    transform: scale(1.1);
+  }
+  #momap, #foodtruck, #obang, #identity {
+    display: none;
   }
   </style>
 </head>
 <body>
-  <!-- <div class="nav">
-  <div>
-  <ul>
-  <li><a href="index.html#title_cont">About</a></li>
-  <li><a href="index.html#body_cont">Portfolio</a></li>
-  <li><a id ="contact_button">Contact</a></li>
-</ul>
-</div>
-</div> -->
-<a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
-<div class="title_container">
-  <div>
-    <img onclick="buttons(); button1();" src="images/posters/pitchfork.jpg">
-    <img onclick="buttons(); button2();" src="images/posters/save9.jpg">
-    <img onclick="buttons(); button3();" src="images/posters/GYEONGJU.jpg">
-    <img onclick="buttons(); button4();" src="images/posters/foodtruck1.jpg">
-    <img onclick="buttons(); button5();" src="images/posters/momap1.jpg">
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div>
+      <img onclick="buttons(); button1();" src="images/posters/pitchfork.jpg">
+      <img onclick="buttons(); button2();" src="images/posters/save9.jpg">
+      <img onclick="buttons(); button3();" src="images/posters/GYEONGJU.jpg">
+      <img onclick="buttons(); button4();" src="images/posters/foodtruck1.jpg">
+      <img onclick="buttons(); button5();" src="images/posters/momap1.jpg">
+    </div>
   </div>
-</div>
 
-<div id="momap" class="content_container content_space">
-  <h2>Maps Throught Time</h2>
-  <div class="content_half_space">
-    <img src="images/posters/momap1.jpg">
-    <img src="images/posters/momap2.jpg">
-    <img src="images/posters/momap3.jpg">
-    <img src="images/posters/momap4.jpg">
-    <img class="big_image" src="images/posters/mockup5.jpg">
-    <img src="images/posters/mockup4.jpg">
-    <img src="images/posters/mockup6.jpg">
+  <div id="momap" class="content_container content_half_space">
+    <h2>Maps Throught Time</h2>
+    <div class="content_half_space" style="font-size:0;">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/momap/mockup1.jpg">
+        <img class="two_grid_content" src="images/momap/mockup3.jpg">
+      </div>
+      <img class="content_10_space" src="images/momap/mockup2.jpg">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/momap/poster1.jpg">
+        <img class="two_grid_content" src="images/momap/poster2.jpg">
+      </div>
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/momap/poster3.jpg">
+        <img class="two_grid_content" src="images/momap/poster4.jpg">
+      </div>
+    </div>
+    <div class="content_half_space centered_text">
+      <a href="momap.html">
+        <div class="round_button"><h3>Full Project</h3></div>
+      </a>
+    </div>
   </div>
-  <!-- <a href="momap.html"><div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Project-A: The Fins</h3></div></a> -->
-  <a href="momap.html">
-    <div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Full Project</h3></div>
-  </a>
-</div>
 
-<div id="pitchfork" class="content_container content_space">
-  <h2>Pitchfork Music Festival 2019</h2>
-  <div class="content_half_space">
-    <img class="big_image" src="images/posters/pitchfork.jpg">
-    <!-- <div></div> -->
-    <img src="images/posters/mockup1.jpg">
-    <img src="images/posters/mockup2.jpg">
-    <img class="big_image" src="images/posters/mockup3.jpg">
+  <div id="pitchfork" class="content_container content_half_space">
+    <h2>Pitchfork Music Festival 2019</h2>
+    <div class="content_half_space" style="font-size:0;">
+      <img src="images/posters/pitchfork.jpg">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/mockup1.jpg">
+        <img class="two_grid_content" src="images/posters/mockup2.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/mockup3.jpg">
+    </div>
   </div>
-  <!-- <a><div class="color_button content_half_space"><h2>> View the Motions</h2></div></a> -->
-</div>
 
-<div id="obang" class="content_container content_space">
-  <h2>Obang City</h2>
-  <div class="content_half_space">
-    <img class="big_image" src="images/posters/SEOUL.jpg">
-    <img src="images/posters/JEJU.jpg">
-    <img src="images/posters/GYEONGJU.jpg">
-    <img src="images/posters/JEONJU.jpg">
-    <img src="images/posters/BUSAN.jpg">
-    <img class="big_image" src="images/posters/obang2.jpg">
+  <div id="obang" class="content_container content_half_space">
+    <h2>Obang City</h2>
+    <div class="content_half_space" style="font-size:0;">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/SEOUL.jpg">
+        <img class="two_grid_content" src="images/posters/JEJU.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/GYEONGJU.jpg">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/JEONJU.jpg">
+        <img class="two_grid_content" src="images/posters/BUSAN.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/obang2.jpg">
+    </div>
   </div>
-</div>
 
-<div id="identity" class="content_container content_space">
-  <h2>Screen Identity</h2>
-  <div class="content_half_space">
-    <img src="images/posters/save1.jpg">
-    <img src="images/posters/save2.jpg">
-    <img src="images/posters/save3.jpg">
-    <img src="images/posters/save4.jpg">
-    <img src="images/posters/save5.jpg">
-    <img src="images/posters/save6.jpg">
-    <img src="images/posters/save7.jpg">
-    <img src="images/posters/save8.jpg">
-    <img src="images/posters/save9.jpg">
-    <img src="images/posters/save10.jpg">
+  <div id="identity" class="content_container content_half_space">
+    <h2>Screen Identity</h2>
+    <div class="content_half_space" style="font-size:0;">
+      <img src="images/posters/save1.jpg">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/save2.jpg">
+        <img class="two_grid_content" src="images/posters/save3.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/save4.jpg">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/save5.jpg">
+        <img class="two_grid_content" src="images/posters/save6.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/save7.jpg">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/save8.jpg">
+        <img class="two_grid_content" src="images/posters/save9.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/save10.jpg">
+    </div>
   </div>
-</div>
 
-<div id="foodtruck" class="content_space">
-  <h2>Food Truck Festival</h2>
-  <div class="content_half_space">
-    <img src="images/posters/foodtruck1.jpg">
-    <img src="images/posters/foodtruck2.jpg">
-    <img class="big_image" src="images/posters/foodtruck3.jpg">
-    <img class="big_image" src="images/posters/mockup8.jpg">
-    <img src="images/posters/mockup7.jpg">
-    <img src="images/posters/mockup9.jpg">
+  <div id="foodtruck" class="content_container content_half_space">
+    <h2>Food Truck Festival</h2>
+    <div class="content_half_space" style="font-size:0;">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/mockup7.jpg">
+        <img class="two_grid_content" src="images/posters/mockup9.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/mockup9.jpg">
+      <div class="four_two_one_grid grid_gap_10 content_10_space">
+        <img class="two_grid_content" src="images/posters/foodtruck1.jpg">
+        <img class="two_grid_content" src="images/posters/foodtruck2.jpg">
+      </div>
+      <img class="content_10_space" src="images/posters/foodtruck3.jpg">
+
+    </div>
+    <div class="content_half_space centered_text">
+      <a onclick="open_foodtruck();" href="motions.html#foodtruck_motion">
+        <div class="round_button"><h3>Motions</h3></div>
+      </a>
+    </div>
   </div>
-  <a onclick="open_foodtruck();" href="motions.html#foodtruck_motion">
-    <div class="color_button content_half_space"><h3><i class="fas fa-external-link-alt"></i> Motions</h3></div>
-  </a>
-</div>
 
-<!-- <div class="contact_container content_space">
-<div>
-<h3>Contact</h3>
-<p>sangwoohahn93@gmail.com</p>
-<p>shahn@mica.edu</p>
-</div>
-</div> -->
-<!-- <div id="copyright_cont" class="contact_container"></div> -->
+  <div id="copyright_cont" class="content_space"></div>
 </body>
 </html>

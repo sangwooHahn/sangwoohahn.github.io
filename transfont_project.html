@@ -21,7 +21,9 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
@@ -31,25 +33,29 @@
     $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
   });
 
-  $(window).on('scroll',function(){
-    var title_image_position = Math.round($(window).scrollTop());
-    $('.webpage_contatiner').css('transform','translateY(-'+(title_image_position)+'px)');
-  });
+  // $(window).on('scroll',function(){
+  //   var title_image_position = Math.round($(window).scrollTop());
+  //   $('.webpage_contatiner').css('transform','translateY(-'+(title_image_position)+'px)');
+  // });
 
   $(document).ready(function(){ /* control all page of the special colors*/
-    var color = ('#07248c');
-    $('h2').css('color',color);
-    $('h3').css('color',color);
-    $('.go_back div').css('color',color);
-    $('.nav').css('background-color',color);
-    $('.title_container').css('background-color',color);
-    $('.color_box').css('background-color',color);
-    $('.color_button').css('background-color',color);
-    $('.color_button h3').css('color','#fafafa');
-    $('.color_box > div > h3').css('color','#fafafa');
-    $('.contact_container div h3').css('color','#fafafa');
-    $('.go_back').css('border-left', '2.5px solid '+color);
-    $('.go_back').css('border-top', '2.5px solid '+color);
+    var main_color = ('#07248c');
+    var sub_color = ('#000000');
+    var white_color = ('#fafafa');
+    $('h2').css('color',main_color);
+    $('h3').css('color',main_color);
+    $('.go_back div').css('color',main_color);
+    $('.go_back').css('border-left', '2.5px solid '+main_color);
+    $('.go_back').css('border-top', '2.5px solid '+main_color);
+    $('.nav').css('background-color',main_color);
+    $('.title_container').css('background-color',main_color);
+    $('.button_container').css('background-color',main_color);
+    $('.button_container h2').css('color',white_color);
+    $('.color_box').css('background-color',main_color);
+    $('.color_box > div > h3').css('color',white_color);
+    $('.title_button').css('background-color',sub_color);
+    $('.round_button').css('background-color',sub_color);
+    $('.contact_container div h3').css('color',white_color);
   });
   window.open_about = function() {
     localStorage.setItem("click_open", "about_show");
@@ -58,9 +64,9 @@
   <style>
 
   .webpage_contatiner {
-    position: fixed;
-    top:170px;
-    left:calc(calc(100vw - 1000px) * 0.5 + 550px);
+    position: absolute;
+    top:140px;
+    left:calc(calc(100vw - 1000px) * 0.5 + 480px);
     width: 700px;
     height: 462.2px;
     background-color: white;
@@ -101,69 +107,24 @@
     border-radius: 0px 0px 15px 15px;
   }
 
-  .content_grid {
-    display: grid;
-    grid-template-columns: 600px auto;
-    grid-row-gap: 100px;
-    grid-column-gap: 50px;
+  #interaction_description div {
+    margin-top: 90px;
   }
-
-  .content_grid div {
-    margin-top: 150px;
-  }
-
-  .content_grid_two {
-    display: grid;
-    grid-template-columns: 300px auto 300px auto;
-    grid-row-gap: 50px;
-    grid-column-gap: 10px;
-  }
-
-  .content_grid_two div {
-    margin-top: 102px;
+  #howtouse img {
+    width: 80%;
   }
 
 
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
     .webpage_contatiner {
-      /* left:calc(calc(100vw - 1000px) * 0.5 + 450px); */
       left: 500px;
-      top:180px;
+      /* top:180px;
       width: 600px;
-      height: 402px;
+      height: 402px; */
     }
-
-    .grind_in_grid {
-      display: grid;
-      grid-template-columns: 40% 50%;
-    }
-    .tablet_transform_grid {
-      display: inherit;
-    }
-    .tablet_transform_grid > img { /* scenario image*/
-      width: 100%;
-      margin-left: 0%;
-    }
-
-    .content_grid {
-      grid-template-columns: 30% auto;
-      grid-column-gap: 20px;
-    }
-
-    .content_grid div {
-      margin-top: 120px;
-    }
-
-    .content_grid_two {
-      display: grid;
-      grid-template-columns: 30% auto 30% auto;
-      grid-row-gap: 50px;
-      grid-column-gap: 10px;
-    }
-
-    .content_grid_two div {
-      margin-top: 0px;
+    #interaction_description div {
+      margin-top: 40px;
     }
   }
 
@@ -171,48 +132,23 @@
   @media screen and (min-width: 600px) and (max-width: 960px) {
     .webpage_contatiner {
       left: 78px;
-      top: 490px;
+      top: 400px;
     }
-    .title_description p {
-      width : 480px;
-    }
-    .content_more_space {
-      margin-top: 400px;
+    #interaction_description div {
+      margin-top: 60px;
     }
   }
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
     .webpage_contatiner {
-      left: 40px;
-      top: 370px;
+      left: 30px;
+      top: 450px;
       width:100%;
       height:calc(60vw + 40px);
     }
-    .content_more_space {
-      margin-top: 250px;
-    }
-    .content_grid {
-      grid-template-columns: 100%;
-      grid-column-gap: 0px;
-      grid-row-gap: 50px;
-    }
-
-    .content_grid div {
+    #interaction_description div {
       margin-top: 0px;
-      margin-bottom: 50px;
-    }
-
-    .content_grid_two {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-column-gap: 0px;
-      grid-row-gap: 50px;
-    }
-
-    .content_grid_two div {
-      margin-top: 0px;
-      margin-bottom: 50px;
     }
   }
 
@@ -220,29 +156,30 @@
 </head>
 <body>
   <div class="nav">
-    <div>
-      <ul>
-        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-        <li><a href="index.html#body_cont">Portfolio</a></li>
-        <li><a id ="contact_button">Contact</a></li>
-      </ul>
-    </div>
+    <ul>
+      <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
+      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+      <li><a href="index.html#body_cont">Portfolio</a></li>
+      <li><a id ="contact_button">Contact</a></li>
+    </ul>
+    <ul>
+      <li style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+    </ul>
   </div>
   <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+
   <div class="title_container">
-    <div>
+    <div class="content_container">
       <div class="title_description">
-        <subtitle>Thesis / Interaction Design</subtitle>
         <h1>Transfont</h1>
-        <p>Transfont is an experimental project that connects the person and font.
-          The design of the font transforms by the person's movement.
-          Users create their own fonts through web pages.
+        <p class="content_tiny_space">
+          A way to get people to design their fonts. Font design that automatically transforms according to people.
         </p>
       </div>
-      <div class="color_button_title"><a href="https://sangwoohahn.com/transfont.html" target="_blank"><i class="fas fa-external-link-alt"></i> Transfont.com</a></div>
+      <a href="https://sangwoohahn.com/transfont.html" class="noUnderline" target="_blank"><div class="title_button content_half_space">transfont.com <i class="fas fa-external-link-alt"></i></div></a>
     </div>
   </div>
-  <img class ="pattern_image" src="images/patterns/pattern4.png">
+
   <div class ="webpage_contatiner">
     <div class ="webpage_top">
       <div></div><div></div><div></div>
@@ -250,113 +187,214 @@
     <img class ="title_image" src="images/transfont/title_person.gif">
   </div>
 
-  <div class="content_container">
-  <h2 class="quotes content_more_space">"How can a font be personal?"</h2>
-  <p class="content_p">
-  People communicate digitally in the digital age.
-  People comunicate in text messages, write and post on the Internet.
-  But when people write digitally, they use fonts made by others not there own's.
-  Why people do not have their own fonts, just as they have their own voices or handwriting?
-  The biggest reason is that the font design takes a lot of time and effort, and people have to design lot of characters at the same time.
-  To reduce this process and make the font more individual, an experiment is conducted to connect the font to human motion.
-  The fonts design elements from the Transfont are connected to each person's movements to make it personal typeface.
-</p>
-</div>
-
-<img class="content_space" src="images/transfont/mockup.jpg">
-
-
-<div  class="content_container">
-  <h2  class="content_space">How it works</h2>
-  <h3 style="padding-top:50px;">Interaction</h3>
-  <div class="content_grid_two content_half_space">
-    <img src="images/transfont/motion_1.gif">
-    <div>
-      <h4>Width</h4>
-      <p>The distance between the elbows.</p>
+  <div class="content_container content_more_space">
+    <div class="quote_left content_space">
+      <div class="quotes" style="width:40px; height:40px; position:absolute;; transform: translate(0px, 10px);"></div>
+      <div class="quotes"  style="width:40px; height:40px; position:absolute; transform: translate(50px, 10px);"></div>
+      <div class="quotes"  style="width:20px; height:25px; position:absolute;; transform: translate(0px, -15px);"></div>
+      <div class="quotes"  style="width:20px; height:25px; position:absolute; transform: translate(50px, -15px);"></div>
     </div>
-    <img src="images/transfont/motion_2.gif">
-    <div>
-      <h4>Weight</h4>
-      <p>The distance between feet.</p>
+    <div class="quote_right">
+      <div class="quotes"  style="width:40px; height:40px; position:absolute; transform: translate(-40px, -10px);"></div>
+      <div class="quotes"  style="width:40px; height:40px; position:absolute; transform: translate(-90px, -10px);"></div>
+      <div class="quotes"  style="width:20px; height:25px; position:absolute; transform: translate(-20px, 30px);"></div>
+      <div class="quotes"  style="width:20px; height:25px; position:absolute; transform: translate(-70px, 30px);"></div>
     </div>
-    <img src="images/transfont/motion_3.gif">
-    <div>
-      <h4>Arc</h4>
-      <p>Angle of arm.</p>
-    </div>
-    <img src="images/transfont/motion_4.gif">
-    <div>
-      <h4>Middle Height</h4>
-      <p>The height of the shoulder.</p>
-    </div>
-    <img src="images/transfont/motion_5.gif">
-    <div>
-      <h4>Horizontal Weight</h4>
-      <p>The height of the hand.</p>
+    <div class="quote_container">
+      <h2 class="noH2Line">How can the font be personal?</h2>
+      <p class="content_small_space">
+        People have their voices and gestures. I studied how these individual differences can be express in the digital world.
+        Text created in a digital environment is designed by a user other. To personalize the font, the user needs to create it themselves.
+        If the design a font by connecting it to something of an individual, it will be a personal font.
+      </p>
     </div>
   </div>
 
-  <h3 class="content_space">Key Functions</h3>
-  <img class="content_half_space" src="images/transfont/keyfeatures.png">
-  <h3 class="content_space">Examples of Use</h3>
-  <img style="box-shadow : 0px 0px 15px rgba(0,0,0,0.1);" class="content_half_space" src="images/transfont/transfont.gif">
-  <h3 class="content_space">User Flow</h3>
-  <img class="content_half_space" src="images/transfont/userflow.png">
+  <div style="font-size:0;">
+    <img class="content_space" src="images/transfont/mockup.jpg">
+    <div class="four_two_one_grid grid_gap_10 content_10_space">
+      <img class="two_grid_content" src="images/transfont/ipad-mockup.jpg">
+      <video controls class="two_grid_content" src="images/transfont/trailer.mp4" type="video/mp4"></video>
+    </div>
+  </div>
 
-  <div class="content_space content_space">
-    <h2 class="content_space">How to Use</h2>
-    <div class = "content_grid">
-      <img src="images/transfont/step_1.gif">
+  <div class="content_container content_more_space">
+    <h2>Project overview</h2>
+    <div class="three_two_one_grid grid_gap_10 content_small_space ">
       <div>
-        <p>1. Prepare a web camera and microphone.</p>
-        <p>2. Allow browsers to use web camera and microphone.</p>
+        <h4>Goal:</h4>
+        <p>Enabling anyone to create their own fonts.</p>
       </div>
-      <img src="images/transfont/step_2.gif">
       <div>
-        <p>3. Step back until see your whole body.</p>
+        <h4>Role:</h4>
+        <p>Font design, Web design, Web development</p>
       </div>
-      <img src="images/transfont/step_3.gif">
       <div>
-        <p>4. Speak on microphone to see an example text.</p>
+        <h4>Duration:</h4>
+        <p>April 2020 – November 2020</p>
       </div>
-      <img src="images/transfont/step_4.gif">
+    </div>
+
+    <hr>
+
+    <h2 class="content_space">How it works</h2>
+    <h3 class="content_tiny_space">Interaction</h3>
+    <div class="four_two_one_grid grid_gap_10 content_half_space" id="interaction_description">
+      <img src="images/transfont/motion_1.gif">
       <div>
-        <p>5. Move your body and design the font.</p>
-        <p>6. Use keywords for additional controls.</p>
+        <h4>Width</h4>
+        <p>The distance between the elbows.</p>
+      </div>
+      <img src="images/transfont/motion_2.gif">
+      <div>
+        <h4>Weight</h4>
+        <p>The distance between the feet.</p>
+      </div>
+      <img src="images/transfont/motion_3.gif">
+      <div>
+        <h4>Arc</h4>
+        <p>Angle of the arm.</p>
+      </div>
+      <img src="images/transfont/motion_4.gif">
+      <div>
+        <h4>Middle Height</h4>
+        <p>The height of the shoulder.</p>
+      </div>
+      <img src="images/transfont/motion_5.gif">
+      <div>
+        <h4>Horizontal Weight</h4>
+        <p>The height of the hand.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="content_space content_space" id="howtouse">
+      <h3>How to use</h3>
+      <div class="four_two_one_grid grid_gap_10 content_half_space">
+        <div class="two_grid_content">
+          <img src="images/transfont/step_1.gif">
+          <div class="content_small_space">
+            <h4>Step 1:</h4>
+            <p>· Prepare a web camera and microphone.</p>
+            <p>· Allow browsers to use web camera and microphone.</p>
+          </div>
+        </div>
+        <div class="two_grid_content">
+          <img src="images/transfont/step_2.gif">
+          <div class="content_small_space">
+            <h4>Step 2:</h4>
+            <p>· Step back until see your whole body.</p>
+          </div>
+        </div>
+        <div class="two_grid_content content_half_space">
+          <img src="images/transfont/step_3.gif">
+          <div class="content_small_space">
+            <h4>Step 3:</h4>
+            <p>· Speak on microphone to see an example text.</p>
+          </div>
+        </div>
+        <div class="two_grid_content content_half_space">
+          <img src="images/transfont/step_4.gif">
+          <div class="content_small_space">
+            <h4>Step 4:</h4>
+            <p>· Move your body and design the font.</p>
+            <p>· Use keywords for additional controls.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3 class="content_space">Examples of use</h3>
+    <img style="box-shadow : 0px 0px 15px rgba(0,0,0,0.1);" class="content_half_space" src="images/transfont/transfont.gif">
+    <h2 class="content_more_space text_above_box">Research</h2>
+  </div>
+  <div class="gray_box">
+    <div class="content_container">
+      <h3>Elements of the font</h3>
+      <div class="four_two_one_grid content_small_space">
+        <div class="list_container">
+          – font width<br>
+          – stroke weight<br>
+          – arc<br>
+          – middle height<br>
+          – overshoot<br>
+          – horiaontal weight<br>
+          – serif height<br>
+          – serif weight<br>
+          – Descender length
+        </div>
+        <img src="images/transfont/font_elements.png" class="three_grid_content">
+      </div>
+
+      <!-- <hr style="background-color: #fafafa;"> -->
+
+      <h3 class="content_space">Elements from the person</h3>
+      <p class="content_10_space">Without changing the font design through commands, the elements of the user and the elements of the font should be directly connected to transform them intuitively.</p>
+      <div class="four_two_one_grid grid_gap_20 content_small_space">
+        <div class="icon_container">
+          <img class="centered_image" style="width:60%;" src="images/transfont/person_elements_1.png">
+          <h4 class="centered_text content_tiny_space">Voice</h4>
+          <p class="small_p content_10_space">It is easy to issue various commands. Variables include tone, pitch, and volume.</p>
+        </div>
+        <div class="icon_container">
+          <img class="centered_image" style="width:60%;" src="images/transfont/person_elements_2.png">
+          <h4 class="centered_text content_tiny_space">Body motion</h4>
+          <p class="small_p content_10_space">Many variables such as arm, leg, shoulder and, body position.</p>
+        </div>
+        <div class="icon_container">
+          <img class="centered_image" style="width:60%;" src="images/transfont/person_elements_3.png">
+          <h4 class="centered_text content_tiny_space">Facial expression</h4>
+          <p class="small_p content_10_space">Only limited expressions are recognized. There is a variable eye, nose, and mouth.</p>
+        </div>
+        <div class="icon_container">
+          <img class="centered_image" style="width:60%;" src="images/transfont/person_elements_4.png">
+          <h4 class="centered_text content_tiny_space">Hand motion</h4>
+          <p class="small_p content_10_space">It's easy to command, but not intuitive to connect to the font.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<img class="content_space" src="images/transfont/typefaces.png">
-<!-- <img class="content_half_space" src="images/transfont/mockup.jpg"> -->
+  <div class="content_container content_space">
+    <h2>UX research</h2>
+    <!-- <h3 class="content_tiny_space">Accessibility</h3>
+    <p class="content_10_space">Some devices are needed to link the elements of the user and font.</p>
+    <div class="four_grid_two_mobile">
+      <img class="two_grid_content" src="images/transfont/userflow.png">
+      <img class="two_grid_content" src="images/transfont/userflow.png">
+    </div>
 
+    <hr> -->
+    <h3 class="content_tiny_space">User flow</h3>
 
-<div class="content_container">
-  <div class="content_half_space">
-    <a href="https://sangwoohahn.com/transfont.html" target="_blank">
-      <div class="color_button"><h3><i class="fas fa-external-link-alt"></i> Transfont</h3></div>
-    </a>
+    <p class="content_10_space">Some devices are needed to link the elements of the user and font.</p>
+    <img class="content_half_space" src="images/transfont/userflow.png">
+
+    <h2 class="content_space">Interface</h3>
+    <p class="list_container content_tiny_space">
+      – The area where users can see them and control bar.<br>
+      – Real-time transform of all alphabets<br>
+      – The area where users can see a particular letter<br>
+      – Download Button
+    </p>
+    <img src="images/transfont/keyfeatures.png">
+
   </div>
-</div>
 
-<div id="copyright_cont" class="content_space"></div>
+  <!-- <img src="images/transfont/typefaces.png" class="content_space"> -->
 
-<!-- <script>
-$(document).ready(function(){
-  $("a").on('click', function(event) {
-    if (this.hash == "#contact_cont") {
-      event.preventDefault();
-      var hash = this.hash;
-      console.log(this.hash);
-      $('html, body').animate({scrollTop: $(hash).offset().top}, 800, function(){
-        window.location.hash = hash;
-      });
-    }
-  });
-});
+  <div class="button_container content_container_full_mobile content_more_space">
+    <div class="inside_container">
+      <h2 class="noH2Line">Design your own font</h2>
+      <div class="content_half_space"><a href="https://sangwoohahn.com/transfont.html" class="noUnderline" target="_blank"><div class="round_button">transfont.com <i class="fas fa-external-link-alt"></i></div></a></div>
+    </div>
+  </div>
+  <!-- <div style="background-color:gray; width:400px; height:400px; position:absolute; bottom:100px; right:100px;"></div> -->
 
-</script> -->
+  <div id="copyright_cont" class="content_space"></div>
+
 </body>
 </html>

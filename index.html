@@ -21,7 +21,9 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" type="text/css" href="title.css">
   <script src="p5/p5.js"></script>
@@ -37,19 +39,22 @@
   </script>
 </head>
 <body>
-<div id="nav_cont" class="nav">
-    <div>
-      <ul>
-        <li><a id="about_button" href="#about_cont">About</a></li>
-        <li><a href="#body_cont">Portfolio</a></li>
-        <li><a id="contact_button">Contact</a></li>
-      </ul>
-    </div>
+  <div id="nav_cont" class="nav">
+    <ul>
+      <li><a id="logo_button" href="#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_black.png" alt="portfolio title logo"></a></li>
+      <li><a id="about_button" href="#about_cont">About</a></li>
+      <li><a href="#body_cont">Portfolio</a></li>
+      <li><a id="contact_button">Contact</a></li>
+    </ul>
+    <ul>
+      <li style="position: absolute; right:60px; padding-right:0px;">EN / KR</li>
+    </ul>
   </div>
-<div id="about_cont" class="about_container">
+
+  <div id="about_cont" class="about_container">
     <div id="about_cont_div">
       <h1>Hello!</h1>
-      <p>I'm Sangwoo Hahn, a designer who studies users' experiences and designs digital products.
+      <p class="content_small_space">I'm Sangwoo Hahn, a designer who studies users' experiences and designs digital products.
         I provide convenience to people through visual and systematic design.
         I aim to find visual solutions to social research and current problems and solve them through design.
         I hope my abilities can offer better living through design for everyone.
@@ -110,53 +115,74 @@
         </div>
       </div>
 
-      <div style="background-color:#1D4922;" class="two_grid_thumbnail" onclick="location.href='momap.html';">
+      <div style="background-color:#1D4922;" class="two_grid_content" onclick="location.href='momap.html';">
         <div class="portfolio_container" style="background-image:url('images/momap/museum2.jpg');">
           <div></div>
           <div class="thumbnail_description">
             <!-- <subtitle>UX · UI / Product Design</subtitle> -->
             <h1>MoMap</h1>
-            <p>Branding system for museum of the map</p>
+            <p>Branding system for museum of map</p>
             <a href="momap.html"><div class="portfolio_button" style="background-color:#1D4922;">View the Project</div></a>
           </div>
         </div>
       </div>
 
-      <div id="special_bg" style="background-image:url('thumbnail/insta.jpg');" onclick="location.href='instamusic.html';">
+      <!-- <div id="special_bg" style="background-image:url('thumbnail/insta.jpg');" onclick="location.href='instamusic.html';">
         <div class="portfolio_container" style="background-image:url('thumbnail/instamusic.png'); background-size: auto 70%; background-position: center 80px;">
           <div></div>
           <div class="thumbnail_description" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));">
-            <!-- <subtitle>UX Research</subtitle> -->
             <h1>InstaMusic</h1>
             <p>Music streaming services for Instagram users</p>
             <a href="instamusic.html"><div class="portfolio_button" style="background-color:#9838B2;">View the Project</div></a>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div style="background-color:#C10C0C;" onclick="location.href='jubudae.html';">
+      <!-- <div style="background-color:#C10C0C;" onclick="location.href='jubudae_menu.html';">
         <div class="portfolio_container" style="background-image:url('images/jubudae/mockup.jpg');">
           <div></div>
           <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
             <h1>Ju Budae</h1>
             <p>Branding system and digital menu design for Restaurant</p>
-            <a href="jubudae.html"><div class="portfolio_button" style="background-color:#C10C0C;">View the Project</div></a>
+            <a href="jubudae_menu.html"><div class="portfolio_button" style="background-color:#C10C0C;">View the Project</div></a>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div style="background-color:#962174;" class="two_grid_thumbnail" onclick="location.href='daydream.html';">
+      <!-- <div style="background-color:#962174;" onclick="location.href='berrystudio.html';">
+        <div class="portfolio_container" style="background-image:url('images/berrystudio/mockup1.jpg');">
+          <div></div>
+          <div class="thumbnail_description">
+            <h1>Berry Studio</h1>
+            <p>Action battle game for PC and consoles</p>
+            <a href="berrystudio.html"><div class="portfolio_button" style="background-color:#962174;">View the Project</div></a>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div style="background-color:#962174;" class="two_grid_content" onclick="location.href='daydream.html';">
         <div class="portfolio_container" style="background-image:url('images/daydream/game4.jpg');">
           <div></div>
           <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Game Design</subtitle> -->
             <h1>Daydream</h1>
             <p>Action battle game for PC and consoles</p>
             <a href="daydream.html"><div class="portfolio_button" style="background-color:#962174;">View the Project</div></a>
           </div>
         </div>
       </div>
+
+      <div style="background-color:#962174;" onclick="location.href='thefins.html';">
+        <div class="portfolio_container" style="background-image:url('images/thefins/mockup1.jpg');">
+          <div></div>
+          <div class="thumbnail_description">
+            <h1>The Fins</h1>
+            <p>Auto battle game for Smartphone and PC</p>
+            <a href="thefins.html"><div class="portfolio_button" style="background-color:#12265B;">View the Project</div></a>
+          </div>
+        </div>
+      </div> -->
+
+
 
 
     </div>
@@ -165,17 +191,17 @@
 <div id="moreProject_cont" class="moreProject_container">
   <div>
     <div class="posters">
-      <h3>+ Poster</h3>
+      <h3><b>+ Poster</b></h3>
       <a href="posters.html">
-        <div class="poster1" style ="background-image:url('thumbnail/foodtruck2.jpg')"></div>
-        <div class="poster2" style ="background-image:url('thumbnail/momap1.jpg')"></div>
+        <div class="poster1" style ="background-image:url('thumbnail/momap1.jpg')"></div>
+        <div class="poster2" style ="background-image:url('thumbnail/foodtruck2.jpg')"></div>
         <div class="poster3" style ="background-image:url('thumbnail/BUSAN.jpg')"></div>
       </a>
     </div>
     <div class="motions">
-      <h3>+ Motion & Code</h3>
+      <h3><b>+ Motion</b></h3>
       <a href="motions.html">
-        <div class="motion1" style ="background-image:url('thumbnail/letter.gif')"></div>
+        <div class="motion1" style ="background-image:url('thumbnail/Strider_fox.gif')"></div>
         <div class="motion2" style ="background-image:url('thumbnail/gif1.gif')"></div>
       </a>
     </div>
