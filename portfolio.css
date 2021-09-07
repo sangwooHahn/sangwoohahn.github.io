@@ -587,6 +587,10 @@ a:hover {
     display: none;
   }
 
+  .go_back {
+    bottom: 20px;
+  }
+
   .content_container_full_mobile {
     width: auto;
     margin-left: 0px;
