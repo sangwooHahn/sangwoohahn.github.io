@@ -82,7 +82,6 @@
   <style>
   .title_container {
     height: 80px;
-    width: auto;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: #eaeaea;
@@ -98,6 +97,7 @@
 
   .title_container img, .title_container a {
     height: 100%;
+    width: auto;
     padding-right: 10px;
   }
 
@@ -109,6 +109,15 @@
   }
   #momap, #foodtruck, #obang, #identity {
     display: none;
+  }
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_container {
+      position: sticky;
+      top: 0;
+      overflow: auto;
+      padding: 10px 20px 10px 20px;
+    }
   }
   </style>
 </head>
