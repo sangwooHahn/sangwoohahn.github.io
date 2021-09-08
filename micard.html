@@ -126,9 +126,23 @@
   }
 
 
-  /*Tablet*/
+  /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-
+    .title_image {
+      left: calc(calc(100vw - 1100px) * 0.5 + 460px);
+      right: 0;
+      top: 270px;
+      bottom: calc(calc(400px - 55vh) * -1);
+      height: calc(30vh + 180px);
+      width: auto;
+    }
+    .title_image_overlap {
+      position: fixed;
+      left: calc(calc(100vw - 1100px) * 0.5 + 430px - 20vh);
+      bottom: calc(calc(90px - 10vh) * -1);
+      height: calc(55vh + 100px);
+      width: auto;
+    }
   }
 
   /*Smart phone*/
