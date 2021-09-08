@@ -246,7 +246,7 @@ a:hover {
 .webpage_contaioner_desktop > div:nth-child(2) {
   overflow-x:auto;
   overflow-y:auto;
-  height:28vw;
+  height:500px;
   border-radius: 0px 0px 10px 10px;
   font-size: 0px;
 }
@@ -261,7 +261,7 @@ a:hover {
 .webpage_contaioner_mobile > div:nth-child(1) {
   overflow-x:auto;
   overflow-y:auto;
-  height: calc(30px + 28vw);
+  height: 530px;
   border-radius: 15px;
   font-size: 0px;
 }
@@ -632,6 +632,45 @@ a:hover {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
+  }
+  .webpage_grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+  }
+
+  /* webpage container */
+  .webpage_contaioner_desktop {
+    border-radius: 5px;
+  }
+  .webpage_contaioner_top_desktop {
+    height:16px;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 0;
+  }
+  .webpage_contaioner_top_desktop div {
+    width: 6px;
+    height: 6px;
+    margin-right: 4px;
+    margin-top: 5px;
+    border-radius: 15px;
+  }
+  .webpage_contaioner_top_desktop div:nth-child(1) {
+    margin-left: 8px;
+  }
+  .webpage_contaioner_desktop > div:nth-child(2) {
+    height:190px;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 0px;
+  }
+  .webpage_contaioner_mobile {
+    width: 70%;
+    border-radius: 15px;
+  }
+  .webpage_contaioner_mobile > div:nth-child(1) {
+    height: calc(16px + 110vw);
+    border-radius: 15px;
+    font-size: 0px;
   }
 
 
