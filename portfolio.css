@@ -551,7 +551,10 @@ a:hover {
 
 
   .content_more_space {
-    margin-top: 300px;
+    margin-top: 150px;
+  }
+  .content_space {
+    margin-top: 80px;
   }
 
   .four_four_two_grid {
@@ -572,6 +575,13 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+  }
+
+  .webpage_contaioner_desktop > div:nth-child(2) {
+    height:290px;
+  }
+  .webpage_contaioner_mobile > div:nth-child(1) {
+    height:320px;
   }
 
   .half_image_full_mobile {
