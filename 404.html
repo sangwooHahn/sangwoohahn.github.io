@@ -32,20 +32,39 @@
     });
     </script>
     <script>
-      $(document).ready(function(){ /* control all page of the special colors*/
-        var color = ('#000000');
-        $('h2').css('color',color);
-        $('h3').css('color',color);
-        $('.go_back div').css('color',color);
-        $('.nav').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-        $('.title_container').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-        $('.color_box').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-        $('.color_button').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-        $('.color_button h2').css('color','#fafafa');
-        $('.color_box > div > h3').css('color','#fafafa');
-        $('.contact_container div h3').css('color','#fafafa');
-        $('.go_back').css('border-left', '2.5px solid '+color);
-        $('.go_back').css('border-top', '2.5px solid '+color);
+      // $(document).ready(function(){ /* control all page of the special colors*/
+      //   var color = ('#000000');
+      //   $('h2').css('color',color);
+      //   $('h3').css('color',color);
+      //   $('.go_back div').css('color',color);
+      //   $('.nav').css('background-image','linear-gradient(to right, #000000 60%, #555)');
+      //   $('.title_container').css('background-image','linear-gradient(to right, #000000 60%, #555)');
+      //   $('.color_box').css('background-image','linear-gradient(to right, #000000 60%, #555)');
+      //   $('.color_button').css('background-image','linear-gradient(to right, #000000 60%, #555)');
+      //   $('.color_button h2').css('color','#fafafa');
+      //   $('.color_box > div > h3').css('color','#fafafa');
+      //   $('.contact_container div h3').css('color','#fafafa');
+      //   $('.go_back').css('border-left', '2.5px solid '+color);
+      //   $('.go_back').css('border-top', '2.5px solid '+color);
+      //  });
+       $(document).ready(function(){ /* control all page of the special colors*/
+         var main_color = ('#000000');
+         var sub_color = ('#000000');
+         var white_color = ('#fafafa');
+         $('h2').css('color',main_color);
+         $('h3').css('color',main_color);
+         $('.go_back div').css('color',main_color);
+         $('.go_back').css('border-left', '2.5px solid '+main_color);
+         $('.go_back').css('border-top', '2.5px solid '+main_color);
+         $('.nav').css('background-color',main_color);
+         $('.title_container').css('background-color',main_color);
+         $('.button_container').css('background-color',main_color);
+         $('.button_container h2').css('color',white_color);
+         $('.color_box').css('background-color',main_color);
+         $('.color_box > div > h3').css('color',white_color);
+         $('.title_button').css('background-color',sub_color);
+         $('.round_button').css('background-color',sub_color);
+         $('.contact_container div h3').css('color',white_color);
        });
 
        window.open_about = function() {
@@ -61,26 +80,28 @@
   </head>
   <body>
     <div class="nav">
-      <div>
-        <ul>
-          <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-          <li><a href="index.html#body_cont">Portfolio</a></li>
-          <li><a id ="contact_button">Contact</a></li>
-        </ul>
-      </div>
+      <ul>
+        <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
+        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+        <li><a href="index.html#body_cont">Portfolio</a></li>
+        <li><a id ="contact_button">Contact</a></li>
+      </ul>
+      <ul>
+        <li style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+      </ul>
     </div>
     <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
 
     <div class="title_container">
-      <div>
+      <div class="content_container">
         <div class="title_description">
-          <subtitle>Page not found</subtitle>
           <h1>404</h1>
-          <p>oooooops! Something missing.</p>
+          <p class="content_tiny_space">
+            Page not found. oooooops! Something missing.
+          </p>
         </div>
       </div>
     </div>
-    <img class ="pattern_image" src="images/patterns/pattern.png">
 
     <div id="copyright_cont" class=""></div>
   </body>
