@@ -392,7 +392,7 @@ a:hover {
 
 .title_button {
   display: inline-block;
-  color:white;
+  color: #fafafa;
   text-decoration: none;
   padding: 12px 50px 12px 40px;
   border-radius: 0 30px 30px 0;
@@ -405,7 +405,7 @@ a:hover {
 
 .round_button {
   display: inline-block;
-  color:white;
+  color: #fafafa;
   text-decoration: none;
   padding: 12px 50px 12px 50px;
   border-radius: 30px;

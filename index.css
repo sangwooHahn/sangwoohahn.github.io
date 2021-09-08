@@ -211,7 +211,7 @@ a:hover {
   background-size: auto 110%;
 }
 
-.portfolio_button {
+/* .portfolio_button {
   display: none;
   height : 38px;
   width : 145px;
@@ -221,12 +221,25 @@ a:hover {
   font-size: 1em;
   font-weight: normal;
   padding: 15px 10px 0px 40px;
-  color: white;
+  color: #fafafa;
   cursor: pointer;
 }
 .portfolio_button:hover {
   transform: scale(0.95);
   opacity: 0.95;
+} */
+
+.portfolio_button {
+  display: none;
+  bottom: 0;
+  color: #fafafa;
+  text-decoration: none;
+  padding: 12px 50px 12px 40px;
+  border-radius: 0 30px 30px 0;
+  transition: all .2s ease;
+}
+.portfolio_button:hover {
+  padding-right: 80px;
 }
 
 
@@ -410,12 +423,7 @@ a:hover {
     padding-right: 35px;
   }
   .portfolio_button {
-    display: block;
-    height : 38px;
-    width : 200px;
-    padding-left: 0px;
-    text-align: center;
-    font-weight: 600;
+    display: inline-block;
   }
 
 }
@@ -478,11 +486,7 @@ a:hover {
     width: 100%;
   }
   .portfolio_button {
-    display: block;
-    height : 38px;
-    width : auto;
-    padding-left: 0px;
-    text-align: center;
+    display: inline-block;
   }
   .moreProject_container {
     height: auto;
