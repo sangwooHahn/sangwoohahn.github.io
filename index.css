@@ -400,6 +400,9 @@ a:hover {
     width: auto;
     margin: 0px 100px 0px 100px;
   }
+  .portfolio_container {
+    height: 600px;
+  }
   .thumbnail_description {
     padding-left: 35px;
     padding-top: 60px;
