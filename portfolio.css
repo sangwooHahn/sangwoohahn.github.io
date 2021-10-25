@@ -769,6 +769,9 @@ a:hover {
   .content_small_space {
     margin-top: 10px;
   }
+  .content_10_space {
+    margin-top: 5px;
+  }
   hr {
     margin-top: 80px;
   }
