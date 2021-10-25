@@ -235,7 +235,7 @@ a:hover {
   bottom: 30px;
   color: #fafafa;
   text-decoration: none;
-  padding: 12px 30px 12px 30px;
+  padding: 12px 40px 12px 40px;
   border-radius: 30px;
   transition: all .2s ease;
   font-weight: 600;
@@ -430,6 +430,9 @@ a:hover {
   }
   .two_grid_content {
     grid-column: span 4;
+  }
+  .tablet_two_grid_content {
+    grid-column: span 2;
   }
   .four_grid_content {
     grid-column: span 4;
