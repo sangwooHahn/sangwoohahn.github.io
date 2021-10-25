@@ -23,7 +23,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="index.css">
   <link rel="stylesheet" type="text/css" href="title.css">
   <script src="p5/p5.js"></script>
@@ -47,17 +47,17 @@
       <li><a id="contact_button">Contact</a></li>
     </ul>
     <ul>
-      <li style="position: absolute; right:60px; padding-right:0px;">EN / KR</li>
+      <li id="language" style="position: absolute; right:60px; padding-right:0px;">EN / KR</li>
     </ul>
   </div>
 
   <div id="about_cont" class="about_container">
     <div id="about_cont_div">
       <h1>Hello!</h1>
-      <p class="content_small_space">I'm Sangwoo Hahn, a designer who studies users' experiences and designs digital products.
+      <p class="content_small_space">
+        I'm Sangwoo Hahn. A visual UX designer who researches the users' experiences and designs digital products.
+        I specialize in finding visual solutions to current problems.
         I provide convenience to people through visual and systematic design.
-        I aim to find visual solutions to social research and current problems and solve them through design.
-        I hope my abilities can offer better living through design for everyone.
       </p>
       <div class="arrow_container">
         <div class="chevron"></div>
@@ -78,7 +78,7 @@
       <div></div><div></div><div></div><div></div>
     </div>
     <!-- <div  class="name_sub_container">Design Portfolio</div> -->
-    <!-- <div  class="name_sub_container">UX · Interaction Designer</div> -->
+    <div class="name_sub_container">Visual · UX Designer</div>
     <div class="backgroundColor_container">
       <div></div><div></div><div></div><div></div><div></div><div></div>
     </div>
@@ -91,50 +91,94 @@
   <div class="container">
     <div class="portfolios">
 
-      <div style="background-color:#1638b4;" class="" onclick="location.href='transfont_project.html';">
+      <div style="background-color:#1638b4;" class="two_grid_content" onclick="location.href='transfont_project.html';">
         <div class="portfolio_container" style="background-image:url('thumbnail/transfont.png');">
           <div></div>
           <div class="thumbnail_description">
             <!-- <subtitle>Thesis / Interaction Design</subtitle> -->
             <h1>Transfont</h1>
             <p>Font design transform with body movement</p>
-            <div style="padding-top: 20px;"><a href="transfont_project.html"><div class="portfolio_button" style="background-color:#1638b4;">View the Project</div></a></div>
+            <div class="portfolio_button_container"><a href="transfont_project.html"><div class="portfolio_button" style="background-color:#1638b4;">View the project</div></a></div>
           </div>
         </div>
       </div>
 
-      <div style="background-color:#2284CA;" class="" onclick="location.href='micard.html';">
+      <div style="background-color:#2284CA;" class="two_grid_content" onclick="location.href='micard.html';">
         <div class="portfolio_container" style="background-image:url('images/micard/micard.jpg');">
           <div></div>
           <div class="thumbnail_description">
             <!-- <subtitle>UX · UI / Product Design</subtitle> -->
             <h1>Micard</h1>
             <p>Mobile ID card application for MICA students</p>
-            <div style="padding-top: 20px;"><a href="micard.html"><div class="portfolio_button" style="background-color:#2284CA;">View the Project</div></a></div>
+            <div class="portfolio_button_container"><a href="micard.html"><div class="portfolio_button" style="background-color:#2284CA;">View the project</div></a></div>
           </div>
         </div>
       </div>
+
+      <div style="background-color:#0D5BA4;" class="four_grid_content" onclick="location.href='k12_event_hub.html';">
+        <div class="portfolio_container" style="background-image:url('thumbnail/k12event.jpg');">
+          <div></div>
+          <div class="thumbnail_description">
+            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
+            <h1>K12 Event Hub</h1>
+            <p>Event hub page for K12</p>
+            <div class="portfolio_button_container"><a href="k12_event_hub.html"><div class="portfolio_button" style="background-color:#0D5BA4;">View the project</div></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color:#962174;" class="one_grid_content" onclick="location.href='daydream.html';">
+        <div class="portfolio_container" style="background-image:url('thumbnail/daydream.png');">
+          <div></div>
+          <div class="thumbnail_description">
+            <h1>Daydream</h1>
+            <p>Action battle game for PC and consoles</p>
+            <div class="portfolio_button_container"><a href="daydream.html"><div class="portfolio_button" style="background-color:#962174;">View the project</div></a></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color:#962174;" class="one_grid_content" onclick="location.href='thefins.html';">
+        <div class="portfolio_container" style="background-image:url('thumbnail/thefins.jpg');">
+          <div></div>
+          <div class="thumbnail_description">
+            <h1>The Fins</h1>
+            <p>Auto battle game for mobile and PC</p>
+            <div class="portfolio_button_container"><a href="thefins.html"><div class="portfolio_button" style="background-color:#12265B;">View the project</div></a></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div style="background-color:#6139B7;" class="two_grid_content" onclick="location.href='marvelron.html';">
+        <div class="portfolio_container portfolio_container_half" style="background-image:url('thumbnail/marvelron.jpg');">
+          <div></div>
+          <div class="thumbnail_description">
+            <h1>Marvelron</h1>
+            <p>Branding system for museum of map</p>
+            <div class="portfolio_button_container"><a href="marvelron.html"><div class="portfolio_button" style="background-color:#6139B7;">View the project</div></a></div>
+          </div>
+        </div>
+      </div> -->
 
       <div style="background-color:#442DD2;" class="two_grid_content" onclick="location.href='berrystudio.html';">
         <div class="portfolio_container" style="background-image:url('images/berrystudio/mockup1.jpg');">
           <div></div>
           <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
             <h1>Berry Studio</h1>
             <p>The platform for the low budget commission</p>
-            <div style="padding-top: 20px;"><a href="berrystudio.html"><div class="portfolio_button" style="background-color:#442DD2;">View the Project</div></a></div>
+            <div class="portfolio_button_container"><a href="berrystudio.html"><div class="portfolio_button" style="background-color:#442DD2;">View the project</div></a></div>
           </div>
         </div>
       </div>
-      
-      <div style="background-color:#1D4922;" class="two_grid_content" onclick="location.href='momap.html';">
-        <div class="portfolio_container" style="background-image:url('images/momap/museum2.jpg');">
+
+      <div style="background-color:#1D4922;" class="four_grid_content" onclick="location.href='momap.html';">
+        <div class="portfolio_container" style="background-image:url('thumbnail/momap.jpg');">
           <div></div>
           <div class="thumbnail_description">
             <!-- <subtitle>UX · UI / Product Design</subtitle> -->
             <h1>MoMap</h1>
             <p>Branding system for museum of map</p>
-            <div style="padding-top: 20px;"><a href="momap.html"><div class="portfolio_button" style="background-color:#1D4922;">View the Project</div></a></div>
+            <div class="portfolio_button_container"><a href="momap.html"><div class="portfolio_button" style="background-color:#1D4922;">View the project</div></a></div>
           </div>
         </div>
       </div>
@@ -172,29 +216,6 @@
         </div>
       </div> -->
 
-      <!-- <div style="background-color:#962174;" class="two_grid_content" onclick="location.href='daydream.html';">
-        <div class="portfolio_container" style="background-image:url('images/daydream/game4.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <h1>Daydream</h1>
-            <p>Action battle game for PC and consoles</p>
-            <a href="daydream.html"><div class="portfolio_button" style="background-color:#962174;">View the Project</div></a>
-          </div>
-        </div>
-      </div>
-
-      <div style="background-color:#962174;" onclick="location.href='thefins.html';">
-        <div class="portfolio_container" style="background-image:url('images/thefins/mockup1.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <h1>The Fins</h1>
-            <p>Auto battle game for Smartphone and PC</p>
-            <a href="thefins.html"><div class="portfolio_button" style="background-color:#12265B;">View the Project</div></a>
-          </div>
-        </div>
-      </div> -->
-
-
 
 
     </div>
@@ -205,16 +226,16 @@
     <div class="posters">
       <h3><b>+ Poster</b></h3>
       <a href="posters.html">
-        <div class="poster1" style ="background-image:url('thumbnail/momap1.jpg')"></div>
-        <div class="poster2" style ="background-image:url('thumbnail/foodtruck2.jpg')"></div>
-        <div class="poster3" style ="background-image:url('thumbnail/BUSAN.jpg')"></div>
+        <div class="poster1" style ="background-image:url('thumbnail/momap_poster.jpg')"></div>
+        <div class="poster2" style ="background-image:url('thumbnail/foodtruck_poster.jpg')"></div>
+        <div class="poster3" style ="background-image:url('thumbnail/BUSAN_poster.jpg')"></div>
       </a>
     </div>
     <div class="motions">
       <h3><b>+ Motion</b></h3>
       <a href="motions.html">
-        <div class="motion1" style ="background-image:url('thumbnail/Strider_fox.gif')"></div>
-        <div class="motion2" style ="background-image:url('thumbnail/gif1.gif')"></div>
+        <div class="motion1" style ="background-image:url('thumbnail/StriderFox_gif.gif')"></div>
+        <div class="motion2" style ="background-image:url('thumbnail/environment_gif.gif')"></div>
       </a>
     </div>
   </div>

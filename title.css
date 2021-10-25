@@ -20,17 +20,18 @@
 }
 
 .name_sub_container {
+  font-family: 'Roboto Condensed', sans-serif;
   position: absolute;
   color: #fafafa;
-  font-size: 1.1em;
-  /* font-weight: bold; */
+  font-size: 1.6em;
   text-align: center;
-  margin-left: calc(50vw - 140px);
+  margin-left: calc(50vw - 170px);
+  text-align: center;
   margin-top: calc(380px);
   padding: 6px 70px 6px 70px;
   border-radius: 0px;
   /* z-index: 9999; */
-  animation: colorchange 10s ease-out 0s infinite;
+  animation: textColorchange 10s ease-out 0s infinite;
 }
 
 

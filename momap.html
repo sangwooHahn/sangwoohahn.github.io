@@ -23,7 +23,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="portfolio.css">
@@ -39,6 +39,8 @@
     var main_color = ('#1D4922');
     var sub_color = ('#000000');
     var white_color = ('#fafafa');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
+    $('html').css('background-color',main_color);
     $('h2').css('color',main_color);
     $('h3').css('color',main_color);
     $('h4').css('color',sub_color);
@@ -62,11 +64,14 @@
 
   <style>
   .title_image {
-    position: absolute;
-    top:0px;
-    left:calc(calc(100vw - 1000px) * 0.5 + 500px);
-    width: 750px;
+    position: relative;
+    width: 580px;
     height: auto;
+    top: -50px;
+    margin: auto;
+  }
+  .content_first_space {
+    margin-top: 280px;
   }
 
   .typeface_geo {
@@ -89,12 +94,12 @@
 
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
-    .title_image {
+    /* .title_image {
       left: 400px;
       top:60px;
       width: 700px;
       height: auto;
-    }
+    } */
     .typeface_geo .grind_in_grid div {s
       padding-top: 0px;
     }
@@ -104,23 +109,23 @@
   }
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-    .title_image {
+    /* .title_image {
       left: 130px;
       top: 220px;
       width:550px;
-    }
-    .content_first_space {
-      margin-top: 200px;
-    }
+    } */
+
   }
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
     .title_image {
-      left: 0px;
-      top: 280px;
-      width:100%;
+      top: -10px;
+      width:90%;
       height:auto;
+    }
+    .content_first_space {
+      margin-top: 160px;
     }
     .quote_left {
       transform: scale(70%) translate(calc(-70px), -40px);
@@ -129,9 +134,6 @@
     .quote_right {
       transform: scale(70%) translate(calc(100vw + 10px), 70px);
       -webkit-transform: scale(70%) translate(calc(100vw + 10px), 70px);
-    }
-    .content_first_space {
-      margin-top: 150px;
     }
   }
 </style>
@@ -145,7 +147,7 @@
       <li><a id ="contact_button">Contact</a></li>
     </ul>
     <ul>
-      <li style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+      <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
     </ul>
   </div>
   <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
@@ -159,8 +161,10 @@
       </div>
       <!-- <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button content_half_space">Prototype <i class="fas fa-flask"></i></div></a> -->
     </div>
+    <div style="text-align:center;">
+      <img class ="title_image" src="images/momap/logo.png">
+    </div>
   </div>
-  <img class ="title_image" src="images/momap/logo.png">
 
   <div class="content_container content_first_space">
     <div class="quote_left">
@@ -177,7 +181,7 @@
     </div>
     <div class="quote_container">
       <h2 class="noH2Line">Museum of Map – Maps throught time</h2>
-      <p class="content_small_space">
+      <p class="content_tiny_space">
         MoMap is a museum where people can see various maps. There are maps from all over the world that draw for different purposes.
         During watch the history of the world map, you can feel the development of mapping technology.
         Also, you can experience the mapping technology of the future. MoMap is easily understood by anyone, not just by people who are interested in maps.
@@ -273,7 +277,7 @@
 
     <hr>
 
-    <h3 class="content_space">Secondary Color Palette</h3>
+    <h3 class="content_space">Secondary color palette</h3>
     <div class="four_four_two_grid grid_gap_20 content_small_space">
       <div>
         <div style="background-color: #EFCAA3; height:200px;"></div>
@@ -348,8 +352,8 @@
             </div>
           </div>
         </div>
-        <p class="content_tiny_space">*Scroll on the screen to see the webpage</p>
       </div>
+      <p class="content_half_space centered_text">*Scroll on the screen to see the webpage</p>
     </div>
   </div>
 
@@ -380,7 +384,7 @@
       </div>
     </div>
 
-    <h3 class="content_space">Mobile AD</h3>
+    <h3 class="content_space">Mobile Ad</h3>
     <div class="four_four_two_grid content_small_space">
       <img src="images/momap/ad1.png">
       <img src="images/momap/ad2.png">

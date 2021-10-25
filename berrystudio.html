@@ -23,7 +23,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
@@ -36,6 +36,8 @@
     var main_color = ('#442DD2');
     var sub_color = ('#000000');
     var white_color = ('#fafafa');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
+    $('html').css('background-color',main_color);
     $('h2').css('color',main_color);
     $('h3').css('color',main_color);
     $('.go_back div').css('color',main_color);
@@ -56,92 +58,61 @@
   }
   </script>
   <style>
-
-  /* .title_image {
-  position: fixed;
-  top:130px;
-  left:calc(calc(100vw - 1000px) * 0.5 + 500px);
-  width: 750px;
-  height: auto;
-  } */
   .title_image {
-    position: absolute;
-    top:150px;
-    left:calc(calc(100vw - 1000px) * 0.5 + 500px);
-    width: 750px;
+    position: relative;
+    width: 600px;
     height: auto;
-  }
-
-  /* .two_grid_large {
-  grid-template-columns: 45% 55%;
-}
-.two_grid_large img {
-width: 50%;
-padding-left: 30%;
-}
-.two_grid_large a {
-margin-left: 24%;
-}
-.two_grid_large div:nth-child(2) p {
-padding: 0;
-color:#999;
-}
-.two_grid_large div:nth-child(2) a {
-background: linear-gradient(to right, #999 50%, rgba(0,0,0,0) 50%);
-background-size: 0% 2px;
-background-position: left bottom;
-background-repeat: no-repeat;
-}
-.two_grid_large div:nth-child(2) a:hover {
-background-size: 200% 2px;
-} */
-
-/*Tablet*/
-@media screen and (min-width: 600px) and (max-width: 1256px) {
-  .title_image {
-    left: 400px;
-    top:60px;
-    width: 700px;
-    height: auto;
-  }
-}
-
-/*Tablet_vertical*/
-@media screen and (min-width: 600px) and (max-width: 960px) {
-  .title_image {
-    left: 130px;
-    top: 220px;
-    width:550px;
-  }
-  .title_description p {
-    width : 480px;
-  }
-  .content_more_space {
-    margin-top: 400px;
-  }
-}
-
-
-/*Smart phone*/
-@media screen and (max-width: 599px) {
-  .title_image {
-    left: 0px;
-    top: 280px;
-    width:100%;
-    height:auto;
-  }
-  .quote_left {
-    transform: scale(70%) translate(calc(-70px), -40px);
-    -webkit-transform: scale(70%) translate(calc(-70px), -40px);
-  }
-  .quote_right {
-    transform: scale(70%) translate(calc(100vw + 10px), 70px);
-    -webkit-transform: scale(70%) translate(calc(100vw + 10px), 70px);
+    top: 10px;
   }
   .content_first_space {
-    margin-top: 150px;
+    margin-top: 400px;
   }
-}
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
+    .title_image {
+      left: 400px;
+      top:60px;
+      width: 700px;
+      height: auto;
+    }
+  }
+
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+    .title_image {
+      left: 130px;
+      top: 220px;
+      width:550px;
+    }
+    .title_description p {
+      width : 480px;
+    }
+    .content_more_space {
+      margin-top: 400px;
+    }
+  }
+
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      left: 0px;
+      top: 10px;
+      width:100%;
+      height:auto;
+    }
+    .content_first_space {
+      margin-top: 250px;
+    }
+    .quote_left {
+      transform: scale(70%) translate(calc(-70px), -40px);
+      -webkit-transform: scale(70%) translate(calc(-70px), -40px);
+    }
+    .quote_right {
+      transform: scale(70%) translate(calc(100vw + 10px), 370px);
+      -webkit-transform: scale(70%) translate(calc(100vw + 10px), 370px);
+    }
+  }
 
 </style>
 </head>
@@ -165,12 +136,14 @@ background-size: 200% 2px;
         <p class="content_tiny_space">
           Berry Studio is a platform that buys and sells a drawing for one dollar. It has two functions on one platform, anyone can be an artist and customer of the Berry Studio.
         </p>
-        <div class="content_container_full_mobile content_half_space">
-          <a href="https://www.figma.com/proto/suhTHqdbMmcvVEvoEAWoiq/Berry-Studio?node-id=15%3A84&viewport=176%2C297%2C0.19706547260284424&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button">Protoype <i class="fas fa-flask"></i></div></a>
-        </div>
       </div>
     </div>
-    <img class ="title_image" src="images/berrystudio/title.png">
+    <div class="button_container content_half_space">
+      <a href="https://www.figma.com/proto/suhTHqdbMmcvVEvoEAWoiq/Berry-Studio?node-id=15%3A84&viewport=176%2C297%2C0.19706547260284424&scaling=scale-down" class="noUnderline" target="_blank"><div class="round_button">Prototype <i class="fas fa-flask"></i></div></a>
+    </div>
+    <div class="centered_text">
+      <img class ="title_image" src="images/berrystudio/title.png">
+    </div>
   </div>
 
   <div class="content_container content_first_space">
@@ -252,67 +225,21 @@ background-size: 200% 2px;
 
   <div class="content_container">
     <h2 class="content_space">User Flow</h2>
-    <!-- <p class="content_p">Barry Studios targets two types of users. User flow is divided into the customer and the artist.
-    Each target user can reach their goal in two ways.
-    The first way to get a drawing from the customer's perspective is to find the artist they like on the feed and commission their photo directly.
-    The second way is to post the image on the commission page and get an artist's request.
-    The first way to draw from an artist's perspective of view is to wait for someone's direct request.
-    The second way is to request the commission they want to draw from the commission list that the customer posted.
-  </p> -->
-  <img class="content_half_space" src="images/berrystudio/userflow.png">
-  <h2 class="content_half_space">Wire Frame</h2>
-  <!-- <p class="content_p">The pages divide into four functions. The main feed page is where the completed commission comes up.
-  Commission pages are for a request to non-specific artists. The customer looks for the artist, and the artist responds.
-  Activity is where artists and customers record their activities. The requests sent and received can check here.
-  My gallery is where the final results store. Users can access their account from here. And Users can always access their Berry status on every page.
-</p> -->
-<img class="content_half_space" src="images/berrystudio/wireframe1.png">
-<img src="images/berrystudio/wireframe2.png">
+    <img class="content_half_space" src="images/berrystudio/userflow.png">
+    <h2 class="content_half_space">Wire Frame</h2>
+    <img class="content_half_space" src="images/berrystudio/wireframe1.png">
+    <img src="images/berrystudio/wireframe2.png">
+  </div>
 
-<!-- <h2 class="content_space">Usability Tests</h2> -->
-</div>
 
-<!-- <div class="color_box">
-<div>
-<h3>Questions</h3>
-<p>
-· Guess the expected function of each button.<br>
-· Guess the function of each page.<br>
-· Test for access to specific features.<br>
-· Expect what will be on the next page.<br>
-· Guess how you can get away from each page.<br>
-· Check the users can move to the expected flow.
-</p>
-<h3>Resolutions</h3>
-<p>
-· The target audience for some buttons is not clear.<br>
-· The name of the page does not imply a function.<br>
-· Some of features not found at once.<br>
-· Unexpected function appear, but satisfied with it.<br>
-· Most of them succeeded at once, and knew which page to go back to.<br>
-· Most of them went with the flow, but some of the buttons were confused.
-</p>
-</div>
-</div> -->
+  <div class="content_container">
+    <h2 class="content_space">Key Features</h2>
+    <img class="content_half_space" src="images/berrystudio/keyfeatures1.png">
+    <img class="content_half_space" src="images/berrystudio/keyfeatures2.png">
+    <img class="content_half_space" src="images/berrystudio/keyfeatures3.png">
+    <img class="content_half_space" src="images/berrystudio/keyfeatures4.png">
+  </div>
 
-<div class="content_container">
-  <h2 class="content_space">Key Features</h2>
-  <img class="content_half_space" src="images/berrystudio/keyfeatures1.png">
-  <img class="content_half_space" src="images/berrystudio/keyfeatures2.png">
-  <img class="content_half_space" src="images/berrystudio/keyfeatures3.png">
-  <img class="content_half_space" src="images/berrystudio/keyfeatures4.png">
-
-  <!-- <h2 class="content_space">Resolutions</h2>
-  <p class="content_p">
-  Berry Studio is a commission platform that allows you to trade drawings with each other simple way.
-  Customers don't have to bargain with artists. The artists who not professional illustrators also have opportunities for those who wanted to do a commission.
-  By making the system as simple as possible, users are not exposed to too many variables.
-  It has a simple process of requesting and drawing images and posting them.
-</p>
-<div class="content_half_space">
-<img src="images/berrystudio/mockup1.jpg">
-<img src="images/berrystudio/mockup2.jpg">
-</div> -->
 
   <div class="button_container content_container_full_mobile content_more_space">
     <div class="inside_container">
@@ -320,9 +247,8 @@ background-size: 200% 2px;
       <div class="content_half_space"><a href="https://www.figma.com/proto/suhTHqdbMmcvVEvoEAWoiq/Berry-Studio?node-id=15%3A84&viewport=176%2C297%2C0.19706547260284424&scaling=scale-down" class="noUnderline" target="_blank"><div class="round_button">Prototype <i class="fas fa-flask"></i></div></a></div>
     </div>
   </div>
-</div>
 
 
-<div id="copyright_cont" class="content_space"></div>
+  <div id="copyright_cont" class="content_space"></div>
 </body>
 </html>

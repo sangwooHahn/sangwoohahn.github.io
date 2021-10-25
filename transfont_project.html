@@ -23,7 +23,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
@@ -42,6 +42,8 @@
     var main_color = ('#07248c');
     var sub_color = ('#000000');
     var white_color = ('#fafafa');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
+    $('html').css('background-color',main_color);
     $('h2').css('color',main_color);
     $('h3').css('color',main_color);
     $('.go_back div').css('color',main_color);
@@ -63,49 +65,52 @@
   </script>
   <style>
 
-  .webpage_contatiner {
-    position: absolute;
-    top:140px;
-    left:calc(calc(100vw - 1000px) * 0.5 + 480px);
-    width: 700px;
-    height: 462.2px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 0px 40px rgba(0,0,0,0.5);
+  /* webpage container */
+  .webpage_contaioner {
+    position: relative;
+    width: 600px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+    margin: auto;
+    top: 60px;
   }
-
-  .webpage_top {
-    background-color: rgb(240,240,240);
-    width : 100%;
-    height: 40px;
-    border-radius: 15px 15px 0px 0px;
+  .webpage_contaioner_top {
+    background-color: #eaeaea;
+    height:30px;
+    border-radius: 10px 10px 0px 0px;
   }
-
-  .webpage_top div {
+  .webpage_contaioner_top div {
     display: inline-block;
-    width:13px;
-    height:13px;
-    margin-right: 8px;
-    margin-top: 14px;
+    width: 10px;
+    height: 10px;
+    margin-right: 7px;
+    margin-top: 10px;
     border-radius: 15px;
   }
-  .webpage_top div:nth-child(1) {
-    margin-left: 15px;
+  .webpage_contaioner_top div:nth-child(1) {
+    margin-left: 14px;
     background-color: rgb(121,121,121);
-    /* background-color: rgb(225,70,70); */
   }
-  .webpage_top div:nth-child(2) {
+  .webpage_contaioner_top div:nth-child(2) {
     background-color: rgb(166,166,166);
-    /* background-color: rgb(255,205,70); */
   }
-  .webpage_top div:nth-child(3) {
+  .webpage_contaioner_top div:nth-child(3) {
     background-color: rgb(115,115,115);
-    /* background-color: rgb(70,205,70); */
+  }
+  .webpage_contaioner > div:nth-child(2) {
+    height:auto;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 0px;
+  }
+  .webpage_contaioner img {
+    position: relative;
+    border-radius: 0px 0px 10px 10px;
   }
 
-  .title_image {
-    border-radius: 0px 0px 15px 15px;
+  .content_first_space {
+    margin-top: 440px;
   }
+
 
   #interaction_description div {
     margin-top: 90px;
@@ -117,12 +122,7 @@
 
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
-    .webpage_contatiner {
-      left: 500px;
-      /* top:180px;
-      width: 600px;
-      height: 402px; */
-    }
+
     #interaction_description div {
       margin-top: 40px;
     }
@@ -130,25 +130,23 @@
 
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-    .webpage_contatiner {
+    /* .webpage_contatiner {
       left: 78px;
       top: 400px;
-    }
+    } */
     #interaction_description div {
       margin-top: 60px;
-    }
-    .content_first_space {
-      margin-top: 400px;
     }
   }
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
-    .webpage_contatiner {
-      left: 30px;
-      top: 400px;
-      width:100%;
-      height:calc(60vw + 40px);
+    .webpage_contaioner {
+      width: 90%;
+      top:50px;
+    }
+    .content_first_space {
+      margin-top: 200px;
     }
     #interaction_description div {
       margin-top: 0px;
@@ -174,7 +172,7 @@
       <li><a id ="contact_button">Contact</a></li>
     </ul>
     <ul>
-      <li style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+      <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
     </ul>
   </div>
   <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
@@ -188,17 +186,19 @@
         </p>
       </div>
     </div>
-    <div class="content_container_full_mobile content_half_space">
-      <a href="https://sangwoohahn.com/transfont" class="noUnderline" target="_blank"><div class="title_button">transfont.com <i class="fas fa-external-link-alt"></i></div></a>
+    <div class="button_container content_half_space">
+      <a href="https://sangwoohahn.com/transfont" class="noUnderline" target="_blank"><div class="round_button">transfont.com <i class="fas fa-external-link-alt"></i></div></a>
+    </div>
+    <div class ="webpage_contaioner" style="z-index:2;">
+      <div class ="webpage_contaioner_top">
+        <div></div><div></div><div></div>
+      </div>
+      <div>
+        <img src="images/transfont/title_person.gif">
+      </div>
     </div>
   </div>
 
-  <div class ="webpage_contatiner" style="z-index:2;">
-    <div class ="webpage_top">
-      <div></div><div></div><div></div>
-    </div>
-    <img class ="title_image" src="images/transfont/title_person.gif">
-  </div>
 
   <div class="content_container content_first_space">
     <div class="quote_left">
@@ -215,7 +215,7 @@
     </div>
     <div class="quote_container">
       <h2 class="noH2Line">How can the font be personal?</h2>
-      <p class="content_small_space">
+      <p class="content_tiny_space">
         People have their voices and gestures. I studied how these individual differences can be express in the digital world.
         Text created in a digital environment is designed by a user other. To personalize the font, the user needs to create it themselves.
         If the design a font by connecting it to something of an individual, it will be a personal font.
@@ -232,7 +232,7 @@
   </div>
 
   <div class="content_container content_more_space">
-    <h2>Project overview</h2>
+    <!-- <h2>Project overview</h2>
     <div class="three_two_one_grid grid_gap_10 content_small_space ">
       <div>
         <h4>Goal:</h4>
@@ -246,12 +246,24 @@
         <h4>Duration:</h4>
         <p>April 2020 – November 2020</p>
       </div>
+    </div> -->
+
+    <!-- <hr> -->
+
+    <!-- <h2 class="content_space">How it works</h2> -->
+    <div class="four_four_two_grid grid_gap_10">
+      <div class="two_grid_content content_space">
+        <h2 class="insideH2Line">How it works</h2>
+        <p class="content_10_space">
+          The user moves in front of the camera. Each element of the font is transformed in conjunction with the elements of the head, shoulders, arms, and legs shown on the screen.
+        </p>
+      </div>
+      <img style="box-shadow : 0px 0px 15px rgba(0,0,0,0.1);" class="content_half_space two_grid_content" src="images/transfont/transfont.gif">
     </div>
 
     <hr>
 
-    <h2 class="content_space">How it works</h2>
-    <h3 class="content_tiny_space">Interaction</h3>
+    <h3 class="content_space">Interaction</h3>
     <div class="four_two_one_grid grid_gap_10 content_half_space" id="interaction_description">
       <img src="images/transfont/motion_1.gif">
       <div>
@@ -318,10 +330,10 @@
       </div>
     </div>
 
-    <hr>
+    <!-- <hr> -->
 
-    <h3 class="content_space">Examples of use</h3>
-    <img style="box-shadow : 0px 0px 15px rgba(0,0,0,0.1);" class="content_half_space" src="images/transfont/transfont.gif">
+    <!-- <h3 class="content_space">Examples of use</h3>
+    <img style="box-shadow : 0px 0px 15px rgba(0,0,0,0.1);" class="content_half_space" src="images/transfont/transfont.gif"> -->
     <h2 class="content_more_space text_above_box">Research</h2>
   </div>
   <div class="gray_box">
@@ -344,7 +356,7 @@
 
       <!-- <hr style="background-color: #fafafa;"> -->
 
-      <h3 class="content_space">Elements from the person</h3>
+      <h3 class="content_more_space">Elements from the person</h3>
       <p class="content_10_space">Without changing the font design through commands, the elements of the user and the elements of the font should be directly connected to transform them intuitively.</p>
       <div class="four_two_one_grid grid_gap_20 content_small_space">
         <div class="icon_container">
