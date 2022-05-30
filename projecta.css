@@ -118,7 +118,7 @@ body > img {
   }
   img {
     padding-top: 8vh;
-  }
+  }*/
   .text_container {
     opacity: 1;
   }
@@ -126,6 +126,7 @@ body > img {
     height: 90px;
     opacity: 1;
   }
+  /*
   .game_container::before {
     font-size: 23.1vw;
     letter-spacing: -0.05em;
@@ -137,7 +138,6 @@ body > img {
   .game_container:hover {
     background-size: 100% auto;
   } */
-
   .game_container {
     width:calc(calc(100vw - 50px) / 3);
   }
