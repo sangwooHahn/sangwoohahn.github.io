@@ -137,7 +137,7 @@ body > img {
     height: 100vh;
   } */
   .game_container:hover {
-    background-size: 100% auto;
+    background-size: auto 100%;
   }
   .game_container {
     width:calc(calc(100vw - 50px) / 3);
