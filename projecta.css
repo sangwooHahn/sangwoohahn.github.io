@@ -133,11 +133,11 @@ body > img {
   }
   .game_container {
     background-size: 100% auto;
-    height: 50vh;
-  }
+    height: 100vh;
+  } */
   .game_container:hover {
     background-size: 100% auto;
-  } */
+  }
   .game_container {
     width:calc(calc(100vw - 50px) / 3);
   }
