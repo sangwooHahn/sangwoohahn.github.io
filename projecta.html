@@ -7,6 +7,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript' src='jquery.mousewheel.min.js'></script>
   <script>
     var OSName="Unknown OS";
     if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
@@ -28,6 +29,18 @@
         $('.win_button').hide();
       }
     });
+
+    if($(window).width() > 699) {
+      $('html, body, *').mousewheel(function(e, delta) {
+      this.scrollLeft -= (delta);
+      e.preventDefault();
+      });
+    }
+    else {
+      $('html, body, *').mousewheel(function(e) {
+      $(this).unbind();
+      });
+    }
 
   </script>
   </head>
@@ -68,6 +81,26 @@
         </div>
         <a href="mavelron.html"><div style="background-color: #5848BC;" class="download_button mac_button">소개 페이지</div></a>
         <a href="mavelron.html"><div style="background-color: #5848BC;" class="download_button win_button">소개 페이지</div></a>
+      </div>
+      <div class="game_container" data-year="2022"  style="background-color: #421D0D;">
+        <img src="images/projecta/Marvlon_logo_KR.png">
+        <div style="opacity: 1;"  class="text_container">
+          <h1>마블론 : 던전과 용병들  2.0</h1>
+          <!-- <h2>(2.0 업데이트)</h2> -->
+          <p>추가된 여러가지 기능 업데이트된 인터페이스로, 용병과 모험의 도시 마블론에서 용병들과 임무를 수행하자.</p>
+        </div>
+        <!-- <a href="mavelron.html"><div style="background-color: #5848BC;" class="download_button mac_button">소개 페이지</div></a>
+        <a href="mavelron.html"><div style="background-color: #5848BC;" class="download_button win_button">소개 페이지</div></a> -->
+      </div>
+      <div class="game_container"  data-year="2023"  style="background-color: #12265B;">
+        <img src="images/projecta/thefins_logo2.png">
+        <div style="opacity: 1;" class="text_container">
+          <h1>The Fins 2.0</h1>
+          <!-- <h2>(2.0 업데이트)</h2> -->
+          <p>더욱 다양한 스테이지와 챕터로 나누어져, 여러가지 바다에서 물고기들과 함께 전투를 즐길 수 있다. 자동 전투/디펜스 게임으로 간단한 조작 방식을 가진다.</p>
+        </div>
+        <!-- <a href="https://drive.google.com/uc?export=download&id=1i4iRfy3eTv6JLmVEUvtleDIaa5zFj2SI" download><div style="background-color: #F4BA19; color:#12265B;" class="download_button mac_button">Download</div></a>
+        <a href="https://drive.google.com/uc?export=download&id=1PrcoQde0syqanuXXxooVam8HyUHoutLm" download><div style="background-color: #F4BA19; color:#12265B;" class="download_button win_button">Download</div></a> -->
       </div>
     </div>
     <img src="images/projecta/projecta_logo.png">

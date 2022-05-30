@@ -3,6 +3,7 @@ html,body {
   padding: 0;
   margin: 0;
   font-family: 'Heebo', sans-serif;
+  background-color: black;
 }
 
 a {
@@ -15,6 +16,13 @@ h1 {
   margin: 0;
   color: white;
   font-size: 1em;
+  /* text-align: center; */
+}
+h2 {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 0.8em;
   /* text-align: center; */
 }
 p {
@@ -33,7 +41,7 @@ img {
   padding-top: 35vh;
 }
 body > img {
-  position: absolute;
+  position: fixed;
   height: 40px;
   width: auto;
   margin: 10px;
@@ -43,7 +51,7 @@ body > img {
 }
 .main_container {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(6,1fr);
   height:100vh;
 }
 .text_container {
@@ -55,6 +63,8 @@ body > img {
   transition: all 1s ease;
 }
 .game_container {
+  width:calc(calc(100vw - 50px) / 4);
+  height:100%;
   position: relative;
   background-repeat: no-repeat;
   background-size: auto 100%;
@@ -86,11 +96,11 @@ body > img {
   text-align: center;
   content: attr(data-year);
   color: white;
-  font-size: 12.5vw;
+  font-size: calc(calc(100vw - 50px) * 0.5 / 4);
   letter-spacing: -0.1em;
   font-weight: 900;
   line-height: 1;
-  top: 0;
+  top: 0px;
   mix-blend-mode: overlay;
   opacity: 0.2;
   z-index: -1;
@@ -100,8 +110,8 @@ body > img {
 }
 
 /*Tablet*/
-@media screen and (min-width: 600px) and (max-width: 1256px) {
-  .main_container {
+@media screen and (min-width: 699px) and (max-width: 1256px) {
+  /* .main_container {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(2,1fr);
@@ -126,6 +136,13 @@ body > img {
   }
   .game_container:hover {
     background-size: 100% auto;
+  } */
+
+  .game_container {
+    width:calc(calc(100vw - 50px) / 3);
+  }
+  .game_container::before {
+    font-size: calc(calc(100vw - 50px) * 0.5 / 3);
   }
 }
 /*Smart phone*/
@@ -147,10 +164,11 @@ body > img {
     opacity: 1;
   }
   .game_container::before {
-    font-size: 47vw;
+    font-size: 45vw;
     letter-spacing: -0.05em;
   }
   .game_container {
+    width: 100%;
     background-size: 100% auto;
     height:540px;
   }
