@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $(function(){
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
+  });
+
+  // $(window).on('scroll',function(){
+  //   var title_image_Xposition = Math.round($(window).scrollTop() / $(window).height() * 1000*10);
+  //   var title_image_Yposition = Math.round($(window).scrollTop() / $(window).height() * 800*10);
+  //   var title_image_scale = Math.round($(window).height() - ($(window).scrollTop() / $(window).height()*500));
+  //   if(title_image_scale/12 > 0)
+  //     $('.title_image').css('transform','translateY('+(title_image_Yposition/200)+'%)' + 'scale('+(title_image_scale/10)+'%)');
+  //   else
+  //   $('.title_image').css('transform','translateY('+(title_image_Yposition/200)+'%)' + 'scale(0%)');
+  // });
+
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var main_color = ('#000E64');
+    var sub_color = ('#000000');
+    var white_color = ('#fafafa');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
+    $('html').css('background-color',main_color);
+    $('h2').css('color',main_color);
+    $('h3').css('color',main_color);
+    $('h4').css('color',sub_color);
+    $('.go_back div').css('color',main_color);
+    $('.go_back').css('border-left', '2.5px solid '+main_color);
+    $('.go_back').css('border-top', '2.5px solid '+main_color);
+    $('.nav').css('background-color',main_color);
+    $('.title_container').css('background-color',main_color);
+    $('.button_container').css('background-color',main_color);
+    $('.button_container h2').css('color',white_color);
+    $('.color_box').css('background-color',main_color);
+    $('.color_box > div > h3').css('color',white_color);
+    $('.title_button').css('background-color',sub_color);
+    $('.round_button').css('background-color',sub_color);
+    $('.contact_container div h3').css('color',white_color);
+  });
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+  </script>
+  <style>
+  .title_image {
+    position: absolute;
+    width: 380px;
+    height: 500px;
+    top: 300px;
+    right: 0px;
+    left: 80px;
+    margin: auto;
+    /* background-color: rgba(1,1,1,0.2); */
+    background-image: url('images/strider/0001.png');
+    -webkit-animation: firstImageOnly 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 100;
+  }
+
+  .title_image_delay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: opacityChange 1s, /*appearFromBottom 1.6s, */ changeImage 1s infinite;
+    animation-timing-function: ease-out;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 101;
+  }
+  @-webkit-keyframes opacityChange
+  {
+     0% {opacity: 0;}
+     99% {opacity: 0;}
+     100% {opacity: 1;}
+  }
+  @-webkit-keyframes firstImageOnly
+  {
+     0% {background-image: url('images/strider/0001.png');}
+     99% {background-image: url('images/strider/0001.png');}
+     100% {background-image: none;}
+  }
+  @-webkit-keyframes appearFromBottom
+  {
+     70% {bottom: -850px;}
+     95% {bottom: -280px;}
+     100% {bottom: -300px;}
+  }
+  @-webkit-keyframes changeImage
+  {
+     0% {background-image: url('images/strider/0001.png');}
+     6.25% {background-image: url('images/strider/0002.png');}
+     12.5% {background-image: url('images/strider/0003.png');}
+     18.75% {background-image: url('images/strider/0004.png');}
+     25% {background-image: url('images/strider/0005.png');}
+     31.25% {background-image: url('images/strider/0006.png');}
+     37.5% {background-image: url('images/strider/0007.png');}
+     43.75% {background-image: url('images/strider/0008.png');}
+     50% {background-image: url('images/strider/0009.png');}
+     56.25% {background-image: url('images/strider/0010.png');}
+     62.5% {background-image: url('images/strider/0011.png');}
+     68.75% {background-image: url('images/strider/0012.png');}
+     75% {background-image: url('images/strider/0013.png');}
+     81.25% {background-image: url('images/strider/0014.png');}
+     87.5% {background-image: url('images/strider/0015.png');}
+     93.75% {background-image: url('images/strider/0016.png');}
+     100% {background-image: url('images/strider/0017.png');}
+  }
+
+  .content_first_space {
+    margin-top: 200px;
+  }
+
+  .roundCorner{
+    border-radius:30px;
+  }
+
+  @-webkit-keyframes walkImage
+  {
+     0% {background-image: url('images/strider/strider_walk/0001.png');}
+     4.7% {background-image: url('images/strider/strider_walk/0002.png');}
+     9.4% {background-image: url('images/strider/strider_walk/0003.png');}
+     14.1% {background-image: url('images/strider/strider_walk/0004.png');}
+     18.8% {background-image: url('images/strider/strider_walk/0005.png');}
+     32.5% {background-image: url('images/strider/strider_walk/0006.png');}
+     28.2% {background-image: url('images/strider/strider_walk/0007.png');}
+     32.9% {background-image: url('images/strider/strider_walk/0008.png');}
+     37.6% {background-image: url('images/strider/strider_walk/0009.png');}
+     42.3% {background-image: url('images/strider/strider_walk/0010.png');}
+     47% {background-image: url('images/strider/strider_walk/0011.png');}
+     51.75% {background-image: url('images/strider/strider_walk/0012.png');}
+     56.45% {background-image: url('images/strider/strider_walk/0013.png');}
+     61.2% {background-image: url('images/strider/strider_walk/0014.png');}
+     65.9% {background-image: url('images/strider/strider_walk/0015.png');}
+     70.6% {background-image: url('images/strider/strider_walk/0016.png');}
+     75.3% {background-image: url('images/strider/strider_walk/0017.png');}
+     80% {background-image: url('images/strider/strider_walk/0018.png');}
+     84.7% {background-image: url('images/strider/strider_walk/0019.png');}
+     89.6% {background-image: url('images/strider/strider_walk/0020.png');}
+     95% {background-image: url('images/strider/strider_walk/0021.png');}
+     100% {background-image: url('images/strider/strider_walk/0001.png');}
+  }
+  .strider_walk{
+    width: 100%;
+    height: calc( calc(100vw - 10px) * 0.282);
+    -webkit-animation: walkImage 1s infinite;
+    animation-timing-function: ease-out;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 101;
+  }
+  @-webkit-keyframes danceImage
+  {
+     0% {background-image: url('images/strider/strider_dance/0001.png');}
+     1.7% {background-image: url('images/strider/strider_dance/0002.png');}
+     3.4% {background-image: url('images/strider/strider_dance/0003.png');}
+     5.1% {background-image: url('images/strider/strider_dance/0004.png');}
+     6.8% {background-image: url('images/strider/strider_dance/0005.png');}
+     8.5% {background-image: url('images/strider/strider_dance/0006.png');}
+     10.2% {background-image: url('images/strider/strider_dance/0007.png');}
+     11.9% {background-image: url('images/strider/strider_dance/0008.png');}
+     13.6% {background-image: url('images/strider/strider_dance/0009.png');}
+     15.3% {background-image: url('images/strider/strider_dance/0010.png');}
+     17% {background-image: url('images/strider/strider_dance/0011.png');}
+     18.7% {background-image: url('images/strider/strider_dance/0012.png');}
+     20.4% {background-image: url('images/strider/strider_dance/0013.png');}
+     22.1% {background-image: url('images/strider/strider_dance/0014.png');}
+     23.8% {background-image: url('images/strider/strider_dance/0015.png');}
+     25.5% {background-image: url('images/strider/strider_dance/0016.png');}
+     26.2% {background-image: url('images/strider/strider_dance/0017.png');}
+     27.9% {background-image: url('images/strider/strider_dance/0018.png');}
+     29.6% {background-image: url('images/strider/strider_dance/0019.png');}
+     33% {background-image: url('images/strider/strider_dance/0020.png');}
+     34.7% {background-image: url('images/strider/strider_dance/0021.png');}
+     36.4% {background-image: url('images/strider/strider_dance/0022.png');}
+     38.1% {background-image: url('images/strider/strider_dance/0023.png');}
+     39.8% {background-image: url('images/strider/strider_dance/0024.png');}
+     41.5% {background-image: url('images/strider/strider_dance/0025.png');}
+     43.2% {background-image: url('images/strider/strider_dance/0026.png');}
+     44.9% {background-image: url('images/strider/strider_dance/0027.png');}
+     46.6% {background-image: url('images/strider/strider_dance/0028.png');}
+     48.3% {background-image: url('images/strider/strider_dance/0029.png');}
+     51% {background-image: url('images/strider/strider_dance/0030.png');}
+     52.7% {background-image: url('images/strider/strider_dance/0031.png');}
+     54.4% {background-image: url('images/strider/strider_dance/0032.png');}
+     56.1% {background-image: url('images/strider/strider_dance/0033.png');}
+     57.8% {background-image: url('images/strider/strider_dance/0034.png');}
+     59.5% {background-image: url('images/strider/strider_dance/0035.png');}
+     61.2% {background-image: url('images/strider/strider_dance/0036.png');}
+     62.9% {background-image: url('images/strider/strider_dance/0037.png');}
+     64.6% {background-image: url('images/strider/strider_dance/0038.png');}
+     66.3% {background-image: url('images/strider/strider_dance/0039.png');}
+     68% {background-image: url('images/strider/strider_dance/0040.png');}
+     69.7% {background-image: url('images/strider/strider_dance/0041.png');}
+     71.4% {background-image: url('images/strider/strider_dance/0042.png');}
+     73.1% {background-image: url('images/strider/strider_dance/0043.png');}
+     74.8% {background-image: url('images/strider/strider_dance/0044.png');}
+     76.5% {background-image: url('images/strider/strider_dance/0045.png');}
+     78.4% {background-image: url('images/strider/strider_dance/0046.png');}
+     80.1% {background-image: url('images/strider/strider_dance/0047.png');}
+     82% {background-image: url('images/strider/strider_dance/0048.png');}
+     83.7% {background-image: url('images/strider/strider_dance/0049.png');}
+     85.6% {background-image: url('images/strider/strider_dance/0050.png');}
+     87.3% {background-image: url('images/strider/strider_dance/0051.png');}
+     89.2% {background-image: url('images/strider/strider_dance/0052.png');}
+     90.9% {background-image: url('images/strider/strider_dance/0053.png');}
+     92.8% {background-image: url('images/strider/strider_dance/0054.png');}
+     94.5% {background-image: url('images/strider/strider_dance/0055.png');}
+     96.4% {background-image: url('images/strider/strider_dance/0056.png');}
+     98.7% {background-image: url('images/strider/strider_dance/0057.png');}
+     100% {background-image: url('images/strider/strider_dance/0001.png');}
+  }
+  .strider_dance{
+    width: 100%;
+    height: calc( calc(100vw - 10px) * 0.282);
+    -webkit-animation: danceImage 3s infinite;
+    animation-timing-function: ease-out;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 101;
+  }
+  .strider_walk_bg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/strider/AR_background1.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .strider_dance_bg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/strider/AR_background2.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
+    .title_image {
+      position: absolute;
+      width: 400px;
+      height: 450px;
+      top: 300px;
+      right: 0px;
+      left: 10px;
+    }
+    .roundCorner{
+      border-radius:2vw;
+    }
+  }
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+    .title_image {
+      position: absolute;
+      width: 300px;
+      height: 370px;
+      top: 400px;
+      right: 0px;
+      left: 10px;
+    }
+    .strider_dance{
+      height: calc(100vw * 0.564);
+    }
+    .strider_walk{
+      height: calc(100vw * 0.564);
+    }
+  }
+
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      position: absolute;
+      width: 300px;
+      height: 370px;
+      top: 320px;
+      right: 0px;
+      left: 10px;
+    }
+    .content_first_space {
+      margin-top: 160px;
+    }
+    .roundCorner{
+      border-radius:4vw;
+    }
+    .strider_dance{
+      height: calc(100vw * 0.564);
+    }
+    .strider_walk{
+      height: calc(100vw * 0.564);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="nav">
+    <ul>
+      <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
+      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+      <li><a href="index.html#body_cont">Portfolio</a></li>
+      <li><a id ="contact_button">Contact</a></li>
+    </ul>
+    <ul>
+      <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+    </ul>
+  </div>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div class="content_container">
+      <div class="title_description">
+        <h1>Strider the fox</h1>
+        <p class="content_tiny_space">
+          B2C marketing with mascot character.
+        </p>
+      </div>
+      <!-- <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button content_half_space">Prototype <i class="fas fa-flask"></i></div></a> -->
+    </div>
+    <div style="text-align:center;">
+      <div class ="title_image"><div class ="title_image_delay"></div></div>
+    </div>
+  </div>
+
+  <div class="content_container content_first_space">
+    <h2>Project overview</h2>
+    <div class="four_four_two_grid grid_gap_40">
+      <div class="two_grid_content project_icon_container content_small_space">
+        <img class="project_icon" src="images/all/icon_role.png">
+        <div>
+          <h4>Role</h4>
+          <p>Illustration, AR Features, Motion Graphic</p>
+        </div>
+      </div>
+      <div class="two_grid_content project_icon_container content_small_space">
+        <img class="project_icon" src="images/all/icon_duration.png">
+        <div>
+          <h4>Duration</h4>
+          <p>May 2021 – present</p>
+        </div>
+      </div>
+    </div>
+    <div class="four_four_two_grid grid_gap_40">
+      <div class="two_grid_content project_icon_container content_small_space">
+        <img class="project_icon" src="images/all/icon_audience.png">
+        <div>
+          <h4>Audience</h4>
+          <p>K-5 students and family</p>
+        </div>
+      </div>
+      <div class="two_grid_content project_icon_container content_small_space">
+        <img class="project_icon" src="images/all/icon_goal.png">
+        <div>
+          <h4>Goal</h4>
+          <p>Meeting Strider through various media and making them familiar with the brand through mascots.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+  </div>
+
+
+  <!-- <div class="gray_box">
+    <div class="content_container">
+      <h3>Table of Contents</h3>
+      <div class="content_half_space">
+        <h4>1. Coloring the Strider</h4><br>
+        <h4>2. Social Media Filter</h4><br>
+        <h4>3. Strider T-shirts</h4><br>
+        <h4>4. Social Media Contents</h4>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="content_container content_space">
+    <div class="four_two_two_grid grid_gap_20">
+      <div class="two_grid_content content_space">
+        <h2>1. Social Media Filter</h2>
+        <p class="content_10_space">
+        Developed an AR filter so that student can meet the Strider that was only seen on the computer screen or on the flyer. Students can use their favorite social media to bring Strider into their workspace or take selfies together. It is created for various events such as school registration, graduation, and summer events.
+        </p>
+      </div>
+      <img class="one_grid_content image_shadow roundCorner" src="images/strider/Strider_AR.png">
+      <img class="one_grid_content image_shadow roundCorner" src="images/strider/Strider_BG.png">
+    </div>
+  </div>
+
+  <div style="font-size:0;">
+    <img class="content_half_space" src="images/strider/AR_mockup2.jpg">
+    <div class="four_two_one_grid grid_gap_10 content_10_space">
+      <div class="two_grid_content strider_walk_bg"><div class="strider_walk"></div></div>
+      <div class="two_grid_content strider_dance_bg"><div class="strider_dance"></div></div>
+    </div>
+  </div>
+
+  <div class="content_container content_more_space">
+    <div class="four_four_two_grid grid_gap_10">
+      <div class="two_grid_content content_space">
+        <h2 class="content_space">2. Coloring the Strider</h2>
+        <p class="content_10_space">
+          K-5 students can meet Strider through the welcome letter they received after registering for the school. They coloring Striders illustrated in black and white, share their Striders with the social community, coloring their own Striders and increase intimacy.
+        </p>
+      </div>
+      <img class="two_grid_content content_10_space" src="images/strider/Strider_coloring.png">
+    </div>
+    <img class="content_half_space" src="images/strider/Strider_student_coloring.jpg">
+  </div>
+
+
+
+  <div class="content_container content_more_space">
+    <h2 class="content_space">3. Strider T-shirts</h2>
+    <div class="four_two_one_grid content_10_space">
+      <p class="two_grid_content">
+        Various products of the Strider are made to meet the Strider in more diverse ways. The Strider of the T-shirt holds various items that represent education.
+      </p>
+    </div>
+    <img class="content_10_space" src="images/strider/Strider_orange.png">
+    <img class="content_10_space" src="images/strider/Strider_line.png">
+
+    <div class="four_two_one_grid grid_gap_10">
+      <img class="two_grid_content" src="images/strider/Strider_orange_tshirt.jpg">
+      <img class="two_grid_content" src="images/strider/Strider_line_tshirt.jpg">
+    </div>
+  </div>
+
+  <div class="content_container content_more_space">
+    <h2>4. Social Media Contents</h2>
+    <!-- <div class="four_two_one_grid content_10_space"> -->
+      <p class="two_grid_content content_10_space">
+        Various types of introductory videos are produced to meet Strider on social media. User can see the various lifestyles of the Striders, Striders appearing after educational programs, and coloring Striders that you met in the Welcome Letter.
+      </p>
+    <!-- </div> -->
+    <div class="four_two_one_grid grid_gap_10 content_half_space">
+      <video class="two_grid_content" controls src="images/motions/Strider_Social_Organic_Fox_Sketch.mp4" type="video/mp4"></video>
+      <video class="two_grid_content" controls src="images/motions/Strider_Social_Organic_Fox_HangOut.mp4" type="video/mp4"></video>
+    </div>
+    <video class="content_10_space" controls src="images/motions/Strider_Social_Organic_Fox_LoFi-Themes-NO-Endcard.mp4" type="video/mp4"></video>
+  </div>
+
+  <div id="copyright_cont" class="content_space"></div>
+</body>
+</html>

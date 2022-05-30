@@ -13,6 +13,9 @@ h1 {
   font-size: 3em;
   line-height: 100%;
 }
+.small_h1 {
+  font-size: 2.5em;
+}
 
 h2 {
   margin: 0;
@@ -190,7 +193,7 @@ a:hover {
   background-repeat: no-repeat;
 }
 .portfolio_container_half {
-  height: 500px;
+  height: 400px;
 }
 
 .one_grid_content {
@@ -229,16 +232,36 @@ a:hover {
   padding-top: 20px;
 }
 
+@keyframes buttonColorchange {
+  0% {
+    background-color: #22e094;
+  }
+  20% {
+    background-color: #1edce3;
+  }
+  50% {
+    background-color: #148fdb;
+  }
+  70% {
+    background-color: #73c928;
+  }
+  100% {
+    background-color: #22e094;
+  }
+}
+
 .portfolio_button {
   display: none;
   position: absolute;
   bottom: 30px;
   color: #fafafa;
+  background-color: #1638b4;
   text-decoration: none;
   padding: 12px 40px 12px 40px;
   border-radius: 30px;
   transition: all .2s ease;
   font-weight: 600;
+  /* animation: buttonColorchange 10s ease-out 0s infinite; */
 }
 .portfolio_button:hover {
   padding-right: 80px;
@@ -418,8 +441,14 @@ a:hover {
     width: auto;
     margin: 0px 100px 0px 100px;
   }
+  .portfolios > div:hover {
+    opacity: 1;
+  }
   .portfolio_container {
     height: 600px;
+  }
+  .portfolio_container_half {
+    height: 300px;
   }
   .portfolios {
     grid-template-columns: repeat(4,1fr);
@@ -446,7 +475,6 @@ a:hover {
   .portfolio_button {
     display: inline-block;
   }
-
 }
 
 /*Tablet_vertical*/
@@ -463,6 +491,9 @@ a:hover {
 /*Smart phone*/
 @media screen and (max-width: 699px) {
   h1 {
+    font-size: 2.6em;
+  }
+  .small_h1 {
     font-size: 2.6em;
   }
   .nav div, .moreProject_container > div, .copyright div {
@@ -492,6 +523,9 @@ a:hover {
   }
   .portfolio_container {
     height: 600px;
+  }
+  .portfolio_container_half {
+    height: 300px;
   }
   .portfolios {
     grid-template-columns: repeat(1,1fr);

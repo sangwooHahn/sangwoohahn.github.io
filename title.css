@@ -20,12 +20,13 @@
 }
 
 .name_sub_container {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   position: absolute;
   color: #fafafa;
   font-size: 1.6em;
+  font-weight: bold;
   text-align: center;
-  margin-left: calc(50vw - 170px);
+  margin-left: calc(50vw - 190px);
   text-align: center;
   margin-top: calc(380px);
   padding: 6px 70px 6px 70px;

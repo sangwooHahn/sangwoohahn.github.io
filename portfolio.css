@@ -184,7 +184,7 @@ a:hover {
   cursor: pointer;
   transition: opacity 1s ease;
 }
-@media screen and (min-width: 1590px) {
+@media screen and (min-width: 1340px) {
   .go_back div {
     opacity: 1;
     visibility: visible;
@@ -236,8 +236,6 @@ a:hover {
   /* background-color: #eee; */
   text-align: center;
 }
-
-
 .gray_icon_container {
   padding: 25px;
   border-radius: 25px;
@@ -353,7 +351,7 @@ a:hover {
 }
 
 /* Main Grid System */
-.four_four_four_grid, .four_four_two_grid, .four_two_one_grid {
+.four_four_four_grid, .four_two_two_grid, .four_four_two_grid, .four_two_one_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
@@ -395,8 +393,6 @@ a:hover {
 .grid_gap_40 {
   grid-gap: 40px;
 }
-
-
 
 /* Sapcing */
 .content_first_space {
@@ -619,6 +615,9 @@ a:hover {
   .four_four_two_grid {
     grid-template-columns: repeat(4, 1fr);
   }
+  .four_two_two_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .four_two_one_grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -674,13 +673,15 @@ a:hover {
     margin-left: 0px;
     margin-right: 0px;
   }
-
   .quote_container {
     width: auto;
     padding-left: 0px;
     padding-right: 0px;
     margin-right: 0px;
     margin-left: 0px;
+  }
+  #copyright_cont{
+    margin-top: 0px;
   }
 
   .title_description {
@@ -692,6 +693,9 @@ a:hover {
 
   /* Grid System */
   .four_four_two_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .four_two_two_grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .four_two_one_grid {
@@ -710,6 +714,7 @@ a:hover {
     grid-template-columns: 100%;
     grid-template-rows: auto auto;
   }
+
 
   /* webpage container */
   .webpage_contaioner_desktop {

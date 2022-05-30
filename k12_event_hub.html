@@ -34,7 +34,7 @@
   });
 
   $(document).ready(function(){ /* control all page of the special colors*/
-    var main_color = ('#0D5BA4');
+    var main_color = ('#0B4AAA');
     var sub_color = ('#000000');
     var white_color = ('#fafafa');
     $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
@@ -72,6 +72,12 @@
   .content_first_space {
     margin-top: 350px;
   }
+  #eventCard3 {
+    content:url(images/k12event/eventCard3.png);
+  }
+  #eventCard4 {
+    content:url(images/k12event/eventCard4.png);
+  }
 
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
@@ -104,6 +110,12 @@
     .quote_right {
       transform: scale(70%) translate(calc(100vw + 10px), 70px);
       -webkit-transform: scale(70%) translate(calc(100vw + 10px), 70px);
+    }
+    #eventCard3 {
+      content:url(images/k12event/eventCard3_small.png);
+    }
+    #eventCard4 {
+      content:url(images/k12event/eventCard4_small.png);
     }
   }
 </style>
@@ -189,34 +201,35 @@
       <h2 class="insideH2Line">Current problems</h2>
       <ul class="content_tiny_space">
         <li>Each school had two seprate event pages for enrolled families and prospective families.</li>
-        <li>All the information without images is heavy text.</li>
+        <li>Heavy texted information without any image.</li>
         <li>Filter with limited functionality.</li>
-        <li>Difficult for prospective families to visit the school website.</li>
-        <li>Lack of explanation on the event method/type.</li>
+        <li>Difficult for prospective families to visit the school website's event page.</li>
+        <li>Lack of explanation on the event method and type.</li>
       </ul>
     </div>
     <img class="content_space two_grid_content image_shadow" src="images/k12event/oldk12event.png">
   </div>
 
-  <h2 class="content_more_space">Visual design</h2>
-  <h3 class="content_tiny_space">Hero event carousel</h3>
-  <img class="content_tiny_space" src="images/k12event/heroEvent.png">
-  <h3 class="content_space">Event card design</h3>
-  <div class="three_two_one_grid grid_gap_20 content_tiny_space">
-    <img class="image_shadow" src="images/k12event/eventCard_1.jpg">
-    <img class="image_shadow" src="images/k12event/eventCard_2.jpg">
-    <img class="image_shadow" src="images/k12event/eventCard_3.jpg">
+  <h2 class="content_more_space">Wireframe</h2>
+  <div class="four_four_two_grid grid_gap_40 content_tiny_space">
+    <div class="two_grid_content">
+      <h3>Grid View</h3>
+      <img class="image_shadow content_tiny_space" src="images/k12event/wireframe1.jpg">
+    </div>
+    <div class="two_grid_content">
+      <h3>List View</h3>
+      <img class="image_shadow content_tiny_space" src="images/k12event/wireframe2.jpg">
+    </div>
   </div>
-  <p>
-  </p>
+
   <h2 class="content_more_space text_above_box">Filter design</h2>
 </div>
 
 <div class="gray_box">
   <div class="content_container">
-    <h3>Mobile first design</h3>
-    <p>Design with priority of mobile devices with a lot of user accessibility.</p>
-    <div class="four_two_one_grid grid_gap_40 content_half_space">
+    <h3>Mobile design first</h3>
+    <p>Designed the mobile first to add filters in a limited screen size, and AB tested in two different experiences.</p>
+    <div class="four_four_two_grid grid_gap_40 content_half_space">
       <div class="two_grid_content content_half_space">
         <h3>A/B testing<h3>
         <h4 class="content_10_space">Experience A</h4>
@@ -237,22 +250,48 @@
       </div>
       <div>
         <img style="border-radius:10px;" class="content_10_space image_shadow" src="images/k12event/mobileFilter2.jpg">
-          <p class="centered_text content_10_space"><b>Experience B</b></p>
+        <p class="centered_text content_10_space"><b>Experience B</b></p>
       </div>
     </div>
 
-    <h3 class="content_half_space">Results<h3>
+    <h3 class="content_tiny_space">Results<h3>
     <h4 class="content_10_space">Experience B win the test!</h4>
     <ul>
       <li>The tester doesn't understand A's double dropdown.</li>
       <li>The user easily recognizes how to use the filter.</li>
-      <li>Hope to add topic filter for ease of search.</li>
-      <li>User provides feedback in a new order.</li>
     </ul>
+
+    <img class=" content_tiny_space" src="images/k12event/filters.png">
   </div>
 </div>
 
-
+<div class="content_container content_space">
+  <h2>Event card design</h2>
+  <h3 class="content_tiny_space">Hero event carousel</h3>
+  <img class="content_tiny_space" src="images/k12event/heroEvent.png">
+  <h3 class="content_space">Event card design</h3>
+  <p class="content_tiny_space">The length of the card is equally increased based on the longest card in the row.</p>
+  <div class="four_four_two_grid grid_gap_20 content_small_space">
+    <div>
+      <p class=""><b>Collapsed with image</b></p>
+      <img class="image_shadow content_10_space" src="images/k12event/eventCard1.png">
+    </div>
+    <div>
+      <p class=""><b>Opened with image</b></p>
+      <img class="image_shadow content_10_space" src="images/k12event/eventCard2.png">
+    </div>
+    <div>
+      <p class=""><b>Collapsed with no image</b></p>
+      <img class="image_shadow content_10_space" id="eventCard3">
+    </div>
+    <div>
+      <p class=""><b>Opened with no image</b></p>
+      <img class="image_shadow content_10_space" id="eventCard4">
+    </div>
+  </div>
+  <p>
+  </p>
+</div>
 
 <div class="content_container">
   <h2 class="content_space">Resolution</h2>
