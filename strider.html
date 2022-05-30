@@ -66,6 +66,144 @@
     $('.title_button').css('background-color',sub_color);
     $('.round_button').css('background-color',sub_color);
     $('.contact_container div h3').css('color',white_color);
+
+    var backgroundImages_title = [
+    'url(images/strider/0001.png)',
+    'url(images/strider/0002.png)',
+    'url(images/strider/0003.png)',
+    'url(images/strider/0004.png)',
+    'url(images/strider/0005.png)',
+    'url(images/strider/0006.png)',
+    'url(images/strider/0007.png)',
+    'url(images/strider/0008.png)',
+    'url(images/strider/0009.png)',
+    'url(images/strider/0010.png)',
+    'url(images/strider/0011.png)',
+    'url(images/strider/0012.png)',
+    'url(images/strider/0013.png)',
+    'url(images/strider/0014.png)',
+    'url(images/strider/0015.png)',
+    'url(images/strider/0016.png)',
+    'url(images/strider/0017.png)'
+    ],
+    backgroundImageCounter = 0,
+    titleImage = $('.title_image');
+
+    window.setInterval(function() {
+        titleImage.css('background-image', backgroundImages_title[backgroundImageCounter]);
+
+        backgroundImageCounter++;
+        if(backgroundImageCounter >= backgroundImages_title.length) {
+            backgroundImageCounter = 0;
+        }
+    }, 70);
+
+    var backgroundImages_walk = [
+    'url(images/strider/strider_walk/0001.png)',
+    'url(images/strider/strider_walk/0002.png)',
+    'url(images/strider/strider_walk/0003.png)',
+    'url(images/strider/strider_walk/0004.png)',
+    'url(images/strider/strider_walk/0005.png)',
+    'url(images/strider/strider_walk/0006.png)',
+    'url(images/strider/strider_walk/0007.png)',
+    'url(images/strider/strider_walk/0008.png)',
+    'url(images/strider/strider_walk/0009.png)',
+    'url(images/strider/strider_walk/0010.png)',
+    'url(images/strider/strider_walk/0011.png)',
+    'url(images/strider/strider_walk/0012.png)',
+    'url(images/strider/strider_walk/0013.png)',
+    'url(images/strider/strider_walk/0014.png)',
+    'url(images/strider/strider_walk/0015.png)',
+    'url(images/strider/strider_walk/0016.png)',
+    'url(images/strider/strider_walk/0017.png)',
+    'url(images/strider/strider_walk/0018.png)',
+    'url(images/strider/strider_walk/0019.png)',
+    'url(images/strider/strider_walk/0020.png)',
+    'url(images/strider/strider_walk/0021.png)'
+    ],
+    backgroundImageCounter_walk = 0,
+    walkImage = $('.strider_walk');
+
+    window.setInterval(function() {
+        walkImage.css('background-image', backgroundImages_walk[backgroundImageCounter_walk]);
+
+        backgroundImageCounter_walk++;
+        if(backgroundImageCounter_walk >= backgroundImages_walk.length) {
+            backgroundImageCounter_walk = 0;
+        }
+    }, 45);
+
+    var backgroundImages_dance = [
+    'url(images/strider/strider_dance/0001.png)',
+    'url(images/strider/strider_dance/0002.png)',
+    'url(images/strider/strider_dance/0003.png)',
+    'url(images/strider/strider_dance/0004.png)',
+    'url(images/strider/strider_dance/0005.png)',
+    'url(images/strider/strider_dance/0006.png)',
+    'url(images/strider/strider_dance/0007.png)',
+    'url(images/strider/strider_dance/0008.png)',
+    'url(images/strider/strider_dance/0009.png)',
+    'url(images/strider/strider_dance/0010.png)',
+    'url(images/strider/strider_dance/0011.png)',
+    'url(images/strider/strider_dance/0012.png)',
+    'url(images/strider/strider_dance/0013.png)',
+    'url(images/strider/strider_dance/0014.png)',
+    'url(images/strider/strider_dance/0015.png)',
+    'url(images/strider/strider_dance/0016.png)',
+    'url(images/strider/strider_dance/0017.png)',
+    'url(images/strider/strider_dance/0018.png)',
+    'url(images/strider/strider_dance/0019.png)',
+    'url(images/strider/strider_dance/0020.png)',
+    'url(images/strider/strider_dance/0021.png)',
+    'url(images/strider/strider_dance/0022.png)',
+    'url(images/strider/strider_dance/0023.png)',
+    'url(images/strider/strider_dance/0024.png)',
+    'url(images/strider/strider_dance/0025.png)',
+    'url(images/strider/strider_dance/0026.png)',
+    'url(images/strider/strider_dance/0027.png)',
+    'url(images/strider/strider_dance/0028.png)',
+    'url(images/strider/strider_dance/0029.png)',
+    'url(images/strider/strider_dance/0030.png)',
+    'url(images/strider/strider_dance/0031.png)',
+    'url(images/strider/strider_dance/0032.png)',
+    'url(images/strider/strider_dance/0033.png)',
+    'url(images/strider/strider_dance/0034.png)',
+    'url(images/strider/strider_dance/0035.png)',
+    'url(images/strider/strider_dance/0036.png)',
+    'url(images/strider/strider_dance/0037.png)',
+    'url(images/strider/strider_dance/0038.png)',
+    'url(images/strider/strider_dance/0039.png)',
+    'url(images/strider/strider_dance/0040.png)',
+    'url(images/strider/strider_dance/0041.png)',
+    'url(images/strider/strider_dance/0042.png)',
+    'url(images/strider/strider_dance/0043.png)',
+    'url(images/strider/strider_dance/0044.png)',
+    'url(images/strider/strider_dance/0045.png)',
+    'url(images/strider/strider_dance/0046.png)',
+    'url(images/strider/strider_dance/0047.png)',
+    'url(images/strider/strider_dance/0048.png)',
+    'url(images/strider/strider_dance/0049.png)',
+    'url(images/strider/strider_dance/0050.png)',
+    'url(images/strider/strider_dance/0051.png)',
+    'url(images/strider/strider_dance/0052.png)',
+    'url(images/strider/strider_dance/0053.png)',
+    'url(images/strider/strider_dance/0054.png)',
+    'url(images/strider/strider_dance/0055.png)',
+    'url(images/strider/strider_dance/0056.png)',
+    'url(images/strider/strider_dance/0057.png)'
+    ],
+    backgroundImageCounter_dance = 0,
+    danceImage = $('.strider_dance');
+
+    window.setInterval(function() {
+        danceImage.css('background-image', backgroundImages_dance[backgroundImageCounter_dance]);
+
+        backgroundImageCounter_dance++;
+        if(backgroundImageCounter_dance >= backgroundImages_dance.length) {
+            backgroundImageCounter_dance = 0;
+        }
+    }, 45);
+
   });
   window.open_about = function() {
     localStorage.setItem("click_open", "about_show");
@@ -78,69 +216,13 @@
     height: 500px;
     top: 300px;
     right: 0px;
-    left: 80px;
+    left: 20px;
     margin: auto;
-    /* background-color: rgba(1,1,1,0.2); */
-    background-image: url('images/strider/0001.png');
-    -webkit-animation: firstImageOnly 1s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 100;
   }
-
-  .title_image_delay {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    -webkit-animation: opacityChange 1s, /*appearFromBottom 1.6s, */ changeImage 1s infinite;
-    animation-timing-function: ease-out;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 101;
-  }
-  @-webkit-keyframes opacityChange
-  {
-     0% {opacity: 0;}
-     99% {opacity: 0;}
-     100% {opacity: 1;}
-  }
-  @-webkit-keyframes firstImageOnly
-  {
-     0% {background-image: url('images/strider/0001.png');}
-     99% {background-image: url('images/strider/0001.png');}
-     100% {background-image: none;}
-  }
-  @-webkit-keyframes appearFromBottom
-  {
-     70% {bottom: -850px;}
-     95% {bottom: -280px;}
-     100% {bottom: -300px;}
-  }
-  @-webkit-keyframes changeImage
-  {
-     0% {background-image: url('images/strider/0001.png');}
-     6.25% {background-image: url('images/strider/0002.png');}
-     12.5% {background-image: url('images/strider/0003.png');}
-     18.75% {background-image: url('images/strider/0004.png');}
-     25% {background-image: url('images/strider/0005.png');}
-     31.25% {background-image: url('images/strider/0006.png');}
-     37.5% {background-image: url('images/strider/0007.png');}
-     43.75% {background-image: url('images/strider/0008.png');}
-     50% {background-image: url('images/strider/0009.png');}
-     56.25% {background-image: url('images/strider/0010.png');}
-     62.5% {background-image: url('images/strider/0011.png');}
-     68.75% {background-image: url('images/strider/0012.png');}
-     75% {background-image: url('images/strider/0013.png');}
-     81.25% {background-image: url('images/strider/0014.png');}
-     87.5% {background-image: url('images/strider/0015.png');}
-     93.75% {background-image: url('images/strider/0016.png');}
-     100% {background-image: url('images/strider/0017.png');}
-  }
-
   .content_first_space {
     margin-top: 200px;
   }
@@ -149,107 +231,18 @@
     border-radius:30px;
   }
 
-  @-webkit-keyframes walkImage
-  {
-     0% {background-image: url('images/strider/strider_walk/0001.png');}
-     4.7% {background-image: url('images/strider/strider_walk/0002.png');}
-     9.4% {background-image: url('images/strider/strider_walk/0003.png');}
-     14.1% {background-image: url('images/strider/strider_walk/0004.png');}
-     18.8% {background-image: url('images/strider/strider_walk/0005.png');}
-     32.5% {background-image: url('images/strider/strider_walk/0006.png');}
-     28.2% {background-image: url('images/strider/strider_walk/0007.png');}
-     32.9% {background-image: url('images/strider/strider_walk/0008.png');}
-     37.6% {background-image: url('images/strider/strider_walk/0009.png');}
-     42.3% {background-image: url('images/strider/strider_walk/0010.png');}
-     47% {background-image: url('images/strider/strider_walk/0011.png');}
-     51.75% {background-image: url('images/strider/strider_walk/0012.png');}
-     56.45% {background-image: url('images/strider/strider_walk/0013.png');}
-     61.2% {background-image: url('images/strider/strider_walk/0014.png');}
-     65.9% {background-image: url('images/strider/strider_walk/0015.png');}
-     70.6% {background-image: url('images/strider/strider_walk/0016.png');}
-     75.3% {background-image: url('images/strider/strider_walk/0017.png');}
-     80% {background-image: url('images/strider/strider_walk/0018.png');}
-     84.7% {background-image: url('images/strider/strider_walk/0019.png');}
-     89.6% {background-image: url('images/strider/strider_walk/0020.png');}
-     95% {background-image: url('images/strider/strider_walk/0021.png');}
-     100% {background-image: url('images/strider/strider_walk/0001.png');}
-  }
   .strider_walk{
+    display:block;
     width: 100%;
     height: calc( calc(100vw - 10px) * 0.282);
-    -webkit-animation: walkImage 1s infinite;
-    animation-timing-function: ease-out;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 101;
   }
-  @-webkit-keyframes danceImage
-  {
-     0% {background-image: url('images/strider/strider_dance/0001.png');}
-     1.7% {background-image: url('images/strider/strider_dance/0002.png');}
-     3.4% {background-image: url('images/strider/strider_dance/0003.png');}
-     5.1% {background-image: url('images/strider/strider_dance/0004.png');}
-     6.8% {background-image: url('images/strider/strider_dance/0005.png');}
-     8.5% {background-image: url('images/strider/strider_dance/0006.png');}
-     10.2% {background-image: url('images/strider/strider_dance/0007.png');}
-     11.9% {background-image: url('images/strider/strider_dance/0008.png');}
-     13.6% {background-image: url('images/strider/strider_dance/0009.png');}
-     15.3% {background-image: url('images/strider/strider_dance/0010.png');}
-     17% {background-image: url('images/strider/strider_dance/0011.png');}
-     18.7% {background-image: url('images/strider/strider_dance/0012.png');}
-     20.4% {background-image: url('images/strider/strider_dance/0013.png');}
-     22.1% {background-image: url('images/strider/strider_dance/0014.png');}
-     23.8% {background-image: url('images/strider/strider_dance/0015.png');}
-     25.5% {background-image: url('images/strider/strider_dance/0016.png');}
-     26.2% {background-image: url('images/strider/strider_dance/0017.png');}
-     27.9% {background-image: url('images/strider/strider_dance/0018.png');}
-     29.6% {background-image: url('images/strider/strider_dance/0019.png');}
-     33% {background-image: url('images/strider/strider_dance/0020.png');}
-     34.7% {background-image: url('images/strider/strider_dance/0021.png');}
-     36.4% {background-image: url('images/strider/strider_dance/0022.png');}
-     38.1% {background-image: url('images/strider/strider_dance/0023.png');}
-     39.8% {background-image: url('images/strider/strider_dance/0024.png');}
-     41.5% {background-image: url('images/strider/strider_dance/0025.png');}
-     43.2% {background-image: url('images/strider/strider_dance/0026.png');}
-     44.9% {background-image: url('images/strider/strider_dance/0027.png');}
-     46.6% {background-image: url('images/strider/strider_dance/0028.png');}
-     48.3% {background-image: url('images/strider/strider_dance/0029.png');}
-     51% {background-image: url('images/strider/strider_dance/0030.png');}
-     52.7% {background-image: url('images/strider/strider_dance/0031.png');}
-     54.4% {background-image: url('images/strider/strider_dance/0032.png');}
-     56.1% {background-image: url('images/strider/strider_dance/0033.png');}
-     57.8% {background-image: url('images/strider/strider_dance/0034.png');}
-     59.5% {background-image: url('images/strider/strider_dance/0035.png');}
-     61.2% {background-image: url('images/strider/strider_dance/0036.png');}
-     62.9% {background-image: url('images/strider/strider_dance/0037.png');}
-     64.6% {background-image: url('images/strider/strider_dance/0038.png');}
-     66.3% {background-image: url('images/strider/strider_dance/0039.png');}
-     68% {background-image: url('images/strider/strider_dance/0040.png');}
-     69.7% {background-image: url('images/strider/strider_dance/0041.png');}
-     71.4% {background-image: url('images/strider/strider_dance/0042.png');}
-     73.1% {background-image: url('images/strider/strider_dance/0043.png');}
-     74.8% {background-image: url('images/strider/strider_dance/0044.png');}
-     76.5% {background-image: url('images/strider/strider_dance/0045.png');}
-     78.4% {background-image: url('images/strider/strider_dance/0046.png');}
-     80.1% {background-image: url('images/strider/strider_dance/0047.png');}
-     82% {background-image: url('images/strider/strider_dance/0048.png');}
-     83.7% {background-image: url('images/strider/strider_dance/0049.png');}
-     85.6% {background-image: url('images/strider/strider_dance/0050.png');}
-     87.3% {background-image: url('images/strider/strider_dance/0051.png');}
-     89.2% {background-image: url('images/strider/strider_dance/0052.png');}
-     90.9% {background-image: url('images/strider/strider_dance/0053.png');}
-     92.8% {background-image: url('images/strider/strider_dance/0054.png');}
-     94.5% {background-image: url('images/strider/strider_dance/0055.png');}
-     96.4% {background-image: url('images/strider/strider_dance/0056.png');}
-     98.7% {background-image: url('images/strider/strider_dance/0057.png');}
-     100% {background-image: url('images/strider/strider_dance/0001.png');}
-  }
   .strider_dance{
     width: 100%;
     height: calc( calc(100vw - 10px) * 0.282);
-    -webkit-animation: danceImage 3s infinite;
-    animation-timing-function: ease-out;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -355,7 +348,7 @@
       <!-- <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button content_half_space">Prototype <i class="fas fa-flask"></i></div></a> -->
     </div>
     <div style="text-align:center;">
-      <div class ="title_image"><div class ="title_image_delay"></div></div>
+      <div class ="title_image"></div>
     </div>
   </div>
 
