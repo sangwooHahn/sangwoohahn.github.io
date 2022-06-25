@@ -23,7 +23,7 @@ function setup() {
 
 function cameraStart () {
   var sketchCanvas = createCanvas(520, 480);//(520, 480);
-  // sketchCanvas = createCanvas(0, 0);
+  sketchCanvas = createCanvas(0, 0);
   sketchCanvas.parent("bodyCanvas");
   video = createCapture(VIDEO);
   video.hide();
