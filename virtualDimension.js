@@ -10,11 +10,20 @@ function setup() {
   cameraStart();
   angleMode(DEGREES);
   frameRate(30);
+
+  depthOfBox = 8000;//displayHeight * 2;
+  document.getElementById("container_").style.height = windowHeight+"px";
+  document.getElementById("wallBack").style.transform = "translateZ(" + (-depthOfBox) + "px)";
+  document.getElementById("wallLeft").style.width = depthOfBox+"px";
+  document.getElementById("wallRight").style.width = depthOfBox+"px";
+  document.getElementById("wallTop").style.height = depthOfBox+"px";
+  document.getElementById("wallBottom").style.height = depthOfBox+"px";
+  document.getElementById("wallBottom").style.top = "calc("+ (windowHeight - depthOfBox) + "px)";
 }
 
 function cameraStart () {
-  // var sketchCanvas = createCanvas(520, 480);//(520, 480);
-  sketchCanvas = createCanvas(0, 0);
+  var sketchCanvas = createCanvas(520, 480);//(520, 480);
+  // sketchCanvas = createCanvas(0, 0);
   sketchCanvas.parent("bodyCanvas");
   video = createCapture(VIDEO);
   video.hide();
@@ -33,14 +42,6 @@ function gotPoses(poses) {
 function modelLoaded() {
   console.log('poseNet ready');
   cameraActive = true;
-
-  depthOfBox = 300;//displayHeight * 2;
-  document.getElementById("wallBack").style.transform = "translateZ(" + (-depthOfBox) + "px)";
-  document.getElementById("wallLeft").style.width = depthOfBox+"px";
-  document.getElementById("wallRight").style.width = depthOfBox+"px";
-  document.getElementById("wallTop").style.height = depthOfBox+"px";
-  document.getElementById("wallBottom").style.height = depthOfBox+"px";
-  document.getElementById("wallBottom").style.top = "calc("+ (displayHeight - depthOfBox) + ")";
 }
 
 function draw() {
@@ -78,10 +79,15 @@ setInterval(function() {
     let middleEyeX = (pose.leftEye.x+ pose.rightEye.x)/2;
     middleEyeX = map(middleEyeX, 520, 0, 0, displayWidth);
     let middleEyeY = (pose.leftEye.y+ pose.rightEye.y)/2;
-    middleEyeY = map(middleEyeY, 480, 0, displayHeight,0);
-    let dist = map(pose.leftEye.x- pose.rightEye.x, 300, -50, 0, 90); // distance between user and the screen.
+    middleEyeY = map(middleEyeY, 480, 0, windowHeight*1,-windowHeight*1.5);
+    let dist = map(pose.leftEye.x- pose.rightEye.x, 300, -50, 1, 100); // distance between user and the screen.
 
-    document.getElementById("container_").style.perspective = dist*30+"px";
-    document.getElementById("container_").style.perspectiveOrigin = middleEyeX + "px " + middleEyeY + "px";
+    document.getElementById("container_").style.perspective = 14000+"px";//dist*100+"px";
+    document.getElementById("container_").style.perspectiveOrigin = middleEyeX*dist/40 + "px " + middleEyeY*dist/50 + "px";
   }
 }, 100);
+
+
+// function draw() {
+//   document.getElementById("container_").style.perspectiveOrigin = map(mouseX,0, displayWidth,0,displayWidth*2) + "px " + map(mouseY,0, displayHeight,displayHeight/2,displayHeight*2) + "px";
+// }

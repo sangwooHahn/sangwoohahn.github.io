@@ -12,22 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <style>
-      html,body {
+      html {
         margin: 0;
       }
       body{
-        /* -webkit-perspective: 1000; */
+        margin: 0;
       }
       #container_ {
         transform-style:preserve-3d;
-        perspective: 200px;
-        perspective-origin: 50vw 50vh;
-      }
-      #perspective{
-        /* width : 100vw;
-        height : 100vh;
-        left: 50vw;
-        top: 50vh; */
+        perspective: 8000px;
+        perspective-origin: 50vw 50%;
       }
       #bodyCanvas {
         height: 480px;
@@ -35,42 +29,38 @@
       #wallBack {
         position: absolute;
         width : 100vw;
-        height : 100vh;
+        height : 100%;
         background-color: #BCBCBC;
-        /* background-image: radial-gradient(circle, #D9D9D9, #BCBCBC, #8F8F8F); */
         left: calc(50vw - calc(100vw * 0.5));
-        top: calc(50vh - calc(100vh * 0.5));
-        transform: translateZ(-400vh);
+        top: calc(50% - calc(100% * 0.5));
+        transform: translateZ(-400%);
       }
       #wallLeft {
         position: absolute;
         background-color: #D9D9D9;
-        /* background-image: linear-gradient(to right, #D9D9D9, #8F8F8F); */
         transform-origin: left;
         width : 400vh;
-        height : 100vh;
+        height : 100%;
         left:0;
-        top: calc(50vh - calc(100vh * 0.5));
+        top: calc(50% - calc(100% * 0.5));
         transform: rotateY(90deg);
       }
       #wallRight {
         position: absolute;
         background-color: #D9D9D9;
-        /* background-image: linear-gradient(to left, #D9D9D9, #8F8F8F); */
         transform-origin: right;
         width : 400vh;
-        height : 100vh;
+        height : 100%;
         right:0;
-        top: calc(50vh - calc(100vh * 0.5));
+        top: calc(50% - calc(100% * 0.5));
         transform: rotateY(-90deg);
       }
       #wallTop {
         position: absolute;
         background-color: #CCCCCC;
-        /* background-image: linear-gradient(to bottom, #CCCCCC, #868686); */
         transform-origin: top;
         width : 100vw;
-        height : 400vh;
+        height : 400%;
         top:0;
         left: calc(50vw - calc(100vw * 0.5));
         transform: rotateX(-90deg);
@@ -78,12 +68,11 @@
       #wallBottom {
         position: absolute;
         background-color: #CCCCCC;
-        /* background-image: linear-gradient(to top, #CCCCCC, #868686); */
         transform-origin: bottom;
         width : 100vw;
-        height : 400vh;
+        height : 400%;
         /* bottom: -100vh; */
-        top: calc(100vh - 400vh); /*bottom origin is far from  400vh, so minus as 400vh from scrren height(100vh)*/
+        top: calc(100% - 400%); /*bottom origin is far from  400vh, so minus as 400vh from scrren height(100vh)*/
         left: calc(50vw - calc(100vw * 0.5));
         transform: rotateX(90deg);
       }
