@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Dimension</title>
+    <!-- <link rel="stylesheet" type="text/css" href="transfont_style.css"> -->
+    <script type="text/javascript" src="dist/opentype.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js'></script>
+    <script src='https://unpkg.com/ml5@0.4.2/dist/ml5.min.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <style>
+      html,body {
+        margin: 0;
+      }
+      body{
+        /* -webkit-perspective: 1000; */
+      }
+      #container_ {
+        transform-style:preserve-3d;
+        perspective: 200px;
+        perspective-origin: 50vw 50vh;
+      }
+      #perspective{
+        /* width : 100vw;
+        height : 100vh;
+        left: 50vw;
+        top: 50vh; */
+      }
+      #bodyCanvas {
+        height: 480px;
+      }
+      #wallBack {
+        position: absolute;
+        width : 100vw;
+        height : 100vh;
+        background-color: #BCBCBC;
+        /* background-image: radial-gradient(circle, #D9D9D9, #BCBCBC, #8F8F8F); */
+        left: calc(50vw - calc(100vw * 0.5));
+        top: calc(50vh - calc(100vh * 0.5));
+        transform: translateZ(-400vh);
+      }
+      #wallLeft {
+        position: absolute;
+        background-color: #D9D9D9;
+        /* background-image: linear-gradient(to right, #D9D9D9, #8F8F8F); */
+        transform-origin: left;
+        width : 400vh;
+        height : 100vh;
+        left:0;
+        top: calc(50vh - calc(100vh * 0.5));
+        transform: rotateY(90deg);
+      }
+      #wallRight {
+        position: absolute;
+        background-color: #D9D9D9;
+        /* background-image: linear-gradient(to left, #D9D9D9, #8F8F8F); */
+        transform-origin: right;
+        width : 400vh;
+        height : 100vh;
+        right:0;
+        top: calc(50vh - calc(100vh * 0.5));
+        transform: rotateY(-90deg);
+      }
+      #wallTop {
+        position: absolute;
+        background-color: #CCCCCC;
+        /* background-image: linear-gradient(to bottom, #CCCCCC, #868686); */
+        transform-origin: top;
+        width : 100vw;
+        height : 400vh;
+        top:0;
+        left: calc(50vw - calc(100vw * 0.5));
+        transform: rotateX(-90deg);
+      }
+      #wallBottom {
+        position: absolute;
+        background-color: #CCCCCC;
+        /* background-image: linear-gradient(to top, #CCCCCC, #868686); */
+        transform-origin: bottom;
+        width : 100vw;
+        height : 400vh;
+        /* bottom: -100vh; */
+        top: calc(100vh - 400vh); /*bottom origin is far from  400vh, so minus as 400vh from scrren height(100vh)*/
+        left: calc(50vw - calc(100vw * 0.5));
+        transform: rotateX(90deg);
+      }
+    </style>
+</head>
+<body>
+  <div id="bodyCanvas" style="position:absolute; right:0; z-index: 999;"></div>
+  <div id="container_">
+    <div id="wallBack"></div>
+    <div id="wallLeft"></div>
+    <div id="wallRight"></div>
+    <div id="wallTop"></div>
+    <div id="wallBottom"></div>
+  </div>
+</body>
+
+<script src="virtualDimension.js"></script>
+
+</html>
