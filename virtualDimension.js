@@ -80,16 +80,18 @@ setInterval(function() {
     print("eyeXpos:  "+ middleEyeX);
     let middleEyeY = (pose.leftEye.y+ pose.rightEye.y)/2;
     print("eyeYpos:  "+ middleEyeY);
-    let dist = Math.hypot(pose.leftEye.x-pose.rightEye.x,pose.leftEye.y-pose.rightEye.y);
+    let dist;
+    dist = Math.hypot(pose.leftEye.x-pose.rightEye.x,pose.leftEye.y-pose.rightEye.y);
     dist = map(dist, 300, 0, 1, 100); // distance between user and the screen.
     dist = Math.round(dist*10)/10;
     print("dist: "+dist);
+    // print("score:  "+ pose.score);
 
     middleEyeX = map(middleEyeX, ((dist * -9.5) + 1250), ((dist * 6.6) - 345), 0, windowWidth);
     middleEyeY = map(middleEyeY, ((dist * -12) + 1380), 150, windowHeight,-windowHeight*0.4);
     print("pers: "+Math.round((14000*(1.12**(dist-86)+0.4))/100)*100);
 
-    document.getElementById("container_").style.perspective = Math.round((14000*(1.12**(dist-86)+0.4))/100)*100+"px";//14000+"px";
+    document.getElementById("container_").style.perspective = 14000+"px";//Math.round((14000*(1.12**(dist-86)+0.4))/100)*100+"px";//14000+"px";
     document.getElementById("container_").style.perspectiveOrigin = middleEyeX + "px " + middleEyeY + "px";
   }
 }, 100);

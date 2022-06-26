@@ -18,6 +18,12 @@
       body{
         margin: 0;
       }
+      img{
+        padding: 0;
+        margin:0;
+        width:100%;
+        height:100%;
+      }
       #container_ {
         transform-style:preserve-3d;
         perspective: 8000px;
@@ -34,10 +40,6 @@
         left: calc(50vw - calc(100vw * 0.5));
         top: calc(50% - calc(100% * 0.5));
         transform: translateZ(-400%);
-        margin: auto;
-        text-align: center;
-        font-size: 200px;
-        padding-top: 100px;
       }
       #wallLeft {
         position: absolute;
@@ -85,11 +87,11 @@
 <body>
   <div id="bodyCanvas" style="position:absolute; right:0; z-index: 999;"></div>
   <div id="container_">
-    <div id="wallBack"></div>
-    <div id="wallLeft"></div>
-    <div id="wallRight"></div>
-    <div id="wallTop"></div>
-    <div id="wallBottom"></div>
+    <div id="wallBack"><img src="images/virtualDimension/back.jpg"></div>
+    <div id="wallLeft"><img src="images/virtualDimension/left.jpg"></div>
+    <div id="wallRight"><img src="images/virtualDimension/right.jpg"></div>
+    <div id="wallTop"><img src="images/virtualDimension/top.jpg"></div>
+    <div id="wallBottom"><img src="images/virtualDimension/bottom.jpg"></div>
   </div>
 </body>
 
