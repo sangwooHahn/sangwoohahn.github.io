@@ -22,7 +22,7 @@ function setup() {
 }
 
 function cameraStart () {
-  var sketchCanvas = createCanvas(520, 480);//(520, 480);
+  var sketchCanvas = createCanvas(640, 480);//(520, 480);
   sketchCanvas = createCanvas(0, 0);
   sketchCanvas.parent("bodyCanvas");
   video = createCapture(VIDEO);
@@ -47,7 +47,7 @@ function modelLoaded() {
 function draw() {
   push();
   // background(204);
-  translate(video.width*0.85, 0);
+  translate(video.width*0.7, 0);
   scale(-0.3, 0.3);
   image(video, 0, 0);
 
@@ -77,13 +77,20 @@ function drawEye() {
 setInterval(function() {
   if(pose !=undefined) {
     let middleEyeX = (pose.leftEye.x+ pose.rightEye.x)/2;
-    middleEyeX = map(middleEyeX, 520, 0, 0, displayWidth);
+    print("eyeXpos:  "+ middleEyeX);
     let middleEyeY = (pose.leftEye.y+ pose.rightEye.y)/2;
-    middleEyeY = map(middleEyeY, 480, 0, windowHeight*1,-windowHeight*1.5);
-    let dist = map(pose.leftEye.x- pose.rightEye.x, 300, -50, 1, 100); // distance between user and the screen.
+    print("eyeYpos:  "+ middleEyeY);
+    let dist = Math.hypot(pose.leftEye.x-pose.rightEye.x,pose.leftEye.y-pose.rightEye.y);
+    dist = map(dist, 300, 0, 1, 100); // distance between user and the screen.
+    dist = Math.round(dist*10)/10;
+    print("dist: "+dist);
 
-    document.getElementById("container_").style.perspective = 14000+"px";//dist*100+"px";
-    document.getElementById("container_").style.perspectiveOrigin = middleEyeX*dist/40 + "px " + middleEyeY*dist/50 + "px";
+    middleEyeX = map(middleEyeX, ((dist * -9.5) + 1250), ((dist * 6.6) - 345), 0, windowWidth);
+    middleEyeY = map(middleEyeY, ((dist * -12) + 1380), 150, windowHeight,-windowHeight*0.4);
+    print("pers: "+Math.round((14000*(1.12**(dist-86)+0.4))/100)*100);
+
+    document.getElementById("container_").style.perspective = Math.round((14000*(1.12**(dist-86)+0.4))/100)*100+"px";//14000+"px";
+    document.getElementById("container_").style.perspectiveOrigin = middleEyeX + "px " + middleEyeY + "px";
   }
 }, 100);
 
