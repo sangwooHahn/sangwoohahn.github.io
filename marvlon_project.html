@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sangwoo Portfolio</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="hsl(24.3, 97.4%, 54.3%)">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="universal-tilt.js"></script>
+  <script src="https://unpkg.com/universal-tilt.js/"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $(function(){
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
+  });
+
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var main_color = ('#421D0D');
+    var sub_color = ('#764F34');
+    var white_color = ('#fafafa');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
+    $('html').css('background-color',main_color);
+    $('h2').css('color',main_color);
+    $('h3').css('color',main_color);
+    $('h4').css('color',sub_color);
+    $('.go_back div').css('color',main_color);
+    $('.go_back').css('border-left', '2.5px solid '+main_color);
+    $('.go_back').css('border-top', '2.5px solid '+main_color);
+    $('.nav').css('background-color',main_color);
+    $('.title_container').css('background-color',main_color);
+    $('.button_container').css('background-color',main_color);
+    $('.button_container h2').css('color',white_color);
+    $('.color_box').css('background-color',main_color);
+    $('.color_box > div > h3').css('color',white_color);
+    $('.title_button').css('background-color',sub_color);
+    $('.round_button').css('background-color',sub_color);
+    $('.contact_container div h3').css('color',white_color);
+  });
+
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+  </script>
+  <style>
+  .title_text_image {
+    position: relative;
+    width: 600px;
+    height: auto;
+    top: 0px;
+  }
+  .title_image {
+    position: relative;
+    width: 400px;
+    height: auto;
+    top: 50px;
+  }
+  .content_first_space {
+    margin-top: 350px;
+  }
+  .card_container {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top: 20px;
+    line-height: 0;
+    border-radius: 10px;
+  }
+  .card_container:hover {
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.8);
+  }
+  .card_ribbon {
+    position: absolute;
+    left: calc(calc(1100px - 120px) / 1960);
+    top: calc(calc(1100px - 120px) / -98);
+    transform: scale(1.06);
+    transition: 0.5s ease;
+  }
+  .card_size {
+    position: absolute;
+    left: calc(calc(1100px - 120px) / -10);
+    top: calc(calc(1100px - 120px) / -10.5);
+    transform: scale(0.27);
+    z-index: 1002;
+  }
+  .card_title {
+    position: absolute;
+    font-weight: bold;
+    font-size: calc(calc(1100px - 120px) / 50);
+    text-align: center;
+    top: calc(calc(1100px - 120px) / 90);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 2px 2px #0C0C0C, -2px -2px #0C0C0C, 2px -2px #0C0C0C, -2px 2px #0C0C0C, 0px 2px #0C0C0C, 0px -2px #0C0C0C, 2px 0px #0C0C0C, -2px 0px #0C0C0C;
+    z-index: 1003;
+  }
+  .card_level {
+    position: absolute;
+    color: #EAD018;
+    text-align: center;
+    font-size: calc(calc(1100px - 120px) / 60);
+    letter-spacing:1px;
+    /* padding-left: 5px; */
+    top: calc(calc(1100px - 120px) / 22);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.5s ease;
+  }
+  .card_content {
+    position: absolute;
+    color: #eaeaea;
+    font-weight: 500;
+    font-size: calc(calc(1100px - 120px) / 45);
+    line-height: calc(calc(1100px - 120px) / 36);
+    text-align: center;
+    width: 80%;
+    top: calc(calc(1100px - 120px) / 4.7);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card_content_oneline {
+    font-size: calc(calc(1100px - 120px) / 45);
+    top: calc(calc(1100px - 120px) / 4.2);
+  }
+  .card_content_fourline {
+    font-size: calc(calc(1100px - 120px) / 55);
+    line-height: calc(calc(1100px - 120px) / 46);
+  }
+  .card_container:hover .card_ribbon {
+    transform: scale(1.12);
+  }
+  .card_container:hover .card_image {
+    transform: scale(1.1);
+  }
+  .opp_container {
+    position: relative;
+    line-height: 0;
+    overflow-x: hidden;
+    border-radius: 15px;
+  }
+  @-webkit-keyframes changeBG
+  {
+     0% {background-image: url('images/marvlon/BG1.png');}
+     19% {background-image: url('images/marvlon/BG1.png');}
+     20% {background-image: url('images/marvlon/BG2.png');}
+     39% {background-image: url('images/marvlon/BG2.png');}
+     40% {background-image: url('images/marvlon/BG3.png');}
+     59% {background-image: url('images/marvlon/BG3.png');}
+     60% {background-image: url('images/marvlon/BG4.png');}
+     79% {background-image: url('images/marvlon/BG4.png');}
+     80% {background-image: url('images/marvlon/BG6.png');}
+     99% {background-image: url('images/marvlon/BG6.png');}
+     100% {background-image: url('images/marvlon/BG1.png');}
+  }
+  .opp_bg {
+    -webkit-animation: changeBG 20s infinite;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 530px;
+    height: 633px;
+  }
+  @-webkit-keyframes moveShadow
+  {
+     0% {right: -67%;}
+     5% {right: 7%;}
+     15% {right: 7%;}
+     20% {right: -67%;}
+     25% {right: 7%;}
+     35% {right: 7%;}
+     40% {right: -67%;}
+     45% {right: 7%;}
+     55% {right: 7%;}
+     60% {right: -67%;}
+     65% {right: 7%;}
+     75% {right: 7%;}
+     80% {right: -67%;}
+     85% {right: 7%;}
+     95% {right: 7%;}
+     100% {right: -67%;}
+  }
+  .opp_shadow {
+    position: absolute;
+    top: 62%;
+    right: 7%;
+    width: 50%;
+    height:10%;
+    -webkit-animation: moveShadow 10s infinite;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+    filter:blur(5px);
+  }
+  @-webkit-keyframes changeImage
+  {
+     0% {background-image: url('images/marvlon/for_portfolio-04.png');}
+     19% {background-image: url('images/marvlon/for_portfolio-04.png');}
+     20% {background-image: url('images/marvlon/for_portfolio-10.png');}
+     39% {background-image: url('images/marvlon/for_portfolio-10.png');}
+     40% {background-image: url('images/marvlon/for_portfolio-06.png');}
+     59% {background-image: url('images/marvlon/for_portfolio-06.png');}
+     60% {background-image: url('images/marvlon/for_portfolio-09.png');}
+     79% {background-image: url('images/marvlon/for_portfolio-09.png');}
+     80% {background-image: url('images/marvlon/for_portfolio-08.png');}
+     99% {background-image: url('images/marvlon/for_portfolio-08.png');}
+     100% {background-image: url('images/marvlon/for_portfolio-04.png');}
+  }
+  @-webkit-keyframes moveImage
+  {
+     0% {right: -60%;}
+     5% {right: 0%;}
+     15% {right: 0%;}
+     20% {right: -60%;}
+     25% {right: 0%;}
+     35% {right: 0%;}
+     40% {right: -60%;}
+     45% {right: 0%;}
+     55% {right: 0%;}
+     60% {right: -60%;}
+     65% {right: 0%;}
+     75% {right: 0%;}
+     80% {right: -60%;}
+     85% {right: 0%;}
+     95% {right: 0%;}
+     100% {right: -60%;}
+  }
+  .opp_image {
+    position: absolute;
+    top: 17%;
+    right: 0%;
+    width: 65%;
+    height: 55%;
+    -webkit-animation: changeImage 10s infinite, moveImage 10s infinite;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+  @-webkit-keyframes changeTypeImage
+  {
+     0% {background-image: url('images/marvlon/typeImage_PL.png');}
+     21% {background-image: url('images/marvlon/typeImage_PL.png');}
+     22% {background-image: url('images/marvlon/typeImage_BS.png');}
+     41% {background-image: url('images/marvlon/typeImage_BS.png');}
+     42% {background-image: url('images/marvlon/typeImage_HM.png');}
+     61% {background-image: url('images/marvlon/typeImage_HM.png');}
+     62% {background-image: url('images/marvlon/typeImage_SP.png');}
+     81% {background-image: url('images/marvlon/typeImage_SP.png');}
+     82% {background-image: url('images/marvlon/typeImage_UD.png');}
+     100% {background-image: url('images/marvlon/typeImage_UD.png');}
+  }
+  .opp_type_image {
+    position: absolute;
+    top: 22.8%;
+    left: 2%;
+    width: 36%;
+    height: 14%;
+    -webkit-animation: changeTypeImage 10s infinite;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  @-webkit-keyframes changeType
+  {
+     0% {content:'PL';}
+     21% {content:'PL';}
+     22% {content:'BS';}
+     41% {content:'BS';}
+     42% {content:'HM';}
+     61% {content:'HM';}
+     62% {content:'SP';}
+     81% {content:'SP';}
+     82% {content:'UD';}
+     100% {content:'UD';}
+  }
+  .opp_type::before {
+    -webkit-animation: changeType 10s infinite;
+    content: "PL";
+  }
+  .opp_type {
+    position: absolute;
+    color: white;
+    font-size: calc(1060px / 2 * 0.05);
+    font-weight: bold;
+    text-align: center;
+    top: 30%;
+    left: 5%;
+    width: 8%;
+  }
+  @-webkit-keyframes changeName
+  {
+     0% {content:'Life Eater';}
+     21% {content:'Life Eater';}
+     22% {content:'Angry Bear';}
+     41% {content:'Angry Bear';}
+     42% {content:'Key Master';}
+     61% {content:'Key Master';}
+     62% {content:'Nille the Watchman';}
+     81% {content:'Nille the Watchman';}
+     82% {content:'Headless';}
+     100% {content:'Headless';}
+  }
+  .opp_name::before {
+    -webkit-animation: changeName 10s infinite;
+    content: "Life Eater";
+  }
+  @-webkit-keyframes changeNamefontSize
+  {
+     0% {font-size: calc(1060px / 2 * 0.03);;}
+     61% {font-size: calc(1060px / 2 * 0.03);;}
+     62% {font-size: calc(1060px / 2 * 0.022);;}
+     81% {font-size: calc(1060px / 2 * 0.022);}
+     82% {font-size: calc(1060px / 2 * 0.03);;}
+     100% {font-size: calc(1060px / 2 * 0.03);;}
+  }
+  .opp_name {
+    position: absolute;
+    color: white;
+    font-size: calc(1060px / 2 * 0.03);
+    font-weight: 600;
+    text-align: center;
+    top: 30%;
+    width: 24%;
+    left: 12%;
+    -webkit-animation: changeNamefontSize 10s infinite;
+  }
+  .opp_power_text {
+    position: absolute;
+    width: 30%;
+    color: white;
+    font-size: calc(1060px / 2 * 0.03);
+    font-weight: 600;
+    text-align: center;
+    top: 39%;
+    left:5%;
+  }
+  @-webkit-keyframes changePower
+  {
+     0% {content:'3';}
+     21% {content:'3';}
+     22% {content:'9';}
+     41% {content:'9';}
+     42% {content:'1';}
+     61% {content:'1';}
+     62% {content:'6';}
+     81% {content:'6';}
+     82% {content:'4';}
+     100% {content:'4';}
+  }
+  .opp_power::before {
+    -webkit-animation: changePower 10s infinite;
+    content: "3";
+  }
+  .opp_power {
+    position: absolute;
+    width: 30%;
+    color: white;
+    font-size: calc(1060px / 2 * 0.2);
+    font-weight: 900;
+    text-align: center;
+    top: 48%;
+    left: 5%;
+  }
+  @-webkit-keyframes changeContent
+  {
+     0% {content:'';}
+     21% {content:'';}
+     22% {content:'';}
+     41% {content:'';}
+     42% {content:'When meet:\aGuide to the next area';}
+     61% {content:'When meet:\aGuide to the next area';}
+     62% {content:"When outcomed:\aTracking to the end";}
+     81% {content:"When outcomed:\aTracking to the end";}
+     82% {content:'';}
+     100% {content:'';}
+  }
+  .opp_content::before {
+    -webkit-animation: changeContent 10s infinite;
+    content: "";
+    white-space: pre-line;
+  }
+  .opp_content {
+    /* display: none; */
+    position: absolute;
+    width: 33%;
+    color: white;
+    font-size: calc(1060px / 2 * 0.03);
+    font-weight: 400;
+    line-height: 140%;
+    text-align: center;
+    top: 57%;
+    left: 3.5%;
+  }
+
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
+    .card_ribbon {
+      left: calc(calc(100vw - 276px) / 1960);
+      top: calc(calc(100vw - 276px) / -98);
+    }
+    .card_size {
+      position: absolute;
+      left: calc(calc(100vw - 276px) / -10);
+      top: calc(calc(100vw - 276px) / -10.5);
+    }
+    .card_title {
+      font-size: calc(calc(100vw - 276px) / 50);
+      top: calc(calc(100vw - 276px) / 90);
+    }
+    .card_level {
+      font-size: calc(calc(100vw - 276px) / 60);
+      top: calc(calc(100vw - 276px) / 22);
+    }
+    .card_content {
+      font-size: calc(calc(100vw - 276px) / 45);
+      line-height: calc(calc(100vw - 276px) / 36);
+      top: calc(calc(100vw - 276px) / 4.7);
+    }
+    .card_content_oneline {
+      font-size: calc(calc(100vw - 276px) / 45);
+      top: calc(calc(100vw - 276px) / 4.2);
+    }
+    .card_content_fourline {
+      font-size: calc(calc(100vw - 276px) / 55);
+      line-height: calc(calc(100vw - 276px) / 46);
+    }
+
+    .opp_bg {
+      width: 100%;
+      height: calc(calc(100vw - 196px) / 2 * 1.194);
+    }
+    .opp_type {
+      font-size: calc(calc(100vw - 196px) / 2 * 0.05);
+    }
+    @-webkit-keyframes changeNamefontSize
+    {
+       0% {font-size: calc(calc(100vw - 196px) / 2 * 0.03);;}
+       61% {font-size: calc(calc(100vw - 196px) / 2 * 0.03);;}
+       62% {font-size: calc(calc(100vw - 196px) / 2 * 0.022);;}
+       81% {font-size: calc(calc(100vw - 196px) / 2 * 0.022);}
+       82% {font-size: calc(calc(100vw - 196px) / 2 * 0.03);;}
+       100% {font-size: calc(calc(100vw - 196px) / 2 * 0.03);;}
+    }
+    .opp_name {
+      font-size: calc(calc(100vw - 196px) / 2 * 0.03);
+      -webkit-animation: changeNamefontSize 10s infinite;
+    }
+    .opp_power_text {
+      font-size: calc(calc(100vw - 196px) / 2 * 0.03);
+    }
+    .opp_power {
+      font-size: calc(calc(100vw - 196px) / 2 * 0.2);
+    }
+    .opp_content {
+      font-size: calc(calc(100vw - 196px) / 2 * 0.03);
+    }
+  }
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+    .title_text_image {
+      width:85%;
+    }
+    /* .content_first_space {
+    margin-top: 200px;
+    } */
+  }
+
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_text_image {
+      width:100%;
+      top: 60px;
+    }
+    .title_image {
+      top: 130px;
+      width:65%;
+      height:auto;
+    }
+    .content_first_space {
+      margin-top: 100px;
+    }
+    .quote_left {
+      transform: scale(70%) translate(calc(-70px), -40px);
+      -webkit-transform: scale(70%) translate(calc(-70px), -40px);
+    }
+    .quote_right {
+      transform: scale(70%) translate(calc(100vw + 10px), 70px);
+      -webkit-transform: scale(70%) translate(calc(100vw + 10px), 70px);
+    }
+
+    .card_ribbon {
+      left: calc(calc(100vw - 80px) / 1960 * 2);
+      top: calc(calc(100vw - 80px) / -98 * 2);
+    }
+    .card_size {
+      position: absolute;
+      left: calc(calc(100vw - 80px) / -10 * 2);
+      top: calc(calc(100vw - 80px) / -10.5 * 2);
+    }
+    .card_title {
+      font-size: calc(calc(100vw - 80px) / 50 * 2);
+      top: calc(calc(100vw - 80px) / 90 * 2);
+    }
+    .card_level {
+      font-size: calc(calc(100vw - 80px) / 60 * 2);
+      top: calc(calc(100vw - 80px) / 22 * 2);
+    }
+    .card_content {
+      font-size: calc(calc(100vw - 80px) / 45 * 2);
+      line-height: calc(calc(100vw - 80px) / 36 * 2);
+      top: calc(calc(100vw - 80px) / 4.7 * 2);
+    }
+    .card_content_oneline {
+      font-size: calc(calc(100vw - 80px) / 45 * 2);
+      top: calc(calc(100vw - 80px) / 4.2 * 2);
+    }
+    .card_content_fourline {
+      font-size: calc(calc(100vw - 80px) / 55 * 2);
+      line-height: calc(calc(100vw - 80px) / 46 * 2);
+    }
+
+    .opp_bg {
+      width: 100%;
+      height: calc(calc(100vw - 60px) * 1.194);
+    }
+    .opp_type {
+      font-size: calc(calc(100vw - 60px) * 0.05);
+    }
+    @-webkit-keyframes changeNamefontSize
+    {
+       0% {font-size: calc(calc(100vw - 60px) * 0.03);;}
+       61% {font-size: calc(calc(100vw - 60px) * 0.03);;}
+       62% {font-size: calc(calc(100vw - 60px) * 0.022);;}
+       81% {font-size: calc(calc(100vw - 60px) * 0.022);}
+       82% {font-size: calc(calc(100vw - 60px) * 0.03);;}
+       100% {font-size: calc(calc(100vw - 60px) * 0.03);;}
+    }
+    .opp_name {
+      font-size: calc(calc(100vw - 60px) * 0.03);
+      -webkit-animation: changeNamefontSize 10s infinite;
+    }
+    .opp_power_text {
+      font-size: calc(calc(100vw - 60px) * 0.03);
+    }
+    .opp_power {
+      font-size: calc(calc(100vw - 60px) * 0.2);
+    }
+    .opp_content {
+      font-size: calc(calc(100vw - 60px) * 0.03);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="nav">
+    <ul>
+      <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
+      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+      <li><a href="index.html#body_cont">Portfolio</a></li>
+      <li><a id ="contact_button">Contact</a></li>
+    </ul>
+    <ul>
+      <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+    </ul>
+  </div>
+  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+  <div class="title_container">
+    <div class="content_container">
+      <div class="title_description ">
+        <img class ="title_text_image" src="images/marvlon/Marvlon_logo_EN.png">
+        <!-- <div class="centered_text">
+          <img class ="title_text_image" src="images/marvlon/Marvlon_logo_EN.png">
+        </div> -->
+        <!-- <h1>Marvlon</h1> -->
+        <p class="content_tiny_space">
+          <!-- 마블론은 모바일을 기반으로 하는 카드 전략 게임이다. -->
+        </p>
+      </div>
+      <!-- <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button content_half_space">Prototype <i class="fas fa-flask"></i></div></a> -->
+    </div>
+    <div class="centered_text">
+      <img class ="title_image" src="images/marvlon/title_image.png">
+    </div>
+  </div>
+
+  <div class="content_container content_first_space">
+    <h2 class="centered_text_noCenter">Project overview</h2>
+    <div class="four_four_two_grid grid_gap_40">
+      <div class="two_grid_content project_icon_container content_small_space centered_image_noCenter">
+        <img class="project_icon" src="images/all/icon_role.png">
+        <div>
+          <h4>Role</h4>
+          <p>Visual · UX design, Illustrator</p>
+        </div>
+      </div>
+      <div class="two_grid_content project_icon_container content_small_space centered_image_noCenter">
+        <img class="project_icon" src="images/all/icon_duration.png">
+        <div>
+          <h4>Duration</h4>
+          <p>June 2021 – Present</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="four_two_one_grid grid_gap_10 content_space" style="font-size:0;">
+  <img class="two_grid_content" src="images/daydream/game1.png">
+  <img class="two_grid_content" src="images/daydream/game4.png">
+</div> -->
+<!-- <img class="content_space" src="images/marvlon/map_drawing_reColoring_EN.jpg"> -->
+
+<div class="content_container content_space">
+  <div class="four_four_two_grid grid_gap_10">
+    <div class="two_grid_content content_more_space">
+      <h2 class="insideH2Line">Target audience</h2>
+      <p class="content_10_space">
+        It is a turn-based combat method, not a real-time battle, targeting people who enjoy strategic games while relaxing slowly. It focuses on collection and strategy for those who like to set up and collect fantasy. It is also built on vertical mobile, so anyone can enjoy the game easily with one hand.
+      </p>
+    </div>
+    <img class="content_half_space two_grid_content" src="images/marvlon/targetUser.png">
+  </div>
+</div>
+
+<div class="content_space"
+style="
+width: 100%;
+height: 500px;
+background-image: url('images/marvlon/map_drawing_reColoring_EN.jpg');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position:center;
+background-size: 110%;
+"></div>
+
+
+
+<div class="content_container content_space">
+  <h2>User interface</h2>
+  <!-- <h3 class="content_10_space">Key functions</h3> -->
+  <div class="four_four_two_grid grid_gap_10 content_tiny_space">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame1.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame2.jpg">
+    <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame3.jpg"> -->
+    <img class="one_grid_content" src="images/marvlon/pages/Frame4.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame5.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame6.jpg">
+    <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame7.jpg"> -->
+    <img class="one_grid_content" src="images/marvlon/pages/Frame8.jpg">
+    <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame9.jpg"> -->
+    <img class="one_grid_content" src="images/marvlon/pages/Frame10.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame11.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame12.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame17.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame16.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame15.jpg">
+    <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame13.jpg">
+    <img class="one_grid_content" src="images/marvlon/pages/Frame14.jpg"> -->
+  </div>
+  <h2 class="content_space text_above_box">Visual design</h2>
+</div>
+
+<div class="gray_box">
+  <div class="content_container">
+    <h3 class="">Card design</h3>
+    <p class="content_10_space">
+      It contains more than six information in a small card, including the name, type, size, rank, illustration, and decription. The type, size, and rank are graphicized and placed at the top, and the illustration and effect are emphasized.
+    </p>
+    <div class="four_four_two_grid grid_gap_40 content_10_space">
+      <div class="card_container tilt">
+        <img src="images/marvlon/card_back.png">
+        <img class="card_ribbon" src="images/marvlon/card_ribbon.png">
+        <img class="card_size" src="images/marvlon/card-18.png">
+        <div class="card_title" style="color:#F27E4C;">Leader's Treasure</div>
+        <div class="card_level">★★</div>
+        <div class="card_content card_content_fourline">
+          Defeat power 4.<br>After defeat, get <i>disposable</i> and<br><i>trained(3)</i>
+        </div>
+        <img class="card_image reverse_tilt" src="images/marvlon/card_image.png">
+      </div>
+      <div class="card_container tilt">
+        <img src="images/marvlon/card_back.png">
+        <img class="card_ribbon" src="images/marvlon/card_ribbon.png">
+        <img class="card_size" src="images/marvlon/card-20.png">
+        <div class="card_title" style="color:#F27E4C;">War Hammer</div>
+        <div class="card_level">★</div>
+        <div class="card_content card_content_oneline">
+          Defeat power 2, 8
+        </div>
+        <img class="card_image reverse_tilt" src="images/marvlon/card-22.png">
+      </div>
+      <div class="card_container tilt">
+        <img src="images/marvlon/card_back.png">
+        <img class="card_ribbon" src="images/marvlon/card_ribbon.png">
+        <img class="card_size" src="images/marvlon/card-17.png">
+        <div class="card_title" style="color: #6AD1D1;">Iron Boots</div>
+        <div class="card_level">★★</div>
+        <div class="card_content card_content_oneline">
+          Armor 4
+        </div>
+        <img class="card_image reverse_tilt" src="images/marvlon/card-23.png">
+      </div>
+      <div class="card_container tilt">
+        <img src="images/marvlon/card_back.png">
+        <img class="card_ribbon" src="images/marvlon/card_ribbon.png">
+        <img class="card_size" src="images/marvlon/card-17.png">
+        <div class="card_title" style="color: #6AD1D1;">Symbol of Luck</div>
+        <div class="card_level">★★</div>
+        <div class="card_content card_content_fourline">
+          <i>Auto, disposable:</i><br>After death, resurrect with 1 health.<br> Then overcome
+        </div>
+        <img class="card_image reverse_tilt" src="images/marvlon/card-21.png">
+      </div>
+    </div>
+
+    <div class="four_four_two_grid grid_gap_40 content_half_space">
+      <div class="two_grid_content content_more_space">
+        <h3>Opponents</h3>
+        <p class="content_10_space">
+          Enemies are made up of various type, and name tags are designed to fit their respective type. And also the monster's power are displayed large, so it's designed to be able to recognize the two most important information in gameplay.
+        </p>
+      </div>
+      <div class="opp_container content_half_space two_grid_content">
+        <div class="opp_bg"></div>
+        <div class="opp_shadow"></div>
+        <div class="opp_image"></div>
+        <div class="opp_type_image"></div>
+        <div class="opp_type"></div>
+        <div class="opp_name"></div>
+        <div class="opp_power_text">Power</div>
+        <div class="opp_power"></div>
+        <div class="opp_content"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<img src="images/marvlon/map_illustration.jpg">
+
+<!-- <div style="background-image:url('images/marvlon/card-24.jpg'); height:300px; background-size: cover;
+background-position: center;
+background-repeat: no-repeat;"></div> -->
+
+
+<div class="content_container content_space">
+  <div class="four_four_two_grid">
+    <h2 class="two_grid_content content_space">Trailer Video</h2>
+    <div class="two_grid_content">
+      <video controls src="images/marvlon/trailer2.mp4" type="video/mp4"></video>
+    </div>
+  </div>
+</div>
+
+
+<div class="button_container content_container_full_mobile content_space">
+  <div class="inside_container">
+    <h2 class="noH2Line">View the Marvlon gamepage</h2>
+    <div class="content_half_space"><a href="https://sangwoohahn.com/marvlon" class="noUnderline" target="_blank"><div class="round_button">Marvlon (KR) <i class="fas fa-external-link-alt"></i></div></a></div>
+  </div>
+</div>
+
+<div id="copyright_cont" class="content_space"></div>
+
+<script>
+$(function(){
+  $('.tilt').universalTilt({
+    settings: {
+      base: 'element',
+      reset: true,
+      mobile: true,
+      shine: false,
+      'shine-opacity': 0.15,
+      'shine-save': false,
+      max: 25,
+      perspective: 600,
+      scale: 1.13,
+      disabled: null,
+      reverse: false,
+      speed: 1000,
+      easing: 'cubic-bezier(.03,.98,.52,.99)',
+      exclude: /(iPod|iPhone|iPad|Android)/
+    },
+    callbacks: {
+      // callbacks...
+    }
+  });
+  $('.reverse_tilt').universalTilt({
+    settings: {
+      base: 'element',
+      reset: true,
+      mobile: true,
+      shine: true,
+      'shine-opacity': 0.45,
+      'shine-save': true,
+      max: 40,
+      perspective: 1200,
+      scale: 1.2,
+      disabled: null,
+      reverse: true,
+      speed: 1200,
+      easing: 'cubic-bezier(.03,.98,.52,.99)',
+      exclude: /(iPod|iPhone|iPad|Android)/
+    },
+    callbacks: {
+      // callbacks...
+    }
+  });
+});
+</script>
+</body>
+</html>
