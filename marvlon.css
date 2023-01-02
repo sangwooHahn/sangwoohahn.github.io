@@ -643,8 +643,8 @@ video {
   }
   .process {
     position: relative;
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background-color:#764F34;
     --all:6px;
     -webkit-mask:
@@ -661,7 +661,7 @@ video {
     width: 40px;
     height: auto;
     margin: auto;
-    top: 10px;
+    top: 7px;
   }
   .process_container p {
     padding-top: 10px;
@@ -669,7 +669,7 @@ video {
   .process_line {
     height: 10px;
     width: 300px;
-    top: -75px;
+    top: -68px;
     left: 0px;
   }
 
