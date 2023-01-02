@@ -426,6 +426,10 @@
     left: 3.5%;
   }
 
+  .map_illustration {
+    content: url("images/marvlon/map_illustration.jpg");
+  }
+
 
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
@@ -582,6 +586,10 @@
     }
     .opp_content {
       font-size: calc(calc(100vw - 60px) * 0.03);
+    }
+
+    .map_illustration {
+      content: url("images/marvlon/map_illustration_mobile.jpg");
     }
   }
 </style>
@@ -769,11 +777,42 @@ background-size: 110%;
   </div>
 </div>
 
-<img src="images/marvlon/map_illustration.jpg">
+<img class="map_illustration">
 
 <!-- <div style="background-image:url('images/marvlon/card-24.jpg'); height:300px; background-size: cover;
 background-position: center;
 background-repeat: no-repeat;"></div> -->
+
+<div class="content_container content_space ">
+  <h2 class="noH2Line text_above_box">Webpage design</h2>
+</div>
+
+<div class="gray_box">
+<div class="content_container">
+  <div class="webpage_grid grid_gap_20">
+    <div>
+      <h3 class="content_small_space">Desktop</h3>
+      <div class ="webpage_contaioner_desktop content_small_space">
+        <div class ="webpage_contaioner_top_desktop">
+          <div></div><div></div><div></div>
+        </div>
+        <div>
+          <img src="images/marvlon/webpage_desktop.jpg">
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="content_small_space">Mobile</h3>
+      <div class ="webpage_contaioner_mobile content_small_space">
+        <div>
+          <img src="images/marvlon/webpage_mobile.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="content_half_space centered_text">*Scroll on the screen to see the webpage</p>
+</div>
+</div>
 
 
 <div class="content_container content_space">
