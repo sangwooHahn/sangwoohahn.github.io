@@ -32,6 +32,10 @@
     $(function(){
       $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
     });
+    $(document).ready(function(){ /* control all page of the special colors*/
+      var main_color = ('#fafafa');
+      $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="' + main_color + '>');
+    });
   </script>
   <style>
   h1 {
