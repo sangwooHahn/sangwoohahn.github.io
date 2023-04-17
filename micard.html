@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sangwoo Portfolio</title>
+  <title>Sangwoo Hahn Design</title>
   <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
@@ -18,12 +18,12 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#EF258D">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
@@ -48,26 +48,22 @@
   });
 
   $(document).ready(function(){ /* control all page of the special colors*/
-    var main_color = ('#2284CA');
-    var sub_color = ('#2126B2');
+    var main_color = ('#EF258D');
+    var sub_color = ('#1E2AAD');
     var white_color = ('#fafafa');
-    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="#1E1E1E">');
     $('html').css('background-color',main_color);
     $('h2').css('color',main_color);
-    $('h3').css('color',main_color);
-    $('h4').css('color',sub_color);
-    $('.go_back div').css('color',main_color);
-    $('.go_back').css('border-left', '2.5px solid '+main_color);
-    $('.go_back').css('border-top', '2.5px solid '+main_color);
-    $('.nav').css('background-color',main_color);
-    $('.title_container').css('background-color',main_color);
-    $('.button_container').css('background-color',main_color);
-    $('.button_container h2').css('color',white_color);
-    $('.color_box').css('background-color',main_color);
-    $('.color_box > div > h3').css('color',white_color);
-    $('.title_button').css('background-color',sub_color);
-    $('.round_button').css('background-color',sub_color);
+    $('h3').css('color','#1c1c1c');
+    // $('.nav').css('background-color', '#EF258DDD');
+    $('.title_container').css('background-color', main_color);
+    $('.title_text_container').css('background-color',sub_color);
+    // $('.footer_container_bar').css('background-color',sub_color);
+    $('.footer_container').css('background-color',sub_color);
+    $('.footer_container h2').css('color',white_color);
+    $('.footer_container p').css('color',white_color);
     $('.contact_container div h3').css('color',white_color);
+    $('#copyright_cont').css('background-color',main_color);
   });
   window.open_about = function() {
     localStorage.setItem("click_open", "about_show");
@@ -76,17 +72,18 @@
   <style>
   .title_image {
     position: relative;
-    left:calc(calc(100vw - 1100px) * 0.5 + 430px - 90px);
-    width: 430px;
+    /* left:calc(calc(100vw - 1100px) * 0.5 + 430px - 90px); */
+    left: -20px;
+    width: 460px;
     height: auto;
-    top: 20px;
+    top: 50px;
   }
   .title_image_overlap {
     position: fixed;
-    top: 470px;
+    top: 202px;
     left:calc(calc(100vw - 1100px) * 0.5 + 180px);
     width: auto;
-    height: 640px;
+    height: 800px;
     animation-name: overlap_animation;
     animation-duration: 5s;
     animation-timing-function: linear;
@@ -101,368 +98,291 @@
     75% {transform: translate(30px, 0px);}
     100% {transform: translate(0px, 0px);}
   }
-  .content_first_space {
-      margin-top: 440px;
+  #three_grid_container {
+    grid-gap: 60px;
   }
-  .grayText_button {
-    padding: 0;
-    color:#999;
-    background: linear-gradient(to right, #999 50%, rgba(0,0,0,0) 50%);
-    background-size: 0% 2px;
-    background-position: left bottom;
-    background-repeat: no-repeat;
-  }
-  .grayText_button:hover {
-    background-size: 200% 2px;
+  #three_grid_container img {
+    border-radius: 5px;
   }
 
+
   @media screen and (min-width: 600px) and  (max-width: 1256px) {
-    /* .title_image {
-      left: calc(calc(100vw - 1000px) * 0.5 + 600px);
-    } */
-    .title_image_overlap {
-      /* left: calc(calc(100vw - 1000px) * 0.5 + 600px - 30vh); */
-    }
+
   }
 
 
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-    /* .title_image {
-      left: calc(calc(100vw - 1100px) * 0.5 + 460px);
-      right: 0;
-      top: 270px;
-      bottom: calc(calc(400px - 55vh) * -1);
-      height: calc(30vh + 180px);
-      width: auto;
-    } */
-    .title_image_overlap {
-      /* position: fixed;
-      left: calc(calc(100vw - 1100px) * 0.5 + 430px - 20vh);
-      bottom: calc(calc(90px - 10vh) * -1);
-      height: calc(55vh + 100px);
-      width: auto; */
-    }
+
   }
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
     .title_image {
-      left:calc(calc(100vw - 1100px) * 0.5 + 300px + 110px);
+      left:calc(calc(100vw - 1100px) * 0.5 + 300px + 80px);
       width: 300px;
       top:30px;
     }
     .title_image_overlap {
       position: fixed;
-      top: 420px;
+      top: 320px;
       left:calc(calc(100vw - 1100px) * 0.5 + 300px);
-      height: 450px;
+      height: 460px;
     }
-    .content_first_space {
-      margin-top: 200px;
-    }
-    .quote_left {
-      transform: scale(70%) translate(calc(-70px), -40px);
-      -webkit-transform: scale(70%) translate(calc(-70px), -40px);
-    }
-    .quote_right {
-      transform: scale(70%) translate(calc(100vw + 10px), 270px);
-      -webkit-transform: scale(70%) translate(calc(100vw + 10px), 270px);
+    #three_grid_container {
+      grid-gap: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 
 </style>
 </head>
-<body>
+<body onscroll="onScroll()">
   <div class="nav">
     <ul>
       <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
-      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-      <li><a href="index.html#body_cont">Portfolio</a></li>
-      <li><a id ="contact_button">Contact</a></li>
     </ul>
     <ul>
+      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+      <li><a id ="contact_button">Contact</a></li>
       <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
     </ul>
   </div>
-  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
 
   <div class="title_container">
-    <div class="content_container">
-      <div class="title_description">
-        <h1>Micard</h1>
-        <p class="content_tiny_space">
-          Micard is an app provides integrated services for MICA students.
-          It provides services that focus on life in school.
-        </p>
+    <div class="content_small_container two_two_one_grid">
+      <div class="title_content">
+        <h1>MICARD</h1>
+        <p>Interactive Design</p>
+        <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button">Prototype <i class="fas fa-external-link-alt"></i></div></a>
       </div>
-    </div>
-    <div class="button_container content_half_space">
-      <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="round_button">Prototype <i class="fas fa-flask"></i></div></a>
-    </div>
 
-    <img class ="title_image_overlap" src="images/micard/title2.png">
-    <img class ="title_image" src="images/micard/title1.png">
-
-    <!-- <div style="text-align:center;"> -->
-    <!-- </div> -->
+      <img class ="title_image_overlap" src="images/micard/title2.png">
+      <img class ="title_image" src="images/micard/title1.png">
+    </div>
   </div>
 
-  <div class="content_container content_first_space">
-    <div class="quote_left">
-      <div class="quotes" style="width:80px; height:80px; position:absolute; border-radius: 0 5px 5px 5px; transform: translate(0px, 40px);"></div>
-      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 0 5px 5px 5px; transform: translate(90px, 40px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 100% 0 0 0; transform: translate(0px, -10px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 100% 0 0 0; transform: translate(90px, -10px);"></div>
-    </div>
-    <div class="quote_right">
-      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 5px 5px 0 5px; transform: translate(-80px, 20px);"></div>
-      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 5px 5px 0 5px; transform: translate(-170px, 20px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 0 0 100% 0; transform: translate(-40px, 100px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 0 0 100% 0; transform: translate(-130px, 100px);"></div>
-    </div>
-    <div class="quote_container">
-      <h2 class="noH2Line">Students always have two things in their pockets. A smartphone and a student ID.</h2>
-      <p class="content_tiny_space">
-        MICA students' lifestyles are stereotyped. Wake up in the dormitory in the morning, attend the class, have a meal at lunchtime with a sandwich or a meal plan, and then go back to class.
-        And after class, come back to the dormitory or stay in the studio to do homework.
-        In all this process, students always carry their student ID cards. They should always show their student ID when they enter the building or get the food.
-        But students don't only have student cards in their pockets. A smartphone is always there too.
-        Therefore, if all the functions of student ID are transfer to their smartphone, the pocket will be lighter.
+  <div class="title_text_container">
+    <div class="content_small_container">
+      <p>
+        MICARD app can be a solution for MICA students to streamline their daily routines.
+        Instead of carrying a physical student ID card, which is required to enter buildings or purchase meals,
+        students can now use their smartphones to access all necessary functions, making their pockets lighter and their lives more convenient.
       </p>
     </div>
   </div>
 
-  <div class="four_two_one_grid grid_gap_10 content_space">
-    <img class="two_grid_content" src="images/micard/mockup1.jpg">
-    <img class="two_grid_content" src="images/micard/mockup2.jpg">
-  </div>
-  <img class="content_10_space" src="images/micard/mockup3.jpg">
+  <div class="project_overview_container">
+    <div class="content_small_container">
+      <h3>Project Overview</h3>
+      <div class="four_four_one_grid grid_gap_40 content_space">
 
-  <div class="content_container content_more_space">
-    <h2>Project overview</h2>
-    <div class="four_four_two_grid grid_gap_40">
-      <div class="two_grid_content project_icon_container content_small_space">
-        <img class="project_icon" src="images/all/icon_role.png">
-        <div>
-          <h4>Role</h4>
-          <p>UX Research, Visual Design, Prototyping</p>
+        <div class="project_overview_content">
+          <img src="images/all/icon_role.png">
+          <div>
+            <p class="content_10_space"><b>Role</b></p>
+            <p class="content_10_space">UX/UI Designer</p>
+          </div>
         </div>
-      </div>
-      <div class="two_grid_content project_icon_container content_small_space">
-        <img class="project_icon" src="images/all/icon_duration.png">
-        <div>
-          <h4>Duration</h4>
-          <p>October 2019 – December 2019</p>
+
+        <div class="project_overview_content">
+          <img src="images/all/icon_duration.png">
+          <div>
+            <p class="content_10_space"><b>Duration</b></p>
+            <p class="content_10_space">Oct.2019 – Dec.2019</p>
+          </div>
         </div>
+
+        <div class="project_overview_content">
+          <img src="images/all/icon_goal.png">
+          <div>
+            <p class="content_10_space"><b>Goal</b></p>
+            <p class="content_10_space">Design of an integrated app to enhance student convenience</p>
+          </div>
+        </div>
+
+        <div class="project_overview_content">
+          <img src="images/all/icon_audience.png">
+          <div>
+            <p class="content_10_space"><b>Target audience</b></p>
+            <p class="content_10_space">MICA Students, and faculties</p>
+          </div>
+        </div>
+
       </div>
     </div>
+  </div>
 
-    <!-- <hr> -->
 
-    <h2 class="content_more_space">Current problems</h2>
-    <div class="four_two_one_grid grid_gap_20">
-      <div class="two_grid_content content_small_space">
-        <h3>6 different services</h3>
-        <p class="content_10_space">
-          The school provides various services. Most use IDs, but some work with smartphones.
-          To use this services, several applications must be downloaded.
-          There are various services such as entering the building, eating, taking a bus, and doing laundry.
+  <div class="intro_image_container">
+    <div class="two_two_one_grid grid_gap_5">
+      <img class="image_top_left_border darkImage" src="images/micard/mockup1.jpg">
+      <img class="image_top_right_border darkImage" src="images/micard/mockup2.jpg">
+    </div>
+    <img class="image_full_border content_5_space darkImage" src="images/micard/mockup3.jpg">
+  </div>
+
+
+  <div class="light_gray_container content_180_space">
+    <div class="content_container two_two_one_grid grid_gap_40">
+
+      <div>
+        <h2>Why MICARD?</h2>
+        <p>MICA provides various services, some requiring physical IDs while others use smartphones.
+          However, accessing all these services requires multiple apps.
+          To simplify the process, MICA is developing MICARD, an integrated app that consolidates all these services into one platform.
         </p>
       </div>
-      <img class="two_grid_content" src="images/micard/problem.png">
-    </div>
 
-    <h2 class="content_more_space">User research</h2>
-    <h3 class="content_small_space">Persona scenario</h3>
-
-    <div class="persona_grid grid_gap_10">
-      <div class="one_two_grid">
-        <img style="width:200px" class="content_small_space" src="images/micard/persona1.jpg">
-        <div>
-          <h4 class="content_small_space">Dormitory resident</h4>
-          <p class="content_10_space">He is a student living in a dormitory. He has to show his ID every time he enters the dormitory.
-            He wants to check the empty washing machine instead of going to the laundry room.
-            He wants to make mobile payments both in laundry and vending machines.
-            And he wants to set the timer automatically whenever he do the laundry.
-          </p>
-        </div>
+      <div class="light_gray_image_container">
+        <img src="images/micard/problem.png">
       </div>
-      <img src="images/micard/persona_scenario_1.png">
-    </div>
 
-    <div class="persona_grid grid_gap_10 content_space">
-      <div class="one_two_grid">
-        <img style="width:200px" class="content_small_space" src="images/micard/persona2.jpg">
-        <div>
-          <h4 class="content_small_space">Night worker</h4>
-          <p class="content_10_space">She does her homework in the studio until late at night and uses a shuttle to go back to her home.
-            She also uses the shuttle to go to the H-mart or restaurant.
-            She wants to check the shuttle schedule and request a shuttle via mobile and check real-time location.
-          </p>
-        </div>
-      </div>
-      <img src="images/micard/persona_scenario_2.png">
-    </div>
-
-    <div class="persona_grid grid_gap_10 content_space">
-      <div class="one_two_grid">
-        <img style="width:200px" class="content_small_space" src="images/micard/persona3.jpg">
-        <div>
-          <h4 class="content_small_space">Cafe Doris lover</h4>
-          <p class="content_10_space">She often buys and eats food at Cafe Doris. She wants to pre-order food and picks it up right away before lunchtime.
-            If she didn’t pre-order the food, she goes directly to Doris to order food and pay with mobile.
-            Sometimes she compares the food and decides to goes to Meyerhoff Dining Hall.
-          </p>
-        </div>
-      </div>
-      <img src="images/micard/persona_scenario_3.png">
     </div>
   </div>
 
-  <div class="gray_box content_space">
+
+  <div class="persona_container content_150_space">
     <div class="content_container">
-      <h3 class="content_small_space">Categorization</h3>
-      <div class="three_two_one_grid grid_gap_20 content_tiny_space">
-        <div class="icon_container">
-          <img class="centered_image" style="width:30%;" src="images/micard/account_icon.png">
-          <h4 class="centered_text">Account</h4>
-          <p class="list_container content_tiny_space centered_image" style="width:55%;">
-            – School ID<br>
-            – 3 different account<br>
-            – Add fund<br>
-            – Transaction history
+      <h3>Persona scenario</h3>
+
+      <div class="three_two_one_grid content_space grid_gap_40">
+        <img src="images/micard/persona_1.jpg">
+        <div>
+          <h4>James Kim</h4>
+          <p class="content_10_space">
+            <b>Age:</b> 22 <br>
+            <b>Occupation:</b> Sophomore at MICA<br>
+            <b>Background:</b> College majoring in Animation major. He is a hard-working student who spends most of his days attending classes, working on assignments, and studying for projects. James often finds himself studying late into the night, either in the library or his studio.
           </p>
         </div>
-        <div class="icon_container">
-          <img class="centered_image" style="width:30%;" src="images/micard/dining_icon.png">
-          <h4 class="centered_text">Dining</h4>
-          <p class="list_container content_tiny_space centered_image" style="width:55%;">
-            – Order food<br>
-            – Pickup food<br>
-            – Purchase food<br>
-            – Today’s Menu
-          </p>
-        </div>
-        <div class="icon_container">
-          <img class="centered_image" style="width:30%;" src="images/micard/life_icon.png">
-          <h4 class="centered_text">Life</h4>
-          <p class="list_container content_tiny_space centered_image" style="width:55%;">
-            – Request shuttle<br>
-            – Shuttle schedule<br>
-            – Check laundry<br>
-            – Pay laundry
-          </p>
+        <div>
+          <p><b>Scenario:</b></p>
+          <div class="persona_scenario">
+            <p style="background-color: #2CA949;">Swiping in and out of buildings</p>
+            <p style="background-color: #2CA949;">Checking the availability of Cafe Doris</p>
+            <p style="background-color: #2CA949;">Using vending machines</p>
+            <p style="background-color: #2CA949;">Calling the shuttle</p>
+          </div>
         </div>
       </div>
+
+      <div class="three_two_one_grid content_50_space grid_gap_40">
+        <img src="images/micard/persona_2.jpg">
+        <div>
+          <h4>Sarah Davis</h4>
+          <p class="content_10_space">
+            <b>Age:</b> 20 <br>
+            <b>Occupation:</b> Sophomore at MICA<br>
+            <b>Background:</b> Sarah is a sophomore at MICA who lives in a dormitory on campus. She is originally from New York City and is majoring in graphic design. She enjoys spending time in the studio working on her projects and exploring the city on the weekends.
+          </p>
+        </div>
+        <div>
+          <p><b>Scenario:</b></p>
+          <div class="persona_scenario">
+            <p style="background-color: #EF258D;">Using MICARD as a student ID</p>
+            <p style="background-color: #EF258D;">Ordering food from Cafe Doris</p>
+            <p style="background-color: #EF258D;">Checking laundry status</p>
+            <p style="background-color: #EF258D;">Printing documents</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="three_two_one_grid content_50_space grid_gap_40">
+        <img src="images/micard/persona_3.jpg">
+        <div>
+          <h4>Emily Lee</h4>
+          <p class="content_10_space">
+            <b>Age:</b> 19<br>
+            <b>Occupation:</b> Freshman at MICA<br>
+            <b>Background:</b> Emily is a freshman at MICA who lives on campus in a dormitory. She is from a small town in Ohio and is majoring in painting. Emily loves exploring Baltimore and trying new foods. She usually eats lunch at Cafe Doris on campus, as she loves the variety of options and the convenience of being on campus.
+          </p>
+        </div>
+        <div>
+          <p><b>Scenario:</b></p>
+          <div class="persona_scenario">
+            <p style="background-color: #F3561E;">Ordering food from Cafe Doris</p>
+            <p style="background-color: #F3561E;">Check the pickup time.</p>
+            <p style="background-color: #F3561E;">Add the payment.</p>
+            <p style="background-color: #F3561E;">Charge the insufficient deposit</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <div class="content_container">
+
+  <div class="light_gray_container content_180_space">
+    <div class="content_container two_two_one_grid grid_gap_40">
+
+      <div>
+        <h2>How it designed?</h2>
+        <p>Based on the scenario, the MICARD can be divided into three categories: Account (personal info, campus services, locker reservation),
+          Dining (meal order/pay, menu/time check, MICARD entry), and Life (laundry, shuttle schedule, study space availability).
+        </p>
+      </div>
+
+      <div class="light_gray_image_container">
+        <img src="images/micard/category_icons.png">
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="content_container module_space">
     <h3 class="content_space">User flow</h3>
-    <div class="four_two_one_grid grid_gap_10 content_small_space">
-      <img class="two_grid_content" src="images/micard/account_userFlow.png">
-      <img class="two_grid_content" src="images/micard/dining_userFlow.png">
-    </div>
-    <img class="content_10_space centered_image half_image_full_mobile"src="images/micard/life_userFlow.png">
-    <h3 class="content_space">Wire frame</h3>
-    <img class="content_half_space" src="images/micard/wireframe-1.png">
-    <img src="images/micard/wireframe-2.png">
-    <img src="images/micard/wireframe-3.png">
-    <img src="images/micard/wireframe-4.png">
+    <img class="content_space" src="images/micard/MICARD_Account.png">
+    <img class="content_space" src="images/micard/MICARD_DormLife.png">
+    <img class="content_space" src="images/micard/MICARD_Dining.png">
   </div>
 
-  <div class="content_container">
-    <h2 class="content_space">Key features</h2>
 
-    <div class="four_four_two_grid grid_gap_20 content_small_space">
-      <div class="two_grid_content">
-        <h3 class="content_half_space">Mobile ID</h3>
-        <ul class="content_tiny_space">
-          <li>Easily accessible from the First page.</li>
-          <li>Has a big portrait and a name.</li>
-          <li>Bar code for rental the book in the library.</li>
-          <li>Blinking color circle proves it is not a picture.</li>
-          <li>The color changes everyday to prevent forgery.</li>
-        </ul>
-      </div>
-      <div class="two_grid_content">
-        <img id="gif-1" class="centered_image" style="width:50%;" src="images/micard/id-card.gif">
-        <p style ="text-align:center;">
-          <a class="grayText_button" onclick="document.getElementById('gif-1').src='images/micard/id-card.gif'">
-            <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
-          </a>
-        </p>
+  <div class="light_gray_overlap_container">
+
+    <div class="light_gray_container module_space">
+      <div class="content_container two_two_one_grid grid_gap_40">
+        <h2>Key Features</h2>
+        <!-- <p>
+        MICARD is a mobile ID card that offers key features such as dining services, life services, and personal information management.
+        It provides a convenient solution for managing campus life, granting access to buildings and services on campus, ordering and paying for meals,
+        reserving laundry facilities, checking shuttle schedules, and accessing personal information and locker reservations.
+        </p> -->
       </div>
     </div>
 
-    <div class="four_four_two_grid grid_gap_20 content_small_space">
-      <div class="two_grid_content">
-        <h3 class="content_half_space">Add funds</h3>
-        <ul class="content_tiny_space">
-          <li>Reduced step to one page.</li>
-          <li>Users can register card and use it quickly.</li>
-          <li>A reconfirmation before completion.</li>
-        </ul>
-      </div>
-      <div class="two_grid_content">
-        <img id="gif-2" class="centered_image" style="width:50%;" src="images/micard/add_credit.gif">
-        <p style ="text-align:center;">
-          <a class="grayText_button" onclick="document.getElementById('gif-2').src='images/micard/add_credit.gif'">
-            <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
-          </a>
-        </p>
+    <div class="content_container">
+      <div id="three_grid_container" class="light_gray_overlap_content three_two_two_grid">
+        <img class="image_shadow" src="images/micard/MAIN_Page.jpg">
+        <img class="image_shadow" src="images/micard/MICA_ID.jpg">
+        <img class="image_shadow" src="images/micard/MICA_Pay.jpg">
+
+        <img class="image_shadow" src="images/micard/CAFETERIA.jpg">
+        <img class="image_shadow" src="images/micard/DORIS_preorder_1.jpg">
+        <img class="image_shadow" src="images/micard/DORIS_preorder_2.jpg">
+
+        <img class="image_shadow" src="images/micard/MICA_Life.jpg">
+        <img class="image_shadow" src="images/micard/MICA_Laundry_1.jpg">
+        <img class="image_shadow" src="images/micard/MICA_Laundry_2.jpg">
       </div>
     </div>
 
-    <div class="four_four_two_grid grid_gap_20 content_small_space">
-      <div class="two_grid_content">
-        <h3 class="content_half_space">Pre-order service</h3>
-        <ul class="content_tiny_space">
-          <li>Able to set pickup time.</li>
-          <li>Easy to select ingredients with the pictures.</li>
-          <li>The notifications tell users the pickup time.</li>
-        </ul>
-      </div>
-      <div class="two_grid_content">
-        <img id="gif-3" class="centered_image" style="width:50%;" src="images/micard/pre_order.gif">
-        <p style ="text-align:center;">
-          <a class="grayText_button" onclick="document.getElementById('gif-3').src='images/micard/pre_order.gif'">
-            <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
-          </a>
-        </p>
-      </div>
-    </div>
+  </div>
 
-    <div class="four_four_two_grid grid_gap_20 content_small_space">
-      <div class="two_grid_content">
-        <h3 class="content_half_space">Laundry status</h3>
-        <ul class="content_tiny_space">
-          <li>Users can check laundrt status anywhere.</li>
-          <li>Saved location's laundry room comes first.</li>
-          <li>The icon is the same as the actual location.</li>
-          <li>Easy step to pay with mobile.</li>
-          <li>Timer counts automatically.</li>
-        </ul>
-      </div>
-      <div class="two_grid_content">
-        <img id="gif-4" class="centered_image" style="width:50%;" src="images/micard/laundry.gif">
-        <p style ="text-align:center;">
-          <a class="grayText_button" onclick="document.getElementById('gif-4').src='images/micard/laundry.gif'">
-            <i class="far fa-play-circle" style="padding-bottom:2px;"></i> Click to replay
-          </a>
-        </p>
-      </div>
+
+  <div class="footer_container module_space">
+    <div class="content_container">
+      <h2 class="noH2Line">Meet MICARD as a prototype</h2>
+      <p>MICARD designed with a Figma prototype.</p>
+      <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button">Prototype <i class="fas fa-external-link-alt"></i></div></a>
     </div>
   </div>
 
-  <div class="button_container content_container_full_mobile content_more_space">
-    <div class="inside_container">
-      <h2 class="noH2Line">Mobile app prototype</h2>
-      <div class="content_half_space"><a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="round_button">Prototype <i class="fas fa-flask"></i></div></a></div>
-    </div>
-  </div>
+  <div id="copyright_cont"></div>
 
-  <div id="copyright_cont" class="content_space"></div>
+  <script src="nav_color.js"></script>
+
 </body>
 </html>

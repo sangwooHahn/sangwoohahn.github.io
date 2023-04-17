@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sangwoo Portfolio</title>
+    <title>Sangwoo Hahn Design</title>
     <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
@@ -18,10 +18,12 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#EF258D">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="portfolio.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
@@ -32,39 +34,21 @@
     });
     </script>
     <script>
-      // $(document).ready(function(){ /* control all page of the special colors*/
-      //   var color = ('#000000');
-      //   $('h2').css('color',color);
-      //   $('h3').css('color',color);
-      //   $('.go_back div').css('color',color);
-      //   $('.nav').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-      //   $('.title_container').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-      //   $('.color_box').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-      //   $('.color_button').css('background-image','linear-gradient(to right, #000000 60%, #555)');
-      //   $('.color_button h2').css('color','#fafafa');
-      //   $('.color_box > div > h3').css('color','#fafafa');
-      //   $('.contact_container div h3').css('color','#fafafa');
-      //   $('.go_back').css('border-left', '2.5px solid '+color);
-      //   $('.go_back').css('border-top', '2.5px solid '+color);
-      //  });
        $(document).ready(function(){ /* control all page of the special colors*/
          var main_color = ('#000000');
          var sub_color = ('#000000');
          var white_color = ('#fafafa');
+         $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="#1E1E1E">');
+         $('html').css('background-color',main_color);
          $('h2').css('color',main_color);
-         $('h3').css('color',main_color);
-         $('.go_back div').css('color',main_color);
-         $('.go_back').css('border-left', '2.5px solid '+main_color);
-         $('.go_back').css('border-top', '2.5px solid '+main_color);
-         $('.nav').css('background-color',main_color);
-         $('.title_container').css('background-color',main_color);
-         $('.button_container').css('background-color',main_color);
-         $('.button_container h2').css('color',white_color);
-         $('.color_box').css('background-color',main_color);
-         $('.color_box > div > h3').css('color',white_color);
-         $('.title_button').css('background-color',sub_color);
-         $('.round_button').css('background-color',sub_color);
+         $('h3').css('color','#1c1c1c');
+         $('.title_container').css('background-color', main_color);
+         $('.title_text_container').css('background-color',sub_color);
+         $('.footer_container').css('background-color',sub_color);
+         $('.footer_container h2').css('color',white_color);
+         $('.footer_container p').css('color',white_color);
          $('.contact_container div h3').css('color',white_color);
+         $('#copyright_cont').css('background-color',"#444");
        });
 
        window.open_about = function() {
@@ -72,37 +56,37 @@
        }
     </script>
     <style>
+      #copyright_cont {
+        bottom: 0px;
+      }
       .title_container {
-        height:50vh;
+        height: calc(100vh - 50px);
       }
 
     </style>
   </head>
-  <body>
+  <body onscroll="onScroll()">
     <div class="nav">
       <ul>
         <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
-        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-        <li><a href="index.html#body_cont">Portfolio</a></li>
-        <li><a id ="contact_button">Contact</a></li>
       </ul>
       <ul>
-        <li style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+        <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+        <li><a id ="contact_button">Contact</a></li>
+        <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
       </ul>
     </div>
-    <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
 
     <div class="title_container">
-      <div class="content_container">
-        <div class="title_description">
+      <div class="content_small_container two_two_one_grid">
+        <div class="title_content">
           <h1>404</h1>
-          <p class="content_tiny_space">
-            Page not found. oooooops! Something missing.
-          </p>
+          <p>Page not found. oooooops!<br>Something missing.</p>
+          <!-- <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button">Prototype <i class="fas fa-external-link-alt"></i></div></a> -->
         </div>
       </div>
     </div>
 
-    <div id="copyright_cont" class=""></div>
+    <div id="copyright_cont"></div>
   </body>
 </html>

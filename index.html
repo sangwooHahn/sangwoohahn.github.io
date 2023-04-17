@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sangwoo Portfolio</title>
+  <title>Sangwoo Hahn Design</title>
   <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
@@ -18,328 +18,309 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#EF258D">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="index.css">
-  <link rel="stylesheet" type="text/css" href="title.css">
-  <script src="p5/p5.js"></script>
-  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="p5/p5_style.css">
-  <meta charset="utf-8"/>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8"/>
   <script>
-  $(function(){
-    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
-  });
+    $(function(){
+      $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
+    });
   </script>
+  <style>
+  h1 {
+    letter-spacing: -2px;
+  }
+  .nav {
+    background-color: rgba(250,250,250, 0.8);/*#fafafa;*/
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    -moz-backdrop-filter: blur(20px);
+    -o-backdrop-filter: blur(20px);
+    -ms-backdrop-filter: blur(20px);
+  }
+  .nav li {
+    color : #353535;
+  }
+  .nav li a {
+    color : #353535;
+  }
+  a {
+    background: linear-gradient(to right, #000 50%, rgba(0,0,0,0) 50%);
+    background-size: 0% 2px;
+    background-position:left bottom;
+    background-repeat: no-repeat;
+  }
+  .about_container {
+    display: none;
+    height: 100vh;
+  }
+
+  .content_small_space {
+    margin-top: 20px;
+  }
+
+  .about_container > div {
+    height: 100%;
+    width : 460px;
+    margin-left: calc(calc(100% - 450px) / 2);
+    margin-right: calc(calc(100% - 450px) / 2);
+    left:0;
+    right:0;
+    padding-top: 30vh;
+  }
+
+  .title_container {
+    position: relative;
+    height: 320px;
+    top:0px;
+    background-color: #fafafa;
+    text-align: center;
+  }
+
+  .name_container {
+    position: relative;
+    top: 110px;
+  }
+
+  #title_cont, #about_cont, #moreProject_cont, #copyright  {
+    width: 100vw;
+    /* transition: width 0.5s ease; */
+  }
+  #about_cont_div {
+    transition: all 0.5s ease;
+  }
+  #contact_cont {
+    transform: translateX(300px);
+    transition: all 0.5s ease;
+  }
+
+  .portfolio_container {
+    height: auto;
+    width: calc(100% - 60px);
+    margin: auto;
+    display: block;
+  }
+
+  .portfolio_container .two_two_one_grid {
+    grid-gap: 5px;
+  }
+
+  .portfolio_content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 360px;
+    width: 100%;
+    background-color: lightgray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .portfolio_content_big {
+    height: 540px;
+    grid-column: span 2;
+  }
+  .portfolio_content:hover .portfolio_gradient {
+    cursor: pointer;
+    opacity: 0.85;
+    height: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5), rgba(0,0,0,1));
+  }
+
+  .portfolio_gradient {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 180px;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,1));
+    border-radius: 0px 0px 5px 5px;
+    color: #fafafa;
+  }
+  .portfolio_gradient div {
+    padding: 20px;
+  }
+  .portfolio_gradient img {
+    width: 160px;
+  }
+  .thumbnail_overlap_container {
+    position: absolute;
+    display: grid;
+    width: auto;
+    align-self: center;
+  }
+  .thumbnail_overlap_container img {
+    display: block;
+    height: 100%;
+    width: auto;
+  }
+
+  #copyright_cont {
+    background-color: #eee;
+  }
+  .copyright {
+    color: #777;
+  }
+
+  </style>
 </head>
 <body>
-  <div id="nav_cont" class="nav">
+  <div class="nav">
     <ul>
-      <li><a id="logo_button" href="#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_black.png" alt="portfolio title logo"></a></li>
-      <li><a id="about_button" href="#about_cont">About</a></li>
-      <li><a href="#body_cont">Portfolio</a></li>
-      <li><a id="contact_button">Contact</a></li>
+      <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_black.png" alt="portfolio title logo"></a></li>
     </ul>
     <ul>
-      <li id="language" style="position: absolute; right:60px; padding-right:0px;">EN / KR</li>
+      <li><a id="about_button" href="index.html#about_cont">About</a></li>
+      <li><a id ="contact_button">Contact</a></li>
+      <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
     </ul>
   </div>
 
   <div id="about_cont" class="about_container">
     <div id="about_cont_div">
-      <h1>Hello!</h1>
+      <h1>Hi!</h1>
       <p class="content_small_space">
-        I'm Sangwoo Hahn. A visual UX designer who researches the users' experiences and designs digital products.
-        I specialize in finding visual solutions to current problems.
-        I provide convenience to people through visual and systematic design.
+        I'm Sangwoo Hahn. A graphic designer specializing in branding, UX/UI, and motion graphics.
+        I specialize at identifying current problems and finding visual solutions.
+        My approach to  design is user-centric, aiming to deliver convenience and ease of use through systematic design.
       </p>
-      <div class="arrow_container">
-        <div class="chevron"></div>
-        <div class="chevron"></div>
-        <div class="chevron"></div>
-        <span class="arrow_text">Scroll down</span>
-      </div>
     </div>
   </div>
-<div id="title_cont" class="title_container">
+
+  <div id="title_cont" class="title_container">
     <div class="name_container">
-      <div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div>
-      <div></div><div></div><div></div><div></div>
+      <H1>SANGWOO HAHN</H1>
+      <p>Graphic design · UX/UI · Motion graphic</p>
     </div>
-    <!-- <div  class="name_sub_container">Design Portfolio</div> -->
-    <div class="name_sub_container">Visual · UX Designer</div>
-    <div class="backgroundColor_container">
-      <div></div><div></div><div></div><div></div><div></div><div></div>
-    </div>
-    <!-- <div id="myCanvas">
-      <script src="p5/p5_title.js"></script>
-      <script src="p5/p5_title_function.js"></script>
-    </div> -->
   </div>
-<div id="body_cont" class="body_container">
-  <div class="container">
-    <div class="portfolios">
 
-      <div style="background-color:#1638b4;" class="two_grid_content tablet_two_grid_content" onclick="location.href='transfont_project.html';">
-        <div class="portfolio_container" style="background-image:url('thumbnail/transfont.png');">
-          <div></div>
-          <div class="thumbnail_description">
-            <!-- <subtitle>Thesis / Interaction Design</subtitle> -->
-            <h1>Transfont</h1>
-            <p>Font design transform with body movement</p>
-            <div class="portfolio_button_container"><a href="transfont_project.html"><div class="portfolio_button" style="background-color:#1638b4;">View the project</div></a></div>
+  <div id="body_cont" class="portfolio_container">
+    <div class="two_two_one_grid">
+
+      <div class="portfolio_content image_top_left_border" style="background-color: #1638B4;" onclick="location.href='transfont_project.html';">
+        <div class="thumbnail_overlap_container">
+          <img src="thumbnail/transfont_person.png">
+        </div>
+        <div class="portfolio_gradient">
+          <div>
+            <h3>Transfont</h3>
+            <p>Real-time font creation with your motion</p>
           </div>
         </div>
       </div>
 
-      <div style="background-color:#3B201A;" class="two_grid_content tablet_two_grid_content" onclick="location.href='marvlon_project.html';">
-        <div class="portfolio_container" style="background-image:url('thumbnail/marvlon.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
-            <h1>Marvlon</h1>
-            <p>Mobile based strategy card game</p>
-            <div class="portfolio_button_container"><a href="marvlon_project.html"><div class="portfolio_button" style="background-color:#421D0D;">View the project</div></a></div>
+      <div class="portfolio_content image_top_right_border" style="background-image:url('thumbnail/marvlon.jpg');" onclick="location.href='marvlon_project.html';">
+        <div class="portfolio_gradient">
+          <div>
+            <img src="images/marvlon/Marvlon_logo_EN.png">
+            <p>UX/UI and visual design for mobile card game</p>
           </div>
         </div>
       </div>
 
-      <div style="background-color:#000E64;" class="four_grid_content" onclick="location.href='strider.html';">
-        <div class="portfolio_container" style="background-image:url('thumbnail/Strider_lofi_Youtube_winter.png');">
-          <div></div>
-          <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
-            <h1>Strider the Fox</h1>
-            <p>B2C marketing with mascot character</p>
-            <div class="portfolio_button_container"><a href="strider.html"><div class="portfolio_button" style="background-color:#F86808;">View the project</div></a></div>
+      <div class="portfolio_content_big portfolio_content image_full_border" style="background-image:url('thumbnail/striderSocial.jpg');" onclick="location.href='strider_social.html';">
+        <div class="thumbnail_overlap_container">
+          <img src="thumbnail/striderSocial_phone.png">
+        </div>
+        <div class="portfolio_gradient">
+          <div>
+            <h3>Strider for social media</h3>
+            <p>Real-time font creation with your motion</p>
           </div>
         </div>
       </div>
 
-      <div style="background-color:#2284CA;" class="two_grid_content tablet_two_grid_content" onclick="location.href='micard.html';">
-        <div class="portfolio_container" style="background-image:url('images/micard/micard.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
-            <h1>Micard</h1>
-            <p>Mobile ID card application for MICA students</p>
-            <div class="portfolio_button_container"><a href="micard.html"><div class="portfolio_button" style="background-color:#2284CA;">View the project</div></a></div>
+      <div class="portfolio_content image_middle_left_border" style="background-color: #003789;" onclick="location.href='strider_illustration.html';">
+        <div class="thumbnail_overlap_container">
+          <img src="thumbnail/strider_illust_fox.png">
+        </div>
+        <div class="portfolio_gradient">
+          <div>
+            <h3>Strider illustrations</h3>
+            <p>Strider illustrations for gear store and activity hub</p>
           </div>
         </div>
       </div>
 
-      <div style="background-color:#1D4922;" class="two_grid_content tablet_two_grid_content" onclick="location.href='momap.html';">
-        <div class="portfolio_container" style="background-image:url('thumbnail/momap.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
-            <h1>MoMap</h1>
-            <p>Branding system for museum of map</p>
-            <div class="portfolio_button_container"><a href="momap.html"><div class="portfolio_button" style="background-color:#1D4922;">View the project</div></a></div>
+      <div class="portfolio_content image_middle_right_border" style="background-color: #001743;" onclick="location.href='branding.html';">
+        <div class="thumbnail_overlap_container" style="align-self: flex-end;">
+          <img src="thumbnail/branding_heart.png">
+        </div>
+        <div class="portfolio_gradient">
+          <div>
+            <h3>Logo and brandings</h3>
+            <p>Real-time font creation with your motion</p>
           </div>
         </div>
       </div>
 
-      <div style="background-color:#12265B;" class="four_grid_content" onclick="location.href='thefins.html';">
-        <div class="portfolio_container" style="background-image:url('thumbnail/thefins.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <h1>The Fins</h1>
-            <p>Auto battle game for mobile and PC</p>
-            <div class="portfolio_button_container"><a href="thefins.html"><div class="portfolio_button" style="background-color:#12265B;">View the project</div></a></div>
+      <div class="portfolio_content image_bottom_right_border" style="background-image:url('thumbnail/moMap.jpg'); background-position: right;" onclick="location.href='momap.html';">
+        <div class="portfolio_gradient">
+          <div>
+            <h3>MoMap</h3>
+            <p>Branding system for Museum of Map</p>
           </div>
         </div>
       </div>
 
-      <div style="background-color:#008AB6;" class="one_grid_content" onclick="location.href='k12_event_hub.html';">
-        <div class="portfolio_container portfolio_container_half" style="background-image:url('thumbnail/k12event.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
-            <h1 class="small_h1">K12 Event Hub</h1>
-            <p>Event hub page for K12.com</p>
-            <div class="portfolio_button_container"><a href="k12_event_hub.html"><div class="portfolio_button" style="background-color:#0D5BA4;">View the project</div></a></div>
+      <div class="portfolio_content image_bottom_left_border" style="background-image:url('thumbnail/micard.jpg'); background-position: right;" onclick="location.href='micard.html';">
+        <div class="thumbnail_overlap_container">
+          <img src="thumbnail/micard_phone.png">
+        </div>
+        <div class="portfolio_gradient">
+          <div>
+            <h3>MICARD</h3>
+            <p>Digital School ID for MICA Students</p>
           </div>
         </div>
       </div>
-
-      <div style="background-color:#E39F00;" class="one_grid_content" onclick="location.href='iceCreamDay.html';">
-        <div class="portfolio_container portfolio_container_half" style="background-image:url('thumbnail/sticker.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <!-- <subtitle>UX · UI / Product Design</subtitle> -->
-            <h1 class="small_h1">FB Stickers</h1>
-            <p>Branding system for museum of map</p>
-            <div class="portfolio_button_container"><a href="iceCreamDay.html"><div class="portfolio_button" style="background-color:#e6a307;">View the project</div></a></div>
-          </div>
-        </div>
-      </div>
-
-      <div style="background-color:#820D60;" class="one_grid_content" onclick="location.href='daydream.html';">
-        <div class="portfolio_container portfolio_container_half" style="background-image:url('thumbnail/daydream.png');">
-          <div></div>
-          <div class="thumbnail_description">
-            <h1 class="small_h1">Daydream</h1>
-            <p>Action battle game for PC and consoles</p>
-            <div class="portfolio_button_container"><a href="daydream.html"><div class="portfolio_button" style="background-color:#962174;">View the project</div></a></div>
-          </div>
-        </div>
-      </div>
-
-      <div style="background-color:#3420B1;" class="one_grid_content" onclick="location.href='berrystudio.html';">
-        <div class="portfolio_container portfolio_container_half" style="background-image:url('images/berrystudio/mockup1.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <h1 class="small_h1">Berry Studio</h1>
-            <p>The platform for the low budget commission</p>
-            <div class="portfolio_button_container"><a href="berrystudio.html"><div class="portfolio_button" style="background-color:#442DD2;">View the project</div></a></div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <!-- <div id="special_bg" style="background-image:url('thumbnail/insta.jpg');" onclick="location.href='instamusic.html';">
-        <div class="portfolio_container" style="background-image:url('thumbnail/instamusic.png'); background-size: auto 70%; background-position: center 80px;">
-          <div></div>
-          <div class="thumbnail_description" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6));">
-            <h1>InstaMusic</h1>
-            <p>Music streaming services for Instagram users</p>
-            <a href="instamusic.html"><div class="portfolio_button" style="background-color:#9838B2;">View the Project</div></a>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div style="background-color:#C10C0C;" onclick="location.href='jubudae_menu.html';">
-        <div class="portfolio_container" style="background-image:url('images/jubudae/mockup.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <h1>Ju Budae</h1>
-            <p>Branding system and digital menu design for Restaurant</p>
-            <a href="jubudae_menu.html"><div class="portfolio_button" style="background-color:#C10C0C;">View the Project</div></a>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div style="background-color:#962174;" onclick="location.href='berrystudio.html';">
-        <div class="portfolio_container" style="background-image:url('images/berrystudio/mockup1.jpg');">
-          <div></div>
-          <div class="thumbnail_description">
-            <h1>Berry Studio</h1>
-            <p>Action battle game for PC and consoles</p>
-            <a href="berrystudio.html"><div class="portfolio_button" style="background-color:#962174;">View the Project</div></a>
-          </div>
-        </div>
-      </div> -->
-
-
 
     </div>
   </div>
-</div>
-<div id="moreProject_cont" class="moreProject_container">
-  <div>
-    <div class="posters">
-      <h3><b>+ Poster</b></h3>
-      <a href="posters.html">
-        <div class="poster1" style ="background-image:url('thumbnail/momap_poster.jpg')"></div>
-        <div class="poster2" style ="background-image:url('thumbnail/foodtruck_poster.jpg')"></div>
-        <div class="poster3" style ="background-image:url('thumbnail/BUSAN_poster.jpg')"></div>
-      </a>
-    </div>
-    <div class="motions">
-      <h3><b>+ Motion</b></h3>
-      <a href="motions.html">
-        <div class="motion1" style ="background-image:url('thumbnail/StriderFox_gif.gif')"></div>
-        <div class="motion2" style ="background-image:url('thumbnail/environment_gif.gif')"></div>
-      </a>
-    </div>
-  </div>
-</div>
-<div id="copyright_cont"></div>
+
+
+<div id="copyright_cont" class="content_space"></div>
 
 <script>
-$(document).ready(function(){
-  $("#about_button").on('click',function(event){
-    $("#about_cont").slideDown(1000);
-    $("#title_cont").slideDown(1000);
-    $("#title_cont").delay(1000).css('position','sticky');
-    $("#myCanvas").delay(1000).css('position','inherit');
-    $("#about_cont_div").delay(1000).css('position','fixed');
-  });
+  $(document).ready(function(){
+    $("#about_button").on('click',function(event){
+      $("#about_cont").slideDown(1000);
+      $("#title_cont").slideDown(1000);
+      $("#title_cont").delay(1000).css('position','sticky');
+      $("#myCanvas").delay(1000).css('position','inherit');
+      $("#about_cont_div").delay(1000).css('position','fixed');
+    });
 
-  if(localStorage.getItem("click_open")=="about_show") {
-    $("#about_cont").slideDown(1000);
-    $("#title_cont").slideDown(1000);
-    $("#title_cont").delay(1000).css('position','sticky');
-    $("#myCanvas").delay(1000).css('position','inherit');
-    $("#about_cont_div").delay(1000).css('position','fixed');
-    localStorage.setItem("click_open", "undefined");
-  }
-
-  $("a").on('click', function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      var hash = this.hash;
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-        window.location.hash = hash;
-      });
+    if(localStorage.getItem("click_open")=="about_show") {
+      $("#about_cont").slideDown(1000);
+      $("#title_cont").slideDown(1000);
+      $("#title_cont").delay(1000).css('position','sticky');
+      $("#myCanvas").delay(1000).css('position','inherit');
+      $("#about_cont_div").delay(1000).css('position','fixed');
+      localStorage.setItem("click_open", "undefined");
     }
+
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        });
+      }
+    });
   });
-});
-
-// let contact_toggle = false;
-// document.getElementById("contact_button").onclick = function() {
-//   toggle_contact();
-// };
-//
-// document.getElementById("contact_close").onclick = function() {
-//   toggle_contact();
-// };
-//
-//
-// function toggle_contact ()
-// {
-//   if(!contact_toggle)
-//   {
-//     // document.getElementById("nav_cont").style.width= "calc(100vw - 300px)";
-//     // document.getElementById("about_cont").style.width= "calc(100vw - 300px)";
-//     // document.getElementById("about_cont_div").style.marginLeft= "calc(calc(100% - 300px - 450px) / 2)";
-//     // document.getElementById("about_cont_div").style.marginRight= "calc(calc(100% - 300px - 450px) / 2)";
-//     // document.getElementById("title_cont").style.width= "calc(100vw - 300px)";
-//     // document.getElementById("body_cont").style.width= "calc(100vw - 300px)";
-//     // document.getElementById("moreProject_cont").style.width= "calc(100vw - 300px)";
-//     // document.getElementById("copyright_cont").style.width= "calc(100vw - 300px)";
-//     document.getElementById("contact_cont").style.transform= "translateX(0px)";
-//   } else
-//   {
-//     // document.getElementById("nav_cont").style.width= "100vw";
-//     // document.getElementById("about_cont").style.width= "100vw";
-//     // document.getElementById("about_cont_div").style.marginLeft= "calc(calc(100% - 450px) / 2)";
-//     // document.getElementById("about_cont_div").style.marginRight= "calc(calc(100% - 450px) / 2)";
-//     // document.getElementById("title_cont").style.width= "100vw";
-//     // document.getElementById("body_cont").style.width= "100vw";
-//     // document.getElementById("moreProject_cont").style.width= "100vw";
-//     // document.getElementById("copyright_cont").style.width= "100vw";
-//     document.getElementById("contact_cont").style.transform= "translateX(300px)";
-//   }
-//   contact_toggle = !contact_toggle;
-// }
-
 </script>
 </body>
 </html>

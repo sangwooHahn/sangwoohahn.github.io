@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sangwoo Hahn Design</title>
+  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta name="theme-color" content="#EF258D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8"/>
+  <script>
+  $(function(){
+    $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
+  });
+
+  $(window).on('scroll',function(){
+    var title_image_position = Math.round($(window).scrollTop() / $(window).height() * 300*10);
+    $('.title_image_overlap').css('transform','translateX('+(title_image_position/10)+'%)');
+
+    $('.mask_image').css('clip','rect(30px, 273px, 379px, '+(76+title_image_position/2)+'px)'); //마스크 반대방향으로 줄이기 clip: rect(30px, 273px, 379px, 76px);
+
+    if(title_image_position > 0) {
+      // $('.title_image').css('filter','hue-rotate(170deg) saturate(300%) hue-rotate(40deg)');
+      $('.title_image_overlap').css('animation-name','none');
+    }
+    else {
+      // $('.title_image').css('filter','hue-rotate(0deg) saturate(100%) hue-rotate(0deg)');
+      $('.title_image_overlap').css('animation-name','overlap_animation');
+    }
+  });
+
+  $(document).ready(function(){ /* control all page of the special colors*/
+    var main_color = ('#003789');
+    var sub_color = ('#0060D0');
+    var white_color = ('#fafafa');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="#1E1E1E">');
+    $('html').css('background-color',main_color);
+    $('h2').css('color',main_color);
+    $('h3').css('color','#1c1c1c');
+    $('.title_container').css('background-color', main_color);
+    $('.title_text_container').css('background-color',sub_color);
+    $('.footer_container').css('background-color',sub_color);
+    $('.footer_container h2').css('color',white_color);
+    $('.footer_container p').css('color',white_color);
+    $('.contact_container div h3').css('color',white_color);
+    $('#copyright_cont').css('background-color',main_color);
+  });
+  window.open_about = function() {
+    localStorage.setItem("click_open", "about_show");
+  }
+
+  </script>
+  <style>
+  .title_image {
+    position: relative;
+    top: 40px;
+    left: 20px;
+    width: auto;
+    height: 450px;
+  }
+
+  /* webpage container */
+  #webpage_contaioner {
+    position: absolute;
+    width: 100%;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+    margin: auto;
+    align-self: center;
+  }
+  #webpage_contaioner_top {
+    background-color: #eaeaea;
+    height:30px;
+    border-radius: 5px 5px 0px 0px;
+  }
+  #webpage_contaioner_top div {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 7px;
+    margin-top: 10px;
+    border-radius: 15px;
+  }
+  #webpage_contaioner_top div:nth-child(1) {
+    margin-left: 14px;
+    background-color: rgb(121,121,121);
+  }
+  #webpage_contaioner_top div:nth-child(2) {
+    background-color: rgb(166,166,166);
+  }
+  #webpage_contaioner_top div:nth-child(3) {
+    background-color: rgb(115,115,115);
+  }
+  #webpage_contaioner > div:nth-child(2) {
+    height:auto;
+    border-radius: 0px 0px 5px 5px;
+    font-size: 0px;
+  }
+  #webpage_contaioner img {
+    position: relative;
+    border-radius: 0px 0px 5px 5px;
+  }
+
+  #winter_Strider {
+    display: flex;
+    justify-content: center;
+  }
+  #winter_Strider img {
+    width: 60%;
+  }
+  .logo_container {
+    height: 260px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .logo_container img {
+    height: 260px;
+    width: auto;
+  }
+  .image_shadow {
+    box-shadow : 0px 0px 50px rgba(0,0,0,0.05);
+  }
+
+
+  @media screen and (min-width: 600px) and  (max-width: 1256px) {
+
+  }
+
+
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 960px) {
+
+  }
+
+  /*Smart phone*/
+  @media screen and (max-width: 599px) {
+    .title_image {
+      left:calc(calc(100vw - 1100px) * 0.5 + 300px + 80px);
+      width: 300px;
+      top:30px;
+    }
+    .title_image_overlap {
+      position: fixed;
+      top: 320px;
+      left:calc(calc(100vw - 1100px) * 0.5 + 300px);
+      height: 460px;
+    }
+    #three_grid_container {
+      grid-gap: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+</style>
+</head>
+<body onscroll="onScroll()">
+  <div class="nav">
+    <ul>
+      <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
+    </ul>
+    <ul>
+      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+      <li><a id ="contact_button">Contact</a></li>
+      <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+    </ul>
+  </div>
+
+  <div class="title_container">
+    <div class="content_small_container two_two_one_grid">
+      <div class="title_content">
+        <h1>Logo and brandings</h1>
+        <p>Branding design</p>
+        <!-- <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button">Prototype <i class="fas fa-external-link-alt"></i></div></a> -->
+      </div>
+
+      <img class ="title_image" src="images/branding/title.png">
+    </div>
+  </div>
+
+  <div class="title_text_container">
+    <div class="content_small_container">
+      <!-- <p>
+        MICARD app can be a solution for MICA students to streamline their daily routines.
+        Instead of carrying a physical student ID card, which is required to enter buildings or purchase meals,
+        students can now use their smartphones to access all necessary functions, making their pockets lighter and their lives more convenient.
+      </p> -->
+    </div>
+  </div>
+
+  <div class="light_gray_overlap_container">
+
+    <div class="light_gray_container content_180_space">
+      <div class="content_container two_two_one_grid grid_gap_40">
+        <h2>Campaign branding</h2>
+      </div>
+    </div>
+
+    <div class="content_container">
+      <div class="light_gray_overlap_content two_two_one_grid grid_gap_20">
+        <div>
+          <h3>Innovation challenge 2023</h3>
+          <p>Environmental improvement idea contest</p>
+          <img class="image_full_border content_10_space" src="images/branding/InnovationChallenge_social.gif">
+        </div>
+        <div>
+          <h3>The Reel Me 2023</h3>
+          <p>Video production contest</p>
+          <img class="image_full_border content_10_space" src="images/branding/ReelMe-SocialMedia-post.gif">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="content_container module_space">
+    <div class="two_two_one_grid grid_gap_20 content_10_space">
+      <div>
+        <h3>K12 Zone</h3>
+        <p>Virtual world for K12 students</p>
+        <img class="image_full_border content_10_space" src="images/branding/K12Zone.gif">
+      </div>
+      <div>
+        <h3>#Teach Luv</h3>
+        <p>K12 campaign</p>
+        <img class="image_full_border content_10_space" src="images/branding/teachLuv1.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div class="content_container module_space">
+    <div class="two_two_one_grid grid_gap_20 content_10_space">
+      <div>
+        <h3>Brain Boost 2023</h3>
+        <p>Online summer activities for K12 students</p>
+        <img class="image_full_border content_10_space" src="images/branding/brainboost.jpg">
+      </div>
+      <div>
+        <h3>Be Kind 365</h3>
+        <p>K12 campaign</p>
+        <img class="image_full_border content_10_space" src="images/branding/bekind.jpg">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="light_gray_overlap_container">
+
+    <div class="light_gray_container content_180_space">
+      <div class="content_container two_two_one_grid grid_gap_40">
+        <h2>K12 Dynamic brand</h2>
+      </div>
+    </div>
+
+    <div class="content_container">
+      <div class="light_gray_overlap_content">
+        <img class="image_full_border" src="images/branding/Concept1_ColorBG_dynamicMotion.gif">
+        <img class="image_full_border image_shadow content_10_space" src="images/branding/Concept2_WhiteBG_noRepeat.gif">
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="light_gray_overlap_container">
+
+    <div class="light_gray_container content_180_space">
+      <div class="content_container two_two_one_grid grid_gap_40">
+        <h2>A day in the life</h2>
+      </div>
+    </div>
+
+    <div class="content_container">
+      <div class="light_gray_overlap_content">
+        <img class="image_full_border image_shadow" src="images/branding/DIL_illustration_motion_final.gif">
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="light_gray_overlap_container">
+
+    <div class="light_gray_container content_180_space">
+      <div class="content_container two_two_one_grid grid_gap_40">
+        <h2>Logo design</h2>
+      </div>
+    </div>
+
+    <div class="content_container">
+      <div class="light_gray_overlap_content">
+        <div class="logo_container">
+          <img class="image_full_border" src="images/branding/logo/GCPA.png">
+        </div>
+        <div class="logo_container image_shadow content_space">
+          <img class="image_full_border" src="images/branding/logo/CMPrep.png">
+        </div>
+        <div class="logo_container image_shadow content_space">
+          <img class="image_full_border" src="images/branding/logo/CAU.png">
+        </div>
+        <div class="logo_container image_shadow content_space">
+          <img class="image_full_border" src="images/branding/logo/BUILD.png">
+        </div>
+        <div class="logo_container image_shadow content_space">
+          <img class="image_full_border" src="images/branding/logo/DEI.png">
+        </div>
+        <div class="logo_container image_shadow content_space">
+          <img class="image_full_border" src="images/branding/logo/Spelling Bee.png">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="copyright_cont" class="content_space"></div>
+
+  <script src="nav_color.js"></script>
+
+</body>
+</html>

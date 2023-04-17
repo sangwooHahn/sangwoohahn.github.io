@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sangwoo Portfolio</title>
+  <title>Sangwoo Hahn Design</title>
   <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
@@ -18,14 +18,12 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#EF258D">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Mukta+Mahee:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="portfolio.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
@@ -37,25 +35,21 @@
 
   $(document).ready(function(){ /* control all page of the special colors*/
     var main_color = ('#1D4922');
-    var sub_color = ('#000000');
+    var sub_color = ('#C55D38');
     var white_color = ('#fafafa');
-    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="'+main_color+'">');
+    $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="#1E1E1E">');
     $('html').css('background-color',main_color);
     $('h2').css('color',main_color);
-    $('h3').css('color',main_color);
-    $('h4').css('color',sub_color);
-    $('.go_back div').css('color',main_color);
-    $('.go_back').css('border-left', '2.5px solid '+main_color);
-    $('.go_back').css('border-top', '2.5px solid '+main_color);
-    $('.nav').css('background-color',main_color);
-    $('.title_container').css('background-color',main_color);
-    $('.button_container').css('background-color',main_color);
-    $('.button_container h2').css('color',white_color);
-    $('.color_box').css('background-color',main_color);
-    $('.color_box > div > h3').css('color',white_color);
-    $('.title_button').css('background-color',sub_color);
-    $('.round_button').css('background-color',sub_color);
+    $('h3').css('color','#1c1c1c');
+    // $('.nav').css('background-color', '#EF258DDD');
+    $('.title_container').css('background-color', main_color);
+    $('.title_text_container').css('background-color',sub_color);
+    // $('.footer_container_bar').css('background-color',sub_color);
+    $('.footer_container').css('background-color',sub_color);
+    $('.footer_container h2').css('color',white_color);
+    $('.footer_container p').css('color',white_color);
     $('.contact_container div h3').css('color',white_color);
+    $('#copyright_cont').css('background-color',main_color);
   });
   window.open_about = function() {
     localStorage.setItem("click_open", "about_show");
@@ -63,16 +57,56 @@
   </script>
 
   <style>
-  .title_image {
-    position: relative;
-    width: 580px;
+
+  .title_text_container_decoration_container {
+    display: grid;
+    grid-template-columns: 100vw 300px;
+  }
+  #title_text_container_decoration {
+    background-color: #ECBE60;
+    height: 100%;
+    transform: skewX(30deg) translate(-200px);
+  }
+  #color_palette_container img {
+    border-radius: 5px;
+    display: block;
+  }
+  #color_palette_container div {
+    border-radius: 5px;
+  }
+  .color_palette_no {
+    width: 100%;
     height: auto;
-    top: -50px;
+    position: relative;
+  }
+  .color_palette_no::before,
+  .color_palette_no::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: red;
+    top: 50%;
+    left: 0;
+    right: 0;
     margin: auto;
+    transform: translateY(-50%);
   }
-  .content_first_space {
-    margin-top: 280px;
+  .color_palette_no::before {
+    transform: rotate(35deg);
   }
+  .color_palette_no::after {
+    transform: rotate(-35deg);
+  }
+  .content_container img {
+    display: block;
+  }
+  #copyright_cont {
+    margin-top: 0px;
+  }
+
+
 
   .typeface_geo {
     font-family: Georgia, sans-serif;
@@ -119,323 +153,355 @@
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
-    .title_image {
-      top: -10px;
-      width:90%;
-      height:auto;
-    }
-    .content_first_space {
-      margin-top: 160px;
-    }
-    .quote_left {
-      transform: scale(70%) translate(calc(-70px), -40px);
-      -webkit-transform: scale(70%) translate(calc(-70px), -40px);
-    }
-    .quote_right {
-      transform: scale(70%) translate(calc(100vw + 10px), 70px);
-      -webkit-transform: scale(70%) translate(calc(100vw + 10px), 70px);
+    #title_text_container_decoration {
+      display: none;
     }
   }
 </style>
 </head>
-<body>
+<body onscroll="onScroll()">
   <div class="nav">
     <ul>
       <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_white.png" alt="portfolio title logo"></a></li>
-      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
-      <li><a href="index.html#body_cont">Portfolio</a></li>
-      <li><a id ="contact_button">Contact</a></li>
     </ul>
     <ul>
+      <li><a onclick="open_about();" id="about_button" href="index.html#about_cont">About</a></li>
+      <li><a id ="contact_button">Contact</a></li>
       <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
     </ul>
   </div>
-  <a href="index.html#body_cont"><div class="go_back"><div>go back</div></div></a>
+
   <div class="title_container">
-    <div class="content_container">
-      <div class="title_description">
+    <div class="content_small_container two_two_one_grid">
+      <div class="title_content">
         <h1>MoMap</h1>
-        <p class="content_tiny_space">
-          The MoMap is a map museum. The brand system is designed using geometric elements found on the map and various colors found on Earth.
+        <p>Branding Design</p>
+      </div>
+
+      <img class ="title_image" src="images/momap/3Dlogo.png">
+    </div>
+  </div>
+
+  <div class="title_text_container_decoration_container">
+    <div class="title_text_container">
+      <div class="content_small_container">
+        <p>
+          Designed a branding system for MoMap, a map museum, using geometric elements found on maps and colors found on Earth.
+          Conducted research on the museum's history, mission, and target audience to create a logo and brand style guide for consistency.
+          The result was a visually appealing and cohesive brand that helped the museum connect with its audience and stand out in the market.
         </p>
       </div>
-      <!-- <a href="https://www.figma.com/proto/6UFhzowdFfITXEfLg89T9X/MICARD?node-id=1%3A6&viewport=126%2C350%2C0.06854934245347977&scaling=scale-down" class="noUnderline" target="_blank"><div class="title_button content_half_space">Prototype <i class="fas fa-flask"></i></div></a> -->
     </div>
-    <div style="text-align:center;">
-      <img class ="title_image" src="images/momap/logo.png">
-    </div>
+    <div id="title_text_container_decoration"></div>
   </div>
 
-  <div class="content_container content_first_space">
-    <div class="quote_left">
-      <div class="quotes" style="width:80px; height:80px; position:absolute; border-radius: 0 5px 5px 5px; transform: translate(0px, 40px);"></div>
-      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 0 5px 5px 5px; transform: translate(90px, 40px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 100% 0 0 0; transform: translate(0px, -10px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 100% 0 0 0; transform: translate(90px, -10px);"></div>
-    </div>
-    <div class="quote_right">
-      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 5px 5px 0 5px; transform: translate(-80px, 20px);"></div>
-      <div class="quotes"  style="width:80px; height:80px; position:absolute; border-radius: 5px 5px 0 5px; transform: translate(-170px, 20px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 0 0 100% 0; transform: translate(-40px, 100px);"></div>
-      <div class="quotes"  style="width:40px; height:50px; position:absolute; border-radius: 0 0 100% 0; transform: translate(-130px, 100px);"></div>
-    </div>
-    <div class="quote_container">
-      <h2 class="noH2Line">Museum of Map – Maps throught time</h2>
-      <p class="content_tiny_space">
-        MoMap is a museum where people can see various maps. There are maps from all over the world that draw for different purposes.
-        During watch the history of the world map, you can feel the development of mapping technology.
-        Also, you can experience the mapping technology of the future. MoMap is easily understood by anyone, not just by people who are interested in maps.
-        The Experience Hall offers various programs to explore and experience map measurements and geographical information.
-      </p>
-    </div>
-  </div>
 
-  <div class="four_two_one_grid grid_gap_10 content_space">
-    <img class="two_grid_content" src="images/momap/banner.jpg">
-    <img class="two_grid_content" src="images/momap/mockup3.jpg">
-  </div>
-  <img class="content_10_space" src="images/momap/museum3.jpg">
+  <div class="project_overview_container">
+    <div class="content_small_container">
+      <h3>Project Overview</h3>
+      <div class="four_four_one_grid grid_gap_40 content_space">
 
-  <div class="content_container content_more_space">
-    <h2>Brand system</h2>
-    <h3 class="content_small_space">Logo mark</h3>
-    <img src="images/momap/logomark.png">
+        <div class="project_overview_content">
+          <img src="images/all/icon_role.png">
+          <div>
+            <p class="content_10_space"><b>Role</b></p>
+            <p class="content_10_space">Graphic Designer</p>
+          </div>
+        </div>
 
-    <hr>
+        <div class="project_overview_content">
+          <img src="images/all/icon_duration.png">
+          <div>
+            <p class="content_10_space"><b>Duration</b></p>
+            <p class="content_10_space">Mar.2020 – May.2020</p>
+          </div>
+        </div>
 
-    <h3 class="content_space">Clear space</h3>
-    <div class="persona_grid grid_gap_10">
-      <div class="one_two_grid">
-        <img style="width:200px" class="content_half_space" src="images/momap/clear_space1.png">
-        <p class="content_10_space">Height of the letter "O" from MoMap.</p>
+        <div class="project_overview_content">
+          <img src="images/all/icon_goal.png">
+          <div>
+            <p class="content_10_space"><b>Goal</b></p>
+            <p class="content_10_space">Developed a logo and branding system</p>
+          </div>
+        </div>
+
+        <div class="project_overview_content">
+          <img src="images/all/icon_audience.png">
+          <div>
+            <p class="content_10_space"><b>Target audience</b></p>
+            <p class="content_10_space">MoMap's visitors and target customers</p>
+          </div>
+        </div>
+
       </div>
-      <img src="images/momap/clear_space2.png">
     </div>
-
-    <h2 class="content_more_space text_above_box noH2Line">Color system</h2>
   </div>
 
-  <div class="gray_box">
+
+  <div class="intro_image_container">
+    <div class="two_two_one_grid grid_gap_5">
+      <img class="image_top_left_border" src="images/momap/banner.jpg">
+      <img class="image_top_right_border darkImage" src="images/momap/museum4.jpg">
+    </div>
+    <img class="image_full_border content_5_space" src="images/momap/museum3.jpg">
+  </div>
+
+
+  <div class="light_gray_container content_180_space">
+    <div class="content_container two_two_one_grid grid_gap_40">
+
+      <div>
+        <h2>Logo Design</h2>
+        <p>
+          The MoMap logo features a top view representation of buildings and roads. It is originally designed in black and white and has a brand system consisting of geometric shapes and distinctive colors.
+        </p>
+      </div>
+
+      <div class="light_gray_image_container">
+        <img src="images/momap/logo_primary_black.png">
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="content_container module_space">
+    <h3>Clear Space</h3>
+    <div class="three_two_one_grid content_space grid_gap_40">
+      <img src="images/momap/clear_space1.png">
+      <img class="two_grid_content" src="images/momap/clear_space2.png">
+    </div>
+  </div>
+
+  <div class="content_container module_space">
+    <h3>Color Study</h3>
+    <div class="three_two_one_grid content_space grid_gap_20">
+      <img src="images/momap/color_references_1.png">
+      <img src="images/momap/color_references_2.png">
+      <img src="images/momap/color_references_3.png">
+      <img src="images/momap/color_references_4.png">
+      <img src="images/momap/color_references_5.png">
+      <img src="images/momap/color_references_6.png">
+    </div>
+  </div>
+
+  <div id="color_palette_container" class="content_container module_space">
+    <h3>Color palette</h3>
+    <div class="two_two_one_grid content_space grid_gap_20">
+      <div>
+        <h4>Dark Logo</h4>
+        <img class="content_10_space" src="images/momap/logo_primary_black.png">
+      </div>
+      <div>
+        <h4>White Logo</h4>
+        <img class="content_10_space" style="background-color: #000;" src="images/momap/logo_primary_white.png">
+      </div>
+    </div>
+
+    <div class="four_four_two_grid grid_gap_20 content_space">
+      <div>
+        <div style="background-color: #dbdbdb; height:70px;"></div>
+        <h4 class="content_10_space">Urban Light Gray</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 219, 219, 219<br>
+          <b>CMYK:</b> 13%, 10%, 10%, 0%<br>
+          <b>HEX:</b> #DBDBDB
+        </p>
+      </div>
+      <div>
+        <div style="background-color: #858585; height:70px;"></div>
+        <h4 class="content_10_space">Urban Gray</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 133, 133, 133<br>
+          <b>CMYK:</b> 50%, 42%, 42%, 6%<br>
+          <b>HEX:</b> #858585
+        </p>
+      </div>
+      <div>
+        <div style="background-color: #000000; height:70px;"></div>
+        <h4 class="content_10_space">Urban Black</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 0, 0, 0<br>
+          <b>CMYK:</b> 75%, 68%, 67%, 90%<br>
+          <b>HEX:</b> #000000
+        </p>
+      </div>
+      <div>
+        <div style="background-color: #ffffff; height:70px; border: solid black 0.05px;"></div>
+        <h4 class="content_10_space">Urban White</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 255,255,255<br>
+          <b>CMYK:</b> 0%, 0%, 0%, 0%<br>
+          <b>HEX:</b> #FFFFFF
+        </p>
+      </div>
+      <div>
+        <div style="background-color: #EFCAA3; height:70px;"></div>
+        <h4 class="content_10_space">Soil Light Orange</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 239, 202, 163<br>
+          <b>CMYK:</b> 5%, 21%, 37%, 0%<br>
+          <b>HEX:</b> #EFCAA3
+        </p>
+      </div>
+      <div>
+        <div style="background-color: #CF5D37; height:70px;"></div>
+        <h4 class="content_10_space">Soil Orange</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 207, 93, 53<br>
+          <b>CMYK:</b> 14%, 76%, 89%, 3%<br>
+          <b>HEX:</b> #CF5D37
+        </p>
+      </div>
+      <div>
+        <div style="background-color: #EDBE5F; height:70px;"></div>
+        <h4 class="content_10_space">Sand Yellow</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 237, 190, 95<br>
+          <b>CMYK:</b> 7%, 25%, 73%, 0<br>
+          <b>HEX:</b> #EDBE5F
+        </p>
+      </div>
+      <div>
+        <div style="background-color: #1C4922; height:70px;"></div>
+        <h4 class="content_10_space">Nature Green</h4>
+        <p class="content_10_space">
+          <b>RGB:</b> 28, 73, 34<br>
+          <b>CMYK:</b> 84%, 43%, 100%, 49%<br>
+          <b>HEX:</b> #1C4922
+        </p>
+      </div>
+    </div>
+
+    <h3 class="content_space">Color guide</h3>
+    <div class="four_two_one_grid content_20_space grid_gap_20">
+      <img style="background-color: #EFCAA3;" src="images/momap/logo_primary_black.png">
+      <img style="background-color: #CF5D37;" src="images/momap/logo_primary_white.png">
+      <img style="background-color: #EDBE5F;" src="images/momap/logo_primary_black.png">
+      <img style="background-color: #1C4922;" src="images/momap/logo_primary_white.png">
+      <div class="color_palette_no"><img style="background-color: #EFCAA3;" src="images/momap/logo_primary_white.png"></div>
+      <div class="color_palette_no"><img style="background-color: #CF5D37;" src="images/momap/logo_primary_black.png"></div>
+      <div class="color_palette_no"><img style="background-color: #EDBE5F;" src="images/momap/logo_primary_white.png"></div>
+      <div class="color_palette_no"><img style="background-color: #1C4922;" src="images/momap/logo_primary_black.png"></div>
+    </div>
+
+  </div>
+
+
+  <div class="light_gray_overlap_container">
+
+    <div class="light_gray_container module_space">
+      <div class="content_container two_two_one_grid grid_gap_40">
+        <h2>Webpage design</h2>
+      </div>
+    </div>
+
     <div class="content_container">
-      <h3>Color study</h3>
-      <div class="three_two_one_grid grid_gap_20 content_small_space">
-        <img src="images/momap/color_references_1.png">
-        <img src="images/momap/color_references_2.png">
-        <img src="images/momap/color_references_3.png">
-        <img src="images/momap/color_references_4.png">
-        <img src="images/momap/color_references_5.png">
-        <img src="images/momap/color_references_6.png">
-      </div>
-    </div>
-  </div>
-
-  <div class="content_container">
-    <h3 class="content_space">Primary color palette</h3>
-    <div class="four_two_one_grid grid_gap_20 content_half_space">
-      <img class="two_grid_content" src="images/momap/primary_color_1.png">
-      <img class="two_grid_content" src="images/momap/primary_color_2.png">
-    </div>
-
-    <div class="four_four_two_grid grid_gap_20 content_small_space">
-      <div>
-        <div style="background-color: #dbdbdb; height:200px;"></div>
-        <h4 class="content_small_space">Urban Light Gray</h4>
-        <p class="content_10_space">
-          RGB : 219, 219, 219<br>
-          CMYK :13%, 10%, 10%, 0%<br>
-          HEX : #DBDBDB
-        </p>
-      </div>
-      <div>
-        <div style="background-color: #858585; height:200px;"></div>
-        <h4 class="content_small_space">Urban Gray</h4>
-        <p class="content_10_space">
-          RGB : 133, 133, 133<br>
-          CMYK : 50%, 42%, 42%, 6%<br>
-          HEX : #858585
-        </p>
-      </div>
-      <div>
-        <div style="background-color: #000000; height:200px;"></div>
-        <h4 class="content_small_space">Urban Black</h4>
-        <p class="content_10_space">
-          RGB  : 0, 0, 0<br>
-          CMYK : 75%, 68%, 67%, 90%<br>
-          HEX : #000000
-        </p>
-      </div>
-      <div>
-        <div style="background-color: #ffffff; height:200px; border: solid black 0.05px;"></div>
-        <h4 class="content_small_space">Urban White</h4>
-        <p class="content_10_space">
-          RGB : 255,255,255<br>
-          CMYK : 0%, 0%, 0%, 0%<br>
-          HEX : #FFFFFF
-        </p>
-      </div>
-    </div>
-
-    <hr>
-
-    <h3 class="content_space">Secondary color palette</h3>
-    <div class="four_four_two_grid grid_gap_20 content_small_space">
-      <div>
-        <div style="background-color: #EFCAA3; height:200px;"></div>
-        <h4 class="content_small_space">Soil Light Orange</h4>
-        <p class="content_10_space">
-          RGB : 239, 202, 163<br>
-          CMYK : 5%, 21%, 37%, 0%<br>
-          HEX : #EFCAA3
-        </p>
-      </div>
-      <div>
-        <div style="background-color: #CF5D37; height:200px;"></div>
-        <h4 class="content_small_space">Soil Orange</h4>
-        <p class="content_10_space">
-          RGB : 207, 93, 53<br>
-          CMYK : 14%, 76%, 89%, 3%<br>
-          HEX : #CF5D37
-        </p>
-      </div>
-      <div>
-        <div style="background-color: #EDBE5F; height:200px;"></div>
-        <h4 class="content_small_space">Sand Yellow</h4>
-        <p class="content_10_space">
-          RGB : 237, 190, 95<br>
-          CMYK : 7%, 25%, 73%, 0<br>
-          HEX : #EDBE5F
-        </p>
-      </div>
-      <div>
-        <div style="background-color: #1C4922; height:200px; border: solid black 0.05px;"></div>
-        <h4 class="content_small_space">Nature Green</h4>
-        <p class="content_10_space">
-          RGB : 28, 73, 34<br>
-          CMYK : 84%, 43%, 100%, 49%<br>
-          HEX : #1C4922
-        </p>
-      </div>
-    </div>
-    <div class="four_four_two_grid content_space grid_gap_20">
-      <img src="images/momap/color_example_1.png">
-      <img src="images/momap/color_example_2.png">
-      <img src="images/momap/color_example_3.png">
-      <img src="images/momap/color_example_4.png">
-      <img src="images/momap/color_example_5.png">
-      <img src="images/momap/color_example_6.png">
-      <img src="images/momap/color_example_7.png">
-      <img src="images/momap/color_example_8.png">
-    </div>
-
-    <h2 class="content_more_space noH2Line text_above_box">Webpage design</h2>
-  </div>
-
-  <div class="gray_box">
-    <div class="content_container">
-      <div class="webpage_grid grid_gap_20">
+      <div class="light_gray_overlap_content webpage_grid grid_gap_20">
         <div>
-          <h3 class="content_small_space">Desktop</h3>
-          <div class ="webpage_contaioner_desktop content_small_space">
+          <h3>Desktop</h3>
+          <div class ="webpage_contaioner_desktop content_10_space">
             <div class ="webpage_contaioner_top_desktop">
               <div></div><div></div><div></div>
             </div>
             <div>
-              <img src="images/momap/webpage_desktop.jpg">
+              <img style="display:block;" src="images/momap/webpage_desktop.jpg">
             </div>
           </div>
         </div>
         <div>
-          <h3 class="content_small_space">Mobile</h3>
-          <div class ="webpage_contaioner_mobile content_small_space">
+          <h3>Mobile</h3>
+          <div class ="webpage_contaioner_mobile content_10_space">
             <div>
-              <img src="images/momap/webpage_mobile.jpg">
+              <img style="display:block;" src="images/momap/webpage_mobile.jpg">
             </div>
           </div>
         </div>
       </div>
-      <p class="content_half_space centered_text">*Scroll on the screen to see the webpage</p>
     </div>
+
   </div>
 
-  <div class="content_container">
-    <h2 class="content_more_space">Brand applications</h2>
-    <h3 class="content_small_space">Exhibition poster</h3>
-    <div class="four_two_one_grid content_small_space grid_gap_10">
-      <img class="two_grid_content" src="images/momap/poster1.jpg">
-      <img class="two_grid_content" src="images/momap/poster2.jpg">
-      <img class="two_grid_content" src="images/momap/poster3.jpg">
-      <img class="two_grid_content" src="images/momap/poster4.jpg">
-    </div>
 
-    <div style="font-size:0;">
-      <img class="content_10_space" src="images/momap/mockup2.jpg">
-      <div class="four_two_one_grid content_10_space grid_gap_10">
-        <img class="two_grid_content" src="images/momap/mockup1.jpg">
-        <img class="two_grid_content" src="images/momap/mockup3.jpg">
+  <div class="light_gray_overlap_container module_space">
+    <div class="light_gray_container module_space">
+      <div class="content_container two_two_one_grid grid_gap_40">
+        <h2>Brand Application</h2>
       </div>
     </div>
 
-    <h3 class="content_space">Exhibition brochure</h3>
-    <div style="font-size:0;">
-      <img class="content_small_space" src="images/momap/mockup_brochure2.jpg">
-      <div class="four_two_one_grid content_10_space grid_gap_10">
-        <img class="two_grid_content" src="images/momap/mockup_brochure1.jpg">
-        <img class="two_grid_content" src="images/momap/mockup_brochure3.jpg">
+    <div class="content_container">
+      <div class="light_gray_overlap_content">
+        <h3>Poster Design</h3>
+        <div class="four_four_two_grid content_space grid_gap_10">
+          <img class="image_top_left_border" src="images/momap/poster1.jpg">
+          <img class="image_top_middle_border" src="images/momap/poster2.jpg">
+          <img class="image_top_middle_border"  src="images/momap/poster3.jpg">
+          <img class="image_top_right_border" src="images/momap/poster4.jpg">
+        </div>
+        <div class="two_two_one_grid content_10_space grid_gap_10">
+          <img class="image_bottom_left_border" src="images/momap/mockup3.jpg">
+          <img class="image_bottom_right_border" src="images/momap/mockup2.jpg">
+        </div>
       </div>
     </div>
 
-    <h3 class="content_space">Mobile Ad</h3>
-    <div class="four_four_two_grid content_small_space">
-      <img src="images/momap/ad1.png">
-      <img src="images/momap/ad2.png">
-      <img src="images/momap/ad3.png">
-      <img src="images/momap/ad4.png">
-    </div>
-    <div class="four_four_two_grid">
+  </div>
+
+
+  <div class="content_container module_space">
+    <h3>Social Media</h3>
+    <div class="four_four_two_grid content_10_space grid_gap_20">
       <img src="images/momap/ad5.png">
       <img src="images/momap/ad6.png">
       <img src="images/momap/ad7.png">
       <img src="images/momap/ad8.png">
     </div>
+  </div>
 
-    <!-- <div class="inside_img_container">
-    <div class="inside_img_mac">
-    <div>
-    <img src="images/momap/web.jpg">
+  <div class="content_container module_space">
+    <h3>Exhibition brochure</h3>
+    <div class="content_space grid_gap_5">
+      <img class="image_full_border" src="images/momap/mockup_brochure1.jpg">
+    </div>
+    <div class="two_two_one_grid content_5_space grid_gap_5">
+      <img class="image_bottom_left_border" src="images/momap/mockup_brochure2.jpg">
+      <img class="image_bottom_right_border" src="images/momap/mockup_brochure3.jpg">
+    </div>
   </div>
+
+
+  <div class="content_container module_space">
+    <h3>Museum Goods</h3>
+    <div class="two_two_one_grid content_space grid_gap_5">
+      <img class="image_full_border" src="images/momap/cup.jpg">
+      <img class="image_full_border" src="images/momap/puzzle.jpg">
+    </div>
   </div>
-  <p style="text-align:center;">Scroll on the screen to see the webpages</p>
-  <div class="inside_img_mobile">
-  <img class="inside_img_frame" src="images/jubudae/notch.png">
-  <div>
-  <img src="images/momap/mobile.jpg">
+
+  <div class="content_container module_space">
+    <h3>Spatial Design</h3>
   </div>
-  </div>
+
+  <!-- <div class="content_space">
+    <img src="images/momap/museum2.jpg">
   </div> -->
 
-  <!-- <h3 class="content_space">Banner</h3>
-  <img class="content_half_space" src="images/momap/banner.jpg">
-  <h3 class="content_space">Bus Wrapper</h3>
-  <img class="content_half_space" src="images/momap/bus.jpg"> -->
-  <h3 class="content_space">Museum goods</h3>
-  <div class="four_two_one_grid content_small_space grid_gap_10">
-    <img class="two_grid_content" src="images/momap/cup.jpg">
-    <img class="two_grid_content" src="images/momap/puzzle.jpg">
-  </div>
+  <div class="content_space darkImage"
+  style="
+  width: 100%;
+  height: 1000px;
+  background-image: url('images/momap/museum2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:center;
+  background-size: 110%;
+  "></div>
 
-  <h3 class="content_space">Exhibition spatial</h3>
-  <div style="font-size:0;">
-    <img class="two_grid_content content_small_space" src="images/momap/museum1.jpg">
-    <img class="two_grid_content content_10_space" src="images/momap/museum2.jpg">
-  </div>
-  <!-- <div class="four_two_one_grid content_small_space grid_gap_10">
-  <img class="two_grid_content" src="images/momap/museum1.jpg">
-  <img class="two_grid_content" src="images/momap/museum2.jpg">
-  </div> -->
+  <div id="copyright_cont"></div>
 
-  </div>
-  </div>
+  <script src="nav_color.js"></script>
 
-  <div id="copyright_cont" class="content_space"></div>
 </body>
 </html>
