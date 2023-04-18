@@ -64,36 +64,6 @@
     $('.footer_container p').css('color',white_color);
     $('.contact_container div h3').css('color',white_color);
     $('#copyright_cont').css('background-color',main_color);
-    var backgroundImages_title = [
-    'url(images/strider/0001.png)',
-    'url(images/strider/0002.png)',
-    'url(images/strider/0003.png)',
-    'url(images/strider/0004.png)',
-    'url(images/strider/0005.png)',
-    'url(images/strider/0006.png)',
-    'url(images/strider/0007.png)',
-    'url(images/strider/0008.png)',
-    'url(images/strider/0009.png)',
-    'url(images/strider/0010.png)',
-    'url(images/strider/0011.png)',
-    'url(images/strider/0012.png)',
-    'url(images/strider/0013.png)',
-    'url(images/strider/0014.png)',
-    'url(images/strider/0015.png)',
-    'url(images/strider/0016.png)',
-    'url(images/strider/0017.png)'
-    ],
-    backgroundImageCounter = 0,
-    titleImage = $('.title_image');
-
-    window.setInterval(function() {
-        titleImage.css('background-image', backgroundImages_title[backgroundImageCounter]);
-
-        backgroundImageCounter++;
-        if(backgroundImageCounter >= backgroundImages_title.length) {
-            backgroundImageCounter = 0;
-        }
-    }, 70);
 
     var backgroundImages_walk = [
     'url(images/strider/strider_walk/0001.png)',
