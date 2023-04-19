@@ -124,7 +124,7 @@
   }
   #how_to_use .how_to_use_content {
     display: inline-block;
-    background-color: #f4f4f4;
+    background-color: #efefef;
     height: 90px;
     border-radius: 5px;
     display: flex;
@@ -136,8 +136,15 @@
     width: 40px;
     padding-left: 20px;
   }
-  #how_to_use .how_to_use_content p {
+  #how_to_use .how_to_use_content ul {
     align-self: center;
+    margin: 0;
+  }
+  #how_to_use .how_to_use_content li {
+    margin: 0;
+  }
+  #how_to_use .how_to_use_content li:nth-child(2) {
+    margin-top: 5px;
   }
 
   #interaction_description div {
@@ -191,6 +198,15 @@
       border-radius: 5px;
       width: 100%;
       height: auto;
+    }
+
+    #how_to_use .how_to_use_content {
+      height: auto;
+      padding: 10px;
+    }
+    #how_to_use .how_to_use_content h3 {
+      width: 40px;
+      padding-left: 10px;
     }
   }
 
@@ -390,10 +406,10 @@
         <img class="image_full_border" src="images/transfont/step_1.gif">
         <div class="how_to_use_content">
           <h3>1</h3>
-          <p>
-            – Prepare a web camera and microphone.<br>
-            – Allow browsers to use web camera and microphone.
-          </p>
+          <ul>
+            <li>Prepare a web camera and microphone.</li>
+            <li>Allow browsers to use web camera and microphone.</li>
+          </ul>
         </div>
       </div>
 
@@ -401,9 +417,9 @@
         <img class="image_full_border" src="images/transfont/step_2.gif">
         <div class="how_to_use_content">
           <h3>2</h3>
-          <p>
-            – Step back until see your whole body.
-          </p>
+          <ul>
+            <li>Step back until see your whole body.</li>
+          </ul>
         </div>
       </div>
 
@@ -411,9 +427,9 @@
         <img class="image_full_border" src="images/transfont/step_3.gif">
         <div class="how_to_use_content">
           <h3>3</h3>
-          <p>
-            – Speak on microphone to see an example text.
-          </p>
+          <ul>
+            <li>Speak on microphone to see an example text.</li>
+          </ul>
         </div>
       </div>
 
@@ -421,10 +437,10 @@
         <img class="image_full_border" src="images/transfont/step_4.gif">
         <div class="how_to_use_content">
           <h3>4</h3>
-          <p>
-            – Move your body and design the font.<br>
-            – Use keywords for additional controls.
-           </p>
+            <ul>
+              <li>Move your body and design the font.</li>
+              <li>Use keywords for additional controls.</li>
+            </ul>
          </div>
       </div>
 

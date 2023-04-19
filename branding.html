@@ -156,9 +156,11 @@
   /*Smart phone*/
   @media screen and (max-width: 599px) {
     .title_image {
-      left:calc(calc(100vw - 1100px) * 0.5 + 300px + 80px);
       width: 300px;
+      height: auto;
       top:30px;
+      left: 0;
+      margin: auto;
     }
     .title_image_overlap {
       position: fixed;
@@ -170,6 +172,25 @@
       grid-gap: 20px;
       padding-left: 10px;
       padding-right: 10px;
+    }
+    .grid_gap_20 {
+      grid-gap: 40px;
+    }
+    #DIL_container .light_gray_container {
+      height: 120px;
+    }
+    #DIL_container .light_gray_overlap_content {
+      margin-top: -130px;
+    }
+    .logo_container {
+      width: 100%;
+      height: auto;
+    }
+    .logo_container img {
+      width: 100%;
+      height: auto;
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
   }
 
@@ -283,7 +304,7 @@
   </div>
 
 
-  <div class="light_gray_overlap_container">
+  <div id="DIL_container" class="light_gray_overlap_container">
 
     <div class="light_gray_container content_180_space">
       <div class="content_container two_two_one_grid grid_gap_40">

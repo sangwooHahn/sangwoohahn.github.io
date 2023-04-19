@@ -126,6 +126,16 @@
     line-height: 140%;
   }
 
+  #map_illust {
+    width: 100%;
+    height: 1000px;
+    background-image: url('images/momap/museum2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position:center;
+    background-size: 110%;
+  }
+
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
     /* .title_image {
@@ -155,6 +165,11 @@
   @media screen and (max-width: 599px) {
     #title_text_container_decoration {
       display: none;
+    }
+    #map_illust {
+      height: 300px;
+      background-position: bottom;
+      background-size: 150%;
     }
   }
 </style>
@@ -277,12 +292,12 @@
   <div class="content_container module_space">
     <h3>Color Study</h3>
     <div class="three_two_one_grid content_space grid_gap_20">
-      <img src="images/momap/color_references_1.png">
-      <img src="images/momap/color_references_2.png">
-      <img src="images/momap/color_references_3.png">
-      <img src="images/momap/color_references_4.png">
-      <img src="images/momap/color_references_5.png">
-      <img src="images/momap/color_references_6.png">
+      <img class="image_full_border" src="images/momap/color_references_1.png">
+      <img class="image_full_border" src="images/momap/color_references_2.png">
+      <img class="image_full_border" src="images/momap/color_references_3.png">
+      <img class="image_full_border" src="images/momap/color_references_4.png">
+      <img class="image_full_border" src="images/momap/color_references_5.png">
+      <img class="image_full_border" src="images/momap/color_references_6.png">
     </div>
   </div>
 
@@ -375,7 +390,7 @@
     </div>
 
     <h3 class="content_space">Color guide</h3>
-    <div class="four_two_one_grid content_20_space grid_gap_20">
+    <div class="four_two_two_grid content_20_space grid_gap_20">
       <img style="background-color: #EFCAA3;" src="images/momap/logo_primary_black.png">
       <img style="background-color: #CF5D37;" src="images/momap/logo_primary_white.png">
       <img style="background-color: #EDBE5F;" src="images/momap/logo_primary_black.png">
@@ -453,10 +468,10 @@
   <div class="content_container module_space">
     <h3>Social Media</h3>
     <div class="four_four_two_grid content_10_space grid_gap_20">
-      <img src="images/momap/ad5.png">
-      <img src="images/momap/ad6.png">
-      <img src="images/momap/ad7.png">
-      <img src="images/momap/ad8.png">
+      <img class="image_full_border image_shadow" src="images/momap/ad1.png">
+      <img class="image_full_border image_shadow" src="images/momap/ad2.png">
+      <img class="image_full_border image_shadow" src="images/momap/ad3.png">
+      <img class="image_full_border image_shadow" src="images/momap/ad4.png">
     </div>
   </div>
 
@@ -488,16 +503,7 @@
     <img src="images/momap/museum2.jpg">
   </div> -->
 
-  <div class="content_space darkImage"
-  style="
-  width: 100%;
-  height: 1000px;
-  background-image: url('images/momap/museum2.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position:center;
-  background-size: 110%;
-  "></div>
+  <div id="map_illust" class="content_space darkImage"></div>
 
   <div id="copyright_cont"></div>
 

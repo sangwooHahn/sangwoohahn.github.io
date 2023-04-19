@@ -142,9 +142,12 @@
   /*Smart phone*/
   @media screen and (max-width: 599px) {
     .title_image {
-      left:calc(calc(100vw - 1100px) * 0.5 + 300px + 80px);
       width: 300px;
-      top:30px;
+      height: auto;
+      padding-top: 20px;
+      top: 0px;
+      left: 0;
+      margin: auto;
     }
     .title_image_overlap {
       position: fixed;
@@ -152,10 +155,16 @@
       left:calc(calc(100vw - 1100px) * 0.5 + 300px);
       height: 460px;
     }
+    .project_overview_container {
+      padding-bottom: 0;
+    }
     #three_grid_container {
       grid-gap: 20px;
       padding-left: 10px;
       padding-right: 10px;
+    }
+    #webpage_contaioner {
+      position: relative;
     }
   }
 

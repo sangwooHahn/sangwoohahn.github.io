@@ -217,7 +217,7 @@ a:hover {
 .project_overview_content img {
   width: 60px;
   height: 60px;
-  background-color: #f4f4f4;
+  background-color: #efefef;
   border-radius: 50%;
   text-align: center;
 }
@@ -268,7 +268,7 @@ a:hover {
 
 /* Light Gray Box */
 .light_gray_container {
-  background-color: #f4f4f4;
+  background-color: #efefef;
   height: 250px;
 }
 .light_gray_container .content_container {
@@ -370,6 +370,7 @@ a:hover {
   background-color: #eaeaea;
   height:30px;
   border-radius: 10px 10px 0px 0px;
+  font-size: 0;
 }
 .webpage_contaioner_top_desktop div {
   display: inline-block;
@@ -586,6 +587,7 @@ a:hover {
 
 
 
+
 /*Tablet*/
 @media screen and (min-width: 600px) and (max-width: 1256px) {
   .content_container, .content_container_full_mobile, .color_box > div, .contact, .copyright div {
@@ -650,7 +652,7 @@ a:hover {
 
 /*Smart phone*/
 @media screen and (max-width: 599px) {
-  .content_container, .content_small_container, .intro_image_container, .color_box > div, .contact, .copyright div {
+  .content_container, .content_small_container, .intro_image_container, .color_box > div, .contact {
     width: auto;
     margin-left: 15px;
     margin-right: 15px;
@@ -678,12 +680,26 @@ a:hover {
     font-size: 1em;
   }
 
+  /* Nav */
+  .nav {
+    width: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+    /* background-color: rgba(250,250,250, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    -moz-backdrop-filter: blur(20px);
+    -o-backdrop-filter: blur(20px);
+    -ms-backdrop-filter: blur(20px); */
+  }
 
-/* Title */
+
+  /* Title */
   .title_content {
     margin-top: 70px;
     align-self: center;
     text-align: center;
+    width : 100%;
   }
   .title_content p {
     width : 100%;
@@ -706,10 +722,13 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(1, 60px 1fr);
     grid-column-gap: 20px;
-    padding-top: 15px;
+    padding-top: 5px;
   }
   .project_overview_content p {
     text-align: left;
+  }
+  .project_overview_container .grid_gap_40 {
+    grid-gap: 5px;
   }
 
   /* Intro Images */
@@ -737,8 +756,11 @@ a:hover {
     display: flex;
     flex-direction: column;
   }
+  .light_gray_overlap_container .light_gray_container {
+    height: 250px;
+  }
   .light_gray_overlap_container .light_gray_overlap_content {
-    margin-top: -50px;
+    margin-top: -260px;
   }
   .light_gray_overlap_container .light_gray_container .content_container { /*그리드 제거용*/
     display: block;
@@ -776,10 +798,10 @@ a:hover {
   }
 
   .content_200_space {
-    margin-top: 100px;
+    margin-top: 80px;
   }
   .content_180_space {
-    margin-top: 80px;
+    margin-top: 50px;
   }
   .content_150_space {
     margin-top: 50px;
@@ -813,7 +835,7 @@ a:hover {
   .four_four_two_grid, .four_two_two_grid, .three_two_two_grid, .two_two_two_grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .four_four_one_grid, .four_two_one_grid, .three_two_one_grid, .two_two_one_grid  {
+  .four_four_one_grid, .four_two_one_grid, .three_three_one_grid, .three_two_one_grid, .two_two_one_grid  {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -829,7 +851,7 @@ a:hover {
     border-radius: 5px;
   }
   .webpage_contaioner_top_desktop {
-    height:16px;
+    height: 16px;
     border-radius: 8px 8px 0px 0px;
     display: block;
   }
@@ -889,6 +911,9 @@ a:hover {
     height: 75px;
   }
   .copyright p {
-    padding-top: 15px;
+    width: 300px;
+  }
+  .copyright .content_container {
+    display: inline-block;
   }
 }
