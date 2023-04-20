@@ -591,10 +591,11 @@ a:hover {
 
 /* Copyright */
 .copyright {
+  display: flex;
   height: 50px;
-  /* background-color: #eee; */
   color: #fafafa;
   text-align: center;
+  justify-content: center;
 }
 .copyright p::after {
   padding-top: 10px;
