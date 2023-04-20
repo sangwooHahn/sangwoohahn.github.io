@@ -11,7 +11,7 @@ function onScroll() {
 		window.innerWidth - 40, 51
 	);
 
-	if(window.innerWidth < 599) {
+	if(window.innerWidth < 1100) {
 		element_left = document.elementFromPoint(1, 51);
 		element_right = document.elementFromPoint(window.innerWidth - 1, 51);
 	}

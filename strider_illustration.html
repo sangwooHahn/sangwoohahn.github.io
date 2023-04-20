@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-  <link rel="manifest" href="favicon.ico/manifest.json">
+  <!-- <link rel="manifest" href="favicon.ico/manifest.json"> -->
   <meta name="msapplication-TileColor" content="#003789">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#003789">
@@ -136,18 +136,19 @@
 
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-
+    .title_image {
+      width: auto;
+      height: 100%;
+      max-height: 400px;
+    }
   }
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
     .title_image {
-      width: 300px;
-      height: auto;
-      padding-top: 20px;
-      top: 0px;
-      left: 0;
-      margin: auto;
+      width: auto;
+      height: 100%;
+      max-height: 400px;
     }
     .title_image_overlap {
       position: fixed;

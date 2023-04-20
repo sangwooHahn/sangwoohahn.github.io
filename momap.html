@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-  <link rel="manifest" href="favicon.ico/manifest.json">
+  <!-- <link rel="manifest" href="favicon.ico/manifest.json"> -->
   <meta name="msapplication-TileColor" content="#1D4922">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#1D4922">
@@ -57,7 +57,11 @@
   </script>
 
   <style>
-
+  .title_image {
+    width: 500px;
+    align-self: center;
+    margin: auto;
+  }
   .title_text_container_decoration_container {
     display: grid;
     grid-template-columns: 100vw 300px;
@@ -106,65 +110,56 @@
     margin-top: 0px;
   }
 
-
-
-  .typeface_geo {
-    font-family: Georgia, sans-serif;
-  }
-  .typeface_geo .grind_in_grid, .typeface_mukta .grind_in_grid {
-    margin-top: 40px;
-  }
-  .typeface_geo p {
-    font-size: 12px;
-    line-height: 120%;
-  }
-  .typeface_mukta {
-    font-family: 'Mukta Mahee', sans-serif;
-  }
-  .typeface_mukta p {
-    font-size: 11px;
-    line-height: 140%;
-  }
-
   #map_illust {
     width: 100%;
-    height: 1000px;
+    height: calc(100vh - 50px);
     background-image: url('images/momap/museum2.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position:center;
+    background-position: center;
     background-size: 110%;
   }
 
   /*Tablet*/
-  @media screen and (min-width: 600px) and (max-width: 1256px) {
-    /* .title_image {
-      left: 400px;
-      top:60px;
-      width: 700px;
-      height: auto;
-    } */
-    .typeface_geo .grind_in_grid div {s
-      padding-top: 0px;
+  @media screen and (min-width: 600px) and (max-width: 1400px) {
+    #title_text_container_decoration {
+      transform: skewX(30deg) translate(-100px);
     }
-    .typeface_mukta .grind_in_grid div {
-      padding-top: 0px;
+  }
+
+  /*Tablet*/
+  @media screen and (min-width: 600px) and (max-width: 1256px) {
+    #title_text_container_decoration {
+      display: none;
+    }
+    #map_illust {
+      background-size: 150%;
     }
   }
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-    /* .title_image {
-      left: 130px;
-      top: 220px;
-      width:550px;
-    } */
-
+    .title_image {
+      width: 100%;
+      max-width: 500px;
+    }
+    .title_content {
+      width: 300px;
+    }
+    #map_illust {
+      height: calc(100vh - 50px);
+      background-size: 200%;
+    }
   }
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
+    .title_image {
+      width: 100%;
+      align-self: center;
+    }
     #title_text_container_decoration {
       display: none;
+      /* transform: skewX(30deg) translate(50px); */
     }
     #map_illust {
       height: 300px;
@@ -390,7 +385,7 @@
     </div>
 
     <h3 class="content_space">Color guide</h3>
-    <div class="four_two_two_grid content_20_space grid_gap_20">
+    <div class="four_four_two_grid content_20_space grid_gap_20">
       <img style="background-color: #EFCAA3;" src="images/momap/logo_primary_black.png">
       <img style="background-color: #CF5D37;" src="images/momap/logo_primary_white.png">
       <img style="background-color: #EDBE5F;" src="images/momap/logo_primary_black.png">

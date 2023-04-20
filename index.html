@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-  <link rel="manifest" href="favicon.ico/manifest.json">
+  <!-- <link rel="manifest" href="favicon.ico/manifest.json"> -->
   <meta name="msapplication-TileColor" content="#fafafa">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#fafafa">
@@ -29,9 +29,9 @@
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
   <meta charset="utf-8"/>
   <script>
-    $(function(){
-      $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
-    });
+    // $(function(){
+    //   $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
+    // });
     $(document).ready(function(){ /* control all page of the special colors*/
       var main_color = ('#fafafa');
       $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="' + main_color + '>');
@@ -74,10 +74,9 @@
   .about_container > div {
     height: 100%;
     width : 460px;
-    margin-left: calc(calc(100% - 450px) / 2);
-    margin-right: calc(calc(100% - 450px) / 2);
     left:0;
     right:0;
+    margin: auto;
     padding-top: 30vh;
     z-index: -99;
   }
@@ -97,14 +96,9 @@
 
   #title_cont, #about_cont, #moreProject_cont, #copyright  {
     width: 100vw;
-    /* transition: width 0.5s ease; */
-  }
-  #about_cont_div {
-    transition: all 0.5s ease;
   }
   #contact_cont {
     transform: translateX(300px);
-    transition: all 0.5s ease;
   }
 
   .portfolio_container {
@@ -183,8 +177,30 @@
     color: #777;
   }
 
+  /*Tablet_vertical*/
+  @media screen and (min-width: 600px) and (max-width: 1150px) { /*960px*/
+    .two_one_one_grid {
+      grid-template-columns: 1fr;
+    }
+    .portfolio_content_big {
+      grid-column: span 1;
+    }
+    .portfolio_content {
+      height: 360px;
+    }
+    .thumbnail_overlap_container {
+      height: 108%;
+    }
+  }
+
   /*Smart phone*/
   @media screen and (max-width: 599px) {
+    .about_container h1 {
+      text-align: left;
+    }
+    .about_container > div {
+      width: calc(100% - 80px);
+    }
     .title_container {
       height: 200px;
     }
@@ -193,7 +209,9 @@
     }
     .portfolio_container {
       width: calc(100% - 10px);
-      margin: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #fafafa;
     }
     .portfolio_container .two_two_one_grid {
       grid-template-columns: 1fr;
@@ -205,7 +223,7 @@
       grid-column: span 1;
     }
     .thumbnail_overlap_container {
-      height: 110%;
+      height: 108%;
     }
     .portfolio_gradient div {
       padding: 15px;
@@ -234,9 +252,9 @@
   </div>
 
   <div id="about_cont" class="about_container">
-    <div id="about_cont_div">
+    <div>
       <h1>Hi!</h1>
-      <p class="content_small_space">
+      <p class="content_space">
         I'm Sangwoo Hahn. A graphic designer specializing in branding, UX/UI, and motion graphics.
         I specialize at identifying current problems and finding visual solutions.
         My approach to  design is user-centric, aiming to deliver convenience and ease of use through systematic design.
@@ -252,7 +270,7 @@
   </div>
 
   <div id="body_cont" class="portfolio_container">
-    <div class="two_two_one_grid">
+    <div class="two_one_one_grid grid_gap_5">
 
       <div class="portfolio_content image_top_left_border" style="background-color: #1638B4; z-index:1;" onclick="location.href='transfont_project.html';">
         <div class="thumbnail_overlap_container">
@@ -275,7 +293,7 @@
         </div>
       </div>
 
-      <div class="portfolio_content_big portfolio_content image_full_border" style="background-image:url('thumbnail/striderSocial.jpg');" onclick="location.href='strider_social.html';">
+      <div class="portfolio_content_big portfolio_content image_full_border" style="background-image:url('thumbnail/striderSocial.jpg'); z-index:2;" onclick="location.href='strider_social.html';">
         <div class="thumbnail_overlap_container">
           <img id="thumbnail_strider_social" src="thumbnail/striderSocial_phone.png">
         </div>
@@ -287,7 +305,7 @@
         </div>
       </div>
 
-      <div class="portfolio_content image_middle_left_border" style="background-color: #003789; z-index:1;" onclick="location.href='strider_illustration.html';">
+      <div class="portfolio_content image_middle_left_border" style="background-color: #003789; z-index:3;" onclick="location.href='strider_illustration.html';">
         <div class="thumbnail_overlap_container">
           <img id="thumbnail_strider_illust" src="thumbnail/strider_illust_fox.png">
         </div>

@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-  <link rel="manifest" href="favicon.ico/manifest.json">
+  <!-- <link rel="manifest" href="favicon.ico/manifest.json"> -->
   <meta name="msapplication-TileColor" content="#1E1E1E">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#1E1E1E">
@@ -66,6 +66,7 @@
   #webpage_contaioner {
     position: relative;
     width: 100%;
+    max-width: 500px;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
     margin: auto;
@@ -135,6 +136,7 @@
     align-self: center;
     width: 40px;
     padding-left: 20px;
+    padding-right: 5px;
   }
   #how_to_use .how_to_use_content ul {
     align-self: center;
@@ -151,27 +153,36 @@
     align-self: flex-end;
     margin-bottom: 10px;
   }
-
-
-
-
+  #element_container .two_two_one_grid {
+    grid-template-columns: 0.25fr 1fr;
+  }
 
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
 
-    #interaction_description div {
-      margin-top: 40px;
-    }
   }
 
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-    /* .webpage_contatiner {
-      left: 78px;
-      top: 400px;
-    } */
-    #interaction_description div {
-      margin-top: 60px;
+    #how_to_use .how_to_use_content h3 {
+      align-self: center;
+      width: 20px;
+      padding-left: 10px;
+      padding-right: 20px;
+    }
+    #how_to_use .how_to_use_content {
+      height: 120px;
+    }
+    #how_to_use .how_to_use_content ul {
+      padding: 15px;
+    }
+    #element_container .two_two_one_grid {
+      grid-template-columns: 0.4fr 1fr;
+    }
+    #input_container img {
+      border-radius: 5px;
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -347,9 +358,9 @@
   </div>
 
 
-  <div class="content_container module_space">
+  <div id="element_container" class="content_container module_space">
     <h3>Elements of the font</h3>
-    <div class="four_two_one_grid content_space">
+    <div class="two_two_one_grid content_space">
       <div class="list_container">
         – Font width<br>
         – Stroke weight<br>
@@ -361,7 +372,7 @@
         – Serif weight<br>
         – Descender length
       </div>
-      <img class="three_grid_content content_space_mobile" src="images/transfont/font_elements.png">
+      <img class="content_space_mobile" src="images/transfont/font_elements.png">
     </div>
   </div>
 

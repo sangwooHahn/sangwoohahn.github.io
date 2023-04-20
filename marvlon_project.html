@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-  <link rel="manifest" href="favicon.ico/manifest.json">
+  <!-- <link rel="manifest" href="favicon.ico/manifest.json"> -->
   <meta name="msapplication-TileColor" content="#421D0D">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#421D0D">
@@ -64,10 +64,9 @@
     position: relative;
     width: 400px;
     height: auto;
-    top: 90px;
-  }
-  .title_content {
-    width: 500px;
+    /* top: 90px; */
+    margin: auto;
+    align-self: center;
   }
   .title_content img {
     width: 300px;
@@ -204,49 +203,100 @@
 
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
+    .title_content  {
+      display: grid;
+    }
+    .title_content img {
+      margin: auto;
+      align-self: center;
+      width: 100%;
+      max-width: 300px;
+    }
+
     .card_ribbon {
-      left: calc(calc(100vw - 276px) / 1960);
-      top: calc(calc(100vw - 276px) / -98);
+      left: calc(calc(100vw - 120px) / 1960);
+      top: calc(calc(100vw - 120px) / -98);
     }
     .card_size {
       position: absolute;
-      left: calc(calc(100vw - 276px) / -10);
-      top: calc(calc(100vw - 276px) / -10.5);
+      left: calc(calc(100vw - 120px) / -10.5);
+      top: calc(calc(100vw - 120px) / -12);
     }
     .card_title {
-      font-size: calc(calc(100vw - 276px) / 50);
-      top: calc(calc(100vw - 276px) / 90);
+      font-size: calc(calc(100vw - 120px) / 60);
+      top: calc(calc(100vw - 120px) / 120);
     }
     .card_level {
-      font-size: calc(calc(100vw - 276px) / 60);
-      top: calc(calc(100vw - 276px) / 22);
+      font-size: calc(calc(100vw - 120px) / 75);
+      top: calc(calc(100vw - 120px) / 23);
     }
     .card_content {
-      font-size: calc(calc(100vw - 276px) / 45);
-      line-height: calc(calc(100vw - 276px) / 36);
-      top: calc(calc(100vw - 276px) / 4.7);
+      font-size: calc(calc(100vw - 120px) / 65);
+      line-height: calc(calc(100vw - 120px) / 36);
+      top: calc(calc(100vw - 120px) / 5.2);
     }
     .card_content_oneline {
-      font-size: calc(calc(100vw - 276px) / 45);
-      top: calc(calc(100vw - 276px) / 4.2);
+      font-size: calc(calc(100vw - 120px) / 60);
+      top: calc(calc(100vw - 120px) / 4.7);
     }
     .card_content_fourline {
-      font-size: calc(calc(100vw - 276px) / 55);
-      line-height: calc(calc(100vw - 276px) / 46);
+      line-height: calc(calc(100vw - 120px) / 50);
+      top: calc(calc(100vw - 120px) / 5);
     }
   }
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-    .title_text_image {
-      width:85%;
+    .title_image {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .card_ribbon {
+      left: calc(calc(100vw - 80px) / 1960);
+      top: calc(calc(100vw - 80px) / -98);
+    }
+    .card_size {
+      position: absolute;
+      left: calc(calc(100vw - 80px) / -10.5);
+      top: calc(calc(100vw - 80px) / -12);
+    }
+    .card_title {
+      font-size: calc(calc(100vw - 80px) / 60);
+      top: calc(calc(100vw - 80px) / 100);
+    }
+    .card_level {
+      font-size: calc(calc(100vw - 80px) / 75);
+      top: calc(calc(100vw - 80px) / 23);
+    }
+    .card_content {
+      font-size: calc(calc(100vw - 80px) / 65);
+      line-height: calc(calc(100vw - 80px) / 36);
+      top: calc(calc(100vw - 80px) / 5.2);
+    }
+    .card_content_oneline {
+      font-size: calc(calc(100vw - 80px) / 60);
+      top: calc(calc(100vw - 80px) / 4.4);
+    }
+    .card_content_fourline {
+      line-height: calc(calc(100vw - 80px) / 50);
+    }
+
+    #map_image_module {
+      width: 100%;
+      height: calc(100vh - 300px);
+      background-image: url('images/marvlon/map_drawing_reColoring_EN.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position:center;
+      background-size: 210%;
+    }
+    #card_container .four_four_two_grid {
+      grid-gap: 20px;
     }
   }
 
   /*Smart phone*/
   @media screen and (max-width: 599px) {
-    .title_content {
-      width: 100%;
-    }
     .title_text_image {
       width:100%;
       top: 60px;
@@ -280,15 +330,15 @@
     .card_content {
       font-size: calc(calc(100vw - 80px) / 45 * 2);
       line-height: calc(calc(100vw - 80px) / 36 * 2);
-      top: calc(calc(100vw - 80px) / 4.7 * 2);
+      top: calc(calc(100vw - 80px) / 4.4 * 2);
     }
     .card_content_oneline {
       font-size: calc(calc(100vw - 80px) / 45 * 2);
-      top: calc(calc(100vw - 80px) / 4.2 * 2);
+      top: calc(calc(100vw - 80px) / 3.8 * 2);
     }
     .card_content_fourline {
       font-size: calc(calc(100vw - 80px) / 55 * 2);
-      line-height: calc(calc(100vw - 80px) / 46 * 2);
+      line-height: calc(calc(100vw - 80px) / 44 * 2);
     }
 
     .map_illustration {
@@ -403,7 +453,7 @@
         <div class="thumb_zone_color_box" style="background-color: #B62E26;"></div>
         <p>OK to reach</p>
       </div>
-      <div class="three_two_one_grid content_space grid_gap_20">
+      <div class="three_three_one_grid content_space grid_gap_5">
         <img src="images/marvlon/ux_select.png">
         <img src="images/marvlon/ux_menu.png">
         <img src="images/marvlon/ux_popup.png">
@@ -416,7 +466,7 @@
   <div class="content_container module_space">
     <h3>Drag and drop</h3>
     <p class="content_10_space">The equipment is in the form of a card, which has all the key functions of equiping, swaping, and actiing by drag and drop.</p>
-    <div class="three_two_one_grid content_space grid_gap_20">
+    <div class="three_three_one_grid content_space grid_gap_5">
       <img src="images/marvlon/ux_equip.png">
       <img src="images/marvlon/ux_swap.png">
       <img src="images/marvlon/ux_attack.png">
@@ -435,11 +485,11 @@
     <div class="light_gray_overlap_content content_container module_space">
       <h3>Guild page interface</h3>
       <div class="page_designs_container four_four_two_grid content_space grid_gap_5">
-        <img class="one_grid_content" src="images/marvlon/pages/Frame1.jpg">
-        <img class="one_grid_content" src="images/marvlon/pages/Frame2.jpg">
+        <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame1.jpg">
+        <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame2.jpg">
         <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame3.jpg"> -->
-        <img class="one_grid_content" src="images/marvlon/pages/Frame4.jpg">
-        <img class="one_grid_content" src="images/marvlon/pages/Frame5.jpg">
+        <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame4.jpg">
+        <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame5.jpg">
       </div>
     </div>
 
@@ -450,16 +500,16 @@
   <div class="content_container module_space">
     <h3>Dungeon page interface</h3>
     <div class="page_designs_container four_four_two_grid content_space grid_gap_5">
-      <img class="one_grid_content" src="images/marvlon/pages/Frame6.jpg">
+      <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame6.jpg">
       <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame7.jpg"> -->
-      <img class="one_grid_content" src="images/marvlon/pages/Frame8.jpg">
+      <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame8.jpg">
       <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame9.jpg"> -->
-      <img class="one_grid_content" src="images/marvlon/pages/Frame10.jpg">
-      <img class="one_grid_content" src="images/marvlon/pages/Frame11.jpg">
-      <img class="one_grid_content" src="images/marvlon/pages/Frame12.jpg">
-      <img class="one_grid_content" src="images/marvlon/pages/Frame17.jpg">
-      <img class="one_grid_content" src="images/marvlon/pages/Frame16.jpg">
-      <img class="one_grid_content" src="images/marvlon/pages/Frame15.jpg">
+      <img class="one_grid_conten darkImaget" src="images/marvlon/pages/Frame10.jpg">
+      <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame11.jpg">
+      <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame12.jpg">
+      <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame17.jpg">
+      <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame16.jpg">
+      <img class="one_grid_content darkImage" src="images/marvlon/pages/Frame15.jpg">
       <!-- <img class="one_grid_content" src="images/marvlon/pages/Frame13.jpg">
       <img class="one_grid_content" src="images/marvlon/pages/Frame14.jpg"> -->
     </div>
@@ -553,7 +603,7 @@
       </div>
     </div>
 
-    <div class="light_gray_overlap_content content_container module_space">
+    <div id="card_container" class="light_gray_overlap_content content_container module_space">
       <h3 class="">Card design</h3>
 
       <div class="four_four_two_grid grid_gap_40 content_space">
@@ -612,7 +662,7 @@
   <div class="content_container module_space">
     <h3>Dungeons</h3>
     <div class="content_space ">
-      <img src="images/marvlon/map_illustration.jpg">
+      <img class="darkImage" src="images/marvlon/map_illustration.jpg">
     </div>
   </div>
 

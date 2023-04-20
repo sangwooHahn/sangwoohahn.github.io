@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-  <link rel="manifest" href="favicon.ico/manifest.json">
+  <!-- <link rel="manifest" href="favicon.ico/manifest.json"> -->
   <meta name="msapplication-TileColor" content="#000E64">
   <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
   <meta name="theme-color" content="#000E64">
@@ -226,7 +226,6 @@
     display:block;
     width: 100%;
     height: 308px;
-    background-image: url('images/strider/strider_dance/0001.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -269,15 +268,22 @@
   }
 
 
-
+  /*Tablet_horizontal*/
   @media screen and (min-width: 600px) and  (max-width: 1256px) {
-
+    #youtube_lofi {
+      height: calc( calc(100vw - 65px) *0.57);
+    }
   }
 
 
   /*Tablet_vertical*/
   @media screen and (min-width: 600px) and (max-width: 960px) {
-
+    .strider_walk{
+      height: calc( calc(100vw - 65px) * 0.562/2);
+    }
+    .strider_dance{
+      height: calc( calc(100vw - 65px) * 0.562/2);
+    }
   }
 
   /*Smart phone*/

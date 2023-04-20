@@ -424,14 +424,14 @@ a:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
 }
-.two_two_one_grid, .two_two_two_grid {
+.two_two_one_grid, .two_two_two_grid, .two_one_one_grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
 }
 .webpage_grid {
   display: grid;
-  grid-template-columns: 75% 25%;
+  grid-template-columns: 0.75fr 0.25fr;
   grid-template-rows: auto;
 }
 
@@ -525,9 +525,6 @@ a:hover {
   margin-right: auto;
   color: #fafafa;
 }
-.contact_container div h3 {
-  padding-top: 8px;
-}
 .contact_container a {
   color: #fafafa;
   background: linear-gradient(to right, #fff 50%, rgba(0,0,0,0) 50%);
@@ -550,22 +547,40 @@ a:hover {
 }
 #contact_close {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin-top: 26px;
-  border-right: 2.5px solid white;
-  border-bottom: 2.5px solid white;
-  -ms-transform: translateX(-10px) translateY(-50%) rotate(-45deg);
-  -webkit-transform: translateX(-10px) translateY(-50%) rotate(-45deg);
-  transform: translateX(-10px) translateY(-50%) rotate(-45deg);
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
 }
-#contact_close > h3 {
-  -ms-transform: translateY(5px) rotate(45deg);
-  -webkit-ransform: translateY(5px) rotate(45deg);
-  transform: translateY(5px) rotate(45deg);
-  margin-left: 32px;
-  cursor: pointer;
+#contact_close div {
+  display: block;
+  position: relative;
+  width: 13px;
+  height: 13px;
+  border-right: 4px solid #fafafa;
+  border-bottom: 4px solid #fafafa;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  align-self: center;
+  justify-content: center;
 }
+/* #contact_close div::before,
+#contact_close div::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #fafafa;
+  border-radius: 1px;
+  left: 0;
+  right: 0;
+}
+#contact_close div::before {
+  transform: rotate(45deg);
+}
+#contact_close div::after {
+  transform: rotate(-45deg);
+} */
 #contact_cont {
   transform: translateX(400px);
   transition: all 0.5s ease;
@@ -581,8 +596,9 @@ a:hover {
   color: #fafafa;
   text-align: center;
 }
-.copyright p {
+.copyright p::after {
   padding-top: 10px;
+  content: "Copyright ⓒ 2023 by Sangwoo Hahn | All Rights Reserved."
 }
 
 
@@ -590,29 +606,17 @@ a:hover {
 
 /*Tablet*/
 @media screen and (min-width: 600px) and (max-width: 1256px) {
-  .content_container, .content_container_full_mobile, .color_box > div, .contact, .copyright div {
-    width: auto;
-    margin-right:78px;
-    margin-left:78px;
+  .content_container, .content_small_container, .intro_image_container, .contact {
+    width: calc(100% - 60px);
+    margin-left: auto;
+    margin-right: auto;
   }
-
 }
+
 /*Tablet_vertical*/
 @media screen and (min-width: 600px) and (max-width: 960px) {
-  h2 {
-    background-size: 60% 20px;
-  }
-
-  .title_description {
-    /* padding-top: 60px; */
-  }
-
-
-  .content_more_space {
-    margin-top: 150px;
-  }
-  .content_space {
-    margin-top: 80px;
+  .light_gray_container .two_two_one_grid {
+    grid-template-columns: 1fr 0.7fr;
   }
 
   .four_four_two_grid {
@@ -627,32 +631,65 @@ a:hover {
   .three_two_one_grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .persona_grid{
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 40% 60%;
+  .two_one_one_grid {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .one_two_grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-
   .webpage_contaioner_desktop > div:nth-child(2) {
-    height:290px;
+    height:calc(calc(calc(100vw - 80px) * 0.25 * 2) - 30px);
   }
   .webpage_contaioner_mobile > div:nth-child(1) {
-    height:320px;
+    height:calc(calc(100vw - 80px) * 0.25 * 2);
   }
 
-  .half_image_full_mobile {
-    width:100%;
+  /* Sapcing */
+  .module_space {
+    margin-top: 50px;
+  }
+  .content_space {
+    margin-top: 20px;
+  }
+  .content_space_mobile {
+    margin-top: 20px;
+  }
+
+  .content_200_space {
+    margin-top: 80px;
+  }
+  .content_180_space {
+    margin-top: 80px;
+  }
+  .content_150_space {
+    margin-top: 80px;
+  }
+  .content_100_space {
+    margin-top: 80px;
+  }
+  .content_80_space {
+    margin-top: 80px;
+  }
+  .content_50_space {
+    margin-top: 50px;
+  }
+  .content_40_space {
+    margin-top: 20px;
+  }
+  .content_30_space {
+    margin-top: 20px;
+  }
+  .content_20_space {
+    margin-top: 20px;
+  }
+  .content_10_space {
+    margin-top: 10px;
+  }
+  .content_5_space {
+    margin-top: 5px;
   }
 }
 
 /*Smart phone*/
 @media screen and (max-width: 599px) {
-  .content_container, .content_small_container, .intro_image_container, .color_box > div, .contact {
+  .content_container, .content_small_container, .intro_image_container, .contact {
     width: auto;
     margin-left: 15px;
     margin-right: 15px;
@@ -835,7 +872,7 @@ a:hover {
   .four_four_two_grid, .four_two_two_grid, .three_two_two_grid, .two_two_two_grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .four_four_one_grid, .four_two_one_grid, .three_three_one_grid, .three_two_one_grid, .two_two_one_grid  {
+  .four_four_one_grid, .four_two_one_grid, .three_three_one_grid, .three_two_one_grid, .two_two_one_grid, .two_one_one_grid  {
     grid-template-columns: repeat(1, 1fr);
   }
 
@@ -904,14 +941,15 @@ a:hover {
 
 
 
-  .contact {
+  /* .contact {
     height: calc(100% - 100px);
-  }
+  } */
   .copyright {
     height: 75px;
   }
-  .copyright p {
-    width: 300px;
+  .copyright p::after {
+    width: 270px;
+    content: "Copyright ⓒ 2023 by Sangwoo Hahn All Rights Reserved."
   }
   .copyright .content_container {
     display: inline-block;
