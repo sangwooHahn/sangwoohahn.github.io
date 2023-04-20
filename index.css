@@ -948,8 +948,10 @@ a:hover {
   .copyright {
     height: 75px;
   }
-  .copyright p::after {
+  .copyright p {
     width: 270px;
+  }
+  .copyright p::after {
     content: "Copyright ⓒ 2023 by Sangwoo Hahn All Rights Reserved."
   }
   .copyright .content_container {
