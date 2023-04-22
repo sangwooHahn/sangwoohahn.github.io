@@ -49,6 +49,7 @@ a{
   background-position: center;
   -webkit-background-blend-mode: soft-light;
   background-size: 120%;
+  -webkit-background-size: 120%;
 }
 .content_container {
   height: auto;
