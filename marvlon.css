@@ -49,7 +49,6 @@ a{
   background-position: center;
   -webkit-background-blend-mode: soft-light;
   background-size: 120%;
-  -webkit-background-size: 120%;
 }
 .content_container {
   height: auto;
@@ -464,6 +463,11 @@ video {
     margin-left:80px;
   }
 
+  .title_container {
+    background-attachment: local;
+    background-size: 150%;
+  }
+
   .title_description {
     padding-top: 120px;
   }
@@ -520,6 +524,7 @@ video {
   }
 
   .title_container {
+    background-attachment: local;
     background-size: 400%;
   }
   .content_container, .footer_container {

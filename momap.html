@@ -118,24 +118,23 @@
     background-attachment: fixed;
     background-position: center;
     background-size: 110%;
-    -webkit-background-size: 110%;
   }
 
-  /*Tablet*/
+  /*Special*/
   @media screen and (min-width: 600px) and (max-width: 1400px) {
     #title_text_container_decoration {
       transform: skewX(30deg) translate(-100px);
     }
-  }
 
+  }
   /*Tablet*/
   @media screen and (min-width: 600px) and (max-width: 1256px) {
     #title_text_container_decoration {
       display: none;
     }
     #map_illust {
-      background-size: 150%;
-      -webkit-background-size: 150%;
+      background-attachment: local;
+      background-size: 180%;
     }
   }
   /*Tablet_vertical*/
@@ -146,11 +145,6 @@
     }
     .title_content {
       width: 300px;
-    }
-    #map_illust {
-      height: calc(100vh - 50px);
-      background-size: 200%;
-      -webkit-background-size: 200%;
     }
   }
 
@@ -166,9 +160,9 @@
     }
     #map_illust {
       height: 300px;
-      background-position: bottom;
-      background-size: 150%;
-      -webkit-background-size: 150%;
+      background-attachment: local;
+      background-position: center;
+      background-size: auto 155%;
     }
   }
 </style>
