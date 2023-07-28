@@ -43,12 +43,12 @@ a{
 .title_container {
   height: 90vh;
   background-image: url('images/marvlon/map_drawing_reColoring_EN.png');
-  background-color: rgba(33,43,58,0.7);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   -webkit-background-blend-mode: soft-light;
   background-size: 120%;
+  background-color: rgba(33,43,58,0.7);
 }
 .content_container {
   height: auto;
@@ -306,6 +306,10 @@ video {
   100% {-webkit-filter: blur(60px);}
 }
 
+.characters {
+  width: 100%;
+}
+
 .bottom_gap_180 {
   padding-bottom: 180px;
 }
@@ -411,7 +415,7 @@ video {
 }
 .card_content_fourline {
   font-size: calc(calc(1200px - 120px) / 55);
-  line-height: calc(calc(1200px - 120px) / 42);
+  line-height: calc(calc(1200px - 120px) / 45);
 }
 .card_container:hover .card_ribbon {
   transform: scale(1.12);
