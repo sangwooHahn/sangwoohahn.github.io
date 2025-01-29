@@ -1,13 +1,13 @@
-<div id="contact_cont" class="contact_container">
-  <div id="contact_area" class="contact">
-    <div id="contact_close"><h3>Contact</h3><div></div></div>
+<div id="contact-cont" class="contact-container">
+  <div id="contact-area" class="contact">
+    <div id="contact-close"><h3>Contact</h3><div></div></div>
     <p><a href="mailto:sangwoohahn93@gmail.com"><i class="far fa-envelope" style="padding-top: 8px;"></i>sangwoohahn93@gmail.com</a></p>
     <p><a href="https://www.instagram.com/hahnsangwoo/" target="_blank"><i class="fab fa-instagram" style="padding-top: 7px;"></i>@hahnsangwoo</a></p>
     <p><a href="https://www.linkedin.com/in/sangwoohahn" target="_blank"><i class="fab fa-linkedin-in" style="padding-top: 6px;"></i>Sangwoo Hahn</a></p>
   </div>
 </div>
 <div class="copyright">
-  <div class="content_container">
+  <div class="content-large-container">
     <p></p> <!--코드로 콘텐트 집어넣어서 모바일에서는 | 표시 안뜨게 함.-->
   </div>
 </div>
@@ -16,8 +16,8 @@
   let contact_toggle = false;
 
   document.addEventListener("click", function(evt) {
-      var desireElement = document.getElementById('contact_area'),//desire to click element
-          buttonElement = document.getElementById('contact_button'), // detect contact button
+      var desireElement = document.getElementById('contact-area'),//desire to click element
+          buttonElement = document.getElementById('contact-button'), // detect contact button
           targetElement = evt.target;  // current clicked element
 
       do {
@@ -33,10 +33,10 @@
         toggle_contact();
   });
 
-  document.getElementById("contact_button").onclick = function() {
+  document.getElementById("contact-button").onclick = function() {
     toggle_contact();
   };
-  document.getElementById("contact_close").onclick = function() {
+  document.getElementById("contact-close").onclick = function() {
     toggle_contact();
   };
 
@@ -44,9 +44,9 @@
   function toggle_contact ()
   {
     if(!contact_toggle)
-      document.getElementById("contact_cont").style.transform= "translateX(0px)";
+      document.getElementById("contact-cont").style.transform= "translateX(0px)";
     else
-      document.getElementById("contact_cont").style.transform= "translateX(300px)";
+      document.getElementById("contact-cont").style.transform= "translateX(300px)";
 
       contact_toggle = !contact_toggle;
   }
