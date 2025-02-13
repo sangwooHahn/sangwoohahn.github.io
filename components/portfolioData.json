@@ -4,48 +4,48 @@
     "name": "Transfont",
     "text": "Real-time font creation with your motion",
     "url": "transfon.html",
-    "image": "../assets/thumbnail/transfont.png"
+    "image": "../assets/images/thumbnails/transfont.png"
   },
   {
     "id": "marvlon",
     "name": "Marvlon",
     "text": "UX/UI and visual design for mobile card game",
     "url":"marvlon.html",
-    "image": "../assets/thumbnail/marvlon.png"
+    "image": "../assets/images/thumbnails/marvlon.png"
   },
   {
     "id": "mpsRefresh",
     "name": "Custom Websites for K12 Schools",
     "text": "Real-time font creation with your motion",
     "url": "mps.html",
-    "image": "../assets/thumbnail/mps.png"
+    "image": "../assets/images/thumbnails/mps.png"
   },
   {
     "id": "strider",
     "name": "Strider in Marketing Campaigns",
     "text": "Real-time font creation with your motion",
     "url": "strider.html",
-    "image": "../assets/thumbnail/strider.png"
+    "image": "../assets/images/thumbnails/strider.png"
   },
   {
     "id": "emailTemplate",
     "name": "K12 Email Design System",
     "text": "Real-time font creation with your motion",
     "url": "email.html",
-    "image": "../assets/thumbnail/email.png"
+    "image": "../assets/images/thumbnails/email.png"
   },
   {
     "id": "pmlpTemplate",
     "name": "Landing Page Design System",
     "text": "Real-time font creation with your motion",
     "url": "pmlp.html",
-    "image": "../assets/thumbnail/pmlp.png"
+    "image": "../assets/images/thumbnails/pmlp.png"
   },
   {
     "id": "branding",
     "name": "Branding",
     "text": "Real-time font creation with your motion",
     "url": "branding.html",
-    "image": "../assets/thumbnail/branding.png"
+    "image": "../assets/images/thumbnails/branding.png"
   }
 ]
