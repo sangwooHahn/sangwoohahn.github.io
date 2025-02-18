@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fafafa">
+  <title>Sangwoo Hahn Design</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/common/favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/common/favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/common/favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/common/favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/common/favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/common/favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/common/favico.icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/common/favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/common/favico.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/common/favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/common/favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/common/favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/common/favicon.ico/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="../assets/images/common/favicon.ico/favicon.ico">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/portfolio.css">
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+
+  <style>
+    .intro-image-module {
+      gap: var(--padding-image);
+    }
+
+    .intro-image-module div {
+      display: flex;
+      flex-direction: column;
+      gap: var(--padding-image);
+      flex-grow: 1;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .intro-image-ratio {
+      width: calc((100vw - (var(--padding-left-right-full) * 2) - var(--padding-image)) / 100 * 65.8) !important;
+      flex-shrink: 0;
+    }
+
+    .resource-image-module {
+      gap: var(--padding-image);
+    }
+
+    .interaction-card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--padding-8);
+    }
+
+    .interaction-card h4 {
+      padding-bottom: var(--padding-8);
+    }
+
+    .interaction-card p {
+      margin-bottom: 12px;
+      line-height: 140%;
+    }
+
+    .step-card img {
+      padding-bottom: var(--padding-content);
+    }
+
+    .step-card h3 {
+      padding: 0px;
+    }
+
+    .step-card div {
+      display: flex;
+      align-items: center;
+      background-color: var(--background-secondary);
+      padding: var(--padding-16);
+      border-radius: var(--radius-card-medium);
+      gap: var(--padding-content);
+    }
+
+    /* 데스크탑 */
+    @media (min-width: 1024px) {
+      .intro-image-module {
+        grid-template-columns: 6.58fr 3.42fr;
+      }
+
+      .resource-image-module {
+        grid-template-columns: 3.87fr 6.13fr;
+      }
+    }
+
+    /* 태블릿 (가로 모드) */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .intro-image-module {
+        grid-template-columns: 6.58fr 3.42fr;
+      }
+
+      .resource-image-module {
+        grid-template-columns: 3.87fr 6.13fr;
+      }
+    }
+
+    /* 기본 (모바일 우선 접근) */
+    @media (max-width: 767px) {}
+  </style>
+</head>
+
+<body onscroll="onScroll()" class="theme-transfont">
+
+  <nav>
+    <a id="logo-button" href="../index.html#header-cont" class="noUnderline">
+      <svg class="nav-logo">
+        <use xlink:href="#logo"></use>
+      </svg>
+    </a>
+
+    <ul>
+      <li><a onclick="open_about();" id="about-button" href="../index.html#about-cont">About</a></li>
+      <li><a id="contact-button">Contact</a></li>
+      <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+    </ul>
+  </nav>
+
+  <header>
+    <section class="title-module module-gap-medium">
+      <div class="content-medium-container two-two-one-grid">
+        <div class="title-content">
+          <h1>Transfont</h1>
+          <p>Interactive Design</p>
+          <!-- <a href="https://sangwoohahn.com/transfont" class="noUnderline" target="_blank">
+            <div class="title_button">transfont.com <i class="fas fa-external-link-alt"></i></div>
+          </a> -->
+        </div>
+
+        <div class="webpage-container">
+          <div class="webpage-container-top">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <img src="../assets/images/transfont/title_person.gif">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="portfolio-description-module module-gap-medium">
+      <div class="content-medium-container">
+        <p>
+          The Transfont project is a web-based platform that leverages motion tracking technology to create
+          personalized
+          fonts.
+          Users can design typefaces in real-time by translating their body movements into unique font designs,
+          reflecting
+          their creativity and individuality.
+          Once completed, the customized fonts can be downloaded for personal use. This project bridges the gap
+          between
+          creators and design, making font creation a deeply personal and interactive experience.
+        </p>
+      </div>
+      <div class="portfolio-description-decoration"></div>
+    </section>
+  </header>
+
+  <main>
+    <section class="overview-module">
+      <div class="content-large-container two-two-one-grid">
+
+        <div class="overview-content">
+          <svg class="svg-icon">
+            <use xlink:href="#role-icon"></use>
+          </svg>
+          <div>
+            <p><b>Role</b></p>
+            <p>Graphic Designer, Developer</p>
+          </div>
+        </div>
+
+        <div class="overview-content">
+          <svg class="svg-icon">
+            <use xlink:href="#duration-icon"></use>
+          </svg>
+          <div>
+            <p><b>Duration</b></p>
+            <p>April 2020 – December 2020</p>
+          </div>
+        </div>
+
+        <div class="overview-content">
+          <svg class="svg-icon">
+            <use xlink:href="#goal-icon"></use>
+          </svg>
+          <div>
+            <p><b>Goal</b></p>
+            <p>To connect font design directly to the person, fostering a personalized creative experience.</p>
+          </div>
+        </div>
+
+        <div class="overview-content">
+          <svg class="svg-icon">
+            <use xlink:href="#audience-icon"></use>
+          </svg>
+          <div>
+            <p><b>Target Audience</b></p>
+            <p>Individuals seeking to design and use their own unique fonts.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="full-image-module module-gap-none two-two-one-grid intro-image-module">
+      <img class="image-full-border dark-image" src="../assets/images/transfont/mockup.jpg">
+      <div>
+        <img class="b-l-border" src="../assets/images/transfont/ipad-mockup.jpg">
+        <video class="t-l-border dark-image" id="transfont-trailer-video" controls
+          src="../assets/videos/transfont/trailer.mp4" poster="../assets/images/transfont/video_thumbnail.jpg"
+          type="video/mp4"></video>
+      </div>
+    </section>
+
+    <section>
+      <div class="content-large-container two-two-one-grid">
+        <div>
+          <h2>The Inspiration Behind the Transfont</h2>
+          <p>
+            The idea for Transfont began with a simple thought: “One day, I should create my own font.” But rather than
+            just designing a personal font, I wanted to make this idea accessible to everyone. Transfont was born from
+            the
+            combination of “transform” (adapting to the user) and “font” (designing a typeface), aiming to create a more
+            personalized and interactive design process.
+          </p>
+        </div>
+        <img src="../assets/images/transfont/howToCreate.png">
+      </div>
+
+      <div class="subsection content-large-container light-gray-box">
+        <div>
+          <h2>Resource Finding</h2>
+          <p>
+            To bring this idea to life, various technical resources were required. I utilized Google’s open-source
+            motion recognition technology to capture body movements, which were converted into numeric data. This data
+            was then translated into glyphs, and ultimately transformed into a complete font. This process involved four
+            main steps: capturing motion, converting it to data, translating the data into glyphs, and finally creating
+            the font.
+          </p>
+        </div>
+
+        <div class="resource-image-module two-two-one-grid">
+          <img class="image-full-border " src="../assets/images/transfont/TensorFlow.jpg">
+          <img class="image-full-border dark-image" src="../assets/images/transfont/OpenTypeJS.jpg">
+        </div>
+      </div>
+
+      <div class="subsection content-large-container">
+        <div>
+          <h2>User Interface</h2>
+          <p>
+            To accurately capture the user’s movements, they needed to maintain a specific distance from the camera. As
+            a result, the fonts were designed to be large and legible. Additionally, since typing wasn’t an option,
+            voice recognition functionality was integrated to allow users to interact with the interface. Simple voice
+            commands let users control the font creation process, such as starting or pausing the transformation using
+            key phrases.
+          </p>
+        </div>
+        <img class="image-full-border" src="../assets/images/transfont/Transfont_Interface.png">
+      </div>
+
+      <div class="content-large-container two-two-one-grid">
+        <div>
+          <h2>Getting Started with Transfont</h2>
+          <p>
+            To ensure users can easily understand how to use Transfont, a simple motion graphic was created. It
+            illustrates how each movement translates into the font design and provides step-by-step instructions on the
+            necessary setup to use Transfont effectively.
+          </p>
+        </div>
+        <img class="image-shadow image-full-border" src="../assets/images/transfont/transfont.gif">
+      </div>
+
+      <div class="content-large-container">
+        <h3 class="center-text">Interaction Parameters</h3>
+        <div class="two-two-one-grid">
+
+          <div class="interaction-card">
+            <img class="image-full-border" src="../assets/images/transfont/motion_1.gif">
+            <div style="align-self: flex-end;">
+              <h4>Width</h4>
+              <p>The distance between the elbows.</p>
+            </div>
+          </div>
+
+          <div class="interaction-card">
+            <img class="image-full-border" src="../assets/images/transfont/motion_2.gif">
+            <div style="align-self: flex-end;">
+              <h4>Weight</h4>
+              <p>The distance between the feet.</p>
+            </div>
+          </div>
+
+          <div class="interaction-card">
+            <img class="image-full-border" src="../assets/images/transfont/motion_3.gif">
+            <div style="align-self: flex-end;">
+              <h4>Arc</h4>
+              <p>Angle of the arm.</p>
+            </div>
+          </div>
+
+          <div class="interaction-card">
+            <img class="image-full-border" src="../assets/images/transfont/motion_4.gif">
+            <div style="align-self: flex-end;">
+              <h4>Middle Height</h4>
+              <p>The height of the shoulder.</p>
+            </div>
+          </div>
+
+          <div class="interaction-card">
+            <img class="image-full-border" src="../assets/images/transfont/motion_5.gif">
+            <div style="align-self: flex-end;">
+              <h4>Horizontal Weight</h4>
+              <p>The height of the hand.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="content-large-container">
+        <h3 class="center-text">Simple Steps to Use</h3>
+        <div class="two-two-one-grid">
+
+          <div class="step-card">
+            <img class="image-full-border" src="../assets/images/transfont/step_1.gif">
+            <div>
+              <h3>1</h3>
+              <p>
+                Set up a webcam and microphone.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <img class="image-full-border" src="../assets/images/transfont/step_2.gif">
+            <div>
+              <h3>2</h3>
+              <p>
+                Step back until your whole body is visible.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <img class="image-full-border" src="../assets/images/transfont/step_3.gif">
+            <div>
+              <h3>3</h3>
+              <p>
+                Speak into the microphone to display example text.
+              </p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <img class="image-full-border" src="../assets/images/transfont/step_4.gif">
+            <div>
+              <h3>4</h3>
+              <p>
+                Move your body to design the font.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="logo" width="40" height="40" viewBox="0 0 40 40">
+      <path
+        d="M33.3325 29.625V22.875H26.666V19.5H29.9993V16.125H26.666V6H23.3328V16.125H19.9995V6H16.6663V16.125H9.99975V29.625H0V33H13.333V19.5H16.6663V33H19.9995V19.5H23.3328V26.25H29.9993V33H40V29.625H33.3325Z" />
+    </symbol>
+  </svg>
+
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="role-icon" width="60" height="60" viewBox="0 0 60 60" style="fill: var(--text-header-primary)">
+      <path
+        d="M35.0068 31.2388C35.0068 34.1549 32.6428 36.5188 29.7268 36.5188C26.8107 36.5188 24.4468 34.1549 24.4468 31.2388C24.4468 28.3227 26.8107 25.9588 29.7268 25.9588C32.6428 25.9588 35.0068 28.3227 35.0068 31.2388Z" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M29.7268 28.2909C28.0987 28.2909 26.7789 29.6107 26.7789 31.2388C26.7789 32.8669 28.0987 34.1867 29.7268 34.1867C31.3549 34.1867 32.6747 32.8669 32.6747 31.2388C32.6747 29.6107 31.3549 28.2909 29.7268 28.2909ZM29.7268 36.5188C32.6428 36.5188 35.0068 34.1549 35.0068 31.2388C35.0068 28.3227 32.6428 25.9588 29.7268 25.9588C26.8107 25.9588 24.4468 28.3227 24.4468 31.2388C24.4468 34.1549 26.8107 36.5188 29.7268 36.5188Z" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M39.342 16.225H20.114L20.114 46.0131H39.342L39.342 16.225ZM20.114 12.1111C17.8419 12.1111 16 13.953 16 16.225V46.0131C16 48.2852 17.8419 50.1271 20.114 50.1271H39.342C41.6141 50.1271 43.456 48.2852 43.456 46.0131V16.225C43.456 13.953 41.6141 12.1111 39.342 12.1111H20.114Z" />
+      <path
+        d="M36.1163 44.4194C36.9758 44.6845 37.6577 44.9992 38.1228 45.3455C38.5059 45.6307 38.4403 45.6403 37.9627 45.6403L21.1793 45.6403C20.7018 45.6403 20.6362 45.6307 21.0192 45.3455C21.4844 44.9992 22.1662 44.6845 23.0258 44.4194C23.8853 44.1543 24.9057 43.9441 26.0288 43.8006C27.1518 43.6571 28.3555 43.5833 29.571 43.5833C30.7866 43.5833 31.9903 43.6571 33.1133 43.8006C34.2363 43.9441 35.2568 44.1543 36.1163 44.4194Z" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M25.5094 39.7223C26.8174 39.5552 28.1957 39.4718 29.5729 39.4718C30.9501 39.4718 32.3284 39.5552 33.6365 39.7223C34.9367 39.8883 36.1964 40.1408 37.3306 40.4906L37.0104 41.5288L37.3306 40.4906C38.4189 40.8262 39.5926 41.3118 40.5815 42.0481L38.1247 45.3479L40.5815 42.0481C40.5849 42.0507 40.5889 42.0536 40.5932 42.0568C40.6851 42.125 40.9838 42.3466 41.2642 42.6323L41.2645 42.6326C41.3816 42.7519 41.8136 43.1919 42.1251 43.8899C42.5073 44.7463 42.8549 46.4572 41.6722 48.0524C40.8137 49.2104 39.6573 49.5258 39.4144 49.5921L39.4095 49.5934C39.0213 49.6994 38.6963 49.7278 38.5713 49.7378C38.3262 49.7573 38.0748 49.7569 37.9825 49.7567C37.9756 49.7567 37.9697 49.7567 37.9646 49.7567H21.1812C21.1762 49.7567 21.1702 49.7567 21.1633 49.7567C21.0711 49.7569 20.8196 49.7573 20.5745 49.7378C20.4495 49.7278 20.1246 49.6994 19.7364 49.5934L19.7314 49.5921C19.4886 49.5258 18.3322 49.2104 17.4736 48.0524C16.291 46.4572 16.6385 44.7463 17.0207 43.8899C17.3322 43.1919 17.7642 42.7519 17.8814 42.6326L17.8816 42.6323C18.1621 42.3466 18.4607 42.125 18.5526 42.0568C18.557 42.0536 18.5609 42.0507 18.5643 42.0481C19.5532 41.3118 20.7269 40.8262 21.8153 40.4906C22.9495 40.1408 24.2091 39.8883 25.5094 39.7223ZM23.4597 48.6615C23.4604 48.661 23.4612 48.6605 23.4621 48.66C23.4492 48.6702 23.4417 48.6758 23.4411 48.676C23.4405 48.6763 23.4463 48.6716 23.4597 48.6615ZM35.6861 48.6615C35.6854 48.661 35.6846 48.6605 35.6837 48.66C35.6966 48.6702 35.7041 48.6758 35.7047 48.676C35.7053 48.6763 35.6995 48.6716 35.6861 48.6615ZM36.1289 44.387L36.9421 41.75L36.1289 44.387Z" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M24.5029 19.503C24.5029 18.367 25.4239 17.446 26.5599 17.446H32.8959C34.0319 17.446 34.9529 18.367 34.9529 19.503C34.9529 20.6391 34.0319 21.56 32.8959 21.56H26.5599C25.4239 21.56 24.5029 20.6391 24.5029 19.503Z" />
+      <path d="M27.3677 10H32.0886V19.4419H27.3677V10Z" />
+    </symbol>
+  </svg>
+
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="duration-icon" width="60" height="60" viewBox="0 0 60 60" style="fill: var(--text-header-primary)">
+      <path
+        d="M40.0001 10C39.0001 10 38.1001 10.8 38.1001 11.9V18.1C38.1001 19.1 38.9001 20 40.0001 20C41.1001 20 41.9001 19.2 41.9001 18.1V11.9C41.9001 10.9 41.1001 10 40.0001 10Z" />
+      <path
+        d="M43.9 14.9V18C43.9 20.2 42.1 21.9 40 21.9C37.9 21.9 36.1 20.1 36.1 18V14.9H22.9V18C22.9 20.2 21.1 21.9 19 21.9C16.9 21.9 15.1 20.1 15.1 18V14.9C12.8 14.9 11 16.7 11 19V45.3C11 47.6 12.8 49.4 15.1 49.4H43.9C46.2 49.4 48 47.6 48 45.3V19C48 16.7 46.2 14.9 43.9 14.9ZM43.9 45.4H15.1V26.1H43.9V45.4Z" />
+      <path
+        d="M20.9001 11.9C20.9001 10.9 20.1001 10 19.0001 10C17.9001 10 17.1001 10.8 17.1001 11.9V18.1C17.1001 18.4 17.1001 18.6 17.2001 18.8C17.5001 19.5 18.1001 19.9 18.9001 19.9C19.7001 19.9 20.8001 19.1 20.8001 18V11.8L20.9001 11.9Z" />
+      <path d="M24.2998 28.7H18.2998V34.7H24.2998V28.7Z" />
+      <path d="M24.2998 37.1H18.2998V43.1H24.2998V37.1Z" />
+      <path d="M41.1001 28.7H35.1001V34.7H41.1001V28.7Z" />
+      <path d="M41.1001 37.1H35.1001V43.1H41.1001V37.1Z" />
+      <path d="M32.7002 28.7H26.7002V34.7H32.7002V28.7Z" />
+      <path d="M32.7002 37.1H26.7002V43.1H32.7002V37.1Z" />
+    </symbol>
+  </svg>
+
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="goal-icon" width="60" height="60" viewBox="0 0 60 60" style="fill: var(--text-header-primary)">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M47.6 29.4L42.7 23.5L47.6 17.6C48.2 16.9 48.2 15.8 47.6 15.1C47.1 14.3 46.1 14 45.2 14.4C42.7 15.4 40.7 15.5 39 15.2C37.4 14.9 36 14.3 34.3 13.7C34.2 13.7 34.1 13.6 33.9 13.5C32.2 12.8 30.3 12 28 12C26.6 12 25.3 12.2 23.8 12.8V12C23.8 10.9 22.9 9.90002 21.7 9.90002C20.5 9.90002 19.6 10.8 19.6 12V43.5C16.1 44.4 13.6 45.9 12.1 47.6C11.2 48.6 12.1 50 13.5 50H37.6C39 50 39.9 48.6 39 47.6C36.8 45.1 32.4 42.8 25.7 42.8C19 42.8 24.4 42.8 23.7 42.8V31.9C25.2 31.4 26.5 31.3 27.7 31.4C29.1 31.6 30.4 32.1 32 32.7C32.2 32.7 32.3 32.8 32.5 32.9C34.2 33.5 36.3 34.3 38.6 34.4C41 34.5 43.6 34 46.7 32.4C47.3 32.1 47.6 31.6 47.8 31C47.9 30.4 47.8 29.8 47.4 29.3L47.6 29.4ZM39 30.4C37.3 30.4 35.8 29.8 34.1 29.2C33.9 29.2 33.8 29.1 33.6 29C32.1 28.4 30.3 27.8 28.4 27.5C27 27.3 25.6 27.4 24 27.7V17.3C25.7 16.2 27 16 28 16C29.3 16 30.6 16.5 32.3 17.2C32.4 17.2 32.6 17.3 32.7 17.4C34.2 18.1 36.1 18.8 38.2 19.2C38.9 19.3 39.7 19.4 40.5 19.4L38.2 22.1C37.6 22.9 37.6 24 38.2 24.7L42.4 29.8C41 30.2 39.9 30.4 38.8 30.3L39 30.4Z" />
+    </symbol>
+  </svg>
+
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="audience-icon" width="60" height="60" viewBox="0 0 60 60" style="fill: var(--text-header-primary)">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M24.2999 32.6C33.3999 28.5 44.4999 36 44.1999 45.9H40.0999C40.2999 32.6 19.2999 32.6 19.4999 45.9H15.3999C15.3999 40.2 18.9999 34.7 24.2999 32.6Z" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M41.4998 28.3C49.2998 24.8 58.7998 31.2 58.5998 39.7H54.4998C54.6998 32.8 45.6998 28.8 40.7998 33.6C39.7998 32.7 38.5998 31.9 37.2998 31.2C38.4998 29.9 39.8998 28.9 41.4998 28.3Z" />
+      <path
+        d="M29.7999 28.1C33.6107 28.1 36.6999 25.0108 36.6999 21.2C36.6999 17.3892 33.6107 14.3 29.7999 14.3C25.9891 14.3 22.8999 17.3892 22.8999 21.2C22.8999 25.0108 25.9891 28.1 29.7999 28.1Z" />
+      <path
+        d="M14.5104 24.0912C17.2515 23.4433 18.9483 20.6959 18.3004 17.9548C17.6524 15.2137 14.905 13.5168 12.1639 14.1648C9.42279 14.8128 7.72597 17.5602 8.37394 20.3013C9.02191 23.0424 11.7693 24.7392 14.5104 24.0912Z" />
+      <path
+        d="M49.851 22.6729C51.8426 20.6812 51.8426 17.4521 49.851 15.4604C47.8593 13.4687 44.6301 13.4687 42.6385 15.4604C40.6468 17.4521 40.6468 20.6812 42.6385 22.6729C44.6301 24.6646 47.8593 24.6646 49.851 22.6729Z" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M8.6 28.3C13.2 26.3 18.9 27.5 22.3 31.2C21.1 31.8 19.9 32.6 18.8 33.6C13.8 28.8 4.8 32.8 5.1 39.7H1C1 34.8 4.1 30.1 8.6 28.3Z" />
+    </symbol>
+  </svg>
+
+
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="h2-decoration" width="74" height="11" viewBox="0 0 74 11">
+      <path d="M10.99 0H6.37L0 11H4.62L10.99 0Z" />
+      <path d="M15.37 0L9 11H13.62L19.99 0H15.37Z" />
+      <path d="M24.37 0L18 11H22.62L28.99 0H24.37Z" />
+      <path d="M33.37 0L27 11H31.62L37.99 0H33.37Z" />
+      <path d="M42.37 0L36 11H40.62L46.99 0H42.37Z" />
+      <path d="M51.37 0L45 11H49.62L55.99 0H51.37Z" />
+      <path d="M60.37 0L54 11H58.62L64.99 0H60.37Z" />
+      <path d="M69.37 0L63 11H67.62L73.99 0H69.37Z" />
+    </symbol>
+  </svg>
+
+
+
+  <section class="footer-container module-gap-medium">
+    <div class="content-medium-container">
+      <h2>See Other Projects</h2>
+      <div class="other-project-container">
+
+        <div id="mpsRefresh" class="theme-mpsRefresh portfolio-card">
+          <img>
+          <div>
+            <h4></h4>
+          </div>
+        </div>
+
+        <div id="marvlon" class="theme-marvlon portfolio-card">
+          <img>
+          <div>
+            <h4></h4>
+          </div>
+        </div>
+
+        <div id="strider" class="theme-strider portfolio-card">
+          <div></div>
+          <img>
+          <div>
+            <h4></h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="copyright-cont"></div>
+
+  <script>
+    //비디오 볼륨 조정 (transfont 전용)
+    document.addEventListener('DOMContentLoaded', function () {
+      const video = document.getElementById('transfont-trailer-video');
+      video.volume = 0.02; // 시작 시 볼륨을 2%로 설정
+    });
+
+    //H2 데코레이션
+    document.addEventListener("DOMContentLoaded", function () {
+      const headings = document.querySelectorAll("h2");
+
+      headings.forEach(h2 => {
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+        svg.setAttribute("width", "74");  // 원하는 가로 크기
+        svg.setAttribute("height", "11");  // 원하는 세로 크기
+
+        use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#h2-decoration");
+        svg.appendChild(use);
+
+        // h2의 색상을 가져와 svg에 적용
+        const h2Color = getComputedStyle(h2).color;
+        svg.style.fill = h2Color;
+
+        // h2 바로 아래에 삽입
+        h2.insertAdjacentElement("afterend", svg);
+      });
+    });
+
+    //배경색 메인색으로 설정 (스크롤할때 뒷면과 사파리 윗부분)
+    $(document).ready(function () {
+      setTimeout(function () {
+        var primaryColor = getComputedStyle(document.body).getPropertyValue('--color-primary').trim();
+
+        $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="' + primaryColor + '">');
+        $('html').css('background-color', primaryColor);
+      }, 100); // 100ms 지연 (CSS 적용될 시간 확보)
+    });
+
+    //카피라이트
+    $(function () {
+      $("#copyright-cont").load("https://sangwoohahn.com/components/footer.html");
+    });
+
+    //어바웃을 눌렀다는걸 저장해두고 페이지 이동
+    window.open_about = function () {
+      localStorage.setItem("click-open", "about-show");
+    }
+
+    //로고 누를 때에는 위에 저장한걸 지우기
+    document.getElementById("logo-button").addEventListener("click", function () {
+      localStorage.removeItem("click-open");
+    });
+
+    //JSON 데이터를 포트폴리오 카드에 연결
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch('https://sangwoohahn.com/components/portfolioData.json')
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(item => {
+            const card = document.getElementById(item.id);
+            if (!card) {
+              return; // 요소가 없으면 건너뛰기
+            }
+
+            // 이미지와 적용
+            const imageUrl = "../assets/" + item.image;
+            const imgElement = card.querySelector("img");
+
+            // 이미지가 없으면 기본 이미지로 대체
+            imgElement.onerror = function () {
+              imgElement.style.display = "none";  // 이미지가 없으면 숨기기
+            };
+
+            imgElement.src = imageUrl;
+
+            // 제목 적용
+            const title = card.querySelector("h4");
+            if (title) title.textContent = item.name;  // 존재하는 경우만 텍스트 설정
+
+            const description = card.querySelector("p");
+            if (description) description.textContent = item.text;  // 존재하는 경우만 텍스트 설정
+
+            // 카드에 링크 추가
+            card.addEventListener("click", function () {
+              window.location.href = "../portfolios/" + item.url;
+            });
+
+            // 호버 시 커서 변경
+            card.style.cursor = "pointer";
+          });
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+    });
+
+  </script>
+
+  <script src="../assets/js/nav-color.js"></script>
+
+</body>
+
+</html>

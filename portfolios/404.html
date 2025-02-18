@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fafafa">
+    <title>Sangwoo Hahn Design</title>
+  
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/common/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/common/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/common/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/common/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/common/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/common/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/common/favico.icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/common/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/common/favico.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/common/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/common/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/common/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/common/favicon.ico/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../assets/images/common/favicon.ico/favicon.ico">
+  
+    <!-- Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet">
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/portfolio.css">
+  
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
+    
+    <style>
+      h1 {
+        font-size: 8em;
+      }
+    </style>
+
+  </head>
+
+  <body onscroll="onScroll()" class="theme-404">
+
+    <nav>
+      <a id="logo-button" href="../index.html#header-cont" class="noUnderline">
+        <svg class="nav-logo">
+          <use xlink:href="#logo"></use>
+        </svg>
+      </a>
+  
+      <ul>
+        <li><a onclick="open_about();" id="about-button" href="../index.html#about-cont">About</a></li>
+        <li><a id="contact-button">Contact</a></li>
+        <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
+      </ul>
+    </nav>
+  
+    <header>
+      <section class="title-module module-gap-medium">
+        <div class="content-medium-container two-two-one-grid">
+          <div class="title-content">
+            <h1>404</h1>
+            <p>Page not found. oooooops!<br>Something missing.</p>
+          </div>
+  
+          <!-- <div class="webpage-container">
+            <div class="webpage-container-top">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <img src="../assets/images/email/title_image.png">
+          </div> -->
+  
+        </div>
+      </section>
+  
+      <section class="portfolio-description-module module-gap-medium">
+        
+      </section>
+    </header>
+  
+    <main>
+      
+    </main>
+
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="logo" width="40" height="40" viewBox="0 0 40 40">
+        <path
+          d="M33.3325 29.625V22.875H26.666V19.5H29.9993V16.125H26.666V6H23.3328V16.125H19.9995V6H16.6663V16.125H9.99975V29.625H0V33H13.333V19.5H16.6663V33H19.9995V19.5H23.3328V26.25H29.9993V33H40V29.625H33.3325Z" />
+      </symbol>
+    </svg>
+    
+    <section class="footer-container module-gap-medium">
+      <div class="content-medium-container">
+        <h2>See Other Projects</h2>
+        <div class="other-project-container">
+  
+          <div id="transfont" class="theme-transfont portfolio-card">
+            <img>
+            <div>
+              <h4></h4>
+            </div>
+          </div>
+  
+          <div id="strider" class="theme-strider portfolio-card">
+            <div></div>
+            <img>
+            <div>
+              <h4></h4>
+            </div>
+          </div>
+  
+          <div id="mpsRefresh" class="theme-mpsRefresh portfolio-card">
+            <img>
+            <div>
+              <h4></h4>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </section>
+  
+    <div id="copyright-cont"></div>
+  
+    <script>
+      //H2 데코레이션
+      document.addEventListener("DOMContentLoaded", function () {
+        const headings = document.querySelectorAll("h2");
+  
+        headings.forEach(h2 => {
+          const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+          svg.setAttribute("width", "74");  // 원하는 가로 크기
+          svg.setAttribute("height", "11");  // 원하는 세로 크기
+  
+          use.setAttributeNS("http://www.w3.org/1999/xlink", "xlink:href", "#h2-decoration");
+          svg.appendChild(use);
+  
+          // h2의 색상을 가져와 svg에 적용
+          const h2Color = getComputedStyle(h2).color;
+          svg.style.fill = h2Color;
+  
+          // h2 바로 아래에 삽입
+          h2.insertAdjacentElement("afterend", svg);
+        });
+      });
+  
+      //배경색 메인색으로 설정 (스크롤할때 뒷면과 사파리 윗부분)
+      $(document).ready(function () {
+        setTimeout(function () {
+          var primaryColor = getComputedStyle(document.body).getPropertyValue('--color-primary').trim();
+  
+          $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="' + primaryColor + '">');
+          $('html').css('background-color', primaryColor);
+        }, 100); // 100ms 지연 (CSS 적용될 시간 확보)
+      });
+  
+      //카피라이트
+      $(function () {
+        $("#copyright-cont").load("https://sangwoohahn.com/components/footer.html");
+      });
+  
+      //어바웃을 눌렀다는걸 저장해두고 페이지 이동
+      window.open_about = function () {
+        localStorage.setItem("click-open", "about-show");
+      }
+  
+      //로고 누를 때에는 위에 저장한걸 지우기
+      document.getElementById("logo-button").addEventListener("click", function () {
+        localStorage.removeItem("click-open");
+      });
+  
+      //JSON 데이터를 포트폴리오 카드에 연결
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch('https://sangwoohahn.com/components/portfolioData.json')
+          .then(response => response.json())
+          .then(data => {
+            data.forEach(item => {
+              const card = document.getElementById(item.id);
+              if (!card) {
+                return; // 요소가 없으면 건너뛰기
+              }
+  
+              // 이미지와 적용
+              const imageUrl = "../assets/" + item.image;
+              const imgElement = card.querySelector("img");
+  
+              // 이미지가 없으면 기본 이미지로 대체
+              imgElement.onerror = function () {
+                imgElement.style.display = "none";  // 이미지가 없으면 숨기기
+              };
+  
+              imgElement.src = imageUrl;
+  
+              // 제목 적용
+              const title = card.querySelector("h4");
+              if (title) title.textContent = item.name;  // 존재하는 경우만 텍스트 설정
+  
+              const description = card.querySelector("p");
+              if (description) description.textContent = item.text;  // 존재하는 경우만 텍스트 설정
+  
+              // 카드에 링크 추가
+              card.addEventListener("click", function () {
+                window.location.href = "../portfolios/" + item.url;
+              });
+  
+              // 호버 시 커서 변경
+              card.style.cursor = "pointer";
+            });
+          })
+          .catch(error => console.error('Error loading JSON:', error));
+      });
+  
+    </script>
+  
+    <script src="../assets/js/nav-color.js"></script>
+  
+  </body>
+  
+</html>
