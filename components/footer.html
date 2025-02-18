@@ -28,7 +28,7 @@
   let contact_toggle = false;
 
   document.addEventListener("click", function (evt) {
-    var desireElement = document.getElementById('contact-area'),//desire to click element
+    var desireElement = document.getElementById('contact-cont'), //desire to click element
       buttonElement = document.getElementById('contact-button'), // detect contact button
       targetElement = evt.target;  // current clicked element
 
@@ -48,16 +48,15 @@
   document.getElementById("contact-button").onclick = function () {
     toggle_contact();
   };
-  document.getElementById("contact-close").onclick = function () {
-    toggle_contact();
-  };
 
 
   function toggle_contact() {
-    if (!contact_toggle)
-      document.getElementById("contact-cont").style.transform = "translateX(0px)";
-    else
-      document.getElementById("contact-cont").style.transform = "translateX(300px)";
+    if (!contact_toggle) {
+      document.getElementById("contact-cont").style.transform = "translate(100%, -50%) scale(0)";
+    }
+    else {
+      document.getElementById("contact-cont").style.transform = "translate(0) scale(1";
+    }
 
     contact_toggle = !contact_toggle;
   }
