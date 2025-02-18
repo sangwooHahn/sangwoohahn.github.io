@@ -1,0 +1,97 @@
+h1 {
+  letter-spacing: -2px;
+}
+
+h3 {
+  color: var(--text-light);
+  line-height: 130%;
+}
+
+header h1,
+header p {
+  color: var(--text-head);
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -moz-backdrop-filter: blur(20px);
+  -o-backdrop-filter: blur(20px);
+  -ms-backdrop-filter: blur(20px);
+}
+
+nav svg {
+  fill: var(--text-header-primary);
+}
+
+nav li {
+  color: var(--text-header-primary);
+}
+
+nav li a {
+  color: var(--text-header-primary);
+}
+
+a {
+  background: linear-gradient(to right, var(--text-header-primary) 50%, rgba(0, 0, 0, 0) 50%);
+  background-size: 0% 2px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+}
+
+
+/* About */
+.about-container {
+  display: none;
+  height: 100vh;
+  z-index: -1;
+}
+
+.about-container div {
+  text-align: left;
+  max-width: 480px !important;
+}
+
+.about-container h2 {
+  text-align: left;
+}
+
+/* Header */
+.header-container {
+  display: flex;
+  position: relative;
+  height: 320px;
+}
+
+.header-container div {
+  position: relative;
+  align-self: center;
+  text-align: center;
+}
+
+.copyright p::after {
+  color: var(--text-header-secondary);
+}
+
+/* 포트폴리오 섹션 */
+.portfolio-container {
+  /* display: block; */
+  height: auto;
+  width: 100%;
+  padding-left: var(--padding-left-right-full);
+  padding-right: var(--padding-left-right-full);
+  padding-bottom: var(--padding-left-right-full);
+  box-sizing: border-box;
+}
+
+.portfolio-container .two-one-one-grid {
+  gap: var(--padding-image);
+}
+
+/* Copyright */
+.copyright {
+  color: var(--text-header-secondary);
+  background-color: var(--background-secondary);
+}
