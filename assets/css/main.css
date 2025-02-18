@@ -755,8 +755,6 @@ header p {
     --padding-top-bottom-large: var(--padding-48);
     --padding-top-bottom-medium: var(--padding-24);
     --padding-column: var(--padding-24);
-
-    --padding-left-right-full: var(--padding-8);
   }
 
   /* -------- 디자인 -------- */
