@@ -1,392 +1,362 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Sangwoo Hahn Design</title>
-  <link rel="apple-touch-icon" sizes="57x57" href="favicon.ico/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="favicon.ico/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="favicon.ico/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="favicon.ico/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="favicon.ico/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="favicon.ico/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="favicon.ico/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="favicon.ico/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="favicon.ico/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favicon.ico/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
-  <!-- <link rel="manifest" href="favicon.ico/manifest.json"> -->
-  <meta name="msapplication-TileColor" content="#fafafa">
-  <meta name="msapplication-TileImage" content="favicon.ico/ms-icon-144x144.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#fafafa">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Sangwoo Hahn Design</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/common/favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/images/common/favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/common/favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/images/common/favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/common/favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/images/common/favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/common/favico.icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/images/common/favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/common/favico.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/common/favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/common/favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/common/favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/common/favicon.ico/favicon-16x16.png">
+  <link rel="icon" type="image/x-icon" href="assets/images/common/favicon.ico/favicon.ico">
+
+  <!-- Font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="index.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@800&family=Open+Sans:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+
+  <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://kit.fontawesome.com/1af5f92f3d.js" crossorigin="anonymous"></script>
-  <meta charset="utf-8"/>
-  <script>
-    $(function(){
-      $("#copyright_cont").load("https://sangwoohahn.com/footer.html");
-    });
-    $(document).ready(function(){ /* control all page of the special colors*/
-      var main_color = ('#fafafa');
-      $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="' + main_color + '>');
-    });
-  </script>
+
   <style>
-  h1 {
-    letter-spacing: -2px;
-  }
-  .nav {
-    background-color: rgba(250,250,250, 0.8);/*#fafafa;*/
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    -moz-backdrop-filter: blur(20px);
-    -o-backdrop-filter: blur(20px);
-    -ms-backdrop-filter: blur(20px);
-  }
-  .nav li {
-    color : #353535;
-  }
-  .nav li a {
-    color : #353535;
-  }
-  a {
-    background: linear-gradient(to right, #000 50%, rgba(0,0,0,0) 50%);
-    background-size: 0% 2px;
-    background-position:left bottom;
-    background-repeat: no-repeat;
-  }
-  .about_container {
-    display: none;
-    height: 100vh;
-    z-index: -1;
-  }
-
-  .content_small_space {
-    margin-top: 20px;
-  }
-
-  .about_container > div {
-    height: 100%;
-    width : 460px;
-    left:0;
-    right:0;
-    margin: auto;
-    padding-top: 30vh;
-    z-index: -99;
-  }
-
-  .title_container {
-    position: relative;
-    height: 320px;
-    top:0px;
-    background-color: #fafafa;
-    text-align: center;
-  }
-
-  .name_container {
-    position: relative;
-    top: 110px;
-  }
-
-  #title_cont, #about_cont, #moreProject_cont, #copyright  {
-    width: 100vw;
-  }
-  #contact_cont {
-    transform: translateX(300px);
-  }
-
-  .portfolio_container {
-    height: auto;
-    width: calc(100% - 60px);
-    margin: auto;
-    display: block;
-    background-color: #fafafa;
-  }
-
-  .portfolio_container .two_two_one_grid {
-    grid-gap: 5px;
-  }
-
-  .portfolio_content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 360px;
-    width: 100%;
-    background-color: lightgray;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .portfolio_content_big {
-    height: 540px;
-    grid-column: span 2;
-  }
-  .portfolio_content:hover .portfolio_gradient {
-    cursor: pointer;
-    opacity: 0.85;
-    height: 80%;
-    background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5), rgba(0,0,0,1));
-  }
-
-  .portfolio_gradient {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 180px;
-    width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6), rgba(0,0,0,1));
-    border-radius: 0px 0px 5px 5px;
-    color: #fafafa;
-  }
-  .portfolio_gradient div {
-    padding: 20px;
-  }
-  .portfolio_gradient img {
-    width: 160px;
-  }
-  .thumbnail_overlap_container {
-    position: absolute;
-    /* display: grid; */
-    width: auto;
-    align-self: center;
-  }
-  .thumbnail_overlap_container img {
-    display: block;
-    height: 100%;
-    width: auto;
-  }
-  #thumbnail_transfont, #thumbnail_branding {
-    transform: translate(30%);
-  }
-
-
-
-  #copyright_cont {
-    background-color: #efefef;
-  }
-  .copyright {
-    color: #777;
-  }
-
-  /*Tablet_vertical*/
-  @media screen and (min-width: 600px) and (max-width: 1150px) { /*960px*/
-    .two_one_one_grid {
-      grid-template-columns: 1fr;
+    h1 {
+      letter-spacing: -2px;
     }
-    .portfolio_content_big {
-      grid-column: span 1;
-    }
-    .portfolio_content {
-      height: 360px;
-    }
-    .thumbnail_overlap_container {
-      height: 108%;
-    }
-  }
 
-  /*Smart phone*/
-  @media screen and (max-width: 599px) {
-    .about_container h1 {
+    h3 {
+      color: var(--text-light);
+      line-height: 130%;
+    }
+
+    header h1,
+    header p {
+      color: var(--text-head);
+    }
+
+    /* Navigation */
+    nav {
+      background-color: rgba(250, 250, 250, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      -moz-backdrop-filter: blur(20px);
+      -o-backdrop-filter: blur(20px);
+      -ms-backdrop-filter: blur(20px);
+    }
+
+    nav svg {
+      fill: var(--text-header-primary);
+    }
+
+    nav li {
+      color: var(--text-header-primary);
+    }
+
+    nav li a {
+      color: var(--text-header-primary);
+    }
+
+    a {
+      background: linear-gradient(to right, var(--text-header-primary) 50%, rgba(0, 0, 0, 0) 50%);
+      background-size: 0% 2px;
+      background-position: left bottom;
+      background-repeat: no-repeat;
+    }
+
+
+    /* About */
+    .about-container {
+      display: none;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    .about-container div {
+      text-align: left;
+      max-width: 480px !important;
+    }
+
+    .about-container h2 {
       text-align: left;
     }
-    .about_container > div {
-      width: calc(100% - 80px);
-    }
-    .title_container {
-      height: 200px;
-    }
-    .name_container {
-      top: 80px;
-    }
-    .portfolio_container {
-      width: calc(100% - 10px);
-      margin-left: auto;
-      margin-right: auto;
-      background-color: #fafafa;
-    }
-    .portfolio_container .two_two_one_grid {
-      grid-template-columns: 1fr;
-    }
-    .portfolio_content {
-      height: 200px;
-    }
-    .portfolio_content_big {
-      grid-column: span 1;
-    }
-    .thumbnail_overlap_container {
-      height: 108%;
-    }
-    .portfolio_gradient div {
-      padding: 15px;
-    }
-    .portfolio_gradient {
-      height: 120px;
-      background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,1));
-    }
-    .content_space {
-      margin-top: 5px;
-    }
-  }
 
+    /* Header */
+    .header-container {
+      display: flex;
+      position: relative;
+      height: 320px;
+    }
+
+    .header-container div {
+      position: relative;
+      align-self: center;
+      text-align: center;
+    }
+
+    .copyright p::after {
+      color: var(--text-header-secondary);
+    }
+
+    /* 포트폴리오 섹션 */
+    .portfolio-container {
+      /* display: block; */
+      height: auto;
+      width: 100%;
+      padding-left: var(--padding-left-right-full);
+      padding-right: var(--padding-left-right-full);
+      padding-bottom: var(--padding-left-right-full);
+      box-sizing: border-box;
+    }
+
+    .portfolio-container .two-one-one-grid {
+      gap: var(--padding-image);
+    }
+
+    /* Copyright */
+    .copyright {
+      color: var(--text-header-secondary);
+      background-color: var(--background-secondary);
+    }
   </style>
+
 </head>
+
 <body>
-  <div class="nav">
+
+  <nav>
+    <a id="logo-button" href="index.html#header-cont" class="noUnderline">
+      <svg class="nav-logo">
+        <use xlink:href="#logo"></use>
+      </svg>
+    </a>
+
     <ul>
-      <li><a id="logo_button" href="index.html#title_cont" class="noUnderline"><img id=porfolioLogo src="images/all/portfolio_logo_black.png" alt="portfolio title logo"></a></li>
-    </ul>
-    <ul>
-      <li><a id="about_button" href="index.html#about_cont">About</a></li>
-      <li><a id ="contact_button">Contact</a></li>
+      <li><a onclick="open_about();" id="about-button" href="index.html#about-cont">About</a></li>
+      <li><a id="contact-button">Contact</a></li>
       <li id="language" style="position: absolute; right:30px; padding-right:0px;">EN / KR</li>
     </ul>
-  </div>
+  </nav>
 
-  <div id="about_cont" class="about_container">
-    <div>
-      <h1>Hi!</h1>
-      <p class="content_space">
-        I'm Sangwoo Hahn. A graphic designer specializing in branding, UX/UI, and motion graphics.
-        I specialize at identifying current problems and finding visual solutions.
-        My approach to  design is user-centric, aiming to deliver convenience and ease of use through systematic design.
+  <section id="about-cont" class="about-container module-gap-none">
+    <div class="content-medium-container">
+      <h2>Hi!</h2>
+      <p>
+        I’m Sangwoo Hahn, a UX/UI designer based in Maryland with a strong background in branding and motion graphics.
+        With front-end coding expertise, I bridge the gap between design and development through seamless collaboration.
+        My strength lies in identifying challenges and crafting visual solutions that enhance user experiences, while
+        also building design systems that streamline workflows for both designers and developers. Let’s create something
+        impactful together!
       </p>
     </div>
-  </div>
+  </section>
 
-  <div id="title_cont" class="title_container">
-    <div class="name_container">
+  <header id="header-cont" class="header-container">
+    <div class="content-medium-container">
       <H1>SANGWOO HAHN</H1>
-      <p>Graphic design · UX/UI · Motion graphic</p>
+      <p>UX/UI · Visual design · Motion graphic</p>
     </div>
-  </div>
+  </header>
 
-  <div id="body_cont" class="portfolio_container">
-    <div class="two_one_one_grid grid_gap_5">
+  <main id="body-cont" class="portfolio-container">
+    <div class="content-full-container two-one-one-grid">
 
-      <div class="portfolio_content image_top_left_border" style="background-color: #1638B4; z-index:1;" onclick="location.href='transfont_project.html';">
-        <div class="thumbnail_overlap_container">
-          <img id="thumbnail_transfont" src="thumbnail/transfont_person.png">
-        </div>
-        <div class="portfolio_gradient">
-          <div>
-            <h3>Transfont</h3>
-            <p>Real-time font creation with your motion</p>
-          </div>
+      <div id="mpsRefresh" class="theme-mpsRefresh portfolio-card b-r-border">
+        <img>
+        <div>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
-      <div class="portfolio_content image_top_right_border" style="background-image:url('thumbnail/marvlon.jpg');" onclick="location.href='marvlon_project.html';">
-        <div class="portfolio_gradient">
-          <div>
-            <img src="images/marvlon/Marvlon_logo_EN.png">
-            <p>UX/UI and visual design for mobile card game</p>
-          </div>
+      <div id="marvlon" class="theme-marvlon portfolio-card b-l-border">
+        <img class="b-l-border">
+        <div>
+          <img src="assets/images/marvlon/Marvlon_logo_EN.png" style="width: 160px;">
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
-      <div class="portfolio_content_big portfolio_content image_full_border" style="background-image:url('thumbnail/striderSocial.jpg'); z-index:2;" onclick="location.href='strider_social.html';">
-        <div class="thumbnail_overlap_container">
-          <img id="thumbnail_strider_social" src="thumbnail/striderSocial_phone.png">
-        </div>
-        <div class="portfolio_gradient">
-          <div>
-            <h3>Strider for social media</h3>
-            <p>Real-time font creation with your motion</p>
-          </div>
+      <div id="strider" class="theme-strider portfolio-card portfolio-card-big image-full-border">
+        <div></div>
+        <img>
+        <div>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
-      <div class="portfolio_content image_middle_left_border" style="background-color: #003789; z-index:3;" onclick="location.href='strider_illustration.html';">
-        <div class="thumbnail_overlap_container">
-          <img id="thumbnail_strider_illust" src="thumbnail/strider_illust_fox.png">
-        </div>
-        <div class="portfolio_gradient">
-          <div>
-            <h3>Strider illustrations</h3>
-            <p>Strider illustrations for gear store and activity hub</p>
-          </div>
+      <div id="transfont" class="theme-transfont portfolio-card t-r-border b-r-border">
+        <img>
+        <div>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
-      <div class="portfolio_content image_middle_right_border" style="background-image:url('thumbnail/branding.jpg');" onclick="location.href='branding.html';">
-        <div class="thumbnail_overlap_container">
-          <img id="thumbnail_branding" src="thumbnail/branding_heart.png">
-        </div>
-        <div class="portfolio_gradient">
-          <div>
-            <h3>Logo and brandings</h3>
-            <p>Real-time font creation with your motion</p>
-          </div>
+      <div id="emailTemplate" class="theme-emailTemplate portfolio-card t-l-border b-l-border">
+        <img>
+        <div>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
-      <div class="portfolio_content image_bottom_left_border" style="background-image:url('thumbnail/moMap.jpg'); background-position: right;" onclick="location.href='momap.html';">
-        <div class="portfolio_gradient">
-          <div>
-            <h3>MoMap</h3>
-            <p>Branding system for Museum of Map</p>
-          </div>
+      <div id="pmlpTemplate" class="theme-pmlpTemplate portfolio-card t-r-border">
+        <img>
+        <div>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
-      <div class="portfolio_content image_bottom_right_border" style="background-image:url('thumbnail/micard.jpg'); background-position: right;" onclick="location.href='micard.html';">
-        <div class="thumbnail_overlap_container">
-          <img src="thumbnail/micard_phone.png">
-        </div>
-        <div class="portfolio_gradient">
-          <div>
-            <h3>MICARD</h3>
-            <p>Digital School ID for MICA Students</p>
-          </div>
+      <div id="branding" class="theme-branding portfolio-card t-l-border">
+        <img>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+          <h3></h3>
+          <p></p>
         </div>
       </div>
 
     </div>
-  </div>
+  </main>
 
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="logo" width="40" height="40" viewBox="0 0 40 40">
+      <path
+        d="M33.3325 29.625V22.875H26.666V19.5H29.9993V16.125H26.666V6H23.3328V16.125H19.9995V6H16.6663V16.125H9.99975V29.625H0V33H13.333V19.5H16.6663V33H19.9995V19.5H23.3328V26.25H29.9993V33H40V29.625H33.3325Z" />
+    </symbol>
+  </svg>
 
-<div id="copyright_cont" class="content_space"></div>
+  <div id="copyright-cont"></div>
 
-<script>
-  $(document).ready(function(){
-    $("#about_button").on('click',function(event){
-      $("#about_cont").slideDown(1000);
-      $("#title_cont").slideDown(1000);
-      $("#title_cont").delay(1000).css('position','sticky');
-      $("#myCanvas").delay(1000).css('position','inherit');
-      $("#about_cont_div").delay(1000).css('position','fixed');
+  <script>
+    //배경 색상 적용
+    $(document).ready(function () {
+      setTimeout(function () {
+        var primaryColor = getComputedStyle(document.body).getPropertyValue('--background-primary').trim();
+
+        $('meta[name="theme-color"]').replaceWith('<meta name="theme-color" content="' + primaryColor + '">');
+        $('html').css('background-color', primaryColor);
+      }, 100); // 100ms 지연 (CSS 적용될 시간 확보)
     });
 
-    if(localStorage.getItem("click_open")=="about_show") {
-      $("#about_cont").slideDown(1000);
-      $("#title_cont").slideDown(1000);
-      $("#title_cont").delay(1000).css('position','sticky');
-      $("#myCanvas").delay(1000).css('position','inherit');
-      $("#about_cont_div").delay(1000).css('position','fixed');
-      localStorage.setItem("click_open", "undefined");
+    //카피라이트
+    $(function () {
+      $("#copyright-cont").load("https://sangwoohahn.com/components/footer.html");
+    });
+
+    //버튼 작용
+    // 로고 클릭 시
+    $("#logo-button").on('click', function (event) {
+      event.preventDefault(); // 기본 동작 방지 (링크 이동 방지)
+
+      // 부드러운 스크롤 애니메이션
+      $('html, body').animate({
+        scrollTop: $("#header-cont").offset().top
+      }, 800, function () {
+        // 스크롤 완료 후, #about-container를 display: none;으로 설정
+        $("#about-container").css("display", "none");
+      });
+    });
+
+    window.open_about = function () {
+      localStorage.setItem("click-open", "about-show");
     }
 
-    $("a").on('click', function(event) {
-      if (this.hash !== "") {
-        event.preventDefault();
-        var hash = this.hash;
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-          window.location.hash = hash;
-        });
+    $(document).ready(function () {
+      $("#about-button").on('click', function (event) {
+        $("#about-cont").slideDown(1000);
+        $("#header-cont").slideDown(1000);
+        $("#header-cont").delay(1000).css('position', 'sticky');
+        // $("#about-cont_div").delay(1000).css('position', 'fixed');
+      });
+
+      if (localStorage.getItem("click-open") == "about-show") {
+        $("#about-cont").slideDown(1000);
+        $("#header-cont").slideDown(1000);
+        $("#header-cont").delay(1000).css('position', 'sticky');
+        // $("#about_cont_div").delay(1000).css('position', 'fixed');
+        localStorage.setItem("click-open", "undefined");
       }
+
+      $("a").on('click', function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function () {
+            // 스크롤 완료 후 실행
+            if (hash === "#header-cont") {
+              $(".about-container").css("display", "none");
+            }
+            // 스크롤을 맨 위로 올리기
+            $("html, body").scrollTop(0);
+          });
+        }
+      });
     });
-  });
-</script>
+
+    //JSON 데이터를 포트폴리오 카드에 연결
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch('https://sangwoohahn.com/components/portfolioData.json')
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(item => {
+            const card = document.getElementById(item.id);
+            if (card) {
+              // 이미지와 적용
+              const imageUrl = "assets/" + item.image;
+              const imgElement = card.querySelector("img");
+
+              // 이미지가 없으면 기본 이미지로 대체
+              imgElement.onerror = function () {
+                imgElement.style.display = "none";  // 이미지가 없으면 숨기기
+              };
+
+              imgElement.src = imageUrl;
+
+              // 제목 적용
+              card.querySelector("h3").textContent = item.name;
+              card.querySelector("p").textContent = item.text;
+
+              // 카드에 링크 추가
+              card.addEventListener("click", function () {
+                window.location.href = "portfolios/" + item.url;
+              });
+
+              // 호버 시 커서 변경
+              card.style.cursor = "pointer";
+            }
+          });
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+    });
+  </script>
 </body>
+
 </html>
