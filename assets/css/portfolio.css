@@ -418,8 +418,8 @@
 @media (max-width: 767px) {
   :root {
     --card-height: 240px !important;
-    --padding-card-right: -16px !important;
-    --padding-card-big-right: -16px !important;
+    --padding-card-right: -32px !important;
+    --padding-card-big-right: -32px !important;
   }
 
   .portfolio-card,

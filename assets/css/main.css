@@ -334,7 +334,7 @@ nav li::before {
 }
 
 nav ul:last-child li:nth-child(2) {
-  padding-left: var(--padding-left-right-full);
+  padding-left: var(--padding-32);
 }
 
 nav li a {
@@ -755,6 +755,8 @@ header p {
     --padding-top-bottom-large: var(--padding-48);
     --padding-top-bottom-medium: var(--padding-24);
     --padding-column: var(--padding-24);
+
+    --padding-left-right-full: var(--padding-8);
   }
 
   /* -------- 디자인 -------- */
@@ -867,6 +869,10 @@ header p {
     width: calc(100vw - 64px);
     scroll-snap-align: center;
     flex-shrink: 0;
+  }
+
+  .copyright p::after {
+    font-size: 0.75em;
   }
 }
 
