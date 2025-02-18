@@ -136,6 +136,18 @@
       color: var(--text-header-secondary);
       background-color: var(--background-secondary);
     }
+
+    
+    /* -------- 디바이스 대응 디자인 -------- */
+
+    /* 기본 (모바일 우선 접근) */
+    @media (max-width: 767px) {
+
+      /* 모바일 */
+      :root {
+        --padding-left-right-full: var(--padding-8);
+      }
+    }
   </style>
 
 </head>
