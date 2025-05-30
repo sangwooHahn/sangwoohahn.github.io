@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+  <title>청첩장 보내기용 링크</title>
+  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+
+<body>
+  <a id="kakao-link-btn" href="javascript:;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s" />
+  </a>
+  <script type='text/javascript'>
+    //<![CDATA[
+    Kakao.init('2ed2abdd736520c949eaff9503434532');
+
+    Kakao.Link.createDefaultButton({
+      container: '#kakao-link-btn',
+      objectType: 'feed',
+      content: {
+        title: '웨딩 초청 테스트',
+        description: '웨딩은 여기서 하니 여기에 언제까지 오세요.',
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
+        link: {
+          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+          webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+        }
+      },
+      buttons: [
+        {
+          title: '식장 안내',
+          link: {
+            mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+            webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+          }
+        }
+      ]
+    });
+    //]]>
+  </script>
+</body>
+
+</html>
