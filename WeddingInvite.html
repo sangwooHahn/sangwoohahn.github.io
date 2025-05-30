@@ -6,24 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport"
     content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
-  <title>청첩장 보내기용 링크</title>
-  <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <title>청첩장 보내기</title>
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 </head>
 
 <body>
-  <a id="kakao-link-btn" href="javascript:;">
+  <!-- <a id="kakao-link-btn" href="javascript:;">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s" />
-  </a>
+  </a> -->
+  <a id="btn-sangwoo" href="javascript:;">📨 상우네 부모닝용</a><br>
+  <a id="btn-jenny" href="javascript:;">📨 제니네 부모님용</a><br>
+  <a id="btn-friends" href="javascript:;">📨 상우 & 제니 친구용</a>
+
   <script type='text/javascript'>
-    //<![CDATA[
+    //자바스크립트 코드
     Kakao.init('2ed2abdd736520c949eaff9503434532');
 
+    // 상우 부모님용
     Kakao.Link.createDefaultButton({
-      container: '#kakao-link-btn',
+      container: '#btn-sangwoo',
       objectType: 'feed',
       content: {
-        title: '웨딩 초청 테스트',
-        description: '웨딩은 여기서 하니 여기에 언제까지 오세요.',
+        title: '우리 아들 결혼합니다',
+        description: '가족 여러분, 오셔서 축복해주세요',
         imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
         link: {
           mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
@@ -31,6 +36,32 @@
         }
       },
       buttons: [
+        { title: '식장 안내', link: { mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html', webUrl: 'https://sangwoohahn.com/JennyMyWife.html' } },
+        { title: '마음 전하실 곳', link: { mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html', webUrl: 'https://sangwoohahn.com/JennyMyWife.html' } }
+      ]
+    });
+
+    // 제니 부모님용
+    Kakao.Link.createDefaultButton({
+      container: '#btn-jenny',
+      objectType: 'feed',
+      content: {
+        title: '우리 딸 결혼합니다',
+        description: '모두 함께해주세요!',
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
+        link: {
+          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+          webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+        }
+      },
+      buttons: [
+        {
+          title: '청첩장 보기',
+          link: {
+            mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+            webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+          }
+        },
         {
           title: '식장 안내',
           link: {
@@ -40,7 +71,25 @@
         }
       ]
     });
-    //]]>
+
+    // 상우 제니 친구용
+    Kakao.Link.createDefaultButton({
+      container: '#btn-friends',
+      objectType: 'feed',
+      content: {
+        title: '우리 결혼해요!',
+        description: '시간 되면 와서 축하해줘~',
+        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
+        link: {
+          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+          webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+        }
+      },
+      buttons: [
+        { title: '식장 위치', link: { mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html', webUrl: 'https://sangwoohahn.com/JennyMyWife.html' } },
+        { title: '연락하기', link: { mobileWebUrl: 'tel:01099573909', webUrl: 'tel:01099573909' } }
+      ]
+    });
   </script>
 </body>
 
