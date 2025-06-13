@@ -92,9 +92,14 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s">
 
 
-    <form action="https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec" method="GET" target="hidden_iframe">
+    <form
+      action="https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec"
+      method="GET" target="hidden_iframe">
+
       <input name="guestName" id="nameInput" placeholder="성함을 입력해 주세요" required />
       <input type="hidden" name="attending" id="attendingInput" />
+      <input type="hidden" name="side" id="sideInput" />
+
       <button type="button" onclick="submitForm(true)">참석합니다</button>
       <button type="button" onclick="submitForm(false)">불참합니다</button>
     </form>
@@ -103,6 +108,13 @@
   </main>
 
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const guestSide = urlParams.get('side') || 'unknown';
+
+    window.onload = function () {
+      document.getElementById('sideInput').value = guestSide;
+    };
+
     function submitForm(isAttending) {
       const name = document.getElementById('nameInput').value.trim();
       if (!name) {
