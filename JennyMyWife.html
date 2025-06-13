@@ -74,7 +74,7 @@
       padding: 24px;
     }
 
-    main div {
+    main form {
       display: block;
       margin: auto;
       width: 310px;
@@ -92,82 +92,27 @@
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s">
 
 
-    <div class="container">
-      <h2>참석자 등록</h2>
-      <form id="attendanceForm">
-        <div class="radio-group">
-          <label>참석 여부:</label><br>
-          <input type="radio" id="attendYes" name="attendance" value="참석" required>
-          <label for="attendYes">참석</label>
-          <input type="radio" id="attendNo" name="attendance" value="불참" required>
-          <label for="attendNo">불참</label>
-        </div>
-
-        <label for="name">이름:</label>
-        <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
-
-        <button type="submit">제출</button>
-      </form>
-      <div id="responseMessage"></div>
-    </div>
+    <form action="https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec" method="GET" target="hidden_iframe">
+      <input name="guestName" id="nameInput" placeholder="성함을 입력해 주세요" required />
+      <input type="hidden" name="attending" id="attendingInput" />
+      <button type="button" onclick="submitForm(true)">참석합니다</button>
+      <button type="button" onclick="submitForm(false)">불참합니다</button>
+    </form>
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
 
   </main>
 
   <script>
-    document.getElementById('attendanceForm').addEventListener('submit', async function (event) {
-      event.preventDefault();
-
-      const attendance = document.querySelector('input[name="attendance"]:checked');
-      const nameInput = document.getElementById('name');
-      const responseMessage = document.getElementById('responseMessage');
-
-      if (!attendance || !nameInput.value.trim()) {
-        responseMessage.textContent = '모든 필드를 채워주세요.';
-        responseMessage.className = 'error';
+    function submitForm(isAttending) {
+      const name = document.getElementById('nameInput').value.trim();
+      if (!name) {
+        alert('성함을 입력해주세요.');
         return;
       }
-
-      const formData = {
-        attendance: attendance.value,
-        name: nameInput.value.trim()
-      };
-
-      responseMessage.textContent = '제출 중...';
-      responseMessage.className = '';
-
-      // ★★★ 배포된 Google Apps Script 웹 앱의 'exec' URL을 여기에 삽입하세요! ★★★
-      const appsScriptApiUrl = 'https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec';
-
-      try {
-        const response = await fetch(appsScriptApiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(formData)
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (data.success) {
-          responseMessage.textContent = data.message;
-          responseMessage.className = 'success';
-          document.getElementById('attendanceForm').reset();
-        } else {
-          responseMessage.textContent = data.message;
-          responseMessage.className = 'error';
-        }
-      } catch (error) {
-        responseMessage.textContent = '제출 중 오류가 발생했습니다: ' + error.message;
-        responseMessage.className = 'error';
-        console.error('Fetch error:', error);
-      }
-    });
+      document.getElementById('attendingInput').value = isAttending ? 'yes' : 'no';
+      document.forms[0].submit();
+      alert('응답이 기록되었습니다. 감사합니다!');
+    }
   </script>
 
 </body>
