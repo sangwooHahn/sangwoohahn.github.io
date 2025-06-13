@@ -94,7 +94,7 @@
 
     <h2>RSVP</h2>
     <div>
-      <input id="nameInput" placeholder="성함을 입력해 주세요" />
+      <input id="nameInput" placeholder="성함을 입력해 주세요!" />
       <button onclick="submitRSVP(true)">참석합니다</button>
       <button onclick="submitRSVP(false)">불참합니다</button>
     </div>
@@ -103,19 +103,17 @@
 
   <script>
     function submitRSVP(isAttending) {
-      const guestName = document.getElementById("nameInput").value;
+      const guestName = encodeURIComponent(document.getElementById("nameInput").value);
+      const attending = isAttending ? "yes" : "no";
 
-      fetch("https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ guestName, attending: isAttending })
-      })
-        .then(res => {
-          if (res.ok) {
-            alert("응답이 기록되었습니다. 감사합니다!");
-          } else {
-            alert("오류가 발생했습니다. 다시 시도해주세요.");
-          }
+      fetch(`https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec?guestName=${guestName}&attending=${attending}`)
+        .then(res => res.text())
+        .then(data => {
+          alert("응답이 기록되었습니다. 감사합니다!");
+        })
+        .catch(err => {
+          console.error("Fetch error:", err);
+          alert("오류가 발생했습니다. 다시 시도해주세요.");
         });
     }
   </script>
