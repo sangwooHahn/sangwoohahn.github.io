@@ -8,7 +8,7 @@
   <title>Sangwoo & Jenny</title>
 
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/images/common/favicon.ico/apple-icon-57x57.png">
+  <!-- <link rel="apple-touch-icon" sizes="57x57" href="assets/images/common/favicon.ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/images/common/favicon.ico/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="assets/images/common/favicon.ico/apple-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="76x76" href="assets/images/common/favicon.ico/apple-icon-76x76.png">
@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/common/favicon.ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/images/common/favicon.ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/common/favicon.ico/favicon-16x16.png">
-  <link rel="icon" type="image/x-icon" href="assets/images/common/favicon.ico/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/images/common/favicon.ico/favicon.ico"> -->
 
   <!-- Font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,8 +31,8 @@
     rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <!-- <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css"> -->
 
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -42,6 +42,7 @@
     body {
       background-color: azure;
     }
+
     h1 {
       position: relative;
       font-family: Helvetica;
@@ -63,12 +64,20 @@
       text-align: center;
       padding-top: 16px;
     }
+
     img {
       display: block;
       margin: auto;
       width: 300px;
       max-width: 100%;
       height: 100%;
+      padding: 24px;
+    }
+
+    main div {
+      display: block;
+      margin: auto;
+      width: 310px;
       padding: 24px;
     }
   </style>
@@ -81,7 +90,36 @@
     <h1>Happy Wedding!</h1>
     <h2>Sangwoo & Jenny Wedding!</h2>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s">
+
+
+    <h2>RSVP</h2>
+    <div>
+      <input id="nameInput" placeholder="성함을 입력해 주세요" />
+      <button onclick="submitRSVP(true)">참석합니다</button>
+      <button onclick="submitRSVP(false)">불참합니다</button>
+    </div>
+
   </main>
+
+  <script>
+    function submitRSVP(isAttending) {
+      const guestName = document.getElementById("nameInput").value;
+
+      fetch("https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ guestName, attending: isAttending })
+      })
+        .then(res => {
+          if (res.ok) {
+            alert("응답이 기록되었습니다. 감사합니다!");
+          } else {
+            alert("오류가 발생했습니다. 다시 시도해주세요.");
+          }
+        });
+    }
+  </script>
+
 </body>
 
 </html>
