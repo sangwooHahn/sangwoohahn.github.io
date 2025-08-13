@@ -7,6 +7,21 @@
   <meta name="theme-color" content="#fafafa">
   <title>Sangwoo Hahn Design</title>
 
+  <!-- 카톡에서 청첩장으로 리다이렉트 -->
+  <script>
+    const ua = navigator.userAgent.toLowerCase();
+    const today = new Date();
+    const weddingDate = new Date(2026, 0, 24); // 2025-10-18 (월은 0부터 시작)
+
+    const isKakao = ua.includes("kakaotalk");
+
+    // 카톡에서 열었고, 결혼식 전이라면
+    if (isKakao && today <= weddingDate) {
+      window.location.href = "https://sangwoohahn.com/JennyMyWife";
+    }
+    // 그 외는 현재 페이지 그대로 표시 (포트폴리오 링크 클릭 시 따로 이동)
+  </script>
+
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="assets/images/common/favicon.ico/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="assets/images/common/favicon.ico/apple-icon-60x60.png">
@@ -137,7 +152,7 @@
       background-color: var(--background-secondary);
     }
 
-    
+
     /* -------- 디바이스 대응 디자인 -------- */
 
     /* 기본 (모바일 우선 접근) */
