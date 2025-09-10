@@ -2,7 +2,7 @@
 function getUserLang() {
   const lang = navigator.language.toLowerCase();
   return "KR"; // 디버깅용 강제 한글
-  // return lang.startsWith("ko") ? "KR" : "EN";
+  return lang.startsWith("ko") ? "KR" : "EN";
 }
 
 // 1. 구글 시트 데이터 불러오기
@@ -32,7 +32,8 @@ function applyAllTexts(textMap) {
   // 일반 텍스트 적용
   document.querySelectorAll("[data-key]").forEach(el => {
     const key = el.getAttribute("data-key");
-    el.textContent = textMap[key] || "";
+    const text = textMap[key] || "";
+    el.innerHTML = text.replace(/\n/g, "<br>");
   });
 
   // input placeholder
@@ -67,7 +68,7 @@ function applyLanguageTheme(lang) {
 
 // 5. 커스텀 alert 모달
 function showAlert(message) {
-  const modal = document.getElementById("custom-alert");
+  const modal = document.getElementById("custom-modal");
   const alertText = document.getElementById("alert-text");
   alertText.textContent = message;
   modal.classList.remove("hidden");
@@ -78,7 +79,9 @@ function showAlert(message) {
   };
 }
 
-// 6. 탭 기본값 설정 및 클릭 처리
+// ----------------------
+// 6. 탭 기본값 설정 및 클릭 처리 (모듈 전용)
+// ----------------------
 document.addEventListener('DOMContentLoaded', async () => {
   const lang = getUserLang();
   applyLanguageTheme(lang);
@@ -86,52 +89,74 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.textMap = textMap;
   applyAllTexts(textMap);
 
-  // 기본값 groom
-  const defaultButton = document.querySelector('.tab-button[data-tab="groom"]');
-  defaultButton.classList.add('active');
-  document.getElementById('sideInput').value = '신랑측';
+  // 모듈 폼 탭 설정
+  const defaultButton = document.querySelector('.RSVP-module form .tab-button[data-tab="groom"]');
+  if (defaultButton) {
+    defaultButton.classList.add('active');
+    const sideInput = document.getElementById('sideInput_module');
+    sideInput.value = '신랑측';
+  }
 
-  // 탭 버튼 클릭
-  document.querySelectorAll('.tab-button').forEach(button => {
+  // 탭 버튼 클릭 (모듈 전용)
+  document.querySelectorAll('.RSVP-module form .tab-button').forEach(button => {
     button.addEventListener('click', () => {
-      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.RSVP-module form .tab-button').forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
 
-      const side = button.dataset.tab === 'groom' ? '신랑측' : '신부측';
-      document.getElementById('sideInput').value = side;
+      const sideInput = document.getElementById('sideInput_module');
+      sideInput.value = button.dataset.tab === 'groom' ? '신랑측' : '신부측';
     });
   });
 });
 
-// 7. RSVP 전송
-function submitForm(isAttending) {
-  const name = document.getElementById('nameInput').value.trim();
+// 탭 기본값 설정 및 클릭 처리 (모달 전용)
+document.addEventListener('DOMContentLoaded', () => {
+  const defaultButton = document.querySelector('.RSVP-module.custom-modal form .tab-button[data-tab="groom"]');
+  if (defaultButton) {
+    defaultButton.classList.add('active');
+    const sideInput = document.getElementById('sideInput_modal');
+    sideInput.value = '신랑측';
+  }
+
+  document.querySelectorAll('.RSVP-module.custom-modal form .tab-button').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.RSVP-module.custom-modal form .tab-button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const sideInput = document.getElementById('sideInput_modal');
+      sideInput.value = button.dataset.tab === 'groom' ? '신랑측' : '신부측';
+    });
+  });
+});
+
+// ----------------------
+// 7. RSVP 전송 - 모듈 버전
+// ----------------------
+function submitFormModule(isAttending) {
+  const nameInputEl = document.getElementById('nameInput_module');
+  const sideInputEl = document.getElementById('sideInput_module');
+
+  const name = nameInputEl.value.trim();
   if (!name) {
     showAlert(document.getElementById('alert-name-required').textContent || '성함을 입력해주세요.');
     return;
   }
-
-  const sideInputEl = document.getElementById('sideInput');
   if (!sideInputEl.value) {
     showAlert(document.getElementById('alert-side-required').textContent || '신랑측 또는 신부측을 선택해주세요.');
     return;
   }
 
-  // 참석/불참 값 세팅
-  document.getElementById('attendingInput').value = isAttending ? '참석' : '불참';
+  // 참석/불참 값
+  document.getElementById('attendingInput_module').value = isAttending ? '참석' : '불참';
 
-  // side 값을 한글로 변환
-  if (sideInputEl.value === 'groom') sideInputEl.value = '신랑측';
-  else if (sideInputEl.value === 'bride') sideInputEl.value = '신부측';
-
-  // 폼 데이터 직렬화 + action 추가
-  const form = document.forms[0];
+  // 직렬화
+  const form = document.getElementById('rsvpForm_module');
   const formData = new FormData(form);
   formData.append('action', 'rsvp');
   const query = new URLSearchParams(formData).toString();
   const url = form.action + '?' + query;
 
-  // 모달 표시
+  // 전송
   showAlert(document.getElementById('alert-wait-text').textContent || '응답을 전송 중입니다...');
   document.getElementById('alert-ok-btn').style.display = 'none';
 
@@ -143,6 +168,56 @@ function submitForm(isAttending) {
     .catch(() => {
       updateAlertText(document.getElementById('alert-error-text').textContent || '전송 중 오류가 발생했습니다.');
       document.getElementById('alert-ok-btn').style.display = 'block';
+    });
+}
+
+
+// ----------------------
+// 8. RSVP 전송 - 모달 버전
+// ----------------------
+function submitFormModal(isAttending) {
+  const modal = document.querySelector('.RSVP-module.custom-modal');
+  const nameInputEl = document.getElementById('nameInput_modal');
+  const sideInputEl = document.getElementById('sideInput_modal');
+
+  const name = nameInputEl.value.trim();
+  if (!name) {
+    showAlert(document.getElementById('alert-name-required').textContent || '성함을 입력해주세요.');
+    return;
+  }
+  if (!sideInputEl.value) {
+    showAlert(document.getElementById('alert-side-required').textContent || '신랑측 또는 신부측을 선택해주세요.');
+    return;
+  }
+
+  // 참석/불참 값
+  document.getElementById('attendingInput_modal').value = isAttending ? '참석' : '불참';
+
+  // 직렬화
+  const form = document.getElementById('rsvpForm_modal');
+  const formData = new FormData(form);
+  formData.append('action', 'rsvp');
+  const query = new URLSearchParams(formData).toString();
+  const url = form.action + '?' + query;
+
+  // 전송
+  showAlert(document.getElementById('alert-wait-text').textContent || '응답을 전송 중입니다...');
+  document.getElementById('alert-ok-btn').style.display = 'none';
+
+  fetch(url, { method: 'GET', mode: 'no-cors' })
+    .then(() => {
+      updateAlertText(document.getElementById('alert-success').textContent || '응답이 기록되었습니다. 감사합니다!');
+      document.getElementById('alert-ok-btn').style.display = 'block';
+
+      // 전송 후 모달 닫기
+      modal.style.display = 'none';
+    })
+    .catch(() => {
+      updateAlertText(document.getElementById('alert-error-text').textContent || '전송 중 오류가 발생했습니다.');
+      document.getElementById('alert-ok-btn').style.display = 'block';
+
+      // 실패해도 모달 닫을지 선택 가능
+      // modal.style.display = 'none';
     });
 }
 
@@ -162,7 +237,7 @@ function submitMessage() {
     content
   });
 
-  const url = `https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec?${params.toString()}`;
+  const url = `https://script.google.com/macros/s/AKfycbwuT2SWQg33Xz50BV5L5TUVdGeGGbOFO2KRxiAJDJjBo0wKI5juw-D_Y49SLS3EY97S/exec?${params.toString()}`;
 
   // 전송 대기 모달 표시
   showAlert(document.getElementById('alert-message-wait')?.textContent || '응답을 전송 중입니다...');
@@ -181,7 +256,7 @@ function submitMessage() {
 
 /// 메시지 받아오기
 async function loadMessages() {
-  const url = 'https://script.google.com/macros/s/AKfycbyH9guMuhbt7gff0W_LLA0YJ-4IRmaBKZk_vM2DPBa8LiQgUBBkBWSSK3XZP1NErZ0/exec?action=getMessages';
+  const url = 'https://script.google.com/macros/s/AKfycbwuT2SWQg33Xz50BV5L5TUVdGeGGbOFO2KRxiAJDJjBo0wKI5juw-D_Y49SLS3EY97S/exec?action=getMessages';
 
   try {
     const response = await fetch(url);
@@ -218,7 +293,7 @@ async function loadMessages() {
 // 모달 닫기 버튼 이벤트
 document.getElementById('alert-ok-btn').addEventListener('click', () => {
   // 모달 숨기기
-  document.getElementById('custom-alert').classList.add('hidden');
+  document.getElementById('custom-modal').classList.add('hidden');
 
   // 메시지 새로 불러오기
   loadMessages();
@@ -318,16 +393,20 @@ galleryTrack.addEventListener('mousedown', e => {
   galleryTrack.classList.add('dragging');
   startX = e.pageX - galleryTrack.offsetLeft;
   scrollLeft = galleryTrack.scrollLeft;
+  // 스크롤 잠금
+  document.body.style.overflow = 'hidden';
 });
 galleryTrack.addEventListener('mouseleave', () => {
   if (isDragging) snapToClosest();
   isDragging = false;
   galleryTrack.classList.remove('dragging');
+  document.body.style.overflow = ''; // 스크롤 복원
 });
 galleryTrack.addEventListener('mouseup', () => {
   if (isDragging) snapToClosest();
   isDragging = false;
   galleryTrack.classList.remove('dragging');
+  document.body.style.overflow = ''; // 스크롤 복원
 });
 galleryTrack.addEventListener('mousemove', e => {
   if (!isDragging) return;
@@ -341,13 +420,20 @@ galleryTrack.addEventListener('mousemove', e => {
 galleryTrack.addEventListener('touchstart', e => {
   startX = e.touches[0].pageX;
   scrollLeft = galleryTrack.scrollLeft;
-});
+  document.body.style.overflow = 'hidden'; // 터치 시작 시 스크롤 잠금
+}, { passive: false });
+
 galleryTrack.addEventListener('touchmove', e => {
+  e.preventDefault(); // 스크롤 막기
   const x = e.touches[0].pageX;
   const walk = (x - startX) * 1.5;
   galleryTrack.scrollLeft = scrollLeft - walk;
+}, { passive: false });
+
+galleryTrack.addEventListener('touchend', () => {
+  snapToClosest();
+  document.body.style.overflow = ''; // 터치 끝나면 스크롤 복원
 });
-galleryTrack.addEventListener('touchend', snapToClosest);
 
 // 스냅
 function snapToClosest() {
@@ -368,6 +454,31 @@ galleryTrack.addEventListener('scroll', () => {
   if (index !== activeIndex) updateIndicator(index);
 });
 
+// 화살표 선택
+const prevArrow = document.querySelector('.indicator-wrapper .prev');
+const nextArrow = document.querySelector('.indicator-wrapper .next');
+
+//인디케이터 갯수 파악 (스크린 크기별로 다름)
+function getVisibleDots() {
+  return indicatorDots.filter(dot => window.getComputedStyle(dot).display !== 'none');
+}
+
+// 이전 버튼 클릭
+prevArrow.addEventListener('click', () => {
+  const visibleDots = getVisibleDots();
+  let newIndex = visibleDots.indexOf(indicatorDots[currentSlide]) - 1;
+  if (newIndex < 0) newIndex = visibleDots.length - 1;
+  scrollToSlide(Array.from(indicatorDots).indexOf(visibleDots[newIndex]));
+});
+
+// 다음 버튼 클릭
+nextArrow.addEventListener('click', () => {
+  const visibleDots = getVisibleDots();
+  let newIndex = visibleDots.indexOf(indicatorDots[currentSlide]) + 1;
+  if (newIndex >= visibleDots.length) newIndex = 0;
+  scrollToSlide(Array.from(indicatorDots).indexOf(visibleDots[newIndex]));
+});
+
 // 초기 인디케이터
 updateIndicator(currentSlide);
 
@@ -378,8 +489,8 @@ const images = document.querySelectorAll('.images img');
 const lightbox = document.querySelector('.lightbox');
 const lightboxImage = document.querySelector('.lightbox-image');
 const closeBtn = document.querySelector('.close');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.arrow-wrapper .prev');
+const nextBtn = document.querySelector('.arrow-wrapper .next');
 
 let currentIndex = 0;
 
@@ -428,8 +539,13 @@ document.addEventListener('keydown', (e) => {
 
 
 //지도
-const key = 'cdqp09bHBUjkatg709VX';
-const styleJson = 'https://api.maptiler.com/maps/0198736c-7d0f-7d3f-86bd-6112b6939cea/style.json?key=cdqp09bHBUjkatg709VX';
+// 사용자 언어 감지
+const lang = getUserLang(); // "KR" 또는 "EN"
+// const styleJson = 'https://api.maptiler.com/maps/0198736c-7d0f-7d3f-86bd-6112b6939cea/style.json?key=cdqp09bHBUjkatg709VX';
+const styleJson = lang === 'KR'
+  ? 'https://api.maptiler.com/maps/0198736c-7d0f-7d3f-86bd-6112b6939cea/style.json?key=cdqp09bHBUjkatg709VX'
+  : 'https://api.maptiler.com/maps/019906d5-2c72-7c4e-8f31-1a499924884f/style.json?key=cdqp09bHBUjkatg709VX';
+
 
 const attribution = new ol.control.Attribution({
   collapsible: true,
@@ -446,6 +562,7 @@ const map = new ol.Map({
 });
 // MapTiler 스타일 적용
 olms.apply(map, styleJson).then(() => {
+
   // 그랜드 하얏트 서울 건물 GeoJSON (예시 좌표)
   const grandHyattGeoJSON = {
     "type": "FeatureCollection",
@@ -531,7 +648,7 @@ olms.apply(map, styleJson).then(() => {
           width: 3
         }),
         text: new ol.style.Text({
-          text: "그랜드 하얏트 서울",
+          text: lang == "KR" ? "그랜드 하얏트 서울" : "Grand Hyatt Seoul",
           font: 'bold 16px sans-serif',
           fill: new ol.style.Fill({ color: '#853BA9' }),
           stroke: new ol.style.Stroke({ color: '#fff', width: 3 }),
@@ -590,7 +707,17 @@ document.getElementById("showMessageBtn").addEventListener("click", () => {
 
 // 연락처 탭 스위칭
 document.querySelectorAll('.contact-tab').forEach(btn => {
+  const lang = getUserLang();
+
+  if (lang === 'EN') { // 영어일 때는 두 패널 모두 항상 열림
+    document.querySelectorAll('.contact-panel').forEach(p => {
+      p.classList.add('active');
+    });
+    return;
+  }
+
   btn.addEventListener('click', () => {
+
     // 버튼 상태
     document.querySelectorAll('.contact-tab').forEach(b => {
       b.classList.toggle('active', b === btn);
@@ -666,6 +793,15 @@ function showContactModal() {
 
 // 계좌 탭 스위칭
 document.querySelectorAll('.account-tab').forEach(btn => {
+  const lang = getUserLang();
+
+  if (lang === 'EN') { // 영어일 때는 두 패널 모두 항상 열림
+    document.querySelectorAll('.account-panel').forEach(p => {
+      p.classList.add('active');
+    });
+    return;
+  }
+
   btn.addEventListener('click', () => {
     // 버튼 상태
     document.querySelectorAll('.account-tab').forEach(b => {
@@ -703,35 +839,208 @@ function showAccountModal() {
 }
 
 //카톡 공유하기 버튼
-
 Kakao.init('2ed2abdd736520c949eaff9503434532');
+const shareBtn = document.querySelector('#share-kakao');
 
-Kakao.Link.createDefaultButton({
-  container: '#share-kakao',
-  objectType: 'feed',
-  content: {
-    title: '상우와 연서의 결혼식에 초대합니다.',
-    description: '2026.01.24 모두 축하해주세요!',
-    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
-    link: {
-      mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
-      webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
-    }
-  },
-  buttons: [
-    {
-      title: '청첩장 보기',
+if (lang === 'KR') {
+  // 카카오 공유 버튼
+  Kakao.Link.createDefaultButton({
+    container: '#share-kakao',
+    objectType: 'feed',
+    content: {
+      title: '상우와 연서의 결혼식에 초대합니다.',
+      description: '2026.01.24 모두 축하해주세요!',
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
       link: {
         mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
         webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
       }
     },
-    {
-      title: '식장 안내',
-      link: {
-        mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html#location-section',
-        webUrl: 'https://sangwoohahn.com/JennyMyWife.html#location-section'
+    buttons: [
+      {
+        title: '청첩장 보기',
+        link: {
+          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+          webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+        }
+      },
+      {
+        title: '식장 안내',
+        link: {
+          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html#location-section',
+          webUrl: 'https://sangwoohahn.com/JennyMyWife.html#location-section'
+        }
+      }
+    ]
+  });
+} else {
+  // 영어 버전 → 주소 복사
+  shareBtn.addEventListener('click', () => {
+    const url = 'https://sangwoohahn.com/JennyMyWife.html';
+    navigator.clipboard.writeText(url)
+      .then(() => {
+        showToast();
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+  });
+}
+
+
+//계좌번호 복사
+function showToast() {
+  const toast = document.getElementById('toast');
+  // toast.textContent = message;
+  toast.classList.add('show');
+
+  // 2초 뒤 자동으로 내려가면서 사라짐
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2000);
+}
+
+document.querySelectorAll('.account-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const key = button.getAttribute('data-account-key');
+    const targetSpan = document.querySelector(`span[data-key="${key}"]`);
+
+    if (targetSpan) {
+      const textToCopy = targetSpan.textContent.trim();
+
+      if (textToCopy) {
+        navigator.clipboard.writeText(textToCopy)
+          .then(() => {
+            showToast();
+          })
+          .catch(err => {
+            console.error('복사 실패:', err);
+          });
       }
     }
-  ]
+  });
+});
+
+
+//RSVP 모달 10초 후 자동등장
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.querySelector(".RSVP-module.custom-modal");
+  const modalContent = document.querySelector(".RSVP-module .custom-modal-content");
+
+  // 이미 본 적 있는지 확인 (localStorage)
+  const hasSeenModal = localStorage.getItem("rsvpModalShown");
+
+  if (!hasSeenModal) {
+    setTimeout(() => {
+      modal.style.display = "flex";  // 보이기
+      localStorage.setItem("rsvpModalShown", "true");
+    }, 10000); // 10초 후 표시
+  }
+
+  // 모달 외부 클릭 시 닫기
+  modal.addEventListener("click", (e) => {
+    if (!modalContent.contains(e.target)) {
+      modal.style.display = "none";
+    }
+  });
+
+  // ESC 키로 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modal.style.display = "none";
+    }
+  });
+});
+
+
+//계좌번호 대신 벤모
+document.querySelectorAll(".venmo-button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const username = btn.dataset.account;
+    if (!username) return;
+
+    // venmo 앱 열기
+    window.location.href = `venmo://paycharge?recipients=${encodeURIComponent(username)}`;
+
+    // fallback: 앱이 없으면 웹으로
+    setTimeout(() => {
+      window.open(`https://venmo.com/${username}`, "_blank");
+    }, 1200);
+  });
+});
+
+
+
+
+//------ 타이틀 애니메이션 ------ //
+
+// ScrollTrigger 플러그인 등록
+gsap.registerPlugin(ScrollTrigger);
+let mm = gsap.matchMedia();
+
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".title-module",
+    start: "top top",
+    end: "+=" + window.innerHeight * 2.5, // 화면 높이 3배 길이 확보
+    pin: true,
+    scrub: true
+  }
+});
+
+
+tl.to(".title-flower-01", { x: -80, y: -55, duration: 0.3 }, 0)
+  .to(".title-flower-02", { x: -50, y: -170, duration: 0.3 }, 0)
+  .to(".title-flower-03", { x: -75, y: 150, duration: 0.3 }, 0)
+  .to(".title-flower-04", { x: -40, y: 80, duration: 0.3 }, 0)
+  .to(".title-flower-05", { x: 100, y: 210, duration: 0.3 }, 0)
+  .to(".title-text", { scale: 1.2, opacity: 0, duration: 0.3 }, 0.1)
+  .to(".title-name", { y: 50, scale: 1.4, opacity: 0, duration: 0.3 }, 0.1)
+  .to(".title-shine", { scale: 1.5, rotation: 60, duration: 0.3 }, 0.2)
+  .to(".title-shine", { scale: 0, duration: 0.4 }, 0.35)
+  .to(".title-ring", { y: -135, duration: 1.2 }, 0.8)
+  .to(".photo-groom", { y: -100, duration: 1.2 }, 0.8)
+  .to(".photo-bride", { y: -100, duration: 1.2 }, 0.8)
+  .to(".flower-01", { y: -100, duration: 1.2 }, 0.8)
+
+const petals = [
+  { selector: ".title-flower-leaf-01", x: 200, y: -100, rotation: 200 },
+  { selector: ".title-flower-leaf-02", x: -180, y: -80, rotation: -120 },
+  { selector: ".title-flower-leaf-03", x: 220, y: -90, rotation: 150 },
+  { selector: ".title-flower-leaf-04", x: 30, y: 180, rotation: 150 },
+  { selector: ".title-flower-leaf-05", x: 220, y: -90, rotation: 150 },
+];
+
+mm.add("(max-width: 767px)", () => { // 모바일
+  tl
+    .to(".title-ring", { scale: 0.7, duration: 0.4 }, 0.3)
+    .to(".photo-groom", { x: -20, scale: 1, duration: 0.6 }, 0.3)
+    .to(".photo-bride", { x: 20, scale: 1, duration: 0.6 }, 0.3)
+    .to(".flower-01", { x: 250, rotation: 0, scale: 1, duration: 1 }, 0.8)
+    .to(".flower-leaf", { x: -90, y: 100, rotation: 180, scale: 1, duration: 1 }, 0.8)
+    .to(".intro-text", { y: -100, opacity: 1, duration: 1.2 }, 1)
+});
+
+mm.add("(min-width: 768px)", () => { // 데스크탑
+  tl
+    .to(".title-ring", { scale: 1.2, duration: 0.4 }, 0.3)
+    .to(".photo-groom", { x: -120, scale: 1, duration: 0.6 }, 0.3)
+    .to(".photo-bride", { x: 120, scale: 1, duration: 0.6 }, 0.3)
+    .to(".flower-01", { x: 250, rotation: 0, scale: 1, duration: 1 }, 0.8)
+    .to(".flower-leaf", { x: -110, y: 80, rotation: 180, scale: 1, duration: 1 }, 0.8)
+    .to(".intro-text", { y: -80, opacity: 1, duration: 1.2 }, 1)
+});
+
+
+
+petals.forEach(p => {
+  document.querySelectorAll(p.selector).forEach(el => {
+    tl.to(el, {
+      x: () => p.x,
+      y: () => p.y,
+      rotation: () => p.rotation,
+      ease: "power1.inOut",
+      duration: 0.2
+    }, 0);
+  });
 });
