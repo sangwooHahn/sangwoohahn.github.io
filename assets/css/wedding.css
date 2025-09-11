@@ -368,7 +368,7 @@ section {
   text-align: center;
   top: 46vh;
   left: 50%;
-  transform: translate(-50%, -50%) translateY(200px);
+  transform: translate(-50%, -50%) translateY(220px);
   opacity: 0;
   width: 100%;
   justify-content: center;
@@ -1677,7 +1677,7 @@ input {
   }
 
   .intro-text {
-    transform: translate(-50%, -50%) translateY(400px);
+    transform: translate(-50%, -50%) translateY(300px);
   }
 
   .intro-text p {
