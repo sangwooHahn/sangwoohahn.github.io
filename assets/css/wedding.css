@@ -552,13 +552,13 @@ section {
 .indicator {
   display: flex;
   justify-content: center;
-  gap: var(--padding-4);
+  gap: var(--padding-8);
 }
 
 .indicator span {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   position: relative;
   cursor: pointer;
 }
