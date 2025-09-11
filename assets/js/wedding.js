@@ -1035,7 +1035,7 @@ mm.add("(max-width: 767px)", () => { // 모바일
     .to(".photo-bride", { y: -90, duration: 1.2 }, 0.8)
     .to(".flower-01", { y: -120, duration: 1.2 }, 0.8)
     .to(".flower-leaf", { x: -100, y: 105, rotation: 180, scale: 1, duration: 1.2 }, 1.1)
-    .to(".intro-text", { y: 70, opacity: 1, duration: 1.2 }, 1)
+    .to(".intro-text", { y: window.innerHeight * 0.46 - 320, opacity: 1, duration: 1.2 }, 1)
 });
 
 mm.add("(min-width: 768px)", () => { // 데스크탑
@@ -1054,7 +1054,7 @@ mm.add("(min-width: 768px)", () => { // 데스크탑
     .to(".photo-bride", { y: -100, duration: 1.2 }, 0.8)
     .to(".flower-01", { y: -110, duration: 1.2 }, 0.8)
     .to(".flower-leaf", { x: window.innerWidth * -0.5 - 60, y: 195, rotation: 180, scale: 1, duration: 1 }, 0.8)
-    .to(".intro-text", { y: 120, opacity: 1, duration: 1.2 }, 1)
+    .to(".intro-text", { y: window.innerHeight * 0.46 - 320, opacity: 1, duration: 1.2 }, 1)
 });
 
 
