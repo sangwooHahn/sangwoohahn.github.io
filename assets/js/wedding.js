@@ -666,6 +666,7 @@ olms.apply(map, styleJson).then(() => {
 
 // 내비게이션 앱 오픈
 const searchQuery = encodeURIComponent('그랜드 하얏트 서울');
+const searchQueryEn = encodeURIComponent('Grand Hyatt Seoul');
 
 const links = {
   naver: {
@@ -681,8 +682,8 @@ const links = {
     app: `tmap://search?name=${searchQuery}`
   },
   google: {
-    web: `https://www.google.com/maps/search/?api=1&query=${searchQuery}`,
-    app: `comgooglemaps://?q=${searchQuery}`
+    web: `https://www.google.com/maps/search/?api=1&query=${searchQueryEn}`,
+    app: `comgooglemaps://?q=${searchQueryEn}`
   }
 };
 
