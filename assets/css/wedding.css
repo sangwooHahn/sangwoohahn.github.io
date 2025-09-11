@@ -922,14 +922,10 @@ section {
   width: 50%;
   background-color: var(--background-secondary);
   color: var(--color-gray);
-  padding: var(--padding-16) var(--padding-24);
+  padding: var(--padding-16) var(--padding-8);
   border-bottom: 1px solid var(--color-gray);
   font-size: 1em;
   cursor: pointer;
-}
-
-.Language-English .RSVP-module .tab-buttons button {
-  font-size: 0.9em;
 }
 
 .RSVP-module .tab-buttons button:hover {
@@ -1123,6 +1119,11 @@ input {
 .account-modal .account-container {
   padding: var(--padding-16);
   width: 80%;
+}
+
+.contact-modal span,
+.account-modal span {
+  text-align: left;
 }
 
 .contact-tabs,
