@@ -1373,9 +1373,9 @@ input {
   line-height: 0;
   font-weight: 600;
   cursor: pointer;
-  height: 52px;
+  height: 50px;
   width: 100%;
-  max-width: 200px;
+  max-width: 180px;
   transition: all 0.3s ease;
 }
 
