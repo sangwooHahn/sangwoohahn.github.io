@@ -1041,6 +1041,10 @@ input {
   max-width: 160px;
 }
 
+.Language-English .message-container button {
+  max-width: 200px;
+}
+
 .message-list-container {
   background-color: var(--background-primary);
   padding: var(--padding-16);
@@ -1069,6 +1073,7 @@ input {
   background-color: var(--background-secondary);
   border-radius: 8px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .message-name {
