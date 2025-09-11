@@ -1366,7 +1366,7 @@ input {
   gap: var(--padding-8);
   padding: var(--padding-8) var(--padding-16);
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
   background: none;
   border-radius: 999px;
   font-size: 1em;

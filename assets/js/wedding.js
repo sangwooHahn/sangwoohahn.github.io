@@ -999,7 +999,7 @@ let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".title-module",
     start: "top top",
-    end: "+=" + window.innerHeight * 2.5, // 화면 높이 3배 길이 확보
+    end: "+=" + window.innerHeight * 4, // 화면 높이 3배 길이 확보
     pin: true,
     scrub: true
   }
