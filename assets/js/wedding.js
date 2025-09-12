@@ -1005,7 +1005,9 @@ document.querySelectorAll(".venmo-button").forEach(btn => {
 // ScrollTrigger 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
 let mm = gsap.matchMedia();
-const screenHeight = window.innerHeight;
+const screenHeight = window.visualViewport
+  ? window.visualViewport.height
+  : window.innerHeight;
 
 let tl = gsap.timeline({
   scrollTrigger: {
