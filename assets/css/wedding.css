@@ -292,6 +292,9 @@ section {
 .name-container {
   position: absolute;
   display: flex;
+  top: 46vh;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(32px);
   /* transform: scale(1.4) translateY(32px); */
 }
 
@@ -306,11 +309,11 @@ section {
 }
 
 .photo-groom {
-  transform: scale(1.4) translateY(32px) translateX(-50vw);
+  transform: scale(1.4) translateX(-50vw);
 }
 
 .photo-bride {
-  transform: scale(1.4) translateY(32px) translateX(50vw);
+  transform: scale(1.4) translateX(50vw);
 }
 
 .photo-groom img {
@@ -1608,7 +1611,7 @@ footer button {
 
   .title-ring {
     width: 136px;
-    transform: translate(-50%, -50%) translateY(55px);
+    transform: translate(-50%, -50%) translateY(57px);
   }
 
   .background-patttern {
