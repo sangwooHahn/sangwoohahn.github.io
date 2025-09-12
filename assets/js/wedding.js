@@ -1018,10 +1018,54 @@ let tl = gsap.timeline({
 
 
 tl
-  .to(".title-text", { scale: 1.2, opacity: 0, duration: 0.3 }, 0.1)
-  .to(".title-date", { y: 220, scale: 1.4, opacity: 0, duration: 0.3 }, 0.1)
-  .to(".title-shine", { scale: 1.5, rotation: 60, duration: 0.3 }, 0.2)
-  .to(".title-shine", { scale: 0, duration: 0.4 }, 0.35)
+  .to(".title-text", { scale: 1.2, opacity: 0, duration: 0.5 }, 0.1)
+  .to(".title-date", { y: 220, scale: 1.4, opacity: 0, duration: 0.5 }, 0.1)
+  .to(".title-shine", { scale: 1.5, rotation: 60, duration: 0.5 }, 0.2)
+  .to(".title-shine", { scale: 0, duration: 0.6 }, 0.35)
+
+mm.add("(max-width: 767px)", () => { // 모바일
+  tl
+    .to(".title-flower-01", { x: -75, y: -55, duration: 0.5 }, 0)
+    .to(".title-flower-02", { x: -45, y: -160, duration: 0.5 }, 0)
+    .to(".title-flower-03", { x: -75, y: 150, duration: 0.5 }, 0)
+    .to(".title-flower-04", { x: -40, y: 110, duration: 0.5 }, 0)
+    .to(".title-flower-05", { x: 100, y: 210, duration: 0.5 }, 0)
+    .to(".title-ring", { scale: 0.8, duration: 0.6 }, 0.3)
+    .to(".photo-groom", { x: -10, scale: 1, duration: 0.8 }, 0.5)
+    .to(".photo-bride", { x: 10, scale: 1, duration: 0.8 }, 0.5)
+    .to(".flower-01", { x: 150, rotation: 0, scale: 1.4, duration: 1 }, 1.2)
+    .to(".title-ring", { y: -130, duration: 1.6 }, 1.2)
+    .to(".name-container", { y: -170, duration: 1.6 }, 1.2)
+    .to(".flower-01", { y: -120, duration: 1.6 }, 1.2)
+    .to(".flower-leaf", { x: -100, y: 105, rotation: 180, scale: 1, duration: 1.8 }, 1.5)
+    .to(".intro-text", { y: 70, opacity: 1, duration: 1.6 }, 1.4)
+});
+
+mm.add("(min-width: 768px)", () => { // 데스크탑
+  tl
+    .to(".title-flower-01", { x: -105, y: -105, duration: 0.5 }, 0)
+    .to(".title-flower-02", { x: -85, y: -230, duration: 0.5 }, 0)
+    .to(".title-flower-03", { x: -95, y: 170, duration: 0.5 }, 0)
+    .to(".title-flower-04", { x: -60, y: 130, duration: 0.5 }, 0)
+    .to(".title-flower-05", { x: 120, y: 250, duration: 0.5 }, 0)
+    .to(".title-ring", { scale: 1, duration: 0.6 }, 0.3)
+    .to(".photo-groom", { x: -120, scale: 1, duration: 0.8 }, 0.5)
+    .to(".photo-bride", { x: 120, scale: 1, duration: 0.8 }, 0.5)
+    .to(".flower-01", { x: 240, rotation: 0, scale: 1.4, duration: 1 }, 1.2)
+    .to(".title-ring", { y: -120, duration: 1.6 }, 1.2)
+    .to(".name-container", { y: -210, duration: 1.6 }, 1.2)
+    .to(".flower-01", { y: -110, duration: 1.6 }, 1.2)
+    .to(".flower-leaf", { x: window.innerWidth * -0.5 - 60, y: 195, rotation: 180, scale: 1, duration: 1.8 }, 1.5)
+    .to(".intro-text", { y: 140, opacity: 1, duration: 1.6 }, 1.4)
+});
+
+tl
+    .to(".title-flower-01", { opacity: 0, duration: 0.5 }, 0.5)
+    .to(".title-flower-02", { opacity: 0, duration: 0.5 }, 0.5)
+    .to(".title-flower-03", { opacity: 0, duration: 0.5 }, 0.5)
+    .to(".title-flower-04", { opacity: 0, duration: 0.5 }, 0.5)
+    .to(".title-flower-05", { opacity: 0, duration: 0.5 }, 0.5)
+
 
 const petals = [
   { selector: ".title-flower-leaf-01", x: 200, y: -100, rotation: 200 },
@@ -1031,44 +1075,6 @@ const petals = [
   { selector: ".title-flower-leaf-05", x: 220, y: -90, rotation: 150 },
 ];
 
-mm.add("(max-width: 767px)", () => { // 모바일
-  tl
-    .to(".title-flower-01", { x: -75, y: -55, duration: 0.3 }, 0)
-    .to(".title-flower-02", { x: -45, y: -160, duration: 0.3 }, 0)
-    .to(".title-flower-03", { x: -75, y: 150, duration: 0.3 }, 0)
-    .to(".title-flower-04", { x: -40, y: 110, duration: 0.3 }, 0)
-    .to(".title-flower-05", { x: 100, y: 210, duration: 0.3 }, 0)
-    .to(".title-ring", { scale: 0.8, duration: 0.4 }, 0.3)
-    .to(".photo-groom", { x: -10, scale: 1, duration: 0.6 }, 0.3)
-    .to(".photo-bride", { x: 10, scale: 1, duration: 0.6 }, 0.3)
-    .to(".flower-01", { x: 150, rotation: 0, scale: 1, duration: 1 }, 0.8)
-    .to(".title-ring", { y: -130, duration: 1.2 }, 0.8)
-    .to(".name-container", { y: -170, duration: 1.2 }, 0.8)
-    .to(".flower-01", { y: -120, duration: 1.2 }, 0.8)
-    .to(".flower-leaf", { x: -100, y: 105, rotation: 180, scale: 1, duration: 1.2 }, 1.1)
-    .to(".intro-text", { y: 70, opacity: 1, duration: 1.2 }, 1)
-});
-
-mm.add("(min-width: 768px)", () => { // 데스크탑
-  tl
-    .to(".title-flower-01", { x: -105, y: -105, duration: 0.3 }, 0)
-    .to(".title-flower-02", { x: -85, y: -230, duration: 0.3 }, 0)
-    .to(".title-flower-03", { x: -95, y: 170, duration: 0.3 }, 0)
-    .to(".title-flower-04", { x: -60, y: 130, duration: 0.3 }, 0)
-    .to(".title-flower-05", { x: 120, y: 250, duration: 0.3 }, 0)
-    .to(".title-ring", { scale: 1, duration: 0.4 }, 0.3)
-    .to(".photo-groom", { x: -120, scale: 1, duration: 0.6 }, 0.3)
-    .to(".photo-bride", { x: 120, scale: 1, duration: 0.6 }, 0.3)
-    .to(".flower-01", { x: 240, rotation: 0, scale: 1, duration: 1 }, 0.8)
-    .to(".title-ring", { y: -120, duration: 1.2 }, 0.8)
-    .to(".name-container", { y: -210, duration: 1.2 }, 0.8)
-    .to(".flower-01", { y: -110, duration: 1.2 }, 0.8)
-    .to(".flower-leaf", { x: window.innerWidth * -0.5 - 60, y: 195, rotation: 180, scale: 1, duration: 1 }, 0.8)
-    .to(".intro-text", { y: 140, opacity: 1, duration: 1.2 }, 1)
-});
-
-
-
 petals.forEach(p => {
   document.querySelectorAll(p.selector).forEach(el => {
     tl.to(el, {
@@ -1076,8 +1082,13 @@ petals.forEach(p => {
       y: () => p.y,
       rotation: () => p.rotation,
       ease: "power1.inOut",
-      duration: 0.2
+      duration: 0.5
     }, 0);
+
+    tl.to(el, {
+      opacity: 0,
+      duration: 0.5
+    }, 0.5);
   });
 });
 

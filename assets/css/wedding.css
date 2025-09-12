@@ -154,7 +154,7 @@ section {
   align-items: center;
   height: 100vh;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .title-text {
@@ -716,7 +716,7 @@ section {
 
 .map-text-container .location-text {
   color: var(--text-body);
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: 600;
 }
 
