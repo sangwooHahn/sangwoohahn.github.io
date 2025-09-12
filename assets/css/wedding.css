@@ -154,7 +154,7 @@ section {
   align-items: center;
   height: 100vh;
   padding: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .title-text {
