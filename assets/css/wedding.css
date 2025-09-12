@@ -154,7 +154,7 @@ section {
   align-items: center;
   height: 100vh;
   padding: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .title-text {
@@ -294,7 +294,7 @@ section {
   display: flex;
   top: 46vh;
   left: 50%;
-  transform: translate(-50%, -50%) translateY(32px);
+  transform: translate(-50%, -50%) translateY(44px);
   /* transform: scale(1.4) translateY(32px); */
 }
 
