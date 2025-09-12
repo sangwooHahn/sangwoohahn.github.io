@@ -540,8 +540,8 @@ section {
   margin-top: var(--padding-24);
 }
 
-.indicator-wrapper .prev,
-.indicator-wrapper .next {
+.indicator-wrapper .prev div,
+.indicator-wrapper .next div {
   width: 22px;
   height: 22px;
   border: 2px solid var(--color-primary);
@@ -554,7 +554,7 @@ section {
 }
 
 /* 좌/우 회전 */
-.indicator-wrapper .next {
+.indicator-wrapper .next div {
   transform: rotate(-135deg);
 }
 
@@ -657,8 +657,21 @@ section {
   z-index: 999;
 }
 
-.arrow-wrapper .prev,
-.arrow-wrapper .next {
+.prev,
+.next{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.arrow-wrapper .prev div,
+.arrow-wrapper .next div{
   width: 22px;
   height: 22px;
   border: 2px solid var(--color-primary);
@@ -666,12 +679,11 @@ section {
   border-top: none;
   border-right: none;
   background: transparent;
-  cursor: pointer;
   transform: rotate(45deg);
 }
 
 /* 좌/우 회전 */
-.arrow-wrapper .next {
+.arrow-wrapper .next div {
   transform: rotate(-135deg);
 }
 
@@ -1424,8 +1436,8 @@ footer button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--padding-8);
-  padding: var(--padding-8) var(--padding-16);
+  gap: 6px;
+  padding: var(--padding-8) var(--padding-8);
   color: var(--color-primary);
   border: 1.5px solid var(--color-primary);
   background: none;

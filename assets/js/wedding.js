@@ -783,7 +783,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // 전화 버튼
 document.querySelectorAll(".phone-button").forEach(btn => {
   btn.addEventListener("click", () => {
-    const phoneNumber = btn.dataset.phoneKey;
+    const phoneNumber = btn.dataset.phone;
     if (!phoneNumber) return;
     window.location.href = `tel:${phoneNumber}`;
   });
@@ -792,7 +792,7 @@ document.querySelectorAll(".phone-button").forEach(btn => {
 // 문자 버튼
 document.querySelectorAll(".sms-button").forEach(btn => {
   btn.addEventListener("click", () => {
-    const phoneNumber = btn.dataset.phoneKey;
+    const phoneNumber = btn.dataset.phone;
     if (!phoneNumber) return;
     window.location.href = `sms:${phoneNumber}`;
   });
@@ -916,7 +916,7 @@ if (lang === 'KR') {
 }
 
 
-//계좌번호 복사
+//계좌번호 복사후 복사 알람
 function showToast() {
   const toast = document.getElementById('toast');
   // toast.textContent = message;
