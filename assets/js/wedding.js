@@ -569,6 +569,23 @@ const map = new ol.Map({
     zoom: 15.8
   })
 });
+
+// DragPan interaction 가져오기
+const dragPan = map.getInteractions().getArray().find(i => i instanceof ol.interaction.DragPan);
+
+// 한 손가락 터치 막기
+map.getViewport().addEventListener('touchstart', (evt) => {
+  if (evt.touches.length === 1) {
+    dragPan.setActive(false); // 한 손가락이면 드래그 비활성화
+  } else {
+    dragPan.setActive(true);  // 두 손가락 이상이면 활성화
+  }
+});
+
+map.getViewport().addEventListener('touchend', () => {
+  dragPan.setActive(true); // 터치 끝나면 다시 활성화
+});
+
 // MapTiler 스타일 적용
 olms.apply(map, styleJson).then(() => {
 
