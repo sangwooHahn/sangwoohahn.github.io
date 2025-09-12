@@ -430,6 +430,12 @@ section {
   z-index: 1;
 }
 
+.date-module .time-text {
+  line-height: 1.2em;
+  padding-top: var(--padding-4);
+  padding-bottom: var(--padding-16);
+}
+
 .Language-English .date-module .pill-button {
   width: 240px;
   max-width: none;
@@ -557,8 +563,8 @@ section {
 
 .indicator span {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 10px;
+  height: 10px;
   position: relative;
   cursor: pointer;
 }
@@ -568,8 +574,8 @@ section {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
   background-color: var(--color-gray);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -944,6 +950,7 @@ section {
   width: 100%;
   gap: var(--padding-24);
   padding: var(--padding-24);
+  padding-top: var(--padding-8);
   background-color: var(--background-secondary);
   border-radius: 24px;
   box-sizing: border-box;
@@ -1364,6 +1371,50 @@ input {
   display: none;
 }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--padding-24);
+  padding: var(--padding-8) var(--padding-16);
+  background-color: #ECE8E0;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(24px);
+}
+
+footer p {
+  font-size: 0.6em;
+  text-align: center;
+  color: var(--color-gray);
+}
+
+footer svg {
+  width: 12px;
+  height: 12px;
+  fill: var(--color-gray);
+}
+
+footer button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px;
+  background: none;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  opacity: 0.8;
+  transform: translateX(24px);
+}
+
 
 /* 컴포넌트 */
 .pill-button {
@@ -1733,7 +1784,18 @@ input {
   }
 
   .indicator-wrapper {
-    gap: var(--padding-24);
+    gap: var(--padding-32);
+    margin-top: var(--padding-48);
+  }
+
+  .indicator span {
+    width: 16px;
+    height: 16px;
+  }
+
+  .indicator span::after {
+    width: 10px;
+    height: 10px;
   }
 
   .indicator span:last-child {
@@ -1912,6 +1974,16 @@ input {
 
   .custom-modal-content {
     max-width: 400px;
+  }
+
+  footer div {
+    flex-direction: row;
+    gap: var(--padding-24);
+    transform: translateX(0px);
+  }
+
+  footer button {
+    transform: translateX(0px);
   }
 
   /* ---꽃장식--- */

@@ -1,9 +1,18 @@
-// 0. 사용자 언어 감지
+// // 0. 사용자 언어 감지
 function getUserLang() {
-  const lang = navigator.language.toLowerCase();
-  // return "KR"; // 디버깅용 강제 한글
-  return lang.startsWith("ko") ? "KR" : "EN";
+  // localStorage에 저장된 언어 확인
+  let storedLang = localStorage.getItem("lang");
+
+  if (!storedLang) {
+    // 없으면 브라우저 언어 감지 후 저장
+    const lang = navigator.language.toLowerCase();
+    storedLang = lang.startsWith("ko") ? "KR" : "EN";
+    localStorage.setItem("lang", storedLang);
+  }
+
+  return storedLang;
 }
+
 
 // 1. 구글 시트 데이터 불러오기
 async function fetchSheetData() {
@@ -665,21 +674,25 @@ olms.apply(map, styleJson).then(() => {
 
 
 // 내비게이션 앱 오픈
-const searchQuery = encodeURIComponent('그랜드 하얏트 서울');
+const langCheck = getUserLang();
+const searchQueryKr = encodeURIComponent('그랜드 하얏트 서울');
 const searchQueryEn = encodeURIComponent('Grand Hyatt Seoul');
+
+// 네이버 검색어 선택
+const naverQuery = langCheck === "EN" ? searchQueryEn : searchQueryKr;
 
 const links = {
   naver: {
-    web: `https://map.naver.com/v5/search/${searchQuery}`,
-    app: `nmap://search?query=${searchQuery}`
+    web: `https://map.naver.com/v5/search/${naverQuery}`,
+    app: `nmap://search?query=${naverQuery}`
   },
   kakao: {
-    web: `https://map.kakao.com/?q=${searchQuery}`,
-    app: `kakaomap://search?q=${searchQuery}`
+    web: `https://map.kakao.com/?q=${searchQueryKr}`,
+    app: `kakaomap://navigate?query=${searchQueryKr}`
   },
   tmap: {
-    web: `https://www.tmap.co.kr/search?query=${searchQuery}`,
-    app: `tmap://search?name=${searchQuery}`
+    web: `https://www.tmap.co.kr/search?query=${searchQueryKr}`,
+    app: `tmap://search?name=${searchQueryKr}`
   },
   google: {
     web: `https://www.google.com/maps/search/?api=1&query=${searchQueryEn}`,
@@ -702,8 +715,6 @@ if (isMobile()) {
 } else {
   tmapLinkEl.style.display = 'none'; // 데스크톱이면 숨김
 }
-
-const langCheck = getUserLang();
 
 if (langCheck === 'EN') {
   document.getElementById('tmap-link').style.display = 'none';
@@ -994,12 +1005,13 @@ document.querySelectorAll(".venmo-button").forEach(btn => {
 // ScrollTrigger 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);
 let mm = gsap.matchMedia();
+const screenHeight = window.innerHeight;
 
 let tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".title-module",
     start: "top top",
-    end: "+=" + window.innerHeight * 4, // 화면 높이 3배 길이 확보
+    end: "+=" + screenHeight * 4, // 화면 높이 3배 길이 확보
     pin: true,
     scrub: true
   }
@@ -1071,3 +1083,26 @@ petals.forEach(p => {
     }, 0);
   });
 });
+
+
+// 버튼 예시 (토글)
+document.getElementById("icon-setting").addEventListener("click", () => {
+  const current = getUserLang();
+  const next = current === "KR" ? "EN" : "KR";
+  setUserLang(next);
+});
+
+// 언어 강제 변경 함수
+function setUserLang(lang) {
+  localStorage.setItem("lang", lang);
+
+  // 알림 메시지
+  if (lang === "KR") {
+    alert("언어가 한국어로 변경되었습니다!");
+  } else {
+    alert("Language has been changed to English!");
+  }
+
+  location.reload(); // 저장 후 새로고침
+}
+
