@@ -56,11 +56,13 @@
 .Language-Korean,
 input,
 textarea {
-  /* font-family: 'MaruBuriExtraLight';
-  font-family: 'MaruBuriLight'; */
   font-family: 'MaruBuri';
-  /* font-family: 'MaruBuriBold';
-  font-family: 'MaruBuriSemiBold'; */
+  /* 글자 단위가 아니라 단어 단위 유지 */
+  word-break: keep-all;
+  /* 단어가 너무 길면 줄바꿈 허용 */
+  overflow-wrap: break-word;
+  /* 레거시 브라우저 호환 */
+  word-wrap: break-word;
 }
 
 .Language-English {
@@ -660,7 +662,7 @@ section {
 }
 
 .prev,
-.next{
+.next {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -673,7 +675,7 @@ section {
 }
 
 .arrow-wrapper .prev div,
-.arrow-wrapper .next div{
+.arrow-wrapper .next div {
   width: 22px;
   height: 22px;
   border: 2px solid var(--color-primary);
@@ -1161,30 +1163,38 @@ input {
 
 .Language-English .contact-modal .contact-container,
 .Language-English .account-modal .account-container,
-.Language-Korean .account-modal .account-container { /*한국 어카운트도 탭 삭제*/
+.Language-Korean .account-modal .account-container {
+  /*한국 어카운트도 탭 삭제*/
   padding: var(--padding-32) var(--padding-16) !important;
 }
 
-.Language-Korean .contact-modal h2/*,
-.Language-Korean .account-modal h2*/ {/*한국 어카운트도 탭 삭제*/
+.Language-Korean .contact-modal h2
+
+/*,
+.Language-Korean .account-modal h2*/
+  {
+  /*한국 어카운트도 탭 삭제*/
   display: none;
 }
 
 .Language-English .contact-modal h2,
 .Language-English .account-modal h2,
-.Language-Korean .account-modal h2 { /*한국 어카운트도 탭 삭제*/
+.Language-Korean .account-modal h2 {
+  /*한국 어카운트도 탭 삭제*/
   padding-bottom: var(--padding-24);
 }
 
 .Language-English .contact-tabs,
 .Language-English .account-tabs,
-.Language-Korean .account-tabs {/*한국 어카운트도 탭 삭제*/
+.Language-Korean .account-tabs {
+  /*한국 어카운트도 탭 삭제*/
   display: none;
 }
 
 .Language-English .contact-panels,
 .Language-English .account-panels,
-.Language-Korean .account-panels {/*한국 어카운트도 탭 삭제*/
+.Language-Korean .account-panels {
+  /*한국 어카운트도 탭 삭제*/
   display: flex;
   flex-direction: column;
   gap: var(--padding-16);
@@ -1192,7 +1202,8 @@ input {
 
 .Language-English .contact-panel,
 .Language-English .account-panel,
-.Language-Korean .account-panel {/*한국 어카운트도 탭 삭제*/
+.Language-Korean .account-panel {
+  /*한국 어카운트도 탭 삭제*/
   padding: 0 !important;
   gap: var(--padding-16) !important;
 }
