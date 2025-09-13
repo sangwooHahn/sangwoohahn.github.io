@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var userAgent = navigator.userAgent.toLowerCase();
   var targetUrl = location.href;
   var sessionFlag = 'inAppExternalTried';
@@ -12,8 +12,8 @@
 
   function isInApp() {
     return browserPatterns.kakaotalk.test(userAgent) ||
-           browserPatterns.line.test(userAgent) ||
-           browserPatterns.otherInApp.test(userAgent);
+      browserPatterns.line.test(userAgent) ||
+      browserPatterns.otherInApp.test(userAgent);
   }
 
   function openExternal() {
@@ -73,8 +73,8 @@
 
     document.body.innerHTML = html;
 
-    document.getElementById('safariButton').onclick = function() {
-      copyToClipboard(targetUrl, function(success) {
+    document.getElementById('safariButton').onclick = function () {
+      copyToClipboard(targetUrl, function (success) {
         if (success) {
           alert('URL주소가 복사되었습니다.\n\nSafari가 열리면 주소창을 길게 터치한 뒤, "붙여넣기 및 이동"를 누르면 정상적으로 이용할 수 있습니다.');
           location.href = 'x-web-search://?';
@@ -85,12 +85,12 @@
 
   function copyToClipboard(text, callback) {
     try {
-      navigator.clipboard.writeText(text).then(function() {
+      navigator.clipboard.writeText(text).then(function () {
         callback(true);
-      }).catch(function() {
+      }).catch(function () {
         callback(false);
       });
-    } catch(e) {
+    } catch (e) {
       callback(false);
     }
   }
@@ -426,17 +426,84 @@ function updateAlertText(text) {
 }
 
 
-//달력 다운로드
-document.getElementById("add-to-calendar").addEventListener("click", () => {
-  // 시트에서 받아온 textMap이 이미 존재한다고 가정
-  const summary = textMap["Event_Summary"];         // 결혼식 제목
-  const description = textMap["Event_Description"];     // 설명
-  const location = textMap["Event_Location"];        // 장소
-  const url = textMap["Event_URL"];             // 안내 페이지 주소
-  const alarm1 = textMap["Event_Alarm1"];          // 하루 전 알림 텍스트
-  const alarm7 = textMap["Event_Alarm7"];          // 일주일 전 알림 텍스트
+// //달력 다운로드
+// document.getElementById("add-to-calendar").addEventListener("click", () => {
+//   // 시트에서 받아온 textMap이 이미 존재한다고 가정
+//   const summary = textMap["Event_Summary"];         // 결혼식 제목
+//   const description = textMap["Event_Description"];     // 설명
+//   const location = textMap["Event_Location"];        // 장소
+//   const url = textMap["Event_URL"];             // 안내 페이지 주소
+//   const alarm1 = textMap["Event_Alarm1"];          // 하루 전 알림 텍스트
+//   const alarm7 = textMap["Event_Alarm7"];          // 일주일 전 알림 텍스트
 
-  const icsContent = `
+//   const icsContent = `
+// BEGIN:VCALENDAR
+// VERSION:2.0
+// PRODID:-//sangwoohahn.com/JennyMyWife//EN
+// BEGIN:VEVENT
+// UID:20260124T030000Z@sangwoohahn.com
+// DTSTAMP:20260124T030000Z
+// DTSTART:20260124T030000Z
+// DTEND:20260124T050000Z
+// SUMMARY:${summary}
+// DESCRIPTION:${description}
+// LOCATION:${location}
+// URL:${url}
+// BEGIN:VALARM
+// TRIGGER:-P1D
+// ACTION:DISPLAY
+// DESCRIPTION:${alarm1}
+// END:VALARM
+// BEGIN:VALARM
+// TRIGGER:-P7D
+// ACTION:DISPLAY
+// DESCRIPTION:${alarm7}
+// END:VALARM
+// END:VEVENT
+// END:VCALENDAR`;
+
+//   const blob = new Blob([icsContent], { type: "text/calendar" });
+//   const urlObj = URL.createObjectURL(blob);
+
+//   const link = document.createElement("a");
+//   link.href = urlObj;
+//   link.download = "SangwooJenny_WeddingDay.ics";
+//   document.body.appendChild(link);
+//   link.click();
+//   document.body.removeChild(link);
+// });
+
+
+//인앱에서 누르면 외부로 나가서 달력 받는 함수
+
+(function () {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const targetUrl = location.href;
+  const sessionFlag = 'inAppExternalTried';
+
+  const browserPatterns = {
+    kakaotalk: /kakaotalk/i,
+    line: /line/i,
+    otherInApp: /inapp|naver|snapchat|wirtschaftswoche|thunderbird|instagram|everytimeapp|whatsapp|electron|wadiz|aliapp|zumapp|iphone(.*)whale|android(.*)whale|kakaostory|band|twitter|daumapps|daumdevice\/mobile|fb_iab|fban|fbios|fbss|trill|samsungbrowser\/[^1]/i,
+    ios: /iphone|ipad|ipod/i
+  };
+
+  function isInApp() {
+    return browserPatterns.kakaotalk.test(userAgent) ||
+      browserPatterns.line.test(userAgent) ||
+      browserPatterns.otherInApp.test(userAgent);
+  }
+
+  // 달력 다운로드 함수
+  function downloadCalendar() {
+    const summary = textMap["Event_Summary"];
+    const description = textMap["Event_Description"];
+    const location = textMap["Event_Location"];
+    const url = textMap["Event_URL"];
+    const alarm1 = textMap["Event_Alarm1"];
+    const alarm7 = textMap["Event_Alarm7"];
+
+    const icsContent = `
 BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//sangwoohahn.com/JennyMyWife//EN
@@ -462,18 +529,63 @@ END:VALARM
 END:VEVENT
 END:VCALENDAR`;
 
-  const blob = new Blob([icsContent], { type: "text/calendar" });
-  const urlObj = URL.createObjectURL(blob);
+    const blob = new Blob([icsContent], { type: "text/calendar" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "SangwooJenny_WeddingDay.ics";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
 
-  const link = document.createElement("a");
-  link.href = urlObj;
-  link.download = "SangwooJenny_WeddingDay.ics";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-});
+  // 버튼 클릭 시
+  const calendarBtn = document.getElementById("add-to-calendar");
+  if (calendarBtn) {
+    calendarBtn.addEventListener("click", (e) => {
+      e.preventDefault();
 
+      if (!isInApp()) {
+        // 일반 브라우저면 바로 다운로드
+        downloadCalendar();
+        return;
+      }
 
+      // 인앱 브라우저면 외부 브라우저 이동 + 달력 다운로드
+      if (sessionStorage.getItem(sessionFlag)) return; // 한 번만 시도
+      sessionStorage.setItem(sessionFlag, 'true');
+
+      const externalUrl = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'downloadCalendar=1';
+
+      if (browserPatterns.kakaotalk.test(userAgent)) {
+        location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(externalUrl);
+      } else if (browserPatterns.line.test(userAgent)) {
+        location.href = externalUrl + '&openExternalBrowser=1';
+      } else if (browserPatterns.otherInApp.test(userAgent)) {
+        if (browserPatterns.ios.test(userAgent)) {
+          handleIOS(externalUrl);
+        } else {
+          handleAndroid(externalUrl);
+        }
+      }
+    });
+  }
+
+  function handleAndroid(url) {
+    location.href = 'intent://' + url.replace(/^https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
+  }
+
+  function handleIOS(url) {
+    // 간단히 URL 열도록
+    location.href = url;
+  }
+
+  // URL 파라미터로 바로 다운로드
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("downloadCalendar") === "1") {
+    downloadCalendar();
+  }
+
+})();
 
 
 

@@ -282,9 +282,9 @@ section {
 
 .flower-01 {
   position: absolute;
-  left: -210px;
-  top: 120px;
-  width: 140px;
+  left: -200px;
+  top: 170px;
+  width: 110px;
   pointer-events: none;
   transform: scale(2) rotate(-30deg);
 }
@@ -1712,12 +1712,9 @@ footer button {
   }
 
   .flower-01 {
-    position: absolute;
-    left: -210px;
-    top: 120px;
-    width: 140px;
-    pointer-events: none;
-    transform: scale(2) rotate(-30deg);
+    left: -260px;
+    top: 180px;
+    width: 160px;
   }
 
   .name-container {
@@ -2021,11 +2018,6 @@ footer button {
   }
 
   /* ---꽃장식--- */
-
-  .flower-01 {
-    left: -290px;
-    width: 220px;
-  }
 
   .flower-02 {
     right: -60px;
