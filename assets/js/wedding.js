@@ -462,14 +462,17 @@ END:VCALENDAR`;
       }
     });
   }
+})();
 
-  // URL 파라미터로 직접 다운로드
+function downloadCalendarIfParam() {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("downloadCalendar") === "1") {
     downloadCalendar();
   }
+}
 
-})();
+// 함수 선언 이후, DOMContentLoaded 이후 실행
+document.addEventListener("DOMContentLoaded", downloadCalendarIfParam);
 
 //갤러리 모듈
 //슬라이드 및 인디케이터
