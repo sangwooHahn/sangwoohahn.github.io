@@ -607,10 +607,12 @@ section {
 }
 
 .lightbox img.lightbox-image {
-  max-height: 85vh;
+  max-height: 100vh;
   max-width: 95vw;
   border-radius: 4px;
   object-fit: contain;
+  box-sizing: border-box;
+  padding: var(--padding-64) 0;
 }
 
 /* 닫기 버튼 */
@@ -649,7 +651,7 @@ section {
 /* 좌우 화살표 */
 .arrow-wrapper {
   position: fixed;
-  bottom: 32px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1126,6 +1128,9 @@ input {
 
 .footer-module button:last-child {
   grid-column: span 2;
+}
+
+.footer-module button {
   max-width: 100%;
 }
 
@@ -1155,36 +1160,45 @@ input {
 }
 
 .Language-English .contact-modal .contact-container,
-.Language-English .account-modal .account-container {
-  padding: var(--padding-32) !important;
+.Language-English .account-modal .account-container,
+.Language-Korean .account-modal .account-container { /*한국 어카운트도 탭 삭제*/
+  padding: var(--padding-32) var(--padding-16) !important;
 }
 
-.Language-Korean .contact-modal h2,
-.Language-Korean .account-modal h2 {
+.Language-Korean .contact-modal h2/*,
+.Language-Korean .account-modal h2*/ {/*한국 어카운트도 탭 삭제*/
   display: none;
 }
 
 .Language-English .contact-modal h2,
-.Language-English .account-modal h2 {
+.Language-English .account-modal h2,
+.Language-Korean .account-modal h2 { /*한국 어카운트도 탭 삭제*/
   padding-bottom: var(--padding-24);
 }
 
 .Language-English .contact-tabs,
-.Language-English .account-tabs {
+.Language-English .account-tabs,
+.Language-Korean .account-tabs {/*한국 어카운트도 탭 삭제*/
   display: none;
 }
 
 .Language-English .contact-panels,
-.Language-English .account-panels {
+.Language-English .account-panels,
+.Language-Korean .account-panels {/*한국 어카운트도 탭 삭제*/
   display: flex;
   flex-direction: column;
   gap: var(--padding-16);
 }
 
 .Language-English .contact-panel,
-.Language-English .account-panel {
+.Language-English .account-panel,
+.Language-Korean .account-panel {/*한국 어카운트도 탭 삭제*/
   padding: 0 !important;
   gap: var(--padding-16) !important;
+}
+
+.hide {
+  display: none !important;
 }
 
 .Language-English .contact-card {
@@ -1256,7 +1270,7 @@ input {
   flex-direction: column;
   gap: var(--padding-8);
   width: 100%;
-  padding: var(--padding-16);
+  padding: var(--padding-16) 0;
   box-sizing: border-box;
 }
 
@@ -1609,7 +1623,7 @@ footer button {
 
   section {
     position: relative;
-    padding: var(--padding-40);
+    padding: var(--padding-80);
   }
 
   .title-text {
@@ -1818,9 +1832,10 @@ footer button {
   }
 
   .lightbox img.lightbox-image {
-    max-height: 90vh;
-    max-width: 90vw;
+    max-height: 100vh;
+    max-width: 100vw;
     border-radius: 4px;
+    padding: var(--padding-64);
   }
 
   .arrow-wrapper {
@@ -1984,6 +1999,10 @@ footer button {
 
   .footer-module button:last-child {
     grid-column: span 1;
+    max-width: 200px;
+  }
+
+  .footer-module button {
     max-width: 200px;
   }
 

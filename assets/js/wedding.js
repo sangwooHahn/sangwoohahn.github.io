@@ -1,4 +1,111 @@
-// // 0. 사용자 언어 감지
+(function() {
+  var userAgent = navigator.userAgent.toLowerCase();
+  var targetUrl = location.href;
+  var sessionFlag = 'inAppExternalTried';
+
+  var browserPatterns = {
+    kakaotalk: /kakaotalk/i,
+    line: /line/i,
+    otherInApp: /inapp|naver|snapchat|wirtschaftswoche|thunderbird|instagram|everytimeapp|whatsapp|electron|wadiz|aliapp|zumapp|iphone(.*)whale|android(.*)whale|kakaostory|band|twitter|daumapps|daumdevice\/mobile|fb_iab|fb4a|fban|fbios|fbss|trill|samsungbrowser\/[^1]/i,
+    ios: /iphone|ipad|ipod/i
+  };
+
+  function isInApp() {
+    return browserPatterns.kakaotalk.test(userAgent) ||
+           browserPatterns.line.test(userAgent) ||
+           browserPatterns.otherInApp.test(userAgent);
+  }
+
+  function openExternal() {
+    if (sessionStorage.getItem(sessionFlag)) return; // 한 번만 시도
+    sessionStorage.setItem(sessionFlag, 'true');
+
+    if (browserPatterns.kakaotalk.test(userAgent)) {
+      location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(targetUrl);
+    } else if (browserPatterns.line.test(userAgent)) {
+      var sep = targetUrl.indexOf('?') !== -1 ? '&' : '?';
+      location.href = targetUrl + sep + 'openExternalBrowser=1';
+    } else if (browserPatterns.otherInApp.test(userAgent)) {
+      if (browserPatterns.ios.test(userAgent)) {
+        handleIOS();
+      } else {
+        handleAndroid();
+      }
+    }
+  }
+
+  function handleAndroid() {
+    location.href = 'intent://' + targetUrl.replace(/^https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
+  }
+
+  function handleIOS() {
+    setMobileViewport();
+    setNotoSansFont();
+    setIOSContent();
+  }
+
+  function setMobileViewport() {
+    var meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui';
+    document.head.appendChild(meta);
+  }
+
+  function setNotoSansFont() {
+    var link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+  }
+
+  function setIOSContent() {
+    var html = "<style>" +
+      "body { width:100%; height:100%; font-family:'Noto Sans KR', sans-serif; margin:0; padding:0; overflow:hidden; }" +
+      "article { display:flex; flex-direction:column; align-items:center; }" +
+      "</style>" +
+      "<h2 style='padding-top:50px; text-align:center;'>인앱 브라우저 호환성 문제로 인해<br>Safari로 접속해야 합니다.</h2>" +
+      "<article style='text-align:center; font-size:17px; word-break:keep-all; color:#999;'>" +
+      "아래 버튼을 눌러 Safari를 실행해주세요<br>" +
+      "Safari가 열리면 주소창을 길게 터치한 후<br>'붙여넣기 및 이동'을 누르면 정상적으로 이용할 수 있습니다.<br><br>" +
+      "<button id='safariButton' style='min-width:180px; margin-top:10px; height:54px; font-weight:700; background-color:#31408E; color:#fff; border-radius:4px; font-size:17px; border:0;'>Safari로 열기</button>" +
+      "<img src='/img/in-app_safari.jpeg' alt='붙여넣기 및 이동' style='width:70%; margin-top:50px;'>" +
+      "</article>";
+
+    document.body.innerHTML = html;
+
+    document.getElementById('safariButton').onclick = function() {
+      copyToClipboard(targetUrl, function(success) {
+        if (success) {
+          alert('URL주소가 복사되었습니다.\n\nSafari가 열리면 주소창을 길게 터치한 뒤, "붙여넣기 및 이동"를 누르면 정상적으로 이용할 수 있습니다.');
+          location.href = 'x-web-search://?';
+        }
+      });
+    };
+  }
+
+  function copyToClipboard(text, callback) {
+    try {
+      navigator.clipboard.writeText(text).then(function() {
+        callback(true);
+      }).catch(function() {
+        callback(false);
+      });
+    } catch(e) {
+      callback(false);
+    }
+  }
+
+  if (isInApp()) {
+    if (document.readyState !== 'loading') {
+      openExternal();
+    } else {
+      document.addEventListener('DOMContentLoaded', openExternal);
+    }
+  }
+
+})();
+
+// 0. 사용자 언어 감지
 function getUserLang() {
   // localStorage에 저장된 언어 확인
   let storedLang = localStorage.getItem("lang");
@@ -566,7 +673,13 @@ const map = new ol.Map({
   view: new ol.View({
     constrainResolution: false,
     center: ol.proj.fromLonLat([126.9978, 37.5389]),
-    zoom: 15.8
+    zoom: 15.8,
+    maxZoom: 18,
+    minZoom: 5,
+    maxBounds: [
+      [124.5, 33.0], // 서남쪽 (경도, 위도)
+      [131.0, 38.7]  // 동북쪽
+    ]
   })
 });
 
@@ -696,24 +809,24 @@ const searchQueryKr = encodeURIComponent('그랜드 하얏트 서울');
 const searchQueryEn = encodeURIComponent('Grand Hyatt Seoul');
 
 // 네이버 검색어 선택
-const naverQuery = langCheck === "EN" ? searchQueryEn : searchQueryKr;
+const searchQuery = langCheck === "EN" ? searchQueryEn : searchQueryKr;
 
 const links = {
   naver: {
-    web: `https://map.naver.com/v5/search/${naverQuery}`,
-    app: `nmap://search?query=${naverQuery}`
+    web: `https://map.naver.com/v5/search/${searchQuery}`,
+    app: `nmap://search?query=${searchQuery}`
   },
   kakao: {
-    web: `https://map.kakao.com/?q=${searchQueryKr}`,
-    app: `kakaomap://navigate?query=${searchQueryKr}`
+    web: `https://map.kakao.com/?q=${searchQuery}`,
+    app: `kakaonavi://navigate?query=${searchQuery}`
   },
   tmap: {
-    web: `https://www.tmap.co.kr/search?query=${searchQueryKr}`,
-    app: `tmap://search?name=${searchQueryKr}`
+    web: `https://www.tmap.co.kr/search?query=${searchQuery}`,
+    app: `tmap://search?name=${searchQuery}`
   },
   google: {
-    web: `https://www.google.com/maps/search/?api=1&query=${searchQueryEn}`,
-    app: `comgooglemaps://?q=${searchQueryEn}`
+    web: `https://www.google.com/maps/search/?api=1&query=${searchQuery}`,
+    app: `comgooglemaps://?q=${searchQuery}`
   }
 };
 
@@ -721,24 +834,75 @@ function isMobile() {
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }
 
-// 링크 설정
-document.getElementById('naver-map-link').href = isMobile() ? links.naver.app : links.naver.web;
-document.getElementById('kakao-navi-link').href = isMobile() ? links.kakao.app : links.kakao.web;
-document.getElementById('google-link').href = isMobile() ? links.google.app : links.google.web;
+// 앱 → 없으면 웹 fallback, 티맵만 alert
+function setupMapButton(buttonId, linkObj, isTmap = false) {
+  const btn = document.getElementById(buttonId);
+  if (!btn) return;
 
-const tmapLinkEl = document.getElementById('tmap-link');
-if (isMobile()) {
-  tmapLinkEl.href = links.tmap.app; // 모바일이면 앱 링크
-} else {
-  tmapLinkEl.style.display = 'none'; // 데스크톱이면 숨김
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (!isMobile()) {
+      // 데스크탑은 바로 웹 열기
+      window.open(linkObj.web, '_blank');
+      return;
+    }
+
+    const appUrl = linkObj.app;
+    const webUrl = linkObj.web;
+
+    if (!appUrl) {
+      // 앱이 없으면 웹 열기 (티맵도 포함)
+      window.open(webUrl, '_blank');
+      return;
+    }
+
+    if (isTmap) {
+      // 티맵: 앱 없으면 alert
+      const start = Date.now();
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = appUrl;
+      document.body.appendChild(iframe);
+
+      setTimeout(() => {
+        const end = Date.now();
+        if (end - start < 1200) {
+          alert("티맵 앱이 설치되어 있지 않습니다. 앱을 설치 후 이용해주세요.");
+        }
+        document.body.removeChild(iframe);
+      }, 1000);
+    } else {
+      // 일반 앱 → iframe 후 웹 fallback
+      const start = Date.now();
+      const iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = appUrl;
+      document.body.appendChild(iframe);
+
+      setTimeout(() => {
+        const end = Date.now();
+        if (end - start < 1200) {
+          window.open(webUrl, '_blank');
+        }
+        document.body.removeChild(iframe);
+      }, 1000);
+    }
+  });
 }
 
+// 버튼에 적용
+setupMapButton('naver-map-link', links.naver);
+setupMapButton('kakao-navi-link', links.kakao);
+setupMapButton('google-link', links.google);
+setupMapButton('tmap-link', links.tmap, true); // 티맵만 true
+
+// 언어별 버튼 표시
 if (langCheck === 'EN') {
   document.getElementById('tmap-link').style.display = 'none';
   document.getElementById('kakao-navi-link').style.display = 'none';
   document.getElementById('google-link').style.display = 'flex';
-}
-else {
+} else {
   document.getElementById('google-link').style.display = 'none';
 }
 
@@ -840,12 +1004,12 @@ function showContactModal() {
 document.querySelectorAll('.account-tab').forEach(btn => {
   const lang = getUserLang();
 
-  if (lang === 'EN') { // 영어일 때는 두 패널 모두 항상 열림
-    document.querySelectorAll('.account-panel').forEach(p => {
-      p.classList.add('active');
-    });
-    return;
-  }
+  // if (lang === 'EN') { // 영어일 때는 두 패널 모두 항상 열림
+  document.querySelectorAll('.account-panel').forEach(p => {
+    p.classList.add('active');
+  });
+  //   return;
+  // }
 
   btn.addEventListener('click', () => {
     // 버튼 상태
@@ -1077,11 +1241,11 @@ mm.add("(min-width: 768px)", () => { // 데스크탑
 });
 
 tl
-    .to(".title-flower-01", { opacity: 0, duration: 0.5 }, 0.5)
-    .to(".title-flower-02", { opacity: 0, duration: 0.5 }, 0.5)
-    .to(".title-flower-03", { opacity: 0, duration: 0.5 }, 0.5)
-    .to(".title-flower-04", { opacity: 0, duration: 0.5 }, 0.5)
-    .to(".title-flower-05", { opacity: 0, duration: 0.5 }, 0.5)
+  .to(".title-flower-01", { opacity: 0, duration: 0.5 }, 0.5)
+  .to(".title-flower-02", { opacity: 0, duration: 0.5 }, 0.5)
+  .to(".title-flower-03", { opacity: 0, duration: 0.5 }, 0.5)
+  .to(".title-flower-04", { opacity: 0, duration: 0.5 }, 0.5)
+  .to(".title-flower-05", { opacity: 0, duration: 0.5 }, 0.5)
 
 
 const petals = [
