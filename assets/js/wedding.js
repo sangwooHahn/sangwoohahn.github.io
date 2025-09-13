@@ -368,8 +368,8 @@ function updateAlertText(text) {
 
 
 //인앱에서 누르면 외부로 나가서 달력 받는 함수
-
-(function () {
+// 달력 다운로드 + 인앱 브라우저 외부 브라우저 처리 통합
+function setupCalendarDownload(textMap) {
   const userAgent = navigator.userAgent.toLowerCase();
   const targetUrl = location.href;
   const sessionFlag = 'inAppExternalTried';
@@ -387,7 +387,6 @@ function updateAlertText(text) {
       browserPatterns.otherInApp.test(userAgent);
   }
 
-  // 달력 다운로드 함수
   function downloadCalendar() {
     const summary = textMap["Event_Summary"];
     const description = textMap["Event_Description"];
@@ -431,55 +430,51 @@ END:VCALENDAR`;
     document.body.removeChild(link);
   }
 
-  // 버튼 클릭 시
+  function openExternalBrowser(url) {
+    if (browserPatterns.kakaotalk.test(userAgent)) {
+      location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(url);
+    } else if (browserPatterns.line.test(userAgent)) {
+      const sep = url.includes('?') ? '&' : '?';
+      location.href = url + sep + 'openExternalBrowser=1';
+    } else if (browserPatterns.otherInApp.test(userAgent)) {
+      if (browserPatterns.ios.test(userAgent)) {
+        location.href = url; // iOS는 단순 URL 열기
+      } else {
+        location.href = 'intent://' + url.replace(/^https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
+      }
+    }
+  }
+
+  // 버튼 클릭 이벤트
   const calendarBtn = document.getElementById("add-to-calendar");
   if (calendarBtn) {
     calendarBtn.addEventListener("click", (e) => {
       e.preventDefault();
 
       if (!isInApp()) {
-        // 일반 브라우저면 바로 다운로드
+        // 일반 브라우저 → 바로 다운로드
         downloadCalendar();
         return;
       }
 
-      // 인앱 브라우저면 외부 브라우저 이동 + 달력 다운로드
-      if (sessionStorage.getItem(sessionFlag)) return; // 한 번만 시도
+      // 인앱 브라우저 → 외부 브라우저 열기 + 달력 다운로드
+      if (sessionStorage.getItem(sessionFlag)) return;
       sessionStorage.setItem(sessionFlag, 'true');
 
       const externalUrl = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'downloadCalendar=1';
-
-      if (browserPatterns.kakaotalk.test(userAgent)) {
-        location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(externalUrl);
-      } else if (browserPatterns.line.test(userAgent)) {
-        location.href = externalUrl + '&openExternalBrowser=1';
-      } else if (browserPatterns.otherInApp.test(userAgent)) {
-        if (browserPatterns.ios.test(userAgent)) {
-          handleIOS(externalUrl);
-        } else {
-          handleAndroid(externalUrl);
-        }
-      }
+      openExternalBrowser(externalUrl);
     });
   }
 
-  function handleAndroid(url) {
-    location.href = 'intent://' + url.replace(/^https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
-  }
-
-  function handleIOS(url) {
-    // 간단히 URL 열도록
-    location.href = url;
-  }
-
-  // URL 파라미터로 바로 다운로드
+  // 외부 브라우저에서 URL 파라미터 확인 → 바로 다운로드
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("downloadCalendar") === "1") {
     downloadCalendar();
   }
+}
 
-})();
-
+// 사용 예시 (textMap은 이미 데이터 존재)
+setupCalendarDownload(textMap);
 
 
 //갤러리 모듈
