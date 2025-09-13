@@ -369,7 +369,8 @@ function updateAlertText(text) {
 
 //인앱에서 누르면 외부로 나가서 달력 받는 함수
 // 달력 다운로드 + 인앱 브라우저 외부 브라우저 처리 통합
-function setupCalendarDownload(textMap) {
+// === 인앱 브라우저 외부 이동 + 달력 다운로드 ===
+(function () {
   const userAgent = navigator.userAgent.toLowerCase();
   const targetUrl = location.href;
   const sessionFlag = 'inAppExternalTried';
@@ -377,7 +378,7 @@ function setupCalendarDownload(textMap) {
   const browserPatterns = {
     kakaotalk: /kakaotalk/i,
     line: /line/i,
-    otherInApp: /inapp|naver|snapchat|wirtschaftswoche|thunderbird|instagram|everytimeapp|whatsapp|electron|wadiz|aliapp|zumapp|iphone(.*)whale|android(.*)whale|kakaostory|band|twitter|daumapps|daumdevice\/mobile|fb_iab|fban|fbios|fbss|trill|samsungbrowser\/[^1]/i,
+    otherInApp: /inapp|naver|snapchat|instagram|whatsapp|electron|aliapp|iphone(.*)whale|android(.*)whale|kakaostory|band|twitter|fb_iab|fb4a|fban|fbios|fbss|samsungbrowser/i,
     ios: /iphone|ipad|ipod/i
   };
 
@@ -430,51 +431,67 @@ END:VCALENDAR`;
     document.body.removeChild(link);
   }
 
-  function openExternalBrowser(url) {
-    if (browserPatterns.kakaotalk.test(userAgent)) {
-      location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(url);
-    } else if (browserPatterns.line.test(userAgent)) {
-      const sep = url.includes('?') ? '&' : '?';
-      location.href = url + sep + 'openExternalBrowser=1';
-    } else if (browserPatterns.otherInApp.test(userAgent)) {
-      if (browserPatterns.ios.test(userAgent)) {
-        location.href = url; // iOS는 단순 URL 열기
-      } else {
-        location.href = 'intent://' + url.replace(/^https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
-      }
-    }
-  }
-
-  // 버튼 클릭 이벤트
+  // 버튼 클릭
   const calendarBtn = document.getElementById("add-to-calendar");
   if (calendarBtn) {
     calendarBtn.addEventListener("click", (e) => {
       e.preventDefault();
 
+      // 일반 브라우저라면 바로 다운로드
       if (!isInApp()) {
-        // 일반 브라우저 → 바로 다운로드
         downloadCalendar();
         return;
       }
 
-      // 인앱 브라우저 → 외부 브라우저 열기 + 달력 다운로드
+      // 인앱 브라우저라면 외부 브라우저 + 달력 파라미터
       if (sessionStorage.getItem(sessionFlag)) return;
       sessionStorage.setItem(sessionFlag, 'true');
 
       const externalUrl = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'downloadCalendar=1';
-      openExternalBrowser(externalUrl);
+
+      if (browserPatterns.kakaotalk.test(userAgent)) {
+        location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(externalUrl);
+      } else if (browserPatterns.line.test(userAgent)) {
+        location.href = externalUrl + '&openExternalBrowser=1';
+      } else if (browserPatterns.otherInApp.test(userAgent)) {
+        if (browserPatterns.ios.test(userAgent)) {
+          location.href = externalUrl;
+        } else {
+          location.href = 'intent://' + externalUrl.replace(/^https?:\/\//i, '') + '#Intent;scheme=http;package=com.android.chrome;end';
+        }
+      }
     });
   }
 
-  // 외부 브라우저에서 URL 파라미터 확인 → 바로 다운로드
+  // URL 파라미터로 직접 다운로드
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("downloadCalendar") === "1") {
     downloadCalendar();
   }
-}
 
-// 사용 예시 (textMap은 이미 데이터 존재)
-setupCalendarDownload(textMap);
+})();
+
+// === GSAP ScrollTrigger 안전 초기화 ===
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+  let mm = gsap.matchMedia();
+
+  const titleModule = document.querySelector(".title-module");
+  if (titleModule) {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: titleModule,
+        start: "top top",
+        end: "+=" + window.innerHeight * 4,
+        pin: true,
+        scrub: true
+      }
+    });
+
+    // 여기에 애니메이션 정의
+    tl.fromTo(titleModule, { opacity: 0 }, { opacity: 1 });
+  }
+});
 
 
 //갤러리 모듈
