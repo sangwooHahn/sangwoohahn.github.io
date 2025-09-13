@@ -471,29 +471,6 @@ END:VCALENDAR`;
 
 })();
 
-// === GSAP ScrollTrigger 안전 초기화 ===
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-  let mm = gsap.matchMedia();
-
-  const titleModule = document.querySelector(".title-module");
-  if (titleModule) {
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: titleModule,
-        start: "top top",
-        end: "+=" + window.innerHeight * 4,
-        pin: true,
-        scrub: true
-      }
-    });
-
-    // 여기에 애니메이션 정의
-    tl.fromTo(titleModule, { opacity: 0 }, { opacity: 1 });
-  }
-});
-
-
 //갤러리 모듈
 //슬라이드 및 인디케이터
 const galleryTrack = document.getElementById('thumbnailTrack');
