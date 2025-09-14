@@ -1369,26 +1369,90 @@ function setUserLang(lang) {
   location.reload(); // 저장 후 새로고침
 }
 
+
 //모달 뒤 스크롤 방지
+// let scrollPos = 0;
+// const headerEl = document.querySelector('header');
+
+// function lockScroll() {
+//   scrollPos = window.scrollY;
+//   document.body.style.overflow = 'hidden';
+//   document.body.style.position = 'fixed';
+//   document.body.style.top = `-${scrollPos}px`;
+//   document.body.style.width = '100%';
+
+//   if (headerEl) {
+//     headerEl.style.opacity = '0';
+//     headerEl.style.pointerEvents = 'none';
+//   }
+// }
+
+// function unlockScroll() {
+//   document.body.style.overflow = '';
+//   document.body.style.position = '';
+//   document.body.style.top = '';
+//   document.body.style.width = '';
+//   window.scrollTo(0, scrollPos);
+
+//   if (headerEl) {
+//     headerEl.style.opacity = '';
+//     headerEl.style.pointerEvents = '';
+//   }
+// }
+
+
 let scrollPos = 0;
-const wrapper = document.querySelector('.page-wrapper');
+const headerEl = document.querySelector('header');
 
 function lockScroll() {
   scrollPos = window.scrollY;
-  wrapper.style.position = 'fixed';
-  wrapper.style.top = `-${scrollPos}px`;
-  wrapper.style.left = '0';
-  wrapper.style.right = '0';
-  wrapper.style.width = '100%';
+
+  // body fixed + top 방식 유지
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPos}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.width = '100%';
+  document.body.style.overflow = 'hidden';
+
+  // iOS Safari 보정: 최소 height 지정
+  document.body.style.minHeight = '100vh';
+
+  // header 숨기기
+  if (headerEl) {
+    headerEl.style.opacity = '0';
+    headerEl.style.pointerEvents = 'none';
+  }
+
+  // 터치 스크롤 방지
+  document.body.addEventListener('touchmove', preventTouchMove, { passive: false });
 }
 
 function unlockScroll() {
-  wrapper.style.position = '';
-  wrapper.style.top = '';
-  wrapper.style.left = '';
-  wrapper.style.right = '';
-  wrapper.style.width = '';
+  // 스타일 복원
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  document.body.style.width = '';
+  document.body.style.overflow = '';
+  document.body.style.minHeight = '';
+
+  // header 복원
+  if (headerEl) {
+    headerEl.style.opacity = '';
+    headerEl.style.pointerEvents = '';
+  }
+
+  // 터치 스크롤 이벤트 제거
+  document.body.removeEventListener('touchmove', preventTouchMove);
+
+  // 이전 스크롤 위치 복원
   window.scrollTo(0, scrollPos);
+}
+
+function preventTouchMove(e) {
+  e.preventDefault();
 }
 
 
