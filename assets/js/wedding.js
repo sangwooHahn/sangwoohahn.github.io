@@ -428,15 +428,27 @@ END:VCALENDAR`;
   }
 })();
 
-function downloadCalendarIfParam() {
+document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("downloadCalendar") === "1") {
-    downloadCalendar();
-  }
-}
+  const showClickAgain = urlParams.get("downloadCalendar") === "1";
+  const clickAgainEl = document.querySelector(".click-again");
 
-// 페이지 접속 후 1초 뒤 실행
-setTimeout(downloadCalendarIfParam, 1000);
+  if (clickAgainEl) {
+    clickAgainEl.style.display = showClickAgain ? "flex" : "none";
+  }
+});
+
+// function downloadCalendarIfParam() {
+//   const urlParams = new URLSearchParams(window.location.search);
+//   if (urlParams.get("downloadCalendar") === "1") {
+//     downloadCalendar();
+//   }
+// }
+
+// // 페이지 접속 후 1초 뒤 실행
+// setTimeout(downloadCalendarIfParam, 1000);
+
+
 
 
 // 갤러리 모듈

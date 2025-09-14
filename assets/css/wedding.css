@@ -433,7 +433,7 @@ section {
   color: var(--color-primary)
 }
 
-.date-module svg {
+.date-module .calendar-container svg {
   position: absolute;
   top: 53%;
   left: 50%;
@@ -448,6 +448,39 @@ section {
   line-height: 1em;
   padding-top: var(--padding-4);
   padding-bottom: var(--padding-16);
+}
+
+.date-button-container {
+  flex-direction: column !important;
+  gap: var(--padding-16) !important;
+}
+
+.date-button-container svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-primary);
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+}
+
+.click-again {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.click-again p {
+  text-align: center;
+  color: var(--color-primary);
+}
+
+.Language-Korean .click-again p {
+  font-family: 'MaruBuriSemiBold';
 }
 
 .Language-English .date-module .pill-button {
