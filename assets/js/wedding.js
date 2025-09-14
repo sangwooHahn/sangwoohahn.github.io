@@ -1330,7 +1330,6 @@ function unlockScroll() {
   window.scrollTo(0, scrollPos);
 }
 
-lightbox.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
 
 //버튼 더블탭 확대 되는거 방지
 document.querySelectorAll('.prev, .next').forEach(btn => {

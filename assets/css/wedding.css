@@ -153,6 +153,11 @@ section {
   padding: var(--padding-200) var(--padding-32);
 }
 
+.page-wrapper {
+  height: 100%;
+  min-height: 100vh;
+}
+
 .title-module {
   display: flex;
   flex-direction: column;
@@ -1960,7 +1965,7 @@ footer button {
     box-sizing: border-box;
   }
 
-    .map-module h2 {
+  .map-module h2 {
     padding-bottom: var(--padding-32);
   }
 
