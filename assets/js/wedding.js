@@ -1310,41 +1310,27 @@ function setUserLang(lang) {
 
 //모달 뒤 스크롤 방지
 let scrollPos = 0;
-const headerEl = document.querySelector('header');
+const wrapper = document.querySelector('.page-wrapper');
 
 function lockScroll() {
-  // scrollPos = window.pageYOffset;
-  // document.body.style.position = 'fixed';
-  // document.body.style.top = `-${scrollPos}px`;
-  // document.body.style.left = '0';
-  // document.body.style.right = '0';
   scrollPos = window.scrollY;
-  document.body.style.overflow = 'hidden';
-  document.body.style.position = 'fixed';
-  document.body.style.top = `-${scrollPos}px`;
-  document.body.style.width = '100%';
-
-  if (headerEl) {
-    headerEl.style.opacity = '0';
-    headerEl.style.pointerEvents = 'none';
-  }
+  wrapper.style.position = 'fixed';
+  wrapper.style.top = `-${scrollPos}px`;
+  wrapper.style.left = '0';
+  wrapper.style.right = '0';
+  wrapper.style.width = '100%';
 }
 
 function unlockScroll() {
-  // document.body.style.position = '';
-  // document.body.style.top = '';
-  // window.scrollTo(0, scrollPos);
-  document.body.style.overflow = '';
-  document.body.style.position = '';
-  document.body.style.top = '';
-  document.body.style.width = '';
+  wrapper.style.position = '';
+  wrapper.style.top = '';
+  wrapper.style.left = '';
+  wrapper.style.right = '';
+  wrapper.style.width = '';
   window.scrollTo(0, scrollPos);
-
-  if (headerEl) {
-    headerEl.style.opacity = '';
-    headerEl.style.pointerEvents = '';
-  }
 }
+
+lightbox.addEventListener('touchmove', e => e.preventDefault(), { passive: false });
 
 //버튼 더블탭 확대 되는거 방지
 document.querySelectorAll('.prev, .next').forEach(btn => {
