@@ -543,11 +543,12 @@ section {
   justify-content: center;
   align-items: center;
   gap: var(--padding-8);
-  margin-top: var(--padding-24);
+  margin-top: var(--padding-16);
 }
 
 .indicator-wrapper .prev div,
 .indicator-wrapper .next div {
+  display: none;
   width: 22px;
   height: 22px;
   border: 2px solid var(--color-primary);
@@ -676,6 +677,9 @@ section {
   background: none;
   cursor: pointer;
   padding: 0;
+
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .arrow-wrapper .prev div,
@@ -770,7 +774,7 @@ section {
 .map-wrapper {
   width: 100%;
   height: 240px;
-  border-radius: 8px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -789,6 +793,28 @@ section {
 }
 
 .map-wrapper .ol-zoom button {
+  color: var(--color-primary);
+}
+
+.ol-control {
+  border-radius: 8px;
+}
+
+.ol-zoom .ol-zoom-in {
+    border-radius: 8px 8px 0 0;
+}
+
+.ol-zoom .ol-zoom-out {
+    border-radius: 0 0 8px 8px;
+}
+
+.ol-zoom .ol-zoom-in:hover {
+    border-color: var(--color-primary);
+}
+
+.ol-control button:hover,
+.ol-control button:focus {
+  outline: 1px solid  var(--color-primary);
   color: var(--color-primary);
 }
 
@@ -1868,6 +1894,11 @@ footer button {
   .indicator-wrapper {
     gap: var(--padding-32);
     margin-top: var(--padding-48);
+  }
+
+  .indicator-wrapper .prev div,
+  .indicator-wrapper .next div {
+    display: block;
   }
 
   .indicator span {

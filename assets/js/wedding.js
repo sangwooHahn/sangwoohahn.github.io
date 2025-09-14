@@ -1302,8 +1302,9 @@ function setUserLang(lang) {
   location.reload(); // 저장 후 새로고침
 }
 
-
+//모달 뒤 스크롤 방지
 let scrollPos = 0;
+const headerEl = document.querySelector('header');
 
 function lockScroll() {
   scrollPos = window.pageYOffset;
@@ -1311,10 +1312,28 @@ function lockScroll() {
   document.body.style.top = `-${scrollPos}px`;
   document.body.style.left = '0';
   document.body.style.right = '0';
+
+  if (headerEl) {
+    headerEl.style.opacity = '0';
+    headerEl.style.pointerEvents = 'none';
+  }
 }
 
 function unlockScroll() {
   document.body.style.position = '';
   document.body.style.top = '';
   window.scrollTo(0, scrollPos);
+
+  if (headerEl) {
+    headerEl.style.opacity = '';
+    headerEl.style.pointerEvents = '';
+  }
 }
+
+//버튼 더블탭 확대 되는거 방지
+document.querySelectorAll('.prev, .next').forEach(btn => {
+  btn.addEventListener('touchend', e => {
+    e.preventDefault(); // 터치 확대 방지
+    btn.click();        // 클릭 이벤트 강제 실행
+  });
+});
