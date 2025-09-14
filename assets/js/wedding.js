@@ -419,14 +419,12 @@ END:VCALENDAR`;
 function downloadCalendarIfParam() {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("downloadCalendar") === "1") {
-    // 페이지 진입 후 1초 뒤에 다운로드 실행
-    setTimeout(() => {
-      downloadCalendar();
-    }, 1000);
+    downloadCalendar();
   }
 }
 
-document.addEventListener("DOMContentLoaded", downloadCalendarIfParam);
+// 페이지 접속 후 1초 뒤 실행
+setTimeout(downloadCalendarIfParam, 1000);
 
 
 // 갤러리 모듈
