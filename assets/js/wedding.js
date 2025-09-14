@@ -840,7 +840,56 @@ function isMobile() {
   return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 }
 
-// 앱 → 없으면 웹 fallback, 티맵만 alert
+// // 앱 → 없으면 웹 fallback, 티맵만 alert
+// function setupMapButton(buttonId, linkObj) {
+//   const btn = document.getElementById(buttonId);
+//   if (!btn) return;
+
+//   btn.addEventListener("click", (e) => {
+//     e.preventDefault();
+
+//     // --- 환경 감지 ---
+//     const ua = navigator.userAgent || navigator.vendor || window.opera;
+//     const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+//     const isAndroid = /android/i.test(ua);
+//     const isMobile = isIOS || isAndroid;
+
+//     if (!isMobile) {
+//       // PC/맥 → 웹 링크 바로 열기
+//       if (linkObj.web) window.open(linkObj.web, "_blank");
+//       return;
+//     }
+
+//     const appUrl = linkObj.app || null;
+//     const webUrl = linkObj.web || null;
+//     const storeUrl = isIOS ? linkObj.appStore : linkObj.playStore;
+
+//     // 앱 URL 자체가 없으면 바로 웹
+//     if (!appUrl) {
+//       if (webUrl) window.open(webUrl, "_blank");
+//       return;
+//     }
+
+//     const start = Date.now();
+//     // 앱 실행 시도 (Safari에서는 location.href가 가장 안정적)
+//     window.location.href = appUrl;
+
+//     // --- fallback 처리 ---
+//     setTimeout(() => {
+//       const end = Date.now();
+//       if (end - start < 1500) {
+//         // 앱 실행 실패로 간주
+//         if (linkObj.isTmap) {
+//           alert("티맵 앱이 설치되어 있지 않습니다.");
+//         } else if (storeUrl) {
+//           window.location.href = storeUrl;
+//         } else if (webUrl) {
+//           window.open(webUrl, "_blank");
+//         }
+//       }
+//     }, 1200);
+//   });
+// }
 function setupMapButton(buttonId, linkObj) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
@@ -848,48 +897,61 @@ function setupMapButton(buttonId, linkObj) {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // --- 환경 감지 ---
     const ua = navigator.userAgent || navigator.vendor || window.opera;
     const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
     const isAndroid = /android/i.test(ua);
     const isMobile = isIOS || isAndroid;
 
-    if (!isMobile) {
-      // PC/맥 → 웹 링크 바로 열기
-      if (linkObj.web) window.open(linkObj.web, "_blank");
-      return;
-    }
-
     const appUrl = linkObj.app || null;
     const webUrl = linkObj.web || null;
     const storeUrl = isIOS ? linkObj.appStore : linkObj.playStore;
 
-    // 앱 URL 자체가 없으면 바로 웹
+    if (!isMobile) {
+      // PC/맥 → 웹 바로 열기
+      if (webUrl) window.open(webUrl, "_blank");
+      return;
+    }
+
     if (!appUrl) {
+      // 앱 링크 없으면 웹 바로 열기
       if (webUrl) window.open(webUrl, "_blank");
       return;
     }
 
     const start = Date.now();
-    // 앱 실행 시도 (Safari에서는 location.href가 가장 안정적)
-    window.location.href = appUrl;
 
-    // --- fallback 처리 ---
-    setTimeout(() => {
-      const end = Date.now();
-      if (end - start < 1500) {
-        // 앱 실행 실패로 간주
+    if (isAndroid) {
+      // Android → intent 또는 location.href
+      if (storeUrl) {
+        location.href = `intent://${appUrl.replace(/^.*?:\/\//, '')}#Intent;scheme=${appUrl.split(':')[0]};package=${linkObj.androidPackage};end`;
+      } else {
+        location.href = appUrl;
+      }
+      // 폴백: 1.2초 후 web
+      setTimeout(() => {
+        const end = Date.now();
+        if (end - start < 1500) {
+          if (linkObj.isTmap) {
+            alert("티맵 앱이 설치되어 있지 않습니다.");
+          } else if (webUrl) {
+            window.open(webUrl, "_blank");
+          }
+        }
+      }, 1200);
+    } else if (isIOS) {
+      // iOS → location.href
+      window.location.href = appUrl;
+      setTimeout(() => {
         if (linkObj.isTmap) {
           alert("티맵 앱이 설치되어 있지 않습니다.");
-        } else if (storeUrl) {
-          window.location.href = storeUrl;
         } else if (webUrl) {
           window.open(webUrl, "_blank");
         }
-      }
-    }, 1200);
+      }, 1200); // 앱 설치되어 있으면 새 탭 열리기 전에 앱 실행됨
+    }
   });
 }
+
 
 // 버튼에 적용
 setupMapButton("naver-map-link", links.naver);
