@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#fafafa">
   <title data-key="Title"></title>
 
@@ -13,6 +13,7 @@
   <meta property="og:image" content="https://sangwoohahn.com/assets/images/thumbnail-EN.png">
   <meta property="og:url" content="https://sangwoohahn.com/JennyMyWife">
   <meta property="og:type" content="website">
+  
 
   <!-- Font-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,42 +41,44 @@
 </head>
 
 <body>
+  
+  <header class="title-module">
+    <img src="assets/images/wedding/title_text.webp" class="title-text">
+    <img src="assets/images/wedding/title-date.webp" class="title-date">
+    <img src="assets/images/wedding/title_flower_1.webp" class="title-flower-01">
+    <img src="assets/images/wedding/title_flower_2.webp" class="title-flower-02">
+    <img src="assets/images/wedding/title_flower_3.webp" class="title-flower-03">
+    <img src="assets/images/wedding/title_flower_4.webp" class="title-flower-04">
+    <img src="assets/images/wedding/title_flower_5.webp" class="title-flower-05">
+    <img src="assets/images/wedding/title_flower_leaf_1.webp" class="title-flower-leaf-01">
+    <img src="assets/images/wedding/title_flower_leaf_2.webp" class="title-flower-leaf-02">
+    <img src="assets/images/wedding/title_flower_leaf_3.webp" class="title-flower-leaf-03">
+    <img src="assets/images/wedding/title_flower_leaf_4.webp" class="title-flower-leaf-04">
+    <img src="assets/images/wedding/title_flower_leaf_5.webp" class="title-flower-leaf-05">
+    <div class="name-container">
+      <div class="photo-groom">
+        <img src="assets/images/wedding/photo-groom.webp">
+        <p class="parent-text" data-key="Name_Groom_Parent"></p>
+        <p class="name-text" data-key="Name_Groom"></p>
+      </div>
+      <div class="photo-bride">
+        <img src="assets/images/wedding/photo-bride.webp">
+        <img class="flower-leaf" src="assets/images/wedding/flower-leaf.webp">
+        <p class="parent-text" data-key="Name_Bride_Parent"></p>
+        <p class="name-text" data-key="Name_Bride"></p>
+      </div>
+    </div>
+    <img class="flower-01" src="assets/images/wedding/flower-01.webp">
+    <img src="assets/images/wedding/ring.webp" class="title-ring">
+    <img src="assets/images/wedding/shine.webp" class="title-shine">
+    <div class="intro-text">
+      <p data-key="Intro"></p>
+    </div>
+    <div class="background-patttern"></div>
+  </header>
 
   <main>
-    <section class="title-module">
-      <img src="assets/images/wedding/title_text.webp" class="title-text">
-      <img src="assets/images/wedding/title-date.webp" class="title-date">
-      <img src="assets/images/wedding/title_flower_1.webp" class="title-flower-01">
-      <img src="assets/images/wedding/title_flower_2.webp" class="title-flower-02">
-      <img src="assets/images/wedding/title_flower_3.webp" class="title-flower-03">
-      <img src="assets/images/wedding/title_flower_4.webp" class="title-flower-04">
-      <img src="assets/images/wedding/title_flower_5.webp" class="title-flower-05">
-      <img src="assets/images/wedding/title_flower_leaf_1.webp" class="title-flower-leaf-01">
-      <img src="assets/images/wedding/title_flower_leaf_2.webp" class="title-flower-leaf-02">
-      <img src="assets/images/wedding/title_flower_leaf_3.webp" class="title-flower-leaf-03">
-      <img src="assets/images/wedding/title_flower_leaf_4.webp" class="title-flower-leaf-04">
-      <img src="assets/images/wedding/title_flower_leaf_5.webp" class="title-flower-leaf-05">
-      <div class="name-container">
-        <div class="photo-groom">
-          <img src="assets/images/wedding/photo-groom.webp">
-          <p class="parent-text" data-key="Name_Groom_Parent"></p>
-          <p class="name-text" data-key="Name_Groom"></p>
-        </div>
-        <div class="photo-bride">
-          <img src="assets/images/wedding/photo-bride.webp">
-          <img class="flower-leaf" src="assets/images/wedding/flower-leaf.webp">
-          <p class="parent-text" data-key="Name_Bride_Parent"></p>
-          <p class="name-text" data-key="Name_Bride"></p>
-        </div>
-      </div>
-      <img class="flower-01" src="assets/images/wedding/flower-01.webp">
-      <img src="assets/images/wedding/ring.webp" class="title-ring">
-      <img src="assets/images/wedding/shine.webp" class="title-shine">
-      <div class="intro-text">
-        <p data-key="Intro"></p>
-      </div>
-      <div class="background-patttern"></div>
-    </section>
+
 
     <section class="date-module" id="date-section">
       <div>
@@ -370,19 +373,6 @@
         </button>
       </div>
     </section>
-
-    <footer>
-      <div>
-        <p data-key="Footer_Text"></p>
-        <p data-key="Footer_Copyright"></p>
-      </div>
-      <button id="icon-setting">
-        <svg>
-          <use xlink:href="#icon_setting"></use>
-        </svg>
-      </button>
-    </footer>
-
 
     <!-- 숨겨진 메시지 span -->
     <span id="alert-name-required" data-key="RSVP_Alert_Name" style="display:none;"></span>
@@ -887,6 +877,19 @@
     </svg>
 
   </main>
+
+  <footer>
+    <div>
+      <p data-key="Footer_Text"></p>
+      <p data-key="Footer_Copyright"></p>
+    </div>
+    <button id="icon-setting">
+      <svg>
+        <use xlink:href="#icon_setting"></use>
+      </svg>
+    </button>
+  </footer>
+
 
   <script src="assets/js/wedding.js"></script>
 
