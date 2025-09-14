@@ -704,7 +704,7 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: var(--padding-32); */
+  gap: var(--padding-32);
   padding-top: var(--padding-104);
   padding-bottom: var(--padding-104);
 }
@@ -715,7 +715,11 @@ section {
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: var(--padding-32);
+  gap: var(--padding-64);
+}
+
+.map-header-container {
+  gap: 0 !important;
 }
 
 .map-text-container {
@@ -731,23 +735,31 @@ section {
   width: 100%;
 }
 
+.map-text-container {
+  order: 2;
+}
+
+.map-container {
+  order: 1;
+}
+
 .transportation-info {
   display: flex;
   flex-direction: column;
   gap: var(--padding-8);
 }
 
-.map-text-container .location-text {
+.map-module .location-text {
   color: var(--text-body);
   font-size: 1.1em;
   font-weight: 600;
 }
 
-.Language-English .map-text-container .location-text {
+.Language-English .map-module .location-text {
   font-size: 1.1em;
 }
 
-.map-text-container .address-text {
+.map-module .address-text {
   color: var(--color-gray);
   font-size: 0.8em;
 }
@@ -801,20 +813,20 @@ section {
 }
 
 .ol-zoom .ol-zoom-in {
-    border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .ol-zoom .ol-zoom-out {
-    border-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
 }
 
 .ol-zoom .ol-zoom-in:hover {
-    border-color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .ol-control button:hover,
 .ol-control button:focus {
-  outline: 1px solid  var(--color-primary);
+  outline: 1px solid var(--color-primary);
   color: var(--color-primary);
 }
 
@@ -1944,7 +1956,12 @@ footer button {
 
   .map-module {
     height: 100vh;
+    gap: var(--padding-48);
     box-sizing: border-box;
+  }
+
+    .map-module h2 {
+    padding-bottom: var(--padding-32);
   }
 
   .map-module>div {
@@ -1957,12 +1974,33 @@ footer button {
     gap: var(--padding-200);
   }
 
+  .map-header-container {
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
   .map-module>div>div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+
+  .map-text-container {
+    order: 1;
+  }
+
+  .map-container {
+    order: 2;
+  }
+
+  .map-module .location-text {
+    font-size: 1.2em;
+  }
+
+  .map-module .address-text {
+    font-size: 1em;
   }
 
   .map-wrapper {

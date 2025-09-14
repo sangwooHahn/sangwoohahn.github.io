@@ -597,9 +597,14 @@ let currentIndex = 0;
 function showLightbox(index) {
   currentIndex = index;
   lightboxImage.src = images[currentIndex].src;
-  lightbox.style.display = 'flex';
-  document.body.style.overflow = "hidden"; // 뒤 스크롤 막기
-  lockScroll();
+
+  if (lightbox.style.display !== 'flex') {
+    // 처음 열 때만 실행
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = "hidden";
+    lockScroll();
+  }
+
   updateIndicator(currentIndex);
 }
 
@@ -611,12 +616,13 @@ function closeLightbox() {
 
 function nextImage() {
   currentIndex = (currentIndex + 1) % images.length;
-  showLightbox(currentIndex);
+  lightboxImage.src = images[currentIndex].src; // 이미지 교체만
+  updateIndicator(currentIndex);
 }
-
 function prevImage() {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showLightbox(currentIndex);
+  lightboxImage.src = images[currentIndex].src; // 이미지 교체만
+  updateIndicator(currentIndex);
 }
 
 // function updateIndicator(index) {
@@ -1225,7 +1231,7 @@ mm.add("(max-width: 767px)", () => { // 모바일
     .to(".title-ring", { y: -130, duration: 1.6 }, 1.2)
     .to(".name-container", { y: -170, duration: 1.6 }, 1.2)
     .to(".flower-01", { y: -120, duration: 1.6 }, 1.2)
-    .to(".flower-leaf", { x: -100, y: 105, rotation: 180, scale: 1, duration: 1.8 }, 1.5)
+    .to(".flower-leaf", { x: -100, y: 105, rotation: 180, scale: 1, duration: 1.65 }, 1.5)
     .to(".intro-text", { y: 70, opacity: 1, duration: 1.6 }, 1.4)
 });
 
@@ -1243,7 +1249,7 @@ mm.add("(min-width: 768px)", () => { // 데스크탑
     .to(".title-ring", { y: -120, duration: 1.6 }, 1.2)
     .to(".name-container", { y: -210, duration: 1.6 }, 1.2)
     .to(".flower-01", { y: -110, duration: 1.6 }, 1.2)
-    .to(".flower-leaf", { x: window.innerWidth * -0.5 - 60, y: 195, rotation: 180, scale: 1, duration: 1.8 }, 1.5)
+    .to(".flower-leaf", { x: window.innerWidth * -0.5 - 60, y: 195, rotation: 180, scale: 1, duration: 1.65 }, 1.5)
     .to(".intro-text", { y: 140, opacity: 1, duration: 1.6 }, 1.4)
 });
 
@@ -1307,11 +1313,16 @@ let scrollPos = 0;
 const headerEl = document.querySelector('header');
 
 function lockScroll() {
-  scrollPos = window.pageYOffset;
+  // scrollPos = window.pageYOffset;
+  // document.body.style.position = 'fixed';
+  // document.body.style.top = `-${scrollPos}px`;
+  // document.body.style.left = '0';
+  // document.body.style.right = '0';
+  scrollPos = window.scrollY;
+  document.body.style.overflow = 'hidden';
   document.body.style.position = 'fixed';
   document.body.style.top = `-${scrollPos}px`;
-  document.body.style.left = '0';
-  document.body.style.right = '0';
+  document.body.style.width = '100%';
 
   if (headerEl) {
     headerEl.style.opacity = '0';
@@ -1320,8 +1331,13 @@ function lockScroll() {
 }
 
 function unlockScroll() {
+  // document.body.style.position = '';
+  // document.body.style.top = '';
+  // window.scrollTo(0, scrollPos);
+  document.body.style.overflow = '';
   document.body.style.position = '';
   document.body.style.top = '';
+  document.body.style.width = '';
   window.scrollTo(0, scrollPos);
 
   if (headerEl) {
