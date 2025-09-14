@@ -844,7 +844,7 @@ function setupMapButton(buttonId, linkObj) {
 
     if (!isMobile) {
       // PC/맥 → 웹 링크 바로 열기
-      window.open(linkObj.web, "_blank");
+      if (linkObj.web) window.open(linkObj.web, "_blank");
       return;
     }
 
@@ -858,33 +858,20 @@ function setupMapButton(buttonId, linkObj) {
       return;
     }
 
-    // --- 앱 실행 시도 ---
-    let hidden = false;
-    const handleVisibility = () => {
-      hidden = true;
-    };
-    document.addEventListener("visibilitychange", handleVisibility);
-
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    iframe.src = appUrl;
-    document.body.appendChild(iframe);
+    const start = Date.now();
+    // 앱 실행 시도 (Safari에서는 location.href가 가장 안정적)
+    window.location.href = appUrl;
 
     // --- fallback 처리 ---
     setTimeout(() => {
-      document.removeEventListener("visibilitychange", handleVisibility);
-      document.body.removeChild(iframe);
-
-      if (!hidden) {
-        // 앱 실행 실패
+      const end = Date.now();
+      if (end - start < 1500) {
+        // 앱 실행 실패로 간주
         if (linkObj.isTmap) {
-          // Tmap만 alert (스토어/웹 열지 않음)
           alert("티맵 앱이 설치되어 있지 않습니다.");
         } else if (storeUrl) {
-          // 스토어 fallback
           window.location.href = storeUrl;
         } else if (webUrl) {
-          // 마지막 fallback: 웹
           window.open(webUrl, "_blank");
         }
       }
