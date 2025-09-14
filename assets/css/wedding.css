@@ -114,9 +114,9 @@ h2 {
 p {
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: normal;
-  line-height: 160%;
+  line-height: 170%;
   color: var(--text-body);
 }
 
@@ -146,7 +146,7 @@ a {
 
 section {
   position: relative;
-  padding: var(--padding-200) var(--padding-24);
+  padding: var(--padding-200) var(--padding-32);
 }
 
 .title-module {
@@ -332,7 +332,7 @@ section {
 }
 
 .parent-text {
-  font-size: 0.9em;
+  font-size: 0.8em;
   padding-top: var(--padding-16);
 }
 
@@ -401,11 +401,11 @@ section {
 }
 
 .date-text {
-  font-size: 2.6em;
+  font-size: 2.2em;
 }
 
 .time-text {
-  font-size: 1.4em;
+  font-size: 1.3em;
   line-height: 2.4em;
 }
 
@@ -419,7 +419,7 @@ section {
 }
 
 .date-module .location-text {
-  font-size: 1.4em;
+  font-size: 1.2em;
   line-height: 2.2em;
   color: var(--color-primary)
 }
@@ -436,7 +436,7 @@ section {
 }
 
 .date-module .time-text {
-  line-height: 1.2em;
+  line-height: 1em;
   padding-top: var(--padding-4);
   padding-bottom: var(--padding-16);
 }
@@ -451,11 +451,11 @@ section {
 }
 
 .Language-English .date-module .time-text {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .Language-English .date-module .location-text {
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.8em;
 }
 
@@ -727,12 +727,11 @@ section {
   display: flex;
   flex-direction: column;
   gap: var(--padding-8);
-
 }
 
 .map-text-container .location-text {
   color: var(--text-body);
-  font-size: 1.4em;
+  font-size: 1.1em;
   font-weight: 600;
 }
 
@@ -742,6 +741,7 @@ section {
 
 .map-text-container .address-text {
   color: var(--color-gray);
+  font-size: 0.8em;
 }
 
 .transportation-item {
@@ -792,7 +792,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--padding-24);
+  gap: var(--padding-16);
   text-align: left;
   width: 100%;
 }
@@ -807,7 +807,8 @@ section {
 .map-links a span {
   position: relative;
   display: inline-block;
-  font-family: 'MaruBuriSemiBold'
+  font-family: 'MaruBuriSemiBold';
+  font-size: 0.9em;
 }
 
 .Language-English .map-links a span {
@@ -905,6 +906,43 @@ section {
   padding-bottom: var(--padding-104);
 }
 
+.decline-wreaths {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--padding-4) !important;
+  padding-top: var(--padding-16);
+}
+
+.decline-wreaths svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  stroke: var(--color-primary);
+  fill: none;
+  stroke-width: 1px;
+}
+
+.decline-wreaths p {
+  color: var(--color-primary);
+  font-size: 0.9em;
+}
+
+.RSVP-module.custom-modal .decline-wreaths {
+  max-width: 90vw;
+  padding: 0;
+}
+
+.RSVP-module.custom-modal .decline-wreaths p {
+  font-size: 0.9em;
+  text-shadow: 0 0 32px white;
+}
+
+.Language-English .decline-wreaths {
+  display: none;
+}
+
 .RSVP-module>div {
   display: flex;
   flex-direction: column;
@@ -918,7 +956,7 @@ section {
 }
 
 .RSVP-module>div.custom-modal-content {
-  padding: var(--padding-36) var(--padding-16);
+  padding: var(--padding-36) var(--padding-24);
 }
 
 .RSVP-module.custom-modal>div {
@@ -1547,7 +1585,6 @@ footer button {
 }
 
 .custom-modal-content p {
-  font-size: 1em;
   padding-bottom: 12px;
 }
 
@@ -1630,6 +1667,10 @@ footer button {
 @media (min-width: 768px) {
   h2 {
     padding-bottom: var(--padding-56);
+  }
+
+  p {
+    font-size: 1em;
   }
 
   section {
@@ -1924,6 +1965,16 @@ footer button {
 
   .RSVP-module.custom-modal>div {
     max-width: 400px;
+  }
+
+  .decline-wreaths {
+    flex-direction: row;
+  }
+
+
+  .RSVP-module.custom-modal .decline-wreaths {
+    flex-direction: column !important;
+    gap: var(--padding-4) !important;
   }
 
   .RSVP-module>div>div {
