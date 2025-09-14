@@ -319,54 +319,6 @@ function updateAlertText(text) {
 }
 
 
-// //달력 다운로드
-// document.getElementById("add-to-calendar").addEventListener("click", () => {
-//   // 시트에서 받아온 textMap이 이미 존재한다고 가정
-//   const summary = textMap["Event_Summary"];         // 결혼식 제목
-//   const description = textMap["Event_Description"];     // 설명
-//   const location = textMap["Event_Location"];        // 장소
-//   const url = textMap["Event_URL"];             // 안내 페이지 주소
-//   const alarm1 = textMap["Event_Alarm1"];          // 하루 전 알림 텍스트
-//   const alarm7 = textMap["Event_Alarm7"];          // 일주일 전 알림 텍스트
-
-//   const icsContent = `
-// BEGIN:VCALENDAR
-// VERSION:2.0
-// PRODID:-//sangwoohahn.com/JennyMyWife//EN
-// BEGIN:VEVENT
-// UID:20260124T030000Z@sangwoohahn.com
-// DTSTAMP:20260124T030000Z
-// DTSTART:20260124T030000Z
-// DTEND:20260124T050000Z
-// SUMMARY:${summary}
-// DESCRIPTION:${description}
-// LOCATION:${location}
-// URL:${url}
-// BEGIN:VALARM
-// TRIGGER:-P1D
-// ACTION:DISPLAY
-// DESCRIPTION:${alarm1}
-// END:VALARM
-// BEGIN:VALARM
-// TRIGGER:-P7D
-// ACTION:DISPLAY
-// DESCRIPTION:${alarm7}
-// END:VALARM
-// END:VEVENT
-// END:VCALENDAR`;
-
-//   const blob = new Blob([icsContent], { type: "text/calendar" });
-//   const urlObj = URL.createObjectURL(blob);
-
-//   const link = document.createElement("a");
-//   link.href = urlObj;
-//   link.download = "SangwooJenny_WeddingDay.ics";
-//   document.body.appendChild(link);
-//   link.click();
-//   document.body.removeChild(link);
-// });
-
-
 //인앱에서 누르면 외부로 나가서 달력 받는 함수
 // 달력 다운로드 + 인앱 브라우저 외부 브라우저 처리 통합
 // === 인앱 브라우저 외부 이동 + 달력 다운로드 ===
@@ -856,67 +808,74 @@ function isMobile() {
 }
 
 // 앱 → 없으면 웹 fallback, 티맵만 alert
-function setupMapButton(buttonId, linkObj, isTmap = false) {
+function setupMapButton(buttonId, linkObj) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
 
-  btn.addEventListener('click', (e) => {
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    if (!isMobile()) {
-      // 데스크탑은 바로 웹 열기
-      window.open(linkObj.web, '_blank');
+    // --- 환경 감지 ---
+    const ua = navigator.userAgent || navigator.vendor || window.opera;
+    const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+    const isAndroid = /android/i.test(ua);
+    const isMobile = isIOS || isAndroid;
+
+    if (!isMobile) {
+      // PC/맥 → 웹 링크 바로 열기
+      window.open(linkObj.web, "_blank");
       return;
     }
 
-    const appUrl = linkObj.app;
-    const webUrl = linkObj.web;
+    const appUrl = linkObj.app || null;
+    const webUrl = linkObj.web || null;
+    const storeUrl = isIOS ? linkObj.appStore : linkObj.playStore;
 
+    // 앱 URL 자체가 없으면 바로 웹
     if (!appUrl) {
-      // 앱이 없으면 웹 열기 (티맵도 포함)
-      window.open(webUrl, '_blank');
+      if (webUrl) window.open(webUrl, "_blank");
       return;
     }
 
-    if (isTmap) {
-      // 티맵: 앱 없으면 alert
-      const start = Date.now();
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = appUrl;
-      document.body.appendChild(iframe);
+    // --- 앱 실행 시도 ---
+    let hidden = false;
+    const handleVisibility = () => {
+      hidden = true;
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
 
-      setTimeout(() => {
-        const end = Date.now();
-        if (end - start < 1200) {
-          alert("티맵 앱이 설치되어 있지 않습니다. 앱을 설치 후 이용해주세요.");
-        }
-        document.body.removeChild(iframe);
-      }, 1000);
-    } else {
-      // 일반 앱 → iframe 후 웹 fallback
-      const start = Date.now();
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = appUrl;
-      document.body.appendChild(iframe);
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = appUrl;
+    document.body.appendChild(iframe);
 
-      setTimeout(() => {
-        const end = Date.now();
-        if (end - start < 1200) {
-          window.open(webUrl, '_blank');
+    // --- fallback 처리 ---
+    setTimeout(() => {
+      document.removeEventListener("visibilitychange", handleVisibility);
+      document.body.removeChild(iframe);
+
+      if (!hidden) {
+        // 앱 실행 실패
+        if (linkObj.isTmap) {
+          // Tmap만 alert (스토어/웹 열지 않음)
+          alert("티맵 앱이 설치되어 있지 않습니다.");
+        } else if (storeUrl) {
+          // 스토어 fallback
+          window.location.href = storeUrl;
+        } else if (webUrl) {
+          // 마지막 fallback: 웹
+          window.open(webUrl, "_blank");
         }
-        document.body.removeChild(iframe);
-      }, 1000);
-    }
+      }
+    }, 1200);
   });
 }
 
 // 버튼에 적용
-setupMapButton('naver-map-link', links.naver);
-setupMapButton('kakao-navi-link', links.kakao);
-setupMapButton('google-link', links.google);
-setupMapButton('tmap-link', links.tmap, true); // 티맵만 true
+setupMapButton("naver-map-link", links.naver);
+setupMapButton("kakao-navi-link", links.kakao);
+setupMapButton("google-link", links.google);
+setupMapButton("tmap-link", { ...links.tmap, isTmap: true }); // 티맵만 예외 처리
 
 // 언어별 버튼 표시
 if (langCheck === 'EN') {
