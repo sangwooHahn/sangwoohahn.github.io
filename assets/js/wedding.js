@@ -474,86 +474,122 @@ function downloadCalendarIfParam() {
 // 함수 선언 이후, DOMContentLoaded 이후 실행
 document.addEventListener("DOMContentLoaded", downloadCalendarIfParam);
 
-//갤러리 모듈
-//슬라이드 및 인디케이터
+
+
+// 갤러리 모듈
+// 갤러리 모듈
 const galleryTrack = document.getElementById('thumbnailTrack');
 const galleryImages = Array.from(document.querySelectorAll('#thumbnailTrack img'));
 const indicatorDots = Array.from(document.querySelectorAll('.indicator span'));
-let activeIndex = 0;
+const prevArrow = document.querySelector('.indicator-wrapper .prev');
+const nextArrow = document.querySelector('.indicator-wrapper .next');
 
+let currentSlide = 0;
 let isDragging = false;
 let startX = 0;
-let scrollLeft = 0;
-let currentSlide = 0;
+let startY = 0;
+let scrollLeftStart = 0;
+let dragStartTime = 0;
+let lastX = 0;
+let lastTime = 0;
+const snapThreshold = 0.35; // 35%
+const velocityThreshold = 0.3; // 빠른 스와이프 임계
 
-// 스냅 이동 함수 + 인디케이터 업데이트
+// 스냅 이동 + 인디케이터 업데이트
 function scrollToSlide(index) {
-  const imageWidth = galleryImages[0].offsetWidth + 8; // 이미지 너비 + gap
+  index = Math.min(Math.max(index, 0), galleryImages.length - 1);
+  currentSlide = index;
+  updateIndicator(index);
+
+  const imageWidth = galleryImages[0].offsetWidth + 8;
   const targetScroll = index * imageWidth - galleryTrack.offsetWidth * 0.05;
   galleryTrack.scrollTo({ left: targetScroll, behavior: 'smooth' });
-  currentSlide = index;
 }
 
 // 인디케이터 업데이트
 function updateIndicator(index) {
   indicatorDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-  activeIndex = index;
 }
 
-// 드래그 시작
+// 터치/마우스 시작
 galleryTrack.addEventListener('mousedown', e => {
   isDragging = true;
-  galleryTrack.classList.add('dragging');
   startX = e.pageX - galleryTrack.offsetLeft;
-  scrollLeft = galleryTrack.scrollLeft;
-  // 스크롤 잠금
+  startY = e.pageY - galleryTrack.offsetTop;
+  scrollLeftStart = galleryTrack.scrollLeft;
+  dragStartTime = Date.now();
+  lastX = startX;
+  lastTime = dragStartTime;
   document.body.style.overflow = 'hidden';
 });
-galleryTrack.addEventListener('mouseleave', () => {
-  if (isDragging) snapToClosest();
-  isDragging = false;
-  galleryTrack.classList.remove('dragging');
-  document.body.style.overflow = ''; // 스크롤 복원
-});
-galleryTrack.addEventListener('mouseup', () => {
-  if (isDragging) snapToClosest();
-  isDragging = false;
-  galleryTrack.classList.remove('dragging');
-  document.body.style.overflow = ''; // 스크롤 복원
-});
-galleryTrack.addEventListener('mousemove', e => {
-  if (!isDragging) return;
-  e.preventDefault();
-  const x = e.pageX - galleryTrack.offsetLeft;
-  const walk = (x - startX) * 1.5;
-  galleryTrack.scrollLeft = scrollLeft - walk;
-});
 
-// 모바일 터치
 galleryTrack.addEventListener('touchstart', e => {
   startX = e.touches[0].pageX;
-  scrollLeft = galleryTrack.scrollLeft;
-  document.body.style.overflow = 'hidden'; // 터치 시작 시 스크롤 잠금
-}, { passive: false });
+  startY = e.touches[0].pageY;
+  scrollLeftStart = galleryTrack.scrollLeft;
+  dragStartTime = Date.now();
+  lastX = startX;
+  lastTime = dragStartTime;
+  isDragging = true;
+  document.body.style.overflow = 'hidden';
+}, {passive:false});
 
-galleryTrack.addEventListener('touchmove', e => {
-  e.preventDefault(); // 스크롤 막기
-  const x = e.touches[0].pageX;
-  const walk = (x - startX) * 1.5;
-  galleryTrack.scrollLeft = scrollLeft - walk;
-}, { passive: false });
+let isHorizontalScroll = false;
 
-galleryTrack.addEventListener('touchend', () => {
-  snapToClosest();
-  document.body.style.overflow = ''; // 터치 끝나면 스크롤 복원
-});
+// 터치/마우스 이동
+galleryTrack.addEventListener('mousemove', handleMove);
+galleryTrack.addEventListener('touchmove', handleMove, {passive:false});
 
-// 스냅
-function snapToClosest() {
+function handleMove(e) {
+  if (!isDragging) return;
+
+  const x = e.type.includes('touch') ? e.touches[0].pageX : e.pageX - galleryTrack.offsetLeft;
+  const y = e.type.includes('touch') ? e.touches[0].pageY : e.pageY - galleryTrack.offsetTop;
+  const dx = x - startX;
+  const dy = y - startY;
+
+  if (!isHorizontalScroll && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+    isHorizontalScroll = true;
+  }
+
+  if (isHorizontalScroll) {
+    e.preventDefault();
+    galleryTrack.scrollLeft = scrollLeftStart - dx;
+
+    // 속도 계산용
+    const now = Date.now();
+    lastX = x;
+    lastTime = now;
+  }
+}
+
+// 드래그/터치 종료
+galleryTrack.addEventListener('mouseup', handleEnd);
+galleryTrack.addEventListener('mouseleave', handleEnd);
+galleryTrack.addEventListener('touchend', handleEnd);
+
+function handleEnd() {
+  if (!isDragging) return;
+  isDragging = false;
+  document.body.style.overflow = '';
+  if (!isHorizontalScroll) return; // 수직 스크롤일 경우 스냅 안함
+
   const imageWidth = galleryImages[0].offsetWidth + 8;
-  const index = Math.round((galleryTrack.scrollLeft + galleryTrack.offsetWidth * 0.05) / imageWidth);
-  const clampedIndex = Math.min(Math.max(index, 0), galleryImages.length - 1);
-  scrollToSlide(clampedIndex);
+  const dx = lastX - startX;
+  const dt = (Date.now() - dragStartTime) / 1000;
+  const velocity = dx / dt / imageWidth;
+
+  let index = currentSlide;
+  const scrollRatio = (galleryTrack.scrollLeft + galleryTrack.offsetWidth*0.05) / imageWidth;
+
+  if (velocity > velocityThreshold || scrollRatio < currentSlide + (1 - snapThreshold) && scrollRatio < currentSlide) {
+    index = currentSlide - 1;
+  } else if (velocity < -velocityThreshold || scrollRatio > currentSlide + snapThreshold) {
+    index = currentSlide + 1;
+  }
+
+  scrollToSlide(index);
+  isHorizontalScroll = false;
 }
 
 // 인디케이터 클릭
@@ -561,35 +597,23 @@ indicatorDots.forEach((dot, i) => {
   dot.addEventListener('click', () => scrollToSlide(i));
 });
 
-// 스크롤 이벤트로 인디케이터 변경
-galleryTrack.addEventListener('scroll', () => {
-  const index = Math.round(galleryTrack.scrollLeft / (galleryImages[0].offsetWidth + 8));
-  if (index !== activeIndex) updateIndicator(index);
-});
-
-// 화살표 선택
-const prevArrow = document.querySelector('.indicator-wrapper .prev');
-const nextArrow = document.querySelector('.indicator-wrapper .next');
-
-//인디케이터 갯수 파악 (스크린 크기별로 다름)
+// 화살표 클릭
 function getVisibleDots() {
-  return indicatorDots.filter(dot => window.getComputedStyle(dot).display !== 'none');
+  return indicatorDots.filter(dot => window.getComputedStyle(dot).display!=='none');
 }
 
-// 이전 버튼 클릭
 prevArrow.addEventListener('click', () => {
   const visibleDots = getVisibleDots();
-  let newIndex = visibleDots.indexOf(indicatorDots[currentSlide]) - 1;
-  if (newIndex < 0) newIndex = visibleDots.length - 1;
-  scrollToSlide(Array.from(indicatorDots).indexOf(visibleDots[newIndex]));
+  let idx = visibleDots.indexOf(indicatorDots[currentSlide]) - 1;
+  if (idx < 0) idx = visibleDots.length - 1;
+  scrollToSlide(Array.from(indicatorDots).indexOf(visibleDots[idx]));
 });
 
-// 다음 버튼 클릭
 nextArrow.addEventListener('click', () => {
   const visibleDots = getVisibleDots();
-  let newIndex = visibleDots.indexOf(indicatorDots[currentSlide]) + 1;
-  if (newIndex >= visibleDots.length) newIndex = 0;
-  scrollToSlide(Array.from(indicatorDots).indexOf(visibleDots[newIndex]));
+  let idx = visibleDots.indexOf(indicatorDots[currentSlide]) + 1;
+  if (idx >= visibleDots.length) idx = 0;
+  scrollToSlide(Array.from(indicatorDots).indexOf(visibleDots[idx]));
 });
 
 // 초기 인디케이터
