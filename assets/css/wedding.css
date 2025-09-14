@@ -134,6 +134,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  touch-action: manipulation;
+}
+
 .Language-Korean button {
   font-family: 'MaruBuriSemiBold';
 }

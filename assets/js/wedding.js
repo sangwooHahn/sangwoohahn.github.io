@@ -81,10 +81,14 @@ function showAlert(message) {
   const alertText = document.getElementById("alert-text");
   alertText.textContent = message;
   modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden"; // 뒤 스크롤 막기
+  lockScroll();
 
   const okBtn = document.getElementById("alert-ok-btn");
   okBtn.onclick = () => {
     modal.classList.add("hidden");
+    document.body.style.overflow = ""; // 원래 상태로 복원
+    unlockScroll();
   };
 }
 
@@ -143,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ----------------------
 function submitFormModule(isAttending) {
   const nameInputEl = document.getElementById('nameInput_module');
+  const companionNameInputEl = document.getElementById('companionNameInput_module');
   const sideInputEl = document.getElementById('sideInput_module');
 
   const name = nameInputEl.value.trim();
@@ -173,6 +178,11 @@ function submitFormModule(isAttending) {
     .then(() => {
       updateAlertText(document.getElementById('alert-success').textContent || '응답이 기록되었습니다. 감사합니다!');
       document.getElementById('alert-ok-btn').style.display = 'block';
+
+      // 필드 초기화
+      nameInputEl.value = '';
+      companionNameInputEl.value = '';
+      document.getElementById('attendingInput_module').value = '';
     })
     .catch(() => {
       updateAlertText(document.getElementById('alert-error-text').textContent || '전송 중 오류가 발생했습니다.');
@@ -303,6 +313,8 @@ async function loadMessages() {
 document.getElementById('alert-ok-btn').addEventListener('click', () => {
   // 모달 숨기기
   document.getElementById('custom-modal').classList.add('hidden');
+  document.body.style.overflow = ""; // 원래 상태로 복원
+  unlockScroll();
 
   // 메시지 새로 불러오기
   loadMessages();
@@ -483,13 +495,13 @@ galleryTrack.addEventListener('touchstart', e => {
   lastTime = dragStartTime;
   isDragging = true;
   document.body.style.overflow = 'hidden';
-}, {passive:false});
+}, { passive: false });
 
 let isHorizontalScroll = false;
 
 // 터치/마우스 이동
 galleryTrack.addEventListener('mousemove', handleMove);
-galleryTrack.addEventListener('touchmove', handleMove, {passive:false});
+galleryTrack.addEventListener('touchmove', handleMove, { passive: false });
 
 function handleMove(e) {
   if (!isDragging) return;
@@ -531,7 +543,7 @@ function handleEnd() {
   const velocity = dx / dt / imageWidth;
 
   let index = currentSlide;
-  const scrollRatio = (galleryTrack.scrollLeft + galleryTrack.offsetWidth*0.05) / imageWidth;
+  const scrollRatio = (galleryTrack.scrollLeft + galleryTrack.offsetWidth * 0.05) / imageWidth;
 
   if (velocity > velocityThreshold || scrollRatio < currentSlide + (1 - snapThreshold) && scrollRatio < currentSlide) {
     index = currentSlide - 1;
@@ -550,7 +562,7 @@ indicatorDots.forEach((dot, i) => {
 
 // 화살표 클릭
 function getVisibleDots() {
-  return indicatorDots.filter(dot => window.getComputedStyle(dot).display!=='none');
+  return indicatorDots.filter(dot => window.getComputedStyle(dot).display !== 'none');
 }
 
 prevArrow.addEventListener('click', () => {
@@ -571,7 +583,7 @@ nextArrow.addEventListener('click', () => {
 updateIndicator(currentSlide);
 
 
-//갤러리 클릭 줌
+//갤러리 클릭 줌 (라이트 박스)
 
 const images = document.querySelectorAll('.images img');
 const lightbox = document.querySelector('.lightbox');
@@ -586,11 +598,15 @@ function showLightbox(index) {
   currentIndex = index;
   lightboxImage.src = images[currentIndex].src;
   lightbox.style.display = 'flex';
+  document.body.style.overflow = "hidden"; // 뒤 스크롤 막기
+  lockScroll();
   updateIndicator(currentIndex);
 }
 
 function closeLightbox() {
   lightbox.style.display = 'none';
+  document.body.style.overflow = ""; // 원래 상태로 복원
+  unlockScroll();
 }
 
 function nextImage() {
@@ -621,8 +637,8 @@ prevBtn.addEventListener('click', prevImage);
 // ESC 키로 닫기
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowRight') nextImage();
-  if (e.key === 'ArrowLeft') prevImage();
+  // if (e.key === 'ArrowRight') nextImage();
+  // if (e.key === 'ArrowLeft') prevImage();
 });
 
 
@@ -962,11 +978,15 @@ document.querySelectorAll(".sms-button").forEach(btn => {
 function showContactModal() {
   const modal = document.querySelector(".contact-modal");
   modal.classList.remove("hidden"); // hidden 제거해서 표시
+  document.body.style.overflow = "hidden"; // 뒤 스크롤 막기
+  lockScroll();
 
   // 모달 바깥 클릭 시 닫기 (선택 사항)
   modal.onclick = (e) => {
     if (e.target === modal) {
       modal.classList.add("hidden");
+      document.body.style.overflow = ""; // 원래 상태로 복원
+      unlockScroll();
     }
   };
 
@@ -975,6 +995,8 @@ function showContactModal() {
   if (closeBtn) {
     closeBtn.onclick = () => {
       modal.classList.add("hidden");
+      document.body.style.overflow = ""; // 원래 상태로 복원
+      unlockScroll();
     };
   }
 }
@@ -1009,11 +1031,15 @@ document.querySelectorAll('.account-tab').forEach(btn => {
 function showAccountModal() {
   const modal = document.querySelector(".account-modal");
   modal.classList.remove("hidden"); // hidden 제거해서 표시
+  document.body.style.overflow = "hidden"; // 뒤 스크롤 막기
+  lockScroll();
 
   // 모달 바깥 클릭 시 닫기 (선택 사항)
   modal.onclick = (e) => {
     if (e.target === modal) {
       modal.classList.add("hidden");
+      document.body.style.overflow = ""; // 원래 상태로 복원
+      unlockScroll();
     }
   };
 
@@ -1022,6 +1048,8 @@ function showAccountModal() {
   if (closeBtn) {
     closeBtn.onclick = () => {
       modal.classList.add("hidden");
+      document.body.style.overflow = ""; // 원래 상태로 복원
+      unlockScroll();
     };
   }
 }
@@ -1274,3 +1302,19 @@ function setUserLang(lang) {
   location.reload(); // 저장 후 새로고침
 }
 
+
+let scrollPos = 0;
+
+function lockScroll() {
+  scrollPos = window.pageYOffset;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollPos}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+}
+
+function unlockScroll() {
+  document.body.style.position = '';
+  document.body.style.top = '';
+  window.scrollTo(0, scrollPos);
+}
