@@ -399,7 +399,7 @@ END:VCALENDAR`;
       if (sessionStorage.getItem(sessionFlag)) return;
       sessionStorage.setItem(sessionFlag, 'true');
 
-      const externalUrl = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'downloadCalendar=1';
+      const externalUrl = targetUrl + (targetUrl.includes('?') ? '&' : '?') + 'downloadCalendar=1#date-section';
 
       if (browserPatterns.kakaotalk.test(userAgent)) {
         location.href = 'kakaotalk://web/openExternal?url=' + encodeURIComponent(externalUrl);
@@ -419,13 +419,14 @@ END:VCALENDAR`;
 function downloadCalendarIfParam() {
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("downloadCalendar") === "1") {
-    downloadCalendar();
+    // 페이지 진입 후 1초 뒤에 다운로드 실행
+    setTimeout(() => {
+      downloadCalendar();
+    }, 1000);
   }
 }
 
-// 함수 선언 이후, DOMContentLoaded 이후 실행
 document.addEventListener("DOMContentLoaded", downloadCalendarIfParam);
-
 
 
 // 갤러리 모듈
