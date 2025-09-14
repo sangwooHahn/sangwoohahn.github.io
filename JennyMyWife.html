@@ -81,7 +81,7 @@
     <main>
 
 
-      <section class="date-module" id="date-section">
+      <section class="date-module">
         <div>
           <div class="date-container">
             <p class="date-text" data-key="Date"></p>
@@ -89,7 +89,7 @@
             <p class="location-text" data-key="Location"></p>
           </div>
           <div>
-            <div class="calendar-container">
+            <div class="calendar-container" id="date-section">
               <!-- 요일 헤더 -->
               <div class="dow sun" data-key="Sun"></div>
               <div class="dow" data-key="Mon"></div>
@@ -143,7 +143,15 @@
             </div>
           </div>
         </div>
-        <button id="add-to-calendar" class="pill-button" data-key="Button_Calendar"></button>
+        <div class="date-button-container">
+          <div class="click-again">
+            <b><p data-key="Click_Again"></p></b>
+            <svg>
+              <use xlink:href="#icon_arrow_down"></use>
+            </svg>
+          </div>
+          <button id="add-to-calendar" class="pill-button" data-key="Button_Calendar"></button>
+        </div>
         <img class="flower-02" src="assets/images/wedding/flower-02.webp">
       </section>
 
@@ -878,6 +886,12 @@
             d="M8.00018 14.668C11.6802 14.668 14.6642 11.684 14.6642 8.00403C14.6642 4.32403 11.6882 1.33203 8.00018 1.33203C4.31218 1.33203 1.33618 4.31603 1.33618 7.99603C1.33618 11.676 4.32018 14.66 8.00018 14.66V14.668Z" />
           <path
             d="M8.00012 6.04425C7.33612 5.26825 6.22412 5.05225 5.38412 5.77225C4.55212 6.48425 4.43212 7.67625 5.08812 8.52425C5.51212 9.06825 6.58412 10.0682 7.30412 10.7162C7.54412 10.9322 7.66412 11.0442 7.80812 11.0842C7.92812 11.1242 8.07212 11.1242 8.19212 11.0842C8.33612 11.0442 8.45612 10.9322 8.69612 10.7162C9.41612 10.0682 10.4881 9.06025 10.9121 8.52425C11.5681 7.68425 11.4641 6.47625 10.6161 5.77225C9.76812 5.06825 8.67212 5.26825 8.00012 6.04425Z" />
+        </symbol>
+      </svg>
+
+      <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon_arrow_down" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M12 4V20M12 20L18 14M12 20L6 14" />
         </symbol>
       </svg>
 
