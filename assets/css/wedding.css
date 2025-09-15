@@ -2246,7 +2246,7 @@ footer button {
   }
 
   .message-item:nth-child(1) {
-    transform: translateX(0px) translateY(-60px) rotate(var(--angle, 0deg));
+    transform: translateX(0px) translateY(-70px) rotate(var(--angle, 0deg));
   }
 
   .message-item:nth-child(2) {
@@ -2254,7 +2254,7 @@ footer button {
   }
 
   .message-item:nth-child(3) {
-    transform: translateX(40px) translateY(-50px) rotate(var(--angle, 0deg));
+    transform: translateX(20px) translateY(-30px) rotate(var(--angle, 0deg));
   }
 
   .message-item:nth-child(4) {
@@ -2263,7 +2263,7 @@ footer button {
   }
 
   .message-item:nth-child(5) {
-    transform: translateX(10px) translateY(30px) rotate(var(--angle, 0deg));
+    transform: translateX(20px) translateY(20px) rotate(var(--angle, 0deg));
   }
 
   .writing-container.hidden {
