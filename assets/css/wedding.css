@@ -103,7 +103,9 @@ h2 {
 }
 
 .Language-Korean h2 {
-  font-family: 'MaruBuriSemiBold';
+  /* font-family: 'MaruBuriSemiBold'; */
+  font-family: "Hahmlet", serif;
+  font-weight: 600;
 }
 
 .Language-English h2 {
@@ -1185,15 +1187,15 @@ input {
   max-width: 200px;
 }
 
-.message-list-container {
+/* .message-list-container {
   background-color: var(--background-primary);
   padding: var(--padding-16);
   border-radius: 16px;
   width: 100%;
   box-sizing: border-box;
-}
+} */
 
-.message-list {
+/* .message-list {
   display: flex;
   flex-direction: column;
   gap: var(--padding-16);
@@ -1202,13 +1204,26 @@ input {
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+} */
+
+.message-list-container {
+  width: 100%;
+  padding: var(--padding-48) 0;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .message-list-container::-webkit-scrollbar {
   display: none;
 }
 
-.message-item {
+/* .message-item {
   padding: var(--padding-16) 12px;
   background-color: var(--background-secondary);
   border-radius: 8px;
@@ -1227,7 +1242,89 @@ input {
   font-size: 0.9em;
   font-weight: 100;
   line-height: 150%;
+} */
+
+.message-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--padding-8);
+  width: 200px;
+  height: 130px;
+  box-sizing: border-box;
 }
+
+/* 홀수번째는 왼쪽 */
+.message-item:nth-child(odd) {
+  transform: translateX(-60px) rotate(var(--angle, 0deg));
+}
+
+/* 짝수번째는 오른쪽 */
+.message-item:nth-child(even) {
+  transform: translateX(60px) rotate(var(--angle, 0deg));
+}
+
+.message-shape {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
+  z-index: -1;
+}
+
+/* 색상별 */
+.message-note-01 use {
+  fill: #99CDEB;
+}
+
+.message-note-02 use {
+  fill: #D9EB99;
+}
+
+.message-note-03 use {
+  fill: #EFB3FB;
+}
+
+.message-note-04 use {
+  fill: #F8D6B8;
+}
+
+.message-note-05 use {
+  fill: #FAE498;
+}
+
+.message-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 100px;
+  padding-top: var(--padding-16);
+}
+
+.message-text {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: 100;
+  line-height: 140%;
+}
+
+.message-name {
+  font-family: "MaruBuriSemiBold";
+  font-size: 0.7em;
+  text-align: center;
+  color: var(--color-primary);
+}
+
 
 .footer-module {
   display: flex;
@@ -2099,6 +2196,7 @@ footer button {
   .message-module {
     height: 80vh;
     box-sizing: border-box;
+    gap: var(--padding-24);
   }
 
   .message-module>div {
@@ -2129,7 +2227,38 @@ footer button {
   }
 
   .message-list {
-    max-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto auto;
+    justify-content: center;
+    /* max-height: 400px; */
+  }
+
+  .message-item {
+    grid-column: span 2;
+    width: 180px;
+    height: 160px;
+  }
+
+  .message-item:nth-child(1) {
+    transform: translateX(0px) translateY(-60px) rotate(var(--angle, 0deg));
+  }
+
+  .message-item:nth-child(2) {
+    transform: translateX(0px) rotate(var(--angle, 0deg));
+  }
+
+  .message-item:nth-child(3) {
+    transform: translateX(40px) translateY(-50px) rotate(var(--angle, 0deg));
+  }
+
+  .message-item:nth-child(4) {
+    grid-column: 2 / span 2;
+    transform: translateX(-40px) rotate(var(--angle, 0deg));
+  }
+
+  .message-item:nth-child(5) {
+    transform: translateX(10px) translateY(30px) rotate(var(--angle, 0deg));
   }
 
   .writing-container.hidden {

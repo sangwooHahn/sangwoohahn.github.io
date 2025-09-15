@@ -273,40 +273,118 @@ function submitMessage() {
     });
 }
 
-/// 메시지 받아오기
+// /// 메시지 받아오기
+// async function loadMessages() {
+//   const url = 'https://script.google.com/macros/s/AKfycbwuT2SWQg33Xz50BV5L5TUVdGeGGbOFO2KRxiAJDJjBo0wKI5juw-D_Y49SLS3EY97S/exec?action=getMessages';
+
+//   try {
+//     const response = await fetch(url);
+//     const messages = await response.json();
+
+//     const listEl = document.getElementById('messageList');
+//     listEl.innerHTML = '';
+
+//     messages.forEach(msg => {
+//       const item = document.createElement('div');
+//       item.className = 'message-item';
+
+//       // 이름 요소
+//       const nameEl = document.createElement('div');
+//       nameEl.className = 'message-name';
+//       nameEl.textContent = msg.name;
+
+//       // 내용 요소
+//       const contentEl = document.createElement('div');
+//       contentEl.className = 'message-content';
+//       contentEl.textContent = msg.content;
+
+//       // item에 추가
+//       item.appendChild(nameEl);
+//       item.appendChild(contentEl);
+
+//       listEl.appendChild(item);
+//     });
+//   } catch (err) {
+//     console.error('메시지 불러오기 실패', err);
+//   }
+// }
+
+// 모양 패턴 정의
+const shapes = [
+  { cls: 'message-note-01', id: 'shape-heart', angle: 6 },
+  { cls: 'message-note-02', id: 'shape-heart', angle: -16 },
+  { cls: 'message-note-03', id: 'shape-heart', angle: -2 },
+  { cls: 'message-note-04', id: 'shape-star', angle: -14 },
+  { cls: 'message-note-05', id: 'shape-circle', angle: 3 },
+];
+
+// 메시지 불러오기
 async function loadMessages() {
   const url = 'https://script.google.com/macros/s/AKfycbwuT2SWQg33Xz50BV5L5TUVdGeGGbOFO2KRxiAJDJjBo0wKI5juw-D_Y49SLS3EY97S/exec?action=getMessages';
 
   try {
     const response = await fetch(url);
-    const messages = await response.json();
+    const data = await response.json();
+
+    const messages = data.messages;
+    const totalMessages = data.totalMessages;
 
     const listEl = document.getElementById('messageList');
     listEl.innerHTML = '';
 
-    messages.forEach(msg => {
+    // 최신 5개만 가져오기
+    const latest = messages.slice(-5).reverse();
+
+    latest.forEach((msg, idx) => {
+      const globalIdx = totalMessages - latest.length + idx;
+      const shape = shapes[globalIdx % shapes.length];
+
       const item = document.createElement('div');
       item.className = 'message-item';
 
-      // 이름 요소
+      // 카드 자체 회전 적용
+      // item.style.transform = `rotate(${shape.angle}deg)`;
+      item.style.setProperty('--angle', `${shape.angle}deg`);
+
+      // 배경 모양 추가 (회전 없음)
+      const iconEl = createNoteShape(shape);
+      item.appendChild(iconEl);
+
+      // 내용
+      const contentEl = document.createElement('div');
+      contentEl.className = 'message-content';
+
+      // p 태그 생성
+      const contentP = document.createElement('p');
+      contentP.className = 'message-text';
+      contentP.textContent = msg.content;
+      // 이름
       const nameEl = document.createElement('div');
       nameEl.className = 'message-name';
       nameEl.textContent = msg.name;
 
-      // 내용 요소
-      const contentEl = document.createElement('div');
-      contentEl.className = 'message-content';
-      contentEl.textContent = msg.content;
-
       // item에 추가
-      item.appendChild(nameEl);
       item.appendChild(contentEl);
+      contentEl.appendChild(contentP);
+      item.appendChild(nameEl);
 
-      listEl.appendChild(item);
+      listEl.appendChild(item); // prepend 사용
     });
   } catch (err) {
     console.error('메시지 불러오기 실패', err);
   }
+}
+
+// SVG 모양 생성
+function createNoteShape(shape) {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("class", `message-shape ${shape.cls}`);
+
+  const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+  use.setAttribute("href", `#${shape.id}`);
+  svg.appendChild(use);
+
+  return svg;
 }
 
 // 모달 닫기 버튼 이벤트
