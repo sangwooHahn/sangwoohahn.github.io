@@ -550,9 +550,7 @@ const velocityThreshold = 0.3; // 빠른 스와이프 임계
 
 // 스냅 이동 + 인디케이터 업데이트
 function scrollToSlide(index) {
-  if (velocity < -velocityThreshold || scrollRatio > currentSlide + snapThreshold) {
-    index = Math.min(currentSlide + 1, galleryImages.length - 1);
-  }
+  index = Math.min(Math.max(index, 0), galleryImages.length - 1);
   currentSlide = index;
   updateIndicator(index);
 
@@ -637,10 +635,13 @@ function handleEnd() {
   let index = currentSlide;
   const scrollRatio = (galleryTrack.scrollLeft + galleryTrack.offsetWidth * 0.05) / imageWidth;
 
-  if (velocity > velocityThreshold || scrollRatio < currentSlide + (1 - snapThreshold) && scrollRatio < currentSlide) {
-    index = currentSlide - 1;
-  } else if (velocity < -velocityThreshold || scrollRatio > currentSlide + snapThreshold) {
-    index = currentSlide + 1;
+  // 왼쪽으로 스와이프
+  if (velocity > velocityThreshold || scrollRatio < currentSlide - snapThreshold) {
+    index = Math.max(currentSlide - 1, 0);
+  }
+  // 오른쪽으로 스와이프
+  else if (velocity < -velocityThreshold || scrollRatio > currentSlide + snapThreshold) {
+    index = Math.min(currentSlide + 1, galleryImages.length - 1);
   }
 
   scrollToSlide(index);
