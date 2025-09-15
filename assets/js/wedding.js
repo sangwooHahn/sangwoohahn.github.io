@@ -601,7 +601,7 @@ function handleMove(e) {
   const dx = x - startX;
   const dy = y - startY;
 
-  if (!isHorizontalScroll && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 5) {
+  if (!isHorizontalScroll && Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 6) {
     isHorizontalScroll = true;
   }
 
