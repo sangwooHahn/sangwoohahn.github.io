@@ -1650,7 +1650,7 @@ footer div {
 }
 
 footer p {
-  font-size: 0.6em;
+  font-size: 0.6em !important;
   text-align: center;
   color: var(--color-gray);
 }
