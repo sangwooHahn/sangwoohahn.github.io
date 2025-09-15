@@ -2354,7 +2354,11 @@ footer button {
 
 
 /* 태블릿 (가로 모드) */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1100px) {
+  section {
+    padding: var(--padding-40);
+  }
+
   .date-module>div {
     gap: var(--padding-80);
   }
@@ -2368,10 +2372,18 @@ footer button {
   }
 
   .message-module>div {
-    gap: var(--padding-80);
+    gap: var(--padding-24);
   }
 
   .title-image img.title-bg {
     height: 100%;
+  }
+
+  .decline-wreaths {
+    flex-direction: column;
+  }
+
+  .decline-wreaths p {
+    max-width: 200px;
   }
 }
