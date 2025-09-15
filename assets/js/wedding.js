@@ -550,7 +550,9 @@ const velocityThreshold = 0.3; // 빠른 스와이프 임계
 
 // 스냅 이동 + 인디케이터 업데이트
 function scrollToSlide(index) {
-  index = Math.min(Math.max(index, 0), galleryImages.length - 1);
+  if (velocity < -velocityThreshold || scrollRatio > currentSlide + snapThreshold) {
+    index = Math.min(currentSlide + 1, galleryImages.length - 1);
+  }
   currentSlide = index;
   updateIndicator(index);
 
