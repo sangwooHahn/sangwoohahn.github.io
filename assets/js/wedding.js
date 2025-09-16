@@ -1214,7 +1214,7 @@ if (lang === 'KR') {
     content: {
       title: '상우와 연서의 결혼식에 초대합니다!',
       description: '2026.01.24 모두 축하해주세요.',
-      imageUrl: 'assets/images/wedding/kakao_image.jpg',
+      imageUrl: 'https://sangwoohahn.com/assets/images/wedding/kakao_image.jpg',
       link: {
         mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
         webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
