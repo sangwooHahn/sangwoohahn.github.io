@@ -1212,9 +1212,9 @@ if (lang === 'KR') {
     container: '#share-kakao',
     objectType: 'feed',
     content: {
-      title: '상우와 연서의 결혼식에 초대합니다.',
-      description: '2026.01.24 모두 축하해주세요!',
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
+      title: '상우와 연서의 결혼식에 초대합니다!',
+      description: '2026.01.24 모두 축하해주세요.',
+      imageUrl: 'assets/images/wedding/kakao_image.jpg',
       link: {
         mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
         webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
