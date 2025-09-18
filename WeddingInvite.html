@@ -152,7 +152,6 @@
     width: 100%;
     max-width: 320px;
     text-align: center;
-    padding: 16px;
     box-sizing: border-box;
   }
 
@@ -171,19 +170,19 @@
     flex: 0 0 32px;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     height: 32px;
     width: 32px;
+    border: 1.5px solid var(--color-primary);
     border-radius: 999px;
     padding: 0;
     margin: 0;
-    border: none;
   }
 
   .arrow-button div {
     width: 8px;
     height: 8px;
-    border: 2px solid white;
+    border: 2px solid var(--color-primary);
     border-radius: 2px;
     border-top: none;
     border-right: none;
@@ -197,6 +196,10 @@
   .arrow-button.next-header div,
   .arrow-button.next-description div {
     transform: translateX(-2px) rotate(-135deg);
+  }
+
+  .pill-button {
+    margin-top: 8px;
   }
 
   /* 데스크탑 (중형 화면) */
