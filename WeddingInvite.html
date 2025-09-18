@@ -8,87 +8,434 @@
     content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
   <title>청첩장 보내기</title>
   <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/wedding.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
-  <!-- <a id="kakao-link-btn" href="javascript:;">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s" />
-  </a> -->
-  <a id="btn-sangwoo" href="javascript:;">📨 상우네 부모닝용</a><br>
-  <a id="btn-jenny" href="javascript:;">📨 제니네 부모님용</a><br>
-  <a id="btn-friends" href="javascript:;">📨 상우 & 제니 친구용</a>
+<style>
+  section {
+    padding: 16px;
+  }
 
-  <script type='text/javascript'>
-    //자바스크립트 코드
+  body {
+    height: 100vh;
+  }
+
+  main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  div {
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    width: 100%;
+  }
+
+  .kakao-module {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #B2C7D9;
+  }
+
+  .kakao-mockup {
+    width: 240px;
+  }
+
+  .title {
+    font-size: 12px;
+    height: 16px;
+  }
+
+  .description {
+    font-size: 12px;
+    color: #919191;
+    height: 15px;
+  }
+
+  .kakao-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .kakao-text-area {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 0 0 10px 10px;
+    box-sizing: border-box;
+    background: #FFF;
+  }
+
+  .button-shape-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .button-shape {
+    display: flex;
+    padding: 8px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #F1F1F1;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .kakao-dev {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+  }
+
+  .kakao-dev-text {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .kakao-dev-image {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+
+  .kakao-dev-text div {
+    color: #919191;
+    font-size: 10px;
+    line-height: 110%;
+  }
+
+  .kakao-dev-arrow {
+    width: 6px;
+    height: 6px;
+    transform: rotate(-135deg);
+    border-bottom: 1px solid #919191;
+    border-left: 1px solid #919191;
+  }
+
+  .ui-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    /*남은 높이 채우기*/
+    flex: 1;
+    /* overflow: hidden; */
+  }
+
+  .ui-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    max-height: 220px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .background-pattern {
+    background-size: 20%;
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrow-button {
+    display: flex;
+    flex: 0 0 32px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    height: 32px;
+    width: 32px;
+    border-radius: 999px;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  .arrow-button div {
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    border-radius: 2px;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    cursor: pointer;
+    transform: translateX(2px) rotate(45deg);
+  }
+
+  /* 좌/우 회전 */
+  .arrow-button.next-image div,
+  .arrow-button.next-header div,
+  .arrow-button.next-description div {
+    transform: translateX(-2px) rotate(-135deg);
+  }
+
+  /* 데스크탑 (중형 화면) */
+  @media (min-width: 768px) {
+
+    section {
+      padding: 80px;
+    }
+
+    .ui-container {
+      gap: 32px;
+      max-height: 300px;
+    }
+
+    .pill-button {
+      margin-top: 32px;
+    }
+  }
+</style>
+
+<body>
+  <main>
+    <section class="kakao-module">
+      <div class="kakao-mockup">
+        <img class="kakao-image" src="assets/images/wedding/kakao_image.jpg">
+        <div class="kakao-text-area">
+          <div class="title">상우와 연서의 결혼식에 초대합니다.</div>
+          <div class="description">2026.01.24 모두 축하해주세요!</div>
+          <div class="button-shape-container">
+            <div class="button-shape">청첩장 보기 </div>
+            <div class="button-shape">식장 안내</div>
+          </div>
+          <div class="kakao-dev">
+            <div class="kakao-dev-text">
+              <img class="kakao-dev-image" src="assets/images/wedding/kakao_dev_icon.png">
+              <div>Sangwoo & Jenny’s Wedding</div>
+            </div>
+            <div class="kakao-dev-arrow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ui-section">
+
+      <div class="ui-container">
+        <div class="image-buttons buttons-container">
+          <button class="arrow-button prev-image">
+            <div></div>
+          </button>
+          <div class="ui-image">이미지 1</div>
+          <button class="arrow-button next-image">
+            <div></div>
+          </button>
+        </div>
+
+        <div class="header-buttons buttons-container">
+          <button class="arrow-button prev-header">
+            <div></div>
+          </button>
+          <div class="ui-header">제목 1</div>
+          <button class="arrow-button next-header">
+            <div></div>
+          </button>
+        </div>
+
+        <div class="description-buttons buttons-container">
+          <button class="arrow-button prev-description">
+            <div></div>
+          </button>
+          <div class="ui-description">내용 1</div>
+          <button class="arrow-button next-description">
+            <div></div>
+          </button>
+        </div>
+
+        <button id="share-button" class="pill-button pill-button-fill">
+          <div>청첩장 보내기</div>
+        </button>
+      </div>
+
+      <div class="background-pattern"></div>
+    </section>
+  </main>
+
+  <script>
+    // UI용 표시
+    const uiImages = ['이미지 1', '이미지 2', '이미지 3', '이미지 4', '이미지 5'];
+    const uiHeaders = ['제목 1', '제목 2', '제목 3', '제목 4', '제목 5'];
+    const uiTexts = ['내용 1', '내용 2', '내용 3', '내용 4', '내용 5'];
+
+    // 실제 적용 콘텐츠
+    const images = [
+      'assets/images/wedding/invite/kakao_image_1.jpg',
+      'assets/images/wedding/invite/kakao_image_2.jpg',
+      'assets/images/wedding/invite/kakao_image_3.jpg',
+      'assets/images/wedding/invite/kakao_image_4.jpg',
+      'assets/images/wedding/invite/kakao_image_5.jpg'
+    ];
+    const headers = [
+      '상우와 연서의 결혼식에 초대합니다.',
+      '한상우 ♥ 유연서 결혼합니다!',
+      '우리 아들 결혼합니다.',
+      '우리 딸 결혼합니다',
+      '상우와 연서의 결혼식에 초대합니다.'
+    ];
+    const descriptions = [
+      '2026.01.24 모두 축하해주세요',
+      '2026.01.24 오셔서 축복해주세요',
+      '2026.01.24 결혼식에 함께해요 🎉',
+      '2026.01.24 (토) 오후 12시',
+      '2026년 1월 24일 토요일 오후 12시'
+    ];
+
+    // 인덱스
+    let imageIndex = 0;
+    let headerIndex = 0;
+    let textIndex = 0;
+
+    // 목업 요소
+    const kakaoImage = document.querySelector('.kakao-image');
+    const kakaoTitle = document.querySelector('.kakao-text-area .title');
+    const kakaoDescription = document.querySelector('.kakao-text-area .description');
+
+    // UI 표시 요소
+    const uiImageDisplay = document.querySelector('.ui-image');
+    const uiHeaderDisplay = document.querySelector('.ui-header');
+    const uiTextDisplay = document.querySelector('.ui-description');
+
+    // 저장/불러오기
+    function saveState() {
+      localStorage.setItem('imageIndex', imageIndex);
+      localStorage.setItem('headerIndex', headerIndex);
+      localStorage.setItem('textIndex', textIndex);
+    }
+    function loadState() {
+      const savedImage = localStorage.getItem('imageIndex');
+      const savedHeader = localStorage.getItem('headerIndex');
+      const savedText = localStorage.getItem('textIndex');
+      if (savedImage !== null) imageIndex = parseInt(savedImage);
+      if (savedHeader !== null) headerIndex = parseInt(savedHeader);
+      if (savedText !== null) textIndex = parseInt(savedText);
+    }
+
+    // 업데이트
+    function updateImage() {
+      kakaoImage.src = images[imageIndex];
+      uiImageDisplay.textContent = uiImages[imageIndex];
+      saveState();
+    }
+    function updateHeader() {
+      kakaoTitle.textContent = headers[headerIndex];
+      uiHeaderDisplay.textContent = uiHeaders[headerIndex];
+      saveState();
+    }
+    function updateText() {
+      kakaoDescription.textContent = descriptions[textIndex];
+      uiTextDisplay.textContent = uiTexts[textIndex];
+      saveState();
+    }
+
+    // 버튼 이벤트
+    document.querySelector('.prev-image').addEventListener('click', () => {
+      imageIndex = (imageIndex - 1 + images.length) % images.length;
+      updateImage();
+    });
+    document.querySelector('.next-image').addEventListener('click', () => {
+      imageIndex = (imageIndex + 1) % images.length;
+      updateImage();
+    });
+
+    document.querySelector('.prev-header').addEventListener('click', () => {
+      headerIndex = (headerIndex - 1 + headers.length) % headers.length;
+      updateHeader();
+    });
+    document.querySelector('.next-header').addEventListener('click', () => {
+      headerIndex = (headerIndex + 1) % headers.length;
+      updateHeader();
+    });
+
+    document.querySelector('.prev-description').addEventListener('click', () => {
+      textIndex = (textIndex - 1 + descriptions.length) % descriptions.length;
+      updateText();
+    });
+    document.querySelector('.next-description').addEventListener('click', () => {
+      textIndex = (textIndex + 1) % descriptions.length;
+      updateText();
+    });
+
+    // 초기화
+    loadState();
+    updateImage();
+    updateHeader();
+    updateText();
+
+
+    //카카오 링크
     Kakao.init('2ed2abdd736520c949eaff9503434532');
 
-    // 상우 부모님용
-    Kakao.Link.createDefaultButton({
-      container: '#btn-sangwoo',
-      objectType: 'feed',
-      content: {
-        title: '우리 아들 결혼합니다',
-        description: '가족 여러분, 오셔서 축복해주세요',
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
-        link: {
-          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=groom',
-          webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=groom'
-        }
-      },
-      buttons: [
-        { title: '식장 안내', link: { mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=groom', webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=groom' } },
-        { title: '마음 전하실 곳', link: { mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=groom', webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=groom' } }
-      ]
-    });
+    // 공유 함수
+    function shareWedding(version) {
+      let content = {};
 
-    // 제니 부모님용
-    Kakao.Link.createDefaultButton({
-      container: '#btn-jenny',
-      objectType: 'feed',
-      content: {
-        title: '우리 딸 결혼합니다',
-        description: '모두 함께해주세요!',
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
-        link: {
-          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=bride',
-          webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=bride'
-        }
-      },
-      buttons: [
-        {
-          title: '청첩장 보기',
+      const imageUrl = images[imageIndex];
+      const title = headers[headerIndex];
+      const description = descriptions[textIndex];
+
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: title,
+          description: description,
+          imageUrl: 'https://sangwoohahn.com/${imageUrl}',
           link: {
-            mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=bride',
-            webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=bride'
+            mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+            webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
           }
         },
-        {
-          title: '식장 안내',
-          link: {
-            mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=bride',
-            webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=bride'
+        buttons: [
+          {
+            title: '청첩장 보기',
+            link: {
+              mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+              webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+            }
+          },
+          {
+            title: '식장 안내',
+            link: {
+              mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html#location-section',
+              webUrl: 'https://sangwoohahn.com/JennyMyWife.html#location-section'
+            }
           }
-        }
-      ]
-    });
+        ]
+      });
+    }
 
-    // 상우 제니 친구용
-    Kakao.Link.createDefaultButton({
-      container: '#btn-friends',
-      objectType: 'feed',
-      content: {
-        title: '우리 결혼해요!',
-        description: '시간 되면 와서 축하해줘~',
-        imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3k8QD2Ty9XCxSBUucxssdkV8aolbj2vrQlw&s',
-        link: {
-          mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=brideFriend',
-          webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=brideFriend'
-        }
-      },
-      buttons: [
-        { title: '식장 위치', link: { mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=brideFriend', webUrl: 'https://sangwoohahn.com/JennyMyWife.html?side=brideFriend' } },
-        { title: '연락하기', link: { mobileWebUrl: 'tel:01099573909', webUrl: 'tel:01099573909' } }
-      ]
+    document.getElementById('share-button').addEventListener('click', () => {
+      shareWedding();
     });
   </script>
 </body>
