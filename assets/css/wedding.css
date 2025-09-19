@@ -592,7 +592,7 @@ section {
 
 .indicator-wrapper .prev div,
 .indicator-wrapper .next div {
-  display: none;
+  /* display: none; */
   width: 22px;
   height: 22px;
   border: 2px solid var(--color-primary);
@@ -1335,8 +1335,7 @@ input {
   display: flex;
   justify-content: center;
   background-color: var(--background-primary);
-  padding-top: var(--padding-32);
-  padding-bottom: var(--padding-32);
+  padding: var(--padding-24) var(--padding-16);
 }
 
 .footer-module>div {
@@ -2035,6 +2034,10 @@ footer button {
     height: calc(100vw * 0.65 + 96px + 32px);
     max-height: 100vh;
     box-sizing: border-box;
+  }
+
+  .gallery-module h2 {
+    display: none;
   }
 
   .images img {
