@@ -582,6 +582,10 @@ section {
   pointer-events: auto;
 }
 
+.images img:nth-last-child(4) {
+  object-position: 15% top;
+}
+
 .indicator-wrapper {
   display: flex;
   justify-content: center;
