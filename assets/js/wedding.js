@@ -1451,37 +1451,6 @@ function setUserLang(lang) {
 }
 
 
-//모달 뒤 스크롤 방지
-// let scrollPos = 0;
-// const headerEl = document.querySelector('header');
-
-// function lockScroll() {
-//   scrollPos = window.scrollY;
-//   document.body.style.overflow = 'hidden';
-//   document.body.style.position = 'fixed';
-//   document.body.style.top = `-${scrollPos}px`;
-//   document.body.style.width = '100%';
-
-//   if (headerEl) {
-//     headerEl.style.opacity = '0';
-//     headerEl.style.pointerEvents = 'none';
-//   }
-// }
-
-// function unlockScroll() {
-//   document.body.style.overflow = '';
-//   document.body.style.position = '';
-//   document.body.style.top = '';
-//   document.body.style.width = '';
-//   window.scrollTo(0, scrollPos);
-
-//   if (headerEl) {
-//     headerEl.style.opacity = '';
-//     headerEl.style.pointerEvents = '';
-//   }
-// }
-
-
 let scrollPos = 0;
 const headerEl = document.querySelector('header');
 
@@ -1542,5 +1511,19 @@ document.querySelectorAll('.prev, .next').forEach(btn => {
   btn.addEventListener('touchend', e => {
     e.preventDefault(); // 터치 확대 방지
     btn.click();        // 클릭 이벤트 강제 실행
+  });
+});
+
+
+// 모든 닫기 버튼 선택
+document.querySelectorAll('.close').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    // 자신의 부모(또는 상위) 중에서 .custom-modal 또는 .contact-modal 계열 찾기
+    const modal = btn.closest('.contact-modal, .account-modal, .RSVP-module.custom-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = ""; // 원래 상태로 복원
+      unlockScroll();
+    }
   });
 });

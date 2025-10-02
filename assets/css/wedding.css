@@ -671,7 +671,7 @@ section {
 }
 
 /* 닫기 버튼 */
-.lightbox .close {
+.close {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -682,8 +682,8 @@ section {
   cursor: pointer;
 }
 
-.lightbox .close::before,
-.lightbox .close::after {
+.close::before,
+.close::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -695,11 +695,11 @@ section {
   transform-origin: center;
 }
 
-.lightbox .close::before {
+.close::before {
   transform: rotate(45deg);
 }
 
-.lightbox .close::after {
+.close::after {
   transform: rotate(-45deg);
 }
 
