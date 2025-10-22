@@ -102,21 +102,38 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.textMap = textMap;
   applyAllTexts(textMap);
 
-  // 모듈 폼 탭 설정
+  const tabButtons = document.querySelectorAll('.RSVP-module form .tab-button');
+  const sideInput = document.getElementById('sideInput_module');
+
+  // 모듈 기본 탭 설정
   const defaultButton = document.querySelector('.RSVP-module form .tab-button[data-tab="groom"]');
+  const defaultModalButton = document.querySelector('.RSVP-module.custom-modal form .tab-button[data-tab="groom"]');
   if (defaultButton) {
     defaultButton.classList.add('active');
-    const sideInput = document.getElementById('sideInput_module');
     sideInput.value = '신랑측';
+    defaultButton.textContent = '✔ ' + defaultButton.textContent.trim();
+  }
+
+  if (defaultModalButton) {
+    defaultModalButton.classList.add('active');
+    sideInput.value = '신랑측';
+    defaultModalButton.textContent = '✔ ' + defaultModalButton.textContent.trim();
   }
 
   // 탭 버튼 클릭 (모듈 전용)
-  document.querySelectorAll('.RSVP-module form .tab-button').forEach(button => {
+  tabButtons.forEach(button => {
     button.addEventListener('click', () => {
-      document.querySelectorAll('.RSVP-module form .tab-button').forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+      // 모든 버튼에서 active 제거 및 체크 표시 제거
+      tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.textContent = btn.textContent.replace(/^✔\s*/, ''); // 앞의 체크 제거
+      });
 
-      const sideInput = document.getElementById('sideInput_module');
+      // 선택된 버튼에 active 추가 및 체크 표시 추가
+      button.classList.add('active');
+      button.textContent = '✔ ' + button.textContent.trim();
+
+      // 입력값 갱신
       sideInput.value = button.dataset.tab === 'groom' ? '신랑측' : '신부측';
     });
   });
