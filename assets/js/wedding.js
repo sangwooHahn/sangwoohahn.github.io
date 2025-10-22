@@ -102,22 +102,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   window.textMap = textMap;
   applyAllTexts(textMap);
 
-  const tabButtons = document.querySelectorAll('.RSVP-module form .tab-button');
+  // 모듈 전용 탭 (모달 제외)
+  const tabButtons = document.querySelectorAll('.RSVP-module:not(.custom-modal) form .tab-button');
   const sideInput = document.getElementById('sideInput_module');
 
   // 모듈 기본 탭 설정
-  const defaultButton = document.querySelector('.RSVP-module form .tab-button[data-tab="groom"]');
-  const defaultModalButton = document.querySelector('.RSVP-module.custom-modal form .tab-button[data-tab="groom"]');
+  const defaultButton = document.querySelector('.RSVP-module:not(.custom-modal) form .tab-button[data-tab="groom"]');
   if (defaultButton) {
     defaultButton.classList.add('active');
     sideInput.value = '신랑측';
-    defaultButton.textContent = '✔ ' + defaultButton.textContent.trim();
+    defaultButton.innerHTML = '<span style="font-size: 0.8em;">✔</span> ' + defaultButton.textContent.trim();
   }
 
+  const defaultModalButton = document.querySelector('.RSVP-module.custom-modal form .tab-button[data-tab="groom"]');
   if (defaultModalButton) {
     defaultModalButton.classList.add('active');
     sideInput.value = '신랑측';
-    defaultModalButton.textContent = '✔ ' + defaultModalButton.textContent.trim();
+    defaultModalButton.innerHTML = '<span style="font-size: 0.8em;">✔</span> ' + defaultModalButton.textContent.trim();
   }
 
   // 탭 버튼 클릭 (모듈 전용)
@@ -126,14 +127,45 @@ document.addEventListener('DOMContentLoaded', async () => {
       // 모든 버튼에서 active 제거 및 체크 표시 제거
       tabButtons.forEach(btn => {
         btn.classList.remove('active');
-        btn.textContent = btn.textContent.replace(/^✔\s*/, ''); // 앞의 체크 제거
+        btn.innerHTML = btn.textContent.replace(/^✔\s*/, ''); // 체크 제거
       });
 
       // 선택된 버튼에 active 추가 및 체크 표시 추가
       button.classList.add('active');
-      button.textContent = '✔ ' + button.textContent.trim();
+      button.innerHTML = '<span style="font-size: 0.8em;">✔</span> ' + button.textContent.trim();
 
       // 입력값 갱신
+      sideInput.value = button.dataset.tab === 'groom' ? '신랑측' : '신부측';
+    });
+  });
+});
+
+
+// ----------------------
+// 탭 기본값 설정 및 클릭 처리 (모달 전용)
+// ----------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const tabButtons = document.querySelectorAll('.RSVP-module.custom-modal form .tab-button');
+  const sideInput = document.getElementById('sideInput_modal');
+
+  // // 기본 탭 설정
+  // const defaultButton = document.querySelector('.RSVP-module.custom-modal form .tab-button[data-tab="groom"]');
+  // if (defaultButton) {
+  //   defaultButton.classList.add('active');
+  //   sideInput.value = '신랑측';
+  //   defaultButton.innerHTML = '<span style="font-size: 0.8em;">✔</span> ' + defaultButton.textContent.trim();
+  // }
+
+  // 탭 버튼 클릭
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.innerHTML = btn.textContent.replace(/^✔\s*/, '');
+      });
+
+      button.classList.add('active');
+      button.innerHTML = '<span style="font-size: 0.8em;">✔</span> ' + button.textContent.trim();
       sideInput.value = button.dataset.tab === 'groom' ? '신랑측' : '신부측';
     });
   });
