@@ -1,149 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>Wedding Gallery</title>
+  <title>웨딩 사진 전송</title>
   <style>
-    #gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .thumb {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
+    body { font-family: sans-serif; text-align: center; padding: 50px; }
+    #uploadForm { margin-bottom: 20px; }
+    #status { margin-top: 20px; font-weight: bold; min-height: 20px; } 
+    #uploadBtn {
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
-
-    #status {
-      margin-top: 10px;
-      font-weight: bold;
+    #uploadBtn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    /* ✨ 진행률 막대 스타일 추가 */
+    #progress-container {
+      width: 300px; 
+      margin: 20px auto; 
+      text-align: left;
+    }
+    #progressBar {
+      width: 100%;
+      height: 20px;
+      appearance: none;
+      border-radius: 10px;
+    }
+    #progressBar::-webkit-progress-bar {
+      background-color: #eee;
+      border-radius: 10px;
+    }
+    #progressBar::-webkit-progress-value {
+      background-color: #4CAF50;
+      border-radius: 10px;
     }
   </style>
 </head>
-
 <body>
 
-  <h2>Wedding Photo Upload</h2>
+<h2>[웨딩 사진] 구글 드라이브로 사진 전송하기</h2>
+<p>소중한 순간이 담긴 사진과 영상을 아래 버튼을 눌러 공유해 주세요.</p>
+<hr>
 
-  <form id="uploadForm">
-    <input type="file" id="files" multiple accept="image/*,video/*">
-    <button type="submit" id="uploadBtn">Upload</button>
-  </form>
+<form id="uploadForm">
+  <input type="file" id="files" multiple accept="image/*,video/*" required>
+  <button type="submit" id="uploadBtn">사진/영상 전송하기</button>
+</form>
+
+<div id="status"></div>
+
+<div id="progress-container" style="display: none;">
+  <progress id="progressBar" value="0" max="100"></progress>
+  <div id="progressText" style="font-size: 0.9em; margin-top: 5px; color: #555;"></div>
+</div>
+
+<script>
+// ✨ SCRIPT_URL을 실제 배포한 Apps Script URL로 변경해야 합니다.
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwOkKdhZqLhzs8HAX8Ev7LyXIlYEx9t0YM1HLNslb3Jl5GutPoi4dk_a0ndBQNDkRzX0g/exec'; // 사용자 URL로 교체
+const uploadBtn = document.getElementById('uploadBtn');
+const status = document.getElementById('status');
+// ✨ 진행률 관련 변수 추가
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
+const progressContainer = document.getElementById('progress-container');
 
 
-  <div id="status"></div>
-  <div id="gallery"></div>
+// 파일을 Base64 문자열로 변환하는 유틸리티 함수
+function toBase64(file) {
+  return new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result.split(',')[1]); 
+    reader.readAsDataURL(file);
+  });
+}
 
-  <script>
-    // ✨ SCRIPT_URL을 실제 배포한 Apps Script URL로 변경해야 합니다.
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzltMrImaxIvd8n5hAkJYwADnJRMoLfO9HzBTCL7HKUzcRXx7fccoLv2dVENKL8me7BBQ/exec';
-    const uploadBtn = document.getElementById('uploadBtn');
-    const status = document.getElementById('status');
-    const gallery = document.getElementById('gallery');
+document.getElementById('uploadForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const input = document.getElementById('files');
+  const files = Array.from(input.files);
+  if (!files.length) return alert('전송할 파일을 선택해 주세요.');
 
-    document.getElementById('uploadForm').addEventListener('submit', async e => {
-      e.preventDefault();
-      const input = document.getElementById('files');
-      const files = Array.from(input.files);
-      if (!files.length) return alert('No files selected');
+  uploadBtn.disabled = true;
+  status.textContent = `파일 (${files.length}개)을 준비하는 중입니다...`;
+  status.style.color = 'black'; 
+  progressContainer.style.display = 'block'; // 진행률 컨테이너 표시
+  progressBar.value = 0; // 초기화
 
-      uploadBtn.disabled = true;
-      uploadBtn.textContent = 'Uploading...';
-      status.textContent = `Uploading ${files.length} file(s)...`;
+  try {
+    // 1. 파일 목록을 Base64 payload로 준비 (인코딩 단계)
+    const payload = [];
+    const ENCODING_MAX_PERCENTAGE = 20; // 인코딩 단계는 최대 20%까지 표시
+    
+    for (const [index, file] of files.entries()) {
+      status.textContent = `(${index + 1}/${files.length}) ${file.name} 인코딩 중...`;
+      
+      // 인코딩 진행률 업데이트 
+      const encodingProgress = (index + 1) / files.length * ENCODING_MAX_PERCENTAGE; 
+      progressBar.value = encodingProgress; 
+      progressText.textContent = `파일 준비 중... ${Math.round(encodingProgress)}%`;
+      
+      const base64 = await toBase64(file);
+      payload.push({ name: file.name, type: file.type, data: base64 });
+    }
 
-      try {
-        // Prepare payload
-        const payload = [];
-        for (const file of files) {
-          // FileReader로 파일을 Base64로 인코딩
-          const base64 = await toBase64(file);
-          payload.push({ name: file.name, type: file.type, data: base64 });
-        }
-
-        // Send to Apps Script
-        const formData = new FormData();
-        formData.append('files', JSON.stringify(payload));
-        const res = await fetch(SCRIPT_URL, { method: 'POST', body: formData });
-        const json = await res.json();
-
-        if (json.success) {
-          status.textContent = `Upload complete: ${json.count} file(s)`;
-          loadGallery(); // Refresh gallery
-        } else {
-          status.textContent = `Upload failed: ${json.message}`;
-        }
-
-      } catch (err) {
-        console.error(err);
-        status.textContent = `Upload error: ${err}`;
-      } finally {
-        uploadBtn.disabled = false;
-        uploadBtn.textContent = 'Upload';
+    // 2. Apps Script로 전송 (XHR 사용으로 네트워크 진행률 추적)
+    const formData = new FormData();
+    formData.append('files', JSON.stringify(payload));
+    status.textContent = `서버로 전송 준비 중...`;
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', SCRIPT_URL);
+    
+    // **네트워크 전송 진행률 추적 이벤트**
+    xhr.upload.onprogress = function(e) {
+      if (e.lengthComputable) {
+        // 전송 단계 (20% ~ 100%)
+        const percentage = Math.round(e.loaded / e.total * (100 - ENCODING_MAX_PERCENTAGE)) + ENCODING_MAX_PERCENTAGE; 
+        progressBar.value = percentage;
+        progressText.textContent = `파일 전송 중... ${percentage}% 완료`;
       }
+    };
+    
+    // Promise로 XHR 요청을 감싸서 비동기 처리
+    const json = await new Promise((resolve, reject) => {
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          resolve(JSON.parse(xhr.responseText));
+        } else {
+          reject(new Error(`서버 응답 오류: ${xhr.status} ${xhr.statusText}`));
+        }
+      };
+      xhr.onerror = function() {
+        reject(new Error("네트워크 오류가 발생했습니다. 인터넷 연결을 확인해 주세요."));
+      };
+      xhr.send(formData);
     });
 
-    function toBase64(file) {
-      return new Promise(resolve => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result.split(',')[1]);
-        reader.readAsDataURL(file);
-      });
+    // 3. 전송 성공 메시지 출력
+    if (json.success) {
+      progressBar.value = 100;
+      status.style.color = '#4CAF50';
+      status.textContent = `🎉 전송 완료! 총 ${json.count}개의 사진/영상이 안전하게 저장되었습니다. 감사합니다!`;
+      progressText.textContent = '100% 완료';
+      input.value = ''; // 파일 선택창 초기화
+    } else {
+      throw new Error(json.message); 
     }
 
-    // Load gallery from Apps Script
-    // Load gallery from Apps Script
-    async function loadGallery() {
-      gallery.innerHTML = '';
-      try {
-        const res = await fetch(`${SCRIPT_URL}?action=list`);
-        const json = await res.json();
-        if (!json.files) return;
-
-        json.files.forEach(f => {
-          // Apps Script에서 보낸 directLink 필드를 사용합니다.
-          if (f.type === 'photo' && f.directLink) {
-            const img = document.createElement('img');
-
-            // 🚀 최종 클라이언트 수정:
-            // 1. thumbnailLink가 있다면 그대로 사용합니다 (가장 안전).
-            let imgSrc = f.directLink;
-
-            // 2. 만약 Apps Script가 thumbnailLink를 반환하지 못했다면 (오류 시), 
-            //    최후의 수단으로 일반 uc?id 링크를 시도합니다.
-            if (!imgSrc) {
-              imgSrc = `https://drive.google.com/uc?id=${f.id}`;
-            }
-
-            img.src = imgSrc;
-
-            img.alt = f.name;
-            img.className = 'thumb';
-            img.title = f.name;
-
-            // ... (클릭 이벤트 유지)
-            img.onclick = () => window.open(`https://drive.google.com/file/d/${f.id}/preview`, '_blank');
-
-            gallery.appendChild(img);
-          }
-        });
-
-      } catch (err) {
-        console.error(err);
-        status.textContent = `Gallery load error: ${err}`;
-      }
-    }
-
-    // 초기 로드
-    loadGallery();
-  </script>
+  } catch(err) {
+    console.error(err);
+    status.style.color = 'red';
+    status.textContent = `❌ 전송 실패: ${err.message || err.toString()}`;
+    progressText.textContent = '실패';
+  } finally {
+    uploadBtn.disabled = false;
+    uploadBtn.textContent = '사진/영상 전송하기';
+    // 오류가 발생해도 진행률 막대는 그대로 두어 최종 상태를 보여줍니다.
+  }
+});
+</script>
 
 </body>
-
 </html>
