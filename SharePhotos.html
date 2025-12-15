@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Wedding Gallery</title>
@@ -10,6 +11,7 @@
       gap: 10px;
       margin-top: 20px;
     }
+
     .thumb {
       width: 120px;
       height: 120px;
@@ -18,118 +20,120 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+
     #status {
       margin-top: 10px;
       font-weight: bold;
     }
   </style>
 </head>
+
 <body>
 
-<h2>Wedding Photo Upload</h2>
+  <h2>Wedding Photo Upload</h2>
 
-<form id="uploadForm">
-  <input type="file" id="files" multiple accept="image/*,video/*">
-  <button type="submit" id="uploadBtn">Upload</button>
-</form>
+  <form id="uploadForm">
+    <input type="file" id="files" multiple accept="image/*,video/*">
+    <button type="submit" id="uploadBtn">Upload</button>
+  </form>
 
 
-<div id="status"></div>
-<div id="gallery"></div>
+  <div id="status"></div>
+  <div id="gallery"></div>
 
-<script>
-// ✨ SCRIPT_URL을 실제 배포한 Apps Script URL로 변경해야 합니다.
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzuNWYk0sdhcPfpMwMAcxnS56quhcKfem6jwpvaMK6fEZ4FDmYwYkWw8XKEDUuaXuEoIw/exec';
-const uploadBtn = document.getElementById('uploadBtn');
-const status = document.getElementById('status');
-const gallery = document.getElementById('gallery');
+  <script>
+    // ✨ SCRIPT_URL을 실제 배포한 Apps Script URL로 변경해야 합니다.
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzltMrImaxIvd8n5hAkJYwADnJRMoLfO9HzBTCL7HKUzcRXx7fccoLv2dVENKL8me7BBQ/exec';
+    const uploadBtn = document.getElementById('uploadBtn');
+    const status = document.getElementById('status');
+    const gallery = document.getElementById('gallery');
 
-document.getElementById('uploadForm').addEventListener('submit', async e => {
-  e.preventDefault();
-  const input = document.getElementById('files');
-  const files = Array.from(input.files);
-  if (!files.length) return alert('No files selected');
+    document.getElementById('uploadForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const input = document.getElementById('files');
+      const files = Array.from(input.files);
+      if (!files.length) return alert('No files selected');
 
-  uploadBtn.disabled = true;
-  uploadBtn.textContent = 'Uploading...';
-  status.textContent = `Uploading ${files.length} file(s)...`;
+      uploadBtn.disabled = true;
+      uploadBtn.textContent = 'Uploading...';
+      status.textContent = `Uploading ${files.length} file(s)...`;
 
-  try {
-    // Prepare payload
-    const payload = [];
-    for (const file of files) {
-      // FileReader로 파일을 Base64로 인코딩
-      const base64 = await toBase64(file);
-      payload.push({ name: file.name, type: file.type, data: base64 });
-    }
+      try {
+        // Prepare payload
+        const payload = [];
+        for (const file of files) {
+          // FileReader로 파일을 Base64로 인코딩
+          const base64 = await toBase64(file);
+          payload.push({ name: file.name, type: file.type, data: base64 });
+        }
 
-    // Send to Apps Script
-    const formData = new FormData();
-    formData.append('files', JSON.stringify(payload));
-    const res = await fetch(SCRIPT_URL, { method: 'POST', body: formData });
-    const json = await res.json();
+        // Send to Apps Script
+        const formData = new FormData();
+        formData.append('files', JSON.stringify(payload));
+        const res = await fetch(SCRIPT_URL, { method: 'POST', body: formData });
+        const json = await res.json();
 
-    if (json.success) {
-      status.textContent = `Upload complete: ${json.count} file(s)`;
-      loadGallery(); // Refresh gallery
-    } else {
-      status.textContent = `Upload failed: ${json.message}`;
-    }
+        if (json.success) {
+          status.textContent = `Upload complete: ${json.count} file(s)`;
+          loadGallery(); // Refresh gallery
+        } else {
+          status.textContent = `Upload failed: ${json.message}`;
+        }
 
-  } catch(err) {
-    console.error(err);
-    status.textContent = `Upload error: ${err}`;
-  } finally {
-    uploadBtn.disabled = false;
-    uploadBtn.textContent = 'Upload';
-  }
-});
-
-function toBase64(file) {
-  return new Promise(resolve => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result.split(',')[1]);
-    reader.readAsDataURL(file);
-  });
-}
-
-// Load gallery from Apps Script
-async function loadGallery() {
-  gallery.innerHTML = '';
-  try {
-    const res = await fetch(`${SCRIPT_URL}?action=list`);
-    const json = await res.json();
-    if (!json.files) return;
-
-    json.files.forEach(f => {
-      if (f.type === 'photo') {
-        const img = document.createElement('img');
-        
-        // 🚀 최종 수정: export=download 옵션을 명시하여 이미지 로드를 강제합니다.
-        // Apps Script의 directLink 대신 f.id를 사용해 URL을 재구성합니다.
-        img.src = `https://drive.google.com/uc?export=download&id=${f.id}`; 
-        
-        img.alt = f.name;
-        img.className = 'thumb';
-        img.title = f.name;
-        
-        // 클릭 시 원본 구글 드라이브 뷰어 링크는 유지
-        img.onclick = () => window.open(`https://drive.google.com/file/d/${f.id}/preview`, '_blank');
-        
-        gallery.appendChild(img);
+      } catch (err) {
+        console.error(err);
+        status.textContent = `Upload error: ${err}`;
+      } finally {
+        uploadBtn.disabled = false;
+        uploadBtn.textContent = 'Upload';
       }
-      // 비디오는 필요하면 별도 처리 가능
     });
 
-  } catch(err) {
-    console.error(err);
-    status.textContent = `Gallery load error: ${err}`;
-  }
-}
+    function toBase64(file) {
+      return new Promise(resolve => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.readAsDataURL(file);
+      });
+    }
 
-// 초기 로드
-loadGallery();
-</script>
+    // Load gallery from Apps Script
+    async function loadGallery() {
+      gallery.innerHTML = '';
+      try {
+        const res = await fetch(`${SCRIPT_URL}?action=list`);
+        const json = await res.json();
+        if (!json.files) return;
+
+        json.files.forEach(f => {
+          // 🚀 Apps Script에서 보내준 directLink를 사용하도록 복귀
+          if (f.type === 'photo' && f.directLink) {
+            const img = document.createElement('img');
+
+            // Drive API가 생성한 안전한 썸네일 URL을 사용
+            img.src = f.directLink;
+
+            img.alt = f.name;
+            img.className = 'thumb';
+            img.title = f.name;
+
+            // ... (클릭 이벤트 유지)
+            img.onclick = () => window.open(`https://drive.google.com/file/d/${f.id}/preview`, '_blank');
+
+            gallery.appendChild(img);
+          }
+        });
+
+      } catch (err) {
+        console.error(err);
+        status.textContent = `Gallery load error: ${err}`;
+      }
+    }
+
+    // 초기 로드
+    loadGallery();
+  </script>
 
 </body>
+
 </html>
