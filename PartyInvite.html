@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+
+  <title>파티 초대장 보내기</title>
+
+  <!-- Kakao SDK -->
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/wedding.css">
+
+  <!-- Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    section {
+      padding: 32px;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+    }
+
+    main {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    div {
+      font-family: "Public Sans", sans-serif;
+      font-weight: 400;
+      width: 100%;
+    }
+
+    /* Kakao Mockup */
+    .kakao-module {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #B2C7D9;
+    }
+
+    .kakao-mockup {
+      width: 240px;
+    }
+
+    .kakao-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .kakao-text-area {
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      border-radius: 0 0 10px 10px;
+      background: #FFF;
+      box-sizing: border-box;
+    }
+
+    .title {
+      font-size: 12px;
+      height: 16px;
+      text-align: center;
+    }
+
+    .description {
+      font-size: 12px;
+      color: #919191;
+      height: 15px;
+      text-align: center;
+    }
+
+    .button-shape {
+      display: flex;
+      padding: 8px 10px;
+      max-width: 200px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      background-color: #F1F1F1;
+      font-size: 12px;
+    }
+
+    .kakao-dev {
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+
+    .kakao-dev-text {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .kakao-dev-image {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    .kakao-dev-text div {
+      color: #919191;
+      font-size: 10px;
+      line-height: 110%;
+    }
+
+    .kakao-dev-arrow {
+      width: 6px;
+      height: 6px;
+      transform: rotate(-135deg);
+      border-bottom: 1px solid #919191;
+      border-left: 1px solid #919191;
+    }
+
+    /* Share Section */
+    .ui-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+
+    .ui-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <!-- Kakao Preview Mockup -->
+    <section class="kakao-module">
+      <div class="kakao-mockup">
+        <img class="kakao-image" src="assets/images/afterParty/KakaoTalk_Image.jpg" alt="After Party">
+
+        <div class="kakao-text-area">
+          <div class="title">
+            상우 & 연서의 결혼식 뒤풀이에 초대합니다.
+          </div>
+          <div class="description">
+            2026.01.24 오후 2시부터 6시
+          </div>
+
+          <div class="button-shape">
+            초대장 보기
+          </div>
+
+          <div class="kakao-dev">
+            <div class="kakao-dev-text">
+              <img class="kakao-dev-image" src="assets/images/wedding/kakao_dev_icon.png" alt="">
+              <div>Sangwoo & Jenny’s Wedding</div>
+            </div>
+            <div class="kakao-dev-arrow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Share Button -->
+    <section class="ui-section">
+      <div class="ui-container">
+        <button id="share-button" class="pill-button pill-button-fill">
+          <div>초대장 보내기</div>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    Kakao.init('2ed2abdd736520c949eaff9503434532');
+
+    const imageUrl = 'https://sangwoohahn.com/assets/images/afterParty/Kakao_Image.jpg';
+    const title = '상우와 연서의 결혼식 애프터 파티에 초대합니다.';
+    const description = '2026.01.24 오후 2시-6시';
+
+    function shareWedding() {
+      Kakao.Link.sendDefault({
+        objectType: 'feed',
+        content: {
+          title: title,
+          description: description,
+          imageUrl: imageUrl,
+          link: {
+            mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+            webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+          }
+        },
+        buttons: [
+          {
+            title: '초대장 보기',
+            link: {
+              mobileWebUrl: 'https://sangwoohahn.com/JennyMyWife.html',
+              webUrl: 'https://sangwoohahn.com/JennyMyWife.html'
+            }
+          }
+        ]
+      });
+    }
+
+    document.getElementById('share-button').addEventListener('click', shareWedding);
+  </script>
+</body>
+
+</html>
